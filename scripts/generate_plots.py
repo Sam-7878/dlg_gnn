@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+import numpy as np
 
 # Source result directories
 RESULT_DIRS = {
@@ -118,17 +119,18 @@ def generate_html_dashboard(df, output_path):
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-base: #0b0f19;
-            --bg-surface: rgba(17, 24, 39, 0.75);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --color-indigo: #6366f1;
-            --color-emerald: #10b981;
-            --color-blue: #3b82f6;
-            --color-amber: #f59e0b;
-            --color-pink: #ec4899;
-            --color-purple: #a855f7;
+            /* Clean high-contrast Light Theme for Paper Screenshots */
+            --bg-base: #ffffff;
+            --bg-surface: #f9fafb;
+            --border-color: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --color-indigo: #4f46e5;
+            --color-emerald: #059669;
+            --color-blue: #2563eb;
+            --color-amber: #d97706;
+            --color-pink: #db2777;
+            --color-purple: #7c3aed;
             --font-outfit: 'Outfit', sans-serif;
             --font-inter: 'Inter', sans-serif;
         }
@@ -146,9 +148,8 @@ def generate_html_dashboard(df, output_path):
             min-height: 100vh;
             padding: 2rem;
             background-image: 
-                radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 90% 80%, rgba(236, 72, 153, 0.1) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+                radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.04) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(236, 72, 153, 0.02) 0px, transparent 50%);
             background-attachment: fixed;
         }
 
@@ -162,11 +163,10 @@ def generate_html_dashboard(df, output_path):
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #d8b4fe 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
         }
 
         .subtitle {
@@ -175,21 +175,19 @@ def generate_html_dashboard(df, output_path):
             font-weight: 400;
         }
 
-        /* Glassmorphism Card style */
+        /* Clean Border Card style */
         .glass-card {
             background: var(--bg-surface);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
             padding: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.25);
-            box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.2);
+            box-shadow: 0 8px 30px 0 rgba(99, 102, 241, 0.08);
         }
 
         /* Layout Grid */
@@ -236,7 +234,7 @@ def generate_html_dashboard(df, output_path):
             font-family: var(--font-outfit);
             font-size: 2.2rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-primary);
             line-height: 1;
             margin-bottom: 0.5rem;
         }
@@ -247,7 +245,7 @@ def generate_html_dashboard(df, output_path):
         }
 
         .kpi-desc span {
-            color: #ffffff;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -281,15 +279,15 @@ def generate_html_dashboard(df, output_path):
             font-family: var(--font-outfit);
             font-size: 0.95rem;
             font-weight: 600;
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             padding-bottom: 0.25rem;
             margin-bottom: 0.5rem;
         }
 
         .btn-tab {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 8px;
             color: var(--text-secondary);
             cursor: pointer;
@@ -301,15 +299,16 @@ def generate_html_dashboard(df, output_path):
         }
 
         .btn-tab:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
+            background: rgba(0, 0, 0, 0.04);
+            color: var(--text-primary);
         }
 
         .btn-tab.active {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
             border-color: var(--color-indigo);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+            color: var(--color-indigo);
+            font-weight: 600;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.05);
         }
 
         .checkbox-label {
@@ -324,7 +323,7 @@ def generate_html_dashboard(df, output_path):
         }
 
         .checkbox-label:hover {
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .checkbox-label input {
@@ -335,10 +334,10 @@ def generate_html_dashboard(df, output_path):
 
         .search-box {
             width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.01);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 8px;
-            color: #ffffff;
+            color: var(--text-primary);
             padding: 0.6rem 1rem;
             font-size: 0.9rem;
             transition: all 0.2s ease;
@@ -347,8 +346,8 @@ def generate_html_dashboard(df, output_path):
         .search-box:focus {
             outline: none;
             border-color: var(--color-indigo);
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
-            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
+            background: #ffffff;
         }
 
         /* Visualization Chart Card */
@@ -378,8 +377,8 @@ def generate_html_dashboard(df, output_path):
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             padding: 0.3rem;
             border-radius: 10px;
         }
@@ -397,14 +396,14 @@ def generate_html_dashboard(df, output_path):
         }
 
         .btn-metric:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            background: rgba(0, 0, 0, 0.04);
         }
 
         .btn-metric.active {
             background: var(--color-indigo);
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
         }
 
         .chart-container {
@@ -430,14 +429,14 @@ def generate_html_dashboard(df, output_path):
             font-family: var(--font-outfit);
             font-size: 1.4rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .table-wrapper {
             overflow-x: auto;
             width: 100%;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
         }
 
         table {
@@ -448,18 +447,18 @@ def generate_html_dashboard(df, output_path):
         }
 
         th {
-            background-color: rgba(255, 255, 255, 0.03);
-            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.02);
+            color: var(--text-primary);
             font-weight: 600;
             padding: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid var(--border-color);
             cursor: pointer;
             user-select: none;
             transition: background-color 0.2s ease;
         }
 
         th:hover {
-            background-color: rgba(255, 255, 255, 0.06);
+            background-color: rgba(0, 0, 0, 0.04);
         }
 
         th::after {
@@ -474,7 +473,7 @@ def generate_html_dashboard(df, output_path):
 
         td {
             padding: 0.9rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
             color: var(--text-secondary);
             font-family: var(--font-inter);
         }
@@ -484,8 +483,8 @@ def generate_html_dashboard(df, output_path):
         }
 
         tr:hover td {
-            background-color: rgba(255, 255, 255, 0.02);
-            color: #ffffff;
+            background-color: rgba(99, 102, 241, 0.01);
+            color: var(--text-primary);
         }
 
         .badge {
@@ -499,50 +498,50 @@ def generate_html_dashboard(df, output_path):
         }
 
         .badge-chain {
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(59, 130, 246, 0.08);
             color: var(--color-blue);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.15);
         }
 
         .badge-polygon {
-            background: rgba(168, 85, 247, 0.1);
+            background: rgba(168, 85, 247, 0.08);
             color: var(--color-purple);
-            border: 1px solid rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(168, 85, 247, 0.15);
         }
 
         .badge-bsc {
-            background: rgba(245, 158, 11, 0.1);
+            background: rgba(245, 158, 11, 0.08);
             color: var(--color-amber);
-            border: 1px solid rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .badge-category {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.03);
             color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         .badge-ngnn {
-            background: rgba(77, 150, 255, 0.1);
+            background: rgba(77, 150, 255, 0.08);
             color: var(--color-blue);
-            border: 1px solid rgba(77, 150, 255, 0.2);
+            border: 1px solid rgba(77, 150, 255, 0.15);
         }
 
         .badge-mc-static {
-            background: rgba(107, 203, 119, 0.1);
+            background: rgba(16, 185, 129, 0.08);
             color: var(--color-emerald);
-            border: 1px solid rgba(107, 203, 119, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.15);
         }
 
         .badge-mc-stream {
-            background: rgba(255, 217, 61, 0.1);
-            color: #d1b81d;
-            border: 1px solid rgba(255, 217, 61, 0.2);
+            background: rgba(245, 158, 11, 0.08);
+            color: #b45309;
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .text-bold {
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .text-highlight {
@@ -558,7 +557,7 @@ def generate_html_dashboard(df, output_path):
         }
 
         .footer-note h3 {
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
             font-family: var(--font-outfit);
         }
@@ -626,7 +625,7 @@ def generate_html_dashboard(df, output_path):
         <!-- Chart Column -->
         <div class="glass-card chart-section">
             <div class="chart-header">
-                <h2 style="font-family: var(--font-outfit); font-size:1.4rem; font-weight:700; color:#fff;" id="chartTitle">ROC-AUC Detection Comparison</h2>
+                <h2 style="font-family: var(--font-outfit); font-size:1.4rem; font-weight:700; color:var(--text-primary);" id="chartTitle">ROC-AUC Detection Comparison</h2>
                 <div class="chart-metric-selector">
                     <button class="btn-metric active" onclick="setMetric('roc_auc')">ROC-AUC</button>
                     <button class="btn-metric" onclick="setMetric('pr_auc')">PR-AUC</button>
@@ -889,11 +888,11 @@ def generate_html_dashboard(df, output_path):
             let datasets = [];
             
             const catColors = {
-                'nGNN': '#4D96FF',
-                'MC-Static': '#6BCB77',
-                'MC-Streaming': '#FFD93D',
-                'MC-Static+Legacy': '#FF6B6B',
-                'MC-Streaming+Legacy': '#B983FF'
+                'nGNN': '#2563eb',             /* High Contrast Blue */
+                'MC-Static': '#059669',        /* High Contrast Emerald */
+                'MC-Streaming': '#d97706',     /* High Contrast Amber */
+                'MC-Static+Legacy': '#ef4444',  /* High Contrast Red */
+                'MC-Streaming+Legacy': '#7c3aed' /* High Contrast Purple */
             };
 
             if (currentChain === 'all') {
@@ -910,7 +909,7 @@ def generate_html_dashboard(df, output_path):
                         label: cat,
                         data: dataPoints,
                         backgroundColor: catColors[cat],
-                        borderColor: 'rgba(255, 255, 255, 0.1)',
+                        borderColor: '#111827',
                         borderWidth: 1,
                         borderRadius: 6
                     });
@@ -927,7 +926,7 @@ def generate_html_dashboard(df, output_path):
                     label: currentMetric.replace('_', ' ').toUpperCase(),
                     data: dataPoints,
                     backgroundColor: backgroundColors,
-                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                    borderColor: '#111827',
                     borderWidth: 1,
                     borderRadius: 6
                 });
@@ -954,14 +953,16 @@ def generate_html_dashboard(df, output_path):
                         y: {
                             type: scaleType,
                             beginAtZero: !isTimeOrMemory,
+                            grace: isTimeOrMemory ? 0 : '12%',
                             grid: {
-                                color: 'rgba(255, 255, 255, 0.05)',
+                                color: 'rgba(0, 0, 0, 0.06)',
                                 drawTicks: false
                             },
                             ticks: {
-                                color: '#9ca3af',
+                                color: '#111827',
                                 font: {
-                                    family: 'Inter'
+                                    family: 'Inter',
+                                    weight: 500
                                 },
                                 callback: function(value, index, ticks) {
                                     if (isTimeOrMemory) {
@@ -976,10 +977,11 @@ def generate_html_dashboard(df, output_path):
                                 display: false
                             },
                             ticks: {
-                                color: '#9ca3af',
+                                color: '#111827',
                                 font: {
                                     family: 'Inter',
-                                    size: 10
+                                    size: 10,
+                                    weight: 500
                                 }
                             }
                         }
@@ -989,7 +991,7 @@ def generate_html_dashboard(df, output_path):
                             display: currentChain === 'all',
                             position: 'top',
                             labels: {
-                                color: '#f3f4f6',
+                                color: '#111827',
                                 font: {
                                     family: 'Outfit',
                                     weight: 'bold'
@@ -1024,7 +1026,46 @@ def generate_html_dashboard(df, output_path):
                             }
                         }
                     }
-                }
+                },
+                /* Academic Custom Plugin to Draw Data Labels above bars */
+                plugins: [{
+                    id: 'datalabels',
+                    afterDatasetsDraw(chart, args, options) {
+                        const { ctx } = chart;
+                        ctx.save();
+                        ctx.font = 'bold 11px Inter';
+                        ctx.fillStyle = '#111827';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+                        
+                        chart.data.datasets.forEach((dataset, i) => {
+                            const meta = chart.getDatasetMeta(i);
+                            meta.data.forEach((bar, index) => {
+                                const dataPoint = dataset.data[index];
+                                if (dataPoint === null || dataPoint === undefined || isNaN(dataPoint)) return;
+                                
+                                let label = '';
+                                if (currentMetric.includes('auc') || currentMetric.includes('f1')) {
+                                    label = dataPoint.toFixed(4);
+                                } else if (currentMetric.includes('sec') || currentMetric.includes('time')) {
+                                    if (dataPoint > 1000) {
+                                        label = Math.round(dataPoint).toLocaleString() + 's';
+                                    } else {
+                                        label = dataPoint.toFixed(1) + 's';
+                                    }
+                                } else if (currentMetric.includes('ram') || currentMetric.includes('gpu')) {
+                                    label = Math.round(dataPoint).toLocaleString() + ' MB';
+                                } else {
+                                    label = dataPoint.toString();
+                                }
+                                
+                                const { x, y } = bar.tooltipPosition();
+                                ctx.fillText(label, x, y - 5);
+                            });
+                        });
+                        ctx.restore();
+                    }
+                }]
             });
         }
 
@@ -1074,79 +1115,116 @@ def main():
         import matplotlib.pyplot as plt
         import seaborn as sns
         
-        # Set theme and plot standard images
+        # Set theme and plot standard images (using whitegrid and dark text)
         sns.set_theme(style="whitegrid")
+        plt.rcParams.update({
+            'text.color': '#111827',
+            'axes.labelcolor': '#111827',
+            'xtick.color': '#111827',
+            'ytick.color': '#111827',
+            'axes.titlecolor': '#111827'
+        })
         
         category_colors = {
-            'nGNN': '#4D96FF',
-            'MC-Static': '#6BCB77',
-            'MC-Streaming': '#FFD93D',
-            'MC-Static+Legacy': '#FF6B6B',
-            'MC-Streaming+Legacy': '#B983FF'
+            'nGNN': '#2563eb',
+            'MC-Static': '#059669',
+            'MC-Streaming': '#d97706',
+            'MC-Static+Legacy': '#ef4444',
+            'MC-Streaming+Legacy': '#7c3aed'
         }
         
+        def add_bar_labels(ax, metric):
+            for p in ax.patches:
+                val = p.get_height()
+                if pd.isna(val) or val == 0:
+                    continue
+                
+                # Format label text
+                if metric in ['roc_auc', 'pr_auc', 'best_f1']:
+                    label = f"{val:.4f}"
+                elif metric in ['elapsed_sec', 'total_time_sec']:
+                    if val > 1000:
+                        label = f"{int(val):,}s"
+                    else:
+                        label = f"{val:.1f}s"
+                else:
+                    label = f"{int(val):,}M"
+                
+                # Draw the text above the bar
+                ax.annotate(label, 
+                            (p.get_x() + p.get_width() / 2., val),
+                            ha='center', va='center', 
+                            xytext=(0, 6), 
+                            textcoords='offset points', 
+                            fontsize=7.5, 
+                            fontweight='bold',
+                            color='#111827')
+
         # Plot 1: ROC-AUC Comparison
-        plt.figure(figsize=(12, 6))
-        sns.barplot(
+        plt.figure(figsize=(12, 6.5))
+        ax = sns.barplot(
             data=df, 
             x='chain', 
             y='roc_auc', 
             hue='category', 
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5
+            edgecolor='#111827',
+            linewidth=0.75
         )
         plt.title('ROC-AUC Comparison Across Blockchain Networks & Pipeline Variants')
         plt.ylabel('ROC-AUC')
         plt.xlabel('Blockchain Network')
-        plt.ylim(0.5, 1.02)
+        plt.ylim(0.5, 1.05)  # add grace space for labels
+        add_bar_labels(ax, 'roc_auc')
         plt.legend(title='Pipeline Variant', bbox_to_anchor=(1.02, 1), loc='upper left')
         plt.tight_layout()
         plt.savefig(os.path.join(OUTPUT_DIR, 'roc_auc_comparison.png'), bbox_inches='tight')
         plt.close()
         
         # Plot 2: PR-AUC Comparison
-        plt.figure(figsize=(12, 6))
-        sns.barplot(
+        plt.figure(figsize=(12, 6.5))
+        ax = sns.barplot(
             data=df, 
             x='chain', 
             y='pr_auc', 
             hue='category', 
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5
+            edgecolor='#111827',
+            linewidth=0.75
         )
         plt.title('PR-AUC (Precision-Recall AUC) Comparison Across Networks')
         plt.ylabel('PR-AUC')
         plt.xlabel('Blockchain Network')
-        plt.ylim(0.8, 1.01)
+        plt.ylim(0.8, 1.03)  # grace space
+        add_bar_labels(ax, 'pr_auc')
         plt.legend(title='Pipeline Variant', bbox_to_anchor=(1.02, 1), loc='upper left')
         plt.tight_layout()
         plt.savefig(os.path.join(OUTPUT_DIR, 'pr_auc_comparison.png'), bbox_inches='tight')
         plt.close()
         
         # Plot 3: Best F1 Score
-        plt.figure(figsize=(12, 6))
-        sns.barplot(
+        plt.figure(figsize=(12, 6.5))
+        ax = sns.barplot(
             data=df, 
             x='chain', 
             y='best_f1', 
             hue='category', 
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5
+            edgecolor='#111827',
+            linewidth=0.75
         )
         plt.title('Best F1 Score Comparison Across Networks')
         plt.ylabel('Best F1 Score')
         plt.xlabel('Blockchain Network')
-        plt.ylim(0.7, 1.01)
+        plt.ylim(0.7, 1.04)  # grace space
+        add_bar_labels(ax, 'best_f1')
         plt.legend(title='Pipeline Variant', bbox_to_anchor=(1.02, 1), loc='upper left')
         plt.tight_layout()
         plt.savefig(os.path.join(OUTPUT_DIR, 'f1_comparison.png'), bbox_inches='tight')
         plt.close()
 
         # Plot 4: Execution Time Comparison (Log scale for elapsed time)
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7.5))
         
         # Left subplot: Inference/fine-tuning time alone (elapsed_sec)
         sns.barplot(
@@ -1155,14 +1233,15 @@ def main():
             y='elapsed_sec',
             hue='category',
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5,
+            edgecolor='#111827',
+            linewidth=0.75,
             ax=ax1
         )
         ax1.set_title('Model Execution / Inference Time Alone (log scale)')
         ax1.set_ylabel('Time (Seconds) - Log Scale')
         ax1.set_yscale('log')
         ax1.set_xlabel('Blockchain Network')
+        add_bar_labels(ax1, 'elapsed_sec')
         ax1.get_legend().remove()
         
         # Right subplot: Total Time including Legacy Training
@@ -1172,14 +1251,15 @@ def main():
             y='total_time_sec',
             hue='category',
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5,
+            edgecolor='#111827',
+            linewidth=0.75,
             ax=ax2
         )
         ax2.set_title('Total Time (Inference + Legacy Training/Preprocessing, log scale)')
         ax2.set_ylabel('Total Time (Seconds) - Log Scale')
         ax2.set_yscale('log')
         ax2.set_xlabel('Blockchain Network')
+        add_bar_labels(ax2, 'total_time_sec')
         ax2.legend(title='Pipeline Variant', bbox_to_anchor=(1.02, 1), loc='upper left')
         
         plt.suptitle('Temporal Cost Comparison (Inference vs. Full Pipeline Overhead)', fontsize=16)
@@ -1188,7 +1268,7 @@ def main():
         plt.close()
 
         # Plot 5: Peak RAM & GPU Usage
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7.5))
         
         # RAM Usage
         sns.barplot(
@@ -1197,13 +1277,14 @@ def main():
             y='peak_ram_mb',
             hue='category',
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5,
+            edgecolor='#111827',
+            linewidth=0.75,
             ax=ax1
         )
         ax1.set_title('Peak RAM Usage (MB) Across Networks')
         ax1.set_ylabel('Peak RAM (MB)')
         ax1.set_xlabel('Blockchain Network')
+        add_bar_labels(ax1, 'peak_ram_mb')
         ax1.get_legend().remove()
         
         # GPU Usage
@@ -1213,13 +1294,14 @@ def main():
             y='peak_gpu_mb',
             hue='category',
             palette=category_colors,
-            edgecolor='black',
-            linewidth=0.5,
+            edgecolor='#111827',
+            linewidth=0.75,
             ax=ax2
         )
         ax2.set_title('Peak GPU VRAM Usage (MB) Across Networks')
         ax2.set_ylabel('Peak GPU VRAM (MB)')
         ax2.set_xlabel('Blockchain Network')
+        add_bar_labels(ax2, 'peak_gpu_mb')
         ax2.legend(title='Pipeline Variant', bbox_to_anchor=(1.02, 1), loc='upper left')
         
         plt.suptitle('Computational Resource Footprint Comparison', fontsize=16)
