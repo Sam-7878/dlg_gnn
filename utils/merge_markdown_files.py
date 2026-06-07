@@ -8,18 +8,17 @@ def merge_markdown_files(base_dir, output_filepath):
     """
     # 00부터 10까지의 접두사 리스트 생성 (['00-', '01-', ..., '10-'])
     # target_prefixes = [f"{i:02d}-" for i in range(11)]
-    # target_prefixes = [f"{i:02d}-" for i in range(11, 17)]  # 11부터 16까지로 수정
-    target_prefixes = [f"{i:03d}_" for i in range(100, 114)]  # 11부터 16까지로 수정
+    target_prefixes = [f"{i:02d}-" for i in range(20, 27)]  # 20부터 26까지로 수정
     
     # 병합할 문서들을 열기 (덮어쓰기 모드)
     with open(output_filepath, 'w', encoding='utf-8') as outfile:
-        outfile.write("# 00 ~ 10 병합된 작업 보고서\n\n")
+        outfile.write("# 20 ~ 26 병합된 작업 보고서\n\n")
         
         # 디렉토리 내의 항목들을 알파벳/숫자 순으로 정렬하여 탐색
         for folder_name in sorted(os.listdir(base_dir)):
             folder_path = os.path.join(base_dir, folder_name)
             
-            # 항목이 디렉토리인지, 그리고 타겟 접두사(00~10)로 시작하는지 확인
+            # 항목이 디렉토리인지, 그리고 타겟 접두사(20~26)로 시작하는지 확인
             if os.path.isdir(folder_path) and any(folder_name.startswith(p) for p in target_prefixes):
                 
                 # 가독성을 위해 폴더명을 1단계 제목으로 추가
@@ -51,9 +50,8 @@ def merge_markdown_files(base_dir, output_filepath):
 # 실행 설정
 if __name__ == "__main__":
     # 작업 디렉토리 설정 (필요에 따라 절대 경로로 수정 가능)
-    # WORK_DIR = "docs/work_reports" 
-    WORK_DIR = "docs_stable_coin/work_reports" 
-   # OUTPUT_FILE = "docs/work_reports/Merged_Reports_00_to_10.md"
-    OUTPUT_FILE = "docs_stable_coin/work_reports/Merged_Reports_100_to_113.md"
+    WORK_DIR = "./dlg_gnn/docs/work_reports" 
+   # OUTPUT_FILE = "Merged_Reports_00_to_10.md"
+    OUTPUT_FILE = "./dlg_gnn/docs/work_reports/Merged_Reports_20_to_26.md"
     
     merge_markdown_files(WORK_DIR, OUTPUT_FILE)
