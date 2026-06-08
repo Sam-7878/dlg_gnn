@@ -365,6 +365,29 @@ def main():
     except ImportError:
         print("    [Info] scikit-posthocs is not installed. Skipping Nemenyi test.")
         
+    # ── 7.5. Detailed Dataset-Wise ROC-AUC & Ranks ──
+    print("Generating detailed dataset-wise ROC-AUC scores and rankings...")
+    dataset_cols = ['Elliptic', 'DGraphFin', 'Yelp', 'Amazon', 'BitcoinOTC', 'Flickr', 'Reddit', 'Cora', 'CiteSeer', 'PubMed']
+    available_datasets = [d for d in dataset_cols if d in df['Dataset'].unique()]
+    
+    roc_scores = df.pivot(index='Model', columns='Dataset', values='ROC-AUC')
+    roc_scores = roc_scores[available_datasets]
+    roc_scores['Mean ROC-AUC'] = roc_scores.mean(axis=1)
+    roc_scores = roc_scores.reset_index().sort_values(by='Mean ROC-AUC', ascending=False)
+    roc_scores.to_csv(os.path.join(args.output_dir, "roc_auc_scores_detailed.csv"), index=False)
+    
+    roc_ranks = df.pivot(index='Model', columns='Dataset', values='rank_roc')
+    roc_ranks = roc_ranks[available_datasets]
+    roc_ranks['Mean ROC Rank'] = roc_ranks.mean(axis=1)
+    roc_ranks = roc_ranks.reset_index().sort_values(by='Mean ROC Rank', ascending=True)
+    roc_ranks.to_csv(os.path.join(args.output_dir, "roc_auc_ranks_detailed.csv"), index=False)
+    
+    fmt_roc_scores = {col: '{:.4f}' for col in available_datasets + ['Mean ROC-AUC']}
+    fmt_roc_ranks = {col: '{:.2f}' for col in available_datasets + ['Mean ROC Rank']}
+    
+    save_latex_and_md(roc_scores, "table_roc_auc_scores", args.table_dir, format_dict=fmt_roc_scores)
+    save_latex_and_md(roc_ranks, "table_roc_auc_ranks", args.table_dir, format_dict=fmt_roc_ranks)
+
     # ── 8. Call Visualizations ──
     if not corr_df.empty:
         print("Generating Figures...")

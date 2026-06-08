@@ -56,7 +56,7 @@ def plot_metric_comparison(summary_df, output_prefix, title):
     plt.ylabel('Mean Performance Score')
     plt.xlabel('Model')
     plt.ylim(0.0, 1.05)
-    plt.legend(loc='lower left', frameon=True)
+    plt.legend(loc='upper right', frameon=True)
     plt.xticks(rotation=15)
     plt.tight_layout()
     
@@ -153,7 +153,7 @@ def plot_homophily_scatter(perf_meta, metric, output_prefix, title, selected_onl
     plt.ylim(0.0, 1.05)
     
     # Legend for domain groups (markers)
-    legend1 = plt.legend(title="Dataset Domain", loc="lower right", frameon=True)
+    legend1 = plt.legend(title="Dataset Domain", loc="upper left", frameon=True)
     plt.gca().add_artist(legend1)
     
     # Custom legend for Model families (colors)
