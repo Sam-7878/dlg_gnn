@@ -9,7 +9,8 @@ except FileNotFoundError:
     print("Error: benchmark_8x10_results.csv 파일을 찾을 수 없습니다.")
     exit()
 
-target_datasets = ['Elliptic', 'DGraphFin', 'Yelp', 'Amazon', 'BitcoinOTC']
+target_datasets = ['Elliptic', 'DGraphFin', 'Yelp', 'Amazon', 'BitcoinOTC', 'Flickr', 'Reddit', 'Cora', 'CiteSeer', 'PubMed']
+# target_datasets = ['Elliptic', 'DGraphFin', 'Yelp', 'Amazon', 'BitcoinOTC']   # 금융/사기 도메인에 집중할 경우
 df_financial = df[df['Dataset'].isin(target_datasets)].copy()
 
 # 2. 모든 그래프에서 모델 색상을 통일하기 위한 고유 고정 팔레트 정의
@@ -86,6 +87,6 @@ fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.98), ncol
 plt.tight_layout(rect=[0, 0, 1, 0.86])
 
 # 6. 고해상도 이미지 저장 (300 DPI)
-plt.savefig('./dlg_gnn/docs/work_reports/35-dlg_full_pipeline_benchmark/financial_domain_benchmark_results2.png', dpi=300, bbox_inches='tight')
+plt.savefig('./dlg_gnn/docs/work_reports/35-dlg_full_pipeline_benchmark/01_financial_domain_benchmark_results_full.png', dpi=300, bbox_inches='tight')
 print("수정된 그래프가 'financial_domain_benchmark_results.png'로 저장되었습니다.")
 plt.show()
