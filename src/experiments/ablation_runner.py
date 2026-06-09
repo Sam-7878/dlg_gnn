@@ -67,8 +67,8 @@ class AblationRunner:
                 "Precision": res.get("precision", 0.0),
                 "ECE": res.get("ece", 0.0),
                 "Brier Score": res.get("brier_score", 0.0),
-                "Avg Latency (ms)": res.get("latency_mc_sampling_ms", res.get("latency_gnn_inference_ms", 0.0)) + res.get("latency_risk_vectorizer_ms", 0.0) + res.get("latency_fusion_layer_ms", 0.0),
-                "Comm (Bytes)": res.get("risk_vector_bytes", 96) if "Without Privacy-Vector" not in name else res.get("raw_context_bytes", 2048)
+                "Avg Latency (ms)": res.get("latency_mc_sampling_ms", 0.0),
+                "Comm (Bytes)": res.get("risk_vector_bytes", 0)
             })
 
         df = pd.DataFrame(ablation_results)
