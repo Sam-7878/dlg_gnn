@@ -1,0 +1,38 @@
+experiment:
+  id: EXP-004
+  name: micro_rag_streaming_dlg_gnn
+  seed: 42
+
+dataset:
+  name: GoG
+  graph_path: data/gog/polygon_hybrid_graph.pt
+  context_path: data/contexts/synthetic_contexts.jsonl
+  streaming_mode: true
+  timestamp_field: tx_timestamp
+
+model:
+  base_model: dlg_gnn
+  use_streaming: true
+  use_micro_rag: true
+  use_monte_carlo: false
+  mc_samples: 1
+  dropout_rate: 0.0
+
+risk_injection:
+  enabled: true
+  mode: privacy_preserving_vector
+  fusion_method: fixed_weight
+  alpha_init: 0.7
+  beta_init: 0.3
+
+evaluation:
+  metrics:
+    - auc_roc
+    - auc_pr
+    - f1
+    - precision
+    - recall
+    - latency_ms
+    - throughput_tps
+    - memory_mb
+    - communication_bytes
