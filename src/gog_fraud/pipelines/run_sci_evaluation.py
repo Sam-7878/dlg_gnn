@@ -343,6 +343,47 @@ def main():
             if rt_table.exists():
                 if str(mc_main) not in rt_table.read_text(encoding="utf-8"):
                     consistency_warnings.append(f"MC sample count ({mc_main}) not found in realtime table.")
+                    
+            # Additional rigorous consistency checks (Round 4)
+            realtime_csv = output_dir / "realtime/realtime_metrics.csv"
+            if realtime_csv.exists():
+                rt_df = pd.read_csv(realtime_csv)
+                warmup_steps = cfg.get("profiling", {}).get("warmup_steps", 30)
+                lats_all = rt_df["total_latency_ms"].values
+                lats_steady = lats_all[warmup_steps:] if len(lats_all) > warmup_steps else lats_all
+                
+                calc_p95_all = np.percentile(lats_all, 95)
+                calc_p99_all = np.percentile(lats_all, 99)
+                calc_max_all = np.max(lats_all)
+                
+                calc_p95_steady = np.percentile(lats_steady, 95)
+                calc_p99_steady = np.percentile(lats_steady, 99)
+                
+                if rt_table.exists():
+                    rt_text = rt_table.read_text(encoding="utf-8")
+                    poly_p95_str = f"{calc_p95_steady:.2f}"
+                    poly_p99_str = f"{calc_p99_steady:.2f}"
+                    if poly_p95_str not in rt_text or poly_p99_str not in rt_text:
+                        consistency_warnings.append(f"Polygon steady-state table metrics ({poly_p95_str} ms / {poly_p99_str} ms) do not match calculations.")
+                    
+                    poly_all_p95_str = f"{calc_p95_all:.2f}"
+                    poly_all_p99_str = f"{calc_p99_all:.2f}"
+                    if poly_all_p95_str not in rt_text or poly_all_p99_str not in rt_text:
+                        consistency_warnings.append(f"Polygon cold-start table metrics ({poly_all_p95_str} ms / {poly_all_p99_str} ms) do not match calculations.")
+                
+                outlier_table = output_dir / "realtime/tables/table_latency_outliers.md"
+                if outlier_table.exists():
+                    out_text = outlier_table.read_text(encoding="utf-8")
+                    max_lat_str = f"{calc_max_all:.2f}"
+                    if max_lat_str not in out_text:
+                        consistency_warnings.append(f"Max latency ({max_lat_str} ms) not found in outlier table.")
+
+            tradeoff_table = output_dir / "sensitivity/tables/table_mc_samples_tradeoff.md"
+            if tradeoff_table.exists():
+                to_text = tradeoff_table.read_text(encoding="utf-8")
+                if "14.20" not in to_text:
+                    consistency_warnings.append("MC=8 p95 latency (14.20 ms) not found in MC tradeoff table.")
+                    
         except Exception as e:
             log.warning(f"[Consistency] Check failed: {e}")
         
@@ -404,7 +445,7 @@ def main():
         
         # Copy to work_reports folder as requested
         import shutil
-        target_docs_dir = Path("docs/work_reports/23-update_correction_2")
+        target_docs_dir = Path("docs/work_reports/24-update_correction_3")
         target_docs_dir.mkdir(parents=True, exist_ok=True)
         
         # 1. Reports
@@ -468,6 +509,7 @@ def main():
             "sensitivity/figures/mc_samples_latency.png",
             "sensitivity/figures/mc_samples_throughput.png",
             "sensitivity/figures/mc_samples_accuracy_latency_tradeoff.png",
+            "sensitivity/figures/mc_samples_pr_auc_latency_tradeoff.png",
             "sensitivity/figures/throughput_vs_subgraph_size.png"
         ]
         

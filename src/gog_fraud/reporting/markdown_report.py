@@ -71,18 +71,19 @@ def generate_markdown_report(output_dir, dataset_summary, baseline_md_path, abla
     sections.append(load_table(ablation_md_path))
     sections.append("\n")
     
-    # 4. Real-Time Performance — Restructured per update3_order.docx
-    sections.append("## 4. Real-Time Performance")
-    sections.append(
-        "We distinguish steady-state streaming latency from cold-start-inclusive end-to-end latency. "
-        "Steady-state latency excludes warm-up, initialization, cache loading, and first CUDA context overhead, "
-        "and is used to evaluate online monitoring performance. Cold-start-inclusive latency is reported separately "
-        "to characterize deployment and initialization overhead."
-    )
-    sections.append("\n")
-
+    # 4. Real-Time Performance & Diagnostics
+    sections.append("## 4. Real-Time Performance & Diagnostics")
+    
     # 4.1 Steady-State Streaming Performance
     sections.append("### 4.1 Steady-State Streaming Performance")
+    sections.append(
+        "We distinguish steady-state streaming latency from cold-start-inclusive end-to-end latency. "
+        "The former excludes warm-up and initialization effects and is used to assess online monitoring performance, "
+        "whereas the latter includes warm-up, cache loading, initialization, and first-use overhead. "
+        "The largest observed outlier occurs during the initial replay phase and is therefore treated as a "
+        "cold-start diagnostic event rather than representative steady-state behavior."
+    )
+    sections.append("\n")
     sections.append(
         "In the steady-state streaming setting, DLG-StreamMC achieves approximately 14 ms average latency "
         "and around 70 graph instances per second. The p95 latency remains around 20–25 ms, while the p99 "
@@ -90,13 +91,23 @@ def generate_markdown_report(output_dir, dataset_summary, baseline_md_path, abla
     )
     sections.append(
         "The 14 ms latency and 70 GPS throughput claims refer to steady-state streaming inference after excluding "
-        "warm-up and cold-start initialization. Cold-start-inclusive end-to-end latency is reported separately and "
-        "includes initialization, cache loading, data loading, and first CUDA context overhead. This separation "
-        "prevents cold-start outliers from being conflated with steady-state online monitoring performance."
+        "warm-up and cold-start initialization. This separation prevents cold-start outliers from being conflated "
+        "with steady-state online monitoring performance."
     )
     sections.append("> *Note: A graph instance denotes a contract-centered rooted subgraph processed by the streaming inference pipeline.*")
     sections.append(load_table(realtime_md_path))
     sections.append("\n")
+
+    # Check for steady-state sample size p99 caution
+    num_profiled = dataset_summary.get("Profiled Streaming Contracts", 0) if dataset_summary else 0
+    n_steady = num_profiled - 30  # warmup steps is 30
+    if n_steady > 0 and n_steady < 1000:
+        sections.append(
+            "> [!WARNING]\n"
+            "> **Because p99 is estimated from fewer than 1000 replay instances, it should be interpreted as "
+            "a replay-level tail indicator rather than a statistically stable production-wide p99 estimate.**\n"
+        )
+        sections.append("\n")
 
     # 4.1b Throughput Summary
     if throughput_md_path:
@@ -104,8 +115,8 @@ def generate_markdown_report(output_dir, dataset_summary, baseline_md_path, abla
         sections.append(load_table(throughput_md_path))
         sections.append("\n")
 
-    # 4.2 Cold-Start-Inclusive End-to-End Performance
-    sections.append("### 4.2 Cold-Start-Inclusive End-to-End Performance")
+    # 4.2 Cold-Start-Inclusive End-to-End Diagnostics
+    sections.append("### 4.2 Cold-Start-Inclusive End-to-End Diagnostics")
     sections.append(
         "The all-sample latency distribution includes cold-start and initialization effects. "
         "A small number of high-latency outliers appear in this setting, but these are separated from "
@@ -140,6 +151,7 @@ def generate_markdown_report(output_dir, dataset_summary, baseline_md_path, abla
     # 7. Sensitivity Analysis
     sections.append("## 7. Sensitivity Analysis")
     sections.append("A sweep across Monte Carlo samples ($T$) and subgraph sizes ($K$) demonstrating latency-accuracy trade-offs.")
+    sections.append("We use T=8 as the default MC sampling configuration because it provides a balanced trade-off between ROC-AUC and p95 latency.")
     sections.append(load_table(sensitivity_md_path))
     sections.append("\n")
 

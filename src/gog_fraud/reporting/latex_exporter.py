@@ -50,21 +50,21 @@ We isolate and analyze the performance impact of four core components: nGNN hier
 
 {load_tex(ablation_tex_path)}
 
-\\section{{Real-Time Performance and Latency Profiling}}
+\\section{{Real-Time Performance and Diagnostics}}
 
-We distinguish steady-state streaming latency from cold-start-inclusive end-to-end latency. Steady-state latency excludes warm-up, initialization, cache loading, and first CUDA context overhead, and is used to evaluate online monitoring performance. Cold-start-inclusive latency is reported separately to characterize deployment and initialization overhead.
+We distinguish steady-state streaming latency from cold-start-inclusive end-to-end latency. The former excludes warm-up and initialization effects and is used to assess online monitoring performance, whereas the latter includes warm-up, cache loading, initialization, and first-use overhead. The largest observed outlier occurs during the initial replay phase and is therefore treated as a cold-start diagnostic event rather than representative steady-state behavior.
 
 \\subsection{{Steady-State Streaming Performance}}
 
 In the steady-state streaming setting, DLG-StreamMC achieves approximately 14~ms average latency and around 70 graph instances per second. The p95 latency remains around 20--25~ms, while the p99 latency remains within the sub-100~ms range, indicating suitability for real-time multi-chain fraud monitoring.
 
-The 14~ms latency and 70~GPS throughput claims refer to steady-state streaming inference after excluding warm-up and cold-start initialization. Cold-start-inclusive end-to-end latency is reported separately and includes initialization, cache loading, data loading, and first CUDA context overhead. This separation prevents cold-start outliers from being conflated with steady-state online monitoring performance.
+The 14~ms latency and 70~GPS throughput claims refer to steady-state streaming inference after excluding warm-up and cold-start initialization. This separation prevents cold-start outliers from being conflated with steady-state online monitoring performance.
 
 {load_tex(realtime_tex_path)}
 
 {load_tex(throughput_tex_path)}
 
-\\subsection{{Cold-Start-Inclusive End-to-End Performance}}
+\\subsection{{Cold-Start-Inclusive End-to-End Diagnostics}}
 
 The all-sample latency distribution includes cold-start and initialization effects. A small number of high-latency outliers appear in this setting, but these are separated from steady-state online inference and analyzed in the outlier table.
 
@@ -76,7 +76,7 @@ We evaluate the performance across Ethereum, BSC, and Polygon chains.
 {load_tex(chainwise_tex_path)}
 
 \\section{{Sensitivity Analysis}}
-We assess parameter sensitivity with respect to the Monte Carlo sample size ($T$) and subgraph window size ($K$).
+We assess parameter sensitivity with respect to the Monte Carlo sample size ($T$) and subgraph window size ($K$). We use T=8 as the default MC sampling configuration because it provides a balanced trade-off between ROC-AUC and p95 latency.
 
 {load_tex(sensitivity_tex_path)}
 

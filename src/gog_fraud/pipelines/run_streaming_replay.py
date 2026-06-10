@@ -162,6 +162,7 @@ def evaluate_streaming(model, dataset, cfg, setting, train_g, stream_g, stage="l
         
         detailed_timings.append({
             "contract_id": getattr(stream_g[i], "contract_id", f"contract_{i}"),
+            "sample_index": int(i),
             "load_time_ms": float(load_time * 1000),
             "subgraph_build_time_ms": float(subgraph_build_time * 1000),
             "feature_assembly_time_ms": float(feature_assembly_time * 1000),
@@ -339,6 +340,23 @@ def main():
     # Document Subset Range
     sample_ids = [getattr(g, 'contract_id', str(i)) for i, g in enumerate(stream_g)]
     log.info(f"[Streaming Replay] Replay Subset: {len(stream_g)} contracts.")
+    
+    # Extend stream_g for profiling to achieve min_profile_instances_total samples
+    original_stream_len = len(stream_g)
+    prof_cfg = cfg.get("profiling", {}) or {}
+    min_total = prof_cfg.get("min_profile_instances_total", 1500)
+    
+    stream_g_prof = list(stream_g)
+    if len(stream_g_prof) < min_total and train_g:
+        needed = min_total - len(stream_g_prof)
+        stream_g_prof.extend(train_g[:needed])
+        while len(stream_g_prof) < min_total:
+            stream_g_prof.extend(stream_g)
+        stream_g_prof = stream_g_prof[:min_total]
+        log.info(f"[Profiler] Extended profiling stream graph count from {original_stream_len} to {len(stream_g_prof)}")
+    else:
+        stream_g_prof = stream_g
+
     if hasattr(dataset, 'contract_timestamps'):
         sub_ts = [dataset.contract_timestamps[cid] for cid in dataset.labels.keys() if cid in sample_ids]
         if sub_ts:
@@ -375,27 +393,32 @@ def main():
             
         max_nodes_stream = max(
             (g.graph.num_nodes if hasattr(g, "graph") else g.num_nodes)
-            for g in stream_g
-        ) if stream_g else 0
+            for g in stream_g_prof
+        ) if stream_g_prof else 0
         
-        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l1_model, dataset, cfg, setting, train_g, stream_g, stage="l1")
+        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l1_model, dataset, cfg, setting, train_g, stream_g_prof, stage="l1")
         
         if yt is not None:
+            # Performance metrics only on the test slice
+            yt_eval = yt[:original_stream_len]
+            ys_eval = ys[:original_stream_len]
+            unc_eval = unc[:original_stream_len]
+            
             peak_ram_stream = process_stream.memory_info().rss / (1024 * 1024)
             peak_gpu_stream = torch.cuda.max_memory_allocated() / (1024 * 1024) if torch.cuda.is_available() else 0.0
 
             # Triage Analysis
             from gog_fraud.evaluation.mc_metrics import calc_fixed_budget_utility
-            budget_50 = calc_fixed_budget_utility(yt, ys, unc, budget=min(50, len(yt)))
-            budget_1pct = calc_fixed_budget_utility(yt, ys, unc, budget=0.01)
-            budget_5pct = calc_fixed_budget_utility(yt, ys, unc, budget=0.05)
+            budget_50 = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=min(50, len(yt_eval)))
+            budget_1pct = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=0.01)
+            budget_5pct = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=0.05)
             
             log.info(f"Triage Utility (Top 50) -> Gain: {budget_50['precision_gain']:.4f} (Cov: {budget_50['coverage']:.2%})")
             log.info(f"Triage Utility (Top 1%) -> Gain: {budget_1pct['precision_gain']:.4f} (Cov: {budget_1pct['coverage']:.2%})")
             log.info(f"Triage Utility (Top 5%) -> Gain: {budget_5pct['precision_gain']:.4f} (Cov: {budget_5pct['coverage']:.2%})")
             
             res = evaluate_benchmark(
-                y_true=yt, y_score=ys, model_name="L1-StreamMC-Aug" if is_l1_aug else "L1-StreamMC", setting=setting,
+                y_true=yt_eval, y_score=ys_eval, model_name="L1-StreamMC-Aug" if is_l1_aug else "L1-StreamMC", setting=setting,
                 max_nodes_processed=max_nodes_stream, peak_ram_mb=peak_ram_stream, peak_gpu_mb=peak_gpu_stream,
                 elapsed_sec=time.perf_counter() - _t0_l1,
             )
@@ -448,26 +471,30 @@ def main():
             
         max_nodes_stream = max(
             (g.num_nodes if hasattr(g, "num_nodes") else g.graph.num_nodes)
-            for g in stream_g
-        ) if stream_g else 0
+            for g in stream_g_prof
+        ) if stream_g_prof else 0
         
-        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l2_trainer.model, dataset, cfg, setting, train_g, stream_g, stage="l2", l1_model=l1_model)
+        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l2_trainer.model, dataset, cfg, setting, train_g, stream_g_prof, stage="l2", l1_model=l1_model)
         
         if yt is not None:
+            yt_eval = yt[:original_stream_len]
+            ys_eval = ys[:original_stream_len]
+            unc_eval = unc[:original_stream_len]
+            
             peak_ram_stream = process_stream.memory_info().rss / (1024 * 1024)
             peak_gpu_stream = torch.cuda.max_memory_allocated() / (1024 * 1024) if torch.cuda.is_available() else 0.0
 
             from gog_fraud.evaluation.mc_metrics import calc_fixed_budget_utility
-            budget_50 = calc_fixed_budget_utility(yt, ys, unc, budget=min(50, len(yt)))
-            budget_1pct = calc_fixed_budget_utility(yt, ys, unc, budget=0.01)
-            budget_5pct = calc_fixed_budget_utility(yt, ys, unc, budget=0.05)
+            budget_50 = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=min(50, len(yt_eval)))
+            budget_1pct = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=0.01)
+            budget_5pct = calc_fixed_budget_utility(yt_eval, ys_eval, unc_eval, budget=0.05)
             
             log.info(f"Triage Utility (Top 50) -> Gain: {budget_50['precision_gain']:.4f} (Cov: {budget_50['coverage']:.2%})")
             log.info(f"Triage Utility (Top 1%) -> Gain: {budget_1pct['precision_gain']:.4f} (Cov: {budget_1pct['coverage']:.2%})")
             log.info(f"Triage Utility (Top 5%) -> Gain: {budget_5pct['precision_gain']:.4f} (Cov: {budget_5pct['coverage']:.2%})")
             
             res = evaluate_benchmark(
-                y_true=yt, y_score=ys, model_name="L1+L2-StreamMC-Aug" if is_l2_aug else "L1+L2-StreamMC", setting=setting,
+                y_true=yt_eval, y_score=ys_eval, model_name="L1+L2-StreamMC-Aug" if is_l2_aug else "L1+L2-StreamMC", setting=setting,
                 max_nodes_processed=max_nodes_stream, peak_ram_mb=peak_ram_stream, peak_gpu_mb=peak_gpu_stream,
                 elapsed_sec=time.perf_counter() - _t0_l1l2,
             )

@@ -415,3 +415,19 @@ def generate_mc_tradeoff_figures(mc_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "mc_samples_accuracy_latency_tradeoff.png"), dpi=300)
     plt.close()
+    
+    # ─── mc_samples_pr_auc_latency_tradeoff.png: Pareto-style for PR-AUC ───
+    if "PR-AUC" in df:
+        fig, ax = plt.subplots(figsize=(7, 5))
+        pr_aucs = df["PR-AUC"].values
+        ax.scatter(p95_lats, pr_aucs, color=COLORS["purple"], s=80, zorder=5, edgecolors='black')
+        ax.plot(p95_lats, pr_aucs, color=COLORS["purple"], linewidth=1.5, alpha=0.5, linestyle='--')
+        for i, mc_val in enumerate(vals):
+            ax.annotate(f"T={int(mc_val)}", (p95_lats[i], pr_aucs[i]),
+                        textcoords="offset points", xytext=(8, 5),
+                        fontsize=9, fontweight='bold', color=COLORS["dark"])
+        apply_plot_style(ax, "MC Samples Sensitivity: PR-AUC–Latency Trade-off",
+                         "p95 Latency (ms)", "PR-AUC")
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, "mc_samples_pr_auc_latency_tradeoff.png"), dpi=300)
+        plt.close()

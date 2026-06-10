@@ -246,12 +246,14 @@ def infer_possible_cause(row, warmup_steps=30):
     """Auto-infer a possible cause for the high latency."""
     total = row.get("total_latency_ms", 0.0)
     dom = get_dominating_stage(row)
-    idx = row.get("_index", -1)
+    idx = row.get("sample_index", row.get("_index", -1))
     nodes = row.get("num_nodes", 0)
     edges = row.get("num_edges", 0)
     
+    if idx == 0 or (idx < 5 and total > 500):
+        return "cold-start initialization / first CUDA context / cache loading"
     if total > 500 and idx < warmup_steps:
-        return "CUDA context init + cold-start"
+        return "cold-start initialization / first CUDA context / cache loading"
     if total > 500 and dom == "Model Forward":
         return "CUDA kernel compilation / first inference"
     if dom == "Data Loading" and row.get("load_time_ms", 0) > 50:
@@ -274,10 +276,10 @@ def write_outlier_table(outliers_list, output_path, chain="polygon", warmup_step
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     headers = [
-        "Outlier Rank", "Latency Type", "Chain", "Contract ID", "Total Latency",
-        "Load Time", "Subgraph Build", "Feature Assembly", "Model Forward",
-        "MC Sampling", "Alert Scoring", "Purge Time", "Num Nodes", "Num Edges",
-        "MC Samples", "Dominating Stage", "Possible Cause"
+        "Outlier Rank", "Sample Index", "Latency Type", "Chain", "Contract ID", "Total Latency ms",
+        "Load Time ms", "Subgraph Build Time ms", "Feature Assembly Time ms", "Model Forward Time ms",
+        "MC Sampling Time ms", "Alert Scoring Time ms", "Purge Time ms", "Num Nodes", "Num Edges",
+        "MC Samples", "Warm-up Phase", "Possible Cause"
     ]
     
     md_lines = []
@@ -296,25 +298,25 @@ def write_outlier_table(outliers_list, output_path, chain="polygon", warmup_step
     
     for idx, r in enumerate(outliers_list):
         rank = str(idx + 1)
-        r_idx = r.get("_index", idx)
-        lat_type = "Cold-Start-Inclusive" if r_idx < warmup_steps else "Cold-Start-Inclusive"
+        r_idx = r.get("sample_index", r.get("_index", idx))
+        lat_type = "Cold-Start-Inclusive"
         ch = chain.capitalize()
         cid = str(r.get("contract_id", ""))
-        tot = format_val(r.get("total_latency_ms", 0.0), "{:.2f} ms")
-        load = format_val(r.get("load_time_ms", 0.0), "{:.2f} ms")
-        build = format_val(r.get("subgraph_build_time_ms", 0.0), "{:.2f} ms")
-        feat = format_val(r.get("feature_assembly_time_ms", 0.0), "{:.2f} ms")
-        fwd = format_val(r.get("model_forward_time_ms", 0.0), "{:.2f} ms")
-        mc = format_val(r.get("mc_sampling_time_ms", 0.0), "{:.2f} ms")
-        alert = format_val(r.get("alert_scoring_time_ms", 0.0), "{:.2f} ms")
-        purge = format_val(r.get("purge_time_ms", 0.0), "{:.2f} ms")
+        tot = format_val(r.get("total_latency_ms", 0.0), "{:.2f}")
+        load = format_val(r.get("load_time_ms", 0.0), "{:.2f}")
+        build = format_val(r.get("subgraph_build_time_ms", 0.0), "{:.2f}")
+        feat = format_val(r.get("feature_assembly_time_ms", 0.0), "{:.2f}")
+        fwd = format_val(r.get("model_forward_time_ms", 0.0), "{:.2f}")
+        mc = format_val(r.get("mc_sampling_time_ms", 0.0), "{:.2f}")
+        alert = format_val(r.get("alert_scoring_time_ms", 0.0), "{:.2f}")
+        purge = format_val(r.get("purge_time_ms", 0.0), "{:.2f}")
         nodes = str(r.get("num_nodes", 0))
         edges = str(r.get("num_edges", 0))
         mc_samples = "8"
-        dom = get_dominating_stage(r)
+        warmup_phase = "Yes" if r_idx < warmup_steps else "No"
         cause = infer_possible_cause(r, warmup_steps)
         
-        row_vals = [rank, lat_type, ch, cid, tot, load, build, feat, fwd, mc, alert, purge, nodes, edges, mc_samples, dom, cause]
+        row_vals = [rank, str(r_idx), lat_type, ch, cid, tot, load, build, feat, fwd, mc, alert, purge, nodes, edges, mc_samples, warmup_phase, cause]
         md_lines.append("| " + " | ".join(row_vals) + " |")
         latex_lines.append(" & ".join(row_vals).replace("%", r"\%") + " \\\\")
         
