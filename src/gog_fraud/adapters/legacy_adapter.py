@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import logging
 import psutil
+import json
+from pathlib import Path
 from dataclasses import dataclass
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -48,6 +50,12 @@ class LegacyAdapterConfig:
     # Partition Caching
     partition_cache_dir: str = "../_data/dataset/.cache/partitioned_graphs/"
     cleanup_partition_cache: bool = False
+
+    # Score Caching (for SCI experiments evaluation)
+    cache_scores: bool = False
+    cache_dir: str = "outputs/cache/legacy_scores"
+    reuse_cache: bool = False
+    max_graphs: Optional[int] = None
 
     def __post_init__(self):
         if self.aggregation_method and not self.score_reduce:
@@ -732,6 +740,12 @@ class LegacyBatchRunner:
         import time
         _t_start = time.perf_counter()
         items = _safe_list(graphs)
+        
+        # Apply max_graphs limit if configured
+        max_graphs = getattr(self.config, "max_graphs", None)
+        if max_graphs is not None:
+            items = items[:max_graphs]
+            
         total = len(items)
 
         logger.info("")
@@ -745,6 +759,21 @@ class LegacyBatchRunner:
                 logger.info("[LegacyBatchRunner] Cleaning up partition cache for chain '%s'...", self.config.chain)
                 shutil.rmtree(cache_root)
             cache_root.mkdir(parents=True, exist_ok=True)
+            
+        # Score cache initialization
+        cache_path = None
+        cached_dict = {}
+        if getattr(self.config, "cache_scores", False):
+            cache_dir = Path(self.config.cache_dir)
+            cache_dir.mkdir(parents=True, exist_ok=True)
+            cache_path = cache_dir / f"{self.config.chain}_{model_name}.json"
+            if getattr(self.config, "reuse_cache", False) and cache_path.exists():
+                try:
+                    with open(cache_path, "r", encoding="utf-8") as f:
+                        cached_dict = json.load(f)
+                    logger.info(f"[Cache] Loaded {len(cached_dict)} cached scores for {model_name} on {self.config.chain}")
+                except Exception as e:
+                    logger.warning(f"[Cache] Failed to load cache from {cache_path}: {e}")
         
         process = psutil.Process()
         if torch.cuda.is_available():
@@ -771,6 +800,20 @@ class LegacyBatchRunner:
             data = _unwrap_data(item)
             contract_id = _extract_contract_id(item, data, idx)
             label = _extract_label(item, data)
+
+            # Check if score is already cached
+            if getattr(self.config, "reuse_cache", False) and contract_id in cached_dict:
+                record = LegacyRecord(
+                    model_name=str(model_name),
+                    contract_id=contract_id,
+                    score=float(cached_dict[contract_id]),
+                    label=label,
+                    score_source="cache",
+                    num_scores=1
+                )
+                output.records.append(record)
+                output.full_graph_count += 1
+                continue
 
             if data is None:
                 logger.warning("[LegacyRunner:%s] Skip %s: cannot unwrap", model_name, contract_id)
@@ -850,6 +893,19 @@ class LegacyBatchRunner:
             model_name, len(output.records), output.full_graph_count, output.partitioned_graph_count, output.skipped,
             output.elapsed_sec
         )
+        
+        # Save cache if enabled
+        if getattr(self.config, "cache_scores", False) and cache_path is not None:
+            new_scores = {r.contract_id: r.score for r in output.records if r.score_source != "cache"}
+            if new_scores:
+                cached_dict.update(new_scores)
+                try:
+                    with open(cache_path, "w", encoding="utf-8") as f:
+                        json.dump(cached_dict, f, ensure_ascii=False, indent=2)
+                    logger.info(f"[Cache] Saved {len(cached_dict)} scores to {cache_path}")
+                except Exception as e:
+                    logger.warning(f"[Cache] Failed to save cache to {cache_path}: {e}")
+                    
         return output
 
     def run_on_items(

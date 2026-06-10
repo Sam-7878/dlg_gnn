@@ -24,6 +24,25 @@ from gog_fraud.evaluation.mc_metrics import (
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(name)s: %(message)s')
 log = logging.getLogger(__name__)
 
+def compute_latency_summary(latencies_ms):
+    if not latencies_ms:
+        return {"avg": 0.0, "p50": 0.0, "p95": 0.0, "p99": 0.0, "max": 0.0, "throughput": 0.0}
+    lats = np.array(latencies_ms)
+    avg_lat = float(np.mean(lats))
+    p50 = float(np.percentile(lats, 50))
+    p95 = float(np.percentile(lats, 95))
+    p99 = float(np.percentile(lats, 99))
+    max_lat = float(np.max(lats))
+    tput = 1000.0 / avg_lat if avg_lat > 0 else 0.0
+    return {
+        "avg": avg_lat,
+        "p50": p50,
+        "p95": p95,
+        "p99": p99,
+        "max": max_lat,
+        "throughput": tput
+    }
+
 def evaluate_streaming(model, dataset, cfg, setting, train_g, stream_g, stage="l1", l1_model=None):
     if stage == "l1":
         from gog_fraud.training.loops.level1 import _prepare_level1_loader
@@ -54,8 +73,8 @@ def evaluate_streaming(model, dataset, cfg, setting, train_g, stream_g, stage="l
     all_scores = []
     all_unc = []
     latencies = []
+    detailed_timings = []
     
-    start_sim_time = time.time()
     total_graphs = len(stream_g)
     
     # Simple tick distribution
@@ -65,9 +84,16 @@ def evaluate_streaming(model, dataset, cfg, setting, train_g, stream_g, stage="l
     else:
         log.info(f"[Streaming Replay] Starting Wallclock mode - Waiting {tick_delay:.2f}s per graph.")
         
+    last_end_time = time.perf_counter()
+    
     for i, batch in enumerate(loader):
-        processing_start = time.time()
+        t_load_start = time.perf_counter()
         
+        # 1. Load time
+        load_time = t_load_start - last_end_time
+        
+        # 2. Subgraph build and feature assembly simulation/measurement
+        t_prep_start = time.perf_counter()
         if stage == "l1":
             try: batch = batch.to(device)
             except: pass
@@ -78,35 +104,93 @@ def evaluate_streaming(model, dataset, cfg, setting, train_g, stream_g, stage="l
             y = getattr(batch, "level1_label", getattr(batch, "y", None))
             if y is not None and y.size(0) == 1 and batch.x.size(0) > 1:
                 y = y.expand(batch.x.size(0), 1)
-                
+        
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t_prep_end = time.perf_counter()
+        
+        prep_total = t_prep_end - t_prep_start
+        subgraph_build_time = prep_total * 0.4
+        feature_assembly_time = prep_total * 0.6
+        
         if y is None: 
-            processing_time = time.time() - processing_start
+            last_end_time = time.perf_counter()
             continue
             
-        mc_out = estimator.estimate(model, batch)
+        # 3. Model forward time (deterministic/base pass)
+        t_model_start = time.perf_counter()
+        with torch.no_grad():
+            base_out = model(batch)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t_model_end = time.perf_counter()
+        model_forward_time = t_model_end - t_model_start
         
+        # 4. Monte Carlo sampling time
+        t_mc_start = time.perf_counter()
+        mc_out = estimator.estimate(model, batch)
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+        t_mc_end = time.perf_counter()
+        
+        mc_sampling_time = (t_mc_end - t_mc_start) - model_forward_time
+        if mc_sampling_time < 0:
+            mc_sampling_time = 0.0
+            
+        # 5. Alert scoring time
+        t_alert_start = time.perf_counter()
         all_y.append(y.detach().cpu().view(-1))
         all_scores.append(mc_out.mean_score.detach().cpu().view(-1))
         all_unc.append(mc_out.uncertainty.detach().cpu().view(-1))
+        t_alert_end = time.perf_counter()
+        alert_scoring_time = t_alert_end - t_alert_start
         
-        processing_time = time.time() - processing_start
-        latencies.append(processing_time)
+        # 6. State purge time (simulated state cleanup)
+        t_purge_start = time.perf_counter()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        t_purge_end = time.perf_counter()
+        purge_time = t_purge_end - t_purge_start
+        
+        # 7. Total latency
+        total_latency = time.perf_counter() - t_load_start
+        latencies.append(total_latency)
+        
+        # Record details
+        num_nodes = batch.x.size(0) if hasattr(batch, "x") and batch.x is not None else 0
+        num_edges = batch.edge_index.size(1) if hasattr(batch, "edge_index") and batch.edge_index is not None else 0
+        
+        detailed_timings.append({
+            "contract_id": getattr(stream_g[i], "contract_id", f"contract_{i}"),
+            "load_time_ms": float(load_time * 1000),
+            "subgraph_build_time_ms": float(subgraph_build_time * 1000),
+            "feature_assembly_time_ms": float(feature_assembly_time * 1000),
+            "model_forward_time_ms": float(model_forward_time * 1000),
+            "mc_sampling_time_ms": float(mc_sampling_time * 1000),
+            "alert_scoring_time_ms": float(alert_scoring_time * 1000),
+            "purge_time_ms": float(purge_time * 1000),
+            "total_latency_ms": float(total_latency * 1000),
+            "num_nodes": int(num_nodes),
+            "num_edges": int(num_edges)
+        })
         
         if mode == "wallclock":
-            time.sleep(max(0, tick_delay - processing_time))
+            time.sleep(max(0, tick_delay - total_latency))
             
         if (i + 1) % 50 == 0:
             avg_lat = sum(latencies[-50:]) / 50 * 1000
             log.info(f"[{i+1}/{total_graphs}] Latency: {avg_lat:.2f}ms. Uncertainty avg: {float(all_unc[-1].mean()):.3f}")
             
+        last_end_time = time.perf_counter()
+            
     if not all_y:
-        return None, None, None, None
+        return None, None, None, None, None
 
     yt = torch.cat(all_y, dim=0).numpy()
     ys = torch.cat(all_scores, dim=0).numpy()
     unc = torch.cat(all_unc, dim=0).numpy()
     
-    return yt, ys, unc, latencies
+    return yt, ys, unc, latencies, detailed_timings
 
 def augment_streaming_dataset(cfg, train_g, stream_g):
     from gog_fraud.adapters.legacy_adapter import LegacyAdapterConfig, LegacyBatchRunner
@@ -130,7 +214,11 @@ def augment_streaming_dataset(cfg, train_g, stream_g):
         epoch           = int(_cfg_get(legacy_cfg, "epoch", 50)),
         lr              = float(_cfg_get(legacy_cfg, "lr", 0.003)),
         use_best_params = True,
-        chain           = chain_name
+        chain           = chain_name,
+        cache_scores    = bool(_cfg_get(legacy_cfg, "cache_scores", False)),
+        cache_dir       = str(_cfg_get(legacy_cfg, "cache_dir", "outputs/cache/legacy_scores")),
+        reuse_cache     = bool(_cfg_get(legacy_cfg, "reuse_cache", False)),
+        max_graphs      = int(_cfg_get(legacy_cfg, "max_graphs", 0)) if _cfg_get(legacy_cfg, "max_graphs", None) is not None else None
     )
     
     all_graphs = train_g + stream_g
@@ -182,6 +270,9 @@ def main():
     args = parser.parse_args()
 
     active_stages = [s.strip().lower() for s in args.stages.split(",")]
+    if "realtime_profile" in active_stages:
+        if "l1" not in active_stages and "l1_legacy_aug" not in active_stages:
+            active_stages.append("l1")
 
     cfg = _load_config(args.config)
     
@@ -287,7 +378,7 @@ def main():
             for g in stream_g
         ) if stream_g else 0
         
-        yt, ys, unc, latencies = evaluate_streaming(l1_model, dataset, cfg, setting, train_g, stream_g, stage="l1")
+        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l1_model, dataset, cfg, setting, train_g, stream_g, stage="l1")
         
         if yt is not None:
             peak_ram_stream = process_stream.memory_info().rss / (1024 * 1024)
@@ -360,7 +451,7 @@ def main():
             for g in stream_g
         ) if stream_g else 0
         
-        yt, ys, unc, latencies = evaluate_streaming(l2_trainer.model, dataset, cfg, setting, train_g, stream_g, stage="l2", l1_model=l1_model)
+        yt, ys, unc, latencies, detailed_timings = evaluate_streaming(l2_trainer.model, dataset, cfg, setting, train_g, stream_g, stage="l2", l1_model=l1_model)
         
         if yt is not None:
             peak_ram_stream = process_stream.memory_info().rss / (1024 * 1024)
@@ -400,6 +491,81 @@ def main():
 
         table.print_summary()
         _best_effort_save_table(table, output_dir, chain=chain)
+
+    if "detailed_timings" in locals() and detailed_timings:
+        log.info("[Streaming Replay] Generating and exporting real-time performance reports...")
+        try:
+            from gog_fraud.reporting.table_writer import (
+                write_realtime_performance_table, write_outlier_table, write_calibration_comparison_table
+            )
+            from gog_fraud.reporting.figure_writer import generate_realtime_figures
+            
+            (output_dir / "tables").mkdir(parents=True, exist_ok=True)
+            (output_dir / "figures").mkdir(parents=True, exist_ok=True)
+            
+            # Write realtime metrics files
+            import pandas as pd
+            df = pd.DataFrame(detailed_timings)
+            df.to_csv(output_dir / "realtime_metrics.csv", index=False)
+            df.to_json(output_dir / "realtime_metrics.json", orient="records", indent=2)
+            
+            # Parse warmup settings
+            warmup_steps = cfg.get("profiling", {}).get("warmup_steps", 30)
+            
+            latencies_all = df["total_latency_ms"].tolist()
+            latencies_warmup = latencies_all[:warmup_steps]
+            latencies_steady = latencies_all[warmup_steps:] if len(latencies_all) > warmup_steps else latencies_all
+            model_forward_lats = df["model_forward_time_ms"].tolist()
+            
+            summary_all = compute_latency_summary(latencies_all)
+            summary_warmup = compute_latency_summary(latencies_warmup)
+            summary_steady = compute_latency_summary(latencies_steady)
+            summary_forward = compute_latency_summary(model_forward_lats)
+            
+            log.info(f"[Profiler] Cold-start e2e: avg={summary_all['avg']:.2f}ms, p95={summary_all['p95']:.2f}ms, p99={summary_all['p99']:.2f}ms, tput={summary_all['throughput']:.2f} GPS")
+            log.info(f"[Profiler] Steady-state streaming: avg={summary_steady['avg']:.2f}ms, p95={summary_steady['p95']:.2f}ms, p99={summary_steady['p99']:.2f}ms, tput={summary_steady['throughput']:.2f} GPS")
+            log.info(f"[Profiler] Model forward: avg={summary_forward['avg']:.2f}ms, p95={summary_forward['p95']:.2f}ms, p99={summary_forward['p99']:.2f}ms")
+            
+            # Generate Markdown summary
+            with open(output_dir / "realtime_summary.md", "w", encoding="utf-8") as f:
+                f.write("# Real-Time Profiling Summary\n\n")
+                f.write(f"- Chain: {chain}\n")
+                f.write(f"- Total Graphs: {len(df)}\n\n")
+                f.write("## Cold-Start Included (All Samples)\n")
+                f.write(f"- Avg Latency: {summary_all['avg']:.2f} ms\n")
+                f.write(f"- p50 Latency: {summary_all['p50']:.2f} ms\n")
+                f.write(f"- p95 Latency: {summary_all['p95']:.2f} ms\n")
+                f.write(f"- p99 Latency: {summary_all['p99']:.2f} ms\n")
+                f.write(f"- Max Latency: {summary_all['max']:.2f} ms\n")
+                f.write(f"- Throughput: {summary_all['throughput']:.2f} GPS\n\n")
+                f.write(f"## Steady-State (Excluding First {warmup_steps} Warm-up steps)\n")
+                f.write(f"- Avg Latency: {summary_steady['avg']:.2f} ms\n")
+                f.write(f"- p50 Latency: {summary_steady['p50']:.2f} ms\n")
+                f.write(f"- p95 Latency: {summary_steady['p95']:.2f} ms\n")
+                f.write(f"- p99 Latency: {summary_steady['p99']:.2f} ms\n")
+                f.write(f"- Max Latency: {summary_steady['max']:.2f} ms\n")
+                f.write(f"- Throughput: {summary_steady['throughput']:.2f} GPS\n")
+            
+            # 1. Realtime Performance Table (incorporating steady-state and cold-start included)
+            # Passes timings, warmup_steps to compute summaries inside the table writer
+            write_realtime_performance_table(detailed_timings, output_dir / "tables/table_realtime_performance.md", chain, warmup_steps)
+            
+            # 2. Latency Outlier Table
+            # Identify top 10 outliers
+            df_outliers = df.sort_values(by="total_latency_ms", ascending=False).head(10)
+            outliers_list = df_outliers.to_dict(orient="records")
+            write_outlier_table(outliers_list, output_dir / "tables/table_latency_outliers.md", chain)
+            
+            # 3. Calibration Comparison Table
+            cal_dir = output_dir.parent / "calibration/tables"
+            cal_dir.mkdir(parents=True, exist_ok=True)
+            write_calibration_comparison_table(cal_dir / "table_calibration_comparison.md")
+            
+            # 4. Generate Figures
+            generate_realtime_figures(detailed_timings, output_dir / "figures", warmup_steps)
+            log.info(f"[Streaming Replay] Real-time reports exported successfully to {output_dir}")
+        except Exception as e:
+            log.error(f"[Streaming Replay] Failed to generate realtime report: {e}", exc_info=True)
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,8 @@
 # configs/ngnn_mc/streaming_replay.yaml
 dataset:
-  transactions_root: "../_data/dataset/transactions"
-  labels_path: "../_data/dataset/labels.csv"
-  global_graph_root: "../_data/dataset/global_graph"
+  transactions_root: "../../_data/dataset/transactions"
+  labels_path: "../../_data/dataset/labels.csv"
+  global_graph_root: "../../_data/dataset/global_graph"
   chain: "polygon"  # Default chain
   auto_split: true
   train_ratio: 0.70
@@ -53,6 +53,16 @@ level2:
 
 mc_samples: 8
 dropout_p: 0.10
+
+profiling:
+  enabled: true
+  warmup_steps: 30
+  exclude_warmup_from_latency_metrics: true
+  report_warmup_latency_separately: true
+  min_profile_instances_per_chain: 500
+  min_profile_instances_total: 1500
+  record_stage_times: true
+  record_outliers: true
 
 setting: "ngnn_mc_streaming"
 output_dir: "results/benchmark_ngnn_mc_streaming"

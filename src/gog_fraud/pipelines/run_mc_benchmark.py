@@ -111,7 +111,11 @@ def augment_dataset_with_legacy_scores(dataset, cfg, setting):
         epoch           = int(_cfg_get(legacy_cfg, "epoch", 50)),
         lr              = float(_cfg_get(legacy_cfg, "lr", 0.003)),
         use_best_params = True,
-        chain           = chain_name
+        chain           = chain_name,
+        cache_scores    = bool(_cfg_get(legacy_cfg, "cache_scores", False)),
+        cache_dir       = str(_cfg_get(legacy_cfg, "cache_dir", "outputs/cache/legacy_scores")),
+        reuse_cache     = bool(_cfg_get(legacy_cfg, "reuse_cache", False)),
+        max_graphs      = int(_cfg_get(legacy_cfg, "max_graphs", 0)) if _cfg_get(legacy_cfg, "max_graphs", None) is not None else None
     )
 
     all_graphs = dataset.train_graphs + dataset.valid_graphs + dataset.test_graphs

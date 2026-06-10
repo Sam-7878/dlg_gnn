@@ -1,0 +1,117 @@
+# configs/ngnn_mc/sci_evaluation.yaml
+experiment:
+  name: "dlg_streammc_sci_evaluation"
+  seed: 42
+  device: "cuda"
+  output_dir: "outputs/dlg_streammc_sci_evaluation"
+
+dataset:
+  transactions_root: "../../_data/dataset/transactions"
+  labels_path: "../../_data/dataset/labels.csv"
+  global_graph_root: "../../_data/dataset/global_graph"
+  chains: ["ethereum", "bsc", "polygon"]
+  chain: "polygon"  # Default chain, can be overridden per model
+  auto_split: true
+  train_ratio: 0.70
+  val_ratio: 0.15
+  split_seed: 42
+  normalize_address: true
+  label_chain_col: "Chain"
+  label_address_col: "Contract"
+  label_label_col: "Category"
+  normal_categories: [0]
+  fraud_categories: null
+  load_global_graph: true 
+  normalize_features: true
+  split: "chronological"
+
+stages:
+  - baselines
+  - ablation
+  - realtime
+  - chain_analysis
+  - sensitivity
+  - calibration
+  - report
+
+legacy:
+  enabled: true
+  models: ["DOMINANT", "DONE", "GAE", "AnomalyDAE", "CoLA"]
+  cache_scores: true
+  cache_dir: "outputs/cache/legacy_scores"
+  reuse_cache: true
+  max_graphs: null
+
+baselines:
+  enabled: true
+  legacy:
+    enabled: true
+    models: ["DOMINANT", "DONE", "GAE", "AnomalyDAE", "CoLA"]
+  flat_gnn:
+    enabled: true
+    models: ["GCN", "GraphSAGE", "GAT", "GIN"]
+  dynamic_gnn:
+    enabled: true
+    models: ["TGN"]
+  realtime_anomaly:
+    enabled: true
+    embedding_model: "GraphSAGE"
+    detectors: ["IsolationForest", "LOF", "OneClassSVM"]
+
+model:
+  proposed_name: "DLG-StreamMC"
+  level1:
+    in_dim: 3
+    hidden_dim: 64
+    out_dim: 64
+  monte_carlo:
+    enabled: true
+    samples: [1, 5, 10, 20]
+    dropout_rate: 0.3
+    edge_dropout_rate: 0.1
+
+mc_samples: 8
+dropout_p: 0.10
+
+profiling:
+  enabled: true
+  warmup_steps: 30
+  exclude_warmup_from_latency_metrics: true
+  report_warmup_latency_separately: true
+  min_profile_instances_per_chain: 500
+  min_profile_instances_total: 1500
+  record_stage_times: true
+  record_outliers: true
+  synchronize_cuda: true
+  record_memory: true
+
+metrics:
+  classification:
+    - roc_auc
+    - pr_auc
+    - f1
+    - precision
+    - recall
+    - balanced_accuracy
+    - mcc
+  calibration:
+    - brier_score
+    - ece
+    - nll
+  latency:
+    - mean
+    - median
+    - p50
+    - p90
+    - p95
+    - p99
+    - max
+  resource:
+    - throughput_gps
+    - peak_gpu_memory_mb
+    - peak_cpu_memory_mb
+
+reporting:
+  formats: ["csv", "json", "md", "tex"]
+  generate_figures: true
+  paper_ready_tables: true
