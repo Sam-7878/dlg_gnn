@@ -8,6 +8,15 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 
+def _safe_savefig(path, **kwargs):
+    """Safely save figure to path, catching PermissionError if the file is locked."""
+    try:
+        plt.savefig(path, **kwargs)
+    except PermissionError as e:
+        print(f"    [Warning] Permission denied when writing to {path}. The file might be open in a viewer (e.g. Acrobat Reader, Chrome, VS Code). Skipping. Error: {e}")
+    except Exception as e:
+        print(f"    [Warning] Failed to save to {path}. Error: {e}")
+
 def set_style():
     """Configure styling matching publication standards."""
     sns.set_theme(style="whitegrid")
@@ -60,8 +69,8 @@ def plot_metric_comparison(summary_df, output_prefix, title):
     plt.xticks(rotation=15)
     plt.tight_layout()
     
-    plt.savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
-    plt.savefig(f"{output_prefix}.pdf", bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.pdf", bbox_inches='tight')
     plt.close()
 
 def plot_rank_heatmap(rank_df, output_prefix, title):
@@ -90,8 +99,8 @@ def plot_rank_heatmap(rank_df, output_prefix, title):
     plt.xticks(rotation=15)
     plt.tight_layout()
     
-    plt.savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
-    plt.savefig(f"{output_prefix}.pdf", bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.pdf", bbox_inches='tight')
     plt.close()
 
 def plot_homophily_scatter(perf_meta, metric, output_prefix, title, selected_only=False):
@@ -112,13 +121,15 @@ def plot_homophily_scatter(perf_meta, metric, output_prefix, title, selected_onl
         "Citation/Homophilous": "^"
     }
     
-    family_colors = {
-        "Reconstruction": "#1f77b4",
-        "Contrastive": "#ff7f0e",
-        "Contrastive/Augmented": "#2ca02c",
-        "Neighborhood Reconstruction": "#d62728",
-        "One-Class": "#9467bd",
-        "Decoupled": "#bcbd22"
+    model_colors = {
+        "DOMINANT": "#4e79a7",   # Blue
+        "AnomalyDAE": "#76b7b2", # Cyan/Teal
+        "CoLA": "#f28e2b",       # Orange
+        "CONAD": "#e15759",      # Red
+        "GADNR": "#ff9da7",      # Pink
+        "OCGNN": "#b07aa1",      # Purple
+        "DLG-Base": "#edc948",   # Yellow/Olive
+        "DLG": "#59a14f"         # Green
     }
     
     # Add temporary styling columns
@@ -131,8 +142,8 @@ def plot_homophily_scatter(perf_meta, metric, output_prefix, title, selected_onl
         if sub.empty:
             continue
         
-        # Determine colors from family mappings
-        colors = sub['ModelFamily'].map(family_colors).fillna('#7f7f7f').tolist()
+        # Determine colors from model mappings
+        colors = sub['Model'].map(model_colors).fillna('#7f7f7f').tolist()
         
         plt.scatter(
             sub['EdgeHomophily'], 
@@ -149,24 +160,36 @@ def plot_homophily_scatter(perf_meta, metric, output_prefix, title, selected_onl
     plt.title(title, pad=15)
     plt.xlabel('Edge Homophily (h)')
     plt.ylabel(metric)
-    plt.xlim(-0.05, 1.05)
+    plt.xlim(0.9, 1.01)
     plt.ylim(0.0, 1.05)
     
     # Legend for domain groups (markers)
-    legend1 = plt.legend(title="Dataset Domain", loc="upper left", frameon=True)
+    legend1 = plt.legend(title="Dataset Domain", loc="upper left", frameon=True, fontsize=9, title_fontsize=10)
     plt.gca().add_artist(legend1)
     
-    # Custom legend for Model families (colors)
+    # Custom legend for Models (colors + family names)
     from matplotlib.lines import Line2D
+    unique_models = df_plot['Model'].unique()
+    model_order = ['DLG', 'DLG-Base', 'DOMINANT', 'AnomalyDAE', 'CoLA', 'CONAD', 'GADNR', 'OCGNN']
+    present_models = [m for m in model_order if m in unique_models]
+    
     legend_elements = [
-        Line2D([0], [0], marker='o', color='w', markerfacecolor=col, label=fam, markersize=10, markeredgecolor='black')
-        for fam, col in family_colors.items() if fam in df_plot['ModelFamily'].unique()
+        Line2D(
+            [0], [0], 
+            marker='o', 
+            color='w', 
+            markerfacecolor=model_colors[m], 
+            label=f"{m} ({MODEL_FAMILY_MAP[m]})", 
+            markersize=9, 
+            markeredgecolor='black'
+        )
+        for m in present_models
     ]
-    plt.legend(handles=legend_elements, title="Model Family", loc="lower left", frameon=True)
+    plt.legend(handles=legend_elements, title="Model (Family)", loc="lower left", frameon=True, fontsize=9, title_fontsize=10)
     
     plt.tight_layout()
-    plt.savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
-    plt.savefig(f"{output_prefix}.pdf", bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.pdf", bbox_inches='tight')
     plt.close()
 
 def plot_correlation_heatmap(corr_df, output_prefix, title):
@@ -229,6 +252,6 @@ def plot_correlation_heatmap(corr_df, output_prefix, title):
     plt.ylabel('Model')
     plt.tight_layout()
     
-    plt.savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
-    plt.savefig(f"{output_prefix}.pdf", bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.png", dpi=300, bbox_inches='tight')
+    _safe_savefig(f"{output_prefix}.pdf", bbox_inches='tight')
     plt.close()
