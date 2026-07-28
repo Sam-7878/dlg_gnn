@@ -1,6 +1,5 @@
 import torch.nn as nn
 from contextlib import contextmanager
-import copy
 
 @contextmanager
 def patch_dropout(model: nn.Module, target_p: float):

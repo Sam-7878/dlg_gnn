@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from typing import Any
-import copy
+import time
 
 from .config import MCDropoutConfig
 from .interfaces import UncertaintyEstimator, MCOutput
@@ -13,16 +13,24 @@ class MCDropoutEstimator(UncertaintyEstimator):
 
     @torch.no_grad()
     def estimate(self, model: nn.Module, batch: Any) -> MCOutput[Any]:
-        # Always run one deterministic pass first to get the base structures
-        model.eval()
-        base_out = model(batch)
-        
-        # Determine execution wrapper
-        if self.config.execution_mode == 'batched':
-            return self._run_batched(model, batch, base_out)
-        else:
-            # Sequential for 'sequential' or 'auto' (conservative fallback)
-            return self._run_sequential(model, batch, base_out)
+        was_training = model.training
+        first_parameter = next(iter(model.parameters()), None)
+        devices = [first_parameter.device.index] if first_parameter is not None and first_parameter.is_cuda else []
+        started = time.perf_counter()
+        try:
+            model.eval()
+            base_out = model(batch)
+            with torch.random.fork_rng(devices=devices):
+                torch.manual_seed(self.config.seed)
+                if devices:
+                    torch.cuda.manual_seed_all(self.config.seed)
+                result = self._run_batched(model, batch, base_out) if self.config.execution_mode == 'batched' else self._run_sequential(model, batch, base_out)
+            result.aux["mc_latency_ms"] = (time.perf_counter() - started) * 1000.0
+            result.aux["seed"] = self.config.seed
+            result.aux["t1_semantics"] = "single stochastic pass; variance is defined as zero" if self.config.mc_samples == 1 else "sample variance over stochastic passes"
+            return result
+        finally:
+            model.train(was_training)
 
     def _run_sequential(self, model: nn.Module, batch: Any, base_out: Any) -> MCOutput[Any]:
         mc_scores = []
@@ -77,11 +85,12 @@ class MCDropoutEstimator(UncertaintyEstimator):
 
     def _build_mc_output(self, base_out: Any, mc_scores_tensor: torch.Tensor) -> MCOutput[Any]:
         mean_score = mc_scores_tensor.mean(dim=0)
-        # Using unbiased standard deviation (bessel correction)
-        uncertainty = mc_scores_tensor.std(dim=0, unbiased=True)
-        
-        # Fallback if standard deviation results in NaNs for zero samples or flat distributions
-        uncertainty = torch.nan_to_num(uncertainty, nan=0.0)
+        variance = mc_scores_tensor.var(dim=0, unbiased=self.config.mc_samples > 1)
+        variance = torch.nan_to_num(variance, nan=0.0, posinf=0.0, neginf=0.0)
+        uncertainty = variance.sqrt()
+        eps = torch.finfo(mean_score.dtype).eps
+        probabilities = mean_score.clamp(eps, 1.0 - eps)
+        entropy = -(probabilities * probabilities.log() + (1.0 - probabilities) * (1.0 - probabilities).log())
         
         raw_scores = mc_scores_tensor if self.config.keep_raw_scores else None
         
@@ -89,13 +98,16 @@ class MCDropoutEstimator(UncertaintyEstimator):
             base_output=base_out,
             mean_score=mean_score,
             uncertainty=uncertainty,
-            raw_scores=raw_scores
+            raw_scores=raw_scores,
+            aux={"variance": variance, "predictive_entropy": entropy, "num_mc_samples": self.config.mc_samples},
         )
         
         if self.config.inject_into_aux:
             if hasattr(base_out, "aux") and isinstance(base_out.aux, dict):
                 base_out.aux["mc_mean_score"] = mean_score
                 base_out.aux["mc_uncertainty"] = uncertainty
+                base_out.aux["mc_variance"] = variance
+                base_out.aux["mc_predictive_entropy"] = entropy
                 if raw_scores is not None:
                     base_out.aux["mc_raw_scores"] = raw_scores
                     

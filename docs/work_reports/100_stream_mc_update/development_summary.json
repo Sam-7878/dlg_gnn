@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "f71ca5a15f4595a4650c4ac5357578daa9a43af7",
+  "branch": "main",
+  "date": "2026-07-28",
+  "decision": "IMPLEMENTATION_FOUNDATION_VALID / EXPERIMENT_EVIDENCE_INCOMPLETE / SCI_NOT_READY",
+  "paper_metrics_generated": false,
+  "targeted_tests": {
+    "passed": 60,
+    "failed": 0,
+    "warnings": 1
+  },
+  "known_contract_blockers": [
+    "Level1 test fixture has 16 features but expects inferred dimension 8",
+    "Level2 implementation defines node-level primary output while historical tests expect graph-level output"
+  ],
+  "completed_capabilities": [
+    "temporal_split",
+    "rolling_origin",
+    "temporal_leakage_validation",
+    "stateful_replay_and_checkpoint",
+    "bounded_subgraph_relation_cache_queue",
+    "dual_and_risk_sensitive_routing",
+    "mc_dropout_statistics_and_seed_control",
+    "run_and_dataset_manifest",
+    "result_schema",
+    "truthful_sci_orchestrator"
+  ],
+  "not_completed": [
+    "full_three_chain_dataset_manifest_scan",
+    "baseline_retraining",
+    "main_multiseed_experiment",
+    "mc_sensitivity",
+    "long_running_stream_profile",
+    "calibration",
+    "cross_chain_generalization",
+    "statistical_significance",
+    "paper_tables_and_figures"
+  ]
+}

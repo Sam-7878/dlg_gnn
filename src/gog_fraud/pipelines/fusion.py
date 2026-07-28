@@ -352,7 +352,10 @@ class LearnedFusionNet(nn.Module):
     def __init__(self, cfg: LearnedFusionConfig):
         super().__init__()
         self.cfg    = cfg
-        self.in_dim = 16 if cfg.use_logits else 8
+        # 2 scores + optional 2 logits + (difference, product, maximum).
+        # Keep this derived from _build_feature rather than a historical model
+        # embedding width; otherwise the first Linear layer is inconsistent.
+        self.in_dim = 7 if cfg.use_logits else 5
 
         self.net = _build_mlp(
             in_dim=self.in_dim,
@@ -779,6 +782,8 @@ class FusionTrainer:
             "best_metric": self.cfg.val_metric,
             "best_mode":   "max",  # Assuming PR-AUC/F1 are max metrics
             "epochs_ran":  len(history),
+            # Backwards-compatible name used by the original Phase-4 API/tests.
+            "total_epochs": len(history),
         }
 
 

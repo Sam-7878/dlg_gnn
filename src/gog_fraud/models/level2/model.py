@@ -339,6 +339,11 @@ class Level2Model(nn.Module):
 
         # Stability: Normalize input features and clamp
         x = batch.x.float()
+        if x.size(-1) != self.cfg.in_dim:
+            raise ValueError(
+                f"Level2 input has {x.size(-1)} features but configured in_dim={self.cfg.in_dim}. "
+                "Regenerate/migrate the relation bundle or correct the config; silent truncation is forbidden."
+            )
         x = self.input_norm(x)
         x = torch.clamp(x, min=-10.0, max=10.0)
 

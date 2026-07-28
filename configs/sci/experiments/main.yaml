@@ -1,0 +1,59 @@
+experiment:
+  name: dlg_streammc_main
+  seeds: [11, 22, 33, 44, 55]
+  output_root: results_sci
+
+dataset:
+  root: /mnt/d/_Work/_data/dataset/transactions
+  labels_path: /mnt/d/_Work/_data/dataset/labels.csv
+  chains: [ethereum, bsc, polygon]
+  split_protocol: rolling_origin
+  temporal_folds: 5
+  strict_temporal_features: true
+
+streaming:
+  enabled: true
+  checkpoint_interval: 10000
+  prefetch_size: 256
+  subgraph:
+    temporal_window_seconds: 2592000
+    max_nodes_per_contract: 4096
+    max_edges_per_contract: 20000
+    eviction_policy: ttl_lru
+  cache:
+    max_entries: 50000
+    max_bytes: 4294967296
+    ttl_seconds: 2592000
+  queues:
+    ingest: 4096
+    direct: 4096
+    deep: 1024
+    review: 10000
+    overload_policy: risk_priority
+
+triage:
+  model: lightweight_gnn
+  mc_samples: 8
+  dropout_p: 0.2
+  uncertainty: predictive_variance
+  router: dual_threshold
+  threshold_selection: validation_cost_constrained
+
+level1:
+  backend: ngnn
+  hidden_dim: 128
+  num_layers: 3
+
+level2:
+  backend: gatv2
+  relation_mode: combined
+
+fusion:
+  method: calibrated
+
+profiling:
+  latency: true
+  memory: true
+  cuda_sync: true
+  sample_trace: true
+  warmup_steps: 30

@@ -63,3 +63,34 @@ frontend_apps/
 
 # notes.
 Crypto-GoG_on_DL_notes.txt
+
+# SCI StreamMC source/test packages are code despite their `data` path segment.
+!src/gog_fraud/data/
+src/gog_fraud/data/*
+!src/gog_fraud/data/io/
+src/gog_fraud/data/io/*
+!src/gog_fraud/data/io/dataset_manifest.py
+!src/gog_fraud/data/io/streaming_dataset.py
+!src/gog_fraud/data/splits/
+src/gog_fraud/data/splits/*
+!src/gog_fraud/data/splits/__init__.py
+!src/gog_fraud/data/splits/temporal_split.py
+!src/gog_fraud/data/splits/rolling_origin.py
+!src/gog_fraud/data/validation/
+src/gog_fraud/data/validation/*
+!src/gog_fraud/data/validation/__init__.py
+!src/gog_fraud/data/validation/temporal_leakage.py
+!tests/data/
+tests/data/*
+!tests/data/test_temporal_integrity.py
+
+# Keep only the versioned deliverables for work order 100; other historical
+# work-report folders remain ignored.
+!docs/work_reports/
+docs/work_reports/*
+!docs/work_reports/100_stream_mc_update/
+docs/work_reports/100_stream_mc_update/*
+!docs/work_reports/100_stream_mc_update/DLG_StreamMC_SCI_Development_Report.md
+!docs/work_reports/100_stream_mc_update/development_summary.json
+!docs/work_reports/100_stream_mc_update/artifacts/
+!docs/work_reports/100_stream_mc_update/artifacts/**
