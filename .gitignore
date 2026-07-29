@@ -57,55 +57,8 @@ frontend_apps/
 
 
 
-# SCI StreamMC source/test packages are code despite their `data` path segment.
-# !src/gog_fraud/data/
-# src/gog_fraud/data/*
-# !src/gog_fraud/data/io/
-# src/gog_fraud/data/io/*
-# !src/gog_fraud/data/io/dataset_manifest.py
-# !src/gog_fraud/data/io/streaming_dataset.py
-# !src/gog_fraud/data/splits/
-# src/gog_fraud/data/splits/*
-# !src/gog_fraud/data/splits/__init__.py
-# !src/gog_fraud/data/splits/temporal_split.py
-# !src/gog_fraud/data/splits/rolling_origin.py
-# !src/gog_fraud/data/validation/
-# src/gog_fraud/data/validation/*
-# !src/gog_fraud/data/validation/__init__.py
-# !src/gog_fraud/data/validation/temporal_leakage.py
-# !tests/data/
-# tests/data/*
-# !tests/data/test_temporal_integrity.py
-
-# Round 2 SCI development, immutable configs, and auditable outputs.
-!src/gog_fraud/data/
-src/gog_fraud/data/*
-!src/gog_fraud/data/io/
-src/gog_fraud/data/io/*
-!src/gog_fraud/data/io/dataset_manifest.py
-!src/gog_fraud/data/splits/
-src/gog_fraud/data/splits/*
-!src/gog_fraud/data/splits/__init__.py
-!src/gog_fraud/data/splits/temporal_split.py
-!src/gog_fraud/data/splits/rolling_origin.py
-!src/gog_fraud/data/splits/artifact.py
-!src/profiling/
-!src/profiling/**
-!tests/data/
-tests/data/*
-!tests/data/test_temporal_integrity.py
-!tests/data/test_dataset_manifest_round2.py
-!tests/data/test_split_artifact.py
-!tests/profiling/
-!tests/profiling/**
-!configs/sci/
-!configs/sci/**
-!results_sci/
-!results_sci/**
-!requirements-sci-lock.txt
-!docs/work_reports/
-docs/work_reports/*
-!docs/work_reports/102_stream_mc_update2/
-!docs/work_reports/102_stream_mc_update2/**
 **/__pycache__/
 **/__pycache__/**
+
+results_sci/
+reports/
