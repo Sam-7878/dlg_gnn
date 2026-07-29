@@ -18,8 +18,6 @@ debug/
 __pycache__/
 lightning_logs/
 
-# Graph database files
-docs_stable_coin/work_reports/
 # docs/architecture/
 docs/work_reports/
 
@@ -32,12 +30,8 @@ dataset/test/
 data/
 wasm/
 
-# test folders
-# test_01/
-# test_02/
-# test_03/
+
 tests/mock
-stable_coin/
 
 ## stable coin project용 폴더.
 # 아직 오픈 안 함.
@@ -61,8 +55,7 @@ frontend_apps/
 *.pkl
 *.pt
 
-# notes.
-Crypto-GoG_on_DL_notes.txt
+
 
 # SCI StreamMC source/test packages are code despite their `data` path segment.
 !src/gog_fraud/data/
@@ -84,13 +77,4 @@ src/gog_fraud/data/validation/*
 tests/data/*
 !tests/data/test_temporal_integrity.py
 
-# Keep only the versioned deliverables for work order 100; other historical
-# work-report folders remain ignored.
-!docs/work_reports/
-docs/work_reports/*
-!docs/work_reports/100_stream_mc_update/
-docs/work_reports/100_stream_mc_update/*
-!docs/work_reports/100_stream_mc_update/DLG_StreamMC_SCI_Development_Report.md
-!docs/work_reports/100_stream_mc_update/development_summary.json
-!docs/work_reports/100_stream_mc_update/artifacts/
-!docs/work_reports/100_stream_mc_update/artifacts/**
+
