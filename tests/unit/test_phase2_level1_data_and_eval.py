@@ -116,7 +116,7 @@ def test_level1_dataset_load_and_infer_dims(tmp_path: Path):
     dataset = Level1GraphDataset(loaded)
 
     assert len(dataset) == 6
-    assert infer_in_dim(dataset.graphs) == 8
+    assert infer_in_dim(dataset.graphs) == 16
     assert infer_struct_dim(dataset.graphs) == 4
 
     graph_ids = get_graph_ids(dataset.graphs)

@@ -3,10 +3,12 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import sys
+import time
 from collections import Counter
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable, Dict, List, Optional
 
 
 @dataclass(frozen=True)
@@ -32,14 +34,27 @@ class DatasetManifest:
     def write(self, json_path: str | Path, csv_path: str | Path) -> None:
         payload = asdict(self)
         jp, cp = Path(json_path), Path(csv_path)
-        jp.parent.mkdir(parents=True, exist_ok=True); cp.parent.mkdir(parents=True, exist_ok=True)
-        jp.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-        flat = {**payload, "file_hashes": json.dumps(payload["file_hashes"], sort_keys=True)}
+        jp.parent.mkdir(parents=True, exist_ok=True)
+        cp.parent.mkdir(parents=True, exist_ok=True)
+        jp.write_text(
+            json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8"
+        )
+        flat = {
+            **payload,
+            "file_hashes": json.dumps(payload["file_hashes"], sort_keys=True),
+        }
         with cp.open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(flat)); writer.writeheader(); writer.writerow(flat)
+            writer = csv.DictWriter(handle, fieldnames=list(flat))
+            writer.writeheader()
+            writer.writerow(flat)
 
 
-def _hash(path: Path) -> str:
+# ---------------------------------------------------------------------------
+# Hash helpers
+# ---------------------------------------------------------------------------
+
+def _hash_file(path: Path) -> str:
+    """SHA-256 hash of a single file (streaming, 1 MB chunks)."""
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
@@ -47,40 +62,243 @@ def _hash(path: Path) -> str:
     return digest.hexdigest()
 
 
-def build_dataset_manifest(source_root: str | Path, *, chain: str, labels_path: str | Path | None = None) -> DatasetManifest:
+def _load_hash_index(index_path: Path) -> Dict[str, str]:
+    """Load a previously saved hash index (path -> sha256)."""
+    if index_path.exists():
+        try:
+            return json.loads(index_path.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_hash_index(index_path: Path, index: Dict[str, str]) -> None:
+    """Persist the hash index atomically."""
+    index_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = index_path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(index, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(index_path)
+
+
+# ---------------------------------------------------------------------------
+# Progress reporter
+# ---------------------------------------------------------------------------
+
+class _ProgressReporter:
+    """Simple stderr progress reporter (no external dependencies)."""
+
+    def __init__(self, total: Optional[int], label: str = "", enabled: bool = True):
+        self._total = total
+        self._label = label
+        self._enabled = enabled
+        self._done = 0
+        self._start = time.monotonic()
+        self._last_print = 0.0
+
+    def update(self, n: int = 1) -> None:
+        if not self._enabled:
+            return
+        self._done += n
+        now = time.monotonic()
+        if now - self._last_print >= 2.0:  # print at most every 2 s
+            self._print()
+            self._last_print = now
+
+    def close(self) -> None:
+        if self._enabled:
+            self._print(final=True)
+            print("", file=sys.stderr)
+
+    def _print(self, final: bool = False) -> None:
+        elapsed = time.monotonic() - self._start
+        rate = self._done / elapsed if elapsed > 0 else 0.0
+        if self._total:
+            pct = 100.0 * self._done / self._total
+            eta = (self._total - self._done) / rate if rate > 0 else float("inf")
+            msg = (
+                f"\r[{self._label}] {self._done}/{self._total} ({pct:.1f}%) "
+                f"{rate:.0f} files/s  ETA {eta:.0f}s"
+            )
+        else:
+            msg = f"\r[{self._label}] {self._done} files  {rate:.0f} files/s  {elapsed:.0f}s elapsed"
+        print(msg, end="" if not final else "\n", file=sys.stderr, flush=True)
+
+
+# ---------------------------------------------------------------------------
+# Core builder
+# ---------------------------------------------------------------------------
+
+HASH_TARGET_SUFFIXES = {".csv", ".json", ".pt", ".pkl"}
+
+
+def build_dataset_manifest(
+    source_root: str | Path,
+    *,
+    chain: str,
+    labels_path: str | Path | None = None,
+    max_files: Optional[int] = None,
+    progress: bool = False,
+    hash_index_path: Optional[str | Path] = None,
+    on_file: Optional[Callable[[Path, int, int], None]] = None,
+) -> DatasetManifest:
+    """Build a DatasetManifest by scanning *source_root*.
+
+    Args:
+        source_root: Root directory containing chain sub-directories or files.
+        chain: Chain name (e.g., "ethereum", "bsc", "polygon").
+        labels_path: Path to the labels CSV (optional).
+        max_files: If set, stop scanning after this many files (useful for
+            smoke tests and early-exit diagnostics).
+        progress: If True, print chain/file progress to stderr every 2 s.
+        hash_index_path: Path to a JSON file used as a resumable SHA-256
+            index.  Previously hashed files are loaded and skipped if the
+            mtime has not changed (future: inode/size check).  New hashes
+            are appended and the file is updated atomically after each chain.
+        on_file: Optional callback(path, file_index, total_files).
+    """
     root = Path(source_root).resolve()
     chain_root = root / chain if (root / chain).exists() else root
-    files = sorted(path for path in chain_root.rglob("*") if path.is_file())
-    csv_files = [path for path in files if path.suffix.lower() == ".csv"]
-    transactions = missing = 0; timestamps: list[int] = []; blocks: list[int] = []; addresses: set[str] = set(); sample_ids: list[str] = []
-    for path in csv_files:
+
+    # ── 1. Enumerate files ──────────────────────────────────────────────────
+    all_files = sorted(p for p in chain_root.rglob("*") if p.is_file())
+    if max_files is not None:
+        all_files = all_files[:max_files]
+
+    total_files = len(all_files)
+    csv_files = [p for p in all_files if p.suffix.lower() == ".csv"]
+
+    prog = _ProgressReporter(total=total_files, label=f"manifest/{chain}", enabled=progress)
+
+    # ── 2. Load resumable hash index ────────────────────────────────────────
+    index_path = Path(hash_index_path) if hash_index_path else None
+    hash_index: Dict[str, str] = _load_hash_index(index_path) if index_path else {}
+
+    # ── 3. Scan CSV files ───────────────────────────────────────────────────
+    transactions = 0
+    missing = 0
+    timestamps: List[int] = []
+    blocks: List[int] = []
+    addresses: set[str] = set()
+    sample_ids: List[str] = []
+
+    for file_idx, path in enumerate(all_files):
+        prog.update(1)
+        if on_file is not None:
+            on_file(path, file_idx, total_files)
+
+        if path.suffix.lower() != ".csv":
+            continue
+
         try:
             with path.open(encoding="utf-8-sig", errors="replace", newline="") as handle:
-                for index, row in enumerate(csv.DictReader(handle)):
-                    transactions += 1; sample_ids.append(str(row.get("sample_id") or f"{path}:{index}"))
-                    lowered = {str(key).lower().replace("_", ""): value for key, value in row.items()}
+                for row_idx, row in enumerate(csv.DictReader(handle)):
+                    transactions += 1
+                    sample_ids.append(str(row.get("sample_id") or f"{path}:{row_idx}"))
+
+                    lowered = {
+                        str(k).lower().replace("_", ""): v for k, v in row.items()
+                    }
                     raw_time = lowered.get("timestamp") or lowered.get("blocktimestamp")
-                    if raw_time in (None, ""): missing += 1
+                    if raw_time in (None, ""):
+                        missing += 1
                     else:
-                        try: timestamps.append(int(float(raw_time)))
-                        except ValueError: missing += 1
+                        try:
+                            timestamps.append(int(float(raw_time)))
+                        except ValueError:
+                            missing += 1
+
                     raw_block = lowered.get("blocknumber")
                     if raw_block not in (None, ""):
-                        try: blocks.append(int(float(raw_block)))
-                        except ValueError: pass
-                    addresses.update(str(lowered.get(name)) for name in ("from", "to", "address") if lowered.get(name))
+                        try:
+                            blocks.append(int(float(raw_block)))
+                        except ValueError:
+                            pass
+
+                    addresses.update(
+                        str(lowered.get(name))
+                        for name in ("from", "to", "address")
+                        if lowered.get(name)
+                    )
         except OSError:
             continue
-    labels = Counter()
+
+    prog.close()
+
+    # ── 4. Label statistics ─────────────────────────────────────────────────
+    labels: Counter = Counter()
     if labels_path and Path(labels_path).is_file():
-        with Path(labels_path).open(encoding="utf-8-sig", errors="replace", newline="") as handle:
+        with Path(labels_path).open(
+            encoding="utf-8-sig", errors="replace", newline=""
+        ) as handle:
             for row in csv.DictReader(handle):
-                row_chain = str(row.get("Chain", row.get("chain", chain))).lower()
-                if row_chain != chain.lower(): continue
+                row_chain = str(
+                    row.get("Chain", row.get("chain", chain))
+                ).lower()
+                if row_chain != chain.lower():
+                    continue
                 raw = row.get("Category", row.get("label", ""))
-                if raw in (None, ""): labels["unlabeled"] += 1
-                elif str(raw).strip() in {"0", "0.0", "benign", "normal"}: labels["benign"] += 1
-                else: labels["fraud"] += 1
+                if raw in (None, ""):
+                    labels["unlabeled"] += 1
+                elif str(raw).strip() in {"0", "0.0", "benign", "normal"}:
+                    labels["benign"] += 1
+                else:
+                    labels["fraud"] += 1
+
     labeled = labels["fraud"] + labels["benign"]
-    selected_hashes = {str(path.relative_to(root)): _hash(path) for path in files if path.suffix.lower() in {".csv", ".json", ".pt", ".pkl"}}
-    return DatasetManifest(chain, str(root), min(timestamps, default=None), max(timestamps, default=None), min(blocks, default=None), max(blocks, default=None), transactions, len(csv_files), len(addresses), len(files), labels["fraud"], labels["benign"], labels["unlabeled"], labels["fraud"] / labeled if labeled else None, len(sample_ids) - len(set(sample_ids)), missing, selected_hashes)
+
+    # ── 5. File hashes (resumable) ──────────────────────────────────────────
+    hash_candidates = [
+        p for p in all_files if p.suffix.lower() in HASH_TARGET_SUFFIXES
+    ]
+    if progress and hash_candidates:
+        print(
+            f"\r[manifest/{chain}] hashing {len(hash_candidates)} files ...",
+            file=sys.stderr,
+            flush=True,
+        )
+
+    selected_hashes: Dict[str, str] = {}
+    hash_prog = _ProgressReporter(
+        total=len(hash_candidates),
+        label=f"hash/{chain}",
+        enabled=progress and len(hash_candidates) > 50,
+    )
+    for path in hash_candidates:
+        rel = str(path.relative_to(root))
+        cached = hash_index.get(rel)
+        if cached is not None:
+            selected_hashes[rel] = cached
+        else:
+            try:
+                digest = _hash_file(path)
+                selected_hashes[rel] = digest
+                hash_index[rel] = digest
+            except OSError:
+                pass
+        hash_prog.update(1)
+    hash_prog.close()
+
+    # Persist updated hash index
+    if index_path is not None:
+        _save_hash_index(index_path, hash_index)
+
+    # ── 6. Assemble manifest ────────────────────────────────────────────────
+    return DatasetManifest(
+        chain=chain,
+        source_root=str(root),
+        collection_start=min(timestamps, default=None),
+        collection_end=max(timestamps, default=None),
+        block_min=min(blocks, default=None),
+        block_max=max(blocks, default=None),
+        transactions=transactions,
+        contracts=len(csv_files),
+        addresses=len(addresses),
+        subgraphs=len(all_files),
+        fraud=labels["fraud"],
+        benign=labels["benign"],
+        unlabeled=labels["unlabeled"],
+        positive_ratio=labels["fraud"] / labeled if labeled else None,
+        duplicates=len(sample_ids) - len(set(sample_ids)),
+        missing_timestamp=missing,
+        file_hashes=selected_hashes,
+    )

@@ -33,6 +33,8 @@ from gog_fraud.pipelines.train_level2 import run_training
 
 LEVEL1_EMB_DIM = 16
 N_LEVEL1_NODES = 6   # number of Level 1 graphs = nodes in Level 2
+# Level-2 node feature dimension = embedding(LEVEL1_EMB_DIM) + score(1)
+LEVEL2_NODE_DIM = LEVEL1_EMB_DIM + 1  # 17
 
 
 def make_synthetic_level1_bundle(
@@ -252,12 +254,22 @@ def test_level2_dataset_save_and_load(tmp_path: Path):
 # ──────────────────────────────────────────────
 
 def test_level2_model_forward():
+    """
+    Level-2 Public Contract (확정):
+    - logits, score: node-level (per-L1-graph) PRIMARY output
+      shape = (total_nodes_in_batch, 1)
+    - embedding: graph-level readout (AUXILIARY), shape = (num_l2_graphs, hidden_dim*)
+    - graph_id: graph-level index [0, 1, ...]
+    - aux["graph_logits"], aux["graph_score"]: graph-level auxiliary outputs
+    """
     graphs = make_level2_graph_list(n_graphs=4)
     loader = DataLoader(graphs, batch_size=2, shuffle=False)
     batch  = next(iter(loader))
 
+    # in_dim must match actual node feature dim: emb(16) + score(1) = 17
+    actual_in_dim = batch.x.size(-1)  # 17
     cfg = Level2ModelConfig(
-        in_dim=16,
+        in_dim=actual_in_dim,
         hidden_dim=16,
         num_layers=2,
         num_heads=4,
@@ -269,20 +281,42 @@ def test_level2_model_forward():
     model = Level2Model(cfg)
     out   = model(batch)
 
-    assert out.logits.shape == (2, 1)
-    assert out.score.shape  == (2, 1)
-    assert out.embedding.shape == (2, cfg.hidden_dim * 2)   # meanmax
-    assert out.label.shape  == (2, 1)
+    # Node-level PRIMARY outputs: shape = (total_nodes_in_batch, 1)
+    # batch has 2 graphs each with N_LEVEL1_NODES=6 nodes → 12 total nodes
+    total_nodes = batch.x.size(0)
+    assert out.logits.shape == (total_nodes, 1), (
+        f"Expected node-level logits shape ({total_nodes}, 1), got {out.logits.shape}. "
+        "Level-2 primary output is node-level (per-L1-graph)."
+    )
+    assert out.score.shape  == (total_nodes, 1)
 
-    # graph_id는 graph-level: batch 내 2개의 Level 2 graph → [0, 1]
-    assert out.graph_id.shape[0] == 2
-    assert out.graph_id.tolist() == [0, 1]
+    # Graph-level AUXILIARY: embedding via readout, shape = (num_l2_graphs, hidden_dim*)
+    num_l2_graphs = int(batch.batch.max().item()) + 1  # 2
+    assert out.embedding.shape == (num_l2_graphs, cfg.hidden_dim * 2), (
+        f"Expected graph-level embedding shape ({num_l2_graphs}, {cfg.hidden_dim * 2}), "
+        f"got {out.embedding.shape}"
+    )
+
+    # Labels are node-level
+    assert out.label.shape  == (total_nodes, 1)
+
+    # graph_id is graph-level: 2 L2 graphs in batch → [0, 1]
+    assert out.graph_id.shape[0] == num_l2_graphs
+    assert out.graph_id.tolist() == list(range(num_l2_graphs))
+
+    # Auxiliary graph-level outputs available in aux dict
+    assert "graph_logits" in out.aux
+    assert "graph_score"  in out.aux
+    assert out.aux["graph_logits"].shape == (num_l2_graphs, 1)
+    assert out.aux["graph_score"].shape  == (num_l2_graphs, 1)
 
 
 
 
 def test_level2_model_forward_no_edge_attr():
-    """Model must work even if edge_attr is not provided."""
+    """Model must work even if edge_attr is not provided.
+    Node-level logits shape = (total_nodes_in_batch, 1).
+    """
     graphs = make_level2_graph_list(n_graphs=4)
     # strip edge_attr
     for g in graphs:
@@ -291,8 +325,10 @@ def test_level2_model_forward_no_edge_attr():
     loader = DataLoader(graphs, batch_size=2, shuffle=False)
     batch  = next(iter(loader))
 
+    # in_dim must match actual node feature dim: emb(16) + score(1) = 17
+    actual_in_dim = batch.x.size(-1)  # 17
     cfg = Level2ModelConfig(
-        in_dim=16,
+        in_dim=actual_in_dim,
         hidden_dim=16,
         num_layers=1,
         num_heads=4,
@@ -304,7 +340,12 @@ def test_level2_model_forward_no_edge_attr():
     model = Level2Model(cfg)
     out   = model(batch)
 
-    assert out.logits.shape == (2, 1)
+    # Node-level PRIMARY output: (total_nodes_in_batch, 1)
+    total_nodes = batch.x.size(0)
+    assert out.logits.shape == (total_nodes, 1), (
+        f"Expected node-level logits shape ({total_nodes}, 1), got {out.logits.shape}"
+    )
+    assert out.score.shape == (total_nodes, 1)
 
 
 # ──────────────────────────────────────────────
@@ -315,8 +356,9 @@ def test_level2_trainer_train_and_eval():
     graphs = make_level2_graph_list(n_graphs=8)
     loader = DataLoader(graphs, batch_size=4, shuffle=True)
 
+    # in_dim = LEVEL1_EMB_DIM(16) + score(1) = 17 (actual node feature dim)
     cfg = Level2ModelConfig(
-        in_dim=16, hidden_dim=16, num_layers=1,
+        in_dim=LEVEL2_NODE_DIM, hidden_dim=16, num_layers=1,
         num_heads=4, dropout=0.0, edge_dim=1,
         readout="meanmax", out_dim=1,
     )
@@ -355,7 +397,8 @@ def test_train_level2_pipeline_saves_checkpoints(tmp_path: Path):
         valid_graphs=valid_graphs,
         output_dir=str(output_dir),
         model_cfg=Level2ModelConfig(
-            in_dim=16, hidden_dim=16, num_layers=1,
+            # in_dim = LEVEL1_EMB_DIM(16) + score(1) = 17 (actual node feature dim)
+            in_dim=LEVEL2_NODE_DIM, hidden_dim=16, num_layers=1,
             num_heads=4, dropout=0.0, edge_dim=1,
             readout="meanmax", out_dim=1,
         ),
