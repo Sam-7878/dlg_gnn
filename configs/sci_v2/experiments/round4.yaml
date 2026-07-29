@@ -20,3 +20,7 @@ paper_policy:
   pilot_scope: EXPLORATORY
   demo_or_synthetic_metric: false
   legacy_compatibility: informational
+routing:
+  confidence_margin: 0.15
+  variance_threshold: 0.001
+  claim_scope: simulated_analyst_review_queue_only
