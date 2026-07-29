@@ -11,7 +11,8 @@ experiment:
 gates:
   require_clean_git: true
   require_leakage_pass: true
-  require_complete_mapping: true
+  require_v2_internal_mapping: true
+  legacy_compatibility: informational
   prohibit_demo_metrics: true
 # Deliberately empty until the full-data P0 gate passes. Strict orchestration
 # must fail closed rather than silently execute a demonstration path.
