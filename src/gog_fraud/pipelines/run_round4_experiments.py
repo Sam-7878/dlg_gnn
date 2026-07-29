@@ -377,6 +377,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True); parser.add_argument("--dataset-root", required=True)
     parser.add_argument("--output-root", required=True); parser.add_argument("--phase", choices=("pilot", "main"), required=True)
+    parser.add_argument("--only-family", choices=("dlg", "pygod", "all"), default="all")
+    parser.add_argument("--models", help="comma-separated model override")
+    parser.add_argument("--chains", help="comma-separated chain override")
+    parser.add_argument("--seeds", help="comma-separated seed override")
     parser.add_argument("--require-clean-git", action="store_true"); parser.add_argument("--real-inference-only", action="store_true")
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args(); repo = Path.cwd().resolve(); output = Path(args.output_root).resolve(); output.mkdir(parents=True, exist_ok=True)
@@ -397,12 +401,18 @@ def main() -> int:
     else:
         chains = (*CHAINS, "pooled"); seeds = tuple(config["seeds"]); pygod_models = tuple(config["pygod_models"])
         dlg_variants = DLG_VARIANTS; mc_values = tuple(config["mc_values"])
+    if args.chains: chains = tuple(item.strip() for item in args.chains.split(",") if item.strip())
+    if args.seeds: seeds = tuple(int(item) for item in args.seeds.split(",") if item.strip())
+    selected_models = tuple(item.strip() for item in args.models.split(",") if item.strip()) if args.models else ()
+    if selected_models:
+        pygod_models = tuple(item for item in selected_models if item in PYGOD_MODELS)
+        dlg_variants = tuple(item for item in selected_models if item in DLG_VARIANTS)
     common = dict(run_id=run_id, phase=args.phase, chains=chains, seeds=seeds, manifest_path=manifest_path,
                   config_path=resolved, clean=not dirty)
-    dlg_records, dlg_failures = run_dlg(dataset, output, variants=dlg_variants, epochs=int(phase_cfg["dlg_epochs"]),
-        mc_values=mc_values, device=device, **common)
-    pygod_records, pygod_failures = run_pygod(dataset, output, models=pygod_models, epochs=int(phase_cfg["pygod_epochs"]),
-        gpu=0 if device.type == "cuda" else -1, **common)
+    dlg_records, dlg_failures = (run_dlg(dataset, output, variants=dlg_variants, epochs=int(phase_cfg["dlg_epochs"]),
+        mc_values=mc_values, device=device, **common) if args.only_family in ("all", "dlg") else ([], []))
+    pygod_records, pygod_failures = (run_pygod(dataset, output, models=pygod_models, epochs=int(phase_cfg["pygod_epochs"]),
+        gpu=0 if device.type == "cuda" else -1, **common) if args.only_family in ("all", "pygod") else ([], []))
     records = dlg_records + pygod_records; failures = dlg_failures + pygod_failures
     if args.phase == "pilot":
         for record in records:
@@ -414,6 +424,8 @@ def main() -> int:
             record["experiment_scope"] = "MAIN"
     _write_csv(output / f"{args.phase}/experiment_records.csv", records)
     _write_csv(output / "failures" / f"{args.phase}_failures.csv", failures)
+    _write_csv(output / f"{args.phase}/records/{run_id}.csv", records)
+    _write_csv(output / f"failures/records/{run_id}.csv", failures)
     summary = {"run_id": run_id, "phase": args.phase, "status": "SUCCESS" if records else "FAILED",
         "records": len(records), "paper_eligible_records": sum(bool(r["paper_eligible"]) for r in records),
         "failures": len(failures), "git_clean_at_experiment_start": not dirty, "git_sha": git_sha,
