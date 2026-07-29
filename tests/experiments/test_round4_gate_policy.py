@@ -65,3 +65,13 @@ def test_complete_real_record_is_eligible_despite_legacy_absence():
               "demo_or_synthetic_metric": False, "sample_count_consistent": True,
               "status": "SUCCESS", "legacy_compatibility": "PARTIAL"}
     assert assess_paper_eligibility(record) == (True, [])
+
+
+def test_pilot_scope_is_not_an_eligibility_input():
+    """The runner, not the scientific record validator, excludes pilot rows."""
+    record = {"dataset_version": "gog-sci-v2.0", "leakage_audit_status": "PASS",
+              "split_hash": "s", "run_manifest": "m", "resolved_config": "c",
+              "git_clean_at_start": True, "real_model_inference": True,
+              "demo_or_synthetic_metric": False, "sample_count_consistent": True,
+              "status": "SUCCESS", "experiment_scope": "EXPLORATORY"}
+    assert assess_paper_eligibility(record)[0]

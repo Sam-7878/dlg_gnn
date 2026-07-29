@@ -404,6 +404,14 @@ def main() -> int:
     pygod_records, pygod_failures = run_pygod(dataset, output, models=pygod_models, epochs=int(phase_cfg["pygod_epochs"]),
         gpu=0 if device.type == "cuda" else -1, **common)
     records = dlg_records + pygod_records; failures = dlg_failures + pygod_failures
+    if args.phase == "pilot":
+        for record in records:
+            record["experiment_scope"] = "EXPLORATORY"
+            record["paper_eligible"] = False
+            record["eligibility_reasons"] = ["pilot results are exploratory and excluded from main tables"]
+    else:
+        for record in records:
+            record["experiment_scope"] = "MAIN"
     _write_csv(output / f"{args.phase}/experiment_records.csv", records)
     _write_csv(output / "failures" / f"{args.phase}_failures.csv", failures)
     summary = {"run_id": run_id, "phase": args.phase, "status": "SUCCESS" if records else "FAILED",
