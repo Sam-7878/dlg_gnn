@@ -345,7 +345,11 @@ def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, cha
                 started = time.perf_counter(); rss0 = psutil.Process().memory_info().rss
                 try:
                     print(f"[round4] start {phase} {chain} {name} seed={seed}", flush=True)
-                    if gpu >= 0: torch.cuda.reset_peak_memory_stats(gpu)
+                    if gpu >= 0:
+                        # WSL2 can report CUDA before its lazy context exists;
+                        # resetting counters before a first allocation is EINVAL.
+                        probe = torch.zeros(1, device=f"cuda:{gpu}"); del probe
+                        torch.cuda.reset_peak_memory_stats(gpu)
                     model = _pygod_detector(name, epochs=epochs, seed=seed, gpu=gpu)
                     model.fit(train_data)
                     val_all = np.asarray(model.decision_function(valid_data)); val_score = val_all[len(train_x):]
