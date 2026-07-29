@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import zipfile
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -44,6 +45,10 @@ def main() -> int:
     routing=pd.read_csv(results/"routing/routing_metrics.csv"); calibration=pd.read_csv(results/"calibration/calibration_metrics.csv")
     streaming=pd.read_csv(results/"streaming/streaming_resource_metrics.csv"); temporal=pd.read_csv(results/"temporal/rolling5_metrics.csv")
     cross=pd.read_csv(results/"cross_chain/cross_chain_metrics.csv"); stats=pd.read_csv(results/"statistics/statistical_tests.csv")
+    junit=out/"round4_in_scope_junit.xml"; test_summary={"tests":0,"failures":0,"errors":0}
+    if junit.is_file():
+        suite=ET.parse(junit).getroot()
+        for key in test_summary: test_summary[key]=int(suite.attrib.get(key,0))
     long_runs=streaming[streaming.scenario=="100k_event_long_run"]
     support_limits=["Polygon fixed temporal test has 0 fraud samples; ROC-AUC/PR-AUC are undefined.",
                     "Polygon rolling fold 5 has 0 fraud samples.",
@@ -67,7 +72,7 @@ def main() -> int:
     for path in (results/"paper_eligible_results_long.csv",results/"routing/routing_metrics.csv",results/"calibration/calibration_metrics.csv",results/"streaming/streaming_resource_metrics.csv",results/"temporal/rolling5_metrics.csv",results/"cross_chain/cross_chain_metrics.csv",results/"statistics/statistical_tests.csv"):
         if not path.is_file(): validation_errors.append(f"missing {path}")
     validation={"validator":"VALID" if not validation_errors else "INVALID","errors":validation_errors,"paper_revision_gate":gate,"scientific_status":"READY_WITH_RESTRICTIONS" if gate!="CLOSED" else "NOT_READY","unresolved_critical":0,"unresolved_failures":len(unresolved)}
-    report_json={"generated_at":datetime.now(timezone.utc).isoformat(),"dataset_samples":24316,"paper_eligible_records":len(records),"unique_main_records":len(main),"unique_mc_records":len(mc),"full_pygod_models":sorted(pygod),"status":status,"validation":validation,"limitations":support_limits}
+    report_json={"generated_at":datetime.now(timezone.utc).isoformat(),"dataset_samples":24316,"paper_eligible_records":len(records),"unique_main_records":len(main),"unique_mc_records":len(mc),"full_pygod_models":sorted(pygod),"in_scope_tests":test_summary,"status":status,"validation":validation,"limitations":support_limits}
     report=f"""# DLG-StreamMC SCI Round 4 Verification Report
 
 **Dataset v2: {status['dataset_v2']}**  
@@ -97,6 +102,7 @@ Round 4 produced real prediction artifacts and opens quantitative paper revision
 - Cross-chain: {len(cross)} train/test/feature settings
 - Streaming/resource: {len(long_runs)} independent 100k-event LPP variants, all with 100% coverage and OOM 0
 - Statistical tests: {len(stats)} records
+- In-scope tests: {test_summary['tests']} passed, {test_summary['failures']} failed, {test_summary['errors']} errors
 - Unresolved CRITICAL issues: 0
 
 ## Main quantitative snapshot (pooled, mean of five seeds)
@@ -128,7 +134,7 @@ See `results_sci_v2/tables/main_metrics_ci.csv` for 95% CIs. Pooled DLG-Full-Fus
     if (results/"pilot/experiment_records.csv").is_file(): pilot=read_csv(results/"pilot/experiment_records.csv")
     _write_csv(results/"paper_ineligible_results_long.csv",pilot+unresolved)
     evidence=[]
-    candidates=[md,js,val,results/"paper_eligible_results_long.csv",results/"paper_ineligible_results_long.csv",results/"experiment_registry.csv",results/"failure_registry.csv",results/"claim_evidence_matrix.csv",results/"tables/main_metrics_ci.csv",results/"routing/routing_metrics.csv",results/"calibration/calibration_metrics.csv",results/"streaming/streaming_resource_metrics.csv",results/"temporal/rolling5_metrics.csv",results/"cross_chain/cross_chain_metrics.csv",results/"statistics/statistical_tests.csv",results/"ablation/ablation_registry.csv",results/"manifests/round4_p0_gate.json",results/"manifests/round4_completion_run_manifest.json"]
+    candidates=[md,js,val,junit,results/"paper_eligible_results_long.csv",results/"paper_ineligible_results_long.csv",results/"experiment_registry.csv",results/"failure_registry.csv",results/"claim_evidence_matrix.csv",results/"tables/main_metrics_ci.csv",results/"routing/routing_metrics.csv",results/"calibration/calibration_metrics.csv",results/"streaming/streaming_resource_metrics.csv",results/"temporal/rolling5_metrics.csv",results/"cross_chain/cross_chain_metrics.csv",results/"statistics/statistical_tests.csv",results/"ablation/ablation_registry.csv",results/"manifests/round4_p0_gate.json",results/"manifests/round4_completion_run_manifest.json"]
     for p in candidates:
         if p.is_file(): evidence.append({"path":str(p),"sha256":sha(p),"size_bytes":p.stat().st_size,"scope":"round4"})
     index=out/"DLG_StreamMC_SCI_Round4_Evidence_Index.csv"; _write_csv(index,evidence)
