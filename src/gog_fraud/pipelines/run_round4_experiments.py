@@ -294,6 +294,7 @@ def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chain
         for seed in seeds:
             for variant in variants:
                 try:
+                    print(f"[round4] start {phase} {chain} {variant} seed={seed}", flush=True)
                     if device.type == "cuda": torch.cuda.reset_peak_memory_stats()
                     rss0 = psutil.Process().memory_info().rss; started = time.perf_counter()
                     model, fit_meta = _fit_dlg(train_x, train_y, variant=variant, seed=seed, epochs=epochs, device=device)
@@ -309,6 +310,7 @@ def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chain
                         "mean_inference_latency_ms": float(np.mean(latency)), "actual_model_class": "ContractDLG"})
                     records.append(_finish_record(record, ids=test_ids, y=test_y, scores=test_score,
                                                   threshold=threshold, output=out, extra_columns={"mc_variance": variance}))
+                    print(f"[round4] success {phase} {chain} {variant} seed={seed}", flush=True)
                     if variant in ("DLG-Full-Fusion", "DLG-Full-Fusion-LPP"):
                         for t in mc_values:
                             mean, var, lat = _dlg_scores(model, train_x, test_x, device, mc=t)
@@ -342,6 +344,7 @@ def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, cha
             for name in models:
                 started = time.perf_counter(); rss0 = psutil.Process().memory_info().rss
                 try:
+                    print(f"[round4] start {phase} {chain} {name} seed={seed}", flush=True)
                     if gpu >= 0: torch.cuda.reset_peak_memory_stats(gpu)
                     model = _pygod_detector(name, epochs=epochs, seed=seed, gpu=gpu)
                     model.fit(train_data)
@@ -358,9 +361,11 @@ def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, cha
                         "peak_rss_mb": max(rss0, psutil.Process().memory_info().rss) / 2**20,
                         "peak_vram_mb": torch.cuda.max_memory_allocated(gpu) / 2**20 if gpu >= 0 else 0.0})
                     records.append(_finish_record(record, ids=test_ids, y=test_y, scores=test_score, threshold=threshold, output=out))
+                    print(f"[round4] success {phase} {chain} {name} seed={seed}", flush=True)
                     del model
                     if gpu >= 0: torch.cuda.empty_cache()
                 except Exception as exc:
+                    print(f"[round4] failure {phase} {chain} {name} seed={seed}: {type(exc).__name__}: {exc}", flush=True)
                     failures.append({"phase": phase, "chain": chain, "seed": seed, "model": name,
                         "error_type": type(exc).__name__, "error": str(exc), "oom": "out of memory" in str(exc).lower(),
                         "fallback": False, "exclusion_justification": "real PyGOD execution failed; no substitute metric emitted"})
