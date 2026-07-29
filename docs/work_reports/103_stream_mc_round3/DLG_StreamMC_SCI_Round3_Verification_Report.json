@@ -1,0 +1,114 @@
+{
+  "data_statistics": {
+    "bsc": {
+      "duplicate_rows": 1567751,
+      "duplicate_transactions": 48910002,
+      "reordered_files": 6016,
+      "samples": 7499,
+      "transaction_rows": 121612480
+    },
+    "ethereum": {
+      "duplicate_rows": 736275,
+      "duplicate_transactions": 26485669,
+      "reordered_files": 8887,
+      "samples": 14464,
+      "transaction_rows": 81788211
+    },
+    "polygon": {
+      "duplicate_rows": 1428832,
+      "duplicate_transactions": 25825065,
+      "reordered_files": 1634,
+      "samples": 2353,
+      "transaction_rows": 64882233
+    }
+  },
+  "dataset_summary": {
+    "chains": {
+      "bsc": {
+        "files_expected": 7499,
+        "files_failed": 0,
+        "files_succeeded": 7499,
+        "manifest_complete": true
+      },
+      "ethereum": {
+        "files_expected": 14464,
+        "files_failed": 0,
+        "files_succeeded": 14464,
+        "manifest_complete": true
+      },
+      "polygon": {
+        "files_expected": 2353,
+        "files_failed": 0,
+        "files_succeeded": 2353,
+        "manifest_complete": true
+      }
+    },
+    "dataset_version": "gog-sci-v2.0",
+    "semantic_status": "RESOLVED"
+  },
+  "experiments": "NOT_RUN",
+  "generated_at": "2026-07-29T11:06:20.053829+00:00",
+  "git_dirty_at_report_time": true,
+  "git_sha": "ebb38480f3c85b28158441cc0f15427128a79834",
+  "in_scope_tests": {
+    "errors": 0,
+    "failures": 0,
+    "path": "/mnt/d/_Work/goat_bank/dlg_gnn/docs/work_reports/103_stream_mc_round3/round3_in_scope_junit.xml",
+    "skipped": 0,
+    "status": "PASS",
+    "tests": 113
+  },
+  "legacy_compatibility": {
+    "bsc": {
+      "ambiguous": 644,
+      "label_orientation": {
+        "consistent": 6837,
+        "other": 0,
+        "reversed": 0
+      },
+      "legacy_graphs": 7481,
+      "missing": 0,
+      "resolved": 6837,
+      "status": "INCOMPLETE"
+    },
+    "ethereum": {
+      "ambiguous": 2056,
+      "label_orientation": {
+        "consistent": 12329,
+        "other": 0,
+        "reversed": 0
+      },
+      "legacy_graphs": 14385,
+      "missing": 0,
+      "resolved": 12329,
+      "status": "INCOMPLETE"
+    },
+    "polygon": {
+      "ambiguous": 147,
+      "label_orientation": {
+        "consistent": 2156,
+        "other": 0,
+        "reversed": 0
+      },
+      "legacy_graphs": 2303,
+      "missing": 0,
+      "resolved": 2156,
+      "status": "INCOMPLETE"
+    }
+  },
+  "overall_status": "NOT_READY",
+  "p0_gate": "BLOCKED",
+  "paper_eligible_experiment_records": 0,
+  "paper_revision_gate": "CLOSED",
+  "report_version": "round3-v1",
+  "sample_level_leakage": {
+    "incomplete_checks": 0,
+    "incomplete_records": [],
+    "paper_eligible": true,
+    "records_checked": 24316,
+    "status": "PASS",
+    "violation_records": [],
+    "violations": 0
+  },
+  "stop_reason": "Round 3 fail-closed P0 prerequisite did not pass; main experiments were not authorized by the work order."
+}
