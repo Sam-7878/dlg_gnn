@@ -1,0 +1,10 @@
+experiment: {name: cross_chain, seeds: [11, 22, 33, 44, 55]}
+matrix:
+  - [ethereum, ethereum]
+  - [bsc, bsc]
+  - [polygon, polygon]
+  - [ethereum+bsc, polygon]
+  - [ethereum+polygon, bsc]
+  - [bsc+polygon, ethereum]
+  - [pooled, each]
+chain_id_feature: [true, false]

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import fnmatch
 import hashlib
 import importlib.metadata
 import json
@@ -17,9 +18,25 @@ from .evidence_index import sha256_file
 from .schema import EvidenceRecord
 
 
-SCAN_ROOTS = ("results_sci", "configs/sci", "tests", "docs/work_reports/100_stream_mc_update", "docs/work_reports/101_stream_mc_check_result")
-ALLOWED_SUFFIXES = {".json", ".yaml", ".yml", ".csv", ".parquet", ".md", ".txt", ".log", ".xml", ".png", ".svg", ".pdf", ".py"}
+SCAN_ROOTS = ("results_sci", "configs/sci", "tests", "docs/work_reports/100_stream_mc_update", "docs/work_reports/101_stream_mc_check_result", "docs/work_reports/102_stream_mc_update2")
+ALLOWED_SUFFIXES = {".json", ".jsonl", ".yaml", ".yml", ".csv", ".parquet", ".md", ".txt", ".log", ".xml", ".png", ".svg", ".pdf", ".py"}
 SKIP_PARTS = {"__pycache__", ".pytest_cache", "archive"}
+DEFAULT_INCLUDE = (
+    "tests/data/**", "tests/streaming/**", "tests/selection/**",
+    "tests/experiments/**", "tests/profiling/**", "tests/reporting/**",
+    "tests/unit/test_mc_dropout.py", "tests/unit/test_phase1_level1.py",
+    "tests/unit/test_phase2_level1_data_and_eval.py",
+    "tests/unit/test_phase3_level2.py", "tests/unit/test_phase4_fusion.py",
+)
+DEFAULT_EXCLUDE = ("tests/llama/**", "tests/micro_rag/**", "tests/mock/**")
+
+
+def _test_in_scope(relative: str) -> bool:
+    if not relative.startswith("tests/"):
+        return True
+    if any(fnmatch.fnmatch(relative, pattern) for pattern in DEFAULT_EXCLUDE):
+        return False
+    return any(fnmatch.fnmatch(relative, pattern) for pattern in DEFAULT_INCLUDE)
 
 
 def _git(repo_root: Path, *args: str) -> str:
@@ -84,12 +101,14 @@ def collect_evidence(repo_root: str | Path, *, include_archive: bool = False) ->
             if not path.is_file() or path.suffix.lower() not in ALLOWED_SUFFIXES: continue
             if any(part in SKIP_PARTS for part in path.parts) and not include_archive: continue
             if path.name.startswith("DLG_StreamMC_SCI_Integrated_Verification_Report") or path.name in {"DLG_StreamMC_SCI_Evidence_Index.csv", "DLG_StreamMC_SCI_Report_Validation.json", "REPORT_MANIFEST.json"}: continue
+            if not _test_in_scope(path.relative_to(root).as_posix()): continue
             paths.append(path)
-    # Core code is evidence even though scanning the entire source tree would be noisy.
-    for relative in ("src/gog_fraud/streaming", "src/gog_fraud/selection", "src/gog_fraud/experiments", "src/gog_fraud/data/splits", "src/gog_fraud/data/validation"):
+    # The reporting allowlist defines the whole gog_fraud package and profiler as in-scope code.
+    for relative in ("src/gog_fraud", "src/profiling"):
         source_dir = root / relative
-        for path in source_dir.glob("*.py") if source_dir.exists() else ():
-            paths.append(path)
+        for path in source_dir.rglob("*.py") if source_dir.exists() else ():
+            if "__pycache__" not in path.parts:
+                paths.append(path)
     records: list[EvidenceRecord] = []
     for index, path in enumerate(sorted(set(paths))):
         relative = path.relative_to(root).as_posix()
@@ -113,7 +132,7 @@ def collect_evidence(repo_root: str | Path, *, include_archive: bool = False) ->
 def load_dataset_manifests(repo_root: str | Path) -> dict[str, Any]:
     root = Path(repo_root).resolve()
     manifests: dict[str, Any] = {}
-    candidates = list((root / "results_sci" / "manifests").glob("dataset_*.json")) if (root / "results_sci" / "manifests").exists() else []
+    candidates = list((root / "results_sci" / "manifests").glob("*.json")) if (root / "results_sci" / "manifests").exists() else []
     candidates += list((root / "docs/work_reports/100_stream_mc_update/artifacts/dataset_manifests").glob("*.json"))
     for path in candidates:
         if path.name in {"build_summary.json", ".hash_index.json"}: continue

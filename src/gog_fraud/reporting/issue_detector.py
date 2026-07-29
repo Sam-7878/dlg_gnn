@@ -9,37 +9,50 @@ from .schema import VerificationIssue
 def detect_issues(*, repo_root: str | Path, datasets: dict[str, Any], experiments: list[dict[str, Any]], git: dict[str, Any], configs: list[dict[str, Any]]) -> list[VerificationIssue]:
     root = Path(repo_root).resolve()
     issues: list[VerificationIssue] = []
+
     def add(severity: str, category: str, message: str, evidence: tuple[str, ...] = ()) -> None:
         issues.append(VerificationIssue(f"ISS-{len(issues)+1:03d}", severity, category, message, evidence))
 
     if not experiments:
-        add("CRITICAL", "experiment", "results_sci에 immutable experiment/result row가 없어 detection·routing·calibration·resource·statistics 주장을 검증할 수 없다.")
+        add("CRITICAL", "experiment", "No immutable scientific experiment result rows exist; detection, routing, calibration, resource, and statistical claims are not verified.")
     missing_chains = sorted({"ethereum", "bsc", "polygon"} - set(datasets))
     if missing_chains:
-        add("HIGH", "dataset", f"dataset manifest가 없는 chain: {', '.join(missing_chains)}")
+        add("HIGH", "dataset", f"Missing dataset manifests: {', '.join(missing_chains)}")
     for chain, manifest in datasets.items():
+        evidence = (str(manifest.get("_source", "")),)
+        if not manifest.get("manifest_complete", False):
+            add("HIGH", "dataset", f"{chain} dataset manifest is incomplete or partial.", evidence)
+        if int(manifest.get("files_failed", 0)):
+            add("HIGH", "dataset", f"{chain} dataset manifest contains failed files.", evidence)
+        if manifest.get("hash_verification") != "full":
+            add("HIGH", "data_hash", f"{chain} does not have full raw-file hash coverage.", evidence)
         ratio = manifest.get("positive_ratio")
         if ratio is not None and float(ratio) > 0.5:
-            add("MEDIUM", "label", f"{chain} fraud positive ratio가 {float(ratio):.3f}로 0.5를 초과한다; label semantics와 sampling provenance 확인이 필요하다.", (str(manifest.get("_source", "")),))
+            add("MEDIUM", "label", f"{chain} fraud positive ratio is {float(ratio):.3f}; label semantics and fraud-oriented corpus sampling must be disclosed.", evidence)
     if git.get("dirty"):
-        add("HIGH", "provenance", "보고서 생성 기준 working tree가 dirty 상태다; commit SHA만으로 정확한 코드 상태를 재현할 수 없다.")
+        add("HIGH", "provenance", "The report working tree is dirty, so the commit SHA alone cannot reproduce the evaluated code state.")
     manifest_source = root / "src/gog_fraud/data/io/dataset_manifest.py"
     if manifest_source.is_file():
         source = manifest_source.read_text(encoding="utf-8", errors="replace")
-        if "cached = hash_index.get(rel)" in source and "stat().st_mtime" not in source and "st_mtime_ns" not in source:
-            add("HIGH", "data_hash", "resumable hash index가 path만으로 cache hit를 결정해 원본 파일 변경 후 stale SHA-256을 재사용할 수 있다.", ("src/gog_fraud/data/io/dataset_manifest.py",))
-        if "max_files" in source and "truncated" not in source and "scan_complete" not in source:
-            add("HIGH", "dataset", "--max-files로 생성한 partial manifest에 incomplete/truncated 표지가 없어 full manifest로 오인될 수 있다.", ("src/gog_fraud/data/io/dataset_manifest.py",))
-    if not (root / "results_sci" / "manifests").exists():
-        add("HIGH", "provenance", "표준 results_sci/manifests registry와 run_manifest가 없다.")
-    if datasets:
-        add("MEDIUM", "data_hash", "manifest 내부 raw-file SHA-256 목록은 존재하지만 이번 검증에서 14,464개 원본 파일 전체를 재해싱하지 않았으므로 externally verified 상태가 아니다.")
+        if "st_mtime_ns" not in source or 'cached.get("size")' not in source:
+            add("HIGH", "data_hash", "The resumable hash cache lacks metadata-guarded invalidation.", ("src/gog_fraud/data/io/dataset_manifest.py",))
+        if "truncated" not in source or "manifest_complete" not in source:
+            add("HIGH", "dataset", "Partial manifests are not explicitly marked incomplete.", ("src/gog_fraud/data/io/dataset_manifest.py",))
+    if not (root / "results_sci/manifests").exists():
+        add("HIGH", "provenance", "The standard results_sci/manifests registry is missing.")
     if not list((root / "configs/sci").rglob("*.yaml")) if (root / "configs/sci").exists() else True:
-        add("HIGH", "config", "SCI config가 없다.")
+        add("HIGH", "config", "SCI configs are missing.")
     elif len(configs) < 2:
-        add("MEDIUM", "config", "SCI config가 main 1개뿐이며 data/model/routing/hardware별 immutable snapshot이 없다.")
-    if not (root / "requirements-lock.txt").is_file() and not (root / "poetry.lock").is_file():
-        add("MEDIUM", "environment", "재현 가능한 Python dependency lock이 없다.")
-    if not list(root.glob("**/*split*manifest*.json")):
-        add("HIGH", "temporal", "고정 split manifest/hash artifact가 없어 실제 experiment temporal boundary를 검증할 수 없다.")
+        add("MEDIUM", "config", "SCI configs are not separated into immutable data/model/routing/hardware snapshots.")
+    if not any((root / name).is_file() for name in ("requirements-sci-lock.txt", "requirements-lock.txt", "poetry.lock")):
+        add("MEDIUM", "environment", "A reproducible Python dependency lock is missing.")
+    split_dir = root / "results_sci/splits"
+    if not split_dir.exists() or not list(split_dir.glob("*_holdout_v1.json")):
+        add("HIGH", "temporal", "Fixed temporal split/hash artifacts are missing.")
+    audit_paths = list(split_dir.glob("*_leakage_audit_v1.json")) if split_dir.exists() else []
+    if audit_paths:
+        import json
+        incomplete = [path.name for path in audit_paths if json.loads(path.read_text(encoding="utf-8")).get("status") != "PASS"]
+        if incomplete:
+            add("HIGH", "temporal", f"Sample-level leakage audit is not PASS: {', '.join(incomplete)}")
     return issues

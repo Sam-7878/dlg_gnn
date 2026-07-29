@@ -12,6 +12,10 @@ def get_git_commit_hash():
         return "N/A"
 
 def generate_markdown_report(output_dir, dataset_summary, baseline_md_path, ablation_md_path, realtime_md_path, chainwise_md_path, calibration_md_path, sensitivity_md_path, outlier_md_path=None, calibration_comparison_md_path=None, config_snapshot=None, throughput_md_path=None, mc_tradeoff_md_path=None, consistency_warnings=None):
+    raise RuntimeError(
+        "legacy markdown generator is disabled because it embeds unverified fixed scientific claims; "
+        "use scripts/build_sci_verification_report.py or scripts/build_round2_report.py"
+    )
     os.makedirs(output_dir, exist_ok=True)
     report_path = os.path.join(output_dir, "evaluation_report.md")
     

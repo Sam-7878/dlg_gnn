@@ -1,0 +1,1 @@
+streaming: {scenario: overload, events: 100000, arrival_rate: overload, queue_policy: risk_priority}

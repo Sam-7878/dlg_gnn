@@ -1,0 +1,3 @@
+experiment: {name: lpp_resource, seeds: [11, 22, 33]}
+variants: [no_purge, graph_purge_only, cuda_cleanup, full_lpp, full_lpp_ttl_lru]
+events: 100000

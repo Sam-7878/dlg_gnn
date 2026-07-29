@@ -6,6 +6,7 @@ from gog_fraud.reporting.evidence_index import write_evidence_index
 from gog_fraud.reporting.report_renderer import build_report_model, render_markdown
 from gog_fraud.reporting.schema import EvidenceRecord, REPORT_TOP_LEVEL_FIELDS
 from gog_fraud.reporting.validator import validate_report
+from gog_fraud.reporting.collector import collect_evidence
 
 
 def _fixture_repo(root: Path):
@@ -43,3 +44,22 @@ def test_validator_detects_evidence_hash_mismatch(tmp_path):
     result = validate_report(report_path=report, json_path=report_json, evidence_index_path=index, repo_root=tmp_path)
     assert result["status"] == "INVALID"
     assert any("hash mismatch" in error for error in result["errors"])
+
+
+def test_evidence_collector_excludes_unrelated_tests(tmp_path):
+    for relative in (
+        "tests/streaming/test_engine.py",
+        "tests/llama/test_graphrag.py",
+        "tests/micro_rag/run_real_pipeline.py",
+        "tests/unit/test_mc_dropout.py",
+        "tests/unit/test_unrelated_mock.py",
+    ):
+        path = tmp_path / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("def test_placeholder(): pass\n", encoding="utf-8")
+    paths = {record.path for record in collect_evidence(tmp_path)}
+    assert "tests/streaming/test_engine.py" in paths
+    assert "tests/unit/test_mc_dropout.py" in paths
+    assert "tests/llama/test_graphrag.py" not in paths
+    assert "tests/micro_rag/run_real_pipeline.py" not in paths
+    assert "tests/unit/test_unrelated_mock.py" not in paths

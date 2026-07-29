@@ -4,7 +4,10 @@ experiment:
   output_root: results_sci
 
 dataset:
-  root: /mnt/d/_Work/_data/dataset/transactions
+  version: gog-processed-v1
+  root: /mnt/d/_Work/_data/GoG
+  canonical_root: /mnt/d/_Work/_data/GoG
+  physical_transaction_root: /mnt/d/_Work/_data/dataset/transactions
   labels_path: /mnt/d/_Work/_data/dataset/labels.csv
   chains: [ethereum, bsc, polygon]
   split_protocol: rolling_origin

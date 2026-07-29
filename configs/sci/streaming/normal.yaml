@@ -1,0 +1,1 @@
+streaming: {scenario: normal, events: 100000, arrival_rate: steady, checkpoint_interval: 10000}

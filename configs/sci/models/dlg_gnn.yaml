@@ -1,0 +1,5 @@
+model:
+  family: dlg_gnn
+  variants: [l1_only, l1_l2, full_fusion, full_lpp]
+  level1: {backend: ngnn, hidden_dim: 128, num_layers: 3}
+  level2: {backend: gatv2, relation_mode: combined}

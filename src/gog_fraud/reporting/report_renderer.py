@@ -24,8 +24,8 @@ COMPONENTS = (
     ("TTL/LRU cache", "src/gog_fraud/streaming/embedding_cache.py", "tests/streaming/test_bounded_state.py"),
     ("Queue/backpressure", "src/gog_fraud/streaming/queue_manager.py", "tests/streaming/test_bounded_state.py"),
     ("Checkpoint/recovery", "src/gog_fraud/streaming/checkpoint.py", "tests/streaming/test_stateful_stream.py"),
-    ("Latency profiler", "src/profiling/streaming_profiler.py", ""),
-    ("Memory profiler", "src/profiling/streaming_profiler.py", ""),
+    ("Latency profiler", "src/profiling/streaming_profiler.py", "tests/profiling/test_streaming_profiler.py"),
+    ("Memory profiler", "src/profiling/streaming_profiler.py", "tests/profiling/test_memory_slope.py"),
     ("Result provenance", "src/gog_fraud/experiments/manifest.py", "tests/experiments/test_provenance.py"),
 )
 

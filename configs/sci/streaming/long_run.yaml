@@ -1,0 +1,5 @@
+streaming:
+  scenario: long_run
+  events: 100000
+  memory_cap_bytes: 4294967296
+  cache: {max_entries: 50000, max_bytes: 4294967296, ttl_seconds: 2592000}
