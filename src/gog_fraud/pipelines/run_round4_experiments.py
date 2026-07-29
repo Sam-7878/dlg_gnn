@@ -80,6 +80,14 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     os.replace(tmp, path)
 
 
+def _append_jsonl(path: Path, row: dict[str, Any]) -> None:
+    """Durable per-record checkpoint so a later CUDA fault loses no evidence."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, sort_keys=True, allow_nan=False) + "\n")
+        handle.flush(); os.fsync(handle.fileno())
+
+
 def _git_state(repo: Path) -> tuple[str, bool]:
     try:
         sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip()
@@ -285,7 +293,8 @@ def _finish_record(record: dict[str, Any], *, ids: list[str], y: np.ndarray, sco
 
 def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chains: Iterable[str],
             seeds: Iterable[int], variants: Iterable[str], epochs: int, mc_values: Iterable[int],
-            device: torch.device, manifest_path: Path, config_path: Path, clean: bool) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+            device: torch.device, manifest_path: Path, config_path: Path, clean: bool,
+            checkpoint_path: Path | None = None) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     records: list[dict[str, Any]] = []; failures: list[dict[str, Any]] = []
     for chain in chains:
         train_ids, valid_ids, test_ids = (dataset.ids(chain, name) for name in ("train", "validation", "test"))
@@ -308,8 +317,10 @@ def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chain
                         "peak_rss_mb": max(rss0, psutil.Process().memory_info().rss) / 2**20,
                         "peak_vram_mb": torch.cuda.max_memory_allocated() / 2**20 if device.type == "cuda" else 0.0,
                         "mean_inference_latency_ms": float(np.mean(latency)), "actual_model_class": "ContractDLG"})
-                    records.append(_finish_record(record, ids=test_ids, y=test_y, scores=test_score,
-                                                  threshold=threshold, output=out, extra_columns={"mc_variance": variance}))
+                    completed = _finish_record(record, ids=test_ids, y=test_y, scores=test_score,
+                        threshold=threshold, output=out, extra_columns={"mc_variance": variance})
+                    records.append(completed)
+                    if checkpoint_path: _append_jsonl(checkpoint_path, completed)
                     print(f"[round4] success {phase} {chain} {variant} seed={seed}", flush=True)
                     if variant in ("DLG-Full-Fusion", "DLG-Full-Fusion-LPP"):
                         for t in mc_values:
@@ -321,8 +332,10 @@ def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chain
                                 "p95_latency_ms": float(np.quantile(lat, .95)), "p99_latency_ms": float(np.quantile(lat, .99)),
                                 "uncertainty_mean": float(var.mean()), "fitted_state_hash": fit_meta["fitted_state_hash"],
                                 "actual_model_class": "ContractDLG", "throughput_samples_per_second": len(test_ids) / max(sum(lat) / 1000, 1e-9)})
-                            records.append(_finish_record(mc_record, ids=test_ids, y=test_y, scores=mean,
-                                threshold=threshold, output=mc_out, extra_columns={"mc_variance": var}))
+                            completed_mc = _finish_record(mc_record, ids=test_ids, y=test_y, scores=mean,
+                                threshold=threshold, output=mc_out, extra_columns={"mc_variance": var})
+                            records.append(completed_mc)
+                            if checkpoint_path: _append_jsonl(checkpoint_path, completed_mc)
                     del model
                     if device.type == "cuda": torch.cuda.empty_cache()
                 except Exception as exc:
@@ -333,7 +346,8 @@ def run_dlg(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chain
 
 def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, chains: Iterable[str],
               seeds: Iterable[int], models: Iterable[str], epochs: int, gpu: int,
-              manifest_path: Path, config_path: Path, clean: bool) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+              manifest_path: Path, config_path: Path, clean: bool,
+              checkpoint_path: Path | None = None, failure_checkpoint_path: Path | None = None) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     records: list[dict[str, Any]] = []; failures: list[dict[str, Any]] = []
     for chain in chains:
         train_ids, valid_ids, test_ids = (dataset.ids(chain, name) for name in ("train", "validation", "test"))
@@ -364,16 +378,22 @@ def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, cha
                         "wall_seconds": time.perf_counter() - started,
                         "peak_rss_mb": max(rss0, psutil.Process().memory_info().rss) / 2**20,
                         "peak_vram_mb": torch.cuda.max_memory_allocated(gpu) / 2**20 if gpu >= 0 else 0.0})
-                    records.append(_finish_record(record, ids=test_ids, y=test_y, scores=test_score, threshold=threshold, output=out))
+                    completed = _finish_record(record, ids=test_ids, y=test_y, scores=test_score, threshold=threshold, output=out)
+                    records.append(completed)
+                    if checkpoint_path: _append_jsonl(checkpoint_path, completed)
                     print(f"[round4] success {phase} {chain} {name} seed={seed}", flush=True)
                     del model
                     if gpu >= 0: torch.cuda.empty_cache()
                 except Exception as exc:
                     print(f"[round4] failure {phase} {chain} {name} seed={seed}: {type(exc).__name__}: {exc}", flush=True)
-                    failures.append({"phase": phase, "chain": chain, "seed": seed, "model": name,
+                    failed = {"phase": phase, "chain": chain, "seed": seed, "model": name,
                         "error_type": type(exc).__name__, "error": str(exc), "oom": "out of memory" in str(exc).lower(),
-                        "fallback": False, "exclusion_justification": "real PyGOD execution failed; no substitute metric emitted"})
-                    if gpu >= 0: torch.cuda.empty_cache()
+                        "fallback": False, "exclusion_justification": "real PyGOD execution failed; no substitute metric emitted"}
+                    failures.append(failed)
+                    if failure_checkpoint_path: _append_jsonl(failure_checkpoint_path, failed)
+                    if gpu >= 0:
+                        try: torch.cuda.empty_cache()
+                        except RuntimeError: pass
     return records, failures
 
 
@@ -385,6 +405,7 @@ def main() -> int:
     parser.add_argument("--models", help="comma-separated model override")
     parser.add_argument("--chains", help="comma-separated chain override")
     parser.add_argument("--seeds", help="comma-separated seed override")
+    parser.add_argument("--gpu", type=int, help="PyGOD GPU index; -1 forces CPU")
     parser.add_argument("--require-clean-git", action="store_true"); parser.add_argument("--real-inference-only", action="store_true")
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args(); repo = Path.cwd().resolve(); output = Path(args.output_root).resolve(); output.mkdir(parents=True, exist_ok=True)
@@ -413,10 +434,14 @@ def main() -> int:
         dlg_variants = tuple(item for item in selected_models if item in DLG_VARIANTS)
     common = dict(run_id=run_id, phase=args.phase, chains=chains, seeds=seeds, manifest_path=manifest_path,
                   config_path=resolved, clean=not dirty)
+    live_records = output / f"{args.phase}/records_live/{run_id}.jsonl"
+    live_failures = output / f"failures/records_live/{run_id}.jsonl"
     dlg_records, dlg_failures = (run_dlg(dataset, output, variants=dlg_variants, epochs=int(phase_cfg["dlg_epochs"]),
-        mc_values=mc_values, device=device, **common) if args.only_family in ("all", "dlg") else ([], []))
+        mc_values=mc_values, device=device, checkpoint_path=live_records, **common) if args.only_family in ("all", "dlg") else ([], []))
     pygod_records, pygod_failures = (run_pygod(dataset, output, models=pygod_models, epochs=int(phase_cfg["pygod_epochs"]),
-        gpu=0 if device.type == "cuda" else -1, **common) if args.only_family in ("all", "pygod") else ([], []))
+        gpu=args.gpu if args.gpu is not None else (0 if device.type == "cuda" else -1),
+        checkpoint_path=live_records, failure_checkpoint_path=live_failures, **common)
+        if args.only_family in ("all", "pygod") else ([], []))
     records = dlg_records + pygod_records; failures = dlg_failures + pygod_failures
     if args.phase == "pilot":
         for record in records:
