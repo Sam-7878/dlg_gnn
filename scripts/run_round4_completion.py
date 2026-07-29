@@ -259,9 +259,12 @@ def run_statistics_and_ablation(root: Path, records: list[dict[str, Any]]) -> tu
 
 
 def main() -> int:
-    ap=argparse.ArgumentParser(); ap.add_argument("--dataset-root",required=True); ap.add_argument("--results-root",required=True); ap.add_argument("--repo-root",default=".")
+    ap=argparse.ArgumentParser(); ap.add_argument("--dataset-root",required=True); ap.add_argument("--results-root",required=True); ap.add_argument("--repo-root",default="."); ap.add_argument("--stats-only",action="store_true")
     args=ap.parse_args(); root=Path(args.results_root).resolve(); repo=Path(args.repo_root).resolve(); dataset_root=Path(args.dataset_root).resolve()
     records,failures=collect_records(root); _write_csv(root/"paper_eligible_results_long.csv",records); _write_csv(root/"failure_registry.csv",failures)
+    if args.stats_only:
+        statistical,ablation=run_statistics_and_ablation(root,records)
+        print(json.dumps({"statistical_records":statistical,"ablation_records":ablation},indent=2)); return 0
     dataset=SciV2Records(dataset_root); device=torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     run_manifest=RunManifest.capture(experiment_id="round4_completion",config={"dataset":"gog-sci-v2.0","real_inference":True},seed=11,
                                      dataset_files=[dataset_root/"manifests/dataset_summary.json"],repo_root=repo)
