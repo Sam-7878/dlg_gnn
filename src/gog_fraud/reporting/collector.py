@@ -29,6 +29,7 @@ DEFAULT_INCLUDE = (
     "tests/unit/test_phase3_level2.py", "tests/unit/test_phase4_fusion.py",
 )
 DEFAULT_EXCLUDE = ("tests/llama/**", "tests/micro_rag/**", "tests/mock/**")
+RUNTIME_LOG_EXCLUDE = {"integrated_report_build.log", "integrated_report_validation.log"}
 
 
 def _test_in_scope(relative: str) -> bool:
@@ -100,6 +101,7 @@ def collect_evidence(repo_root: str | Path, *, include_archive: bool = False) ->
         for path in scan_root.rglob("*"):
             if not path.is_file() or path.suffix.lower() not in ALLOWED_SUFFIXES: continue
             if any(part in SKIP_PARTS for part in path.parts) and not include_archive: continue
+            if path.name in RUNTIME_LOG_EXCLUDE: continue
             if path.name.startswith("DLG_StreamMC_SCI_Integrated_Verification_Report") or path.name in {"DLG_StreamMC_SCI_Evidence_Index.csv", "DLG_StreamMC_SCI_Report_Validation.json", "REPORT_MANIFEST.json"}: continue
             if not _test_in_scope(path.relative_to(root).as_posix()): continue
             paths.append(path)
@@ -132,8 +134,11 @@ def collect_evidence(repo_root: str | Path, *, include_archive: bool = False) ->
 def load_dataset_manifests(repo_root: str | Path) -> dict[str, Any]:
     root = Path(repo_root).resolve()
     manifests: dict[str, Any] = {}
-    candidates = list((root / "results_sci" / "manifests").glob("*.json")) if (root / "results_sci" / "manifests").exists() else []
-    candidates += list((root / "docs/work_reports/100_stream_mc_update/artifacts/dataset_manifests").glob("*.json"))
+    # Load legacy artifacts first so the authoritative Round 2 results_sci
+    # manifests replace them for the same chain.
+    candidates = list((root / "docs/work_reports/100_stream_mc_update/artifacts/dataset_manifests").glob("*.json"))
+    if (root / "results_sci" / "manifests").exists():
+        candidates += list((root / "results_sci" / "manifests").glob("*.json"))
     for path in candidates:
         if path.name in {"build_summary.json", ".hash_index.json"}: continue
         try:

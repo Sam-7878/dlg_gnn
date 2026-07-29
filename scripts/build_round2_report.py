@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,6 +28,24 @@ def main() -> None:
     in_scope_tests = _read(output / "test_summaries/round2_in_scope_summary.json", {"status": "NOT_RUN"})
     repository_tests = _read(output / "test_summaries/round2_repository_summary.json", {"status": "NOT_RUN"})
     git = git_metadata(root)
+    run_manifest_paths = sorted(
+        (root / "results_sci/manifests").glob("*/run_manifest.json"),
+        key=lambda path: path.stat().st_mtime,
+    )
+    strict_run = _read(run_manifest_paths[-1], {}) if run_manifest_paths else {}
+    try:
+        tagged_sha = subprocess.check_output(
+            ["git", "rev-list", "-n", "1", "dlg-streammc-sci-v1.0"],
+            cwd=root, text=True, stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        tagged_sha = ""
+    clean_tagged_execution = bool(
+        tagged_sha
+        and strict_run.get("git_dirty") is False
+        and strict_run.get("git_sha") == tagged_sha
+        and "--require-clean-git" in strict_run.get("cli_args", [])
+    )
     full_manifests = len(manifests) == 3 and all(row.get("manifest_complete") and row.get("files_failed") == 0 and row.get("hash_verification") == "full" for row in manifests.values())
     split_exists = all((root / f"results_sci/splits/{chain}_holdout_v1.json").is_file() for chain in chains)
     leakage_pass = len(audits) == 3 and all(row.get("status") == "PASS" and row.get("violations") == 0 for row in audits.values())
@@ -34,13 +53,13 @@ def main() -> None:
     blockers = []
     if not full_manifests: blockers.append("Three-chain full manifest gate is not satisfied.")
     if not leakage_pass: blockers.append("Processed-feature sample-level leakage audit is not PASS.")
-    if git.get("dirty"): blockers.append("Current delivery worktree is dirty; paper runs require the frozen clean worktree/tag.")
+    if not clean_tagged_execution: blockers.append("No strict execution from the clean tagged code baseline was captured.")
     if not result_rows: blockers.append("No paper-eligible baseline/main/MC/calibration/resource/temporal/cross-chain result rows exist.")
     blockers.append("The legacy run_baseline_benchmark path contains hard-coded demonstration metrics and is now guarded as non-paper-eligible; real PyGOD runs remain required.")
     gate = {
         "three_chain_manifest": full_manifests, "fixed_split_manifests": split_exists,
         "sample_level_leakage_pass": leakage_pass, "dependency_lock": (root / "requirements-sci-lock.txt").is_file(),
-        "in_scope_tests_pass": in_scope_tests.get("status") == "PASS", "clean_delivery_tree": not git.get("dirty"),
+        "in_scope_tests_pass": in_scope_tests.get("status") == "PASS", "clean_tagged_code": clean_tagged_execution,
         "main_baseline_5_seed": False, "mc_sensitivity": False, "calibration": False, "streaming_100k": False,
         "temporal_robustness": False, "held_out_cross_chain": False, "statistical_tests": False,
     }
@@ -57,6 +76,7 @@ def main() -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(), "overall_status": "NOT_READY",
         "paper_revision_gate": "CLOSED", "git": git, "manifests": manifests, "leakage_audits": audits,
         "smoke": smoke, "tests": {"in_scope": in_scope_tests, "repository_wide": repository_tests},
+        "strict_orchestrator_run": strict_run, "tagged_sha": tagged_sha,
         "gate": gate, "phases": phases, "paper_eligible_result_files": result_rows, "blockers": blockers,
     }
     json_path = output / "DLG_StreamMC_SCI_Round2_Development_Experiment_Report.json"
@@ -90,7 +110,7 @@ Canonical root is `/mnt/d/_Work/_data/GoG`; raw physical input is `/mnt/d/_Work/
 
 Fixed holdout and rolling-origin artifacts: `{'present' if split_exists else 'missing'}`. Raw event-time ordering audit: `{', '.join(f'{chain}={row.get("raw_event_time_audit", "MISSING")}' for chain, row in audits.items()) or 'NOT_RUN'}`. Full processed-feature leakage status: `{', '.join(f'{chain}={row.get("status", "MISSING")}' for chain, row in audits.items()) or 'NOT_RUN'}`.
 
-Legacy graph JSON does not contain feature-source timestamps, normalizer fit intervals, relation construction intervals, or KNN candidate-pool provenance. Therefore zero raw timestamp violations cannot be promoted to a full leakage `PASS`.
+Raw ordering violations: `{', '.join(f'{chain}={row.get("violations", "MISSING")}' for chain, row in audits.items()) or 'NOT_RUN'}`. Legacy graph JSON also does not contain feature-source timestamps, normalizer fit intervals, relation construction intervals, or KNN candidate-pool provenance. Either condition prevents a full leakage `PASS`.
 
 ## 4. Development Completed
 
@@ -103,7 +123,7 @@ Legacy graph JSON does not contain feature-source timestamps, normalizer fit int
 - Evidence test allowlist excluding llama, micro_rag, and unrelated mocks.
 - Legacy hard-coded baseline and Markdown/LaTeX scientific-claim generators are fail-closed.
 - Calibration, reliability-source, paired-bootstrap, effect-size, and Holm correction utilities.
-- Immutable SCI data/model/routing/streaming/hardware/experiment configs.
+- Versioned SCI data/model/routing/streaming/hardware/experiment config snapshots.
 
 ## 5. Smoke Verification
 
@@ -120,6 +140,8 @@ Legacy graph JSON does not contain feature-source timestamps, normalizer fit int
 | Phase | Status |
 |---|---|
 {phase_rows}
+
+Strict orchestrator evidence: git SHA `{strict_run.get('git_sha', 'NOT_RUN')}`, git dirty `{strict_run.get('git_dirty', 'NOT_RUN')}`, status `{strict_run.get('status', 'NOT_RUN')}`. The failed status is expected fail-closed behavior caused by the leakage gate and absence of configured real paper stages; it is not counted as a completed experiment.
 
 ## 8. Paper Revision Gate
 
