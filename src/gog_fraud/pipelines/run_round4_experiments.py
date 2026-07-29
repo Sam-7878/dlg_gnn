@@ -364,17 +364,31 @@ def run_pygod(dataset: SciV2Records, root: Path, *, run_id: str, phase: str, cha
                         # resetting counters before a first allocation is EINVAL.
                         probe = torch.zeros(1, device=f"cuda:{gpu}"); del probe
                         torch.cuda.reset_peak_memory_stats(gpu)
+                    preprocessing = "train_zscore"
+                    model_train, model_valid, model_test = train_data, valid_data, test_data
+                    if name == "GAAN":
+                        # GAAN's BCE attribute decoder requires targets in
+                        # [0, 1]. Fit min/max on train only and clip held-out
+                        # values without inspecting their distribution.
+                        lower = train_x.min(0); span = train_x.max(0) - lower; span[span == 0] = 1
+                        scale = lambda value: np.clip((value - lower) / span, 0, 1).astype(np.float32)
+                        bounded_train, bounded_valid, bounded_test = scale(train_x), scale(valid_x), scale(test_x)
+                        model_train = _data(bounded_train)
+                        model_valid = _data(bounded_train, bounded_valid)
+                        model_test = _data(bounded_train, bounded_test)
+                        preprocessing = "train_minmax_clip_0_1"
                     model = _pygod_detector(name, epochs=epochs, seed=seed, gpu=gpu)
-                    model.fit(train_data)
-                    val_all = np.asarray(model.decision_function(valid_data)); val_score = val_all[len(train_x):]
+                    model.fit(model_train)
+                    val_all = np.asarray(model.decision_function(model_valid)); val_score = val_all[len(train_x):]
                     threshold = _threshold(valid_y, val_score)
-                    score_all = np.asarray(model.decision_function(test_data)); test_score = score_all[len(train_x):]
+                    score_all = np.asarray(model.decision_function(model_test)); test_score = score_all[len(train_x):]
                     state = b"".join(v.detach().cpu().numpy().tobytes() for v in model.model.state_dict().values())
                     out = root / phase / "predictions" / f"{chain}__{name}__seed{seed}.csv"
                     record = _base_record(run_id=run_id, chain=chain, seed=seed, model=name,
                         split_hash=dataset.split_hash(chain), manifest_path=manifest_path, config_path=config_path, clean=clean, phase=phase)
                     record.update({"fit_called": True, "decision_function_called": True, "epochs": epochs,
                         "fitted_state_hash": _sha_bytes(state), "actual_model_class": f"pygod.detector.{name}",
+                        "preprocessing_boundary": preprocessing,
                         "wall_seconds": time.perf_counter() - started,
                         "peak_rss_mb": max(rss0, psutil.Process().memory_info().rss) / 2**20,
                         "peak_vram_mb": torch.cuda.max_memory_allocated(gpu) / 2**20 if gpu >= 0 else 0.0})
