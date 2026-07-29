@@ -127,6 +127,20 @@ class DLG(DeepDetector):
         self.weight = weight
         self.sigmoid_s = sigmoid_s
 
+    def fit(self, data, label=None):
+        """Fit through PyGOD and expose legacy DLG component aliases."""
+        fitted = super().fit(data, label)
+        self.level1_model = self.model.local_encoder
+        self.level2_model = self.model.global_encoder
+        self.fusion_model = self.model
+        return fitted
+
+    def predict(self, data=None, return_confidence=False, **kwargs):
+        """Support the historical ``return_confidence`` spelling."""
+        if return_confidence:
+            kwargs["return_conf"] = True
+        return super().predict(data=data, **kwargs)
+
     def process_graph(self, data):
         """Compute dense adjacency for structure reconstruction."""
         DLGBase.process_graph(data)
@@ -135,6 +149,9 @@ class DLG(DeepDetector):
         """Initialize the DLGBase neural network."""
         if self.save_emb:
             self.emb = torch.zeros(self.num_nodes, self.hid_dim)
+        # PyGOD 1.1 passes detector-level loader controls through kwargs.
+        # They are not GNN backbone constructor arguments in PyG 2.7.
+        kwargs.pop("subgraph_batch_size", None)
         return DLGBase(
             in_dim=self.in_dim,
             hid_dim=self.hid_dim,

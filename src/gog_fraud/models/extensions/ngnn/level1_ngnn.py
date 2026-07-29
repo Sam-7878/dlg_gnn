@@ -101,7 +101,9 @@ class Level1nGNN(nn.Module):
         if node_to_parent is None:
             node_to_parent = torch.zeros(data.x.size(0), dtype=torch.long, device=device)
 
-        node_to_local_subgraph = getattr(data, 'subgraph_idx', None)
+        node_to_local_subgraph = getattr(data, 'nested_subgraph_id', None)
+        if node_to_local_subgraph is None:
+            node_to_local_subgraph = getattr(data, 'subgraph_idx', None)
 
         if node_to_local_subgraph is None:
             # Fallback: if data is a Batch of subgraphs WITHOUT parent mapping,
@@ -192,14 +194,24 @@ class Level1nGNN(nn.Module):
             return graph_embs
     
 
+    def _encode_nested_graph(self, data) -> torch.Tensor:
+        global_subgraph_idx, subgraph_to_parent, _ = self._resolve_batch_indices(data)
+        parent_batch = getattr(data, 'batch', None)
+        data.batch = global_subgraph_idx
+        try:
+            subgraph_embs = self.nested_encoder(data)
+        finally:
+            data.batch = parent_batch
+        return self.nested_readout(subgraph_embs, subgraph_to_parent)
+
     def embed(self, data) -> torch.Tensor:
-        return self.encode_graph(data)
+        return self._encode_nested_graph(data)
 
     def extract_graph_embedding(self, data) -> torch.Tensor:
-        return self.encode_graph(data)
+        return self._encode_nested_graph(data)
 
     def forward(self, data, return_embedding=False):
-        graph_embs = self.encode_graph(data)
+        graph_embs = self._encode_nested_graph(data)
         logits = self.classifier(graph_embs)
         if return_embedding:
             return logits, graph_embs
