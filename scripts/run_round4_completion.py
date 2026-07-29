@@ -64,6 +64,9 @@ def collect_records(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, An
         "error_type": "RuntimeBudgetExceeded", "error": "graphlet preprocessing exceeded 180 seconds",
         "oom": False, "fallback": False, "exclusion_justification": "bounded laptop runtime; no metric emitted",
     }
+    successes = {(r.get("chain"), r.get("model"), str(r.get("seed"))) for r in dedup.values()}
+    for row in failure_dedup.values():
+        row["recovered_by_successful_rerun"] = (row.get("chain"), row.get("model"), str(row.get("seed"))) in successes
     return list(dedup.values()), list(failure_dedup.values())
 
 
@@ -203,7 +206,7 @@ def run_statistics_and_ablation(root: Path, records: list[dict[str, Any]]) -> tu
     numeric=[]
     for row in records:
         if row.get("phase") != "main" or row.get("model") == "DLG-StreamMC": continue
-        try: numeric.append({**row,"roc_auc":float(row["roc_auc"]),"pr_auc":float(row["pr_auc"])})
+        try: numeric.append({**row,"seed":int(row["seed"]),"roc_auc":float(row["roc_auc"]),"pr_auc":float(row["pr_auc"])})
         except (ValueError,TypeError,KeyError): pass
     frame=pd.DataFrame(numeric); aggregate=[]
     for (chain,model), group in frame.groupby(["chain","model"]):
