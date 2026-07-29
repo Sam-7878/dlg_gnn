@@ -26,8 +26,14 @@ def main() -> None:
     for relative in ("configs/sci", "results_sci"):
         base = root / relative
         if base.exists(): selected.extend(path for path in base.rglob("*") if path.is_file())
-    for pattern in ("DLG_StreamMC_SCI_Round2_Development_Experiment_Report.*", "DLG_StreamMC_SCI_Round2_Evidence_Index.csv", "Dataset_Provenance_and_Label_Audit.md", "dataset_provenance_label_audit.json", "dataset_exclusions.csv", "environment_manifest.json", "test_summaries/*"):
+    for pattern in ("DLG_StreamMC_SCI_Round2_Development_Experiment_Report.*", "DLG_StreamMC_SCI_Round2_Evidence_Index.csv", "Dataset_Provenance_and_Label_Audit.md", "dataset_provenance_label_audit.json", "dataset_exclusions.csv", "environment_manifest.json", "strict_orchestrator.log", "test_summaries/*"):
         selected.extend(path for path in report_dir.glob(pattern) if path.is_file())
+    integrated_reports = root / "reports"
+    if integrated_reports.exists():
+        selected.extend(
+            path for path in integrated_reports.glob("DLG_StreamMC_SCI_*")
+            if path.is_file()
+        )
     if (root / "requirements-sci-lock.txt").is_file(): selected.append(root / "requirements-sci-lock.txt")
     selected = sorted(set(selected))
     with tempfile.TemporaryDirectory(prefix="dlg_round2_") as temporary:
