@@ -47,8 +47,9 @@ def main() -> int:
     cross=pd.read_csv(results/"cross_chain/cross_chain_metrics.csv"); stats=pd.read_csv(results/"statistics/statistical_tests.csv")
     junit=out/"round4_in_scope_junit.xml"; test_summary={"tests":0,"failures":0,"errors":0}
     if junit.is_file():
-        suite=ET.parse(junit).getroot()
-        for key in test_summary: test_summary[key]=int(suite.attrib.get(key,0))
+        xml_root=ET.parse(junit).getroot()
+        suites=[xml_root] if xml_root.tag=="testsuite" else list(xml_root.findall("testsuite"))
+        for key in test_summary: test_summary[key]=sum(int(suite.attrib.get(key,0)) for suite in suites)
     long_runs=streaming[streaming.scenario=="100k_event_long_run"]
     support_limits=["Polygon fixed temporal test has 0 fraud samples; ROC-AUC/PR-AUC are undefined.",
                     "Polygon rolling fold 5 has 0 fraud samples.",
