@@ -68,6 +68,6 @@ The v2 dataset itself has complete address-based identity. The remaining blocker
 ## Reproducibility
 
 - WSL2 Python: `/mnt/d/_Work/goat_bank/.venv/bin/python`
-- Git SHA: `ebb38480f3c85b28158441cc0f15427128a79834`
+- Git SHA: `0e1a93103ad9f52bd56be129fbb3d6827d1479bf`
 - Dirty at report generation: `True`
 - Canonical SCI v2 root: `/mnt/d/_Work/_data/GoG_sci_v2`

@@ -168,7 +168,7 @@ The v2 dataset itself has complete address-based identity. The remaining blocker
     ) if path.exists()]
     index_path = report_dir / "DLG_StreamMC_SCI_Round3_Evidence_Index.csv"
     with index_path.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=("path", "sha256", "size_bytes", "scope")); w.writeheader()
+        w = csv.DictWriter(f, fieldnames=("path", "sha256", "size_bytes", "scope"), lineterminator="\n"); w.writeheader()
         for path in sorted(set(evidence)):
             w.writerow({"path": str(path), "sha256": sha(path), "size_bytes": path.stat().st_size, "scope": "round3"})
     validation = {"status": "VALID", "report_exists": output.exists(), "json_exists": json_path.exists(),
