@@ -60,5 +60,6 @@ frontend_apps/
 **/__pycache__/
 **/__pycache__/**
 
+results_sci_v2
 results_sci/
 reports/
