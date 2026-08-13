@@ -197,7 +197,13 @@ class DLGFull(DeepDetector):
         # Extract frozen L1 embeddings
         l1_encoder.eval()
         with torch.no_grad():
-            embs = l1_encoder(x, edge_index).cpu()
+            z = l1_encoder(x, edge_index)
+            x_hat = l1_decoder(z)
+            embs = z.cpu()
+            # Expose the empirical local-only score for controlled ablations.
+            # This is descriptive state on the processed Data object; it does
+            # not alter the historical DLGFull global score path.
+            data.dlg_l1_score = torch.mean((x_hat - x) ** 2, dim=1).detach().cpu()
         
         # Cleanup L1 model (not needed during L2 training)
         del l1_encoder, l1_decoder, optimizer

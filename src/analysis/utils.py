@@ -29,6 +29,51 @@ DOMAIN_GROUP_MAP = {
     "PubMed": "Citation/Homophilous"
 }
 
+# Machine-readable taxonomy used by SCI round-1 outputs. Keep paper-friendly
+# labels above for backward-compatible plots, but never repeat this mapping in
+# individual runners.
+DOMAIN_FINE_MAP = {
+    "Elliptic": "financial_transaction_fraud",
+    "DGraphFin": "financial_transaction_fraud",
+    "Yelp": "review_behavioral_fraud",
+    "Amazon": "review_behavioral_fraud",
+    "BitcoinOTC": "blockchain_trust_anomaly",
+    "Flickr": "social_anomaly",
+    "Reddit": "social_anomaly",
+    "Cora": "citation_reference",
+    "CiteSeer": "citation_reference",
+    "PubMed": "citation_reference",
+}
+
+DOMAIN_BROAD_MAP = {
+    name: ("fraud_oriented" if name in {"Elliptic", "DGraphFin", "Yelp", "Amazon", "BitcoinOTC"}
+           else "general_graph_anomaly")
+    for name in DOMAIN_FINE_MAP
+}
+
+LABEL_PROVENANCE_MAP = {
+    "Elliptic": "real",
+    "DGraphFin": "real",
+    "Yelp": "real",
+    "Amazon": "synthetic_injection",
+    "BitcoinOTC": "derived_from_signed_trust",
+    "Flickr": "synthetic_injection",
+    "Reddit": "synthetic_injection",
+    "Cora": "synthetic_injection",
+    "CiteSeer": "synthetic_injection",
+    "PubMed": "synthetic_injection",
+}
+
+
+def dataset_metadata(name):
+    if name not in DOMAIN_FINE_MAP:
+        raise KeyError(f"unknown benchmark dataset: {name}")
+    return {
+        "domain": DOMAIN_FINE_MAP[name],
+        "domain_group": DOMAIN_BROAD_MAP[name],
+        "label_provenance": LABEL_PROVENANCE_MAP[name],
+    }
+
 MODEL_FAMILY_MAP = {
     "DOMINANT": "Reconstruction",
     "AnomalyDAE": "Reconstruction",

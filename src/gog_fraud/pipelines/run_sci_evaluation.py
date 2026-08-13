@@ -113,6 +113,11 @@ def main() -> int:
     parser.add_argument("--require-clean-git", action="store_true")
     parser.add_argument("--strict", action="store_true")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--seeds", nargs="+", type=int)
+    parser.add_argument("--datasets", nargs="+")
+    parser.add_argument("--models", nargs="+")
+    parser.add_argument("--max-nodes", type=int)
     parser.add_argument("--max-files", type=int)
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -121,6 +126,13 @@ def main() -> int:
     config = _load_config(config_path)
     experiment = config.get("experiment", {})
     output_root = Path(args.output_root or experiment.get("output_root", "results_sci")).resolve()
+    if config.get("workflow") == "benchmark_round_1":
+        from gog_fraud.pipelines.run_sci_round1_benchmark import run as run_round1
+        return run_round1(
+            config, output_root=output_root, resume=args.resume, force=args.force,
+            dataset_filter=args.datasets, model_filter=args.models,
+            seed_override=args.seeds, max_nodes=args.max_nodes,
+        )
     _, initial_git_dirty = _git_status(repo_root)
     _create_layout(output_root)
     config_digest = hashlib.sha256(yaml.safe_dump(config, sort_keys=True).encode()).hexdigest()[:12]

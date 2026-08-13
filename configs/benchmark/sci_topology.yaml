@@ -1,0 +1,9 @@
+workflow: benchmark_round_1
+experiment: {name: sci_topology, output_root: outputs/sci}
+data: {root: /mnt/d/_Work/_data/DLG}
+evaluation: {seeds: [42], dataset_seed: 42, deterministic: true, epochs: 1, gpu: -1}
+topology:
+  enabled: true
+  directed: true
+  metrics: [edge_homophily, fraud_homophily, normal_homophily, adjusted_homophily, label_assortativity]
+

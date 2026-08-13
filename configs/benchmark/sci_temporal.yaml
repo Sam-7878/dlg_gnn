@@ -1,0 +1,13 @@
+workflow: benchmark_round_1_temporal
+experiment: {name: sci_temporal, output_root: outputs/sci}
+data:
+  root: /mnt/d/_Work/_data/DLG
+  capability_gated_datasets: [DGraphFin2, NearbyNet]
+evaluation: {seeds: [42, 43, 44, 45, 46], deterministic: true}
+temporal:
+  strategy: chronological
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  require_real_timestamp: true
+  forbid_graph_id_fallback: true
+

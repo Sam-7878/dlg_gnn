@@ -1,0 +1,21 @@
+workflow: benchmark_round_1
+experiment: {name: sci_ablation, output_root: outputs/sci}
+data: {root: /mnt/d/_Work/_data/DLG}
+models: [DLG-Base, DLG]
+evaluation:
+  seeds: [42, 43, 44, 45, 46]
+  dataset_seed: 42
+  deterministic: true
+  epochs: 50
+  validation_ratio: 0.20
+  test_ratio: 0.20
+ablation:
+  enabled: true
+  variants: [l1_only, global_only, l1_l2, full, dlg_base]
+fusion:
+  methods: [l1_only, l2_only, weighted_sum, calibrated, learned, ensemble]
+  weighted_l1: [0.2, 0.4, 0.5, 0.6, 0.8]
+relation:
+  modes: [embedding_knn, temporal_window, shared_entity]
+  knn_k: [3, 5, 10, 20]
+
