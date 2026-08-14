@@ -1,0 +1,3 @@
+experiment: {name: routing, seeds: [11, 22, 33, 44, 55]}
+variants: [variance_only, dual_threshold, risk_sensitive, no_selective_routing]
+threshold_source: validation

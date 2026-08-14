@@ -1,0 +1,53 @@
+workflow: benchmark_round_2_pilot
+
+experiment:
+  name: sci_round2_representative_pilot
+  output_root: outputs/sci_round2_pilot
+
+data:
+  root: /mnt/d/_Work/_data/DLG
+
+datasets: [Elliptic, DGraphFin, Yelp, Cora, Reddit]
+models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG]
+
+evaluation:
+  seeds: [42, 43]
+  dataset_seed: 42
+  deterministic: true
+  # Validity pilot, not a converged paper-performance run.
+  epochs: 1
+  validation_ratio: 0.20
+  test_ratio: 0.20
+  gpu: 0
+  partition_sizes:
+    DGraphFin: 4096
+    Yelp: 4096
+    Reddit: 8192
+
+model_kwargs:
+  DLG:
+    l1_epochs: 1
+
+component_pilot:
+  datasets: [Elliptic, DGraphFin, Yelp, Cora]
+  seeds: [42, 43]
+
+fusion:
+  weighted_l1: [0.2, 0.4, 0.5, 0.6, 0.8]
+
+injection_sensitivity:
+  dataset: Cora
+  dataset_seeds: [41, 42, 43]
+  model_seeds: [42, 43]
+  model: DLG
+
+partition_sensitivity:
+  dataset: Reddit
+  sizes: [2048, 4096, 8192]
+  models: [DOMINANT, DLG]
+  seeds: [42]
+
+topology:
+  adjusted_homophily_primary: true
+  assortativity_role: validation_reference_equivalent_binary_metric
+

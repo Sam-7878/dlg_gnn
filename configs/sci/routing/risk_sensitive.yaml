@@ -1,0 +1,4 @@
+routing:
+  mode: risk_sensitive
+  threshold_source: validation
+  risk_prior_threshold_grid: [0.25, 0.5, 0.75]

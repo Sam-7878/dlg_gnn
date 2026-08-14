@@ -190,12 +190,10 @@ class DLGBase(nn.Module):
             Per-node anomaly scores [N].
         """
         # Attribute reconstruction error
-        attr_diff = torch.pow(x - x_, 2)
-        attr_error = torch.sqrt(torch.sum(attr_diff, dim=1))
+        attr_error = torch.linalg.vector_norm(x - x_, ord=2, dim=1)
         
         # Structure reconstruction error
-        struct_diff = torch.pow(s - s_, 2)
-        struct_error = torch.sqrt(torch.sum(struct_diff, dim=1))
+        struct_error = torch.linalg.vector_norm(s - s_, ord=2, dim=1)
         
         score = weight * attr_error + (1 - weight) * struct_error
         return score

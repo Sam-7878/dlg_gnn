@@ -1,0 +1,4 @@
+hardware:
+  expected_gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+  cuda_timing: synchronize
+  cold_start_excluded_from_steady_state: true

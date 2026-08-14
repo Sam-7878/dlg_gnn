@@ -1,0 +1,5 @@
+model:
+  family: dlg_streammc
+  variants: [deterministic_triage, mc_dual_threshold, mc_risk_sensitive]
+  mc_samples: 8
+  dropout_p: 0.2

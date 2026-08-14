@@ -1,0 +1,7 @@
+dataset:
+  version: gog-processed-v1
+  canonical_root: /mnt/d/_Work/_data/GoG
+  physical_transaction_root: /mnt/d/_Work/_data/dataset/transactions
+  labels_path: /mnt/d/_Work/_data/dataset/labels.csv
+  chains: [ethereum, bsc, polygon]
+  chain_id_feature: false
