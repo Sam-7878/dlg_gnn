@@ -18,6 +18,7 @@ from dataclasses import asdict, dataclass
 from typing import Iterable, Literal
 
 import torch
+from torch_sparse import SparseTensor, matmul as sparse_matmul
 
 BackendName = Literal["dense_reference", "exact_sparse", "chunked_exact"]
 
@@ -109,33 +110,47 @@ def exact_dot_product_row_squared_error(
         rows = rows.to(device=z.device, dtype=torch.long).reshape(-1)
     if rows.numel() and (int(rows.min()) < 0 or int(rows.max()) >= n):
         raise IndexError("row index outside embedding range")
-    src, dst, values = coalesced_adjacency(edge_index.to(z.device), n, edge_weight)
-    values = values.to(dtype=z.dtype, device=z.device)
-
-    inverse = torch.full((n,), -1, dtype=torch.long, device=z.device)
-    inverse[rows] = torch.arange(rows.numel(), device=z.device)
-    local_src = inverse[src]
-    keep = local_src >= 0
-    local_src, dst, values = local_src[keep], dst[keep], values[keep]
-
     z_rows = z[rows]
     gram_term = torch.einsum("bi,ij,bj->b", z_rows, z.T @ z, z_rows)
-    edge_dot = (z_rows[local_src] * z[dst]).sum(dim=1)
 
     if positive_weight == 0.5:
-        edge_correction = values.square() - 2.0 * values * edge_dot
-        squared = gram_term
+        values = edge_weight
+        if values is None:
+            values = torch.ones(edge_index.shape[1], dtype=z.dtype, device=edge_index.device)
+        else:
+            values = values.to(dtype=z.dtype, device=edge_index.device)
+        adjacency = SparseTensor(
+            row=edge_index[0], col=edge_index[1], value=values,
+            sparse_sizes=(n, n), is_sorted=False,
+        ).coalesce().to(z.device)
+        src, _, coalesced_values = adjacency.coo()
+        row_norm = torch.zeros(n, dtype=z.dtype, device=z.device)
+        row_norm.scatter_add_(0, src, coalesced_values.square())
+        # A @ Z is a fused SpMM.  It exactly represents sum_j A_ij z_j
+        # without constructing an [E,H] edge-dot tensor.
+        neighbor_sum = sparse_matmul(adjacency, z, reduce="sum")
+        cross = (z_rows * neighbor_sum[rows]).sum(dim=1)
+        return torch.clamp_min(row_norm[rows] - 2.0 * cross + gram_term, 0.0)
     else:
         if not 0.0 <= positive_weight <= 1.0:
             raise ValueError("positive_weight must lie in [0, 1]")
+        src, dst, values = coalesced_adjacency(edge_index.to(z.device), n, edge_weight)
+        values = values.to(dtype=z.dtype, device=z.device)
+        inverse = torch.full((n,), -1, dtype=torch.long, device=z.device)
+        inverse[rows] = torch.arange(rows.numel(), device=z.device)
+        local_src = inverse[src]
+        keep = local_src >= 0
+        local_src, dst, values = local_src[keep], dst[keep], values[keep]
         p = float(positive_weight)
         q = 1.0 - p
-        edge_correction = p * values.square() - 2.0 * p * values * edge_dot
-        edge_correction = edge_correction + (p - q) * edge_dot.square()
         squared = q * gram_term
-
-    correction_by_row = torch.zeros(rows.numel(), dtype=z.dtype, device=z.device)
-    correction_by_row.scatter_add_(0, local_src, edge_correction)
+        correction_by_row = torch.zeros(rows.numel(), dtype=z.dtype, device=z.device)
+        for start in range(0, local_src.numel(), 1_000_000):
+            part = slice(start, start + 1_000_000)
+            edge_dot = (z_rows[local_src[part]] * z[dst[part]]).sum(dim=1)
+            correction = p * values[part].square() - 2.0 * p * values[part] * edge_dot
+            correction = correction + (p - q) * edge_dot.square()
+            correction_by_row.scatter_add_(0, local_src[part], correction)
     # Cancellation can create tiny negative values although the exact quantity
     # is non-negative.  Clamping preserves the mathematical objective.
     return torch.clamp_min(squared + correction_by_row, 0.0)

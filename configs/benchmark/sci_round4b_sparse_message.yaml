@@ -1,0 +1,68 @@
+workflow: sci_benchmark_round_4b_sparse_message_readiness
+experiment:
+  output_root: outputs/sci_round4b
+  auto_start_round5: false
+data:
+  root: /mnt/d/_Work/_data/DLG
+message_passing:
+  reference_backend: pyg_coo_reference
+  default_backend: sparse_fused
+  normalized_adjacency_cache: true
+reconstruction:
+  linear_backend: exact_sparse
+  nonlinear_backend: chunked_exact
+  score_chunk_size: 8192
+  nonlinear_score_chunk_size: 256
+execution:
+  gpu: 0
+  fresh_subprocess_per_run: true
+  partition_fallback: false
+  cpu_fallback: false
+  approximation_used: false
+  run_timeout_sec: 1800
+evaluation:
+  dataset_seed: 42
+  validation_ratio: 0.2
+  test_ratio: 0.2
+fusion:
+  weighted_l1: [0.2, 0.4, 0.5, 0.6, 0.8]
+large_graph:
+  datasets: [DGraphFin, Yelp, Reddit]
+  models: [DOMINANT, CONAD, DLG-Base, DLG-Aug]
+  seed: 42
+  epochs: 1
+  l1_epochs: 1
+anomalydae:
+  microbenchmark_nodes: [10000, 20000, 40000, 80000]
+  hidden_dim: 64
+  chunk_size: 256
+  repeats: 3
+  benchmark_epochs: 50
+  final_inference_passes: 1
+  prohibitive_gpu_hours: 24
+historical_closure:
+  yelp_models: [DOMINANT, CONAD, DLG-Base]
+  reddit_models: [CONAD]
+  seeds: [42, 43]
+component:
+  datasets: [Elliptic, DGraphFin, Cora, Yelp]
+  optional_datasets: [Reddit]
+  variants: [DLG-Base, DLG-Local, DLG-Aug, DLG-Fusion]
+  seeds: [42, 43]
+  epochs: 50
+  l1_epochs: 50
+representative:
+  datasets: [Elliptic, DGraphFin, Yelp, Cora, Reddit]
+  models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG-Aug]
+  seeds: [42, 43]
+synthetic:
+  fixed_dataset_seed: 42
+  robustness_appendix_seeds: [41, 42, 43, 44, 45]
+metrics:
+  primary: [roc_auc, pr_auc, validation_selected_f1]
+  fixed_05: false
+statistics:
+  seed_aggregation_first: true
+  complete_cases_only: true
+  unsupported_rank_imputation: false
+  tests: [friedman, paired_wilcoxon_holm]

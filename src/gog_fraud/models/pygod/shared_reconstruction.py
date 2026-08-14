@@ -26,6 +26,13 @@ from .exact_reconstruction import (
     resolve_backend,
 )
 from .stable_reconstruction import CONAD, DOMINANT, StableDOMINANTBase
+from .sparse_message import (
+    MessageBackendName,
+    MessageGraphCache,
+    SparseFusedGCN,
+    normalized_sparse_adjt,
+    resolve_message_backend,
+)
 
 
 class CheckpointGCN(GCN):
@@ -131,19 +138,43 @@ class SharedFullGraphMixin:
         self.score_chunk_size = backend.score_chunk_size
         self.reconstruction_metadata = backend.metadata
 
+    def _init_message(self, message_backend: MessageBackendName):
+        backend = resolve_message_backend(message_backend)
+        self.message_backend = backend.name
+        self.message_metadata = backend.metadata
+        self._message_cache = MessageGraphCache()
+        if hasattr(self, "reconstruction_metadata"):
+            self.reconstruction_metadata.update(self.message_metadata)
+
+    def _message_graph(self, data, dtype, *, edge_index=None, cache=True):
+        edge_index = data.edge_index if edge_index is None else edge_index
+        if self.message_backend == "pyg_coo_reference":
+            return edge_index.to(self.device)
+        edge_weight = getattr(data, "edge_weight", None) if edge_index is data.edge_index else None
+        if cache:
+            return self._message_cache.get(
+                edge_index, data.num_nodes, edge_weight=edge_weight,
+                dtype=dtype, device=self.device,
+            )
+        return normalized_sparse_adjt(
+            edge_index, data.num_nodes, edge_weight=edge_weight,
+            dtype=dtype, device=self.device,
+        )
+
     def process_graph(self, data):
         # edge_index is already the sparse full-graph target and message graph.
         data._reconstruction_backend = self.reconstruction_backend
+        data._message_backend = self.message_backend
 
     def _targets(self, data):
         return data.x.to(self.device), data.x.to(self.device)
 
     def _forward_components(self, data):
         x = data.x.to(self.device)
-        edge_index = data.edge_index.to(self.device)
-        x_hat, z_structure = self.model(x, edge_index)
+        message_graph = self._message_graph(data, x.dtype)
+        x_hat, z_structure = self.model(x, message_graph)
         x_target, _ = self._targets(data)
-        return x_target, x_hat, z_structure, edge_index
+        return x_target, x_hat, z_structure, data.edge_index
 
     def _score_rows(self, components, rows):
         x, x_hat, z_structure, edge_index = components
@@ -163,6 +194,14 @@ class SharedFullGraphMixin:
 
     def _backward_exact(self, data, components, extra_loss=None):
         n = data.num_nodes
+        if self.reconstruction_backend == "exact_sparse" and not self.sigmoid_structure:
+            rows = torch.arange(n, device=self.device)
+            score = self._score_rows(components, rows)
+            loss = score.mean()
+            if extra_loss is not None:
+                loss = loss + extra_loss
+            loss.backward()
+            return score.detach().cpu()
         chunks = list(iter_row_chunks(n, self.score_chunk_size, self.device))
         scores = torch.empty(n, device="cpu")
         for index, rows in enumerate(chunks):
@@ -203,6 +242,13 @@ class SharedFullGraphMixin:
         self.process_graph(data)
         self.model.eval()
         components = self._forward_components(data)
+        if self.reconstruction_backend == "exact_sparse" and not self.sigmoid_structure:
+            rows = torch.arange(data.num_nodes, device=self.device)
+            result = self._score_rows(components, rows).cpu()
+            if self.save_emb:
+                emb = getattr(self.model, "emb", None)
+                self.emb = emb.detach().cpu() if emb is not None else None
+            return result
         scores = []
         for rows in iter_row_chunks(data.num_nodes, self.score_chunk_size, self.device):
             scores.append(self._score_rows(components, rows).cpu())
@@ -213,18 +259,22 @@ class SharedFullGraphMixin:
         return result
 
     def backend_metadata(self) -> dict[str, object]:
-        return dict(self.reconstruction_metadata)
+        return {**self.reconstruction_metadata, **self.message_metadata}
 
 
 class SharedDOMINANT(SharedFullGraphMixin, DOMINANT):
     def __init__(self, *args, reconstruction_backend="exact_sparse", score_chunk_size=8192,
-                 gradient_checkpointing=True, **kwargs):
-        if gradient_checkpointing:
+                 gradient_checkpointing=True, message_backend="sparse_fused", **kwargs):
+        if message_backend == "sparse_fused":
+            kwargs["backbone"] = SparseFusedGCN
+            gradient_checkpointing = False
+        elif gradient_checkpointing:
             kwargs["backbone"] = CheckpointGCN
             kwargs.setdefault("cached", True)
         super().__init__(*args, **kwargs)
         self.sigmoid_structure = bool(self.sigmoid_s)
         self._init_exact(reconstruction_backend, score_chunk_size)
+        self._init_message(message_backend)
         self.reconstruction_metadata["gradient_checkpointing"] = bool(gradient_checkpointing)
 
     def init_model(self, **kwargs):
@@ -239,13 +289,17 @@ class SharedDOMINANT(SharedFullGraphMixin, DOMINANT):
 
 class SharedDLGBase(SharedFullGraphMixin, DLG):
     def __init__(self, *args, reconstruction_backend="exact_sparse", score_chunk_size=8192,
-                 gradient_checkpointing=True, **kwargs):
-        if gradient_checkpointing:
+                 gradient_checkpointing=True, message_backend="sparse_fused", **kwargs):
+        if message_backend == "sparse_fused":
+            kwargs["backbone"] = SparseFusedGCN
+            gradient_checkpointing = False
+        elif gradient_checkpointing:
             kwargs["backbone"] = CheckpointGCN
             kwargs.setdefault("cached", True)
         super().__init__(*args, **kwargs)
         self.sigmoid_structure = bool(self.sigmoid_s)
         self._init_exact(reconstruction_backend, score_chunk_size)
+        self._init_message(message_backend)
         self.reconstruction_metadata["gradient_checkpointing"] = bool(gradient_checkpointing)
 
     def init_model(self, **kwargs):
@@ -259,14 +313,50 @@ class SharedDLGBase(SharedFullGraphMixin, DLG):
 
 class SharedDLGFull(SharedFullGraphMixin, DLGFull):
     def __init__(self, *args, reconstruction_backend="exact_sparse", score_chunk_size=8192,
-                 gradient_checkpointing=True, **kwargs):
-        if gradient_checkpointing:
+                 gradient_checkpointing=True, message_backend="sparse_fused", **kwargs):
+        if message_backend == "sparse_fused":
+            kwargs["backbone"] = SparseFusedGCN
+            gradient_checkpointing = False
+        elif gradient_checkpointing:
             kwargs["backbone"] = CheckpointGCN
             kwargs.setdefault("cached", True)
         super().__init__(*args, **kwargs)
         self.sigmoid_structure = bool(self.sigmoid_s)
         self._init_exact(reconstruction_backend, score_chunk_size)
+        self._init_message(message_backend)
         self.reconstruction_metadata["gradient_checkpointing"] = bool(gradient_checkpointing)
+
+    def _pretrain_level1(self, data):
+        """Full-graph local pretraining using the selected message backend."""
+        in_dim = data.x.size(1)
+        backbone = SparseFusedGCN if self.message_backend == "sparse_fused" else GCN
+        l1_encoder = backbone(
+            in_channels=in_dim, hidden_channels=self.l1_hid_dim,
+            num_layers=self.l1_hops, out_channels=self.l1_hid_dim,
+        ).to(self.device)
+        l1_decoder = torch.nn.Linear(self.l1_hid_dim, in_dim).to(self.device)
+        x = data.x.to(self.device)
+        message_graph = self._message_graph(data, x.dtype)
+        optimizer = torch.optim.Adam(
+            list(l1_encoder.parameters()) + list(l1_decoder.parameters()), lr=.01
+        )
+        l1_encoder.train()
+        for _ in range(self.l1_epochs):
+            optimizer.zero_grad(set_to_none=True)
+            z = l1_encoder(x, message_graph)
+            x_hat = l1_decoder(z)
+            loss = F.mse_loss(x_hat, x)
+            loss.backward(); optimizer.step()
+        l1_encoder.eval()
+        with torch.no_grad():
+            z = l1_encoder(x, message_graph)
+            x_hat = l1_decoder(z)
+            data.dlg_l1_score = (x_hat - x).square().mean(dim=1).cpu()
+            embeddings = z.cpu()
+        del l1_encoder, l1_decoder, optimizer
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return embeddings
 
     def process_graph(self, data):
         if hasattr(data, "_dlg_full_augmented") and data._dlg_full_augmented:
@@ -278,6 +368,7 @@ class SharedDLGFull(SharedFullGraphMixin, DLGFull):
         data.x = torch.cat([data.x, l1_embs.to(data.x.device)], dim=-1)
         data._dlg_full_augmented = True
         data._reconstruction_backend = self.reconstruction_backend
+        data._message_backend = self.message_backend
 
     def _targets(self, data):
         return data.dlg_original_x.to(self.device), data.x.to(self.device)
@@ -301,6 +392,7 @@ class SharedAnomalyDAE(SharedFullGraphMixin, PyGODAnomalyDAE):
         self.positive_weight_structure = self.theta / (1.0 + self.theta)
         self.sigmoid_structure = True
         self._init_exact(reconstruction_backend, score_chunk_size)
+        self._init_message("pyg_coo_reference")
         self.reconstruction_metadata["gradient_checkpointing"] = False
 
     def init_model(self, **kwargs):
@@ -310,8 +402,11 @@ class SharedAnomalyDAE(SharedFullGraphMixin, PyGODAnomalyDAE):
 
 class SharedCONAD(SharedFullGraphMixin, CONAD):
     def __init__(self, *args, reconstruction_backend="exact_sparse", score_chunk_size=8192,
-                 gradient_checkpointing=True, **kwargs):
-        if gradient_checkpointing:
+                 gradient_checkpointing=True, message_backend="sparse_fused", **kwargs):
+        if message_backend == "sparse_fused":
+            kwargs["backbone"] = SparseFusedGCN
+            gradient_checkpointing = False
+        elif gradient_checkpointing:
             kwargs["backbone"] = CheckpointGCN
             # CONAD alternates an augmented and the original graph in one
             # iteration; caching normalized adjacency would mix graph states.
@@ -319,6 +414,7 @@ class SharedCONAD(SharedFullGraphMixin, CONAD):
         super().__init__(*args, **kwargs)
         self.sigmoid_structure = bool(self.sigmoid_s)
         self._init_exact(reconstruction_backend, score_chunk_size)
+        self._init_message(message_backend)
         self.reconstruction_metadata["gradient_checkpointing"] = bool(gradient_checkpointing)
         self._contrastive_extra = None
 
@@ -344,23 +440,26 @@ class SharedCONAD(SharedFullGraphMixin, CONAD):
         # Same independent Bernoulli(m/N) edge distribution as the dense code,
         # generated in bounded row blocks.
         probability = min(1.0, self.m / max(1, n))
-        # Geometric skipping samples the exact iid Bernoulli row distribution
-        # without drawing or storing ``high_degree_rows x N`` uniforms.
-        for source in high_nodes.tolist():
-            destinations = []
-            position = -1
-            while True:
-                failures = int(torch.distributions.Geometric(
-                    torch.tensor(probability, device=self.device)
-                ).sample().item())
-                position += failures + 1
-                if position >= n:
-                    break
-                destinations.append(position)
-            if destinations:
-                dst = torch.tensor(destinations, device=self.device, dtype=torch.long)
-                src = torch.full_like(dst, source)
-                pieces.append(torch.stack((src, dst)))
+        # Geometric skipping samples the exact iid Bernoulli row process.  It
+        # is vectorized in blocks, so expected work is O(high_rows * m), not
+        # O(high_rows * N), while incomplete rare rows are extended exactly.
+        block_rows, width = 4096, max(64, int(self.m * 2 + 32))
+        for sources in high_nodes.split(block_rows):
+            active_sources = sources
+            offsets = torch.full((sources.numel(),), -1, device=self.device, dtype=torch.long)
+            while active_sources.numel():
+                trials = torch.empty(
+                    (active_sources.numel(), width), device=self.device
+                ).geometric_(probability).long()
+                positions = trials.cumsum(dim=1) + offsets[:, None]
+                valid = positions < n
+                local, column = torch.nonzero(valid, as_tuple=True)
+                if local.numel():
+                    pieces.append(torch.stack((active_sources[local], positions[local, column])))
+                new_offsets = positions[:, -1]
+                incomplete = new_offsets < n
+                active_sources = active_sources[incomplete]
+                offsets = new_offsets[incomplete]
         edge_aug = torch.cat(pieces, dim=1)
         x_aug = x.clone()
         deviated = (self.r / 2 <= prob) & (prob < self.r * 3 / 4)
@@ -377,7 +476,10 @@ class SharedCONAD(SharedFullGraphMixin, CONAD):
     def _forward_components(self, data):
         if self.model.training:
             x_aug, edge_aug, labels = self._sparse_data_augmentation(data)
-            self.model(x_aug, edge_aug)
+            augmented_graph = self._message_graph(
+                data, x_aug.dtype, edge_index=edge_aug, cache=False
+            )
+            self.model(x_aug, augmented_graph)
             h_aug = self.model.emb
         components = super()._forward_components(data)
         if self.model.training:
