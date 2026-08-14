@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import logging
 import time
@@ -13,11 +14,13 @@ import pandas as pd
 import torch
 import yaml
 from sklearn.metrics import average_precision_score, roc_auc_score
+from torch_geometric.data import Data
+from torch_geometric.utils import add_self_loops, subgraph
 
 from gog_fraud.evaluation.reproducibility import seed_everything
 from gog_fraud.evaluation.threshold_protocol import best_f1_threshold, evaluate_threshold_protocol
 from gog_fraud.pipelines.run_sci_round1_benchmark import (
-    _eligible_labels, _fit_and_score, _legacy_registries, _limit_graph,
+    _eligible_labels, _fit_and_score, _fit_and_score_partitioned, _legacy_registries, _limit_graph,
     _resolve_gpu, _validation_test_indices,
 )
 
@@ -41,6 +44,36 @@ def _validation_scale(validation: np.ndarray, all_scores: np.ndarray) -> np.ndar
     if high <= low:
         return np.zeros_like(all_scores, dtype=float)
     return np.clip((all_scores - low) / (high - low), 0.0, 1.0)
+
+
+def _fit_layered_partitioned(model_class, data, *, partition_size: int, epochs: int,
+                             gpu: int, model_kwargs: dict):
+    """Reassemble both historical DLGFull global and empirical local scores."""
+    if data.num_nodes <= partition_size:
+        model, global_score, train, infer, before, peak, delta, vram = _fit_and_score(
+            model_class, data, epochs=epochs, gpu=gpu, model_kwargs=model_kwargs)
+        local_score = data.dlg_l1_score.detach().cpu().numpy().reshape(-1)
+        return model, local_score, global_score, train, infer, before, peak, delta, vram
+    local_scores, global_scores = [], []
+    train_total = infer_total = peak = delta = vram_peak = 0.0
+    before_first, last_model = None, None
+    for start in range(0, data.num_nodes, partition_size):
+        nodes = torch.arange(start, min(start + partition_size, data.num_nodes), dtype=torch.long)
+        edge_index, _ = subgraph(nodes, data.edge_index, relabel_nodes=True, num_nodes=data.num_nodes)
+        edge_index, _ = add_self_loops(edge_index, num_nodes=len(nodes))
+        part = Data(x=data.x[nodes].clone(), y=data.y[nodes].clone(), edge_index=edge_index,
+                    num_nodes=len(nodes))
+        last_model, global_score, train, infer, before, ram, ram_delta, vram = _fit_and_score(
+            model_class, part, epochs=epochs, gpu=gpu, model_kwargs=model_kwargs)
+        local_scores.append(part.dlg_l1_score.detach().cpu().numpy().reshape(-1))
+        global_scores.append(global_score)
+        train_total += train; infer_total += infer
+        if before_first is None: before_first = before
+        peak, delta, vram_peak = max(peak, ram), max(delta, ram_delta), max(vram_peak, vram)
+        gc.collect()
+        if torch.cuda.is_available(): torch.cuda.empty_cache()
+    return (last_model, np.concatenate(local_scores), np.concatenate(global_scores),
+            train_total, infer_total, float(before_first or 0.0), peak, delta, vram_peak)
 
 
 def _metric_row(dataset: str, seed: int, variant: str, y: np.ndarray, score: np.ndarray,
@@ -90,12 +123,14 @@ def run(config: dict, output_root: Path, *, datasets: list[str] | None = None,
         base = _limit_graph(dataset_registry[dataset](), max_nodes or evaluation.get("max_nodes"), int(evaluation.get("dataset_seed", 42)))
         eligible, y = _eligible_labels(base)
         for seed in seed_values:
+            partition_size = int(evaluation.get("partition_sizes", {}).get(dataset, 16384))
             val, test = _validation_test_indices(y, seed, float(evaluation.get("validation_ratio", .2)), float(evaluation.get("test_ratio", .2)))
             seed_everything(seed)
             try:
                 global_data = base.clone()
-                _, global_score, train_time, inference_time, rss_before, ram, rss_delta, vram = _fit_and_score(
-                    model_registry["DLG-Base"], global_data, epochs=int(evaluation.get("epochs", 50)), gpu=gpu, model_kwargs={})
+                _, global_score, train_time, inference_time, rss_before, ram, rss_delta, vram = _fit_and_score_partitioned(
+                    model_registry["DLG-Base"], global_data, partition_size=partition_size,
+                    epochs=int(evaluation.get("epochs", 50)), gpu=gpu, model_kwargs={})
                 rows.append(_metric_row(dataset, seed, "global_only", y, global_score[eligible], val, test,
                                         train_time=train_time, inference_time=inference_time, peak_ram=ram, peak_vram=vram))
             except Exception as exc:
@@ -104,9 +139,10 @@ def run(config: dict, output_root: Path, *, datasets: list[str] | None = None,
             seed_everything(seed)
             try:
                 layered_data = base.clone()
-                _, layered_score, train_time, inference_time, rss_before, ram, rss_delta, vram = _fit_and_score(
-                    model_registry["DLG"], layered_data, epochs=int(evaluation.get("epochs", 50)), gpu=gpu, model_kwargs={})
-                local_score = layered_data.dlg_l1_score.detach().cpu().numpy().reshape(-1)
+                _, local_score, layered_score, train_time, inference_time, rss_before, ram, rss_delta, vram = _fit_layered_partitioned(
+                    model_registry["DLG"], layered_data, partition_size=partition_size,
+                    epochs=int(evaluation.get("epochs", 50)), gpu=gpu,
+                    model_kwargs=dict(config.get("model_kwargs", {}).get("DLG", {})))
                 local, layered = local_score[eligible], layered_score[eligible]
                 rows.append(_metric_row(dataset, seed, "local_only", y, local, val, test,
                                         train_time=train_time, inference_time=0.0, peak_ram=ram, peak_vram=vram,

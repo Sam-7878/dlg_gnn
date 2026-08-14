@@ -64,6 +64,13 @@ LABEL_PROVENANCE_MAP = {
     "PubMed": "synthetic_injection",
 }
 
+DISPLAY_NAME_MAP = {
+    "Elliptic": "Elliptic", "DGraphFin": "DGraphFin", "Yelp": "Yelp-Syn",
+    "Amazon": "Amazon-Syn", "BitcoinOTC": "BitcoinOTC", "Flickr": "Flickr-Syn",
+    "Reddit": "Reddit-Syn", "Cora": "Cora-Syn", "CiteSeer": "CiteSeer-Syn",
+    "PubMed": "PubMed-Syn",
+}
+
 
 def dataset_metadata(name):
     if name not in DOMAIN_FINE_MAP:
@@ -72,6 +79,9 @@ def dataset_metadata(name):
         "domain": DOMAIN_FINE_MAP[name],
         "domain_group": DOMAIN_BROAD_MAP[name],
         "label_provenance": LABEL_PROVENANCE_MAP[name],
+        "display_name": DISPLAY_NAME_MAP[name],
+        "real_or_synthetic": ("synthetic" if "synthetic" in LABEL_PROVENANCE_MAP[name]
+                              else "real_or_derived"),
     }
 
 MODEL_FAMILY_MAP = {

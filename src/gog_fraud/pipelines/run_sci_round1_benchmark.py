@@ -30,6 +30,7 @@ from torch_geometric.utils import add_self_loops, remove_isolated_nodes, subgrap
 
 from analysis.utils import dataset_metadata
 from gog_fraud.evaluation.fraud_topology import compute_fraud_topology_metrics
+from gog_fraud.evaluation.finite_guard import assert_finite_tensor
 from gog_fraud.evaluation.reproducibility import seed_everything
 from gog_fraud.evaluation.score_semantics import audit_score_orientation, get_score_semantics
 from gog_fraud.evaluation.threshold_protocol import evaluate_threshold_protocol
@@ -76,9 +77,10 @@ def _legacy_registries(data_root: str, dataset_seed: int = 42):
         "CiteSeer": lambda: legacy.load_planetoid("CiteSeer"),
         "PubMed": lambda: legacy.load_planetoid("PubMed"),
     }
+    from gog_fraud.models.pygod.stable_reconstruction import DOMINANT, CONAD
     models = {
-        "DOMINANT": legacy.DOMINANT, "AnomalyDAE": legacy.AnomalyDAE,
-        "CoLA": legacy.CoLA, "CONAD": legacy.CONAD, "GADNR": legacy.GADNR,
+        "DOMINANT": DOMINANT, "AnomalyDAE": legacy.AnomalyDAE,
+        "CoLA": legacy.CoLA, "CONAD": CONAD, "GADNR": legacy.GADNR,
         "OCGNN": legacy.OCGNN, "DLG-Base": legacy.DLGBase, "DLG": legacy.DLG,
     }
     return datasets, models
@@ -161,21 +163,29 @@ def _fit_and_score_partitioned(model_class, data, *, partition_size: int, epochs
     if data.num_nodes <= partition_size:
         return _fit_and_score(model_class, data, epochs=epochs, gpu=gpu, model_kwargs=model_kwargs)
     scores, train_total, inference_total, rss_before, ram_peak, ram_delta, vram_peak, last_model = [], 0.0, 0.0, None, 0.0, 0.0, 0.0, None
-    for start in range(0, data.num_nodes, partition_size):
+    for partition_id, start in enumerate(range(0, data.num_nodes, partition_size)):
         nodes = torch.arange(start, min(start + partition_size, data.num_nodes), dtype=torch.long)
         edge_index, _ = subgraph(nodes, data.edge_index, relabel_nodes=True, num_nodes=data.num_nodes)
         edge_index, _ = add_self_loops(edge_index, num_nodes=len(nodes))
         part = Data(x=data.x[nodes].clone(), y=data.y[nodes].clone(), edge_index=edge_index, num_nodes=len(nodes))
+        if part.edge_index.numel() and (int(part.edge_index.min()) < 0 or int(part.edge_index.max()) >= part.num_nodes):
+            raise IndexError(f"partition {partition_id} edge_index outside [0,{part.num_nodes})")
+        assert_finite_tensor(part.x, stage="input_x", partition_id=partition_id,
+                             node_range=f"{start}:{start + len(nodes)}")
         if hasattr(data, "eval_mask") and data.eval_mask is not None:
             part.eval_mask = data.eval_mask[nodes].clone()
         last_model, part_score, train_time, inference_time, before, ram, delta, vram = _fit_and_score(
             model_class, part, epochs=epochs, gpu=gpu, model_kwargs=model_kwargs)
         scores.append(part_score); train_total += train_time; inference_total += inference_time
+        assert_finite_tensor(part_score, stage="partition_score", partition_id=partition_id,
+                             node_range=f"{start}:{start + len(nodes)}")
         if rss_before is None: rss_before = before
         ram_peak, ram_delta, vram_peak = max(ram_peak, ram), max(ram_delta, delta), max(vram_peak, vram)
         gc.collect()
         if torch.cuda.is_available(): torch.cuda.empty_cache()
-    return last_model, np.concatenate(scores), train_total, inference_total, float(rss_before or 0.0), ram_peak, ram_delta, vram_peak
+    assembled = np.concatenate(scores)
+    assert_finite_tensor(assembled, stage="assembled_score")
+    return last_model, assembled, train_total, inference_total, float(rss_before or 0.0), ram_peak, ram_delta, vram_peak
 
 
 def _resolve_gpu(requested: int) -> int:

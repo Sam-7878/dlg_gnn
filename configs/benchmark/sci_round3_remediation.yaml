@@ -1,0 +1,40 @@
+workflow: benchmark_round_3_remediation
+experiment:
+  output_root: outputs/sci_round3
+data:
+  root: /mnt/d/_Work/_data/DLG
+partition:
+  strategy: graph_aware_halo
+  backend: metis
+  halo_hops: 1
+  sci_evidence: true
+  max_expanded_nodes: 8192
+  core_sizes:
+    DGraphFin: 4096
+    Yelp: 512
+    Reddit: 32
+  stored_bidirectional:
+    DGraphFin: false
+    Yelp: true
+    Reddit: true
+  acceptance:
+    preferred: 0.95
+    minimum: 0.80
+convergence:
+  datasets: [Cora, Elliptic]
+  models: [DOMINANT, AnomalyDAE, CONAD, DLG-Base, DLG]
+  epochs: [1, 5, 10, 20, 50]
+  seed: 42
+injection:
+  dataset_seeds: [41, 42, 43, 44, 45]
+  model_seeds: [42, 43, 44]
+  models: [DOMINANT, DLG]
+  epochs: 10
+  l1_epochs: 10
+representative:
+  datasets: [Elliptic, DGraphFin, Yelp, Cora, Reddit]
+  models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG]
+  seeds: [42, 43]
+  epochs: 1
+round4:
+  auto_start: false

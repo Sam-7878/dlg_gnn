@@ -2,15 +2,15 @@
 DLG-Full — Decoupled Local-to-Global (Full Pipeline) Detector
 
 A PyGOD-compatible detector that implements the FULL DLG pipeline:
-  1. Level 1 (process_graph): Pre-train a local GCN-AE on ego-net subgraphs
-     to capture neighborhood-level anomalous patterns.
+  1. Local stage (process_graph): Pre-train a full-input GCN feature AE whose
+     finite message-passing receptive field captures local context.
   2. Level 2 (fit): Train a global GCN-AE on augmented features
      [original_x | L1_embeddings] to capture graph-wide relational patterns.
 
 Key Difference from DLG:
   - DLG: local_encoder + global_encoder operate on the SAME graph → deeper GCN.
-  - DLG-Full: L1 is pre-trained on SEPARATE ego-nets → genuine local context.
-    L2 then operates on features enriched with true local structure information.
+  - DLG-Full: the local GCN is pre-trained separately and frozen; it does not
+    extract or iterate explicit ego-net objects.
 
 Fully compatible with PyGOD's fit()/decision_function() interface.
 Can be submitted as a PyGOD PR.
@@ -31,8 +31,8 @@ class DLGFull(DeepDetector):
     Decoupled Local-to-Global Graph Neural Network — Full Pipeline (DLG-Full)
     
     Unlike the standard DLG which runs both local and global encoders on the
-    same graph topology, DLG-Full pre-trains a separate Level 1 encoder on
-    k-hop ego-net subgraphs to capture genuine neighborhood-level patterns.
+    same graph topology, DLG-Full pre-trains a separate local-receptive GCN
+    feature autoencoder on the complete input passed to the detector.
     These L1 embeddings are then concatenated with original features, and a
     Level 2 global encoder learns graph-wide relational anomaly patterns
     on the augmented representation.
@@ -44,7 +44,7 @@ class DLGFull(DeepDetector):
     num_layers : int, optional
         Number of GCN layers in the L2 global encoder. Default: ``4``.
     l1_hops : int, optional
-        Number of hops for ego-net extraction. Default: ``2``.
+        Number of local GCN message-passing layers/hops. Default: ``2``.
     l1_epochs : int, optional
         Number of training epochs for L1 pre-training. Default: ``20``.
     l1_hid_dim : int, optional
@@ -132,7 +132,7 @@ class DLGFull(DeepDetector):
 
     def process_graph(self, data):
         """
-        Pre-process: compute dense adjacency + pre-train L1 on ego-nets.
+        Compute dense adjacency and pre-train the local-receptive GCN AE.
         
         Guarded against double-augmentation (process_graph is called in both
         fit() and decision_function() by PyGOD's DeepDetector).
@@ -163,9 +163,9 @@ class DLGFull(DeepDetector):
         loss, then FROZEN. Its embeddings capture local structural patterns that
         the L2 global encoder can leverage but couldn't learn by itself.
         
-        GCN's message passing inherently aggregates k-hop neighborhood info
-        (k = num_layers), achieving the same effect as explicit ego-net
-        extraction but in O(1) forward passes instead of O(N) k_hop_subgraph calls.
+        GCN message passing aggregates k-hop neighborhood information
+        (k = num_layers) in a full-input forward pass. No explicit ego-net
+        extraction occurs.
         """
         in_dim = data.x.size(1)
         device = self.device
