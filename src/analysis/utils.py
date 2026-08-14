@@ -54,7 +54,7 @@ DOMAIN_BROAD_MAP = {
 LABEL_PROVENANCE_MAP = {
     "Elliptic": "real",
     "DGraphFin": "real",
-    "Yelp": "real",
+    "Yelp": "synthetic_injection_overwrites_original",
     "Amazon": "synthetic_injection",
     "BitcoinOTC": "derived_from_signed_trust",
     "Flickr": "synthetic_injection",

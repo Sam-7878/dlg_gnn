@@ -31,9 +31,9 @@ def test_partitioned_scoring_preserves_node_count(monkeypatch):
     data = Data(x=torch.randn(11, 3), y=torch.tensor([0] * 8 + [1] * 3),
                 edge_index=torch.stack([torch.arange(11), torch.roll(torch.arange(11), -1)]), num_nodes=11)
     def fake_fit(model_class, part, **kwargs):
-        return object(), np.arange(part.num_nodes, dtype=float), 1.0, .5, 10.0, 0.0
+        return object(), np.arange(part.num_nodes, dtype=float), 1.0, .5, 8.0, 10.0, 2.0, 0.0
     monkeypatch.setattr(runner, "_fit_and_score", fake_fit)
-    _, scores, train, inference, _, _ = runner._fit_and_score_partitioned(
+    _, scores, train, inference, _, _, _, _ = runner._fit_and_score_partitioned(
         object, data, partition_size=4, epochs=1, gpu=-1, model_kwargs={})
     assert len(scores) == 11
     assert train == 3.0 and inference == 1.5

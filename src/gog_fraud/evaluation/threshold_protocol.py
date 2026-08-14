@@ -5,7 +5,10 @@ from dataclasses import asdict, dataclass
 from typing import Any
 
 import numpy as np
-from sklearn.metrics import f1_score, precision_recall_curve, precision_score, recall_score
+from sklearn.metrics import (
+    balanced_accuracy_score, f1_score, matthews_corrcoef,
+    precision_recall_curve, precision_score, recall_score,
+)
 
 
 def _arrays(y_true: Any, y_score: Any) -> tuple[np.ndarray, np.ndarray]:
@@ -50,6 +53,11 @@ class ThresholdEvaluation:
     oracle_best_threshold: float
     validation_f1: float
     validation_threshold: float
+    validation_threshold_percentile: float
+    validation_precision: float
+    validation_recall: float
+    validation_mcc: float
+    validation_balanced_accuracy: float
     f1_at_05: float
     precision_at_05: float
     recall_at_05: float
@@ -58,6 +66,13 @@ class ThresholdEvaluation:
     recall_at_k: float
     topk_k: int
     topk_prevalence_source: str
+    validation_positive: int
+    validation_negative: int
+    test_positive: int
+    test_negative: int
+    threshold_unstable_warning: bool
+    metric_low_support_warning: bool
+    fixed_05_applicable: bool
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -70,6 +85,7 @@ def evaluate_threshold_protocol(
     test_score: Any,
     *,
     topk_prevalence: float | None = None,
+    fixed_05_applicable: bool = False,
 ) -> ThresholdEvaluation:
     """Select a threshold only on validation labels, then evaluate on test.
 
@@ -82,6 +98,7 @@ def evaluate_threshold_protocol(
     validation_pred = score >= validation_threshold
     oracle_f1, oracle_threshold = best_f1_threshold(y, score)
     fixed_pred = score >= 0.5
+    threshold_percentile = float(np.mean(val_score <= validation_threshold))
 
     if topk_prevalence is None:
         prevalence = float(val_y.mean())
@@ -99,13 +116,24 @@ def evaluate_threshold_protocol(
         oracle_best_threshold=oracle_threshold,
         validation_f1=float(f1_score(y, validation_pred, zero_division=0)),
         validation_threshold=validation_threshold,
-        f1_at_05=float(f1_score(y, fixed_pred, zero_division=0)),
-        precision_at_05=float(precision_score(y, fixed_pred, zero_division=0)),
-        recall_at_05=float(recall_score(y, fixed_pred, zero_division=0)),
+        validation_threshold_percentile=threshold_percentile,
+        validation_precision=float(precision_score(y, validation_pred, zero_division=0)),
+        validation_recall=float(recall_score(y, validation_pred, zero_division=0)),
+        validation_mcc=float(matthews_corrcoef(y, validation_pred)),
+        validation_balanced_accuracy=float(balanced_accuracy_score(y, validation_pred)),
+        f1_at_05=float(f1_score(y, fixed_pred, zero_division=0)) if fixed_05_applicable else float("nan"),
+        precision_at_05=float(precision_score(y, fixed_pred, zero_division=0)) if fixed_05_applicable else float("nan"),
+        recall_at_05=float(recall_score(y, fixed_pred, zero_division=0)) if fixed_05_applicable else float("nan"),
         topk_f1=float(f1_score(y, topk_pred, zero_division=0)),
         precision_at_k=float(precision_score(y, topk_pred, zero_division=0)),
         recall_at_k=float(recall_score(y, topk_pred, zero_division=0)),
         topk_k=k,
         topk_prevalence_source=source,
+        validation_positive=int(val_y.sum()),
+        validation_negative=int((val_y == 0).sum()),
+        test_positive=int(y.sum()),
+        test_negative=int((y == 0).sum()),
+        threshold_unstable_warning=bool(val_y.sum() < 20),
+        metric_low_support_warning=bool(y.sum() < 20),
+        fixed_05_applicable=bool(fixed_05_applicable),
     )
-
