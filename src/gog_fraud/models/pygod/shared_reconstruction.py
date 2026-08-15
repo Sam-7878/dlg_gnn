@@ -6,9 +6,14 @@ score space.  Only adjacency *reconstruction rows* may be chunked.
 """
 from __future__ import annotations
 
+import json
+import os
+import random
 import time
 from copy import deepcopy
+from pathlib import Path
 
+import numpy as np
 import torch
 import torch.nn.functional as F
 from pygod.detector import AnomalyDAE as PyGODAnomalyDAE
@@ -225,8 +230,24 @@ class SharedFullGraphMixin:
         )
         self.decision_score_ = torch.zeros(self.num_nodes)
         self.loss_history_ = []
+        start_epoch = 0
+        checkpoint_path_value = getattr(self, "training_checkpoint_path", None)
+        checkpoint_path = Path(checkpoint_path_value) if checkpoint_path_value else None
+        if checkpoint_path is not None and checkpoint_path.exists():
+            state = torch.load(checkpoint_path, map_location=self.device, weights_only=False)
+            self.model.load_state_dict(state["model_state_dict"])
+            optimizer.load_state_dict(state["optimizer_state_dict"])
+            start_epoch = int(state["next_epoch"])
+            self.decision_score_ = state["decision_score"].cpu()
+            self.loss_history_ = list(state["loss_history"])
+            torch.set_rng_state(state["torch_rng_state"].cpu())
+            if torch.cuda.is_available() and state.get("cuda_rng_state_all") is not None:
+                torch.cuda.set_rng_state_all(state["cuda_rng_state_all"])
+            np.random.set_state(state["numpy_rng_state"])
+            random.setstate(state["python_rng_state"])
+        self.resumed_from_epoch_ = start_epoch
         self.model.train()
-        for _ in range(self.epoch):
+        for epoch_index in range(start_epoch, self.epoch):
             optimizer.zero_grad(set_to_none=True)
             components = self._forward_components(data)
             extra = self._training_extra_loss(data, components)
@@ -234,6 +255,29 @@ class SharedFullGraphMixin:
             optimizer.step()
             self.decision_score_ = scores
             self.loss_history_.append(float(scores.mean()))
+            if checkpoint_path is not None:
+                checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+                temporary = checkpoint_path.with_suffix(checkpoint_path.suffix + ".tmp")
+                torch.save({
+                    "next_epoch": epoch_index + 1,
+                    "model_state_dict": self.model.state_dict(),
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "decision_score": self.decision_score_,
+                    "loss_history": self.loss_history_,
+                    "torch_rng_state": torch.get_rng_state(),
+                    "cuda_rng_state_all": torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None,
+                    "numpy_rng_state": np.random.get_state(),
+                    "python_rng_state": random.getstate(),
+                }, temporary)
+                os.replace(temporary, checkpoint_path)
+                progress_path = checkpoint_path.with_suffix(checkpoint_path.suffix + ".progress.json")
+                progress_temporary = progress_path.with_suffix(progress_path.suffix + ".tmp")
+                progress_temporary.write_text(
+                    json.dumps({"completed_epochs": epoch_index + 1}) + "\n",
+                    encoding="utf-8",
+                )
+                os.replace(progress_temporary, progress_path)
+        self.actual_epochs_ = len(self.loss_history_)
         self._process_decision_score()
         return self
 

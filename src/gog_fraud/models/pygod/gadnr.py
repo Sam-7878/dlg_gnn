@@ -11,6 +11,7 @@ import torch.nn.functional as F
 from torch_geometric.loader import NeighborLoader
 from torch_geometric.nn import GCN
 from torch_geometric import compile
+from torch_geometric.utils import add_self_loops, to_undirected
 
 from pygod.detector import DeepDetector
 from pygod.nn import GADNRBase as PyGODGADNRBase
@@ -206,9 +207,22 @@ class GADNR(DeepDetector):
                                 GADNRBase.process_graph(data,
                                                         data.input_id.tolist())
         else: # full batch
-            data, neighbor_dict, neighbor_num_list, id_mapping = \
-                                GADNRBase.process_graph(data)
+            # Upstream builds an unused neighbor dictionary and checks every
+            # edge endpoint against ``input_id`` as a Python list.  In full
+            # batch mode all endpoints are members, making that implementation
+            # O(E*N) before training starts.  The forward path only consumes
+            # the per-node degree tensor, which bincount computes exactly from
+            # the same normalized edge index in O(E).
+            data.x = F.normalize(data.x, p=1, dim=1)
+            data.edge_index = to_undirected(data.edge_index)
+            data.edge_index, _ = add_self_loops(data.edge_index)
+            node_count = int(data.edge_index.max().item()) + 1
+            neighbor_num_list = torch.bincount(
+                data.edge_index[1], minlength=node_count
+            )
+            neighbor_dict, id_mapping = {}, {}
             self.tot_nodes = data.x.shape[0]
+            self.full_batch_preprocess_backend_ = "exact_degree_bincount"
 
         self.neighbor_num_list = neighbor_num_list.to(self.device)
         self.neighbor_dict = neighbor_dict

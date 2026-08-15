@@ -95,6 +95,24 @@ class SparseFusedGCN(GCN):
         super().__init__(*args, **kwargs)
 
 
+class AutoSparseFusedGCN(SparseFusedGCN):
+    """Drop-in PyG ``GCN`` backbone accepting either COO or SparseTensor.
+
+    Historical PyGOD detectors call their backbone with a tensor edge index.
+    This adapter preserves that public contract while converting each sampled
+    (or full-batch) graph with PyG's reference normalization before fused SpMM.
+    It does not change detector sampling, loss, score, or decoder semantics.
+    """
+
+    def forward(self, x, edge_index, edge_weight=None):
+        if isinstance(edge_index, Tensor):
+            edge_index = normalized_sparse_adjt(
+                edge_index, x.size(0), edge_weight=edge_weight,
+                dtype=x.dtype, device=x.device,
+            )
+        return super().forward(x, edge_index)
+
+
 class MessageGraphCache:
     """One normalized operator per static graph/device/dtype."""
 

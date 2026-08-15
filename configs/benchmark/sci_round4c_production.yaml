@@ -1,0 +1,42 @@
+workflow: sci_benchmark_round_4c_production_readiness
+experiment:
+  output_root: outputs/sci_round4c
+  auto_start_round5: false
+data:
+  root: /mnt/d/_Work/_data/DLG
+  fixed_dataset_seed: 42
+datasets: [Cora, Elliptic, Yelp, DGraphFin, Reddit]
+display_names:
+  Cora: Cora-Syn
+  Elliptic: Elliptic
+  Yelp: Yelp-Syn
+  DGraphFin: DGraphFin
+  Reddit: Reddit-Syn
+models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG-Aug]
+seeds: [42, 43]
+training:
+  epochs: 50
+  dlg_l1_epochs: 20
+  early_stopping: false
+execution:
+  gpu: 0
+  fresh_subprocess_per_cell: true
+  max_run_wall_hours: 24
+  partition_fallback: false
+  cpu_fallback: false
+  approximation_used: false
+  deterministic: true
+backend:
+  message: sparse_fused
+  linear_reconstruction: exact_sparse
+  anomalydae_reconstruction: chunked_exact
+  linear_score_chunk_size: 8192
+  anomalydae_score_chunk_size: 256
+evaluation:
+  validation_ratio: 0.2
+  test_ratio: 0.2
+  fixed_05: false
+round5:
+  model_seeds: [42, 43, 44, 45, 46]
+  output_root: outputs/sci_round5_final
+
