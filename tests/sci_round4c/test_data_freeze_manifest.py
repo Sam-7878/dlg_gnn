@@ -12,4 +12,6 @@ def test_data_freeze_hash_changes_with_graph(monkeypatch):
     data.edge_index[1,1]=0
     second=analysis.build_data_freeze(config)
     assert first["freeze_hash"] != second["freeze_hash"]
-
+    assert first["benchmark_source_hash"]
+    assert first["config_hash"]
+    assert first["datasets"][0]["features"] == 2

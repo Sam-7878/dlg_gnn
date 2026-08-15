@@ -11,9 +11,14 @@ import pandas as pd
 
 FINAL_STATUSES = {
     "success", "unsupported_algorithmic", "unsupported_operational",
+    "unsupported_resource_exact_implementation",
     "failed_numerical", "failed_cuda", "failed_oom", "failed_data", "failed_other",
+    "failed_unknown",
 }
-UNSUPPORTED_STATUSES = {"unsupported_algorithmic", "unsupported_operational"}
+UNSUPPORTED_STATUSES = {
+    "unsupported_algorithmic", "unsupported_operational",
+    "unsupported_resource_exact_implementation",
+}
 FAILURE_STATUSES = FINAL_STATUSES - {"success"} - UNSUPPORTED_STATUSES
 
 

@@ -17,7 +17,7 @@ import yaml
 
 from gog_fraud.experiments.round2_validity import graph_fingerprints
 from gog_fraud.experiments.round4c_policy import (
-    FAILURE_STATUSES, UNSUPPORTED_STATUSES, final_support_matrix,
+    FAILURE_STATUSES, UNSUPPORTED_STATUSES, canonical_hash, final_support_matrix,
     readiness_decision, runtime_forecast,
 )
 from gog_fraud.pipelines.run_sci_round4c import _datasets, ensure_layout
@@ -72,8 +72,14 @@ def build_data_freeze(config: dict, *, datasets: list[str] | None=None) -> dict:
     registry=_datasets(config); names=datasets or list(config["datasets"]); records=[]
     for name in names:
         data=registry[name](); fingerprints=graph_fingerprints(data,injection_config={"dataset_seed":42})
+        labels=data.y.detach().cpu().numpy()
+        eligible=labels[np.isin(labels,[0,1])]
         records.append({
             "dataset":name,"nodes":int(data.num_nodes),"edges":int(data.num_edges),
+            "features":int(data.x.shape[1]),
+            "anomaly_label_ratio":float((eligible==1).mean()) if len(eligible) else None,
+            "label_provenance":("real labels" if name in {"Elliptic","DGraphFin","BitcoinOTC"}
+                                else "synthetic injection"),
             "feature_hash":_hash_tensor(data.x),"label_hash":_hash_tensor(data.y),
             "edge_hash":_hash_tensor(data.edge_index),"injection_hash":fingerprints.get("injection_hash"),
         })
@@ -81,7 +87,19 @@ def build_data_freeze(config: dict, *, datasets: list[str] | None=None) -> dict:
         commit=subprocess.run(["git","rev-parse","HEAD"],capture_output=True,text=True,check=True,timeout=10).stdout.strip()
     except Exception:
         commit=None
+    source_hash=hashlib.sha256()
+    source_files=sorted(Path("src/gog_fraud").rglob("*.py"))
+    for path in source_files:
+        source_hash.update(str(path).encode());source_hash.update(path.read_bytes())
+    try:
+        dirty=subprocess.run(["git","status","--porcelain"],capture_output=True,text=True,
+                             check=True,timeout=10).stdout.splitlines()
+    except Exception:
+        dirty=[]
     return {"fixed_dataset_seed":42,"datasets":records,"code_git_commit":commit,
+            "benchmark_source_hash":source_hash.hexdigest(),
+            "config_hash":canonical_hash(config),"backend_hash":canonical_hash(config.get("backend",{})),
+            "git_dirty_paths":dirty,
             "freeze_hash":hashlib.sha256(json.dumps(records,sort_keys=True).encode()).hexdigest()}
 
 
