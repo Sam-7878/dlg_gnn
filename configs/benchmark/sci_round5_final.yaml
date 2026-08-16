@@ -1,0 +1,50 @@
+workflow: sci_benchmark_round_5_final
+experiment:
+  output_root: outputs/sci_round5_final
+  phase0_source: outputs/sci_round4c
+  execution_origin: round5_new
+  auto_start: false
+data:
+  root: /mnt/d/_Work/_data/DLG
+  fixed_dataset_seed: 42
+datasets: [Elliptic, DGraphFin, Yelp, Amazon, BitcoinOTC, Flickr, Reddit, Cora, CiteSeer, PubMed]
+remaining_five: [Amazon, BitcoinOTC, Flickr, CiteSeer, PubMed]
+display_names:
+  Elliptic: Elliptic
+  DGraphFin: DGraphFin
+  Yelp: Yelp-Syn
+  Amazon: Amazon-Syn
+  BitcoinOTC: BitcoinOTC
+  Flickr: Flickr-Syn
+  Reddit: Reddit-Syn
+  Cora: Cora-Syn
+  CiteSeer: CiteSeer-Syn
+  PubMed: PubMed-Syn
+models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG-Aug]
+seeds: [42, 43, 44, 45, 46]
+training:
+  epochs: 50
+  dlg_l1_epochs: 20
+  early_stopping: false
+execution:
+  gpu: 0
+  fresh_subprocess_per_cell: true
+  max_run_wall_hours: 24
+  partition_fallback: false
+  cpu_fallback: false
+  approximation_used: false
+  deterministic: true
+backend:
+  message: sparse_fused
+  linear_reconstruction: exact_sparse
+  anomalydae_reconstruction: chunked_exact
+  linear_score_chunk_size: 8192
+  anomalydae_score_chunk_size: 256
+evaluation:
+  validation_ratio: 0.2
+  test_ratio: 0.2
+  fixed_05: false
+analysis:
+  ci_method: t_95_seed_level
+  topology_bootstrap_iterations: 2000
+  minimum_inference_datasets: 4

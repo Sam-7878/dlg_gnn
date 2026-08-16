@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import platform
@@ -41,6 +42,21 @@ STATUS_FROM_EXCEPTION = {
     FileNotFoundError: "failed_data",
     KeyError: "failed_data",
 }
+
+
+def benchmark_execution_source_hash() -> str:
+    """Hash only code that can change training, scoring, data, or metrics."""
+    digest = hashlib.sha256()
+    roots = [
+        Path("src/gog_fraud/models"), Path("src/gog_fraud/data"),
+        Path("src/gog_fraud/evaluation"),
+    ]
+    files = [Path(__file__), Path("src/gog_fraud/pipelines/run_sci_round1_benchmark.py")]
+    for root in roots:
+        files.extend(root.rglob("*.py"))
+    for path in sorted(set(files), key=str):
+        digest.update(str(path).encode("utf-8")); digest.update(path.read_bytes())
+    return digest.hexdigest()
 
 
 def ensure_layout(root: Path) -> None:
@@ -128,6 +144,11 @@ def _label_provenance(dataset: str) -> str:
         "Yelp": "synthetic_injection_fixed_dataset_seed_42",
         "Cora": "synthetic_injection_fixed_dataset_seed_42",
         "Reddit": "synthetic_injection_fixed_dataset_seed_42",
+        "Amazon": "synthetic_injection_fixed_dataset_seed_42",
+        "BitcoinOTC": "real_trust_network_labels",
+        "Flickr": "synthetic_injection_fixed_dataset_seed_42",
+        "CiteSeer": "synthetic_injection_fixed_dataset_seed_42",
+        "PubMed": "synthetic_injection_fixed_dataset_seed_42",
     }[dataset]
 
 
@@ -149,7 +170,9 @@ def _base_record(config, dataset, model_name, model_class, seed, data):
     return {
         "run_id": str(uuid.uuid4()), "cell_key": cell_key(dataset, model_name, seed, config_hash, backend_hash),
         "config_hash": config_hash, "backend_hash": backend_hash,
+        "benchmark_execution_source_hash": benchmark_execution_source_hash(),
         "dataset": dataset, "display_name": display, "label_provenance": _label_provenance(dataset),
+        "execution_origin": config.get("experiment", {}).get("execution_origin", "round4c_new"),
         "model": model_name, "paper_model_name": "DLG" if model_name == "DLG-Aug" else model_name,
         "python_class": f"{model_class.__module__}.{model_class.__qualname__}", "seed": int(seed),
         "configured_epochs": int(config["training"]["epochs"]), "actual_epochs": 0,
