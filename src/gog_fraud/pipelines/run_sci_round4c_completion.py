@@ -18,7 +18,7 @@ from gog_fraud.pipelines.run_sci_round4c import (
 from gog_fraud.pipelines.run_sci_round4c_guard_resume import resume_guard
 
 
-FAST_REDDIT_MODELS = ["DOMINANT", "CONAD", "DLG-Base", "DLG-Aug", "CoLA", "OCGNN"]
+FAST_REDDIT_MODELS = ["CoLA", "OCGNN", "DLG-Aug", "DLG-Base", "DOMINANT", "CONAD"]
 
 
 def _run_fresh_cell(config: dict, config_path: Path, output: Path,

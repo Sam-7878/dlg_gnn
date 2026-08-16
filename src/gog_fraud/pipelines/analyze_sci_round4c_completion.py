@@ -61,6 +61,8 @@ def write_completion_report(output: Path, gate: dict, accounting: pd.DataFrame,
 
 **{gate['decision']}**. Nominal {gate['nominal_cells']} cells 중 {gate['accounted_cells']} cells가 success 또는 scientifically classified unsupported로 accounted되었다. Success는 {gate['success_cells']}, classified unsupported는 {gate['classified_unsupported_cells']}, unknown/unaccounted는 {gate['failed_unknown']}이다. Round 5는 자동 실행하지 않았다.
 
+가속화는 기존 success cell을 보존하는 hash-checked resume, fast-to-slow scheduling, 그리고 관측된 최단 epoch로도 guard 내 완주가 불가능함을 보이는 conservative lower-bound decision만 사용했다. AMP, sampling, partition, hidden-dimension 축소 또는 objective 변경은 사용하지 않았다.
+
 ## 2. 80-cell accounting
 
 Raw execution observation은 보존하고 `support_reclassification.json` ledger가 final support status와 measured/by-policy 근거를 별도로 고정한다. Unsupported cell에는 score 또는 worst rank를 대입하지 않는다.
@@ -73,7 +75,7 @@ Raw execution observation은 보존하고 `support_reclassification.json` ledger
 
 ## 4. AnomalyDAE operational classification
 
-Decoder-only microbenchmark보다 end-to-end production evidence를 우선한다. 즉시 OOM runtime은 completed runtime으로 해석하지 않으며, 24-hour guard는 right-censored operational limit이다.
+Decoder-only microbenchmark보다 end-to-end production evidence를 우선한다. 즉시 OOM runtime은 completed runtime으로 해석하지 않는다. DGraphFin은 4 epoch/63,064초의 실측에 더해 관측된 최단 epoch 135분을 남은 46 epoch에 적용한 낙관적 하한만 103.5시간이므로, 누적 시간이 24-hour guard 안에서 50 epoch에 도달할 수 없다는 decision-complete evidence로 분류했다.
 
 {_markdown_table(anomaly, ['dataset','estimated_gpu_hours','observed_runtime_sec','observed_epochs','production_projection_hours','actual_to_estimated_ratio','final_support_status'])}
 
@@ -81,11 +83,15 @@ Decoder-only microbenchmark보다 end-to-end production evidence를 우선한다
 
 Historical architecture, hidden dimension, neighbor policy를 바꾸지 않았다. 동일 exact production path의 반복 materialization OOM은 `unsupported_resource_exact_implementation`으로 분류한다.
 
+아래 allocated/reserved 수치는 PyTorch가 WSL unified/virtual allocator 문구로 보고한 값이며 물리 GPU 용량으로 해석하지 않는다. 물리 장치는 8 GB-class이고, scientific classification은 requested allocation, traceback stage와 seed 재현성에 근거한다.
+
 {_markdown_table(oom, ['dataset','seed','oom_stage','requested_allocation_gib','current_allocated_gib','current_reserved_unallocated_gib','N','E'])}
 
 ## 6. Final support matrix
 
 `primary_supported=true`는 두 production seed가 모두 성공한 경우뿐이다. Restricted cells는 performance comparison에서 missing이며 scalability table에서 restriction으로 보고한다. Restricted model-dataset pairs: {len(unsupported)}.
+
+Reddit CONAD처럼 1-epoch gate는 통과했지만 50-epoch exact production에서 두 seed 모두 동일 allocation OOM이 재현된 경우도 hidden dimension·sampling·objective를 바꾸지 않고 current exact implementation resource restriction으로 기록한다.
 
 ## 7. Complete-case statistical views
 
@@ -175,6 +181,27 @@ def gadnr_oom_audit(raw: pd.DataFrame, freeze: dict) -> pd.DataFrame:
             "tensor_shape": "not exposed by allocator traceback",
             "N": meta.get("nodes"), "E": meta.get("edges"),
             "observed_status": row.status,
+        })
+    return pd.DataFrame(rows)
+
+
+def production_oom_audit(raw: pd.DataFrame, freeze: dict) -> pd.DataFrame:
+    graph = {row["dataset"]: row for row in freeze["datasets"]}
+    rows = []
+    for row in raw.loc[raw.status.eq("failed_oom")].itertuples():
+        message = str(row.failure_message)
+        meta = graph.get(row.dataset, {})
+        if row.model == "CONAD":
+            stage = "native_contrastive_augmentation_or_reconstruction_materialization"
+        else:
+            stage = _oom_stage(row.model, message)
+        rows.append({
+            "dataset": row.dataset, "model": row.model, "seed": int(row.seed),
+            "oom_stage": stage, "requested_allocation_gib": _memory_gib(r"Tried to allocate", message),
+            "current_allocated_gib": _memory_gib(r"allocated memory", message),
+            "current_reserved_unallocated_gib": _memory_gib(r"and", message),
+            "tensor_shape": "not exposed by allocator traceback",
+            "N": meta.get("nodes"), "E": meta.get("edges"),
         })
     return pd.DataFrame(rows)
 
@@ -345,6 +372,8 @@ def finalize(config: dict, output: Path, round4b_root: Path) -> dict:
 
     oom = gadnr_oom_audit(raw, freeze)
     oom.to_csv(output / "tables/gadnr_oom_root_cause.csv", index=False)
+    all_oom = production_oom_audit(raw, freeze)
+    all_oom.to_csv(output / "tables/production_oom_root_cause.csv", index=False)
     anomaly = anomaly_actual_table(raw, ledger, round4b_root)
     anomaly.to_csv(output / "tables/anomalydae_estimated_vs_actual_final.csv", index=False)
 

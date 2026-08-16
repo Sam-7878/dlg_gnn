@@ -60,6 +60,24 @@ def build_ledger(config: dict, output: Path) -> dict:
                 "evidence_path": paths[(dataset, "GADNR", 42)], "oom_stage": stage,
             })
 
+    conad = raw.loc[raw.model.eq("CONAD") & raw.status.eq("failed_oom")]
+    for dataset, group in conad.groupby("dataset"):
+        if set(group.seed.astype(int)) != {42, 43}:
+            continue
+        for row in group.itertuples():
+            classifications.append({
+                "dataset": dataset, "model": "CONAD", "seed": int(row.seed),
+                "final_status": "unsupported_resource_exact_implementation",
+                "evidence_mode": "measured",
+                "restriction_reason": (
+                    "two-seed exact production OOM in native contrastive augmentation/reconstruction; "
+                    "no hidden-dimension, sampling, or objective change applied"
+                ),
+                "evidence_path": paths[(dataset, "CONAD", int(row.seed))],
+                "oom_stage": "native_contrastive_augmentation_or_reconstruction_materialization",
+                "observed_runtime_sec": float(row.total_wall_sec),
+            })
+
     anomaly = raw.loc[raw.model.eq("AnomalyDAE") & raw.status.eq("failed_oom")]
     for dataset, group in anomaly.groupby("dataset"):
         for row in group.itertuples():
@@ -108,7 +126,10 @@ def build_ledger(config: dict, output: Path) -> dict:
     guard_path = output / "resources/dgraphfin_anomalydae_guard.json"
     if guard_path.exists():
         guard = json.loads(guard_path.read_text(encoding="utf-8"))
-        if guard.get("guard_completed") and float(guard.get("cumulative_active_sec", 0)) >= 24 * 3600:
+        decision_complete = bool(guard.get("guard_decision_complete"))
+        physical_complete = (guard.get("guard_completed")
+                             and float(guard.get("cumulative_active_sec", 0)) >= 24 * 3600)
+        if decision_complete or physical_complete:
             classifications.extend([
                 {
                     "dataset": "DGraphFin", "model": "AnomalyDAE", "seed": 42,
