@@ -195,7 +195,10 @@ def finalize(config: dict) -> dict:
     dataset_table=_dataset_table(config,freeze);dataset_table.to_csv(output/"tables/01_dataset_characteristics.csv",index=False)
     performance=_performance_wide(summary,support,config);performance.to_csv(output/"tables/02_overall_performance.csv",index=False)
     performance.loc[performance.dataset.isin([config["display_names"][name] for name in FRAUD_DATASETS])].to_csv(output/"tables/03_fraud_oriented_performance.csv",index=False)
+    resource_columns=["run_id","dataset","model","seed","nodes","edges","train_time_sec","inference_time_sec","total_wall_sec","rss_peak_mb","nvidia_smi_peak_mb","cuda_allocated_peak_mb","cuda_reserved_peak_mb"]
+    raw.loc[:,resource_columns].to_csv(output/"resources/run_level_resources.csv",index=False)
     resources=raw.groupby(["dataset","model"],as_index=False).agg(runtime_mean_sec=("total_wall_sec","mean"),gpu_memory_peak_mb=("nvidia_smi_peak_mb","max"),rss_peak_mb=("rss_peak_mb","max"))
+    resources.to_csv(output/"resources/model_dataset_resource_summary.csv",index=False)
     scalability=support.merge(resources,on=["dataset","model"],how="left");scalability.to_csv(output/"tables/04_scalability_support.csv",index=False)
     component_path=Path("outputs/sci_round4b/ablation/component_raw.csv");component=pd.read_csv(component_path);component.to_csv(output/"ablation/dlg_component_raw_frozen.csv",index=False)
     component_summary=component.groupby(["dataset","variant"],as_index=False)[["pr_auc","validation_f1"]].agg(["mean","std"]);component_summary.columns=["_".join(filter(None,col)) for col in component_summary.columns];component_summary.to_csv(output/"tables/05_dlg_extended_components.csv",index=False)
@@ -216,14 +219,66 @@ def finalize(config: dict) -> dict:
 
 def write_report(output: Path,gate:dict,views:pd.DataFrame,omnibus:pd.DataFrame,correlations:pd.DataFrame,
                  scalability:pd.DataFrame,component:pd.DataFrame,raw_hash:str)->None:
-    report=Path("docs/work_reports/207_benchmark_round_5/01_round5_final_benchmark_report.md")
-    unsupported=scalability.loc[~scalability.supported,["dataset","model","support_status","restriction_reason"]]
+    reports=(Path("docs/work_reports/207_benchmark_round_5/01_round5_final_benchmark_report.md"),
+             Path("docs/work_reports/round5/01_round5_final_benchmark_report.md"))
+    restriction_summaries={
+        ("Elliptic","GADNR"):"native neighborhood-distribution materialization exceeds the 8 GB-class GPU envelope",
+        ("DGraphFin","AnomalyDAE"):"exact nonlinear all-pairs runtime cannot complete inside the predeclared 24 GPU-hour guard",
+        ("DGraphFin","GADNR"):"native neighborhood-distribution materialization exceeds the 8 GB-class GPU envelope",
+        ("Yelp","AnomalyDAE"):"exact AnomalyDAE COO/GAT encoder materialization exceeds GPU memory",
+        ("Yelp","GADNR"):"native neighborhood-distribution materialization exceeds the 8 GB-class GPU envelope",
+        ("Flickr","GADNR"):"measured seed-42 exact production run exhausted the 8 GB-class GPU",
+        ("Reddit","AnomalyDAE"):"exact nonlinear all-pairs/COO-GAT implementation exceeds GPU memory",
+        ("Reddit","CONAD"):"two-seed exact production OOM in native contrastive augmentation/reconstruction",
+        ("Reddit","GADNR"):"native neighborhood-distribution materialization exceeds the 8 GB-class GPU envelope",
+    }
+    unsupported=scalability.loc[~scalability.supported,["dataset","model","support_status"]].copy()
+    unsupported["restriction_summary"]=[restriction_summaries.get((r.dataset,r.model),"see frozen support ledger")
+                                         for r in unsupported.itertuples(index=False)]
     significant=omnibus.loc[(~omnibus.descriptive_only)&(omnibus.p_value<.05)] if "p_value" in omnibus else pd.DataFrame()
+    summary=pd.read_csv(output/"summary/seed_aggregated_performance.csv")
+    rankings=pd.read_csv(output/"statistics/rankings.csv")
+    average_ranks=(rankings.groupby(["view_name","metric","model"],as_index=False)["rank"].mean()
+                   .rename(columns={"rank":"average_rank"}).sort_values(["view_name","metric","average_rank"]))
+    average_ranks["average_rank"]=average_ranks.average_rank.round(2)
+    posthoc=pd.read_csv(output/"statistics/wilcoxon_holm.csv")
+    posthoc_significant=posthoc.loc[posthoc.significant.astype(bool),
+        ["view_name","metric","comparison","adjusted_p","effect_size_dz"]].copy()
+    if not posthoc_significant.empty:
+        posthoc_significant[["adjusted_p","effect_size_dz"]]=posthoc_significant[["adjusted_p","effect_size_dz"]].round(4)
+    dlg=summary.loc[summary.model.isin(["DLG-Aug","DLG-Base"]),
+                    ["dataset","model","pr_auc_mean","validation_f1_mean"]]
+    dlg_pr=dlg.pivot(index="dataset",columns="model",values="pr_auc_mean")
+    dlg_f1=dlg.pivot(index="dataset",columns="model",values="validation_f1_mean")
+    dlg_delta=pd.DataFrame({"dataset":dlg_pr.index,
+                            "delta_pr_aug_minus_base":dlg_pr["DLG-Aug"]-dlg_pr["DLG-Base"],
+                            "delta_f1_aug_minus_base":dlg_f1["DLG-Aug"]-dlg_f1["DLG-Base"]}).reset_index(drop=True)
+    dlg_delta.iloc[:,1:]=dlg_delta.iloc[:,1:].round(4)
+    component_means=component.groupby(["dataset","variant"],as_index=False)[["pr_auc","validation_f1"]].mean()
+    comp_pr=component_means.pivot(index="dataset",columns="variant",values="pr_auc")
+    comp_f1=component_means.pivot(index="dataset",columns="variant",values="validation_f1")
+    component_delta=pd.DataFrame({"dataset":comp_pr.index,
+        "delta_pr_aug_minus_base":comp_pr["DLG-Aug"]-comp_pr["DLG-Base"],
+        "delta_pr_fusion_minus_aug":comp_pr["DLG-Fusion"]-comp_pr["DLG-Aug"],
+        "delta_f1_aug_minus_base":comp_f1["DLG-Aug"]-comp_f1["DLG-Base"],
+        "delta_f1_fusion_minus_aug":comp_f1["DLG-Fusion"]-comp_f1["DLG-Aug"]}).reset_index(drop=True)
+    component_delta.iloc[:,1:]=component_delta.iloc[:,1:].round(4)
+    topology_dlg=correlations.loc[(correlations.model=="DLG-Aug") &
+        (correlations.topology_metric=="adjusted_homophily"),
+        ["performance_metric","rho","p_value","ci95_low","ci95_high","n_datasets"]].copy()
+    topology_dlg.iloc[:,1:5]=topology_dlg.iloc[:,1:5].round(4)
+    support_rate=(scalability.groupby("model",as_index=False).supported.mean()
+                  .rename(columns={"supported":"support_rate"}).sort_values("support_rate",ascending=False))
+    support_rate["support_rate"]=(100*support_rate.support_rate).round(1)
+    omnibus_display=omnibus[["view_name","metric","statistic","p_value","n_datasets","n_models","descriptive_only"]].copy()
+    omnibus_display[["statistic","p_value"]]=omnibus_display[["statistic","p_value"]].round(6)
     text=f"""# DLG-GNN SCI Benchmark Round 5 Final Report
 
 ## 1. Experimental protocol
 
-Exact full-shared-graph backend, fixed synthetic instance seed 42, model seeds 42–46, validation-selected threshold를 사용했다. Score inversion, partition, sampling substitute, CPU fallback, worst-rank imputation은 사용하지 않았다.
+Exact full-shared-graph backend, fixed synthetic instance seed 42, model seeds 42–46, validation-selected threshold를 사용했다. Linear reconstruction은 `exact_sparse`, message passing은 `sparse_fused`, AnomalyDAE는 `chunked_exact`를 사용했다. Score inversion, graph partition, neighbor/negative sampling substitute, CPU fallback, worst-rank imputation은 사용하지 않았다. 8 detectors의 score는 probability가 아니므로 F1@0.5는 보고하지 않았다.
+
+Phase 0에서 remaining-five의 DOMINANT/AnomalyDAE/GADNR 15 production cells를 실제 실행했다. Amazon과 PubMed GADNR을 포함한 14 cells가 성공했고 Flickr GADNR만 measured OOM으로 분류됐다. 이 evidence로 80 model-dataset pairs를 v2 support matrix로 freeze한 뒤 supported pairs만 5 seeds로 실행했다.
 
 ## 2. Support matrix
 
@@ -231,13 +286,17 @@ Final decision: **{gate['decision']}**. Supported pairs {gate['supported_pairs']
 
 {unsupported.to_markdown(index=False)}
 
+Unsupported는 성능 저하가 아니라 exact historical implementation의 scalability limitation이다. Performance table에는 `N/A†`로 남기며 zero/worst rank로 대체하지 않는다.
+
 ## 3. Five-seed performance
 
-Source: `outputs/sci_round5_final/tables/02_overall_performance.csv`. Seed mean, sample standard deviation와 t-based 95% CI를 `summary/seed_aggregated_performance.csv`에 고정했다.
+Source: `outputs/sci_round5_final/tables/02_overall_performance.csv`. 각 supported pair는 정확히 5 successful seeds를 가지며, seed mean, sample standard deviation, median, min/max와 t-based 95% CI를 `summary/seed_aggregated_performance.csv`에 고정했다.
+
+DLG-Aug의 PR-AUC mean은 Elliptic 0.1037, DGraphFin 0.0134, Yelp-Syn 0.0832, Amazon-Syn 0.1302, BitcoinOTC 0.8262, Flickr-Syn 0.4599, Reddit-Syn 0.3388이었다. DLG-Aug가 모든 dataset에서 최고는 아니다. Amazon-Syn은 AnomalyDAE(0.2734), BitcoinOTC는 DOMINANT/CONAD(0.8802), Flickr-Syn은 AnomalyDAE(0.4761), Reddit-Syn은 DOMINANT(0.4069)가 더 높았다.
 
 ## 4. Fraud-oriented performance
 
-Source: `tables/03_fraud_oriented_performance.csv`. Yelp-Syn은 synthetic injection이며 real Yelp fraud 성능으로 해석하지 않는다.
+Source: `tables/03_fraud_oriented_performance.csv`. 7-dataset fraud-oriented complete-case view에서 DLG-Aug의 average rank는 ROC-AUC 1.71, PR-AUC 1.71, validation F1 1.86으로 가장 낮았다. 이는 이 frozen five-model common subset에서의 상대 순위이며 universal SOTA claim은 아니다. Yelp-Syn/Amazon-Syn/Flickr-Syn/Reddit-Syn은 synthetic injection이고 real-label fraud 성능으로 해석하지 않는다.
 
 ## 5. Statistical tests
 
@@ -245,31 +304,57 @@ Complete-case views는 final support matrix에서 재계산했다. All-8 view의
 
 {views.to_markdown(index=False)}
 
+{omnibus_display.to_markdown(index=False)}
+
+Average ranks (missing-cell imputation 없음):
+
+{average_ranks.to_markdown(index=False)}
+
+Holm-adjusted significant post-hoc comparisons:
+
+{posthoc_significant.to_markdown(index=False) if not posthoc_significant.empty else 'None.'}
+
+Scalable 5-model × 10-dataset view에서 DLG-Aug는 CoLA와 OCGNN보다 ROC/PR/F1에서 Holm-adjusted significance가 검출됐다. DLG-Aug와 DLG-Base 또는 DOMINANT 사이에는 adjusted significance가 검출되지 않았으므로 동등성이나 우월성을 주장하지 않는다.
+
 ## 6. Topology associations
 
-Adjusted/fraud-conditioned homophily와 성능의 Spearman association을 valid observed datasets만으로 계산했다. 결과는 연관성이지 인과 evidence가 아니다.
+Adjusted/fraud-conditioned homophily와 성능의 Spearman association을 valid observed datasets만으로 계산했다. DLG-Aug의 adjusted homophily association은 ROC rho=0.4303 (p=0.2145), PR/F1 rho=0.5515 (p=0.0984), n=10이었고 bootstrap CI가 모두 zero를 포함했다. 따라서 DLG heterophily robustness의 확증이 아니라 hypothesis-generating trend로만 해석한다. 전체 exploratory correlation에는 multiplicity가 있으므로 개별 nominal p-value를 confirmatory evidence로 사용하지 않는다.
+
+{topology_dlg.to_markdown(index=False)}
 
 ## 7. DLG component analysis
 
-Historical DLG는 DLG-Aug이며 DLG-Fusion은 extended component이다. Round 4B component freeze와 Round 5 main five-seed 결과를 분리해 보고한다.
+Historical DLG는 DLG-Aug이며 DLG-Fusion은 extended component이다. Round 5 DLG-Aug−DLG-Base delta는 dataset-dependent했다. PR delta는 Elliptic +0.0350, DGraphFin +0.0034, Amazon +0.0057인 반면 Reddit −0.0656, BitcoinOTC −0.0050이었다. Cora/CiteSeer/PubMed/Flickr/Yelp는 절대값 0.004 미만의 near-neutral PR delta였다.
+
+{dlg_delta.to_markdown(index=False)}
+
+Round 4B extended component freeze에서도 Cora fusion은 Aug 대비 PR +0.2208이었지만 Elliptic/DGraphFin에서는 약 −0.0010/−0.0003이었고, Yelp에서는 local/global interaction이 mixed였다. Fusion의 universal benefit은 지지되지 않는다.
+
+{component_delta.to_markdown(index=False)}
 
 ## 8. Scalability
 
-Performance rank와 support/runtime/memory를 합치지 않았다. Exact unsupported는 낮은 성능이 아니라 실행 가능성 제한이다.
+Performance rank와 support/runtime/memory를 합치지 않았다. Five scalable detectors(CoLA, OCGNN, DOMINANT, DLG-Base, DLG-Aug)는 10/10 datasets를 지원했다. AnomalyDAE 7/10, CONAD 9/10, GADNR 5/10이다. Exact unsupported는 낮은 성능이 아니라 실행 가능성 제한이다.
+
+{support_rate.to_markdown(index=False)}
 
 ## 9. Failure/unsupported analysis
 
-AnomalyDAE nonlinear all-pairs, GADNR native neighborhood-distribution, Reddit CONAD contrastive materialization 제한을 frozen support ledger에 보존했다.
+AnomalyDAE nonlinear all-pairs/COO-GAT, GADNR native neighborhood-distribution, Reddit CONAD contrastive materialization 제한을 frozen support ledger에 보존했다. DGraphFin AnomalyDAE는 measured four-epoch runtime과 24 GPU-hour guard의 낙관적 lower bound로 operationally unsupported다. Phase 1 supported-cell failures는 0이다.
+
+Raw freeze 직전 system-sleep으로 wall time이 오염된 Cora/AnomalyDAE/seed43은 기존 JSON과 failed checkpoint-resume evidence를 archive한 뒤 checkpoint 없는 fresh subprocess로 재실행했다. 최종 row는 50 epochs, 17.88 sec, success이며 archived evidence는 `logs/runtime_contamination_archive/`에 보존했다.
 
 ## 10. Limitations
 
-5 model seeds는 uncertainty 추정에 제한적이며, synthetic primary graphs는 injection seed 42에 고정됐다. Unsupported cells에는 performance estimate가 없다.
+5 model seeds는 uncertainty 추정에 제한적이며, synthetic primary graphs는 injection seed 42에 고정됐다. Unsupported cells에는 performance estimate가 없다. Broad all-8 view는 공통 5 datasets뿐이고 topology association은 dataset 수가 5–10으로 작다. Round 4B component evidence와 Round 5 five-seed main matrix는 서로 다른 frozen experiment이므로 직접적인 joint inference로 합치지 않았다.
 
 ## 11. Claims supported by evidence
 
-- Exact, leakage-safe protocol에서 supported detector-dataset pair의 reproducible five-seed 성능을 보고할 수 있다.
-- Local augmentation의 이득/손해는 dataset-dependent한 descriptive pattern으로 평가할 수 있다.
-- Exact historical implementations 사이에 명확한 scalability 차이가 존재한다.
+- 71 supported pairs 모두 5/5 seeds를 완주했고 9 restricted pairs를 exact scalability evidence로 account했다 (`final_gate.json`).
+- Fraud-oriented common subset에서 DLG-Aug average PR rank 1.71이 관측됐다 (`statistics/rankings.csv`).
+- Scalable 10-dataset view에서 DLG-Aug와 CoLA/OCGNN 사이의 차이는 Holm-adjusted significance가 검출됐지만 DLG-Base/DOMINANT 대비 significance는 검출되지 않았다 (`statistics/wilcoxon_holm.csv`).
+- Local augmentation의 이득/손해는 Elliptic(+0.0350 PR)과 Reddit(−0.0656 PR)처럼 dataset-dependent했다 (`summary/seed_aggregated_performance.csv`).
+- Exact historical implementations 사이에 50–100%의 model-level dataset support-rate 차이가 존재한다 (`tables/04_scalability_support.csv`).
 
 ## 12. Claims not supported by evidence
 
@@ -283,13 +368,19 @@ AnomalyDAE nonlinear all-pairs, GADNR native neighborhood-distribution, Reddit C
 
 ```bash
 PYTHONPATH=src ../.venv/bin/python -m gog_fraud.pipelines.run_sci_round5 --config configs/benchmark/sci_round5_final.yaml --stage phase0
+PYTHONPATH=src ../.venv/bin/python -m gog_fraud.pipelines.run_sci_round5 --config configs/benchmark/sci_round5_final.yaml --stage phase1
 PYTHONPATH=src ../.venv/bin/python -m gog_fraud.pipelines.run_sci_round5 --config configs/benchmark/sci_round5_final.yaml --stage phase1 --resume
+PYTHONPATH=src ../.venv/bin/python -m gog_fraud.pipelines.run_sci_round5 --config configs/benchmark/sci_round5_final.yaml --stage phase1 --force
 PYTHONPATH=src ../.venv/bin/python -m gog_fraud.pipelines.analyze_sci_round5 --config configs/benchmark/sci_round5_final.yaml
 ```
 
-Frozen raw SHA-256: `{raw_hash}`.
+Table-only/figure-only entry points are intentionally not separate: the analysis-only command reads only frozen `benchmark_raw.csv` plus support matrix and deterministically regenerates both artifact sets.
+
+Frozen support SHA-256: `{gate['support_matrix_hash']}`. Frozen raw SHA-256: `{raw_hash}`.
 """
-    report.write_text(text,encoding="utf-8")
+    for report in reports:
+        report.parent.mkdir(parents=True,exist_ok=True)
+        report.write_text(text,encoding="utf-8")
 
 
 def main()->int:

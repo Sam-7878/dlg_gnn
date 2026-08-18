@@ -28,10 +28,11 @@ def _read_result(config: dict, output: Path, dataset: str, model: str, seed: int
 
 
 def _run_fresh(config_path: Path, config: dict, dataset: str, model: str, seed: int,
-               *, retry: bool = False) -> dict:
+               *, retry: bool = False, force: bool = False) -> dict:
     output = Path(config["experiment"]["output_root"])
     path = result_path(config, output, dataset, model, seed)
-    if path.exists() and json.loads(path.read_text(encoding="utf-8")).get("status") == "success":
+    if (not force and path.exists()
+            and json.loads(path.read_text(encoding="utf-8")).get("status") == "success"):
         return json.loads(path.read_text(encoding="utf-8"))
     if path.exists() and not retry:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -52,14 +53,14 @@ def _run_fresh(config_path: Path, config: dict, dataset: str, model: str, seed: 
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def phase0(config_path: Path, config: dict) -> dict:
+def phase0(config_path: Path, config: dict, *, force: bool = False) -> dict:
     output = Path(config["experiment"]["output_root"]); ensure_layout(output)
     remaining = list(config["remaining_five"])
     evidence = []
     for model in ("DOMINANT", "AnomalyDAE", "GADNR"):
         for dataset in remaining:
             print(f"[PHASE0] {dataset}/{model}/seed=42", flush=True)
-            record = _run_fresh(config_path, config, dataset, model, 42)
+            record = _run_fresh(config_path, config, dataset, model, 42, force=force)
             evidence.append({key:record.get(key) for key in (
                 "dataset","model","seed","status","failure_type","failure_message","total_wall_sec",
                 "actual_epochs","nodes","edges","config_hash","backend_hash")})
@@ -128,7 +129,7 @@ def freeze_support_v2(config: dict, output: Path, phase0_evidence: pd.DataFrame)
     return gate
 
 
-def phase1(config_path: Path, config: dict, *, resume: bool) -> dict:
+def phase1(config_path: Path, config: dict, *, resume: bool, force: bool = False) -> dict:
     output = Path(config["experiment"]["output_root"])
     support_path = output / "manifests/model_dataset_support_matrix_v2.csv"
     support = pd.read_csv(support_path)
@@ -144,15 +145,15 @@ def phase1(config_path: Path, config: dict, *, resume: bool) -> dict:
                 continue
             for seed in config["seeds"]:
                 existing = _read_result(config, output, dataset, model, int(seed))
-                if resume and existing is not None and existing.get("status") == "success":
+                if resume and not force and existing is not None and existing.get("status") == "success":
                     print(f"[SKIP] {dataset}/{model}/seed={seed}", flush=True); continue
                 print(f"[RUN] {dataset}/{model}/seed={seed}", flush=True)
-                first = _run_fresh(config_path, config, dataset, model, int(seed), retry=True)
+                first = _run_fresh(config_path, config, dataset, model, int(seed), retry=True, force=force)
                 if first.get("status") != "success":
                     first_path = result_path(config, output, dataset, model, int(seed))
                     if first_path.exists():
                         shutil.copy2(first_path, output/"logs"/(first_path.stem+"__attempt1.json"))
-                    second = _run_fresh(config_path, config, dataset, model, int(seed), retry=True)
+                    second = _run_fresh(config_path, config, dataset, model, int(seed), retry=True, force=force)
                     if second.get("status") != "success":
                         violations.append({"dataset":dataset,"model":model,"seed":seed,
                                            "attempt1":first.get("status"),"attempt2":second.get("status")})
@@ -167,6 +168,8 @@ def main() -> int:
     parser=argparse.ArgumentParser();parser.add_argument("--config",required=True)
     parser.add_argument("--stage",choices=("phase0","phase1"),required=True)
     parser.add_argument("--resume",action="store_true")
+    parser.add_argument("--force",action="store_true",
+                        help="rerun selected stage cells even when successful evidence already exists")
     args=parser.parse_args();config_path=Path(args.config).resolve()
     config=yaml.safe_load(config_path.read_text(encoding="utf-8"));output=Path(config["experiment"]["output_root"])
     ensure_layout(output)
@@ -185,7 +188,8 @@ def main() -> int:
             raise RuntimeError(f"Round 5 execution provenance drift: frozen={frozen_hashes} current={current_hashes}")
     else:
         execution_manifest.write_text(json.dumps(current_hashes,indent=2)+"\n",encoding="utf-8")
-    result=phase0(config_path,config) if args.stage=="phase0" else phase1(config_path,config,resume=args.resume)
+    result=(phase0(config_path,config,force=args.force) if args.stage=="phase0"
+            else phase1(config_path,config,resume=args.resume,force=args.force))
     print(json.dumps(result,indent=2));return 0
 
 
