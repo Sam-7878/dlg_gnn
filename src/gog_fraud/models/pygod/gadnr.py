@@ -25,16 +25,13 @@ class _UnusedPool:
     def terminate(self): pass
     def join(self): pass
 
+# Patch upstream Pool at module load time so no worker processes are ever spawned
+pygod_gadnr_module.mp.Pool = lambda *_args, **_kwargs: _UnusedPool()
+
 
 class GADNRBase(PyGODGADNRBase):
     """Avoid the upstream unused four-process Pool for reliable SCI execution."""
-    def __init__(self, *args, **kwargs):
-        original_pool = pygod_gadnr_module.mp.Pool
-        pygod_gadnr_module.mp.Pool = lambda *_args, **_kwargs: _UnusedPool()
-        try:
-            super().__init__(*args, **kwargs)
-        finally:
-            pygod_gadnr_module.mp.Pool = original_pool
+    pass
 
 
 class GADNR(DeepDetector):
@@ -214,11 +211,10 @@ class GADNR(DeepDetector):
             # the per-node degree tensor, which bincount computes exactly from
             # the same normalized edge index in O(E).
             data.x = F.normalize(data.x, p=1, dim=1)
-            data.edge_index = to_undirected(data.edge_index)
-            data.edge_index, _ = add_self_loops(data.edge_index)
-            node_count = int(data.edge_index.max().item()) + 1
+            data.edge_index = to_undirected(data.edge_index, num_nodes=data.x.shape[0])
+            data.edge_index, _ = add_self_loops(data.edge_index, num_nodes=data.x.shape[0])
             neighbor_num_list = torch.bincount(
-                data.edge_index[1], minlength=node_count
+                data.edge_index[1], minlength=data.x.shape[0]
             )
             neighbor_dict, id_mapping = {}, {}
             self.tot_nodes = data.x.shape[0]
