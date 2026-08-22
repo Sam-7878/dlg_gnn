@@ -115,6 +115,14 @@ class LanlRedTeamGraphBuilder:
         self.get_or_create_computer(dst_comp)
         self.redteam_compromised_computers.add(dst_comp)
 
+    def build_labels(self) -> np.ndarray:
+        """Build labels from red-team records, independently of feature extraction."""
+        labels = np.zeros(len(self.computers), dtype=np.int64)
+        for comp_id in self.redteam_compromised_computers:
+            if comp_id in self.comp_to_idx:
+                labels[self.comp_to_idx[comp_id]] = 1
+        return labels
+
     def extract_features(self) -> np.ndarray:
         """Extract 16 leakage-safe multi-source statistics per computer.
 
@@ -187,10 +195,7 @@ class LanlRedTeamGraphBuilder:
             edge_index = torch.empty((2, 0), dtype=torch.long)
 
         # Labels: 1 for red-team compromised computers, 0 otherwise
-        y = torch.zeros(n_nodes, dtype=torch.long)
-        for comp_id in self.redteam_compromised_computers:
-            if comp_id in self.comp_to_idx:
-                y[self.comp_to_idx[comp_id]] = 1
+        y = torch.from_numpy(self.build_labels()).long()
 
         n_pos = int(y.sum().item())
         n_neg = n_nodes - n_pos

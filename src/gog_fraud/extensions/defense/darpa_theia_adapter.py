@@ -67,7 +67,8 @@ class DarpaTheiaGraphBuilder:
         return self.node_to_idx[node_id]
 
     def add_event(self, src_id: str, dst_id: str, src_type: int, dst_type: int,
-                  event_type: str, timestamp: int, is_malicious_ground_truth: bool = False) -> None:
+                  event_type: str, timestamp: int) -> None:
+        """Add telemetry only; ground truth is deliberately not accepted here."""
         src_idx = self.add_node(src_id, src_type)
         dst_idx = self.add_node(dst_id, dst_type)
 
@@ -101,14 +102,18 @@ class DarpaTheiaGraphBuilder:
         elif "RECV" in event_type or "READ" in event_type:
             dst_node["net_recv_count"] += 1
 
-        if is_malicious_ground_truth:
-            self.ground_truth_malicious_ids.add(src_id)
-            self.ground_truth_malicious_ids.add(dst_id)
-
     def mark_ground_truth_entity(self, entity_id: str) -> None:
         """Mark ground truth entity identified in DARPA official APT report."""
         if entity_id in self.node_to_idx:
             self.ground_truth_malicious_ids.add(entity_id)
+
+    def build_labels(self) -> np.ndarray:
+        """Build labels from the separately supplied ground-truth entity set."""
+        labels = np.zeros(len(self.nodes), dtype=np.int64)
+        for entity_id in self.ground_truth_malicious_ids:
+            if entity_id in self.node_to_idx:
+                labels[self.node_to_idx[entity_id]] = 1
+        return labels
 
     def extract_features(self) -> np.ndarray:
         """Extract 16 leakage-safe topological and activity count features per node.
@@ -189,10 +194,7 @@ class DarpaTheiaGraphBuilder:
             edge_index = torch.empty((2, 0), dtype=torch.long)
 
         # Labels: 1 for ground truth attack entity, 0 otherwise
-        y = torch.zeros(n_nodes, dtype=torch.long)
-        for node_id in self.ground_truth_malicious_ids:
-            if node_id in self.node_to_idx:
-                y[self.node_to_idx[node_id]] = 1
+        y = torch.from_numpy(self.build_labels()).long()
 
         n_pos = int(y.sum().item())
         n_neg = n_nodes - n_pos

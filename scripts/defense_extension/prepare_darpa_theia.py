@@ -77,7 +77,7 @@ def generate_canonical_theia_e3_graph(output_dir: Path, seed: int = 42) -> Path:
         if parent != child:
             ts = base_ts + random.randint(0, 86400)
             builder.add_event(parent, child, NODE_TYPE_PROCESS, NODE_TYPE_PROCESS,
-                              EVENT_TYPE_SPAWN, ts, is_malicious_ground_truth=False)
+                              EVENT_TYPE_SPAWN, ts)
 
     # File reads and writes
     for _ in range(2500):
@@ -86,7 +86,7 @@ def generate_canonical_theia_e3_graph(output_dir: Path, seed: int = 42) -> Path:
         ev_type = random.choice([EVENT_TYPE_READ, EVENT_TYPE_WRITE])
         ts = base_ts + random.randint(0, 86400)
         builder.add_event(p, f, NODE_TYPE_PROCESS, NODE_TYPE_FILE,
-                          ev_type, ts, is_malicious_ground_truth=False)
+                          ev_type, ts)
 
     # Network communication
     for _ in range(1200):
@@ -95,7 +95,7 @@ def generate_canonical_theia_e3_graph(output_dir: Path, seed: int = 42) -> Path:
         ev_type = random.choice([EVENT_TYPE_CONNECT, EVENT_TYPE_SEND, EVENT_TYPE_RECV])
         ts = base_ts + random.randint(0, 86400)
         builder.add_event(p, s, NODE_TYPE_PROCESS, NODE_TYPE_SOCKET,
-                          ev_type, ts, is_malicious_ground_truth=False)
+                          ev_type, ts)
 
     # 2. DARPA E3 Ground Truth APT Attack Scenario:
     # Phase 1: Ingress via malicious browser payload (proc_mal_browser_tab)
@@ -118,33 +118,37 @@ def generate_canonical_theia_e3_graph(output_dir: Path, seed: int = 42) -> Path:
     # Ingress spawn: compromised user browser spawns backdoor process
     ingress_ts = base_ts + 36000
     builder.add_event("proc_user_10", mal_procs[0], NODE_TYPE_PROCESS, NODE_TYPE_PROCESS,
-                      EVENT_TYPE_SPAWN, ingress_ts, is_malicious_ground_truth=True)
+                      EVENT_TYPE_SPAWN, ingress_ts)
 
     # APT lateral spawn chain
     for i in range(len(mal_procs) - 1):
         ts = ingress_ts + (i + 1) * 300
         builder.add_event(mal_procs[i], mal_procs[i + 1], NODE_TYPE_PROCESS, NODE_TYPE_PROCESS,
-                          EVENT_TYPE_SPAWN, ts, is_malicious_ground_truth=True)
+                          EVENT_TYPE_SPAWN, ts)
 
     # Malicious file I/O (credential harvesting, sensitive data staging)
     for p in mal_procs:
         for f in mal_files[:8]:
             ts = ingress_ts + random.randint(600, 3600)
             builder.add_event(p, f, NODE_TYPE_PROCESS, NODE_TYPE_FILE,
-                              EVENT_TYPE_READ, ts, is_malicious_ground_truth=True)
+                              EVENT_TYPE_READ, ts)
         for f in mal_files[8:]:
             ts = ingress_ts + random.randint(1200, 4800)
             builder.add_event(p, f, NODE_TYPE_PROCESS, NODE_TYPE_FILE,
-                              EVENT_TYPE_WRITE, ts, is_malicious_ground_truth=True)
+                              EVENT_TYPE_WRITE, ts)
 
     # C2 Communication & Exfiltration
     for p in mal_procs:
         for s in mal_sockets:
             ts = ingress_ts + random.randint(1800, 7200)
             builder.add_event(p, s, NODE_TYPE_PROCESS, NODE_TYPE_SOCKET,
-                              EVENT_TYPE_SEND, ts, is_malicious_ground_truth=True)
+                              EVENT_TYPE_SEND, ts)
             builder.add_event(p, s, NODE_TYPE_PROCESS, NODE_TYPE_SOCKET,
-                              EVENT_TYPE_RECV, ts + 1, is_malicious_ground_truth=True)
+                              EVENT_TYPE_RECV, ts + 1)
+
+    # Label construction is intentionally separate from telemetry/feature generation.
+    for entity_id in ["proc_user_10", *mal_procs, *mal_files, *mal_sockets]:
+        builder.mark_ground_truth_entity(entity_id)
 
     # Build PyG Data & Manifest
     data, manifest = builder.build_pyg_data()
