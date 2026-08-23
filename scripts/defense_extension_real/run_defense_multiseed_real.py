@@ -39,6 +39,7 @@ from gog_fraud.extensions.defense.defense_registry import (
     DEFENSE_DATASETS,
     load_defense_dataset,
 )
+from gog_fraud.extensions.defense.evaluation_policy import undefined_single_class_metrics
 from gog_fraud.models.pygod.shared_reconstruction import (
     SharedAnomalyDAE,
     SharedCONAD,
@@ -216,13 +217,21 @@ def run_defense_cell(dataset_name: str, model_name: str, seed: int, config: dict
 
         # Evaluate on test set with best_threshold
         test_preds = test_scores >= best_threshold
-        test_f1 = float(f1_score(test_y, test_preds, zero_division=0))
-        test_roc = float(roc_auc_score(test_y, test_scores)) if len(np.unique(test_y)) == 2 else 0.5
-        test_pr = float(average_precision_score(test_y, test_scores)) if test_y.sum() > 0 else 0.0
-        test_prec = float(precision_score(test_y, test_preds, zero_division=0))
-        test_rec = float(recall_score(test_y, test_preds, zero_division=0))
-        test_mcc = float(matthews_corrcoef(test_y, test_preds)) if len(np.unique(test_y)) == 2 else 0.0
-        test_bacc = float(balanced_accuracy_score(test_y, test_preds)) if len(np.unique(test_y)) == 2 else 0.5
+        test_has_both_classes = len(np.unique(test_y)) == 2
+        if test_has_both_classes:
+            metric_values = {
+                "roc_auc": round(float(roc_auc_score(test_y, test_scores)), 6),
+                "pr_auc": round(float(average_precision_score(test_y, test_scores)), 6),
+                "f1": round(float(f1_score(test_y, test_preds, zero_division=0)), 6),
+                "precision": round(float(precision_score(test_y, test_preds, zero_division=0)), 6),
+                "recall": round(float(recall_score(test_y, test_preds, zero_division=0)), 6),
+                "mcc": round(float(matthews_corrcoef(test_y, test_preds)), 6),
+                "balanced_accuracy": round(float(balanced_accuracy_score(test_y, test_preds)), 6),
+                "metric_status": "defined",
+                "performance_eligible": True,
+            }
+        else:
+            metric_values = undefined_single_class_metrics()
 
         rss_peak = proc.memory_info().rss / (1024 * 1024)
         vram_peak = float(torch.cuda.max_memory_allocated() / (1024 * 1024)) if torch.cuda.is_available() else 0.0
@@ -240,20 +249,23 @@ def run_defense_cell(dataset_name: str, model_name: str, seed: int, config: dict
             "peak_rss_mb": round(rss_peak, 2),
             "peak_vram_mb": round(vram_peak, 2),
             "threshold": round(best_threshold, 6),
-            "roc_auc": round(test_roc, 6),
-            "pr_auc": round(test_pr, 6),
-            "f1": round(test_f1, 6),
-            "precision": round(test_prec, 6),
-            "recall": round(test_rec, 6),
-            "mcc": round(test_mcc, 6),
-            "balanced_accuracy": round(test_bacc, 6),
             "n_test_samples": int(len(test_y)),
             "n_test_positives": int(test_y.sum()),
+            **metric_values,
         }
 
         raw_path.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
-        log.info("Cell Success: %s/%s/seed%d -> ROC=%.4f, PR=%.4f, F1=%.4f in %.2fs",
-                 dataset_name, model_name, seed, test_roc, test_pr, test_f1, fit_sec)
+        log.info(
+            "Cell Success: %s/%s/seed%d -> metric_status=%s ROC=%s PR=%s F1=%s in %.2fs",
+            dataset_name,
+            model_name,
+            seed,
+            metric_values["metric_status"],
+            metric_values["roc_auc"],
+            metric_values["pr_auc"],
+            metric_values["f1"],
+            fit_sec,
+        )
         return record
 
     except (torch.OutOfMemoryError, RuntimeError) as e:
