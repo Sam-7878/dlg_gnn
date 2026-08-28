@@ -1,0 +1,48 @@
+############################################################
+# configs/ablation.yaml — Ablation study config
+############################################################
+
+_base: "base.yaml"
+
+experiment:
+  name: "ablation_study"
+
+ablation:
+  variants:
+    - name: "gnn_only"
+      fusion.strategy: "fixed"
+      fusion.fixed_alpha: 0.0
+      graphrag.enabled: false
+
+    - name: "semantic_only"
+      fusion.strategy: "fixed"
+      fusion.fixed_alpha: 1.0
+      graphrag.enabled: true
+
+    - name: "fixed_fusion"
+      fusion.strategy: "fixed"
+      fusion.fixed_alpha: 0.40
+      graphrag.enabled: true
+
+    - name: "learned_fusion"
+      fusion.strategy: "learned"
+      graphrag.enabled: true
+
+    - name: "uncertainty_fusion"        # Proposed method
+      fusion.strategy: "uncertainty"
+      graphrag.enabled: true
+
+    - name: "no_graphrag"
+      fusion.strategy: "uncertainty"
+      graphrag.enabled: false
+
+    - name: "no_mc"
+      fusion.strategy: "uncertainty"
+      graphrag.enabled: true
+      mc.enabled: false
+
+    - name: "no_streaming"
+      fusion.strategy: "uncertainty"
+      graphrag.enabled: true
+      mc.enabled: true
+      level2.enabled: false

@@ -1,0 +1,32 @@
+############################################################
+# configs/privacy.yaml — Privacy experiment config
+############################################################
+
+_base: "base.yaml"
+
+experiment:
+  name: "privacy_utility_tradeoff"
+
+privacy_experiment:
+  representations:
+    - name: "raw_context"
+      mode: "raw_context"
+    - name: "full_vector"
+      mode: "full_risk_vector"
+    - name: "quantized"
+      mode: "quantized_risk_vector"
+    - name: "noisy_gaussian"
+      mode: "noisy_risk_vector"
+      noise_scale: 0.05
+    - name: "minimal"
+      mode: "minimal_risk_token"
+
+  leakage_attack:
+    target_attributes:
+      - "scam_category"        # k_t (13-class)
+      - "urgency_state"        # binary: urgent cue present
+    cv_folds: 5
+    max_iter: 500
+
+  serialization:
+    formats: ["json", "binary"]

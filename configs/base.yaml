@@ -1,0 +1,92 @@
+############################################################
+# configs/base.yaml
+# Base configuration for all dlg_gnn GraphRAG Round 1 experiments.
+# All experiments inherit from this file.
+############################################################
+
+experiment:
+  name: "dlg_gnn_graphrag_r1"
+  seeds: [7, 17, 27, 37, 47]          # 5-seed multi-run for mean ± std
+  device: "cuda"                        # "cuda" or "cpu"
+  output_dir: "results/"
+
+# ── Dataset ───────────────────────────────────────────────────────────────
+dataset:
+  transactions_root: "../_data/dataset/transactions"
+  labels_path: "../_data/dataset/labels.csv"
+  chain: "polygon"                      # polygon | ethereum | bsc
+  temporal_split: true                  # chronological split (prevent data leakage)
+  train_ratio: 0.70
+  val_ratio: 0.15
+  # test_ratio = 1 - train_ratio - val_ratio = 0.15
+
+# ── GraphRAG / Retrieval ──────────────────────────────────────────────────
+graphrag:
+  enabled: true
+  top_k: 5
+  graph_hops: 1
+  similarity_threshold: 0.0
+
+# ── Risk Encoder (φ(r_t)) ────────────────────────────────────────────────
+risk_encoder:
+  hidden_dim: 32
+  output_dim: 16
+  num_k_categories: 13
+  num_h_categories: 6
+  k_embed_dim: 8
+  h_embed_dim: 8
+  dropout: 0.1
+  age_norm_tau: 3600.0
+
+# ── Fusion ───────────────────────────────────────────────────────────────
+fusion:
+  strategy: "uncertainty"              # uncertainty | fixed | learned
+  # For FixedFusion:
+  fixed_alpha: 0.40
+  # For UncertaintyFusion:
+  lambda_uncertainty: 5.0
+  bias: -2.0
+  min_local_weight: 0.05
+  max_local_weight: 0.70
+  norm_mode: "minmax"
+  # For LearnedFusion:
+  learned:
+    hidden_dim: 16
+    dropout: 0.1
+
+# ── GNN (Level 1) ────────────────────────────────────────────────────────
+level1:
+  encoder_backend: "ngnn"              # gnn | ngnn
+  hidden_dim: 128
+  num_layers: 3
+  dropout: 0.2
+  readout: "meanmax"
+  conv_type: "sage"                    # sage | gcn | gat
+
+# ── GNN (Level 2) ────────────────────────────────────────────────────────
+level2:
+  hidden_dim: 128
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.2
+  eval_chunk_size: 16
+  train_chunk_size: 16
+
+# ── MC Dropout ───────────────────────────────────────────────────────────
+mc:
+  enabled: true
+  num_samples: 20                      # default MC samples
+  dropout_p: 0.2
+
+# ── Training ─────────────────────────────────────────────────────────────
+training:
+  level1_epochs: 80
+  level2_epochs: 40
+  lr: 0.001
+  weight_decay: 1.0e-4
+  early_stopping_patience: 10
+
+# ── Privacy ──────────────────────────────────────────────────────────────
+privacy:
+  mode: "full_risk_vector"            # full_risk_vector | quantized_risk_vector | noisy_risk_vector | minimal_risk_token | raw_context
+  noise_scale: 0.05

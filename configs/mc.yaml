@@ -1,0 +1,16 @@
+############################################################
+# configs/mc.yaml — MC sensitivity sweep config
+############################################################
+
+_base: "base.yaml"
+
+experiment:
+  name: "mc_sensitivity_sweep"
+
+mc_sensitivity:
+  T_values: [1, 5, 10, 20, 30]       # MC sample counts to sweep
+  dropout_p_values: [0.1, 0.2, 0.3]  # dropout rates to test
+
+mc:
+  enabled: true
+  dropout_p: 0.2
