@@ -56,13 +56,15 @@ logging.basicConfig(
 log = logging.getLogger("full_pipeline")
 
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-CKPT_DIR = ROOT / "results" / "real_checkpoints"
-RESULTS_DIR = ROOT / "results"
-REPORTS_DIR = ROOT / "reports"
-PRED_DIR = ROOT / "results" / "real_raw_predictions"
+from experiments.round3.artifact_paths import (
+    CHECKPOINT_DIR as CKPT_DIR,
+    RAW_PREDICTION_DIR as PRED_DIR,
+    ROUND3_REPORTS as REPORTS_DIR,
+    ROUND3_RESULTS as RESULTS_DIR,
+)
 
-RESULTS_DIR.mkdir(exist_ok=True)
-REPORTS_DIR.mkdir(exist_ok=True)
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 PRED_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -116,7 +118,7 @@ class Level1GNNDirect(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
@@ -170,7 +172,7 @@ class GNNWithMLP(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0) if T > 1 else torch.zeros_like(mean_p)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
@@ -264,7 +266,7 @@ def load_contexts():
 # Metrics
 # ─────────────────────────────────────────────────────────────────────────────
 
-def metrics(y, probs, method="", split_type="chronological_real", gnn_source="real_checkpoint"):
+def metrics(y, probs, method="", split_type="synthetic_time_ordered", gnn_source="real_checkpoint"):
     y = np.array(y, dtype=int)
     probs = np.array(probs, dtype=float)
     try:
@@ -396,8 +398,8 @@ def uncertainty_fusion(p_gnn, u_mc, p_risk):
     return (1 - beta) * p_gnn + beta * p_risk
 
 
-def learned_alpha_fusion(p_gnn, p_risk, val_y, val_p_gnn, val_p_risk):
-    """Sweep alpha on validation, pick best AUC-PR."""
+def validation_tuned_fixed_fusion(p_gnn, p_risk, val_y, val_p_gnn, val_p_risk):
+    """Sweep a fixed alpha on validation and apply the selected value to test."""
     best_alpha, best_val = 0.5, -1.0
     for alpha in np.arange(0.0, 1.05, 0.1):
         val_fused = alpha * val_p_gnn + (1 - alpha) * val_p_risk
@@ -408,7 +410,18 @@ def learned_alpha_fusion(p_gnn, p_risk, val_y, val_p_gnn, val_p_risk):
         if v > best_val:
             best_val = v
             best_alpha = alpha
-    return alpha * p_gnn + (1 - alpha) * p_risk, best_alpha
+    return best_alpha * p_gnn + (1 - best_alpha) * p_risk, best_alpha
+
+
+def learned_fusion(p_gnn, p_risk, val_y, val_p_gnn, val_p_risk):
+    """Fit a two-feature logistic fusion head on validation only."""
+    if len(np.unique(val_y)) < 2:
+        return fixed_fusion(p_gnn, p_risk, alpha=0.5)
+    head = LogisticRegression(
+        class_weight="balanced", max_iter=1000, random_state=42
+    )
+    head.fit(np.column_stack((val_p_gnn, val_p_risk)), val_y)
+    return head.predict_proba(np.column_stack((p_gnn, p_risk)))[:, 1]
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -586,14 +599,18 @@ def calibration_data(y, probs, method, n_bins=10):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def main():
+    global CKPT_DIR
     parser = argparse.ArgumentParser()
     parser.add_argument("--seeds", type=str, default="7,17,27,37,47")
+    parser.add_argument("--checkpoint-dir", type=Path, default=CKPT_DIR)
     parser.add_argument("--T", type=int, default=10)
     parser.add_argument("--n-boot", type=int, default=5000)
     parser.add_argument("--device", type=str, default="auto")
     parser.add_argument("--skip-privacy", action="store_true")
     parser.add_argument("--skip-robustness", action="store_true")
     args = parser.parse_args()
+
+    CKPT_DIR = args.checkpoint_dir.resolve()
 
     seeds = [int(s) for s in args.seeds.split(",")]
     device = torch.device("cuda" if (args.device == "auto" and torch.cuda.is_available()) else "cpu")
@@ -633,6 +650,7 @@ def main():
         "TF_IDF_Only": [],
         "Fixed_Fusion_0.5": [],
         "Fixed_Fusion_ValTuned": [],
+        "Learned_Fusion": [],
         "Uncertainty_Fusion": [],
         "Without_MC_T1": [],
         "Without_GraphRAG": [],
@@ -667,10 +685,14 @@ def main():
             p_gnn_t1_mean, _, _ = model.forward_mc(test_data, T=1)
         p_gnn_t1 = p_gnn_t1_mean.cpu().numpy()
 
-        # Learned alpha (val tuned)
-        fused_learned, best_alpha = learned_alpha_fusion(
+        # Validation-tuned fixed alpha and distinct learned fusion head.
+        fused_val_tuned, best_alpha = validation_tuned_fixed_fusion(
             p_gnn_np, graphrag_scores_test,
             y_val, val_p_gnn, graphrag_scores_val
+        )
+        fused_learned = learned_fusion(
+            p_gnn_np, graphrag_scores_test,
+            y_val, val_p_gnn, graphrag_scores_val,
         )
         log.info(f"  Best alpha (val-tuned): {best_alpha:.1f}")
 
@@ -688,7 +710,8 @@ def main():
             "Semantic_Only_GraphRAG": graphrag_scores_test,
             "TF_IDF_Only":            tfidf_scores_test,
             "Fixed_Fusion_0.5":       fused_fixed05,
-            "Fixed_Fusion_ValTuned":  fused_learned,
+            "Fixed_Fusion_ValTuned":  fused_val_tuned,
+            "Learned_Fusion":         fused_learned,
             "Uncertainty_Fusion":     fused_unc,
             "Without_MC_T1":          without_mc,
             "Without_GraphRAG":       without_graphrag,
@@ -725,7 +748,7 @@ def main():
             "mean_ece": round(float(np.mean(eccs)), 6),
             "n_seeds": len(seed_metrics_list),
             "gnn_source": "real_checkpoint",
-            "split_type": "chronological_real",
+            "split_type": "synthetic_time_ordered",
         })
 
     main_path = RESULTS_DIR / "real_main_results.csv"
@@ -750,7 +773,7 @@ def main():
 
     boot_results = []
     reference = "Uncertainty_Fusion"
-    comparisons = ["GNN_Only", "Fixed_Fusion_0.5", "Fixed_Fusion_ValTuned", "Without_MC_T1"]
+    comparisons = ["GNN_Only", "Fixed_Fusion_0.5", "Learned_Fusion", "Without_MC_T1"]
 
     for comp in comparisons:
         if reference not in mean_probs or comp not in mean_probs:

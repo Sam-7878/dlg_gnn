@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
 from langchain_core.prompts import PromptTemplate
@@ -85,8 +86,10 @@ try:
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
     plt.title("Extracted Micro-GraphRAG (Track A)")
-    plt.savefig("micro_graphrag_result.png") # 이미지로 저장
-    print("\n✅ [성공] 그래프 시각화가 'micro_graphrag_result.png' 파일로 저장되었습니다!")
+    image_path = Path(__file__).resolve().parents[1] / "check_env" / "micro_graphrag_result.png"
+    image_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(image_path) # 이미지로 저장
+    print(f"\n✅ [성공] 그래프 시각화가 '{image_path}' 파일로 저장되었습니다!")
 
 except json.JSONDecodeError:
     print("\n❌ [실패] 모델이 올바른 JSON을 생성하지 않았습니다. 응답 원본:")

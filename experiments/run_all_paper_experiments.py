@@ -53,7 +53,8 @@ def run_step(name: str, cmd: list, cwd: Path) -> bool:
 
 def main():
     parser = argparse.ArgumentParser(description="Run all paper experiments for dlg_gnn GraphRAG R1")
-    parser.add_argument("--config", required=True, help="Base config YAML path")
+    parser.add_argument("--config", default="configs/base.yaml", help="Base config YAML path")
+    parser.add_argument("--seeds", default="7,17,27,37,47")
     parser.add_argument("--skip-audit",   action="store_true")
     parser.add_argument("--skip-main",    action="store_true")
     parser.add_argument("--skip-ablation",action="store_true")
@@ -61,20 +62,35 @@ def main():
     parser.add_argument("--skip-privacy", action="store_true")
     parser.add_argument("--skip-leakage", action="store_true")
     parser.add_argument("--skip-latency", action="store_true")
-    parser.add_argument("--paper-ready",  action="store_true", help="Run full Round 2 validated paper suite")
+    parser.add_argument("--paper-ready",  action="store_true", help="Validate the fail-closed Round 3 SCI evidence gate")
+    parser.add_argument("--simulation-study", action="store_true", help="Run the explicitly non-paper Round 2 simulation suite")
     parser.add_argument("--dry-run",      action="store_true", help="Print commands without running")
     args = parser.parse_args()
 
     root = Path(__file__).parent.parent.resolve()
     python = sys.executable
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = root / "results" / f"paper_experiments_{timestamp}"
+    if args.paper_ready:
+        from experiments.round3.paper_ready_gate import evaluate_paper_ready
+
+        seeds = [int(value) for value in args.seeds.split(",")]
+        gate = evaluate_paper_ready(seeds)
+        if not gate["paper_ready"]:
+            for failure in gate["failures"]:
+                log.error("PAPER-READY GATE: %s", failure)
+            raise SystemExit(1)
+        log.info("Round 3 paper-ready gate passed for seeds %s", seeds)
+        return
+
+    if not args.simulation_study:
+        parser.error("choose --paper-ready or --simulation-study")
+
+    output_dir = root / "results" / "graphrag" / "round_2" / f"paper_experiments_{timestamp}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     log.info(f"Results directory: {output_dir}")
     log.info(f"Config: {args.config}")
-    if args.paper_ready:
-        log.info("Mode: --paper-ready (Full Round 2 validation suite enabled)")
+    log.info("Mode: --simulation-study (not eligible for paper claims)")
 
     steps_ok = []
 
@@ -95,7 +111,15 @@ def main():
 
     # ── Steps ──────────────────────────────────────────────────────────────
     maybe_run(args.skip_leakage, "1. Dataset Leakage & Inference Attack", "run_leakage.py")
-    maybe_run(args.skip_main,    "2. Main Model (multi-seed)",            "run_multiseed.py")
+    if not args.skip_main:
+        command = [python, "experiments/run_multiseed.py", "--simulation-study", "--config", args.config,
+                   "--seeds", args.seeds, "--output", str(output_dir / "run_multiseed")]
+        if args.dry_run:
+            log.info("  [DRY RUN] %s", " ".join(command))
+        else:
+            steps_ok.append(("2. Main Model (simulation study)", run_step(
+                "2. Main Model (simulation study)", command, root
+            )))
     maybe_run(args.skip_ablation,"3. Ablation Study (8 variants)",        "run_ablation.py",
               ["--ablation-config", "configs/ablation.yaml"])
     maybe_run(args.skip_mc,      "4. MC Sensitivity Sweep",               "run_mc_sensitivity.py",
@@ -105,13 +129,12 @@ def main():
     maybe_run(args.skip_latency, "6. Module Latency Profiling",           "run_latency.py")
 
     # Round 2 additions
-    if args.paper_ready:
-        maybe_run(False, "7. Context Lexical Baselines",                  "run_context_baselines.py", pass_output=False)
-        maybe_run(False, "8. Uncertainty Subgroup Analysis",              "run_uncertainty_subgroup.py", pass_output=False)
-        maybe_run(False, "9. True End-to-End Latency by T",               "run_e2e_latency.py", pass_output=False)
-        maybe_run(False, "10. Robustness & Missing Context Stress Test",   "run_robustness.py", pass_output=False)
-        maybe_run(False, "11. Dataset Manifest Generation",               "generate_dataset_manifest.py", pass_output=False)
-        maybe_run(False, "12. LaTeX Tables Generation",                   "generate_latex_tables.py", pass_output=False)
+    maybe_run(False, "7. Context Lexical Baselines",                  "run_context_baselines.py", pass_output=False)
+    maybe_run(False, "8. Uncertainty Subgroup Analysis",              "run_uncertainty_subgroup.py", pass_output=False)
+    maybe_run(False, "9. Simulated End-to-End Latency by T",           "run_e2e_latency.py", pass_output=False)
+    maybe_run(False, "10. Robustness & Missing Context Stress Test",   "run_robustness.py", pass_output=False)
+    maybe_run(False, "11. Dataset Manifest Generation",               "generate_dataset_manifest.py", pass_output=False)
+    maybe_run(False, "12. LaTeX Tables Generation",                   "generate_latex_tables.py", pass_output=False)
 
     maybe_run(False,             "13. Publication Figures & Summary CSVs", "generate_figures.py", pass_output=False)
 

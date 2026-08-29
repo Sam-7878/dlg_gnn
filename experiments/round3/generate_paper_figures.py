@@ -10,6 +10,7 @@ Generate 7 publication-ready figures for Round 3:
 """
 
 import csv
+import sys
 import json
 import logging
 from pathlib import Path
@@ -23,8 +24,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(na
 log = logging.getLogger("generate_figures")
 
 ROOT = Path(__file__).parent.parent.parent
-RESULTS_DIR = ROOT / "results"
-FIGURES_DIR = ROOT / "figures"
+sys.path.insert(0, str(ROOT))
+from experiments.round3.artifact_paths import ROUND3_FIGURES as FIGURES_DIR, ROUND3_RESULTS as RESULTS_DIR
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # Styling
@@ -65,7 +66,7 @@ def plot_main_comparison():
     bars2 = ax.bar(x + width/2, auc_rocs, width, label='AUC-ROC', color='#d95f02', alpha=0.85)
 
     ax.set_ylabel('Score')
-    ax.set_title('Real Chronological Evaluation: Main Method Comparison (GoG-MicroRAG)')
+    ax.set_title('Controlled Synthetic-Time Evaluation (Not Paper-Eligible)')
     ax.set_xticks(x)
     ax.set_xticklabels(methods, rotation=35, ha='right')
     ax.legend()

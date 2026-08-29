@@ -10,8 +10,8 @@ import torch
 
 ROOT = Path(__file__).parent.parent.parent
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-REPORTS_DIR = ROOT / "reports"
-REPORTS_DIR.mkdir(exist_ok=True)
+from experiments.round3.artifact_paths import ROUND3_REPORTS as REPORTS_DIR
+REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 log = logging.getLogger("failure_analysis")

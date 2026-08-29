@@ -1,18 +1,18 @@
 """
-Generate 5 publication-ready LaTeX tables for Round 3:
-1. results/tables/real_main_results.tex
-2. results/tables/real_ablation.tex
-3. results/tables/real_latency.tex
-4. results/tables/real_statistical_significance.tex
-5. results/tables/real_privacy_tradeoff.tex
+Generate the required Round 3 LaTeX tables in the canonical artifact folder.
+
+The captions deliberately identify the current evaluation as controlled and
+synthetic-time.  The paper-ready gate is the authority for whether these
+tables may be used as real chronological evidence.
 """
 
 import csv
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent.parent
-RESULTS_DIR = ROOT / "results"
-TABLES_DIR = RESULTS_DIR / "tables"
+sys.path.insert(0, str(ROOT))
+from experiments.round3.artifact_paths import ROUND3_RESULTS as RESULTS_DIR, TABLE_DIR as TABLES_DIR
 TABLES_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -26,7 +26,7 @@ def table_main_results():
     tex = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Main Experimental Results under Real Chronological Evaluation (GoG-MicroRAG-Stream-v1). Mean and std over 5 random seeds.}",
+        r"\caption{Controlled synthetic-time evaluation on GoG-MicroRAG-Stream-v1. These results are not paper-eligible real chronological evidence. Mean and std over 5 random seeds.}",
         r"\label{tab:real_main_results}",
         r"\begin{tabular}{lcccccc}",
         r"\toprule",
@@ -127,6 +127,40 @@ def table_latency():
     out.write_text("\n".join(tex), encoding="utf-8")
 
 
+def table_mc_sensitivity():
+    p = RESULTS_DIR / "real_mc_sensitivity.csv"
+    if not p.exists():
+        return
+    with open(p) as f:
+        rows = list(csv.DictReader(f))
+
+    grouped = {}
+    for row in rows:
+        grouped.setdefault(int(row["T"]), []).append(row)
+
+    tex = [
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\caption{MC-dropout sensitivity in the controlled synthetic-time evaluation (five seeds).}",
+        r"\label{tab:real_mc_sensitivity}",
+        r"\begin{tabular}{rccc}",
+        r"\toprule",
+        r"\textbf{MC passes} & \textbf{AUC-PR} & \textbf{ECE} & \textbf{Latency (ms)} \\",
+        r"\midrule",
+    ]
+    for t in sorted(grouped):
+        group = grouped[t]
+        mean = lambda key: sum(float(row[key]) for row in group) / len(group)
+        tex.append(
+            f"{t} & {mean('auc_pr'):.4f} & {mean('ece'):.4f} & "
+            f"{mean('latency_ms'):.2f} \\\\"
+        )
+    tex.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
+    (TABLES_DIR / "real_mc_sensitivity.tex").write_text(
+        "\n".join(tex), encoding="utf-8"
+    )
+
+
 def table_statistical():
     p = RESULTS_DIR / "real_statistical_summary.csv"
     if not p.exists():
@@ -158,7 +192,9 @@ def table_statistical():
         r"\end{table}",
     ])
 
-    out = TABLES_DIR / "real_statistical_significance.tex"
+    supplementary = TABLES_DIR / "supplementary"
+    supplementary.mkdir(parents=True, exist_ok=True)
+    out = supplementary / "real_statistical_significance.tex"
     out.write_text("\n".join(tex), encoding="utf-8")
 
 
@@ -195,13 +231,14 @@ def table_privacy():
         r"\end{table}",
     ])
 
-    out = TABLES_DIR / "real_privacy_tradeoff.tex"
+    out = TABLES_DIR / "real_privacy_utility.tex"
     out.write_text("\n".join(tex), encoding="utf-8")
 
 
 def main():
     table_main_results()
     table_ablation()
+    table_mc_sensitivity()
     table_latency()
     table_statistical()
     table_privacy()

@@ -50,6 +50,8 @@ frontend_apps/
 
 # Text files
 *.txt 
+!requirements/
+!requirements/requirements-sci-lock.txt
 *.log
 *.png 
 *.pkl

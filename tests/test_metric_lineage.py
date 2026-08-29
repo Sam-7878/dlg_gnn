@@ -136,17 +136,23 @@ def test_metrics_reproducible_from_raw_predictions():
 
 
 def test_lineage_report_exists():
-    """reports/round_2_metric_lineage.md must exist."""
-    report_path = REPO_ROOT / "reports" / "round_2_metric_lineage.md"
+    """The organized Round 2 metric-lineage report must exist."""
+    report_path = (
+        REPO_ROOT / "reports" / "graphrag" / "round_2"
+        / "round_2_metric_lineage.md"
+    )
     assert report_path.exists(), (
-        "reports/round_2_metric_lineage.md does not exist. "
+        "reports/graphrag/round_2/round_2_metric_lineage.md does not exist. "
         "Generate the metric lineage report as the first step of Round 2."
     )
 
 
 def test_lineage_report_mentions_gnn_simulation():
     """The lineage report must explicitly document the GNN simulation."""
-    report_path = REPO_ROOT / "reports" / "round_2_metric_lineage.md"
+    report_path = (
+        REPO_ROOT / "reports" / "graphrag" / "round_2"
+        / "round_2_metric_lineage.md"
+    )
     if not report_path.exists():
         pytest.skip("Lineage report not yet generated")
 

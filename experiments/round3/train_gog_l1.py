@@ -54,9 +54,12 @@ log = logging.getLogger("train_gog_l1")
 # ─────────────────────────────────────────────────────────────────────────────
 
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-CKPT_DIR = ROOT / "results" / "real_checkpoints"
-MANIFEST_DIR = ROOT / "results" / "checkpoint_manifests"
-TRAIN_LOG = ROOT / "results" / "real_train_log.jsonl"
+from experiments.round3.artifact_paths import (
+    CHECKPOINT_DIR as CKPT_DIR,
+    CHECKPOINT_MANIFEST_DIR as MANIFEST_DIR,
+    ROUND3_RESULTS,
+)
+TRAIN_LOG = ROUND3_RESULTS / "real_train_log.jsonl"
 
 CKPT_DIR.mkdir(parents=True, exist_ok=True)
 MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
@@ -148,7 +151,7 @@ class Level1GNNDirect(nn.Module):
         self.eval()
         probs = torch.stack(probs_list, dim=0)  # [T, N]
         mean_prob = probs.mean(0)
-        variance = probs.var(0)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_prob * torch.log(mean_prob + eps)
                     + (1 - mean_prob) * torch.log(1 - mean_prob + eps))
@@ -389,7 +392,7 @@ def save_checkpoint(seed: int, result: dict, model_cfg: dict, graph_sha256: str)
             "test_metrics": result["test_metrics"],
             "test_mc_auc_pr": result["test_mc_auc_pr"],
             "gnn_source": "real_checkpoint",
-            "split_type": "chronological_real",
+            "split_type": "synthetic_time_ordered",
             "dataset": "GoG-MicroRAG-Stream-v1",
             "dataset_sha256": graph_sha256,
             "config_sha256": cfg_sha256,
@@ -413,7 +416,7 @@ def save_checkpoint(seed: int, result: dict, model_cfg: dict, graph_sha256: str)
         "test_f1": result["test_metrics"]["f1"],
         "test_mc_auc_pr": result["test_mc_auc_pr"],
         "gnn_source": "real_checkpoint",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
         "dataset_sha256": graph_sha256,
         "config_sha256": cfg_sha256,
         "git_commit": git_commit(),
@@ -472,7 +475,7 @@ def main():
         "dropout": 0.2,
         "encoder_backend": "gnn_direct",
         "dataset": "GoG-MicroRAG-Stream-v1",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
     }
 
     all_manifests = []
@@ -523,7 +526,7 @@ def main():
     # Write summary manifest
     summary = {
         "gnn_source": "real_checkpoint",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
         "dataset": "GoG-MicroRAG-Stream-v1",
         "dataset_sha256": graph_sha256,
         "seeds": seeds,

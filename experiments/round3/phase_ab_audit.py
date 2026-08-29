@@ -26,12 +26,11 @@ if not (ROOT / "data").exists():
     ROOT = Path(os.environ.get("DLG_GNN_ROOT", "/mnt/d/_Work/goat_bank/dlg_gnn"))
 sys.path.insert(0, str(ROOT / "src"))
 
-REPORTS_DIR = ROOT / "reports"
-RESULTS_DIR = ROOT / "results"
+from experiments.round3.artifact_paths import ROUND3_REPORTS as REPORTS_DIR, ROUND3_RESULTS as RESULTS_DIR
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
 
-REPORTS_DIR.mkdir(exist_ok=True)
-RESULTS_DIR.mkdir(exist_ok=True)
+REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def sha256_file(path: Path) -> str:
@@ -220,6 +219,10 @@ test_fraud = int(test_labels.sum())
 # Manifest
 manifest = {
     "dataset_name": "GoG-MicroRAG-Stream-v1",
+    "evaluation_track": "controlled_context_augmentation",
+    "graph_source": "real_gog_processed_graph_without_timestamp",
+    "context_source": "label_conditioned_synthetic",
+    "timestamp_source": "synthetic_context_schedule",
     "graph_file": "data/benchmark/gog_microrag_stream_v1/polygon_hybrid_graph.pt",
     "graph_sha256": graph_sha256,
     "contexts_sha256": contexts_sha256,
@@ -229,7 +232,13 @@ manifest = {
     "embedding_dim": emb_dim,
     "fraud_count": n_fraud,
     "fraud_ratio": round(fraud_ratio, 6),
-    "split_type": "temporal_chronological",
+    "split_type": "synthetic_time_ordered",
+    "paper_eligible": False,
+    "paper_ineligibility_reasons": [
+        "The processed graph has no recorded transaction timestamp field.",
+        "The split order comes from synthetic context timestamps.",
+        "Contexts are label-conditioned and may only be used as a controlled study.",
+    ],
     "train_size": len(train_ids),
     "valid_size": len(valid_ids),
     "test_size": len(test_ids),
@@ -254,7 +263,7 @@ print(f"  Written: {manifest_path.relative_to(ROOT)}")
 # Dataset profile report
 dataset_report = REPORTS_DIR / "real_dataset_profile.md"
 with open(dataset_report, "w") as f:
-    f.write("# Real Dataset Profile — GoG-MicroRAG-Stream-v1\n\n")
+    f.write("# Controlled Dataset Profile — GoG-MicroRAG-Stream-v1\n\n")
     f.write(f"**Date**: {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}\n")
     f.write(f"**SHA256 (graph)**: `{graph_sha256}`\n\n")
     f.write("## Dataset Statistics\n\n")
@@ -294,8 +303,8 @@ with open(dataset_report, "w") as f:
     f.write(f"| Edge type | Count |\n|---|---|\n")
     f.write(f"| Train→Test edges | {cross_train_to_test} |\n")
     f.write(f"| Test→Train edges | {cross_test_to_train} |\n\n")
-    f.write("> Note: Cross-split edges exist in the static graph but are managed by\n")
-    f.write("> chronological masking during inference (only past-node neighbors used).\n")
+    f.write("> **Paper-readiness warning:** the graph has no recorded transaction timestamp.\n")
+    f.write("> Split ordering comes from synthetic context timestamps and is not a real chronological split.\n")
 
 print(f"  Written: {dataset_report.relative_to(ROOT)}")
 
@@ -335,12 +344,15 @@ edges_within_test = int((src_in_test_np & dst_in_test_np).sum())
 # Scaler: since we are training from scratch, scaler will be fit on train only
 scaler_note = "Scaler will be fit on train split only (see train_gog_l1.py)"
 
-leakage_pass = temporal_ordering_ok and no_overlap
+leakage_pass = False
 
 with open(leakage_report, "w") as f:
     f.write("# Temporal Leakage Audit — Round 3\n\n")
     f.write(f"**Date**: {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}\n")
-    f.write(f"**Overall result**: {'PASS' if leakage_pass else 'FAIL'}\n\n")
+    f.write("**Overall result**: NOT ESTABLISHED (paper-ineligible)\n\n")
+    f.write("> Node IDs are ordered by a synthetic context schedule, not by recorded on-chain\n")
+    f.write("> transaction timestamps. ID ordering and disjointness therefore cannot establish\n")
+    f.write("> chronological leakage freedom.\n\n")
     f.write("## Split ID Ordering\n\n")
     f.write("| Check | Result |\n|---|---|\n")
     f.write(f"| Temporal ordering (train < valid < test IDs) | {'PASS' if temporal_ordering_ok else 'FAIL'} |\n")
@@ -360,18 +372,16 @@ with open(leakage_report, "w") as f:
     f.write(f"| Cross-split edges (train→test) | {cross_train_to_test} |\n")
     f.write(f"| Cross-split edges (test→train) | {cross_test_to_train} |\n")
     f.write(f"| Edges within test set | {edges_within_test} |\n\n")
-    f.write("> Cross-split edges exist in the static graph but do NOT cause leakage\n")
-    f.write("> because GNN inference uses only historical (past-timestep) neighbors.\n")
-    f.write("> The IDs serve as temporal ordering: lower ID = earlier transaction.\n\n")
+    f.write("> Cross-split and within-test edges exist in a static graph with no edge timestamps.\n")
+    f.write("> The present artifacts cannot prove that every inference uses historical-only edges.\n\n")
     f.write("## Feature Normalization\n\n")
     f.write(f"- {scaler_note}\n")
     f.write("- Threshold selection: validation set only\n")
     f.write("- Hyperparameter tuning: validation set only\n\n")
     f.write("## Conclusion\n\n")
-    f.write(f"Temporal leakage audit: **{'PASS' if leakage_pass else 'FAIL'}**\n\n")
-    if leakage_pass:
-        f.write("The chronological split is clean. Train < Validation < Test in ID order.\n")
-        f.write("No test information leaks into the training process.\n")
+    f.write("Temporal leakage audit: **NOT ESTABLISHED**\n\n")
+    f.write("The split is suitable only for the controlled synthetic-context study. A paper-ready\n")
+    f.write("main result requires raw transaction timestamps and timestamped edge masking.\n")
 
 print(f"  Written: {leakage_report.relative_to(ROOT)}")
 print("\n=== Phase A+B Complete ===")

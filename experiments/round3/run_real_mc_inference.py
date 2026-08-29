@@ -48,14 +48,16 @@ logging.basicConfig(
 log = logging.getLogger("real_mc_inference")
 
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-CKPT_DIR = ROOT / "results" / "real_checkpoints"
-MANIFEST_DIR = ROOT / "results" / "checkpoint_manifests"
-PRED_DIR = ROOT / "results" / "real_raw_predictions"
-RESULTS_DIR = ROOT / "results"
-REPORTS_DIR = ROOT / "reports"
+from experiments.round3.artifact_paths import (
+    CHECKPOINT_DIR as CKPT_DIR,
+    CHECKPOINT_MANIFEST_DIR as MANIFEST_DIR,
+    RAW_PREDICTION_DIR as PRED_DIR,
+    ROUND3_REPORTS as REPORTS_DIR,
+    ROUND3_RESULTS as RESULTS_DIR,
+)
 
 PRED_DIR.mkdir(parents=True, exist_ok=True)
-RESULTS_DIR.mkdir(exist_ok=True)
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -121,7 +123,7 @@ class Level1GNNDirect(nn.Module):
         self.eval()
         probs = torch.stack(probs_list, dim=0)
         mean_p = probs.mean(0)
-        variance = probs.var(0)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps)
                     + (1 - mean_p) * torch.log(1 - mean_p + eps))
@@ -180,7 +182,7 @@ class GNNWithMLP(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0) if T > 1 else torch.zeros_like(mean_p)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
@@ -549,14 +551,14 @@ def main():
                         "T": T,
                         "seed": seed,
                         "gnn_source": "real_checkpoint",
-                        "split_type": "chronological_real",
+                        "split_type": "synthetic_time_ordered",
                     })
 
             row = {
                 "seed": seed,
                 "T": T,
                 "gnn_source": "real_checkpoint",
-                "split_type": "chronological_real",
+                "split_type": "synthetic_time_ordered",
                 "checkpoint_sha256": checkpoint_sha256[:12],
                 "latency_ms": round(elapsed_ms, 2),
                 "throughput_events_sec": round(throughput, 2),

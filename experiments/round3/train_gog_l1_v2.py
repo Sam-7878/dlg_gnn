@@ -45,9 +45,12 @@ logging.basicConfig(
 log = logging.getLogger("train_gog_l1_v2")
 
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-CKPT_DIR = ROOT / "results" / "real_checkpoints"
-MANIFEST_DIR = ROOT / "results" / "checkpoint_manifests"
-TRAIN_LOG = ROOT / "results" / "real_train_log.jsonl"
+from experiments.round3.artifact_paths import (
+    CHECKPOINT_DIR as CKPT_DIR,
+    CHECKPOINT_MANIFEST_DIR as MANIFEST_DIR,
+    ROUND3_RESULTS,
+)
+TRAIN_LOG = ROUND3_RESULTS / "real_train_log.jsonl"
 CKPT_DIR.mkdir(parents=True, exist_ok=True)
 MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -212,7 +215,7 @@ class Level1GNNv2(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
@@ -388,7 +391,7 @@ def save_checkpoint(seed, result, model_cfg, graph_sha256):
         "test_metrics": result["test_metrics"],
         "test_mc_auc_pr": result["test_mc_auc_pr"],
         "gnn_source": "real_checkpoint",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
         "dataset": "GoG-MicroRAG-Stream-v1",
         "dataset_sha256": graph_sha256,
         "config_sha256": cfg_sha256,
@@ -409,7 +412,7 @@ def save_checkpoint(seed, result, model_cfg, graph_sha256):
         "test_f1": result["test_metrics"]["f1"],
         "test_mc_auc_pr": result["test_mc_auc_pr"],
         "gnn_source": "real_checkpoint",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
         "dataset_sha256": graph_sha256,
         "config_sha256": cfg_sha256,
         "git_commit": git_commit(),
@@ -463,7 +466,7 @@ def main():
         "feature_engineering": "degree+emb+normalized",
         "loss": "focal_loss",
         "dataset": "GoG-MicroRAG-Stream-v1",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
     }
 
     all_manifests = []
@@ -504,7 +507,7 @@ def main():
     summary = {
         "gnn_source": "real_checkpoint",
         "model_class": "Level1GNNv2",
-        "split_type": "chronological_real",
+        "split_type": "synthetic_time_ordered",
         "dataset": "GoG-MicroRAG-Stream-v1",
         "dataset_sha256": graph_sha256,
         "seeds": seeds,

@@ -15,7 +15,9 @@ Outputs:
     results/real_e2e_latency.csv
 """
 
+import argparse
 import csv
+import hashlib
 import json
 import logging
 import os
@@ -39,8 +41,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(na
 log = logging.getLogger("real_e2e_latency")
 
 DATA_DIR = ROOT / "data" / "benchmark" / "gog_microrag_stream_v1"
-CKPT_DIR = ROOT / "results" / "real_checkpoints"
-RESULTS_DIR = ROOT / "results"
+from experiments.round3.artifact_paths import CHECKPOINT_DIR as CKPT_DIR, ROUND3_RESULTS as RESULTS_DIR
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -96,7 +97,7 @@ class Level1GNNv2(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
@@ -232,13 +233,16 @@ class GNNWithMLP(nn.Module):
         self.eval()
         probs = torch.stack(probs_list)
         mean_p = probs.mean(0)
-        variance = probs.var(0) if T > 1 else torch.zeros_like(mean_p)
+        variance = probs.var(0, unbiased=False)
         eps = 1e-8
         entropy = -(mean_p * torch.log(mean_p + eps) + (1 - mean_p) * torch.log(1 - mean_p + eps))
         return mean_p, variance, entropy
 
 
-from experiments.round3.train_gog_l1_v3 import build_features_v3
+from experiments.round3.train_gog_l1_v3 import (
+    GNNWithMLP as TrainedGNNWithMLP,
+    build_features_v3,
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -255,7 +259,7 @@ def load_best_model(device):
                 cfg = ckpt["model_config"]
                 mc = ckpt.get("model_class", "Level1GNNDirect")
                 if mc == "GNNWithMLP":
-                    model = GNNWithMLP(
+                    model = TrainedGNNWithMLP(
                         in_dim=cfg.get("in_dim", 18), hidden_dim=cfg.get("hidden_dim", 256),
                         dropout=cfg.get("dropout", 0.3),
                     )
@@ -273,7 +277,7 @@ def load_best_model(device):
                 model = model.to(device)
                 model.eval()
                 log.info(f"  Loaded: {p.relative_to(ROOT)} ({mc})")
-                return model, ckpt
+                return model, ckpt, p
     raise FileNotFoundError("No checkpoint found. Run training first.")
 
 
@@ -313,6 +317,9 @@ def measure_graphrag_latency(test_ids, contexts):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sample-count", type=int, default=100)
+    args = parser.parse_args()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     log.info(f"Device: {device}")
 
@@ -335,7 +342,19 @@ def main():
                     contexts[nid] = c.get("context_text", "")
 
     # Load model
-    model, ckpt = load_best_model(device)
+    model, ckpt, checkpoint_path = load_best_model(device)
+    checkpoint_sha256 = hashlib.sha256(checkpoint_path.read_bytes()).hexdigest()
+
+    from graphrag.local_kb import LocalKnowledgeBase
+    from graphrag.retriever import GraphRAGRetriever, RetrieverConfig
+    from graphrag.risk_extractor import RiskExtractor
+    from graphrag.risk_encoder import RiskEncoder
+
+    retriever = GraphRAGRetriever(
+        LocalKnowledgeBase(), RetrieverConfig(top_k=5, graph_hops=1)
+    )
+    extractor = RiskExtractor()
+    risk_encoder = RiskEncoder.from_config({}).to(device).eval()
 
     T_values = [1, 5, 10, 20, 30]
     results = []
@@ -344,8 +363,23 @@ def main():
         log.info(f"\n=== T={T} ===")
         latencies = []
 
-        # Single-node streaming simulation
-        sample_ids = test_ids[:100]  # 100 events for latency measurement
+        # Exclude CUDA/kernel and Python first-call initialization from the
+        # measured distribution.
+        for warmup_id in test_ids[:10]:
+            warmup_data = build_single_node_data(graph, warmup_id, all_features, device)
+            model.forward_mc(warmup_data, T=T)
+            warmup_text = contexts.get(warmup_id, "")
+            warmup_evidence = retriever.retrieve(warmup_text) if warmup_text else []
+            warmup_risk = extractor.extract(
+                warmup_evidence, event_id=f"tx_{warmup_id:06d}"
+            )
+            risk_encoder.encode_risk_dict_batch([warmup_risk], device=device)
+        if device.type == "cuda":
+            torch.cuda.synchronize()
+
+        # Controlled single-event replay. The synthetic-time provenance is
+        # recorded in every row and is rejected by the paper-ready gate.
+        sample_ids = test_ids[:args.sample_count]
 
         for nid in sample_ids:
             t_start = time.perf_counter()
@@ -360,27 +394,64 @@ def main():
             mean_p, var, ent = model.forward_mc(node_data, T=T)
             t_gnn_ms = (time.perf_counter() - t2) * 1000
 
-            # Step 3: Fusion (simplified, no GraphRAG for per-event timing)
+            # Step 3: GraphRAG retrieval and risk extraction
+            t3 = time.perf_counter()
+            context_text = contexts.get(nid, "")
+            evidence = retriever.retrieve(context_text) if context_text else []
+            risk = extractor.extract(evidence, event_id=f"tx_{nid:06d}")
+            t_graphrag_ms = (time.perf_counter() - t3) * 1000
+
+            # Step 4: neural risk encoding
+            t_risk = time.perf_counter()
+            with torch.no_grad():
+                _, encoded_risk = risk_encoder.encode_risk_dict_batch([risk], device=device)
+            p_risk = float(encoded_risk.item())
+            t_risk_encoder_ms = (time.perf_counter() - t_risk) * 1000
+
+            # Step 5: uncertainty fusion
+            t4 = time.perf_counter()
             p_gnn = float(mean_p[node_data.y.shape[0] // 2].item()) if mean_p.numel() > 0 else 0.5
             u_mc = float(var.mean().item())
-            p_risk = 0.5  # neutral (actual GraphRAG measured separately)
             beta = 1.0 / (1.0 + np.exp(-10 * (u_mc - 0.01)))
             final_score = (1 - beta) * p_gnn + beta * p_risk
+            t_fusion_ms = (time.perf_counter() - t4) * 1000
+
+            # Step 6: event serialization
+            t5 = time.perf_counter()
+            json.dumps({
+                "event_id": f"tx_{nid:06d}",
+                "p_gnn": p_gnn,
+                "u_mc": u_mc,
+                "p_risk": p_risk,
+                "score": final_score,
+            }, separators=(",", ":"))
+            t_serialization_ms = (time.perf_counter() - t5) * 1000
 
             t_total_ms = (time.perf_counter() - t_start) * 1000
             latencies.append({
                 "total_ms": t_total_ms,
                 "graph_ms": t_graph_ms,
                 "gnn_ms": t_gnn_ms,
+                "graphrag_ms": t_graphrag_ms,
+                "risk_encoder_ms": t_risk_encoder_ms,
+                "fusion_ms": t_fusion_ms,
+                "serialization_ms": t_serialization_ms,
             })
 
         total_ms_arr = np.array([l["total_ms"] for l in latencies])
         gnn_ms_arr = np.array([l["gnn_ms"] for l in latencies])
+        graphrag_ms_arr = np.array([l["graphrag_ms"] for l in latencies])
+        risk_encoder_ms_arr = np.array([l["risk_encoder_ms"] for l in latencies])
+        fusion_ms_arr = np.array([l["fusion_ms"] for l in latencies])
+        serialization_ms_arr = np.array([l["serialization_ms"] for l in latencies])
 
         row = {
             "T": T,
             "gnn_source": "real_checkpoint",
-            "split_type": "chronological_real",
+            "split_type": "synthetic_time_ordered",
+            "paper_eligible": False,
+            "risk_encoder_source": "untrained_controlled_latency_only",
+            "checkpoint_sha256": checkpoint_sha256,
             "n_events": len(sample_ids),
             "mean_total_ms": round(float(np.mean(total_ms_arr)), 4),
             "median_total_ms": round(float(np.median(total_ms_arr)), 4),
@@ -389,6 +460,10 @@ def main():
             "events_per_sec": round(1000.0 / float(np.mean(total_ms_arr)), 2),
             "mean_gnn_ms": round(float(np.mean(gnn_ms_arr)), 4),
             "p95_gnn_ms": round(float(np.percentile(gnn_ms_arr, 95)), 4),
+            "mean_graphrag_ms": round(float(np.mean(graphrag_ms_arr)), 4),
+            "mean_risk_encoder_ms": round(float(np.mean(risk_encoder_ms_arr)), 4),
+            "mean_fusion_ms": round(float(np.mean(fusion_ms_arr)), 4),
+            "mean_serialization_ms": round(float(np.mean(serialization_ms_arr)), 4),
         }
 
         # GPU memory
