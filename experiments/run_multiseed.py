@@ -154,6 +154,16 @@ def run_single_seed(cfg: Dict[str, Any], seed: int) -> Dict[str, float]:
     except Exception:
         auc_pr = float("nan")
 
+    # GNN-only metrics (for paired bootstrap CI)
+    try:
+        auc_pr_gnn_only = float(average_precision_score(labels_np, p_gnn_np))
+    except Exception:
+        auc_pr_gnn_only = float("nan")
+    try:
+        auc_roc_gnn_only = float(roc_auc_score(labels_np, p_gnn_np))
+    except Exception:
+        auc_roc_gnn_only = float("nan")
+
     # F1 at threshold 0.5
     preds = (scores_np >= 0.5).astype(int)
     f1 = float(f1_score(labels_np, preds, zero_division=0))
@@ -163,16 +173,60 @@ def run_single_seed(cfg: Dict[str, Any], seed: int) -> Dict[str, float]:
     topk_idx = np.argsort(scores_np)[::-1][:k]
     recall_at_k = float(labels_np[topk_idx].sum() / max(labels_np.sum(), 1))
 
+    # Calibration metrics (ECE, Brier, NLL)
+    def _ece(y, p, n_bins=10):
+        bins = np.linspace(0, 1, n_bins + 1)
+        ece = 0.0
+        for i in range(n_bins):
+            mask = (p >= bins[i]) & (p < bins[i + 1])
+            if mask.sum() > 0:
+                ece += (mask.sum() / len(y)) * abs(y[mask].mean() - p[mask].mean())
+        return float(ece)
+
+    eps = 1e-7
+    ece_val = _ece(labels_np.astype(float), scores_np)
+    brier = float(np.mean((scores_np - labels_np.astype(float)) ** 2))
+    nll = float(-np.mean(
+        labels_np * np.log(np.clip(scores_np, eps, 1 - eps))
+        + (1 - labels_np) * np.log(np.clip(1 - scores_np, eps, 1 - eps))
+    ))
+
+    # Round 2: save raw per-event predictions for calibration + lineage tracing
+    try:
+        import pandas as pd
+        from pathlib import Path as _Path
+        raw_dir = _Path("results/raw_predictions")
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame({
+            "event_id": event_ids,
+            "label": labels_np,
+            "score": scores_np,         # Uncertainty Fusion output
+            "p_gnn": p_gnn_np,          # GNN simulation
+            "u_mc": u_mc_np,            # MC uncertainty
+            "p_risk": p_risk_np,        # RiskEncoder output
+        }).to_csv(raw_dir / f"multiseed_seed{seed}_preds.csv", index=False)
+    except Exception as save_err:
+        log.warning(f"[Seed {seed}] Could not save raw predictions: {save_err}")
+
     metrics = {
         "seed": seed,
+        "gnn_source": "simulated",
         "auc_roc": auc_roc,
         "auc_pr": auc_pr,
+        "auc_pr_gnn_only": auc_pr_gnn_only,
+        "auc_roc_gnn_only": auc_roc_gnn_only,
         "f1": f1,
         "recall_at_k": recall_at_k,
+        "ece": ece_val,
+        "brier": brier,
+        "nll": nll,
         "n_samples": n_samples,
         "n_fraud": int(labels_np.sum()),
     }
-    log.info(f"[Seed {seed}] AUC-ROC={auc_roc:.4f} AUC-PR={auc_pr:.4f} F1={f1:.4f}")
+    log.info(
+        f"[Seed {seed}] AUC-ROC={auc_roc:.4f} AUC-PR={auc_pr:.4f} "
+        f"F1={f1:.4f} ECE={ece_val:.4f} [gnn=simulated]"
+    )
     return metrics
 
 
@@ -195,31 +249,98 @@ def main():
         all_metrics.append(m)
 
     # ── Aggregate ──────────────────────────────────────────────────────────
-    metric_keys = ["auc_roc", "auc_pr", "f1", "recall_at_k"]
+    metric_keys = ["auc_roc", "auc_pr", "f1", "recall_at_k", "ece", "brier", "nll",
+                   "auc_pr_gnn_only", "auc_roc_gnn_only"]
     agg = {}
     for k in metric_keys:
-        vals = [m[k] for m in all_metrics if not np.isnan(m[k])]
-        agg[k] = {"mean": float(np.mean(vals)), "std": float(np.std(vals))}
-        log.info(f"  {k}: {agg[k]['mean']:.4f} ± {agg[k]['std']:.4f}")
+        vals = [m[k] for m in all_metrics if not np.isnan(m.get(k, float("nan")))]
+        if vals:
+            agg[k] = {"mean": float(np.mean(vals)), "std": float(np.std(vals))}
+            log.info(f"  {k}: {agg[k]['mean']:.4f} ± {agg[k]['std']:.4f}")
 
-    # ── Bootstrap CI (95%) ──────────────────────────────────────────────────
+    # ── Bootstrap CI (95%) — per-seed mean resampling ──────────────────────
     n_bootstrap = 2000
-    rng = np.random.RandomState(0)
+    rng_ci = np.random.RandomState(0)
     ci = {}
-    # Use per-seed mean scores as the bootstrap population
-    for k in metric_keys:
-        vals = np.array([m[k] for m in all_metrics if not np.isnan(m[k])])
-        boot = np.array([rng.choice(vals, size=len(vals), replace=True).mean()
-                         for _ in range(n_bootstrap)])
-        ci[k] = {"lo": float(np.percentile(boot, 2.5)), "hi": float(np.percentile(boot, 97.5))}
-        log.info(f"  {k} 95% CI: [{ci[k]['lo']:.4f}, {ci[k]['hi']:.4f}]")
+    for k in ["auc_roc", "auc_pr", "f1", "recall_at_k"]:
+        vals = np.array([m.get(k, float("nan")) for m in all_metrics])
+        vals = vals[~np.isnan(vals)]
+        if len(vals) >= 2:
+            boot = np.array([
+                rng_ci.choice(vals, size=len(vals), replace=True).mean()
+                for _ in range(n_bootstrap)
+            ])
+            ci[k] = {"lo": float(np.percentile(boot, 2.5)), "hi": float(np.percentile(boot, 97.5))}
+            log.info(f"  {k} 95% CI: [{ci[k]['lo']:.4f}, {ci[k]['hi']:.4f}]")
+
+    # ── Paired bootstrap: Full model vs GNN Only (AUC-PR delta) ─────────────
+    full_auc_prs = np.array([m.get("auc_pr", float("nan")) for m in all_metrics])
+    gnn_only_auc_prs = np.array([m.get("auc_pr_gnn_only", float("nan")) for m in all_metrics])
+    valid = ~(np.isnan(full_auc_prs) | np.isnan(gnn_only_auc_prs))
+    paired_bootstrap = {}
+    if valid.sum() >= 2:
+        deltas = full_auc_prs[valid] - gnn_only_auc_prs[valid]
+        delta_mean = float(deltas.mean())
+        boot_deltas = np.array([
+            rng_ci.choice(deltas, size=len(deltas), replace=True).mean()
+            for _ in range(n_bootstrap)
+        ])
+        paired_bootstrap["full_vs_gnn_only_auc_pr"] = {
+            "delta_mean": delta_mean,
+            "ci_lo": float(np.percentile(boot_deltas, 2.5)),
+            "ci_hi": float(np.percentile(boot_deltas, 97.5)),
+        }
+        log.info(
+            f"  Paired bootstrap Full vs GNN-only AUC-PR: delta={delta_mean:.4f} "
+            f"95%CI=[{paired_bootstrap['full_vs_gnn_only_auc_pr']['ci_lo']:.4f}, "
+            f"{paired_bootstrap['full_vs_gnn_only_auc_pr']['ci_hi']:.4f}]"
+        )
+
+    # ── Run manifest ────────────────────────────────────────────────────────
+    import hashlib, datetime
+    import subprocess as _sp
+    cfg_str = json.dumps(cfg, sort_keys=True)
+    cfg_sha256 = hashlib.sha256(cfg_str.encode()).hexdigest()[:16]
+    try:
+        git_commit = _sp.check_output(["git", "rev-parse", "HEAD"], text=True).strip()[:12]
+    except Exception:
+        git_commit = "unknown"
+    try:
+        import sys as _sys
+        python_ver = f"{_sys.version_info.major}.{_sys.version_info.minor}.{_sys.version_info.micro}"
+        import torch as _torch
+        torch_ver = _torch.__version__
+    except Exception:
+        python_ver = "unknown"
+        torch_ver = "unknown"
+
+    manifest = {
+        "experiment": "multiseed",
+        "git_commit": git_commit,
+        "seeds": seeds,
+        "gnn_source": "simulated",
+        "config_sha256": cfg_sha256,
+        "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
+        "command": f"python experiments/run_multiseed.py --config {args.config}",
+        "python_version": python_ver,
+        "torch_version": torch_ver,
+    }
+    manifest_dir = Path("results/run_manifests")
+    manifest_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = manifest_dir / f"multiseed_{datetime.datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json"
+    with open(manifest_path, "w") as f:
+        json.dump(manifest, f, indent=2)
+    log.info(f"Run manifest saved to {manifest_path}")
 
     # ── Save ───────────────────────────────────────────────────────────────
     results = {
         "per_seed": all_metrics,
         "aggregate_mean_std": agg,
         "bootstrap_ci_95": ci,
+        "paired_bootstrap": paired_bootstrap,
         "seeds": seeds,
+        "gnn_source": "simulated",
+        "manifest": manifest,
     }
     out_path = output_dir / "multiseed_results.json"
     with open(out_path, "w") as f:

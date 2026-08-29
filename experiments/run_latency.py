@@ -1,14 +1,22 @@
 """
 experiments/run_latency.py
 
-Component-wise latency profiling for the dlg_gnn GraphRAG pipeline.
+Component-wise (MODULE) latency profiling for the dlg_gnn GraphRAG pipeline.
 
-Measures:
+Round 2 fix: Renamed 'end_to_end' to 'module_pipeline' to correctly reflect
+that this script does NOT include:
+  - Streaming graph update (subgraph_store, neighborhood preparation)
+  - GNN forward pass (Level1GNN / Level2 model)
+  - MC stochastic forward passes (T samples)
+
+The true End-to-End latency (including GNN + MC sampling) is measured
+separately in experiments/run_e2e_latency.py.
+
+Modules profiled here:
     - GraphRAG retrieval latency (per transaction)
     - Risk Encoder forward pass latency
-    - MC GNN inference latency (per T)
     - Fusion latency
-    - Total end-to-end latency
+    - Module pipeline (retrieval + extraction + encoder + fusion, WITHOUT GNN)
 
 Protocol:
     1. Warm-up: 50 iterations (excluded from measurement)
@@ -93,6 +101,12 @@ def main():
 
     # ── Benchmark components ───────────────────────────────────────────────
     results = {}
+    # Metadata to clarify scope
+    scope_note = (
+        "MODULE latency only (GraphRAG retrieval + extraction + encoder + fusion). "
+        "Does NOT include: streaming graph update, GNN forward pass, MC sampling. "
+        "See run_e2e_latency.py for true End-to-End latency."
+    )
 
     log.info("Profiling: GraphRAG retrieval ...")
     retrieval_times = _time_fn(

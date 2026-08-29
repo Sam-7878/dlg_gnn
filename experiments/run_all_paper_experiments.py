@@ -61,6 +61,7 @@ def main():
     parser.add_argument("--skip-privacy", action="store_true")
     parser.add_argument("--skip-leakage", action="store_true")
     parser.add_argument("--skip-latency", action="store_true")
+    parser.add_argument("--paper-ready",  action="store_true", help="Run full Round 2 validated paper suite")
     parser.add_argument("--dry-run",      action="store_true", help="Print commands without running")
     args = parser.parse_args()
 
@@ -72,15 +73,18 @@ def main():
 
     log.info(f"Results directory: {output_dir}")
     log.info(f"Config: {args.config}")
+    if args.paper_ready:
+        log.info("Mode: --paper-ready (Full Round 2 validation suite enabled)")
 
     steps_ok = []
 
-    def maybe_run(skip: bool, name: str, script: str, extra_args: list = None):
+    def maybe_run(skip: bool, name: str, script: str, extra_args: list = None, pass_output: bool = True):
         if skip:
             log.info(f"  SKIPPED: {name}")
             return
-        cmd = [python, f"experiments/{script}", "--config", args.config,
-               "--output", str(output_dir / script.replace(".py", ""))]
+        cmd = [python, f"experiments/{script}", "--config", args.config]
+        if pass_output:
+            cmd += ["--output", str(output_dir / script.replace(".py", ""))]
         if extra_args:
             cmd += extra_args
         if args.dry_run:
@@ -98,8 +102,18 @@ def main():
               ["--mc-config", "configs/mc.yaml"])
     maybe_run(args.skip_privacy, "5. Privacy-Utility Tradeoff",           "run_privacy_utility.py",
               ["--privacy-config", "configs/privacy.yaml"])
-    maybe_run(args.skip_latency, "6. Latency Profiling",                  "run_latency.py")
-    maybe_run(False,             "7. Publication Figures & Summary CSVs", "generate_figures.py")
+    maybe_run(args.skip_latency, "6. Module Latency Profiling",           "run_latency.py")
+
+    # Round 2 additions
+    if args.paper_ready:
+        maybe_run(False, "7. Context Lexical Baselines",                  "run_context_baselines.py", pass_output=False)
+        maybe_run(False, "8. Uncertainty Subgroup Analysis",              "run_uncertainty_subgroup.py", pass_output=False)
+        maybe_run(False, "9. True End-to-End Latency by T",               "run_e2e_latency.py", pass_output=False)
+        maybe_run(False, "10. Robustness & Missing Context Stress Test",   "run_robustness.py", pass_output=False)
+        maybe_run(False, "11. Dataset Manifest Generation",               "generate_dataset_manifest.py", pass_output=False)
+        maybe_run(False, "12. LaTeX Tables Generation",                   "generate_latex_tables.py", pass_output=False)
+
+    maybe_run(False,             "13. Publication Figures & Summary CSVs", "generate_figures.py", pass_output=False)
 
     # ── Summary ────────────────────────────────────────────────────────────
     log.info(f"\n{'='*60}")

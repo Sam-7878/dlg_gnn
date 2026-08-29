@@ -13,35 +13,52 @@ from fusion.fixed_fusion import FixedFusion
 from privacy.vector_codec import VectorCodec
 from privacy.leakage_attack import LeakageAttack
 
+import pytest
+
 SAMPLE_TEXT = "URGENT: Send 500 USDT to 0xDeadBeef immediately! Guaranteed 500% return."
 
-def test_kb():
-    kb = LocalKnowledgeBase()
+@pytest.fixture
+def kb():
+    return LocalKnowledgeBase()
+
+@pytest.fixture
+def evidence(kb):
+    retriever = GraphRAGRetriever(kb)
+    return retriever.retrieve(SAMPLE_TEXT)
+
+@pytest.fixture
+def risk(evidence):
+    extractor = RiskExtractor()
+    return extractor.extract(evidence, event_id="tx_000", pre_transaction_gap_sec=300)
+
+@pytest.fixture
+def p_risk(risk):
+    import torch
+    encoder = RiskEncoder()
+    encoder.eval()
+    with torch.no_grad():
+        _, p = encoder.encode_risk_dict_batch([risk])
+    return p
+
+def test_kb(kb):
     s = kb.summary()
     assert s["num_nodes"] > 20, f"Expected > 20 nodes, got {s['num_nodes']}"
     assert s["num_edges"] > 20, f"Expected > 20 edges, got {s['num_edges']}"
     print(f"  KB: {s['num_nodes']} nodes, {s['num_edges']} edges — OK")
-    return kb
 
-def test_retrieval(kb):
-    retriever = GraphRAGRetriever(kb)
-    evidence = retriever.retrieve(SAMPLE_TEXT)
+def test_retrieval(kb, evidence):
     assert len(evidence) > 0, "No evidence retrieved"
     top = evidence[0]
     assert top.score >= 0.0, "Evidence score must be non-negative"
     print(f"  Retrieval: {len(evidence)} items, top={top.node_label} ({top.score:.4f}) — OK")
-    return evidence
 
-def test_risk_extraction(evidence):
-    extractor = RiskExtractor()
-    risk = extractor.extract(evidence, event_id="tx_000", pre_transaction_gap_sec=300)
+def test_risk_extraction(evidence, risk):
     assert "local_risk_score" in risk
     assert "label" not in risk, "LEAKAGE: label found in risk dict!"
     assert 0.0 <= risk["local_risk_score"] <= 1.0
     print(f"  Extractor: s_t={risk['local_risk_score']:.4f}, k_t={risk['risk_type_id']}, scenario={risk['scenario_type']} — OK")
-    return risk
 
-def test_risk_encoder(risk):
+def test_risk_encoder(risk, p_risk):
     import torch
     encoder = RiskEncoder()
     encoder.eval()
@@ -50,7 +67,6 @@ def test_risk_encoder(risk):
     assert tuple(z.shape) == (1, 16), f"Wrong z shape: {tuple(z.shape)}"
     assert 0.0 <= p[0].item() <= 1.0
     print(f"  Encoder: z.shape={tuple(z.shape)}, p_risk={p[0].item():.4f} — OK")
-    return p
 
 def test_fusion(p_risk):
     import torch

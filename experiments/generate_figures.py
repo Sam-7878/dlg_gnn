@@ -1,14 +1,18 @@
 """
 experiments/generate_figures.py
 
-Generates publication-quality figures and summary CSV tables for the SCI paper
-as specified in round_1_task.txt Section 17 & 18.
+Generates publication-quality figures and summary CSV tables for the SCI paper.
+
+Round 2 policy: ALL paper-facing figures and CSVs must be derived from real
+raw prediction artifacts. Hardcoded fallback values are FORBIDDEN.
+If a required artifact is missing, this script raises FileNotFoundError
+(or warns and skips, depending on the --strict / FIGURES_STRICT env var).
 
 Figures produced:
     figures/ablation_performance.png    (Figure A: 3 bars — AUC-PR, F1, Recall)
-    figures/mc_sensitivity_plot.png     (Figure B: Dual-axis — T vs ECE and Latency)
+    figures/mc_sensitivity_plot.png     (Figure B: Dual-Axis — T vs ECE and Latency)
     figures/privacy_utility_plot.png    (Figure C: Comm overhead log-bytes vs AUC-PR)
-    figures/calibration_plot.png        (Figure D: Reliability diagram / ECE bins)
+    figures/calibration_plot.png        (Figure D: Reliability diagram from real predictions)
     figures/leakage_utility_plot.png    (Figure E: Privacy leakage vs AUC-PR)
 
 Summary CSVs produced in results/:
@@ -20,16 +24,43 @@ Summary CSVs produced in results/:
     results/calibration.csv
     results/latency_breakdown.csv
     results/statistical_summary.csv
+
+Round 2 changes:
+  - REMOVED all hardcoded fallback metric values (0.9369, 0.9906, 0.8264, ECE=0.038).
+  - REMOVED simulated calibration figure; now loads from real calibration artifact.
+  - REMOVED hardcoded leakage accuracy defaults.
+  - Added FIGURES_STRICT env var: set to '1' to make missing artifacts raise errors
+    instead of printing warnings and skipping.
 """
 
 import json
 import os
+import sys
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")  # headless backend for server/WSL
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+# Round 2: FIGURES_STRICT=1 → raise on missing artifacts; 0 → warn and skip
+_STRICT = os.environ.get("FIGURES_STRICT", "0") == "1"
+
+
+def _require_artifact(path: Path, label: str) -> bool:
+    """Return True if the artifact exists. In strict mode, raise. Otherwise warn+return False."""
+    if path.exists():
+        return True
+    msg = (
+        f"[generate_figures] MISSING ARTIFACT: {path}\n"
+        f"  Cannot produce '{label}' without raw prediction data.\n"
+        f"  Run the corresponding experiment first, or set FIGURES_STRICT=0 to skip."
+    )
+    if _STRICT:
+        raise FileNotFoundError(msg)
+    print(f"WARNING: {msg}", file=sys.stderr)
+    return False
+
 
 plt.style.use("seaborn-v0_8-whitegrid" if "seaborn-v0_8-whitegrid" in plt.style.available else "default")
 plt.rcParams.update({
@@ -269,31 +300,86 @@ def plot_figure_c_privacy_utility():
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Figure D — Reliability Diagram (Calibration Plot)
+# Figure D — Reliability Diagram (Calibration Plot) — Round 2: real data only
 # ══════════════════════════════════════════════════════════════════════════════
 
 def plot_figure_d_calibration():
-    # Construct a clean reliability diagram based on multi-seed predictions
-    ms_json = RESULTS_DIR / "multiseed" / "multiseed_results.json"
-    n_bins = 10
-    bin_edges = np.linspace(0, 1, n_bins + 1)
-    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    """Build reliability diagram from real per-event prediction artifacts.
 
-    # Simulated realistic calibrated output matching our 0.03-0.08 ECE
-    rng = np.random.RandomState(42)
-    bin_accs = bin_centers + rng.normal(0, 0.025, n_bins)
-    bin_accs = np.clip(bin_accs, 0.0, 1.0)
-    bin_accs[0] = 0.04
-    bin_accs[-1] = 0.98
+    Round 2 fix: REMOVED simulated calibration data.  This function now loads
+    raw event-level predictions from results/raw_predictions/ and computes ECE
+    directly.  If no prediction files exist, it raises (strict) or skips (non-strict).
+    """
+    raw_dir = RESULTS_DIR / "raw_predictions"
+    cal_csv = RESULTS_DIR / "calibration.csv"
+
+    # First, try to load already-computed calibration.csv (from run_calibration)
+    if cal_csv.exists():
+        df_cal = pd.read_csv(cal_csv)
+        if {"bin_confidence", "bin_accuracy"}.issubset(df_cal.columns):
+            bin_centers = df_cal["bin_confidence"].values
+            bin_accs = df_cal["bin_accuracy"].values
+            ece = float((df_cal.get("weight", pd.Series([1 / len(df_cal)] * len(df_cal))) *
+                         (df_cal["bin_confidence"] - df_cal["bin_accuracy"]).abs()).sum())
+            source = "calibration.csv"
+        else:
+            if not _require_artifact(Path("__nonexistent__"), "calibration figure (calibration.csv lacks required columns)"):
+                return
+    elif raw_dir.exists():
+        # Build calibration from raw predictions
+        preds_list, labels_list = [], []
+        for fp in sorted(raw_dir.glob("*.csv")):
+            df = pd.read_csv(fp)
+            if {"score", "label"}.issubset(df.columns):
+                preds_list.append(df["score"].values)
+                labels_list.append(df["label"].values)
+        if not preds_list:
+            if not _require_artifact(raw_dir / "[no prediction csv files]",
+                                     "calibration figure"):
+                return
+        all_preds = np.concatenate(preds_list)
+        all_labels = np.concatenate(labels_list)
+        n_bins = 10
+        bin_edges = np.linspace(0, 1, n_bins + 1)
+        bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+        bin_accs = np.full(n_bins, np.nan)
+        bin_weights = np.zeros(n_bins)
+        n = len(all_labels)
+        for i in range(n_bins):
+            lo, hi = bin_edges[i], bin_edges[i + 1]
+            mask = (all_preds >= lo) & (all_preds < hi)
+            if mask.sum() > 0:
+                bin_accs[i] = all_labels[mask].mean()
+                bin_weights[i] = mask.sum() / n
+        ece = float(np.nansum(bin_weights * np.abs(bin_centers - bin_accs)))
+        # Save calibration CSV for reproducibility
+        rows = []
+        for i in range(n_bins):
+            rows.append({
+                "bin": i,
+                "bin_confidence": float(bin_centers[i]),
+                "bin_accuracy": float(bin_accs[i]) if not np.isnan(bin_accs[i]) else None,
+                "weight": float(bin_weights[i]),
+                "calibration_gap": float(abs(bin_centers[i] - bin_accs[i])) if not np.isnan(bin_accs[i]) else None,
+            })
+        pd.DataFrame(rows).to_csv(cal_csv, index=False)
+        source = f"raw_predictions ({len(preds_list)} seed files)"
+    else:
+        if not _require_artifact(raw_dir, "calibration figure"):
+            return
+
+    # Replace NaN bins with the perfect-calibration line for plotting
+    bin_accs_plot = np.where(np.isnan(bin_accs), bin_centers, bin_accs)
 
     fig, ax = plt.subplots(figsize=(6, 5.5))
     ax.plot([0, 1], [0, 1], "k--", label="Perfect Calibration")
-    ax.plot(bin_centers, bin_accs, "o-", color="#16a085", linewidth=2, markersize=7, label="Uncertainty Fusion (ECE=0.038)")
-    ax.fill_between(bin_centers, bin_centers, bin_accs, color="#16a085", alpha=0.2, label="Calibration Gap")
-
+    ax.plot(bin_centers, bin_accs_plot, "o-", color="#16a085", linewidth=2, markersize=7,
+            label=f"Uncertainty Fusion (ECE={ece:.4f})")
+    ax.fill_between(bin_centers, bin_centers, bin_accs_plot, color="#16a085", alpha=0.2,
+                    label="Calibration Gap")
     ax.set_xlabel("Mean Predicted Probability (Confidence)")
     ax.set_ylabel("Empirical Accuracy (Fraction of Positives)")
-    ax.set_title("Figure D: Reliability Diagram (Proposed Method)")
+    ax.set_title(f"Figure D: Reliability Diagram [source: {source}]")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.legend(loc="upper left", frameon=True)
@@ -302,18 +388,7 @@ def plot_figure_d_calibration():
     out_path = FIGURES_DIR / "calibration_plot.png"
     plt.savefig(out_path)
     plt.close()
-    print(f"Saved: {out_path}")
-
-    # Export CSV
-    rows = []
-    for i in range(n_bins):
-        rows.append({
-            "bin": i,
-            "bin_confidence": bin_centers[i],
-            "bin_accuracy": bin_accs[i],
-            "calibration_gap": abs(bin_centers[i] - bin_accs[i]),
-        })
-    pd.DataFrame(rows).to_csv(RESULTS_DIR / "calibration.csv", index=False)
+    print(f"Saved: {out_path}  (ECE={ece:.4f}, source={source})")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -321,34 +396,47 @@ def plot_figure_d_calibration():
 # ══════════════════════════════════════════════════════════════════════════════
 
 def plot_figure_e_leakage_utility():
+    """Leakage vs utility scatter plot.
+
+    Round 2 fix: REMOVED hardcoded default leakage accuracy values.
+    All points must come from real attack artifacts.
+    """
     leak_json = RESULTS_DIR / "leakage" / "leakage_results.json"
     priv_json = RESULTS_DIR / "privacy_utility" / "privacy_utility_results.json"
 
-    leak_acc_map = {
-        "minimal": 0.6945,
-        "noisy": 0.7405,
-        "quantized": 0.9570,
-        "full": 0.9570,
-    }
-    if leak_json.exists():
-        with open(leak_json) as f:
-            ldata = json.load(f)
-        for ar in ldata.get("attribute_inference_attacks", []):
-            rep = ar["representation"]
-            if "minimal" in rep:
-                leak_acc_map["minimal"] = ar["accuracy"]
-            elif "noisy" in rep:
-                leak_acc_map["noisy"] = ar["accuracy"]
-            elif "quantized" in rep:
-                leak_acc_map["quantized"] = ar["accuracy"]
-            elif "full" in rep:
-                leak_acc_map["full"] = ar["accuracy"]
+    # Both artifacts required — no hardcoded fallbacks
+    if not _require_artifact(leak_json, "Figure E: leakage_results.json"):
+        return
+    if not _require_artifact(priv_json, "Figure E: privacy_utility_results.json"):
+        return
+
+    with open(leak_json) as f:
+        ldata = json.load(f)
+    with open(priv_json) as f:
+        pdata = json.load(f)
+
+    # Build leakage map from real attack results
+    leak_acc_map: dict = {}
+    for ar in ldata.get("attribute_inference_attacks", []):
+        rep = ar["representation"]
+        for key in ("minimal", "noisy", "quantized", "full"):
+            if key in rep.lower():
+                leak_acc_map[key] = ar["accuracy"]
+                break
+
+    priv_summary = pdata.get("summary", {})
+
+    def _auc_pr_for(key: str) -> float:
+        for mode in priv_summary:
+            if key in mode.lower():
+                return priv_summary[mode].get("auc_pr", {}).get("mean", float("nan"))
+        return float("nan")
 
     items = [
-        ("Minimal Token", leak_acc_map["minimal"], 0.936, "#27ae60", "D"),
-        ("Noisy Vector", leak_acc_map["noisy"], 0.936, "#e67e22", "^"),
-        ("Quantized Vector", leak_acc_map["quantized"], 0.939, "#2980b9", "s"),
-        ("Full Risk Vector", leak_acc_map["full"], 0.939, "#8e44ad", "o"),
+        ("Minimal Token",    leak_acc_map.get("minimal",   float("nan")), _auc_pr_for("minimal"),   "#27ae60", "D"),
+        ("Noisy Vector",     leak_acc_map.get("noisy",     float("nan")), _auc_pr_for("noisy"),     "#e67e22", "^"),
+        ("Quantized Vector", leak_acc_map.get("quantized", float("nan")), _auc_pr_for("quantized"), "#2980b9", "s"),
+        ("Full Risk Vector", leak_acc_map.get("full",      float("nan")), _auc_pr_for("full"),      "#8e44ad", "o"),
     ]
 
     fig, ax = plt.subplots(figsize=(7.5, 5))
@@ -380,29 +468,51 @@ def plot_figure_e_leakage_utility():
 # ══════════════════════════════════════════════════════════════════════════════
 
 def generate_summary_csvs():
+    """Generate main_results.csv and statistical_summary.csv from raw artifacts.
+
+    Round 2 fix: REMOVED all hardcoded fallback metric values.  If the
+    multiseed_results.json artifact does not exist, this function raises
+    FileNotFoundError (FIGURES_STRICT=1) or warns and returns (default).
+    """
     # 1. Main results CSV
     ms_json = RESULTS_DIR / "multiseed" / "multiseed_results.json"
-    if ms_json.exists():
-        with open(ms_json) as f:
-            ms_data = json.load(f)
-        agg = ms_data.get("aggregate_mean_std", {})
-        ci = ms_data.get("bootstrap_ci_95", {})
+    if not _require_artifact(ms_json, "main_results.csv / statistical_summary.csv"):
+        return
 
-        main_row = {
-            "Model": "Full Proposed (GraphRAG + MC-nGNN + Uncertainty Fusion)",
-            "AUC-PR_mean": agg.get("auc_pr", {}).get("mean", 0.9369),
-            "AUC-PR_std": agg.get("auc_pr", {}).get("std", 0.0051),
-            "AUC-PR_95CI_low": ci.get("auc_pr", {}).get("lo", 0.9318),
-            "AUC-PR_95CI_high": ci.get("auc_pr", {}).get("hi", 0.9419),
-            "AUC-ROC_mean": agg.get("auc_roc", {}).get("mean", 0.9906),
-            "AUC-ROC_std": agg.get("auc_roc", {}).get("std", 0.0005),
-            "F1_mean": agg.get("f1", {}).get("mean", 0.8264),
-            "F1_std": agg.get("f1", {}).get("std", 0.0054),
-            "Recall@K_mean": agg.get("recall_at_k", {}).get("mean", 0.8699),
-            "Recall@K_std": agg.get("recall_at_k", {}).get("std", 0.0113),
-        }
-        pd.DataFrame([main_row]).to_csv(RESULTS_DIR / "main_results.csv", index=False)
-        pd.DataFrame([main_row]).to_csv(RESULTS_DIR / "statistical_summary.csv", index=False)
+    with open(ms_json) as f:
+        ms_data = json.load(f)
+    agg = ms_data.get("aggregate_mean_std", {})
+    ci = ms_data.get("bootstrap_ci_95", {})
+
+    def _get(d: dict, *keys, default=float("nan")):
+        """Safe nested get — returns float(nan) instead of hardcoded numbers."""
+        cur = d
+        for k in keys:
+            if not isinstance(cur, dict):
+                return default
+            cur = cur.get(k, None)
+            if cur is None:
+                return default
+        return cur
+
+    gnn_source = ms_data.get("gnn_source", "simulated")
+    main_row = {
+        "Model": "Full Proposed (GraphRAG + MC-nGNN + Uncertainty Fusion)",
+        "gnn_source": gnn_source,
+        "AUC-PR_mean":       _get(agg, "auc_pr",      "mean"),
+        "AUC-PR_std":        _get(agg, "auc_pr",      "std"),
+        "AUC-PR_95CI_low":   _get(ci,  "auc_pr",      "lo"),
+        "AUC-PR_95CI_high":  _get(ci,  "auc_pr",      "hi"),
+        "AUC-ROC_mean":      _get(agg, "auc_roc",     "mean"),
+        "AUC-ROC_std":       _get(agg, "auc_roc",     "std"),
+        "F1_mean":           _get(agg, "f1",          "mean"),
+        "F1_std":            _get(agg, "f1",          "std"),
+        "Recall@K_mean":     _get(agg, "recall_at_k", "mean"),
+        "Recall@K_std":      _get(agg, "recall_at_k", "std"),
+    }
+    pd.DataFrame([main_row]).to_csv(RESULTS_DIR / "main_results.csv", index=False)
+    pd.DataFrame([main_row]).to_csv(RESULTS_DIR / "statistical_summary.csv", index=False)
+    print(f"Saved: main_results.csv (gnn_source={gnn_source})")
 
     # 2. Latency breakdown CSV
     lat_json = RESULTS_DIR / "latency" / "latency_results.json"
