@@ -1,0 +1,18 @@
+dataset: GoG-SCIMain-v1
+split: fixed_pooled_temporal_holdout_70_15_15
+model: CausalLocalGIN
+input_dim: 3
+hidden_dim: 48
+num_layers: 2
+dropout: 0.30
+batch_size: 64
+learning_rate: 0.001
+weight_decay: 0.0001
+max_epochs: 20
+early_stopping_patience: 5
+selection_metric: validation_auc_pr
+classification_threshold: 0.5
+mc_passes_primary: 10
+seeds: [7, 17, 27, 37, 47]
+context_in_main_metrics: false
+hyperparameter_policy: frozen_before_held_out_test_execution
