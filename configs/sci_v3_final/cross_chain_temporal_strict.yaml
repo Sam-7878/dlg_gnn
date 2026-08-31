@@ -1,0 +1,16 @@
+protocol: source_only_to_frozen_target_temporal_holdout
+dataset_root: /mnt/d/_Work/_data/GoG_sci_v2
+model: DLG-Full-Fusion
+chain_id_feature: false
+epochs: 30
+seeds: [11, 22, 33, 44, 55]
+transfers:
+  - sources: [bsc, polygon]
+    target: ethereum
+  - sources: [ethereum, polygon]
+    target: bsc
+  - sources: [ethereum, bsc]
+    target: polygon
+preprocessing_fit_scope: source_train_only
+threshold_selection_scope: source_validation_only
+target_evaluation_scope: frozen_temporal_test_only

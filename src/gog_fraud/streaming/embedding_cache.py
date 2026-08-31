@@ -31,6 +31,7 @@ class EmbeddingCache:
         self.max_entries, self.max_bytes, self.ttl = max_entries, max_bytes, ttl_seconds
         self._items: OrderedDict[str, _Entry] = OrderedDict()
         self._bytes = 0
+        self._last_expiry_scan = 0
         self.stats = CacheStats()
 
     def put(self, key: str, value: Any, *, now: int, model_version: str, feature_version: str) -> None:
@@ -65,10 +66,17 @@ class EmbeddingCache:
         self._bytes -= entry.size
 
     def _evict(self, now: int) -> None:
-        for key in list(self._items):
-            if now - self._items[key].created_at > self.ttl:
-                self._remove(key)
-                self.stats.evictions += 1
+        # A full TTL scan on every insertion makes a bounded cache O(events *
+        # capacity). Gets still reject stale entries immediately; insertion
+        # performs a periodic complete sweep, preserving the TTL invariant
+        # while keeping long streaming replays amortized linear.
+        scan_interval = min(self.ttl, 1000)
+        if now - self._last_expiry_scan >= scan_interval:
+            for key in list(self._items):
+                if now - self._items[key].created_at > self.ttl:
+                    self._remove(key)
+                    self.stats.evictions += 1
+            self._last_expiry_scan = now
         while len(self._items) > self.max_entries or self._bytes > self.max_bytes:
             _, entry = self._items.popitem(last=False)
             self._bytes -= entry.size
