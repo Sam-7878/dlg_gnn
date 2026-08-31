@@ -39,16 +39,17 @@ def binary_calibration_metrics(y_true, probabilities) -> dict[str, float]:
     p = np.clip(np.asarray(probabilities, dtype=float).reshape(-1), 1e-12, 1 - 1e-12)
     if len(y) != len(p) or not len(y):
         raise ValueError("non-empty equal-length labels and probabilities are required")
-    classwise = []
-    for label in (0, 1):
-        target = (y == label).astype(int); confidence = p if label == 1 else 1 - p
-        classwise.append(_ece(reliability_rows(target, confidence, bins=10), len(y)))
+    benign_ece = _ece(reliability_rows((y == 0).astype(int), 1.0 - p, bins=10), len(y))
+    fraud_ece = _ece(reliability_rows((y == 1).astype(int), p, bins=10), len(y))
     return {
         "nll": float(-np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))),
         "brier": float(np.mean((p - y) ** 2)),
         "ece10": _ece(reliability_rows(y, p, bins=10), len(y)),
         "ece20": _ece(reliability_rows(y, p, bins=20), len(y)),
-        "adaptive_ece": _adaptive_ece(y, p, 10), "classwise_ece": float(np.mean(classwise)),
+        "adaptive_ece": _adaptive_ece(y, p, 10),
+        "classwise_ece": float(0.5 * (benign_ece + fraud_ece)),
+        "fraud_class_ece": float(fraud_ece),
+        "benign_class_ece": float(benign_ece),
     }
 
 
