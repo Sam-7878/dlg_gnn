@@ -27,9 +27,14 @@ src/gog_fraud/
  └── adapters/           # 과거 벤치마크 혹은 Legacy 모형의 테스트 런 호환 계층
 ```
 
-## 서브 문서 (Architecture Details)
-아래의 서브 문서를 참조하여 개별 소스의 구조와 인터페이스 정의를 파악할 수 있습니다.
+## 서브 및 상위 문서 (Architecture Details)
+아래의 문서를 참조하여 시스템 전체 구조 및 개별 소스의 구조와 인터페이스 정의를 파악할 수 있습니다.
+- **[종합 시스템 아키텍처 (System Architecture v2.0)](system_architecture.md)**: 3대 프로젝트(DLG-GNN Core, StreamMC, PyGOD Benchmark) 통합 아키텍처 문서
+- **[DLG-GNN 아키텍처 리포트 (Journal Prep)](DLG_GNN_Architecture_Report.md)**: 논문 투고 및 초기 상세 기술 리포트
 - [Level 1, 2 Plan for Decoupling and Architectural Refactoring](level1_and_2/architectural_plan.md)
 - [Level 1 Architecture](level1_and_2/level1_architecture.md)
 - [Level 2 & Fusion Architecture](level1_and_2/level2_fusion_architecture.md)
 - [Data & Pipeline Architecture](level1_and_2/pipeline_and_data.md)
+- [Monte Carlo Extension Architecture](mc/mc_extension_architecture.md)
+- [Nested GNN Extension Architecture](ngnn/ngnn_extension_architecture.md)
+

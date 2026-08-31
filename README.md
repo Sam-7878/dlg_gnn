@@ -19,4 +19,5 @@
 - `scripts/` & `tests/` : 자동화된 벤치마크 런 및 단위 테스트
 
 ## ⚙️ Getting Started
-자세한 아키텍처와 구동 방법은 `docs/architecture/` 내부의 마크다운 문서들을 참조해 주세요.
+자세한 아키텍처와 구동 방법은 [`docs/architecture/system_architecture.md`](docs/architecture/system_architecture.md) 및 `docs/architecture/` 내부의 마크다운 문서들을 참조해 주세요.
+
