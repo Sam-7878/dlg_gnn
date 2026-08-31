@@ -16,8 +16,10 @@ def load_packed(dataset_dir: Path):
         graphs.append(Data(
             x=item["x"], edge_index=item["edge_index"],
             y=torch.tensor(float(item["label"])),
-            chain_index=torch.tensor(item["chain_index"], dtype=torch.long),
-            event_index=torch.tensor(index, dtype=torch.long),
+            # Avoid PyG's automatic offsetting of attributes whose names contain
+            # ``index``; chain_id is a graph-level categorical value.
+            chain_id=torch.tensor(item["chain_index"], dtype=torch.long),
+            event_pos=torch.tensor(index, dtype=torch.long),
             timestamp=torch.tensor(item["timestamp"], dtype=torch.long),
         ))
     n_train = manifest["split"]["train"]["n_events"]

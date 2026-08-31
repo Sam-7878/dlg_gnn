@@ -1,0 +1,11 @@
+\begin{table}
+\caption{Timestamp-grounded SCI main-track results (five seeds).}
+\begin{tabular}{llrlllrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\toprule
+track & method & n_seeds & gnn_source & split_type & timestamp_source & context_used & paper_eligible & mean_auc_pr & std_auc_pr & ci95_low_auc_pr & ci95_high_auc_pr & mean_auc_roc & std_auc_roc & ci95_low_auc_roc & ci95_high_auc_roc & mean_f1 & std_f1 & ci95_low_f1 & ci95_high_f1 & mean_brier & std_brier & ci95_low_brier & ci95_high_brier & mean_ece & std_ece & ci95_low_ece & ci95_high_ece & mean_nll & std_nll & ci95_low_nll & ci95_high_nll \\
+\midrule
+SCI Main Track & GNN Only & 5 & real_checkpoint & chronological_real & recorded_transaction_timestamp & False & True & 0.4648 & 0.0687 & 0.4112 & 0.5183 & 0.9009 & 0.0056 & 0.8968 & 0.9054 & 0.4782 & 0.0745 & 0.4215 & 0.5344 & 0.0533 & 0.0199 & 0.0417 & 0.0711 & 0.1672 & 0.0524 & 0.1316 & 0.2128 & 0.2365 & 0.0610 & 0.1970 & 0.2913 \\
+SCI Main Track & MC-GNN (T=10) & 5 & real_checkpoint & chronological_real & recorded_transaction_timestamp & False & True & 0.4416 & 0.0855 & 0.3729 & 0.5058 & 0.8997 & 0.0175 & 0.8853 & 0.9120 & 0.4230 & 0.1140 & 0.3349 & 0.5110 & 0.0410 & 0.0139 & 0.0344 & 0.0536 & 0.1285 & 0.0436 & 0.1013 & 0.1679 & 0.1935 & 0.0473 & 0.1677 & 0.2366 \\
+\bottomrule
+\end{tabular}
+\end{table}

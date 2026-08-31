@@ -29,7 +29,7 @@ class CausalLocalGIN(nn.Module):
         h = F.dropout(F.relu(self.conv1(data.x, data.edge_index)), self.dropout, self.training)
         h = F.dropout(F.relu(self.conv2(h, data.edge_index)), self.dropout, self.training)
         pooled = torch.cat((global_mean_pool(h, data.batch), global_max_pool(h, data.batch)), dim=1)
-        chain = F.one_hot(data.chain_index.long(), num_classes=self.num_chains).float()
+        chain = F.one_hot(data.chain_id.long(), num_classes=self.num_chains).float()
         return self.head(torch.cat((pooled, chain), dim=1)).squeeze(-1)
 
     def forward_mc(self, data, passes: int = 10):

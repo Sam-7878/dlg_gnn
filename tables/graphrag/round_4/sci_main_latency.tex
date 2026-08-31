@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Real-checkpoint context-free end-to-end latency.}
+\begin{tabular}{lrrrllrrrrrrrrrrrrr}
+\toprule
+track & seed & T & n_events & gnn_source & split_type & context_branch_enabled & graphrag_retrieval_ms & risk_encoder_ms & fusion_ms & historical_graph_retrieval_update_ms & gnn_mc_forward_ms & serialization_ms & mean_ms & median_ms & p95_ms & p99_ms & events_per_second & peak_gpu_memory_mb \\
+\midrule
+SCI Main Track & 7 & 1 & 300 & real_checkpoint & chronological_real & False & 0.000 & 0.000 & 0.000 & 0.731 & 1.277 & 0.062 & 2.072 & 1.802 & 2.360 & 2.925 & 482.602 & 9.286 \\
+SCI Main Track & 7 & 5 & 300 & real_checkpoint & chronological_real & False & 0.000 & 0.000 & 0.000 & 0.747 & 5.109 & 0.068 & 5.925 & 5.802 & 6.904 & 8.063 & 168.772 & 9.289 \\
+SCI Main Track & 7 & 10 & 300 & real_checkpoint & chronological_real & False & 0.000 & 0.000 & 0.000 & 0.776 & 9.787 & 0.072 & 10.637 & 10.415 & 12.242 & 13.395 & 94.009 & 9.291 \\
+SCI Main Track & 7 & 20 & 300 & real_checkpoint & chronological_real & False & 0.000 & 0.000 & 0.000 & 0.842 & 19.584 & 0.080 & 20.509 & 20.396 & 22.667 & 23.566 & 48.759 & 9.296 \\
+SCI Main Track & 7 & 30 & 300 & real_checkpoint & chronological_real & False & 0.000 & 0.000 & 0.000 & 0.952 & 37.110 & 0.103 & 38.167 & 33.559 & 55.867 & 58.422 & 26.201 & 9.301 \\
+\bottomrule
+\end{tabular}
+\end{table}

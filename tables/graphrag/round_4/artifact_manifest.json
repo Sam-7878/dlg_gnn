@@ -1,0 +1,16 @@
+{
+  "gate_version": "round4-paper-ready-v2.0",
+  "paper_ready": true,
+  "source_track": "SCI Main Track",
+  "controlled_context_included": false,
+  "tables": [
+    "sci_main_results.tex",
+    "sci_main_latency.tex"
+  ],
+  "figures": [
+    "sci_main_auc_pr.png",
+    "sci_main_latency.png",
+    "sci_main_calibration.png",
+    "sci_main_mc_sensitivity.png"
+  ]
+}
