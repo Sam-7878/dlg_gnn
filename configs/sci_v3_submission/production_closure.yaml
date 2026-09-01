@@ -1,0 +1,45 @@
+method_identity:
+  final_method: dlg_specific_bounded_local_to_global_graph_inference
+  paper_method_backbone: ProductionLevel1GIN
+  executed_backbone: ProductionLevel1GIN
+  profiler_backbone: ProductionLevel1GIN
+  routing_backbone: ProductionLevel1GIN
+  graph_backbone_control: ProductionLevel1GIN
+  deep_stage: ProductionLevel2GATv2
+  fusion: WeightedLogitFusion
+  mc_scope: ProductionLevel1GIN_dropout_only
+dataset_root: /mnt/d/_Work/_data/GoG_sci_v2
+chains: [ethereum, bsc, polygon]
+seeds: [11, 22, 33, 44, 55]
+bounded_graph:
+  max_edges: 128
+  max_nodes: 128
+  temporal_window_seconds: 7776000
+level1:
+  in_dim: 3
+  hidden_dim: 32
+  num_layers: 2
+  dropout: 0.2
+  readout: meanmax
+  epochs: 5
+  batch_size: 64
+level2:
+  hidden_dim: 32
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.2
+  epochs: 20
+  knn_k: 8
+fusion:
+  level1_weight: 0.4
+  level2_weight: 0.6
+routing:
+  deep_budget: 0.42
+  mc_passes: [1, 3, 5, 8]
+profiling:
+  events_per_seed: 500
+  warmup_events: 25
+  integrated_events: 100000
+  relation_context_size: 64
+  cache_entries: 5000
+  queue_limit: 512
