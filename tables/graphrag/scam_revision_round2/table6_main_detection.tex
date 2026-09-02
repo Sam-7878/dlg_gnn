@@ -1,0 +1,10 @@
+\begin{tabular}{lllll}
+\toprule
+Model & AUC-PR & AP Lift & ROC-AUC & Macro-F1 \\
+\midrule
+DLG-GNN Only (On-chain structural) & 1.0000 ± 0.0000 & +0.1556 & 1.0000 ± 0.0000 & 0.9923 ± 0.0035 \\
+GraphRAG Only (2-hop semantic) & 0.9649 ± 0.0009 & +0.1205 & 0.8159 ± 0.0050 & 0.8269 ± 0.0458 \\
+Fixed Fusion (α=0.5) & 0.9998 ± 0.0001 & +0.1554 & 0.9991 ± 0.0006 & 0.9829 ± 0.0053 \\
+Uncertainty-Weighted Fusion (Proposed) & 0.9988 ± 0.0007 & +0.1543 & 0.9936 ± 0.0036 & 0.9631 ± 0.0100 \\
+\bottomrule
+\end{tabular}

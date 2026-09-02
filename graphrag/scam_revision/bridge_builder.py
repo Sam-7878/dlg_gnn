@@ -44,9 +44,9 @@ DATA_CCC_USERS = "/mnt/d/_Work/_data/DLG/CoordinatedCryptocurrencyCampaigns/Boun
 DATA_CCC_REG = "/mnt/d/_Work/_data/DLG/CoordinatedCryptocurrencyCampaigns/Bounties(Altcoins)/labeled/comments_registration.tsv"
 DATA_CCC_SPREAD = "/mnt/d/_Work/_data/DLG/CoordinatedCryptocurrencyCampaigns/Bounties(Altcoins)/labeled/spreadsheets.tsv"
 
-OUTPUT_COVERAGE_CSV = "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/scam_revision/bridge_coverage.csv"
-OUTPUT_ENTITY_CSV = "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/scam_revision/entity_resolution.csv"
-OUTPUT_AUDIT_MD = "/mnt/d/_Work/goat_bank/dlg_gnn/reports/graphrag/scam_revision/entity_resolution_audit.md"
+OUTPUT_COVERAGE_CSV = "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/scam_revision_round2/bridge_manifest.csv"
+OUTPUT_ENTITY_CSV = "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/scam_revision_round2/entity_resolution.csv"
+OUTPUT_AUDIT_MD = "/mnt/d/_Work/goat_bank/dlg_gnn/reports/graphrag/scam_revision_round2/bridge_definition_audit.md"
 
 
 @dataclass
