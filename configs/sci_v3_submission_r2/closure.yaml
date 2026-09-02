@@ -1,0 +1,42 @@
+base_config: configs/sci_v3_submission/production_closure.yaml
+source_results: results/sci_v3_submission
+output_root: results/sci_v3_submission_r2
+manuscript: docs/work_reports/110_stream_mc_sci_v3_submission_r2/_41_01_DLG_StreamMC/DLG-StreamMC.tex
+seeds: [11, 22, 33, 44, 55]
+
+interface:
+  case: A
+  fast_output: probability
+  deep_output: probability
+  fusion_space: calibrated_log_odds
+  rationale: >-
+    ProductionLevel2GATv2 consumes the ProductionLevel1GIN embedding and score.
+    Tabular controls therefore invoke the same GIN representation builder before
+    the common GATv2 stage, and that cost is charged to their deep route.
+
+calibration:
+  method: platt_log_odds
+  epsilon: 1.0e-6
+  logistic_c: 1.0
+  fast_weight_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  deep_budget_grid: [0.10, 0.20, 0.30, 0.42]
+  selection_objective: validation_f1_then_lower_deep_rate
+  final_threshold: validation_only
+
+statistics:
+  bootstrap_seed: 20260902
+  bootstrap_resamples: 2000
+  confidence_level: 0.95
+  familywise_alpha: 0.05
+
+runtime:
+  samples_per_repeat: 500
+  warmup_samples: 25
+  repeats: 5
+
+mc_sensitivity:
+  samples: [1, 3, 5, 8, 10, 20, 30]
+
+formatting:
+  metric_decimals: 3
+  latency_decimals: 2

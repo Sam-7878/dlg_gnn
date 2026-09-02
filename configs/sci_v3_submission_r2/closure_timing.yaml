@@ -1,0 +1,6 @@
+base_config: configs/sci_v3_submission/production_closure.yaml
+source_results: /tmp/dlg_sci_v3_submission_source
+output_root: results/sci_v3_submission_r2
+seeds: [11, 22, 33, 44, 55]
+runtime: {samples_per_repeat: 500, warmup_samples: 25, repeats: 5}
+mc_sensitivity: {samples: [1, 3, 5, 8, 10, 20, 30]}
