@@ -1,0 +1,68 @@
+{
+  "dataset_name": "GoG-SCIMain-v1",
+  "dataset_version": "gog-scimain-v1.0",
+  "paper_eligible": true,
+  "split_type": "chronological_real",
+  "timestamp_source": "recorded_transaction_timestamp",
+  "timestamp_semantics": "latest recorded on-chain event in each expanding contract graph",
+  "timezone": "UTC (Unix epoch seconds)",
+  "graph_source": "gog_sci_v2_pooled",
+  "chains": [
+    "ethereum",
+    "bsc",
+    "polygon"
+  ],
+  "context_policy": "excluded_from_main_detector_metrics",
+  "gnn_input_policy": "most recent 128 historical edges at or before event cutoff",
+  "label_provenance": "GoG upstream category; category 0 mapped to fraud per SCI v2 resolved semantics",
+  "label_semantics_sha256": "d15c20cf6a20f12938ab4432beb8930cbde1d2120a84f7f5ec2aa5bd5a507091",
+  "upstream_manifest_sha256": {
+    "ethereum": "1efed3a8977f56cc30bd79c97f95eee57b825fe25971e7f72b2e0a93402ae2be",
+    "bsc": "edcf3890377a985b8c03da68fda5237590e878672c2d6ac31b784c1ac1ef60b7",
+    "polygon": "d8948abd672a1abe68ae11229b4d482c8d8415ae3cfddff76d48cb776d63ce0c"
+  },
+  "source_availability": "immutable sorted derivatives and graph snapshots available; original source paths absent locally",
+  "license_availability": "upstream version/license metadata not present in local archive; author verification required before redistribution",
+  "n_events": 24316,
+  "future_edge_count": 0,
+  "graph_hash_failures": 0,
+  "graph_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "transactions_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+  "split_manifest_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+  "future_edge_audit_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+  "split": {
+    "train": {
+      "n_events": 17021,
+      "n_positive": 6783,
+      "n_negative": 10238,
+      "start_time": 1497961441,
+      "end_time": 1708407959,
+      "start_time_utc": "2017-06-20T12:24:01+00:00",
+      "end_time_utc": "2024-02-20T05:45:59+00:00",
+      "fraud_ratio": 0.39850772575054344,
+      "event_ids_sha256": "21bebfd7794d4d0c2bee8c9dd1a6b87c724e03d5f87ee9d1b0733ba65f9324c7"
+    },
+    "validation": {
+      "n_events": 3647,
+      "n_positive": 308,
+      "n_negative": 3339,
+      "start_time": 1708408439,
+      "end_time": 1709182819,
+      "start_time_utc": "2024-02-20T05:53:59+00:00",
+      "end_time_utc": "2024-02-29T05:00:19+00:00",
+      "fraud_ratio": 0.08445297504798464,
+      "event_ids_sha256": "33d2eeaab91ff3c105e87fac2e326561ef5f4572364465f7a22c7ca6416837a4"
+    },
+    "test": {
+      "n_events": 3648,
+      "n_positive": 107,
+      "n_negative": 3541,
+      "start_time": 1709182969,
+      "end_time": 1709251199,
+      "start_time_utc": "2024-02-29T05:02:49+00:00",
+      "end_time_utc": "2024-02-29T23:59:59+00:00",
+      "fraud_ratio": 0.029331140350877194,
+      "event_ids_sha256": "e6ae116eb9e78bfa1e01bbd026b953438c81f2a4713b845d4349406010718283"
+    }
+  }
+}
