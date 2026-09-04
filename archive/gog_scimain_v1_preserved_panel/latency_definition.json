@@ -1,0 +1,69 @@
+{
+  "source_file": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/mc_sensitivity.csv",
+  "source_sha256": "81b95aca82c5daca434299da69af7c45f8669e5361760404f066df3249740d97",
+  "unit": "milliseconds per complete held-out panel",
+  "measurement_scope": "model inference loop over all 3,648 test events in DataLoader batches of 128",
+  "included": [
+    "batch device transfer",
+    "deterministic or MC model forward passes"
+  ],
+  "excluded": [
+    "model/dataset loading",
+    "metric computation",
+    "CSV serialization"
+  ],
+  "warm_up_policy": "not recorded in source runner",
+  "cpu_gpu_synchronization": "no explicit torch.cuda.synchronize call recorded",
+  "single_event_or_batch": "batched full-panel elapsed time, not single-event latency",
+  "summary_statistic": "median full-panel elapsed milliseconds across five seeds for each T",
+  "sample_count": {
+    "seeds_per_T": 5,
+    "events_per_seed_T": 3648
+  },
+  "legacy_e2e_source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_3/real_e2e_latency.csv",
+  "legacy_e2e_source_sha256": "51a66b1f4697cbaa96516f5b45d469fe7f3eabb95af45fed0abbc70c88671a9d",
+  "legacy_comparison": "different quantity: controlled single-event end-to-end pipeline timing on synthetic time order",
+  "publication_label": "Full held-out-panel inference elapsed time (ms)",
+  "latency_scope_consistent": true,
+  "limitations": [
+    "timings are retained as sensitivity/runtime context, not hardware-normalized latency claims",
+    "absence of explicit warm-up and GPU synchronization prevents microbenchmark interpretation"
+  ],
+  "aggregate": [
+    {
+      "T": 1,
+      "auc_pr": 0.464796683313911,
+      "ece": 0.16717584248971223,
+      "panel_elapsed_ms": 167.10584199995537,
+      "seed_count": 5
+    },
+    {
+      "T": 5,
+      "auc_pr": 0.4364600237969098,
+      "ece": 0.1283797514263393,
+      "panel_elapsed_ms": 291.557118000128,
+      "seed_count": 5
+    },
+    {
+      "T": 10,
+      "auc_pr": 0.4415736797710041,
+      "ece": 0.12846116478730546,
+      "panel_elapsed_ms": 443.8658920000762,
+      "seed_count": 5
+    },
+    {
+      "T": 20,
+      "auc_pr": 0.44795787721276775,
+      "ece": 0.12853972781204465,
+      "panel_elapsed_ms": 739.3928189999315,
+      "seed_count": 5
+    },
+    {
+      "T": 30,
+      "auc_pr": 0.4440636564263283,
+      "ece": 0.12876749380487587,
+      "panel_elapsed_ms": 1015.4274249998708,
+      "seed_count": 5
+    }
+  ]
+}

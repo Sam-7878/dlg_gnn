@@ -1,0 +1,183 @@
+{
+  "archive_name": "gog_scimain_v1_preserved_panel",
+  "entries": [
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints/seed7.pt",
+      "bytes": 53192,
+      "sha256": "37de36370eb0a6b0ef7d647231fca2bf914310051292ea5fa9fdc5bb2d29c6c1",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_checkpoints/seed7.pt"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoint_manifests/seed7.json",
+      "bytes": 518,
+      "sha256": "79f9c008c4f1bb01d9edecfde06b46eb2ed81c0dbd5396346d499ce5662b2cde",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/checkpoint_manifests/seed7.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed7_T1.csv",
+      "bytes": 417142,
+      "sha256": "a7164c24f99e586b7009c80f275e05c045b6a2ff2832631f1000d229677f91e8",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed7_T1.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed7_T10.csv",
+      "bytes": 819435,
+      "sha256": "c0eb91ba4c432af7267e922b46de23c298d63dfc8391bf33296451dc2c2f2954",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed7_T10.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints/seed17.pt",
+      "bytes": 53210,
+      "sha256": "170c81918af643144d000d40f8f55f63b3d1e6c3be0e6329f057cc9207ece016",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_checkpoints/seed17.pt"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoint_manifests/seed17.json",
+      "bytes": 519,
+      "sha256": "41e0a1923f24a16641a521ff621bf2a5cd20e07609647edf9c7b7d40f7367e14",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/checkpoint_manifests/seed17.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed17_T1.csv",
+      "bytes": 420239,
+      "sha256": "b9d486c29c88ad1261a074eacef5e2b3d8030c0de676e3eb0f462de932027511",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed17_T1.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed17_T10.csv",
+      "bytes": 821817,
+      "sha256": "f2b3807c25a779489b93a3d5cd14dab487c6f85266b54e3dc692af3e9323a108",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed17_T10.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints/seed27.pt",
+      "bytes": 53210,
+      "sha256": "7799ffea3e935308fa554ed0cc9c927ed2e90cc238a07080f0cf594c0e39d054",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_checkpoints/seed27.pt"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoint_manifests/seed27.json",
+      "bytes": 520,
+      "sha256": "616a2ec40da3022fb69fb131b958bad20e2626ef3477ca8025456e00495e56ac",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/checkpoint_manifests/seed27.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed27_T1.csv",
+      "bytes": 421926,
+      "sha256": "5d50be4cf055d9185be9456463da6b8c0b12dc87de47381dfa93b53e99cbcd6b",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed27_T1.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed27_T10.csv",
+      "bytes": 828266,
+      "sha256": "b87a196af90c54e86aa1099134d5a70679b6508e6f884c79ee4fe3f0fc2776f5",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed27_T10.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints/seed37.pt",
+      "bytes": 53210,
+      "sha256": "ebfd2fdf00835ea68e81075e1610d3c07e9adc3539d9da4b13e56f57dfae048a",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_checkpoints/seed37.pt"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoint_manifests/seed37.json",
+      "bytes": 519,
+      "sha256": "fcb2144e6d92212aef87d218b02f003fe4e833b6f0def6aec85794d316147023",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/checkpoint_manifests/seed37.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed37_T1.csv",
+      "bytes": 419747,
+      "sha256": "9dd88ff62255ded2ebc759274375e51ef0a0e4d3f2cdc310d972cb33c3a5f2af",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed37_T1.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed37_T10.csv",
+      "bytes": 821727,
+      "sha256": "45e636f036b7f4bb3c907d53c345ea54189c7f336b29012bf3e98155cfe86c46",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed37_T10.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints/seed47.pt",
+      "bytes": 53210,
+      "sha256": "ff63990f1707d19dca97642626ef2062b03cc95c641dfa827104f6eeb25ee59b",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_checkpoints/seed47.pt"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoint_manifests/seed47.json",
+      "bytes": 520,
+      "sha256": "a026847e017bb2f4888a2a550c6bd4faf3942c05210281b51274482cfc529917",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/checkpoint_manifests/seed47.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed47_T1.csv",
+      "bytes": 418392,
+      "sha256": "bb709e50eafced301281d028a061b96dc0a8075fd384e47682b25f5e21fe554e",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed47_T1.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/seed47_T10.csv",
+      "bytes": 812656,
+      "sha256": "79e8ba26aaa0caf6015767c3d04ea2c2beedd37a163d095b4d4b7318bc5dadbe",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/seed47_T10.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/checkpoints_manifest.json",
+      "bytes": 3075,
+      "sha256": "116cac80cfaab6590d2121838a758f9b49e76dfaa2e839cc58d6afe1ef58a9a9",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/checkpoints_manifest.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/ensemble_predictions.parquet",
+      "bytes": 265811,
+      "sha256": "6a1f05438ded1e132703fef51dc64389cbac415170337a3af3f55742302eed70",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/ensemble_predictions.parquet"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/model_metrics.csv",
+      "bytes": 3470,
+      "sha256": "f1d2db4c1c5142ee09b3d21bab2a9f81c3a77f10459c9615832df5341f4e6b8c",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/model_metrics.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/statistical_comparisons.csv",
+      "bytes": 1304,
+      "sha256": "b35fdc05849cfc4fe6610010ed8df101efd4823a4bb6670028f7a37ca3496348",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/statistical_comparisons.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/temporal_slice_metrics.csv",
+      "bytes": 4790,
+      "sha256": "95a5b1df36e428a924ed3350d98e82f7deda758947e0cc6b93656784ad73f374",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/temporal_slice_metrics.csv"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/latency_definition.json",
+      "bytes": 2428,
+      "sha256": "82772448781eab41f23d0ba4cd818c9b81575cc6be69152cfb5be3e815a27119",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/latency_definition.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/dataset_recovery_manifest.json",
+      "bytes": 4204,
+      "sha256": "12a7d7f18d425bad165bfc56bb1e0ffe15a70c5055fb295f1c1e4700f1ec3a8c",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/dataset_recovery_manifest.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/paper_ready_gate_v7.json",
+      "bytes": 2190,
+      "sha256": "c1d43afc351f951aa47a26fbdbd517508a92121073b9e3a8ff942559cda89b5a",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/paper_ready_gate_v7.json"
+    },
+    {
+      "archived": "archive/gog_scimain_v1_preserved_panel/raw_predictions/manifest.json",
+      "bytes": 3838,
+      "sha256": "2fa896b14bccebf9ef98c4444f0e7805a568bd2752405daed7d10634e3657640",
+      "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final/raw_predictions/manifest.json"
+    }
+  ],
+  "historical_only": true,
+  "policy": "copy-once; refuse overwrite on byte mismatch",
+  "prediction_panel_count": 10,
+  "seed_count": 5
+}

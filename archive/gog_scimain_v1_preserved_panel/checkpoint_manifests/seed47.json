@@ -1,0 +1,12 @@
+{
+  "seed": 47,
+  "best_epoch": 3,
+  "best_val_auc_pr": 0.7336507932691974,
+  "test_auc_pr": 0.48855731832358634,
+  "test_auc_roc": 0.8947390646815542,
+  "checkpoint_path": "results/graphrag/round_4/real_checkpoints/seed47.pt",
+  "checkpoint_sha256": "ff63990f1707d19dca97642626ef2062b03cc95c641dfa827104f6eeb25ee59b",
+  "dataset_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "config_sha256": "2dfed45b9334c3ff3ea4aa1e456aea5d1dcdfad4074d57b9df153b08882f6b7c",
+  "seed_provenance": 47
+}

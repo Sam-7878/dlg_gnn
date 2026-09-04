@@ -1,0 +1,121 @@
+{
+  "dataset_name": "GoG-SCIMain-v1",
+  "dataset_version": "gog-scimain-v1.0",
+  "preserved_manifest_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_dataset_manifest.json",
+  "preserved_manifest_sha256": "5758f1cf36d4a82019686b0612eb6c3a24f0e585cfbf70d959923b3831003a2c",
+  "artifacts": [
+    {
+      "artifact": "real_dataset_manifest.json",
+      "expected_hash": "5758f1cf36d4a82019686b0612eb6c3a24f0e585cfbf70d959923b3831003a2c",
+      "found_path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/real_dataset_manifest.json",
+      "actual_hash": "5758f1cf36d4a82019686b0612eb6c3a24f0e585cfbf70d959923b3831003a2c",
+      "status": "EXACT_HASH_MATCH",
+      "recovery_source": "expected frozen path"
+    },
+    {
+      "artifact": "graph.pt",
+      "expected_hash": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    },
+    {
+      "artifact": "transactions.parquet",
+      "expected_hash": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    },
+    {
+      "artifact": "split_manifest.json",
+      "expected_hash": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    },
+    {
+      "artifact": "future_edge_audit.csv",
+      "expected_hash": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    }
+  ],
+  "upstream_artifacts": [
+    {
+      "artifact": "upstream:ethereum",
+      "expected_hash": "1efed3a8977f56cc30bd79c97f95eee57b825fe25971e7f72b2e0a93402ae2be",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    },
+    {
+      "artifact": "upstream:bsc",
+      "expected_hash": "edcf3890377a985b8c03da68fda5237590e878672c2d6ac31b784c1ac1ef60b7",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    },
+    {
+      "artifact": "upstream:polygon",
+      "expected_hash": "d8948abd672a1abe68ae11229b4d482c8d8415ae3cfddff76d48cb776d63ce0c",
+      "found_path": null,
+      "actual_hash": null,
+      "status": "MISSING",
+      "recovery_source": "not found"
+    }
+  ],
+  "dataset_exact_recovery": false,
+  "upstream_exact_recovery": false,
+  "future_edge_audit_verified": false,
+  "manifest_reports_zero_future_edges": true,
+  "new_dataset_version_fully_retrained": false,
+  "search_audit": [
+    {
+      "scope": "/mnt/d/_Work and /home/sam exact-name search",
+      "result": "only preserved real-dataset manifest copies found"
+    },
+    {
+      "scope": "Windows Desktop/Documents/Downloads/OneDrive exact-name and archive search",
+      "result": "no candidate found"
+    },
+    {
+      "scope": "D: recycle bin exact-name search",
+      "result": "no candidate found"
+    },
+    {
+      "scope": "project and _Work ZIP archive member-name audit",
+      "result": "no frozen v1 artifact member found"
+    },
+    {
+      "scope": "Git history and unreachable-object audit",
+      "result": "manifest only; unreachable blobs were unrelated source files"
+    },
+    {
+      "scope": "extension-constrained SHA-256 search under /mnt/d/_Work",
+      "result": "5,418 candidates (6,713,820,195 bytes) checked; only two byte-identical manifest copies matched"
+    }
+  ],
+  "hash_search_summary": {
+    "candidate_files": 5418,
+    "candidate_bytes": 6713820195,
+    "matches": [
+      "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/real_dataset_manifest.json",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/real_dataset_manifest.json"
+    ],
+    "excluded_bulk_directories": [
+      "graphs",
+      "local_graphs",
+      "edges",
+      "build caches"
+    ]
+  },
+  "decision": "OPTION_B3_GATE_REMAINS_CLOSED",
+  "no_synthetic_reconstruction": true
+}
