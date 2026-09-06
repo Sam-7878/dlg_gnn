@@ -1,0 +1,32 @@
+{
+  "version": 4,
+  "branch": "MC-B",
+  "predeclared_timestamp": "2026-09-06T22:50:00+09:00",
+  "selection_partition": "validation",
+  "seed": 11,
+  "validation_evidence": {
+    "T1_local_f1": 0.8010204081632653,
+    "T3_local_f1": 0.7753623188405797,
+    "T5_local_f1": 0.7894736842105263,
+    "T8_local_f1": 0.7896174863387978,
+    "mean_predictive_variance_T5": 0.003331,
+    "error_variance_separation": "weak (0.0040 on errors vs 0.0030 on correct)",
+    "conclusion": "Stochastic MC dropout incurs substantial computational overhead and reduces validation discrimination compared to deterministic inference. T=1 confidence-margin selective routing is strictly superior on validation."
+  },
+  "protocol_decisions": {
+    "primary_operating_point_T": 1,
+    "stochastic_dropout_in_production": false,
+    "primary_routing_mechanism": "validation-calibrated confidence-margin selective routing",
+    "primary_method_name": "DLG-SelectiveStream",
+    "mc_status": "optional_ablation_and_sensitivity_study",
+    "prohibited_claims": [
+      "MC uncertainty is the primary compute-allocation signal in production",
+      "Stochastic dropout improves fraud detection accuracy at the primary operating point"
+    ],
+    "approved_claims": [
+      "Validation-calibrated confidence margins govern selective escalation",
+      "Deterministic T=1 execution minimizes latency while preserving state invariants",
+      "MC sensitivity across T in {1, 3, 5, 8} is reported as an ablation study"
+    ]
+  }
+}
