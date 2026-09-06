@@ -146,11 +146,14 @@ def test_canonical_artifacts_completeness():
         assert path.stat().st_size > 0
         
     # Check manuscripts
-    assert (Path('manuscript/DLG-SelectiveStream_submission_r4.tex')).exists()
-    assert (Path('manuscript/DLG_SelectiveStream_Supplementary_r4.tex')).exists()
-    assert (Path('manuscript/r4_numbers.tex')).exists()
+    ms_dir = Path('manuscript/_41_01_DLG_StreamMC') if Path('manuscript/_41_01_DLG_StreamMC').exists() else Path('manuscript')
+    assert (ms_dir / 'DLG-SelectiveStream_submission.tex').exists() or (ms_dir / 'DLG-SelectiveStream_submission_r4.tex').exists()
+    assert (ms_dir / 'DLG-SelectiveStream_supplementary.tex').exists() or (ms_dir / 'DLG_SelectiveStream_Supplementary_r4.tex').exists()
+    assert (ms_dir / 'r4_numbers.tex').exists()
     
     # Check gate report
-    gate = Path('docs/work_reports/sci_v3_submission_r4/final_scientific_gate.md')
+    gate = Path('docs/work_reports/112_stream_mc_submission_r4/sci_v3_submission_r4/final_scientific_gate.md')
+    if not gate.exists():
+        gate = Path('docs/work_reports/sci_v3_submission_r4/final_scientific_gate.md')
     assert gate.exists()
     assert gate.stat().st_size > 1000
