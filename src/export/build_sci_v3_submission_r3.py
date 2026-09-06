@@ -19,16 +19,19 @@ class Builder:
     def __init__(self):
         self.cfg=read_config();self.root=Path(self.cfg['output_root']);self.protocol=load(self.root/'protocol_predeclaration.json')
         self.selections={seed:load(self.root/f'offline/seed{seed}/selection.json') for seed in self.cfg['seeds']}
-        self.registry=[];self.claims=[];self.table_sources={}
+        self.registry=[];self.claims=[];self.table_sources={};self._pop_cache={}
         for name in ('canonical','tables','figures','profiling'): (self.root/name).mkdir(exist_ok=True)
 
     def identify(self,row,kind,lane='offline_contract_detection',stage=''):
         row=clean(row.copy());seed=int(row.get('seed',11));s=self.selections[seed];split=row.get('split','test');scope=row.get('chain_scope','pooled')
         policy=row.get('policy_family','primary');unit={'offline_contract_detection':'contract','raw_event_runtime':'raw_event_runtime_trace','integrated_streaming':'event_with_inherited_contract_label'}[lane]
         if lane=='offline_contract_detection':
-            frame=pd.read_csv(self.root/f'offline/seed{seed}/{split}_predictions.csv')
-            if scope!='pooled':frame=frame[frame.sample_id.str.startswith(scope+':')]
-            population=digest(frame.sample_id.tolist())
+            ckey=(seed,split,scope)
+            if ckey not in self._pop_cache:
+                frame=pd.read_csv(self.root/f'offline/seed{seed}/{split}_predictions.csv')
+                if scope!='pooled':frame=frame[frame.sample_id.str.startswith(scope+':')]
+                self._pop_cache[ckey]=digest(frame.sample_id.tolist())
+            population=self._pop_cache[ckey]
         else:population=row['prefix_id']
         policy_id=digest({'frozen_selection':s['policy_config_id'],'policy':policy})
         identity=ExperimentIdentity(lane,unit,population,'frozen-GoG-bounded-cache-'+self.protocol['source_hashes'][self.cfg['graph_cache']][:12],
@@ -61,7 +64,7 @@ class Builder:
         def escape(v):return str(v).replace('&',r'\&').replace('_',r'\_').replace('%',r'\%')
         text='% canonical_row_id: '+','.join(source_ids)+'\n'
         text+=r'\begin{table*}[t]\centering\small'+'\n'+r'\caption{'+caption+r'}\label{tab:'+name+'}\n'
-        text+=r'\begin{tabular}{'+'l'+'r'*(len(headers)-1)+'}\toprule\n'
+        text+=r'\begin{tabular}{'+'l'+'r'*(len(headers)-1)+r'}\toprule'+'\n'
         text+=' & '.join(headers)+r'\\\midrule'+'\n'
         text+='\n'.join(' & '.join(str(v) for v in row)+r'\\' for row in rows)
         text+='\n'+r'\bottomrule\end{tabular}'+'\n'
@@ -116,7 +119,7 @@ class Builder:
         for r in stat:
             if r['metric']=='f1':srows.append([str(r['seed']),f'{r["delta"]:+.3f}',f'[{r["ci_low"]:+.3f}, {r["ci_high"]:+.3f}]','Descriptive'])
         self.table('statistical_evidence','Prediction-paired conditional intervals for the selective-minus-local F1 difference.',
-            ['Seed',r'$\Delta$F1','95\% interval','Claim status'],srows,ids(stat),
+            ['Seed',r'$\Delta$F1',r'95\% interval','Claim status'],srows,ids(stat),
             'Class-stratified matched-contract bootstrap, 2,000 resamples per model. These intervals are conditional on frozen models and do not establish robustness across training runs. Exact McNemar and Holm-adjusted tests are in the supplement.')
         crows=[]
         for split in ('validation','test'):

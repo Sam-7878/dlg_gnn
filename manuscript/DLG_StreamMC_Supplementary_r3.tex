@@ -1,0 +1,35 @@
+\documentclass[10pt,journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,cite,url}
+\usepackage[hidelinks]{hyperref}
+\input{r3_numbers.tex}
+\title{Supplementary Material: DLG-StreamMC Evidence Dossier, Statistical Protocol, and System Diagnostics}
+\author{SeongSu Park and Ki-Hyung Kim}
+\begin{document}
+\maketitle
+
+\section{Overview and Predeclared Protocol}
+This supplementary document provides the complete evidence registries, statistical interval ledgers, calibration decompositions, and systems memory audits supporting the main manuscript.
+In accordance with predeclared Statistical Track~B, all predictive comparisons use matched test contracts across five frozen models. No confirmatory superiority claim is made.
+
+\section{Quantitative Calibration Analysis}
+Table~\ref{tab:supp_calibration} provides the comprehensive calibration evaluation across both validation and test partitions for all five seeds.
+\input{../results/sci_v3_submission_r3/tables/table_calibration_metrics.tex}
+Calibration maps fitted via Platt logistic scaling on validation improve Brier scores and expected calibration error (ECE). However, validation estimates remain optimistic due to dual use in threshold selection.
+
+\section{Exact Paired Statistical Tests}
+Table~\ref{tab:supp_mcnemar} details the paired contract bootstrap intervals and exact McNemar discordance tests with Holm-Bonferroni family-wise error rate control.
+\input{../results/sci_v3_submission_r3/tables/table_statistical_evidence.tex}
+Across the five seeds, the selective policy improves F1 in \PositiveSeeds{} seeds and decreases in \NegativeSeeds{} seeds, yielding an observed mean difference of \DeltaFOne{}.
+
+\section{System Memory Attribution and Bounded State}
+Figure~\ref{fig:supp_mem} and Table~\ref{tab:supp_stream} detail the replay resource accounting.
+\input{../results/sci_v3_submission_r3/tables/table_integrated_streaming.tex}
+Process RSS reflects memory management from Python heap preloading, PyTorch native allocators, and CUDA runtime contexts. Bounded logical state invariants are strictly preserved throughout execution.
+
+\section{Temporal Audit and Boundary Qualification}
+Of the held-out test contracts, \EarlyTestContracts{} conclude before the latest timestamp present in the training reference. Furthermore, the 100,000-event streaming workload is entirely situated prior to the training reference upper boundary. Consequently, these results are reported as retrospective systems workloads rather than live deployment guarantees.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
