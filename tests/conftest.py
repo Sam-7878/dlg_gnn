@@ -11,6 +11,6 @@ _tests_dir = Path(__file__).resolve().parent
 _dlg_gnn_root = _tests_dir.parent
 _goat_bank_root = _dlg_gnn_root.parent
 
-for _p in (str(_dlg_gnn_root), str(_goat_bank_root)):
+for _p in (str(_dlg_gnn_root / "src"), str(_dlg_gnn_root), str(_goat_bank_root)):
     if _p not in sys.path:
         sys.path.insert(0, _p)

@@ -105,10 +105,13 @@ dlg_gnn/
 │   ├── benchmark/                      # [benchmark] full_system.yaml, sci_round1~5, defense_extension 등
 │   └── graph_rag/                      # [graph_rag] round4_sci_main_frozen.yaml 등
 │
-└── src/                                # [공용] 공통 라이브러리 및 모델 코어
+└── src/                                # [공용] 공통 라이브러리 및 모델 코어 (소스 코드 일원화)
     ├── analysis/                       # 사후 분석 및 통계 유틸리티
+    ├── fusion/                         # 불확실성 가중치 융합 모듈 (Fixed, Learned, Uncertainty Fusion)
     ├── gog_fraud/                      # 다중 체인 Graph-of-Graphs 핵심 모델 및 어댑터
+    ├── graphrag/                       # GraphRAG 핵심 알고리즘 (Local KB, Retriever, Risk Encoder/Head)
     ├── models/                         # GNN 백본 (GIN, GraphSAGE, TGAT, TGN 등)
+    ├── privacy/                        # 프라이버시 벡터 코덱, 노이즈 주입 및 양자화
     ├── profiling/                      # 하드웨어/레이턴시 측정 프로파일러
     └── validation/                     # 누락/누출 방지 검증 모듈
 ```
