@@ -22,16 +22,33 @@ from gog_fraud.models.level1.model import Level1Model, Level1ModelConfig
 from gog_fraud.models.level2.model import Level2Model, Level2ModelConfig
 
 
-def read_config(path='configs/sci_v3_submission_r4/primary_operating_point.yaml'):
-    cfg = yaml.safe_load(Path(path).read_text())
-    base_cfg = yaml.safe_load(Path(cfg['source_config']).read_text())
+def _resolve_cfg_path(p):
+    path = Path(p)
+    if path.exists():
+        return path
+    s = str(p).replace('\\', '/')
+    for prefix in ('configs/stream_mc/', 'configs/dlg_gnn/', 'configs/benchmark/', 'configs/graph_rag/'):
+        if s.startswith('configs/'):
+            cand = Path(prefix + s[len('configs/'):])
+            if cand.exists():
+                return cand
+        cand = Path(prefix + s)
+        if cand.exists():
+            return cand
+    return path
+
+
+def read_config(path='configs/stream_mc/sci_v3_submission_r4/primary_operating_point.yaml'):
+    path = _resolve_cfg_path(path)
+    cfg = yaml.safe_load(path.read_text())
+    base_cfg = yaml.safe_load(_resolve_cfg_path(cfg['source_config']).read_text())
     if 'source_config' in base_cfg:
-        root_base = yaml.safe_load(Path(base_cfg['source_config']).read_text())
+        root_base = yaml.safe_load(_resolve_cfg_path(base_cfg['source_config']).read_text())
         for k in ('level1', 'level2', 'bounded_graph', 'method_identity'):
             if k in root_base and k not in base_cfg:
                 base_cfg[k] = root_base[k]
     cfg['base'] = base_cfg
-    cfg['selection'] = yaml.safe_load(Path(cfg['selection_config']).read_text())['calibration']
+    cfg['selection'] = yaml.safe_load(_resolve_cfg_path(cfg['selection_config']).read_text())['calibration']
     return cfg
 
 

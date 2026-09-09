@@ -237,7 +237,8 @@ def run(dataset_root: Path, output_root: Path, kinds: list[str], seeds: list[int
     metadata = pd.read_parquet(dataset_root / "transactions.parquet").sort_values(
         ["timestamp", "event_id"], kind="stable",
     ).reset_index(drop=True)
-    config = yaml.safe_load((ROOT / "configs/round4_sci_main_frozen.yaml").read_text())
+    cfg_path = ROOT / "configs/graph_rag/round4_sci_main_frozen.yaml" if (ROOT / "configs/graph_rag/round4_sci_main_frozen.yaml").exists() else ROOT / "configs/round4_sci_main_frozen.yaml"
+    config = yaml.safe_load(cfg_path.read_text())
     device = torch.device(device_name if device_name.startswith("cuda") and torch.cuda.is_available() else "cpu")
     output_root.mkdir(parents=True, exist_ok=True)
     rows = [

@@ -17,7 +17,7 @@
 4. **`graph_rag`**: GraphRAG 스캠 캠페인 분석 및 시간적 분포 변화(Temporal Distribution Shift, TDS) 인과 GNN 평가 (Paper #43: `_43_01_TDS`)
 
 ### 개편 원칙
-공용 라이브러리(`src/`, `configs/`, `utils/`)는 단일 공유 체계를 유지하고, 모든 산출물 및 평가 폴더(**`figures/`, `outputs/`, `reports/`, `results/`, `experiments/`, `tests/`, `tables/`**)를 **4대 프로젝트 폴더(`dlg_gnn`, `stream_mc`, `benchmark`, `graph_rag`)만 존재하는 직관적이고 깔끔한 구조**로 통일하여 재배치하였습니다.
+공용 라이브러리(`src/`, `utils/`)는 공유 체계를 유지하고, 모든 설정 및 산출물/평가 폴더(**`configs/`, `figures/`, `outputs/`, `reports/`, `results/`, `experiments/`, `tests/`, `tables/`**)를 **4대 프로젝트 폴더(`dlg_gnn`, `stream_mc`, `benchmark`, `graph_rag`)만 존재하는 직관적이고 깔끔한 구조**로 통일하여 재배치하였습니다.
 
 ---
 
@@ -98,6 +98,12 @@ dlg_gnn/
 │   ├── stream_mc/                      # [stream_mc] 스트리밍 MC 표
 │   ├── benchmark/                      # [benchmark] 벤치마크 비교표
 │   └── graph_rag/                      # [graph_rag] scam_revision/, scam_revision_round2/
+│
+├── configs/                            # [4대 프로젝트별 실험 및 모델 설정 YAML/JSON]
+│   ├── dlg_gnn/                        # [dlg_gnn] base.yaml, ablation.yaml, privacy.yaml, ngnn_mc/, mc/ 등
+│   ├── stream_mc/                      # [stream_mc] sci/, sci_v2/, sci_v3_submission_r1~r4/ 등
+│   ├── benchmark/                      # [benchmark] full_system.yaml, sci_round1~5, defense_extension 등
+│   └── graph_rag/                      # [graph_rag] round4_sci_main_frozen.yaml 등
 │
 └── src/                                # [공용] 공통 라이브러리 및 모델 코어
     ├── analysis/                       # 사후 분석 및 통계 유틸리티

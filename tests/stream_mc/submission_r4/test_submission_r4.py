@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / 'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'src'))
 
 import numpy as np
 import pandas as pd
@@ -20,7 +20,7 @@ from validation.validate_mc_method_identity import validate_mc_method_identity
 
 
 def test_temporal_relation_validator_passes():
-    root = Path('results/sci_v3_submission_r4')
+    root = Path('results/stream_mc/sci_v3_submission_r4') if Path('results/stream_mc/sci_v3_submission_r4').exists() else Path('results/sci_v3_submission_r4')
     summary = validate_temporal_relation_provenance(root)
     assert summary['status'] == 'PASS'
     assert summary['temporal_violations'] == 0
@@ -29,8 +29,8 @@ def test_temporal_relation_validator_passes():
 
 
 def test_mc_method_identity_validator_passes():
-    root = Path('results/sci_v3_submission_r4')
-    predec = Path('configs/sci_v3_submission_r4/mc_identity_predeclaration.json')
+    root = Path('results/stream_mc/sci_v3_submission_r4') if Path('results/stream_mc/sci_v3_submission_r4').exists() else Path('results/sci_v3_submission_r4')
+    predec = Path('configs/stream_mc/sci_v3_submission_r4/mc_identity_predeclaration.json') if Path('configs/stream_mc/sci_v3_submission_r4/mc_identity_predeclaration.json').exists() else Path('configs/sci_v3_submission_r4/mc_identity_predeclaration.json')
     summary = validate_mc_method_identity(root, predec)
     assert summary['status'] == 'PASS'
     assert summary['branch'] == 'MC-B'
@@ -113,7 +113,7 @@ def test_policy_selection_and_application():
 
 
 def test_canonical_artifacts_completeness():
-    root = Path('results/sci_v3_submission_r4')
+    root = Path('results/stream_mc/sci_v3_submission_r4') if Path('results/stream_mc/sci_v3_submission_r4').exists() else Path('results/sci_v3_submission_r4')
     
     # Check tables
     required_tables = [
@@ -152,7 +152,9 @@ def test_canonical_artifacts_completeness():
     assert (ms_dir / 'r4_numbers.tex').exists()
     
     # Check gate report
-    gate = Path('docs/work_reports/112_stream_mc_submission_r4/sci_v3_submission_r4/final_scientific_gate.md')
+    gate = Path('docs/work_reports/stream_mc/112_stream_mc_submission_r4/sci_v3_submission_r4/final_scientific_gate.md')
+    if not gate.exists():
+        gate = Path('docs/work_reports/112_stream_mc_submission_r4/sci_v3_submission_r4/final_scientific_gate.md')
     if not gate.exists():
         gate = Path('docs/work_reports/sci_v3_submission_r4/final_scientific_gate.md')
     assert gate.exists()
