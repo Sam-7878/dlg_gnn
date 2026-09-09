@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{True End-to-End Latency vs. MC Samples ($T$)}
+\label{tab:e2e_latency}
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+T & gnn_source & n_measure & n_warmup & mean_ms & median_ms & p95_ms & p99_ms & std_ms & throughput_eps \\
+\midrule
+1 & simulated & 200 & 30 & 0.816200 & 0.733700 & 1.396800 & 1.793000 & 0.236900 & 1225.157900 \\
+5 & simulated & 200 & 30 & 1.451800 & 1.437000 & 1.917100 & 2.876600 & 0.337700 & 688.789900 \\
+10 & simulated & 200 & 30 & 2.108200 & 1.958700 & 2.934800 & 3.981200 & 0.465700 & 474.344800 \\
+20 & simulated & 200 & 30 & 3.815600 & 3.806600 & 4.998000 & 6.432800 & 0.796400 & 262.085200 \\
+30 & simulated & 200 & 30 & 5.136600 & 5.171800 & 6.525300 & 8.037600 & 0.857600 & 194.681900 \\
+\bottomrule
+\end{tabular}
+\end{table}

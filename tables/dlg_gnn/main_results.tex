@@ -1,0 +1,13 @@
+\begin{table}[t]
+\centering
+\caption{Overall detection performance of proposed method (5 seeds)}
+\label{tab:main_results}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+Model & gnn_source & AUC-PR_mean & AUC-PR_std & AUC-PR_95CI_low & AUC-PR_95CI_high & AUC-ROC_mean & AUC-ROC_std & F1_mean & F1_std & Recall@K_mean & Recall@K_std \\
+\midrule
+Full Proposed (GraphRAG + MC-nGNN + Uncertainty Fusion) & simulated & 0.943236 & 0.009627 & 0.935397 & 0.951738 & 0.991316 & 0.001162 & 0.831002 & 0.022580 & 0.870012 & 0.019515 \\
+\bottomrule
+\end{tabular}
+\end{table}

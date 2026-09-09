@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Robustness under missing and noisy context conditions}
+\label{tab:robustness}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+perturbation_type & rate & auc_pr_mean & auc_pr_std & auc_roc_mean & auc_roc_std & f1_mean & f1_std \\
+\midrule
+missing_context & 0.000000 & 0.943929 & 0.012878 & 0.991506 & 0.001404 & 0.827532 & 0.017062 \\
+missing_context & 0.100000 & 0.944612 & 0.012519 & 0.991589 & 0.001396 & 0.827532 & 0.017062 \\
+missing_context & 0.300000 & 0.944447 & 0.012401 & 0.991601 & 0.001323 & 0.832853 & 0.014773 \\
+missing_context & 0.500000 & 0.944743 & 0.012381 & 0.991656 & 0.001296 & 0.832835 & 0.016514 \\
+noisy_context & 0.200000 & 0.943925 & 0.012883 & 0.991506 & 0.001408 & 0.827532 & 0.017062 \\
+noisy_context & 0.500000 & 0.943906 & 0.012877 & 0.991506 & 0.001399 & 0.828306 & 0.016101 \\
+\bottomrule
+\end{tabular}
+\end{table}

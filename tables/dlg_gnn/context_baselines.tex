@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Context-only lexical baselines comparison}
+\label{tab:context_baselines}
+\small
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Model & auc_roc_mean & auc_roc_std & auc_pr_mean & auc_pr_std & macro_f1_mean & macro_f1_std & balanced_accuracy_mean & balanced_accuracy_std & fraud_ratio_mean & fraud_ratio_std \\
+\midrule
+majority_classifier & 0.500000 & 0.000000 & 0.097000 & 0.004300 & 0.474500 & 0.001200 & 0.500000 & 0.000000 & 0.097000 & 0.004300 \\
+keyword_rule & 0.525600 & 0.029700 & 0.107000 & 0.010000 & 0.493300 & 0.016400 & 0.503700 & 0.010000 & 0.097000 & 0.004300 \\
+tfidf_lr & 0.717700 & 0.095600 & 0.246300 & 0.074400 & 0.564100 & 0.055200 & 0.661800 & 0.076900 & 0.094700 & 0.012400 \\
+tfidf_svm & 0.696500 & 0.107100 & 0.290400 & 0.103400 & 0.475100 & 0.003400 & 0.500000 & 0.000000 & 0.094700 & 0.012400 \\
+semantic_risk_only & 0.504700 & 0.049600 & 0.109600 & 0.016700 & 0.351400 & 0.175700 & 0.501600 & 0.019000 & 0.097000 & 0.004300 \\
+\bottomrule
+\end{tabular}
+\end{table}
