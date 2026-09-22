@@ -6,7 +6,7 @@ This document provides the canonical mathematical derivation, implementation ide
 
 ## 1. Problem Formulation and Dense Reference
 
-Let $G = (V, E)$ be an attributed graph with $N = |V|$ nodes and $E = |E|$ edges (with adjacency matrix $A \in \{0, 1\}^{N \times N}$, binary and undirected, with optional self-loops).
+Let $G = (V, E)$ be an attributed graph with $N = |V|$ nodes and $E = |E|$ edges, represented by adjacency matrix $A \in \mathbb{R}^{N \times N}$ (which may be directed or weighted, with optional self-loops).
 Let $Z \in \mathbb{R}^{N \times d}$ denote the learned latent node representation matrix, where row $z_i \in \mathbb{R}^{1 \times d}$ is the embedding for node $i$.
 
 In dot-product graph autoencoders (such as DOMINANT, CONAD, DLG-Base, and DLG-Aug), the reconstructed adjacency matrix is:
@@ -28,18 +28,19 @@ $$\|A_{i,:} - z_i Z^\top\|_2^2 = \|A_{i,:}\|_2^2 - 2 A_{i,:} (z_i Z^\top)^\top +
 
 We analyze the three terms individually:
 
-### Term 1: Ground-Truth Degree Norm
-For binary adjacency graphs where $A_{ij} \in \{0, 1\}$:
-$$\|A_{i,:}\|_2^2 = \sum_{j=1}^N A_{ij}^2 = \sum_{j=1}^N A_{ij} = d_i$$
-where $d_i$ is the node degree (or row sum).
+### Term 1: Ground-Truth Row Norm
+For arbitrary real-valued or weighted adjacency graphs:
+$$\|A_{i,:}\|_2^2 = \sum_{j=1}^N A_{ij}^2$$
+When the adjacency is unweighted binary ($A_{ij} \in \{0, 1\}$), this reduces directly to the node row degree (out-degree in directed graphs, degree $d_i$ in undirected graphs):
+$$\sum_{j=1}^N A_{ij}^2 = \sum_{j=1}^N A_{ij} = d_i$$
 
 ### Term 2: Sparse-Dense Cross Term
 The inner product simplifies using the sparsity pattern of row $i$:
 $$A_{i,:} (z_i Z^\top)^\top = A_{i,:} (Z z_i^\top) = (A_{i,:} Z) z_i^\top = \sum_{j: A_{ij} \neq 0} A_{ij} (z_i z_j^\top)$$
 Since $A_{i,:} Z \in \mathbb{R}^{1 \times d}$ is the sparse neighborhood aggregation of embeddings into node $i$, it is computed across all nodes in a single sparse-dense matrix multiplication:
 $$S = A Z \in \mathbb{R}^{N \times d}$$
-Taking the row-wise inner product with $z_i$ gives:
-$$A_{i,:} (z_i Z^\top)^\top = \sum_{k=1}^d S_{ik} Z_{ik} = (S \odot Z) \mathbf{1}_d$$
+Taking the row-wise inner product with $z_i$ gives the dot product:
+$$A_{i,:} (z_i Z^\top)^\top = \langle (A Z)_i, z_i \rangle = \sum_{k=1}^d S_{ik} Z_{ik} = (S \odot Z) \mathbf{1}_d$$
 
 ### Term 3: Gram Quadratic Form
 The squared norm of the reconstructed row is:
@@ -49,6 +50,10 @@ Let $G = Z^\top Z \in \mathbb{R}^{d \times d}$ be the feature Gram matrix. Once 
 $$\|z_i Z^\top\|_2^2 = z_i G z_i^\top = \sum_{a=1}^d \sum_{b=1}^d Z_{ia} G_{ab} Z_{ib} = ((Z G) \odot Z) \mathbf{1}_d$$
 
 ### Exact Closed-Form Identity:
+For general real-valued / weighted graphs:
+$$\|A_{i,:} - z_i Z^\top\|_2^2 = \sum_{j=1}^N A_{ij}^2 - 2 \sum_{j: A_{ij} \neq 0} A_{ij} (z_i z_j^\top) + z_i (Z^\top Z) z_i^\top$$
+
+For binary unweighted graphs ($\sum_j A_{ij}^2 = d_i$):
 $$\|A_{i,:} - z_i Z^\top\|_2^2 = d_i - 2 \sum_{j: A_{ij} \neq 0} A_{ij} (z_i z_j^\top) + z_i (Z^\top Z) z_i^\top$$
 
 ---
@@ -68,8 +73,14 @@ $$\|A_{i,:} - z_i Z^\top\|_2^2 = d_i - 2 \sum_{j: A_{ij} \neq 0} A_{ij} (z_i z_j
 
 ---
 
-## 4. Distinction Against Erroneous Approximations
+## 4. Distinction Against Erroneous Approximations & Directed/Weighted Generality
 
-Notice that:
+Notice that in general:
 $$z_i (Z^\top Z) z_i^\top \neq \|Z\|_F^2 \|z_i\|_2^2$$
-in general. The identity $\|z_i Z^\top\|_2^2 = \|Z\|_F^2 \|z_i\|_2^2$ would only hold under the pathological condition that $Z^\top Z = \frac{\|Z\|_F^2}{d} I$, which never occurs in learned neural representations. The benchmark implementation strictly uses the exact Gram quadratic form $z_i (Z^\top Z) z_i^\top$.
+The scalar Frobenius substitution is not valid in general; the benchmark implementation strictly retains the full $d \times d$ Gram quadratic form $z_i (Z^\top Z) z_i^\top$.
+
+Furthermore, the algebraic identity does not require an undirected or unweighted graph:
+- **Directed Graphs**: The identity remains algebraically exact using row-oriented adjacency, where $A_{i,:}$ represents the outgoing neighborhood of node $i$ (or incoming neighborhood if transposed).
+- **Weighted Graphs**: For graphs with arbitrary edge weights, the first term evaluates $\sum_j A_{ij}^2$, and the cross-term aggregates edge-weighted representations $\sum_{j: A_{ij} \neq 0} A_{ij} (z_i z_j^\top)$.
+- **Self-Loops and Multigraphs**: Self-loops contribute to $A_{ii}^2$ and $A_{ii} \|z_i\|^2$, while coalesced parallel edges maintain exact row-norm equivalence.
+

@@ -30,10 +30,16 @@ import pandas as pd
 from sklearn.metrics import average_precision_score, roc_auc_score
 import torch
 
-# Ensure gog_fraud and scripts are on sys.path
-REPO_ROOT = Path(__file__).resolve().parents[3]
-DLG_SRC = REPO_ROOT / "dlg_gnn" / "src"
-DLG_ROOT = REPO_ROOT / "dlg_gnn"
+# Ensure gog_fraud and scripts are on sys.path portably
+CURRENT_FILE = Path(__file__).resolve()
+PROJECT_ROOT = CURRENT_FILE.parents[2]
+SRC_DIR = PROJECT_ROOT / "src"
+if not SRC_DIR.exists() and (CURRENT_FILE.parents[3] / "dlg_gnn" / "src").exists():
+    PROJECT_ROOT = CURRENT_FILE.parents[3] / "dlg_gnn"
+    SRC_DIR = PROJECT_ROOT / "src"
+
+DLG_SRC = SRC_DIR
+DLG_ROOT = PROJECT_ROOT
 if str(DLG_SRC) not in sys.path:
     sys.path.insert(0, str(DLG_SRC))
 if str(DLG_ROOT) not in sys.path:
@@ -72,7 +78,7 @@ def sha256_tensor(tensor: torch.Tensor) -> str:
 
 def get_git_commit() -> str:
     try:
-        res = subprocess.run(["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, capture_output=True, text=True, check=True)
+        res = subprocess.run(["git", "rev-parse", "HEAD"], cwd=PROJECT_ROOT, capture_output=True, text=True, check=True)
         return res.stdout.strip()
     except Exception:
         return "git_commit_unavailable"
@@ -331,15 +337,30 @@ def main():
     parser.add_argument("--seeds", type=str, default="42,43,44,45,46")
     parser.add_argument("--gpu", type=int, default=0)
     parser.add_argument("--force", action="store_true", help="Force rerun even if cached")
+    parser.add_argument("--dry-run", action="store_true", help="Validate imports, arguments, and execution matrix without GPU training")
     args = parser.parse_args()
 
-    data_root = Path(os.environ.get("DLG_DATA_ROOT", str(REPO_ROOT / "data" / "DLG")))
+    data_root = Path(os.environ.get("DLG_DATA_ROOT", str(PROJECT_ROOT / "data" / "DLG")))
     if not data_root.exists():
-        data_root = REPO_ROOT.parents[0] / "_data" / "DLG"
+        data_root = PROJECT_ROOT.parents[0] / "_data" / "DLG"
 
     datasets = [d.strip() for d in args.datasets.split(",") if d.strip()]
     seeds = [int(s.strip()) for s in args.seeds.split(",") if s.strip()]
     models = [m.strip() for m in args.models.split(",") if m.strip()]
+
+    if args.dry_run:
+        msg = (
+            "[DRY-RUN] Capacity Controls sensitivity runner dry-run mode.\n"
+            f"[DRY-RUN] Datasets ({len(datasets)}): {datasets}\n"
+            f"[DRY-RUN] Models ({len(models)}): {models}\n"
+            f"[DRY-RUN] Seeds ({len(seeds)}): {seeds}\n"
+            f"[DRY-RUN] Total planned matrix: {len(datasets) * len(models) * len(seeds)} runs.\n"
+            f"[DRY-RUN] Data root candidate: {data_root} (exists: {data_root.exists()})\n"
+            "[DRY-RUN] Sensitivity runner imports and arguments verified successfully."
+        )
+        print(msg)
+        log.info(msg)
+        return
 
     records = []
     for ds in datasets:

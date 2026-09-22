@@ -1,0 +1,19 @@
+\begin{table}[h]
+\centering
+\caption{LANL-RedTeam Neighborhood Structure Diagnostics (External Labeled Validation). Directed incoming authentication edges exhibit 97.27\% benign peer connections.}
+\label{tab:lanl_diagnostics_summary}
+\small
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Metric} & \textbf{RedTeam (Anomalous)} & \textbf{Benign (Normal)} & \textbf{Effect Size (Cliff's $\delta$)} \\
+\midrule
+in_degree & 9.00 & 4.00 & +0.819 \\
+out_degree & 21.00 & 19.00 & +0.302 \\
+total_degree & 33.00 & 23.00 & +0.633 \\
+unique_peers & 31.00 & 21.00 & +0.630 \\
+neighbor_feat_mean_dist & 14533481.00 & 18195070.00 & -0.319 \\
+neighbor_feat_dispersion & 18194944.00 & 20006802.00 & -0.188 \\
+local_deg_deviation & 7360.10 & 9406.54 & -0.357 \\
+\bottomrule
+\end{tabular}
+\end{table}

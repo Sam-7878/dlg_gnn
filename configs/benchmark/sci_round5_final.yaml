@@ -5,7 +5,7 @@ experiment:
   execution_origin: round5_new
   auto_start: false
 data:
-  root: /mnt/d/_Work/_data/DLG
+  root: data
   fixed_dataset_seed: 42
 datasets: [Elliptic, DGraphFin, Yelp, Amazon, BitcoinOTC, Flickr, Reddit, Cora, CiteSeer, PubMed]
 remaining_five: [Amazon, BitcoinOTC, Flickr, CiteSeer, PubMed]

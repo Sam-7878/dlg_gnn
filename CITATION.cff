@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this benchmark suite, models, or datasets, please cite it as below."
+title: "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"
+version: "preprint-preparation"
+date-released: "2026-09-22"
+url: "https://github.com/goat-bank/dlg_gnn"
+authors:
+  - family-names: "Park"
+    given-names: "SeongSu"
+    affiliation: "Department of Computer Engineering, Ajou University, Suwon 16499, Republic of Korea"
+    orcid: "https://orcid.org/0009-0002-3642-1596"
+  - family-names: "Kim"
+    given-names: "Ki-Hyung"
+    affiliation: "Department of Cyber Security, Ajou University, Suwon 16499, Republic of Korea"
+    orcid: "https://orcid.org/0000-0002-2321-4475"
+preferred-citation:
+  type: article
+  title: "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"
+  authors:
+    - family-names: "Park"
+      given-names: "SeongSu"
+    - family-names: "Kim"
+      given-names: "Ki-Hyung"
+  journal: "MDPI Applied Sciences (Under Review)"
+  year: 2026
+references:
+  - type: article
+    title: "DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection"
+    authors:
+      - family-names: "Park"
+        given-names: "SeongSu"
+      - family-names: "Kim"
+        given-names: "Ki-Hyung"
+    doi: "10.20944/preprints202609.0848.v1"
+    year: 2026

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dlg-gnn"
 version = "1.0.0"
-description = "Evaluating Decoupled Local-to-Global Graph Neural Networks for Unsupervised Anomaly Detection"
+description = "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"
 readme = "README.md"
 authors = [{ name = "DLG-GNN Benchmark Team" }]
 license = { text = "MIT" }

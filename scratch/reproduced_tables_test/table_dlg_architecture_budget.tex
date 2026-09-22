@@ -1,0 +1,24 @@
+% Auto-generated production architecture and parameter budget table
+\begin{table*}[t]
+\centering
+\caption{Neural network parameter counts and training budget for DLG-Base and DLG-Aug across the benchmark portfolio ($H = 64$ hidden channels, 2-layer encoder + 2-layer decoder; $F$ denotes input feature dimension). All primary and external benchmark runs executed exactly 50 global optimization epochs matching frozen raw run metadata.}
+\label{tab:dlg_architecture_budget}
+\scriptsize
+\begin{tabular}{l r r r r c c c}
+\toprule
+\textbf{Dataset} & \textbf{\(F\)} & \textbf{DLG-Base Active} & \textbf{DLG-Aug Stage 2} & \textbf{DLG-Aug Total} & \textbf{Base Ep} & \textbf{Aug Local Ep} & \textbf{Aug Global Ep} \\
+\midrule
+Elliptic & 165 & 37,990 & 33,765 & 59,274 & 50 & 20 & 50 \\
+DGraphFin & 17 & 18,898 & 14,673 & 21,090 & 50 & 20 & 50 \\
+BitcoinOTC & 67 & 25,348 & 21,123 & 33,990 & 50 & 20 & 50 \\
+Yelp-Syn & 300 & 55,405 & 51,180 & 94,104 & 50 & 20 & 50 \\
+Amazon-Syn & 767 & 115,648 & 111,423 & 214,590 & 50 & 20 & 50 \\
+Reddit-Syn & 602 & 94,363 & 90,138 & 172,020 & 50 & 20 & 50 \\
+Flickr-Syn & 500 & 81,205 & 76,980 & 145,704 & 50 & 20 & 50 \\
+Cora-Syn & 1,433 & 201,562 & 197,337 & 386,418 & 50 & 20 & 50 \\
+CiteSeer-Syn & 3,703 & 494,392 & 490,167 & 972,078 & 50 & 20 & 50 \\
+PubMed-Syn & 500 & 81,205 & 76,980 & 145,704 & 50 & 20 & 50 \\
+LANL-RedTeam & 13 & 18,382 & 14,157 & 20,058 & 50 & 20 & 50 \\
+\bottomrule
+\end{tabular}
+\end{table*}
