@@ -333,7 +333,7 @@ def main():
     parser.add_argument("--force", action="store_true", help="Force rerun even if cached")
     args = parser.parse_args()
 
-    data_root = Path("/mnt/d/_Work/_data/DLG")
+    data_root = Path(os.environ.get("DLG_DATA_ROOT", str(REPO_ROOT / "data" / "DLG")))
     if not data_root.exists():
         data_root = REPO_ROOT.parents[0] / "_data" / "DLG"
 

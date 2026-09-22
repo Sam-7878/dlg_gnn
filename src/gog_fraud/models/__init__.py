@@ -1,0 +1,1 @@
+"""GOG Fraud Models package."""
