@@ -12,7 +12,7 @@ import zipfile
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-PREPRINTS_DIR = REPO_ROOT / "publication" / "preprints"
+PREPRINTS_DIR = REPO_ROOT / "publication" / "benchmark" / "preprints"
 PREPRINT_TEX = PREPRINTS_DIR / "DLG-Benchmark-Preprint.tex"
 PREPRINT_ZIP = PREPRINTS_DIR / "DLG_Benchmark_Preprints_Submission.zip"
 PREPRINT_PDF = PREPRINTS_DIR / "DLG-Benchmark-Preprint.pdf"

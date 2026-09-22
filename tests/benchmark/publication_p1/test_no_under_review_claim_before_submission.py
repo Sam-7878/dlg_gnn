@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CITATION_CFF = REPO_ROOT / "CITATION.cff"
 README_MD = REPO_ROOT / "README.md"
 RELEASE_META = REPO_ROOT / "outputs" / "benchmark" / "manuscript_m5" / "release" / "release_metadata.json"
-PREPRINT_TEX = REPO_ROOT / "publication" / "preprints" / "DLG-Benchmark-Preprint.tex"
+PREPRINT_TEX = REPO_ROOT / "publication" / "benchmark" / "preprints" / "DLG-Benchmark-Preprint.tex"
 
 
 def test_citation_cff_no_under_review():

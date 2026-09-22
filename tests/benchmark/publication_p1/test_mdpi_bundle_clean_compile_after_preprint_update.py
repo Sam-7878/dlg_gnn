@@ -3,7 +3,7 @@
 test_mdpi_bundle_clean_compile_after_preprint_update.py
 
 Round P1 Freeze Gate: Verifies that the MDPI Applied Sciences submission bundle
-(publication/mdpi/DLG_Benchmark_MDPI_Submission.zip) contains all required assets
+(publication/benchmark/mdpi/DLG_Benchmark_MDPI_Submission.zip) contains all required assets
 including cover_letter.md and Definitions/, and compiles cleanly in an isolated
 temporary directory to produce a publication-ready PDF.
 """
@@ -16,7 +16,7 @@ import zipfile
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-MDPI_DIR = REPO_ROOT / "publication" / "mdpi"
+MDPI_DIR = REPO_ROOT / "publication" / "benchmark" / "mdpi"
 MDPI_ZIP = MDPI_DIR / "DLG_Benchmark_MDPI_Submission.zip"
 MDPI_PDF = MDPI_DIR / "DLG-Benchmark.pdf"
 COVER_LETTER = MDPI_DIR / "cover_letter.md"

@@ -17,9 +17,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 PRECEDING_DOI = "10.20944/preprints202609.0848.v1"
 RELEASE_META = REPO_ROOT / "outputs" / "benchmark" / "manuscript_m5" / "release" / "release_metadata.json"
 CITATION_CFF = REPO_ROOT / "CITATION.cff"
-PREPRINT_TEX = REPO_ROOT / "publication" / "preprints" / "DLG-Benchmark-Preprint.tex"
-MDPI_TEX = REPO_ROOT / "publication" / "mdpi" / "DLG-Benchmark.tex"
-BIB_FILE = REPO_ROOT / "publication" / "preprints" / "references.bib"
+PREPRINT_TEX = REPO_ROOT / "publication" / "benchmark" / "preprints" / "DLG-Benchmark-Preprint.tex"
+MDPI_TEX = REPO_ROOT / "publication" / "benchmark" / "mdpi" / "DLG-Benchmark.tex"
+BIB_FILE = REPO_ROOT / "publication" / "benchmark" / "preprints" / "references.bib"
 
 
 def test_release_metadata_doi_separation():

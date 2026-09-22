@@ -12,8 +12,8 @@ import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 MASTER_TEX = REPO_ROOT / "docs" / "papers" / "_42_Benchmark" / "DLG-Benchmark.tex"
-PREPRINT_TEX = REPO_ROOT / "publication" / "preprints" / "DLG-Benchmark-Preprint.tex"
-MDPI_TEX = REPO_ROOT / "publication" / "mdpi" / "DLG-Benchmark.tex"
+PREPRINT_TEX = REPO_ROOT / "publication" / "benchmark" / "preprints" / "DLG-Benchmark-Preprint.tex"
+MDPI_TEX = REPO_ROOT / "publication" / "benchmark" / "mdpi" / "DLG-Benchmark.tex"
 
 REQUIRED_SUBSECTION = "Use of AI-Assisted Tools in Manuscript and Software Preparation"
 REQUIRED_TOOLS = ["ChatGPT", "Claude", "Gemini"]

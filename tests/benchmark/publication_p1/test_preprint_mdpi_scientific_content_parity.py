@@ -3,8 +3,8 @@
 test_preprint_mdpi_scientific_content_parity.py
 
 Round P1 Freeze Gate: Verifies 100% scientific content parity between
-Preprints.org manuscript (publication/preprints/DLG-Benchmark-Preprint.tex) and
-MDPI manuscript (publication/mdpi/DLG-Benchmark.tex).
+Preprints.org manuscript (publication/benchmark/preprints/DLG-Benchmark-Preprint.tex) and
+MDPI manuscript (publication/benchmark/mdpi/DLG-Benchmark.tex).
 """
 
 from pathlib import Path
@@ -12,8 +12,8 @@ import re
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-PREPRINT_TEX = REPO_ROOT / "publication" / "preprints" / "DLG-Benchmark-Preprint.tex"
-MDPI_TEX = REPO_ROOT / "publication" / "mdpi" / "DLG-Benchmark.tex"
+PREPRINT_TEX = REPO_ROOT / "publication" / "benchmark" / "preprints" / "DLG-Benchmark-Preprint.tex"
+MDPI_TEX = REPO_ROOT / "publication" / "benchmark" / "mdpi" / "DLG-Benchmark.tex"
 
 
 def extract_abstract(text: str) -> str:
