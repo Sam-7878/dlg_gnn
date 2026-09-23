@@ -113,7 +113,7 @@ def run(config: dict, output_root: Path, *, datasets: list[str] | None = None,
     evaluation = config.get("evaluation", {})
     seed_values = [int(value) for value in (seeds or evaluation.get("seeds", [42, 43, 44, 45, 46]))]
     dataset_registry, model_registry = _legacy_registries(
-        config.get("data", {}).get("root", "/mnt/d/_Work/_data/DLG"), int(evaluation.get("dataset_seed", 42)))
+        config.get("data", {}).get("root", "data"), int(evaluation.get("dataset_seed", 42)))
     names = datasets or config.get("datasets") or list(dataset_registry)
     gpu = _resolve_gpu(int(evaluation.get("gpu", 0 if torch.cuda.is_available() else -1)))
     rows, failures, weight_rows = [], [], []

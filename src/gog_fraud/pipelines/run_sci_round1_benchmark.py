@@ -222,7 +222,7 @@ def run(config: dict[str, Any], *, output_root: Path, resume: bool, force: bool,
         seed_override: list[int] | None = None, max_nodes: int | None = None) -> int:
     evaluation = config.get("evaluation", {})
     seeds = [int(seed) for seed in (seed_override or evaluation.get("seeds", [42, 43, 44, 45, 46]))]
-    data_root = str(config.get("data", {}).get("root", "/mnt/d/_Work/_data/DLG"))
+    data_root = str(config.get("data", {}).get("root", "data"))
     dataset_seed = int(evaluation.get("dataset_seed", 42))
     datasets, models = _legacy_registries(data_root, dataset_seed)
     datasets = _select(dataset_filter or config.get("datasets"), datasets, "datasets")

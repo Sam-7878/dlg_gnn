@@ -1,0 +1,24 @@
+name: dlg_gnn
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip>=24.0
+  - pytorch=2.5.1
+  - pytorch-cuda=12.1
+  - numpy>=1.24.0
+  - scipy>=1.10.0
+  - scikit-learn>=1.2.0
+  - pandas>=2.0.0
+  - pyyaml>=6.0
+  - pytest>=8.0.0
+  - pip:
+      - torch-geometric==2.7.0
+      - --find-links https://data.pyg.org/whl/torch-2.5.1+cu121.html
+      - torch-scatter==2.1.2+pt25cu121
+      - torch-sparse==0.6.18+pt25cu121
+      - pygod==1.1.0
+      - -e .

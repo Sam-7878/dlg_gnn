@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dlg-gnn"
+version = "1.0.0"
+description = "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"
+readme = "README.md"
+authors = [{ name = "DLG-GNN Benchmark Team" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "torch-geometric>=2.5.0",
+    "scipy>=1.10.0",
+    "scikit-learn>=1.2.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

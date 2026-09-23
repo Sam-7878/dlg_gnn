@@ -1,22 +1,159 @@
-# DLG-GNN (Decoupled Local-to-Global Graph Neural Network)
+# A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs
 
-**DLG-GNN**은 GoatBank 생태계의 핵심 보안 및 자금 세탁 방지(AML) 인프라로 작동하는 계층형 그래프 신경망 기반 사기 탐지 엔진입니다. 
+[![Preprints.org Ready](https://img.shields.io/badge/Preprints.org-Preprint_Ready-blue.svg)](https://www.preprints.org/)
+[![Target Journal](https://img.shields.io/badge/Target_Journal-MDPI_Applied_Sciences-green.svg)](https://www.mdpi.com/journal/applsci/special_issues/C80IXAF9V4)
+[![PyTorch 2.5+](https://img.shields.io/badge/PyTorch-2.5.1-orange.svg)](https://pytorch.org/)
+[![PyG 2.7+](https://img.shields.io/badge/PyG-2.7.0-red.svg)](https://pyg.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🚀 Overview
-기존 상용 AML 솔루션의 한계를 극복하고 멀티 체인(Ethereum, BSC, Polygon) 상에서 발생하는 복잡하고 은닉된 자금 세탁 패턴을 실시간으로 탐지합니다. 단일 그래프 추론의 한계를 뛰어넘어 Level 1(개별 하위 그래프 특성)과 Level 2(하위 그래프 간의 메타 릴레이션)를 분리하여 학습하는 **계층적 아키텍처**를 채택했습니다.
+Official companion code, experiment runners, canonical manifests, frozen evaluation tables, and replication scripts for the benchmark paper:
 
-## ✨ Core Features
-- **Decoupled Architecture**: Subgraph 내부 구조(Level 1)와 관계 네트워크(Level 2)를 물리적/논리적으로 분리.
-- **Uncertainty-Aware Alerting**: Monte Carlo (MC) Dropout을 활용하여 예측의 불확실성을 정량화하고, 오탐(False Positive)을 최소화.
-- **Streaming & Static Processing**: 스트리밍 리플레이 시뮬레이션을 통한 실시간 탐지 및 정적(Static) 대규모 그래프 배치 처리 동시 지원.
-- **Ablation & Benchmarking**: 설정(Config) 기반의 실험 파이프라인을 통해 Legacy, Level 1 단독, Level 1+2 조합 간의 ROC-AUC, PR-AUC, F1 성능을 비교.
+> **"A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"**  
+> **Authors:** SeongSu Park$^1$ and Ki-Hyung Kim$^{2,*}$  
+> $^1$ *Department of Computer Engineering, Ajou University, Suwon 16499, Republic of Korea* (`parky@ajou.ac.kr`, ORCID: [0009-0008-4056-3875](https://orcid.org/0009-0008-4056-3875))  
+> $^2$ *Department of Cyber Security, Ajou University, Suwon 16499, Republic of Korea* (`kkim86@ajou.ac.kr`, ORCID: [0000-0002-2321-4475](https://orcid.org/0000-0002-2321-4475))  
+> $^*$ *Corresponding author: Ki-Hyung Kim*
 
-## 📂 Repository Structure
-- `src/` : 모델, 학습 파이프라인, 평가 코드가 포함된 코어 소스코드
-- `configs/` : YAML 기반의 실험 세팅 파일 (MC, nGNN 등)
-- `data/` : 학습 및 벤치마크 평가용 그래프 데이터 (캐시 및 전처리)
-- `docs/` : 아키텍처 및 시스템 세부 설계 문서 (`docs/architecture/` 참조)
-- `scripts/` & `tests/` : 자동화된 벤치마크 런 및 단위 테스트
+---
 
-## ⚙️ Getting Started
-자세한 아키텍처와 구동 방법은 `docs/architecture/` 내부의 마크다운 문서들을 참조해 주세요.
+## 📌 Publication & Deposit Status
+
+- **Preprints.org Deposit:** In preparation / deposit initiated.
+- **Target Journal:** *MDPI Applied Sciences* (Special Issue: *Graph Neural Networks: Theory, Methods and Applications*).
+- **Official Release Asset:** `DLG_GNN_Benchmark_v1.0.0_preprint.zip` (Tag: `v1.0.0-preprint`).
+- **Release State:** Release prepared; publication pending public deposit.
+
+---
+
+## 📊 Frozen Benchmark Summary
+
+This repository hosts the complete, frozen scientific artifacts and exact-sparse execution backends for large-scale graph anomaly detection:
+
+| Benchmark Dimension | Frozen Specification |
+|---|---|
+| **Primary Suite** | **10 Heterogeneous Datasets** (3 real financial: *Elliptic, DGraphFin, BitcoinOTC*; 7 controlled synthetic-injection: *Yelp-Syn, Amazon-Syn, Flickr-Syn, Reddit-Syn, Cora-Syn, CiteSeer-Syn, PubMed-Syn*) |
+| **External Validation** | **LANL-RedTeam** authentication interaction graph (16,694 nodes, 130,551 edges) |
+| **Evaluated Detectors** | **8 Configurations** (6 established baselines: *DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN*; 2 DLG variants: *DLG-Base, DLG-Aug*) |
+| **Supported Pairs** | **71 / 80 pairs** supported exactly under declared resource limits (8 GB GPU budget; zero OOM imputation) |
+| **Successful Primary Runs** | **355 runs** across 5 independent random model seeds (seeds 42–46) |
+| **Sensitivity Controls** | **45 targeted runs** (*DLG-Aug-Zero, DLG-Aug-Permuted, DLG-Base-70*) across discrepancy graphs |
+| **Scalability Backends** | Exact sparse linear structure decoder (avoids $\mathcal{O}(N^2)$ dense matrix storage with $\mathcal{O}(\|E\|d + Nd^2)$ arithmetic) & fused sparse message passing |
+
+### Authoritative Cryptographic Hashes
+- `benchmark_raw.csv`: `39a497efe81a0d2630d8817e653d35b01bbb141de4a8d008a46a8c13f1c8375c`
+- `model_dataset_support_matrix.csv`: `c58dbca9a9e1ed14dfc025075820a3ad745f6cb70be77764c265d90af3522914`
+
+---
+
+## 🚀 Quick Reproduction Guide
+
+The benchmark provides two reproduction pathways:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ MODE 1: Frozen-Artifact Fast Reproduction (0 Raw Datasets Needed)       │
+│ • Validates cryptographic SHA-256 hashes of frozen raw benchmark runs  │
+│ • Regenerates all manuscript performance, statistical, & control tables│
+│ • Runs exact-sparse mathematical and numerical equivalence unit tests  │
+│ • Execution time: ~5 seconds (no GPU or external data downloads needed)│
+└────────────────────────────────────────────────────────────────────────┘
+                                    │
+┌────────────────────────────────────────────────────────────────────────┐
+│ MODE 2: Full Benchmark Re-Execution (Raw Datasets Required)             │
+│ • Primary 10-Dataset Benchmark: run_sci_round5_final.py (355 runs)     │
+│ • Sensitivity Controls: run_capacity_controls_m3.py (45 runs)          │
+│ • Requires downloading external datasets according to license matrix   │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### Mode 1: Fast Frozen-Artifact Reproduction
+```bash
+# 1. Clone repository
+git clone https://github.com/Sam-7878/dlg_gnn.git
+cd dlg_gnn
+
+# 2. Run Mode 1 reproduction script (~5s, verifies hashes and generates tables)
+python scripts/reproduce_frozen_artifacts.py
+```
+
+### Mode 2: Full Pipeline Re-Execution
+```bash
+# Set up Python environment (see INSTALL.md for detailed steps)
+pip install -r requirements-core.txt
+
+# Run full five-seed primary benchmark
+python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/primary_suite.yaml
+
+# Run pre-registered sensitivity controls
+python experiments/benchmark/run_capacity_controls_m3.py
+```
+
+---
+
+## 📦 Repository Structure
+
+```text
+dlg_gnn/
+├── src/                          # Exact sparse backends, DLG models, adapters
+│   ├── gog_fraud/models/         # DLG-Base, DLG-Aug, baseline adapters
+│   └── gog_fraud/pipelines/      # Evaluation and verification pipelines
+├── experiments/benchmark/        # Mode 2 experiment runner scripts
+├── scripts/                      # Mode 1 reproduction and audit tools
+├── configs/                      # Canonical configuration files
+├── tests/                        # Automated test suites (P1, P2, P3, P4)
+├── outputs/benchmark/            # Frozen artifacts, evaluation CSVs, manifests
+│   └── manuscript_m5/
+│       ├── artifacts/            # Machine-readable performance & ranking tables
+│       ├── provenance/           # Environment manifests (frozen vs tested)
+│       └── release/              # Publication release package
+├── publication/benchmark/        # Preprints.org & MDPI submission bundles
+├── docs/papers/_42_Benchmark/    # Master LaTeX source and generated tables
+├── CITATION.cff                  # Machine-readable scholarly citation
+├── INSTALL.md                    # Environment setup & dependency instructions
+└── README.md                     # Benchmark landing page (this document)
+```
+
+---
+
+## 📜 Dataset Provenance & Attribution
+
+- **Public Real-Label Graphs:**
+  - **Elliptic:** Bitcoin transaction graph ([Weber et al., 2019](https://arxiv.org/abs/1908.02591)), available on Kaggle.
+  - **DGraphFin:** Million-scale financial user graph ([Huang et al., 2022](https://arxiv.org/abs/2207.03579)), available from FinVolution.
+  - **BitcoinOTC:** Who-trusts-whom network with rating labels, available from the Stanford Network Analysis Project ([SNAP](https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html)).
+  - **LANL-RedTeam:** Enterprise authentication log graph ([Kent, 2015](https://csr.lanl.gov/data/cyber1/)), available from Los Alamos National Laboratory.
+- **Controlled Synthetic-Injection Graphs (`-Syn`):**
+  - Seven benchmarks (`Yelp-Syn`, `Amazon-Syn`, `Flickr-Syn`, `Reddit-Syn`, `Cora-Syn`, `CiteSeer-Syn`, `PubMed-Syn`) are constructed from public base graphs distributed via PyGOD and SNAP, using the frozen structural and contextual anomaly-injection protocol described in the manuscript.
+
+---
+
+## 📖 Citation
+
+If you use this benchmark suite, exact sparse backends, or frozen evaluation tables, please cite as follows:
+
+```bibtex
+@article{park2026dlgbenchmark,
+  title={A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs},
+  author={Park, SeongSu and Kim, Ki-Hyung},
+  journal={Preprints.org},
+  year={2026},
+  note={Preprint forthcoming. Code available at \url{https://github.com/Sam-7878/dlg_gnn}}
+}
+```
+
+### Relation to Preceding Work
+This benchmark isolates and empirically investigates the local-to-global principle first proposed in our preceding architectural paper:
+> **"DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection"**  
+> *Preprints.org 2026*, DOI: [10.20944/preprints202609.0848.v1](https://doi.org/10.20944/preprints202609.0848.v1).
+
+---
+
+## 🏛️ Historical & Broader Project Context
+
+This repository originated as part of the **GoatBank** security research initiative, which developed hierarchical local-to-global graph representations for multi-chain blockchain fraud analysis. While the present benchmark paper deliberately isolates the core static GNN anomaly detection principles for standard graph benchmarks, the wider project includes streaming replay engines, bounded state caches, and hierarchical transaction modeling components preserved under `src/` and `docs/`.
+
+---
+
+## 📄 License
+
+This benchmark repository and its code are released under the [MIT License](LICENSE). Frozen benchmark outputs, evaluation tables, and pre-computed artifacts are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -1,0 +1,48 @@
+workflow: sci_benchmark_round_4a_exact_sparse_readiness
+experiment:
+  output_root: outputs/sci_round4a
+  auto_start_round4b: false
+data:
+  root: /mnt/d/_Work/_data/DLG
+reconstruction:
+  default_backend: exact_sparse
+  nonlinear_backend: chunked_exact
+  score_chunk_size: 8192
+  nonlinear_score_chunk_size: 256
+  dense_reference_max_nodes: 4096
+execution:
+  shared_full_graph_model: true
+  fresh_subprocess_per_run: true
+  approximation_used: false
+  gpu: 0
+equivalence:
+  datasets: [synthetic_small, Cora]
+  float32_loss_rtol: 1.0e-5
+  float32_score_rtol: 1.0e-5
+  float32_gradient_rtol: 1.0e-4
+large_graph:
+  datasets: [DGraphFin, Yelp, Reddit]
+  feasibility_epochs: 1
+  gradient_checkpointing: false
+  gpu_memory_budget_mb: 8192
+  production_models: [DOMINANT, AnomalyDAE, CONAD, DLG-Base, DLG-Aug]
+failure_closure:
+  yelp_models: [DOMINANT, CONAD, DLG-Base]
+  reddit_models: [CONAD]
+  seeds: [42, 43]
+component:
+  datasets: [Elliptic, DGraphFin, Cora, Yelp, Reddit]
+  variants: [DLG-Base, DLG-Local, DLG-Aug, DLG-Fusion]
+  seeds: [42, 43]
+  epochs: 50
+representative:
+  datasets: [Elliptic, DGraphFin, Yelp, Cora, Reddit]
+  models: [DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN, DLG-Base, DLG-Aug]
+  seeds: [42, 43]
+  production_equivalent: true
+synthetic:
+  primary_dataset_seed: 42
+  robustness_appendix_seeds: [41, 42, 43, 44, 45]
+metrics:
+  primary: [roc_auc, pr_auc, validation_selected_f1]
+  fixed_05: false

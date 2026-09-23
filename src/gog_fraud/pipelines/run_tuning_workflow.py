@@ -19,7 +19,7 @@ def run_cmd(cmd, cwd="."):
     return True
 
 def run_workflow():
-    py_exec = "/mnt/d/_Work/MC_and_nGNN_for_GoG/.venv/bin/python3"
+    py_exec = sys.executable
     out_dir = "docs/work_reports/14-ablation_study_resource_efficiency/"
     legacy_results_dir = "results/benchmark"
     

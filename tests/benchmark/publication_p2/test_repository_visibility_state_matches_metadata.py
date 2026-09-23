@@ -14,7 +14,7 @@ import pytest
 REPO_ROOT = Path(__file__).resolve().parents[3]
 RELEASE_META = REPO_ROOT / "outputs" / "benchmark" / "manuscript_m5" / "release" / "release_metadata.json"
 VISIBILITY_DOC = REPO_ROOT / "publication" / "benchmark" / "reports" / "08_repository_external_visibility_check.md"
-RELEASE_ZIP = REPO_ROOT / "outputs" / "benchmark" / "manuscript_m5" / "release" / "DLG_GNN_Benchmark_M5_Release.zip"
+RELEASE_ZIP = REPO_ROOT / "outputs" / "benchmark" / "manuscript_m5" / "release" / "DLG_GNN_Benchmark_v1.0.0_preprint.zip"
 
 
 def test_visibility_metadata_consistency():

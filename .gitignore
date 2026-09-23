@@ -5,6 +5,7 @@ xbuild/
 _res/
 .venv/
 .pytest_cache/
+scratch/
 .gradle/
 .android/
 .idea/

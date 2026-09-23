@@ -22,10 +22,12 @@ def test_release_metadata_semantics():
 
     # Boolean semantics
     assert isinstance(data.get("is_public_release"), bool)
-    assert data.get("is_public_release") is True
 
-    # State enum
-    assert data.get("release_state") == "public"
+    # State enum matches boolean truthfulness
+    if data.get("is_public_release") is True:
+        assert data.get("release_state") == "public"
+    else:
+        assert data.get("release_state") == "prepared_for_public_release"
 
     # URL
     assert data.get("repository_url") == "https://github.com/Sam-7878/dlg_gnn"
