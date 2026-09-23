@@ -20,7 +20,7 @@
   "preceding_work_doi": "10.20944/preprints202609.0848.v1",
   "version": "1.0.0-preprint",
   "git_tag": "v1.0.0-preprint",
-  "commit_sha": "9ab41934d28ec45490d48e76152285f626a0b578",
-  "is_public_release": false,
-  "release_state": "prepared_for_public_release"
+  "is_public_release": true,
+  "release_state": "public",
+  "date_released": "2026-09-23"
 }

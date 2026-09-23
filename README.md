@@ -21,7 +21,7 @@ Official companion code, experiment runners, canonical manifests, frozen evaluat
 - **Preprints.org Deposit:** Prepared for Preprints.org deposit.
 - **Target Journal:** *MDPI Applied Sciences* (Special Issue: *Graph Neural Networks: Theory, Methods and Applications*).
 - **Official Release Asset:** `DLG_GNN_Benchmark_v1.0.0_preprint.zip` (Tag: `v1.0.0-preprint`).
-- **Release State:** GitHub release publication pending; the deposit package is prepared.
+- **Release State:** GitHub release published; prepared for Preprints.org deposit.
 
 ---
 

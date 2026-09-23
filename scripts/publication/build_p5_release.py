@@ -19,9 +19,7 @@ def sha256(path: Path) -> str:
 
 def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     metadata = json.loads((ROOT / "publication/benchmark/publication_metadata.json").read_text())
-    metadata.update({"commit_sha": commit, "is_public_release": False, "release_state": "prepared_for_public_release"})
     release_meta = OUT.parent / "release_metadata.json"
     release_meta.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     files = [ROOT / p for p in INCLUDE_FILES]
@@ -32,6 +30,6 @@ def main() -> None:
         for path in files:
             zf.write(path, "dlg_gnn/" + path.relative_to(ROOT).as_posix())
         zf.writestr("dlg_gnn/release_metadata.json", json.dumps(metadata, indent=2) + "\n")
-    print(json.dumps({"path": str(OUT), "sha256": sha256(OUT), "files": len(files) + 1, "commit": commit}, indent=2))
+    print(json.dumps({"path": str(OUT), "sha256": sha256(OUT), "files": len(files) + 1}, indent=2))
 if __name__ == "__main__":
     main()

@@ -19,5 +19,8 @@
   "preceding_work_title": "DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection",
   "preceding_work_doi": "10.20944/preprints202609.0848.v1",
   "version": "1.0.0-preprint",
-  "git_tag": "v1.0.0-preprint"
+  "git_tag": "v1.0.0-preprint",
+  "is_public_release": true,
+  "release_state": "public",
+  "date_released": "2026-09-23"
 }
