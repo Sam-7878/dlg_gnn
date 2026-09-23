@@ -13,8 +13,27 @@ from torch_geometric.nn import GCN
 from torch_geometric import compile
 
 from pygod.detector import DeepDetector
-from pygod.nn import GADNRBase
+from pygod.nn import GADNRBase as PyGODGADNRBase
+import pygod.nn.gadnr as pygod_gadnr_module
 from pygod.utils import logger
+
+
+class _UnusedPool:
+    """Compatibility placeholder: upstream creates a Pool but never uses it."""
+    def close(self): pass
+    def terminate(self): pass
+    def join(self): pass
+
+
+class GADNRBase(PyGODGADNRBase):
+    """Avoid the upstream unused four-process Pool for reliable SCI execution."""
+    def __init__(self, *args, **kwargs):
+        original_pool = pygod_gadnr_module.mp.Pool
+        pygod_gadnr_module.mp.Pool = lambda *_args, **_kwargs: _UnusedPool()
+        try:
+            super().__init__(*args, **kwargs)
+        finally:
+            pygod_gadnr_module.mp.Pool = original_pool
 
 
 class GADNR(DeepDetector):

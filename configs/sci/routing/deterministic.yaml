@@ -1,0 +1,1 @@
+routing: {mode: deterministic, threshold_source: validation}

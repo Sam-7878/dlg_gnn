@@ -1,0 +1,12 @@
+workflow: benchmark_round_1
+experiment: {name: sci_multiseed, output_root: outputs/sci}
+data: {root: /mnt/d/_Work/_data/DLG}
+evaluation:
+  seeds: [42, 43, 44, 45, 46]
+  dataset_seed: 42
+  deterministic: true
+  epochs: 50
+  validation_ratio: 0.20
+  test_ratio: 0.20
+threshold: {modes: [fixed_05, validation_best, topk, test_oracle_report_only]}
+

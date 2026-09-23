@@ -1,0 +1,71 @@
+workflow: benchmark_round_1
+
+experiment:
+  name: sci_full_round_1
+  output_root: outputs/sci
+
+data:
+  root: /mnt/d/_Work/_data/DLG
+
+datasets:
+  - Elliptic
+  - DGraphFin
+  - Yelp
+  - Amazon
+  - BitcoinOTC
+  - Flickr
+  - Reddit
+  - Cora
+  - CiteSeer
+  - PubMed
+
+models:
+  - DOMINANT
+  - AnomalyDAE
+  - CoLA
+  - CONAD
+  - GADNR
+  - OCGNN
+  - DLG-Base
+  - DLG
+
+evaluation:
+  seeds: [42, 43, 44, 45, 46]
+  dataset_seed: 42
+  deterministic: true
+  epochs: 50
+  validation_ratio: 0.20
+  test_ratio: 0.20
+  bootstrap_samples: 1000
+  gpu: 0
+  partition_sizes:
+    DGraphFin: 4096
+    Yelp: 4096
+    Reddit: 8192
+
+threshold:
+  modes: [fixed_05, validation_best, topk, test_oracle_report_only]
+
+topology:
+  enabled: true
+  directed: true
+  metrics:
+    - edge_homophily
+    - fraud_homophily
+    - normal_homophily
+    - adjusted_homophily
+    - label_assortativity
+
+statistics:
+  friedman: true
+  paired_tests: true
+  correction: holm
+
+ablation:
+  enabled: true
+  variants: [l1_only, global_only, l1_l2, full, dlg_base]
+
+resources:
+  profile_time: true
+  profile_ram: true
+  profile_vram: true

@@ -1,0 +1,4 @@
+model:
+  family: pygod
+  candidates: [DOMINANT, DONE, GAE, AnomalyDAE, CoLA, CONAD, GAAN, GUIDE]
+  selection_split: validation

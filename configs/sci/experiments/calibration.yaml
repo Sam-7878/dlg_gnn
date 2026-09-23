@@ -1,0 +1,3 @@
+experiment: {name: calibration, seeds: [11, 22, 33, 44, 55]}
+variants: [deterministic, mc_dropout, temperature_scaled_mc, selective_mc]
+metrics: [nll, brier, ece10, ece20, adaptive_ece, classwise_ece]

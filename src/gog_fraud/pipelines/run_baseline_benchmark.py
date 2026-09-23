@@ -1,4 +1,8 @@
-# src/gog_fraud/pipelines/run_baseline_benchmark.py
+"""Synthetic UI/demo baseline table generator.
+
+This module does not train or evaluate models and is prohibited as SCI evidence.
+Use the real legacy/PyGOD execution path in run_fraud_benchmark instead.
+"""
 import argparse
 import logging
 import time
@@ -88,7 +92,17 @@ def main():
     parser.add_argument("--config", required=True, type=str)
     parser.add_argument("--output", required=False, type=str, default="outputs/baselines")
     parser.add_argument("--max_samples", required=False, type=int, default=None)
+    parser.add_argument(
+        "--allow-synthetic-demo", action="store_true",
+        help="explicitly permit hard-coded demonstration rows; outputs are never paper eligible",
+    )
     args = parser.parse_args()
+
+    if not args.allow_synthetic_demo:
+        parser.error(
+            "this command contains hard-coded demonstration metrics and is blocked for SCI use; "
+            "pass --allow-synthetic-demo only for UI/table-format demonstrations"
+        )
 
     cfg = _load_config(args.config)
     output_dir = Path(args.output)
@@ -126,6 +140,7 @@ def main():
         cpu_mem = 250.0 if gpu_mem == 0 else gpu_mem * 1.3
         
         result_row = {
+            "scientific_status": "SYNTHETIC_DEMO_NOT_PAPER_ELIGIBLE",
             "Model": model_name,
             "Family": base["Family"],
             "Dynamic": base["Dynamic"],

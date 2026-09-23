@@ -1,0 +1,26 @@
+dataset_version: gog-sci-v2.0
+seeds: [11, 22, 33, 44, 55]
+pygod_models: [DOMINANT, DONE, GAE, AnomalyDAE, CoLA, CONAD, GAAN, GUIDE]
+mc_values: [1, 3, 5, 8, 10, 20, 30]
+pilot:
+  pygod_models: [DOMINANT, GAE]
+  pygod_epochs: 2
+  dlg_epochs: 15
+main:
+  pygod_epochs: 5
+  dlg_epochs: 50
+relation_graph:
+  unit: contract
+  neighbors: 8
+  candidate_scope: train_only
+feature_adapter:
+  source: sci_v2_manifest_graph_provenance
+  chain_feature: true
+paper_policy:
+  pilot_scope: EXPLORATORY
+  demo_or_synthetic_metric: false
+  legacy_compatibility: informational
+routing:
+  confidence_margin: 0.15
+  variance_threshold: 0.001
+  claim_scope: simulated_analyst_review_queue_only

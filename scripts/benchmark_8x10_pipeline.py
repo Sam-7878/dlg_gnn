@@ -68,6 +68,7 @@ warnings.filterwarnings("ignore")
 # Configuration
 # ==========================================
 DATA_ROOT = "/mnt/d/_Work/_data/DLG"
+DATASET_SEED = 42
 REPORT_DIR = os.path.abspath(os.path.join(
     os.path.dirname(__file__),
     '../docs/work_reports/25-dlg_full_pipeline_benchmark'
@@ -89,13 +90,13 @@ MAX_LARGE_SUBSAMPLE = None
 # 1. Dataset Loaders
 # ==========================================
 
-def _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03, m_clique=10, k=50):
+def _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03, m_clique=10, k=50, seed=42):
     """Inject synthetic contextual and structural outliers into a PyG Data object."""
     n_contextual = max(10, int(data.num_nodes * contextual_ratio))
-    data, yc = gen_contextual_outlier(data, n=n_contextual, k=k, seed=42)
+    data, yc = gen_contextual_outlier(data, n=n_contextual, k=k, seed=seed)
 
     n_clique = max(1, int((data.num_nodes * structural_ratio) / m_clique))
-    data, ys = gen_structural_outlier(data, m=m_clique, n=n_clique, seed=42)
+    data, ys = gen_structural_outlier(data, m=m_clique, n=n_clique, seed=seed)
 
     data.y = torch.logical_or(yc, ys).long()
     return data
@@ -247,7 +248,7 @@ def load_yelp():
     data = _maybe_subsample(data, "Yelp", MAX_LARGE_SUBSAMPLE)
     
     # Inject structural outliers to create graph-level anomalies
-    data = _inject_outliers(data, contextual_ratio=0.01, structural_ratio=0.01, m_clique=8)
+    data = _inject_outliers(data, contextual_ratio=0.01, structural_ratio=0.01, m_clique=8, seed=DATASET_SEED)
     return data
 
 
@@ -260,7 +261,7 @@ def load_amazon():
     dataset = Amazon(root=root, name='Computers')
     data = dataset[0]
     data = _repackage_graph(data)
-    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.02, m_clique=8)
+    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.02, m_clique=8, seed=DATASET_SEED)
     return data
 
 
@@ -337,7 +338,7 @@ def load_bitcoin_otc():
     data.y = torch.zeros(num_nodes, dtype=torch.long)  # will be overwritten by outlier injection
 
     data = _repackage_graph(data)
-    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03, m_clique=8)
+    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03, m_clique=8, seed=DATASET_SEED)
     return data
 
 
@@ -355,7 +356,7 @@ def load_twitch():
         dataset = Twitch(root=root, name="EN")
         data = dataset[0]
         data = _repackage_graph(data)
-        data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.02, m_clique=8)
+        data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.02, m_clique=8, seed=DATASET_SEED)
         return data
     except Exception as e:
         print(f"  [SKIP] Twitch-EN: Failed to download/load dataset. Upstream server may be down. ({e})")
@@ -370,7 +371,7 @@ def load_flickr():
     data = dataset[0]
     # Flickr is 89K — use full data with partition handling
     data = _repackage_graph(data)
-    data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.02, m_clique=8)
+    data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.02, m_clique=8, seed=DATASET_SEED)
     return data
 
 
@@ -382,7 +383,7 @@ def load_reddit():
     data = dataset[0]
     # Reddit is large — subsample to 100K for practical runtime
     data = _maybe_subsample(data, "Reddit", MAX_LARGE_SUBSAMPLE)
-    data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.01, m_clique=10)
+    data = _inject_outliers(data, contextual_ratio=0.02, structural_ratio=0.01, m_clique=10, seed=DATASET_SEED)
     return data
 
 
@@ -394,7 +395,7 @@ def load_planetoid(name):
     print(f"  [Dataset] {name} (Sanity Check)...")
     dataset = Planetoid(root=root, name=name)
     data = dataset[0]
-    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03)
+    data = _inject_outliers(data, contextual_ratio=0.03, structural_ratio=0.03, seed=DATASET_SEED)
     return data
 
 

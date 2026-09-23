@@ -3,6 +3,9 @@ import os
 import time
 
 def generate_latex_report(output_dir, baseline_tex_path, ablation_tex_path, realtime_tex_path, chainwise_tex_path, calibration_tex_path, sensitivity_tex_path, outlier_tex_path=None, calibration_comparison_tex_path=None, throughput_tex_path=None, mc_tradeoff_tex_path=None):
+    raise RuntimeError(
+        "legacy LaTeX generator is disabled because it embeds unverified fixed scientific claims"
+    )
     os.makedirs(output_dir, exist_ok=True)
     report_path = os.path.join(output_dir, "evaluation_report.tex")
     

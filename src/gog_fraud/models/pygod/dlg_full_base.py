@@ -9,7 +9,8 @@ Architecture (L2 Global Encoder + Decoders):
 
 Key Difference from DLGBase:
   - DLGBase runs local_encoder + global_encoder on the SAME graph → essentially a deeper GCN.
-  - DLGFullBase's L1 is pre-trained on ego-nets (in process_graph) and FROZEN.
+  - DLGFullBase's local-receptive GCN is separately pre-trained on the full
+    detector input (in process_graph) and FROZEN.
     This module only handles L2 global encoding on augmented features.
   - Reconstruction target is original features, not augmented ones.
 
@@ -137,11 +138,9 @@ class DLGFullBase(nn.Module):
         
         Score = weight * ‖x_orig - x̂‖² + (1-weight) * ‖s - ŝ‖²
         """
-        attr_diff = torch.pow(x_orig - x_, 2)
-        attr_error = torch.sqrt(torch.sum(attr_diff, dim=1))
+        attr_error = torch.linalg.vector_norm(x_orig - x_, ord=2, dim=1)
         
-        struct_diff = torch.pow(s - s_, 2)
-        struct_error = torch.sqrt(torch.sum(struct_diff, dim=1))
+        struct_error = torch.linalg.vector_norm(s - s_, ord=2, dim=1)
         
         return weight * attr_error + (1 - weight) * struct_error
 
