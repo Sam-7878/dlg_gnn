@@ -1,9 +1,11 @@
+import pytest
+pytest.importorskip("langchain_core")
+pytest.importorskip("langchain_ollama")
+
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
 from langchain_core.prompts import PromptTemplate
-
-# ✅ 새로 수정된 Import 경로
 from langchain_ollama import ChatOllama
 
 # ==========================================
