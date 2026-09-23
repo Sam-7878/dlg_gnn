@@ -20,6 +20,10 @@ lightning_logs/
 
 # docs/architecture/
 docs/work_reports/
+docs/papers/
+manuscript/
+publication/
+reports/
 
 # GoG/    
 outputs/
