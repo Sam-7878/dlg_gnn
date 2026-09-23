@@ -1,0 +1,71 @@
+{
+  "dataset_name": "LANL-RedTeam",
+  "role": "external_labeled_validation",
+  "canonical_graph_path": "outputs/benchmark/sci_defense_extension_real/graphs/lanl_graph.pt",
+  "canonical_graph_sha256": "689c2968fe3ece9494196515e6089d6db3f430530e55b8b410d116b27c920359",
+  "x_sha256": "e8aeeb61e274e4cd6bd70f2fef4c44ead6058fa2016b5c0360cc065e77b7a11d",
+  "edge_index_sha256": "8455387180942b91c54fa24647fc383c5cc518afe826965869a93542a33dd544",
+  "y_sha256": "740312f343ae36857e0f65dd135c5baa28a5498f82f73421018da6961863c102",
+  "num_nodes": 16694,
+  "num_edges": 323897,
+  "num_features": 13,
+  "positive_count": 301,
+  "negative_count": 16393,
+  "anomaly_rate": 0.01803043009464478,
+  "source_of_truth_artifacts": {
+    "performance_table": {
+      "path": "outputs/benchmark/sci_defense_extension_real_final/tables/table_d2_lanl_external_validation.csv",
+      "sha256": "8f14084436fae7d6c7c95744e1388108fc2feb2bcca6af36c37ed0040603c471"
+    },
+    "ground_truth_freeze": {
+      "path": "outputs/benchmark/sci_defense_extension_real_final/defense_validation/lanl_ground_truth_freeze.json",
+      "sha256": "2225f478577b52fd065e0d804b87cbd666a390b3a4b4278321b8aacae1b55f7e"
+    }
+  },
+  "authoritative_results": {
+    "GADNR": {
+      "roc_auc": 0.8261,
+      "pr_auc": 0.1806,
+      "val_f1": 0.2475
+    },
+    "DLG-Base": {
+      "roc_auc": 0.7923,
+      "pr_auc": 0.1367,
+      "val_f1": 0.2112
+    },
+    "DLG-Aug": {
+      "roc_auc": 0.7188,
+      "pr_auc": 0.1114,
+      "val_f1": 0.1683
+    },
+    "DOMINANT": {
+      "roc_auc": 0.7997,
+      "pr_auc": 0.1348,
+      "val_f1": 0.174
+    },
+    "CONAD": {
+      "roc_auc": 0.7997,
+      "pr_auc": 0.1348,
+      "val_f1": 0.174
+    },
+    "AnomalyDAE": {
+      "roc_auc": 0.5548,
+      "pr_auc": 0.045,
+      "val_f1": 0.0688
+    },
+    "CoLA": {
+      "roc_auc": 0.4663,
+      "pr_auc": 0.02,
+      "val_f1": 0.0295
+    },
+    "OCGNN": {
+      "roc_auc": 0.3762,
+      "pr_auc": 0.0454,
+      "val_f1": 0.0568
+    }
+  },
+  "split_protocol": "stratified_node_transductive",
+  "val_ratio": 0.2,
+  "test_ratio": 0.2,
+  "hard_gates_passed": true
+}

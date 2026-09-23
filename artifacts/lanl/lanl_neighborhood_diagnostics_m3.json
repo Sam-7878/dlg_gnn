@@ -1,0 +1,137 @@
+{
+  "dataset": "LANL-RedTeam",
+  "canonical_graph_sha256": "689c2968fe3ece9494196515e6089d6db3f430530e55b8b410d116b27c920359",
+  "num_nodes": 16694,
+  "num_edges": 323897,
+  "num_features": 13,
+  "num_positives": 301,
+  "num_negatives": 16393,
+  "edge_homophily": 0.5189983235411257,
+  "pos_pos_edges": 4201,
+  "pos_neg_cross_edges": 155795,
+  "neg_neg_edges": 163901,
+  "benign_neighbor_statistics": {
+    "directed_out_edges_from_pos": {
+      "total": 10115,
+      "benign_destinations": 5914,
+      "benign_percentage": 58.46762234305487,
+      "formula": "count(y[dst] == 0 for edges with y[src] == 1) / count(edges with y[src] == 1)"
+    },
+    "directed_in_edges_to_pos": {
+      "total": 154082,
+      "benign_sources": 149881,
+      "benign_percentage": 97.2735296790021,
+      "formula": "count(y[src] == 0 for edges with y[dst] == 1) / count(edges with y[dst] == 1)"
+    },
+    "undirected_peer_incidences": {
+      "total": 161259,
+      "benign_incidences": 153877,
+      "benign_percentage": 95.42227100502917,
+      "formula": "sum_u(|peers(u) cap Normal|) / sum_u(|peers(u)|) across u in Positives"
+    },
+    "mean_per_node_benign_fraction": {
+      "mean_percentage": 62.21457610920106,
+      "formula": "mean_u( |peers(u) cap Normal| / |peers(u)| ) across u in Positives"
+    }
+  },
+  "metrics": {
+    "in_degree": {
+      "metric": "in_degree",
+      "pos_median": 9.0,
+      "pos_iqr": 15.0,
+      "pos_q25": 7.0,
+      "pos_q75": 22.0,
+      "neg_median": 4.0,
+      "neg_iqr": 4.0,
+      "neg_q25": 1.0,
+      "neg_q75": 5.0,
+      "cliffs_delta": 0.8189941294527909,
+      "median_diff_ci_low": 5.0,
+      "median_diff_ci_high": 7.0
+    },
+    "out_degree": {
+      "metric": "out_degree",
+      "pos_median": 21.0,
+      "pos_iqr": 11.0,
+      "pos_q25": 17.0,
+      "pos_q75": 28.0,
+      "neg_median": 19.0,
+      "neg_iqr": 12.0,
+      "neg_q25": 12.0,
+      "neg_q75": 24.0,
+      "cliffs_delta": 0.3015070244105893,
+      "median_diff_ci_low": 1.0,
+      "median_diff_ci_high": 4.0
+    },
+    "total_degree": {
+      "metric": "total_degree",
+      "pos_median": 33.0,
+      "pos_iqr": 26.0,
+      "pos_q25": 27.0,
+      "pos_q75": 53.0,
+      "neg_median": 23.0,
+      "neg_iqr": 14.0,
+      "neg_q25": 15.0,
+      "neg_q75": 29.0,
+      "cliffs_delta": 0.6328947227090083,
+      "median_diff_ci_low": 9.0,
+      "median_diff_ci_high": 12.0
+    },
+    "unique_peers": {
+      "metric": "unique_peers",
+      "pos_median": 31.0,
+      "pos_iqr": 24.0,
+      "pos_q25": 25.0,
+      "pos_q75": 49.0,
+      "neg_median": 21.0,
+      "neg_iqr": 13.0,
+      "neg_q25": 13.0,
+      "neg_q75": 26.0,
+      "cliffs_delta": 0.6301352594991825,
+      "median_diff_ci_low": 9.0,
+      "median_diff_ci_high": 12.0
+    },
+    "neighbor_feat_mean_dist": {
+      "metric": "neighbor_feat_mean_dist",
+      "pos_median": 14533481.0,
+      "pos_iqr": 8190755.0,
+      "pos_q25": 9728901.0,
+      "pos_q75": 17919656.0,
+      "neg_median": 18195070.0,
+      "neg_iqr": 7804248.0,
+      "neg_q25": 14797692.0,
+      "neg_q75": 22601940.0,
+      "cliffs_delta": -0.3187607626867719,
+      "median_diff_ci_low": -4441029.6,
+      "median_diff_ci_high": -3112875.0
+    },
+    "neighbor_feat_dispersion": {
+      "metric": "neighbor_feat_dispersion",
+      "pos_median": 18194944.0,
+      "pos_iqr": 7502704.0,
+      "pos_q25": 12973830.0,
+      "pos_q75": 20476534.0,
+      "neg_median": 20006802.0,
+      "neg_iqr": 4463888.0,
+      "neg_q25": 17161800.0,
+      "neg_q75": 21625688.0,
+      "cliffs_delta": -0.18824378690118326,
+      "median_diff_ci_low": -2439543.55,
+      "median_diff_ci_high": -1224367.8
+    },
+    "local_deg_deviation": {
+      "metric": "local_deg_deviation",
+      "pos_median": 7360.103448275862,
+      "pos_iqr": 3980.8472958642633,
+      "pos_q25": 4949.804878048781,
+      "pos_q75": 8930.652173913044,
+      "neg_median": 9406.541666666666,
+      "neg_iqr": 2915.0735930735927,
+      "neg_q25": 7844.212121212121,
+      "neg_q75": 10759.285714285714,
+      "cliffs_delta": -0.35671513629206864,
+      "median_diff_ci_low": -2581.7550487987987,
+      "median_diff_ci_high": -1726.4116786140983
+    }
+  }
+}

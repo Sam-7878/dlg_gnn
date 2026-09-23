@@ -1,0 +1,479 @@
+{
+  "title": "DLG Production Architecture and Training Budget Runtime Introspection (Round M3)",
+  "verification_status": "PASSED_EQUIVALENCE_AND_FORMULAS",
+  "datasets": [
+    {
+      "dataset": "Elliptic",
+      "F": 165,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 14784,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 14885,
+        "total_active": 37990
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 25509,
+        "stage2_encoder": 18880,
+        "stage2_decoder": 14885,
+        "stage2_active": 33765,
+        "total_params": 59274
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "DGraphFin",
+      "F": 17,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 5312,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 5265,
+        "total_active": 18898
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 6417,
+        "stage2_encoder": 9408,
+        "stage2_decoder": 5265,
+        "stage2_active": 14673,
+        "total_params": 21090
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "F": 67,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 8512,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 8515,
+        "total_active": 25348
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 12867,
+        "stage2_encoder": 12608,
+        "stage2_decoder": 8515,
+        "stage2_active": 21123,
+        "total_params": 33990
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "F": 300,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 23424,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 23660,
+        "total_active": 55405
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 42924,
+        "stage2_encoder": 27520,
+        "stage2_decoder": 23660,
+        "stage2_active": 51180,
+        "total_params": 94104
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "F": 767,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 53312,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 54015,
+        "total_active": 115648
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 103167,
+        "stage2_encoder": 57408,
+        "stage2_decoder": 54015,
+        "stage2_active": 111423,
+        "total_params": 214590
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "F": 602,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 42752,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 43290,
+        "total_active": 94363
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 81882,
+        "stage2_encoder": 46848,
+        "stage2_decoder": 43290,
+        "stage2_active": 90138,
+        "total_params": 172020
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "F": 500,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 36224,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 36660,
+        "total_active": 81205
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 68724,
+        "stage2_encoder": 40320,
+        "stage2_decoder": 36660,
+        "stage2_active": 76980,
+        "total_params": 145704
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "Cora-Syn",
+      "F": 1433,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 95936,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 97305,
+        "total_active": 201562
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 189081,
+        "stage2_encoder": 100032,
+        "stage2_decoder": 97305,
+        "stage2_active": 197337,
+        "total_params": 386418
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "F": 3703,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 241216,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 244855,
+        "total_active": 494392
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 481911,
+        "stage2_encoder": 245312,
+        "stage2_decoder": 244855,
+        "stage2_active": 490167,
+        "total_params": 972078
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "F": 500,
+      "role": "Primary",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 36224,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 36660,
+        "total_active": 81205
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 68724,
+        "stage2_encoder": 40320,
+        "stage2_decoder": 36660,
+        "stage2_active": 76980,
+        "total_params": 145704
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "F": 13,
+      "role": "External",
+      "base_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGBase",
+      "base_module_tree": {
+        "local_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "global_encoder": "2-layer GCN (in=64, hid=64, out=64)",
+        "gate": "learnable scalar alpha (sigmoid)",
+        "attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "base_parameter_counts": {
+        "local_encoder": 5056,
+        "global_encoder": 8320,
+        "gate": 1,
+        "attr_decoder": 5005,
+        "total_active": 18382
+      },
+      "base_epochs": "0 local + 50 global = 50 total",
+      "aug_production_class": "gog_fraud.models.pygod.shared_reconstruction.SharedDLGFull",
+      "aug_module_tree": {
+        "l1_pretrain_encoder": "2-layer GCN (in=F, hid=64, out=64)",
+        "l1_pretrain_decoder": "Linear (in=64, out=F)",
+        "stage2_global_encoder": "2-layer GCN (in=F+64, hid=64, out=64)",
+        "stage2_attr_decoder": "2-layer GCN (in=64, hid=64, out=F)",
+        "stage2_struct_decoder": "exact sparse dot-product (0 params)"
+      },
+      "aug_parameter_counts": {
+        "l1_pretrain": 5901,
+        "stage2_encoder": 9152,
+        "stage2_decoder": 5005,
+        "stage2_active": 14157,
+        "total_params": 20058
+      },
+      "aug_epochs": "20 local + 50 global = 70 total",
+      "layer_count_clarification": {
+        "num_layers_constructor_argument": 4,
+        "encoder_layers": 2,
+        "decoder_layers": 2,
+        "note": "num_layers=4 denotes total GCN layers across encoder (2) and decoder (2)"
+      }
+    }
+  ]
+}

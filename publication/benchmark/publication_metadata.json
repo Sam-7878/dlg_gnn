@@ -1,0 +1,23 @@
+{
+  "paper_title": "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs",
+  "repository_url": "https://github.com/Sam-7878/dlg_gnn",
+  "release_tag": "v1.0.0-preprint",
+  "release_title": "DLG-GNN Benchmark v1.0.0-preprint",
+  "release_asset": "DLG_GNN_Benchmark_v1.0.0_preprint.zip",
+  "publication_status": "Prepared for Preprints.org deposit",
+  "lanl_manifest": "artifacts/manifests/lanl_canonical_manifest.json",
+  "environment_manifest": "provenance/environment_manifest.json",
+  "reproduction_commands": "docs/reproduction_commands.yaml",
+  "authors": [
+    "SeongSu Park",
+    "Ki-Hyung Kim"
+  ],
+  "target_journal": "MDPI Applied Sciences",
+  "special_issue": "Graph Neural Networks: Theory, Methods and Applications",
+  "preprint_status": "preprint-forthcoming",
+  "preprint_doi": null,
+  "preceding_work_title": "DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection",
+  "preceding_work_doi": "10.20944/preprints202609.0848.v1",
+  "version": "1.0.0-preprint",
+  "git_tag": "v1.0.0-preprint"
+}

@@ -1,0 +1,81 @@
+dataset,display_name,model,support_status,supported,evidence_mode,restriction_reason,evidence_path
+Elliptic,Elliptic,DOMINANT,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,AnomalyDAE,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,CoLA,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,CONAD,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,GADNR,unsupported_resource_exact_implementation,False,round4c_measured,reproduced exact historical implementation materialization exceeds the current 8 GB-class GPU resource envelope,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,OCGNN,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,DLG-Base,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Elliptic,Elliptic,DLG-Aug,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,DOMINANT,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,AnomalyDAE,unsupported_operational,False,round4c_measured,exact nonlinear all-pairs production runtime exceeds predeclared 24 GPU-hour budget | same graph/backend/epochs/O(N^2) pair count; model seed does not alter production complexity,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,CoLA,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,CONAD,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,GADNR,unsupported_resource_exact_implementation,False,round4c_measured,reproduced exact historical implementation materialization exceeds the current 8 GB-class GPU resource envelope,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,OCGNN,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,DLG-Base,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+DGraphFin,DGraphFin,DLG-Aug,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,DOMINANT,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,AnomalyDAE,unsupported_resource_exact_implementation,False,round4c_measured,exact AnomalyDAE encoder COO/GAT materialization exceeds GPU memory,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,CoLA,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,CONAD,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,GADNR,unsupported_resource_exact_implementation,False,round4c_measured,reproduced exact historical implementation materialization exceeds the current 8 GB-class GPU resource envelope,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,OCGNN,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,DLG-Base,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Yelp,Yelp-Syn,DLG-Aug,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Amazon,Amazon-Syn,DOMINANT,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Amazon,Amazon-Syn,AnomalyDAE,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#Amazon/AnomalyDAE/seed42
+Amazon,Amazon-Syn,CoLA,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Amazon,Amazon-Syn,CONAD,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Amazon,Amazon-Syn,GADNR,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#Amazon/GADNR/seed42
+Amazon,Amazon-Syn,OCGNN,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Amazon,Amazon-Syn,DLG-Base,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Amazon,Amazon-Syn,DLG-Aug,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,DOMINANT,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,AnomalyDAE,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#BitcoinOTC/AnomalyDAE/seed42
+BitcoinOTC,BitcoinOTC,CoLA,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,CONAD,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,GADNR,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#BitcoinOTC/GADNR/seed42
+BitcoinOTC,BitcoinOTC,OCGNN,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,DLG-Base,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+BitcoinOTC,BitcoinOTC,DLG-Aug,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,DOMINANT,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,AnomalyDAE,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#Flickr/AnomalyDAE/seed42
+Flickr,Flickr-Syn,CoLA,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,CONAD,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,GADNR,unsupported_resource_exact_implementation,False,round5_phase0_measured,"CUDA out of memory. Tried to allocate 8.17 GiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 21.55 GiB is allocated by PyTorch, and 685.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",support/phase0_qualification_evidence.csv#Flickr/GADNR/seed42
+Flickr,Flickr-Syn,OCGNN,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,DLG-Base,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Flickr,Flickr-Syn,DLG-Aug,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+Reddit,Reddit-Syn,DOMINANT,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,AnomalyDAE,unsupported_resource_exact_implementation,False,round4c_measured,exact AnomalyDAE encoder COO/GAT materialization exceeds GPU memory | same graph/backend/pair count and encoder materialization as measured seed 42,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,CoLA,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,CONAD,unsupported_resource_exact_implementation,False,round4c_measured,"two-seed exact production OOM in native contrastive augmentation/reconstruction; no hidden-dimension, sampling, or objective change applied",outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,GADNR,unsupported_resource_exact_implementation,False,round4c_measured,reproduced exact historical implementation materialization exceeds the current 8 GB-class GPU resource envelope | reproduced exact historical implementation materialization exceeds the current 8 GB-class GPU resource envelope; seed does not change N/E/materialization shape,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,OCGNN,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,DLG-Base,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Reddit,Reddit-Syn,DLG-Aug,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,DOMINANT,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,AnomalyDAE,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,CoLA,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,CONAD,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,GADNR,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,OCGNN,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,DLG-Base,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+Cora,Cora-Syn,DLG-Aug,supported,True,round4c_measured,Round4C two-seed exact production success,outputs/sci_round4c/tables/model_dataset_support_matrix_final.csv
+CiteSeer,CiteSeer-Syn,DOMINANT,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+CiteSeer,CiteSeer-Syn,AnomalyDAE,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#CiteSeer/AnomalyDAE/seed42
+CiteSeer,CiteSeer-Syn,CoLA,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+CiteSeer,CiteSeer-Syn,CONAD,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+CiteSeer,CiteSeer-Syn,GADNR,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#CiteSeer/GADNR/seed42
+CiteSeer,CiteSeer-Syn,OCGNN,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+CiteSeer,CiteSeer-Syn,DLG-Base,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+CiteSeer,CiteSeer-Syn,DLG-Aug,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,DOMINANT,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,AnomalyDAE,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#PubMed/AnomalyDAE/seed42
+PubMed,PubMed-Syn,CoLA,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,CONAD,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,GADNR,supported,True,round5_phase0_measured,seed42 exact 50-epoch production qualification succeeded,support/phase0_qualification_evidence.csv#PubMed/GADNR/seed42
+PubMed,PubMed-Syn,OCGNN,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,DLG-Base,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv
+PubMed,PubMed-Syn,DLG-Aug,supported,True,phase0_backend_plus_round4b_exact_acceptance,DOMINANT exact backend sanity passed; non-heavy exact path retained,support/phase0_qualification_evidence.csv

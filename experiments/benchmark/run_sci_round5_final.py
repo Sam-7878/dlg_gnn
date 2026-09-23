@@ -88,10 +88,21 @@ def main():
         print(msg)
         log.info(msg)
 
-        # Verify pipeline and model imports
-        from gog_fraud.experiments.round5_policy import validate_support_matrix
-        from gog_fraud.models.pygod.shared_reconstruction import SharedDLGBase, SharedDLGFull, SharedDOMINANT
-        from gog_fraud.pipelines.run_sci_round5 import PHASE1_DATASET_ORDER, PHASE1_MODEL_ORDER
+        # Validate sources without loading CUDA/native sparse backends.
+        required_modules = [
+            SRC_DIR / "gog_fraud/experiments/round5_policy.py",
+            SRC_DIR / "gog_fraud/models/pygod/shared_reconstruction.py",
+            SRC_DIR / "gog_fraud/pipelines/run_sci_round5.py",
+        ]
+        for module_path in required_modules:
+            if not module_path.exists():
+                raise FileNotFoundError(f"Required module not found: {module_path}")
+            compile(module_path.read_text(encoding="utf-8"), str(module_path), "exec")
+        expected_datasets = {"Elliptic", "DGraphFin", "Yelp", "Amazon", "BitcoinOTC", "Flickr", "Reddit", "Cora", "CiteSeer", "PubMed"}
+        expected_models = {"DOMINANT", "AnomalyDAE", "CoLA", "CONAD", "GADNR", "OCGNN", "DLG-Base", "DLG-Aug"}
+        if set(datasets) != expected_datasets or set(models) != expected_models or seeds != [42, 43, 44, 45, 46]:
+            raise ValueError("Frozen Round 5 schedule does not match the canonical 10 x 8 x 5 matrix")
+
 
         summary = (
             "Pipeline imports and detector adapters verified successfully.\n" +

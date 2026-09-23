@@ -1,0 +1,5 @@
+schema_version: 1
+mode1: "python scripts/reproduce_frozen_artifacts.py"
+mode2: "python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/sci_round5_final.yaml --stage phase1"
+mode2_dry_run: "python experiments/benchmark/run_sci_round5_final.py --dry-run"
+sensitivity: "python experiments/benchmark/run_capacity_controls_m3.py --gpu 0"

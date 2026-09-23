@@ -18,10 +18,10 @@ Official companion code, experiment runners, canonical manifests, frozen evaluat
 
 ## 📌 Publication & Deposit Status
 
-- **Preprints.org Deposit:** In preparation / deposit initiated.
+- **Preprints.org Deposit:** Prepared for Preprints.org deposit.
 - **Target Journal:** *MDPI Applied Sciences* (Special Issue: *Graph Neural Networks: Theory, Methods and Applications*).
 - **Official Release Asset:** `DLG_GNN_Benchmark_v1.0.0_preprint.zip` (Tag: `v1.0.0-preprint`).
-- **Release State:** Release prepared; publication pending public deposit.
+- **Release State:** GitHub release publication pending; the deposit package is prepared.
 
 ---
 
@@ -32,9 +32,9 @@ This repository hosts the complete, frozen scientific artifacts and exact-sparse
 | Benchmark Dimension | Frozen Specification |
 |---|---|
 | **Primary Suite** | **10 Heterogeneous Datasets** (3 real financial: *Elliptic, DGraphFin, BitcoinOTC*; 7 controlled synthetic-injection: *Yelp-Syn, Amazon-Syn, Flickr-Syn, Reddit-Syn, Cora-Syn, CiteSeer-Syn, PubMed-Syn*) |
-| **External Validation** | **LANL-RedTeam** authentication interaction graph (16,694 nodes, 130,551 edges) |
+| **External Validation** | **LANL-RedTeam** authentication interaction graph (16,694 nodes, 323,897 directed stored edges, 13 features, 301 positive computers) |
 | **Evaluated Detectors** | **8 Configurations** (6 established baselines: *DOMINANT, AnomalyDAE, CoLA, CONAD, GADNR, OCGNN*; 2 DLG variants: *DLG-Base, DLG-Aug*) |
-| **Supported Pairs** | **71 / 80 pairs** supported exactly under declared resource limits (8 GB GPU budget; zero OOM imputation) |
+| **Supported Pairs** | **71 / 80 pairs** supported exactly under declared resource limits; 9 restrictions are reported separately and are not imputed as zero scores or worst ranks |
 | **Successful Primary Runs** | **355 runs** across 5 independent random model seeds (seeds 42–46) |
 | **Sensitivity Controls** | **45 targeted runs** (*DLG-Aug-Zero, DLG-Aug-Permuted, DLG-Base-70*) across discrepancy graphs |
 | **Scalability Backends** | Exact sparse linear structure decoder (avoids $\mathcal{O}(N^2)$ dense matrix storage with $\mathcal{O}(\|E\|d + Nd^2)$ arithmetic) & fused sparse message passing |
@@ -82,7 +82,7 @@ python scripts/reproduce_frozen_artifacts.py
 pip install -r requirements-core.txt
 
 # Run full five-seed primary benchmark
-python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/primary_suite.yaml
+python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/sci_round5_final.yaml --stage phase1
 
 # Run pre-registered sensitivity controls
 python experiments/benchmark/run_capacity_controls_m3.py
@@ -100,18 +100,17 @@ dlg_gnn/
 ├── experiments/benchmark/        # Mode 2 experiment runner scripts
 ├── scripts/                      # Mode 1 reproduction and audit tools
 ├── configs/                      # Canonical configuration files
-├── tests/                        # Automated test suites (P1, P2, P3, P4)
-├── outputs/benchmark/            # Frozen artifacts, evaluation CSVs, manifests
-│   └── manuscript_m5/
-│       ├── artifacts/            # Machine-readable performance & ranking tables
-│       ├── provenance/           # Environment manifests (frozen vs tested)
-│       └── release/              # Publication release package
-├── publication/benchmark/        # Preprints.org & MDPI submission bundles
+├── artifacts/                    # Small frozen derived data and canonical manifests
+├── provenance/                   # Frozen-environment evidence and manifest
+├── docs/                         # Architecture, mathematics, and reproduction commands
+├── tests/                        # Automated benchmark/publication test suites
 ├── docs/papers/_42_Benchmark/    # Master LaTeX source and generated tables
 ├── CITATION.cff                  # Machine-readable scholarly citation
 ├── INSTALL.md                    # Environment setup & dependency instructions
 └── README.md                     # Benchmark landing page (this document)
 ```
+
+The downloadable GitHub Release archive additionally contains the same root files, the `artifacts/` and `provenance/` trees, the exact benchmark runner dependencies, and `release_metadata.json`. Raw third-party datasets and local `outputs/` are not part of either the Git repository or release archive.
 
 ---
 

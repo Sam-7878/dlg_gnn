@@ -77,7 +77,7 @@ pytest tests/benchmark/ -v
 Mode 1 does NOT require downloading raw graphs. It verifies cryptographic SHA-256 hashes of the frozen primary raw runs and model-dataset support matrix, and regenerates all manuscript performance, statistical, and control tables:
 
 ```bash
-python scripts/reproduce_frozen_artifacts.py --artifact-root outputs/benchmark/manuscript_m5/artifacts --output-dir reproduced_tables
+python scripts/reproduce_frozen_artifacts.py
 ```
 
 ---
