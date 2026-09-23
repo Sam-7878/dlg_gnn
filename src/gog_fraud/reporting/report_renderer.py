@@ -30,13 +30,33 @@ COMPONENTS = (
 )
 
 
+def _find_test_file(root: Path, test_path: str) -> str | None:
+    if not test_path:
+        return None
+    if (root / test_path).is_file():
+        return test_path
+    parts = Path(test_path).parts
+    if parts and parts[0] == "tests":
+        for prefix in ("dlg_gnn", "stream_mc", "benchmark", "tds"):
+            candidate = Path("tests") / prefix / Path(*parts[1:])
+            if (root / candidate).is_file():
+                return candidate.as_posix()
+    return None
+
+
 def _implementation(root: Path) -> list[dict[str, Any]]:
     rows = []
     for name, source, test in COMPONENTS:
         implemented = (root / source).is_file()
-        tested = bool(test and (root / test).is_file())
+        resolved_test = _find_test_file(root, test)
+        tested = bool(resolved_test is not None)
         status = "PASS" if implemented and tested else "PARTIAL" if implemented else "NOT_IMPLEMENTED"
-        rows.append({"component": name, "required": True, "implemented": implemented, "tested": tested, "evidence": ", ".join(item for item in (source, test) if item), "status": status})
+        evidence_paths = [source]
+        if resolved_test:
+            evidence_paths.append(resolved_test)
+        elif test:
+            evidence_paths.append(test)
+        rows.append({"component": name, "required": True, "implemented": implemented, "tested": tested, "evidence": ", ".join(evidence_paths), "status": status})
     return rows
 
 

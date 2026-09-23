@@ -27,8 +27,16 @@ DEFAULT_INCLUDE = (
     "tests/unit/test_mc_dropout.py", "tests/unit/test_phase1_level1.py",
     "tests/unit/test_phase2_level1_data_and_eval.py",
     "tests/unit/test_phase3_level2.py", "tests/unit/test_phase4_fusion.py",
+    "tests/dlg_gnn/data/**", "tests/stream_mc/streaming/**", "tests/stream_mc/selection/**",
+    "tests/dlg_gnn/experiments/**", "tests/dlg_gnn/profiling/**", "tests/dlg_gnn/reporting/**",
+    "tests/dlg_gnn/unit/test_mc_dropout.py", "tests/dlg_gnn/unit/test_phase1_level1.py",
+    "tests/dlg_gnn/unit/test_phase2_level1_data_and_eval.py",
+    "tests/dlg_gnn/unit/test_phase3_level2.py", "tests/dlg_gnn/unit/test_phase4_fusion.py",
 )
-DEFAULT_EXCLUDE = ("tests/llama/**", "tests/micro_rag/**", "tests/mock/**")
+DEFAULT_EXCLUDE = (
+    "tests/llama/**", "tests/micro_rag/**", "tests/mock/**",
+    "tests/dlg_gnn/llama/**", "tests/dlg_gnn/mock/**", "tests/tds/micro_rag/**",
+)
 RUNTIME_LOG_EXCLUDE = {"integrated_report_build.log", "integrated_report_validation.log"}
 
 
