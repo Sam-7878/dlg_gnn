@@ -33,10 +33,10 @@ The submission archive `DLG_Benchmark_Preprints_Submission.zip` contains all sel
 | Item | Included in Package | Verification Status |
 |---|:---:|:---:|
 | **LaTeX Source** | `DLG-Benchmark-Preprint.tex` | **PASS** (Publisher-neutral, zero MDPI branding) |
-| **Compiled PDF** | Not embedded in the source ZIP | **PASS** (provided and hashed separately; 32 pages, 501.6 KB, 0 errors) |
+| **Compiled PDF** | `DLG-Benchmark-Preprint.pdf` | **PASS** (32 pages, 501.6 KB, 0 errors) |
 | **Bibliography** | `references.bib` | **PASS** (Foundational DLG paper included with DOI) |
-| **Graphical Abstract** | `graphical_abstract.png` | **PASS** (High-res, 300 DPI, `-Syn` notation verified) |
-| **Manuscript figures** | Embedded in the LaTeX source | **PASS** (no external figure files required) |
+| **Graphical Abstract** | `Figure_GA_Revised.png` & `.pdf` | **PASS** (High-res, 300 DPI, `-Syn` notation verified) |
+| **All Manuscript Figures** | Figures 1–8 (PNG / PDF) | **PASS** (Zero external dependencies) |
 | **Generated Tables** | Tables 1–8 | **PASS** (Generated from frozen benchmark data) |
 
 ---

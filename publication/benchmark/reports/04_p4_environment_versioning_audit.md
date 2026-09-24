@@ -23,12 +23,12 @@ To prevent environment drift between the historical execution environment (which
 
 | Component | Frozen Execution Environment | Current Reproduction Environment |
 |---|---|---|
-| **Python Version** | Python 3.12.13 | Python 3.12.13 |
-| **PyTorch** | 2.5.1+cu121 | 2.5.1+cu121 |
-| **PyTorch Geometric (PyG)** | 2.7.0 | 2.7.0 |
+| **Python Version** | Python 3.10.12 | Python 3.10.14 |
+| **PyTorch** | 2.1.2+cu121 | 2.1.2+cu121 |
+| **PyTorch Geometric (PyG)** | 2.5.0 | 2.5.0 |
 | **PyGOD** | 1.1.0 | 1.1.0 |
 | **CUDA Toolkit** | CUDA 12.1 | CUDA 12.1 |
-| **OS Platform** | Linux / Windows Subsystem | Linux WSL2 x86_64 |
+| **OS Platform** | Linux / Windows Subsystem | Windows 11 x86_64 |
 | **Key Role** | Provenance for Tables 4–8 in paper | Live verification of reproduction pipelines |
 
 ---
@@ -41,7 +41,7 @@ To prevent environment drift between the historical execution environment (which
    - Clarifies the distinction between Mode 1 (frozen table reproduction without GPU) and Mode 2 (full re-training with CUDA).
 
 2. **`environment.yml`**:
-   - Specifies dependencies with version pins compatible with PyTorch 2.5.1 and PyGOD 1.1.0.
+   - Specifies dependencies with version pins compatible with PyTorch 2.1.2 and PyGOD 1.1.0.
    - Tested and verified against standard conda environment solvers.
 
 3. **`scripts/verify_environment.py`**:
