@@ -1,5 +1,8 @@
 # A02 변경 기록 및 영향 범위
 
+> **Later execution decision:** [A04](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md) records the actual `.venv_cuda` stack and publication corrections. This file remains the dated A02 change record.
+
+
 **Date:** 2026-10-02  
 **Base:** A01 work order + historical FROZEN protocol  
 **Deliverable:** A02 complete work order, versioned amendment, consolidated effective protocol, task porting profiles.

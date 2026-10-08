@@ -4,6 +4,8 @@ build/
 xbuild/
 _res/
 .venv/
+environment/wheelhouse/
+
 .pytest_cache/
 scratch/
 .gradle/
@@ -12,6 +14,8 @@ scratch/
 .vscode/
 .run/
 .cargo/
+.github/
+.git/
 release/
 debug/
 
@@ -25,8 +29,9 @@ docs/papers/
 manuscript/
 publication/
 reports/
+archive/
 
-# GoG/    
+# GoG/
 outputs/
 result/
 results/
@@ -35,18 +40,11 @@ dataset/test/
 data/
 wasm/
 
+# new wheel files for dev-environments
+environment/wheelhouse/
 
 tests/mock
 
-## stable coin project용 폴더.
-# 아직 오픈 안 함.
-# local currency dex 
-# local_currency_dex/ 
-local_currency_dex_cache/ 
-# api_gateway/ 
-# tests_stable_coin/ 
-frontend_apps/ 
-# yongin_pay_frontend/ 
 
 *.info
 *.address
@@ -54,17 +52,74 @@ frontend_apps/
 *.csv
 
 # Text files
-*.txt 
+*.txt
 *.log
-*.png 
+*.png
 *.pkl
 *.pt
 
-
+*.gz
 
 **/__pycache__/
 **/__pycache__/**
 
+## projects folders.
+dlg_gnn/projects/benchmark/paper/
+
 results_sci_v2
 results_sci/
+
+# A04 publication evidence and exact environment locks
+!environment/locks/benchmark-a04-cuda.lock.txt
+!environment/locks/benchmark-a04-cuda.hashed.txt
+!evaluation/benchmark/v2/paper_ready_final/**
 reports/
+
+# Project and archive layout
+/local_storage/
+/environment/wheelhouse-*/
+**/*.whl
+**/venv-before-rename.tar.gz
+
+# Archive ignore rules (keep heavy caches and raw outputs local)
+/archive/**/outputs/
+/archive/**/results/
+/archive/**/data/
+/archive/**/scratch/
+/archive/**/submissions/*.zip
+/projects/**/paper/history/
+/projects/benchmark/paper/current/*_candidate_review_package.zip
+/projects/benchmark/manuscript_base_a06
+/projects/**/paper/
+# LaTeX intermediates; curated TeX/Bib/PDF stay in each project paper folder.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+
+# Project paper figures, data and reports remain visible despite generic ignores
+!/projects/**/paper/current/**/*.csv
+!/projects/**/paper/current/**/*.png
+!/projects/**/paper/published_v1/**/*.png
+!/projects/tds/paper/current/data/
+!/projects/benchmark/paper/current/A07_CANDIDATE_NOT_FOR_SUBMISSION.txt
+!/docs/papers/
+/docs/papers/*
+!/docs/papers/README.md
+!/projects/*/reports/
+!/archive/benchmark/artifacts/
+!/archive/benchmark/artifacts/**
+!/archive/benchmark/publication/
+!/archive/benchmark/publication/**
+!/archive/benchmark/outputs/
+!/archive/benchmark/outputs/manuscript_m5/
+!/archive/benchmark/outputs/manuscript_m5/release/
+!/archive/benchmark/outputs/manuscript_m5/release/**
+!/archive/benchmark/provenance/
+!/archive/benchmark/provenance/**
+
+## paper ready folder in evaluation
+/evaluation/benchmark/v2/

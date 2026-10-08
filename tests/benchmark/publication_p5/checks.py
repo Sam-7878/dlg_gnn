@@ -36,7 +36,10 @@ def manuscript_title():
     assert META['paper_title'] in t
     return META['paper_title']
 def check_notes(): assert manuscript_title() in text('publication/benchmark/release_notes.md')
-def env(): return json.loads(text('provenance/environment_manifest.json'))
+def env():
+    p = 'archive/benchmark/provenance/environment_manifest.json'
+    if not (ROOT / p).exists(): p = 'provenance/environment_manifest.json'
+    return json.loads(text(p))
 def check_walkthrough():
     w=text('docs/work_reports/benchmark/221_p4/walkthrough.md'); e=env()
     for v in (e['python'],e['pytorch'],e['torch-geometric'],e['pygod']): assert v in w

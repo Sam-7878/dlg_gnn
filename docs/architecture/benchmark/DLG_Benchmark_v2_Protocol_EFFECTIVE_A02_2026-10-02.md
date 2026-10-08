@@ -1,5 +1,8 @@
 # DLG-GNN Benchmark v2 Protocol — EFFECTIVE A02 CONSOLIDATED EDITION
 
+> **Superseded where A04 differs.** The [A04 amendment](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md) is now the effective environment, CONAD, evidence, statistics, and stopping policy. A02 remains the record of the portable architecture and pre-A03 candidate stack.
+
+
 **Protocol ID:** DLG-BENCH-V2.0+A02  
 **Consolidation date:** 2026-10-02 (Asia/Seoul)  
 **Historical freeze:** 2026-09-30, preserved in the original FROZEN file  

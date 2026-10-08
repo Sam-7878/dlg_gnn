@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "project": "stream_mc",
+  "source_hashes": {
+    "src/gog_fraud/data/io/streaming_dataset.py": "3c34cc1b77ffec852988ea7d7df40636b5780941cd0296fdb8d093f52152c2d5",
+    "src/gog_fraud/streaming/subgraph_store.py": "786ba770c4cfd5722a7be74a253c41ec1644bbca33f980c693223f293fa0135d"
+  },
+  "fixture_sha256": "f798a41e69afa1a46b58ed43932d9bf0ee52815e918a823b88a75a37844a056d"
+}

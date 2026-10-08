@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the preceding DLG-GNN architecture preprint."
+title: "DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection"
+authors:
+  - family-names: Park
+    given-names: SeongSu
+  - family-names: Kim
+    given-names: Ki-Hyung
+doi: "10.20944/preprints202609.0848.v1"

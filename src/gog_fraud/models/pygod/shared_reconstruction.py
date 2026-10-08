@@ -242,7 +242,7 @@ class SharedFullGraphMixin:
             self.loss_history_ = list(state["loss_history"])
             torch.set_rng_state(state["torch_rng_state"].cpu())
             if torch.cuda.is_available() and state.get("cuda_rng_state_all") is not None:
-                torch.cuda.set_rng_state_all(state["cuda_rng_state_all"])
+                torch.cuda.set_rng_state_all([rng_state.cpu() for rng_state in state["cuda_rng_state_all"]])
             np.random.set_state(state["numpy_rng_state"])
             random.setstate(state["python_rng_state"])
         self.resumed_from_epoch_ = start_epoch

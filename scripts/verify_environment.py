@@ -73,8 +73,10 @@ def inspect_environment():
 
     # Check against manifest
     manifest_paths = [
-        REPO_ROOT / "outputs/benchmark/manuscript_m5/provenance/environment_manifest.json",
-        REPO_ROOT / "outputs/benchmark/manuscript_m5/provenance/frozen_execution_environment.json",
+        REPO_ROOT / "archive/benchmark/provenance/environment_manifest.json",
+        REPO_ROOT / "archive/benchmark/provenance/frozen_execution_environment.json",
+        REPO_ROOT / "archive/benchmark/outputs/manuscript_m5/provenance/environment_manifest.json",
+        REPO_ROOT / "archive/benchmark/outputs/manuscript_m5/provenance/frozen_execution_environment.json",
         REPO_ROOT / "provenance/environment_manifest.json",
         REPO_ROOT / "provenance/frozen_execution_environment.json",
     ]

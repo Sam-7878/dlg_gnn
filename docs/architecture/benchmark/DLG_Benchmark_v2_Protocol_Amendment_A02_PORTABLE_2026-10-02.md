@@ -1,4 +1,7 @@
 # DLG-GNN Benchmark v2 Protocol Amendment A02
+
+> **A04 current development update:** Use the frozen `.venv_cuda` Python 3.14.4 / PyTorch 2.14.1+cu130 / CUDA 13.0 / PyG 2.8.0.post1 / PyGOD 1.1.0 stack for new work. Historical Round5 metric runs used an older stack. [A04](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md) overrides the earlier 3.12/2.11/cu128 candidate and makes CONAD diagnostic-only. The portability contracts below continue to apply.
+
 ## CUDA-first completion, preserved environments and portable evaluation contracts
 
 **Amendment ID:** DLG-BENCH-V2-A02  

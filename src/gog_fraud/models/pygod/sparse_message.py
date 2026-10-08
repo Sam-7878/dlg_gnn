@@ -14,7 +14,10 @@ import torch
 from torch import Tensor
 from torch_geometric.nn import GCN
 from torch_geometric.nn.conv.gcn_conv import gcn_norm
-from torch_sparse import SparseTensor
+try:
+    from torch_sparse import SparseTensor
+except ImportError:
+    from torch_geometric.typing import SparseTensor
 
 MessageBackendName = Literal["pyg_coo_reference", "sparse_fused"]
 
@@ -70,18 +73,28 @@ def normalized_sparse_adjt(
         flow="source_to_target",
         dtype=dtype,
     )
-    assert normalized_weight is not None
     # SparseTensor follows PyG's adj_t contract: row=target, col=source.
-    adj_t = SparseTensor(
-        row=normalized_index[1],
-        col=normalized_index[0],
-        value=normalized_weight,
-        sparse_sizes=(num_nodes, num_nodes),
-        is_sorted=False,
-    ).coalesce()
-    if device is not None:
-        adj_t = adj_t.to(device)
-    return adj_t
+    target_device = device or source_device
+    try:
+        from torch_sparse import SparseTensor
+        adj_t = SparseTensor(
+            row=normalized_index[1],
+            col=normalized_index[0],
+            value=normalized_weight,
+            sparse_sizes=(num_nodes, num_nodes),
+            is_sorted=False,
+        ).coalesce()
+        if device is not None:
+            adj_t = adj_t.to(device)
+        return adj_t
+    except (ImportError, Exception):
+        # Native PyG 2.8+ sparse tensor fallback
+        indices = torch.stack([normalized_index[1], normalized_index[0]]).to(target_device)
+        values = normalized_weight.to(target_device)
+        adj_t = torch.sparse_coo_tensor(
+            indices, values, (num_nodes, num_nodes), device=target_device
+        ).coalesce()
+        return adj_t
 
 
 class SparseFusedGCN(GCN):
@@ -105,7 +118,7 @@ class AutoSparseFusedGCN(SparseFusedGCN):
     """
 
     def forward(self, x, edge_index, edge_weight=None):
-        if isinstance(edge_index, Tensor):
+        if isinstance(edge_index, Tensor) and not edge_index.is_sparse and edge_index.layout != getattr(torch, "sparse_csr", None):
             edge_index = normalized_sparse_adjt(
                 edge_index, x.size(0), edge_weight=edge_weight,
                 dtype=x.dtype, device=x.device,

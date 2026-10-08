@@ -43,10 +43,10 @@ flowchart TB
         end
 
         subgraph Benchmark_Subproject["Subproject 2: benchmark (Scientific Evaluation)"]
-            B1["10 Primary Datasets + LANL External Protocol"]
-            B2["8 Detector Configurations (71/80 Supported Pairs)"]
-            B3["Mode 1 (Instant Frozen Table Extraction < 1s)"]
-            B4["Mode 2 (Full Pipeline Re-execution)"]
+            B1["13 Primary Datasets + LANL External Protocol"]
+            B2["7 Primary Models (80/91 Supported Pairs)"]
+            B3["Level 1 (Frozen Evidence Verification)"]
+            B4["Level 2 Paper / Level 3 Manual Full Rerun"]
             B5["Non-Parametric Statistical Engine<br>(Friedman Rank Test & Holm-adjusted Wilcoxon)"]
             B1 --> B2 --> B5
             B3 -.-> B5
@@ -104,9 +104,9 @@ The repository is organized into four complementary domains:
 ### 3.2 `benchmark` (Scientific Reproducibility & Evaluation)
 - **Mission:** Rigorous, publication-grade empirical benchmarking across diverse graph topologies, scale regimes, and anomaly injection scenarios.
 - **Key Characteristics:**
-  - 10 primary benchmark graphs (Yelp-Syn, Amazon-Syn, Flickr-Syn, Reddit-Syn, Cora-Syn, CiteSeer-Syn, PubMed-Syn, BitcoinOTC, Elliptic, DGraphFin) plus LANL-RedTeam external validation.
-  - 8 detector configurations covering DLG variants (`DLG-Aug`, `DLG-Base`, `DLG-Aug-Permuted`, `DLG-Base-70`), baselines (DOMINANT, GAD-NR, GAAN, OCGN).
-  - Dual-mode reproduction: Mode 1 instant artifact reproduction (`scripts/reproduce_frozen_artifacts.py`) and Mode 2 full training pipeline (`experiments/benchmark/run_sci_round5_final.py`).
+  - 13 primary benchmark graphs (Elliptic, DGraphFin, BitcoinOTC, Ethereum, BSC, Polygon, Yelp-Syn, Amazon-Syn, Reddit-Syn, Flickr-Syn, Cora-Syn, CiteSeer-Syn, PubMed-Syn) plus LANL-RedTeam external validation.
+  - Seven functioning inferential models (DOMINANT, AnomalyDAE, CoLA, GADNR, OCGNN, DLG-Base, DLG-Aug); 80 of 91 primary pairs supported. CONAD is diagnostic only.
+  - A07 project facade: `scripts/reproduce_project.py --project benchmark --mode verify|paper|full`; full rerun is guarded and manually orchestrated.
   - Automated statistical testing (Friedman test, Holm-adjusted Wilcoxon signed-rank tests).
 
 ### 3.3 `stream_mc` (Streaming Monte Carlo Engine)
@@ -130,5 +130,7 @@ The repository is organized into four complementary domains:
 
 1. **Decoupled Representation:** Never force a single GNN layer to simultaneously optimize for local anomaly isolation and global connectivity. Decouple local aggregation from global propagation and learn the fusion balance.
 2. **Exact Scalability Without Approximations:** Avoid mini-batch sampling heuristics that drop negative edges or compromise exact Frobenius reconstruction error. Use closed-form sparse algebra ($O(|E|d + Nd^2)$) instead.
-3. **Strict Symmetry Across Workflows:** Tests, reports, and results mirror the four subproject domains (`dlg_gnn`, `benchmark`, `stream_mc`, `tds`), preventing monolithic entanglements.
-4. **Zero-Drift Scientific Provenance:** All empirical benchmark results are cryptographically hashed and tied to dual environment specifications (`frozen_execution_environment.json` and `current_reproduction_environment.json`).
+3. **Two-Tier Active vs. Archive Separation:** Active manuscripts, canonical evidence, and final verification reports live strictly in `projects/<project>/`, while historical development rounds, legacy preprints, and intermediate runs are segregated into `archive/<project>/`.
+4. **Strict Symmetry Across Workflows:** Tests, configurations, and documentation symmetrically mirror the four subproject domains (`dlg_gnn`, `benchmark`, `stream_mc`, `tds`), preventing monolithic entanglements.
+5. **Zero-Drift Scientific Provenance:** All empirical benchmark results are cryptographically hashed and linked to per-run source/environment provenance, with historical campaign limitations disclosed.
+

@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "No project paper DOI is assigned; cite the shared software repository if needed."
+title: "DLG-GNN stream_mc research code"
+authors:
+  - family-names: Park
+    given-names: SeongSu
+url: "https://github.com/Sam-7878/dlg_gnn"

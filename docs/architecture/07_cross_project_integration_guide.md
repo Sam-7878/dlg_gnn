@@ -10,7 +10,7 @@ This document provides practical, plug-and-play recipes for integrating and reus
 |---|---|---|---|
 | [**Pattern A**](#pattern-a-standalone-pygod-anomaly-detector) | Drop-in PyGOD anomaly detector | `src/gog_fraud/models/pygod/dlg.py`<br>`src/gog_fraud/models/pygod/exact_reconstruction.py` | Any PyTorch Geometric / PyGOD project |
 | [**Pattern B**](#pattern-b-reusing-exact-sparse-reconstruction-backend) | Eliminate $O(N^2)$ memory wall in custom GNN autoencoders | `src/gog_fraud/models/pygod/exact_reconstruction.py` | PyTorch / PyG autoencoder architectures |
-| [**Pattern C**](#pattern-c-reusing-the-benchmark--statistical-engine) | Benchmark a custom model across 10 datasets with Friedman/Wilcoxon tests | `src/analysis/add_benchmark_analysis.py`<br>`experiments/benchmark/run_sci_round5_final.py` | Academic GNN benchmark projects |
+| [**Pattern C**](#pattern-c-reusing-the-benchmark--statistical-engine) | Reuse the A05/A06 13-dataset, support-aware benchmark statistics | `src/analysis/add_benchmark_analysis.py`<br>`experiments/benchmark/run_sci_round5_final.py` | Academic GNN benchmark projects |
 | [**Pattern D**](#pattern-d-adopting-the-streaming-monte-carlo-pipeline) | Real-time sliding window graph AML engine | `src/gog_fraud/streaming/`<br>`src/gog_fraud/selection/` | Production stream processing (Kafka / Flink) |
 | [**Pattern E**](#pattern-e-reusing-the-anomaly-injection-protocol) | Inject synthetic anomalies into arbitrary graphs | `src/gog_fraud/data/transforms/` | Graph ML data augmentation pipelines |
 
@@ -101,8 +101,10 @@ print("Backprop succeeded! Peak memory:", torch.cuda.max_memory_allocated() / (1
 
 ## Pattern C: Reusing the Benchmark & Statistical Engine
 
+The frozen A05/A06 paper matrix has 13 primary graphs and seven functioning inferential models, with 80/91 supported pairs. The reusable statistical code in `src/analysis/` can be adapted for a new study; the frozen paper evidence, support policy and approved run identities in `projects/benchmark/` must not be silently extended. First run `python scripts/reproduce_project.py --project benchmark --mode verify`, then `--mode paper` to regenerate this manuscript. New-model comparisons need a separate preregistered campaign.
+
 ### Use Case
-You are developing a novel GNN detector and want to rigorously compare it against the established 10-dataset benchmark portfolio using Friedman rank tests and Holm-adjusted Wilcoxon post-hoc tests.
+You are developing a novel GNN detector and want to rigorously compare it against the A05/A06 13-dataset support-aware benchmark portfolio using Friedman rank tests and Holm-adjusted Wilcoxon post-hoc tests.
 
 ### Integration Steps
 1. **Define Your Model Wrapper:** Implement the PyGOD `fit(data)` and `decision_function(data)` API.

@@ -1,0 +1,22 @@
+schema_version: 1
+project: stream_mc
+release: development
+python: ">=3.12"
+tested_os: "Ubuntu 26.04 on WSL2; GitHub CI Ubuntu"
+modes:
+  verify:
+    command: "python scripts/reproduce_project.py --project stream_mc --mode verify"
+    estimated_minutes: "<5"
+    gpu_required: false
+    raw_datasets_required: false
+  paper:
+    command: "python scripts/reproduce_project.py --project stream_mc --mode paper"
+    estimated_minutes: "not yet qualified"
+    gpu_required: false
+    raw_datasets_required: false
+  full:
+    command: "python scripts/reproduce_project.py --project stream_mc --mode full --confirm-full"
+    estimated_minutes: "hours to days; manual campaign orchestration"
+    gpu_required: false
+    raw_datasets_required: true
+expected_outputs: "projects/stream_mc/expected_outputs.json"

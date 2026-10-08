@@ -1,0 +1,17 @@
+{
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "executable": "/mnt/d/_Work/goat_bank/dlg_gnn/../.venv_cuda/bin/python",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "torch": "2.14.1+cu130",
+  "torch_cuda": "13.0",
+  "pyg": "2.8.0.post1",
+  "pygod": "1.1.0",
+  "cuda_available": true,
+  "source_probe_path": "evaluation/benchmark/v2/environment/journal_cuda/environment_probe.json",
+  "source_probe_sha256": "427c3911397c44b88b10dd9d3f91ffdf9a42f807d498b0d6cd4b9fef805fc2d2",
+  "a04_lock_sha256": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127",
+  "wheelhouse_path": "environment/wheelhouse-a04",
+  "qualification_note": "Empirically qualified; PyG 2.8 published compatibility does not list PyTorch 2.14.",
+  "git_commit": "fa7df9a1cef0ec862fac401f685d868788140cd9",
+  "hashed_lock_sha256": "317a1e417249f74f78f856684abf091eb455839090107a7f841bca4ff1cb6012"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "project": "tds",
+  "source_hashes": {
+    "tests/tds/micro_rag/graph_builder.py": "31eb1908c49bebf2fc9114366469a38ceec2ef23ef4376967f38f5947276513c",
+    "tests/tds/micro_rag/data_loader.py": "e59ecc2b7e8b0910d894d062a49a8760f36f1d68fcf2a6973d71f13e722baf01"
+  },
+  "fixture_sha256": "03b0caeb34fc4a3bec1beb70ab28d4623fd40a650c89f0cd5e70981bc855a512"
+}

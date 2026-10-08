@@ -18,7 +18,15 @@ from dataclasses import asdict, dataclass
 from typing import Iterable, Literal
 
 import torch
-from torch_sparse import SparseTensor, matmul as sparse_matmul
+try:
+    from torch_sparse import SparseTensor, matmul as sparse_matmul
+except ImportError:
+    try:
+        from torch_geometric.typing import SparseTensor
+        sparse_matmul = None
+    except ImportError:
+        SparseTensor = None
+        sparse_matmul = None
 
 BackendName = Literal["dense_reference", "exact_sparse", "chunked_exact"]
 
@@ -119,18 +127,31 @@ def exact_dot_product_row_squared_error(
             values = torch.ones(edge_index.shape[1], dtype=z.dtype, device=edge_index.device)
         else:
             values = values.to(dtype=z.dtype, device=edge_index.device)
-        adjacency = SparseTensor(
-            row=edge_index[0], col=edge_index[1], value=values,
-            sparse_sizes=(n, n), is_sorted=False,
-        ).coalesce().to(z.device)
-        src, _, coalesced_values = adjacency.coo()
-        row_norm = torch.zeros(n, dtype=z.dtype, device=z.device)
-        row_norm.scatter_add_(0, src, coalesced_values.square())
-        # A @ Z is a fused SpMM.  It exactly represents sum_j A_ij z_j
-        # without constructing an [E,H] edge-dot tensor.
-        neighbor_sum = sparse_matmul(adjacency, z, reduce="sum")
-        cross = (z_rows * neighbor_sum[rows]).sum(dim=1)
-        return torch.clamp_min(row_norm[rows] - 2.0 * cross + gram_term, 0.0)
+        try:
+            from torch_sparse import SparseTensor, matmul as sparse_matmul
+            adjacency = SparseTensor(
+                row=edge_index[0], col=edge_index[1], value=values,
+                sparse_sizes=(n, n), is_sorted=False,
+            ).coalesce().to(z.device)
+            src, _, coalesced_values = adjacency.coo()
+            row_norm = torch.zeros(n, dtype=z.dtype, device=z.device)
+            row_norm.scatter_add_(0, src, coalesced_values.square())
+            # A @ Z is a fused SpMM.  It exactly represents sum_j A_ij z_j
+            # without constructing an [E,H] edge-dot tensor.
+            neighbor_sum = sparse_matmul(adjacency, z, reduce="sum")
+            cross = (z_rows * neighbor_sum[rows]).sum(dim=1)
+            return torch.clamp_min(row_norm[rows] - 2.0 * cross + gram_term, 0.0)
+        except (ImportError, Exception):
+            sparse_adj = torch.sparse_coo_tensor(
+                edge_index.long(), values, (n, n), device=z.device
+            ).coalesce()
+            src, _ = sparse_adj.indices()
+            coalesced_values = sparse_adj.values()
+            row_norm = torch.zeros(n, dtype=z.dtype, device=z.device)
+            row_norm.scatter_add_(0, src, coalesced_values.square())
+            neighbor_sum = torch.sparse.mm(sparse_adj, z)
+            cross = (z_rows * neighbor_sum[rows]).sum(dim=1)
+            return torch.clamp_min(row_norm[rows] - 2.0 * cross + gram_term, 0.0)
     else:
         if not 0.0 <= positive_weight <= 1.0:
             raise ValueError("positive_weight must lie in [0, 1]")

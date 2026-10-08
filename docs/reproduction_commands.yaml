@@ -1,5 +1,13 @@
-schema_version: 1
-mode1: "python scripts/reproduce_frozen_artifacts.py"
-mode2: "python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/sci_round5_final.yaml --stage phase1"
-mode2_dry_run: "python experiments/benchmark/run_sci_round5_final.py --dry-run"
-sensitivity: "python experiments/benchmark/run_capacity_controls_m3.py --gpu 0"
+schema_version: 2
+projects:
+  dlg_gnn:
+    verify: "python scripts/reproduce_project.py --project dlg_gnn --mode verify"
+  benchmark:
+    verify: "python scripts/reproduce_project.py --project benchmark --mode verify"
+    paper: "python scripts/reproduce_project.py --project benchmark --mode paper"
+    full_guard: "python scripts/reproduce_project.py --project benchmark --mode full"
+  stream_mc:
+    verify: "python scripts/reproduce_project.py --project stream_mc --mode verify"
+  tds:
+    verify: "python scripts/reproduce_project.py --project tds --mode verify"
+notes: "full is manual campaign orchestration; archived v1 Round5 commands remain in historical release"

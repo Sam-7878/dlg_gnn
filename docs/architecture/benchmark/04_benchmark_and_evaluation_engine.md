@@ -1,106 +1,27 @@
-# 04. Benchmark & Scientific Evaluation Engine
+# 04. Benchmark and scientific evaluation engine
 
-This document details the architecture of the **Benchmark Engine** (`benchmark`), which provides a standardized, scientifically rigorous evaluation harness across diverse graph scales, homophily regimes, and anomaly types.
+**Current decision:** [A04 effective amendment](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md). The [2026-09-30 freeze](DLG_Benchmark_v2_Protocol_FROZEN_2026-09-30.md) and [A02 consolidated protocol](DLG_Benchmark_v2_Protocol_EFFECTIVE_A02_2026-10-02.md) document the protocol history. Gate G4 remains HOLD until A04 evidence validation passes.
 
----
+## Study contract
 
-## 1. Benchmark Suite Design
+The primary portfolio has 13 datasets: Elliptic, DGraphFin, BitcoinOTC, Ethereum, BSC, Polygon, Yelp-Syn, Amazon-Syn, Reddit-Syn, Flickr-Syn, Cora-Syn, CiteSeer-Syn, and PubMed-Syn. LANL-RedTeam is external descriptive validation. A canonical manifest is the only source for graph and evaluated population counts, feature dimension, prevalence, prediction unit, split identity, and tensor hashes. The model-consumed graph can differ from a raw source graph; both populations must be named.
 
-The evaluation engine addresses common pitfalls in existing GNN literature (e.g., small datasets, unverified synthetic generation, lack of statistical significance testing).
+The seven primary inferential detectors are DOMINANT, AnomalyDAE, CoLA, GADNR, OCGNN, DLG-Base, and DLG-Aug. `CONAD-PyGOD-1.1-reference` is retained for diagnostic reproducibility only. The A03 experimental `CONAD-corrected` implementation is not a primary baseline. DLG-Aug-Permuted, DLG-Aug-Zero, and DLG-Base-70 are Elliptic ablation controls, not independent primary detectors.
 
-### 1.1 Dataset Portfolio (10 Primary Datasets + 1 External Validation)
-The suite spans 10 primary graph benchmarks categorized into two provenance regimes:
+## Runtime and reproducibility
 
-| Dataset | Type / Domain | Nodes ($N$) | Edges ($|E|$) | Anomaly Ratio | Provenance |
-|---|---|:---:|:---:|:---:|---|
-| **Yelp-Syn** | Social / Review | 45,954 | 3,846,979 | 11.4% | Public base graph + frozen contextual/structural injection |
-| **Amazon-Syn** | E-commerce | 11,944 | 4,397,792 | 7.1% | Public base graph + frozen contextual/structural injection |
-| **Flickr-Syn** | Image sharing | 7,575 | 239,738 | 5.9% | Public base graph + frozen contextual/structural injection |
-| **Reddit-Syn** | Discussion network | 10,984 | 168,016 | 3.3% | Public base graph + frozen contextual/structural injection |
-| **Cora-Syn** | Citation network | 2,708 | 5,429 | 5.5% | Public base graph + frozen contextual/structural injection |
-| **CiteSeer-Syn**| Citation network | 3,327 | 4,732 | 4.5% | Public base graph + frozen contextual/structural injection |
-| **PubMed-Syn** | Citation network | 19,717 | 44,338 | 2.5% | Public base graph + frozen contextual/structural injection |
-| **BitcoinOTC** | Cryptocurrency trust | 5,881 | 35,592 | 8.9% | Stanford SNAP (Real transaction rating labels) |
-| **Elliptic** | Bitcoin transaction | 203,769 | 234,355 | 9.8% | Kaggle / Elliptic (Real illicit transaction labels) |
-| **DGraphFin** | Financial credit | 3,700,550 | 4,300,999 | 1.3% | FinVolution (Real fraud labels, directed) |
-| **LANL-RedTeam**| Cyber authentication | 1,231,768 | 114,952,383 | 0.06% | Los Alamos National Lab (External enterprise validation) |
+Use the repository root `.venv_cuda/bin/python` on WSL2 Ubuntu 26.04 for current development and any new A04 work. This qualified stack is Python 3.14.4, PyTorch 2.14.1+cu130, CUDA 13.0, PyG 2.8.0.post1, and PyGOD 1.1.0. The exact inventory and wheel hashes are in `environment/locks/benchmark-a04-cuda.lock.txt` and `benchmark-a04-cuda.hashed.txt`. The RTX 3090 24 GB eGPU is the primary current envelope; the RTX 4070 8 GB laptop GPU and same-3090 8-GiB allocator cap are distinct diagnostics. A04 independently recreated this stack and passed smoke/exact/fused checks.
 
-> **Provenance Clarification:** The seven `-Syn` benchmarks apply a deterministic, seed-frozen contextual (attribute perturbation) and structural (clique injection) anomaly protocol to well-known public base graphs distributed through PyGOD.
+Historical performance runs must retain their own execution lineage. The archived Round5 environment manifest records Python 3.12.13, PyTorch 2.5.1+cu121, CUDA 12.1, and PyG 2.7.0. The current A04 lock is a qualification/development lock and must not be attached to those historical runs as their execution lock. A03 crypto and LANL raw run files also lack a per-run environment lock; session evidence and inferred stack are labeled separately. Missing exact execution locks block the publication gate.
 
----
+Each paper metric must be reproducible from approved dataset/model/seed run records. Keep the original metric JSON, its SHA-256, the raw score hash or an explicit missing marker, source config hash, dataset tensor/split identity, actual execution environment lock or an explicit missing marker, and run ID. Do not turn a planning estimate or a CSV-only record into a measured telemetry or archived raw-score claim.
 
-## 2. Models & Detector Configurations
+## Analysis and publication gates
 
-The benchmark evaluates 8 distinct detector configurations across 71 supported model-dataset pairs (out of 80 theoretical combinations):
+Aggregate the five model seeds within each dataset. Use one dataset as one block in Friedman and post-hoc Wilcoxon-Holm analysis. S1 is the seven-model complete case; S2 is the continuity-five set (DOMINANT, CoLA, OCGNN, DLG-Base, DLG-Aug); S3 is the six financial/blockchain domain datasets with mixed label provenance; S4 is the seven `-Syn` datasets; S5 is LANL descriptive. BitcoinOTC uses synthetic node anomalies injected into a real trust graph and must not be called a real-label node benchmark. Do not rank diagnostic CONAD. The S3 omnibus result is non-significant at approximately `p=0.082`; do not claim DLG-Aug superiority there.
 
-1. **DLG-Aug (Primary Model):** Full Decoupled Local-to-Global model with direction-aware local ego-net augmentation.
-2. **DLG-Base (Ablation):** Historical non-augmented implementation without local ego-net enhancement.
-3. **DLG-Aug-Permuted (Sensitivity Control 1):** Probes sensitivity to node alignment by permuting local ego-net edges while preserving marginal node degrees.
-4. **DLG-Base-70 (Sensitivity Control 2):** Probes sensitivity to an expanded global training budget (70 epochs instead of 50).
-5. **DOMINANT:** Classical dense autoencoder baseline.
-6. **GAD-NR:** Neighborhood-reconstruction baseline with Gaussian anomaly modeling.
-7. **GAAN:** Generative adversarial anomaly network.
-8. **OCGN:** One-class graph neural network.
+The 25-row Elliptic ablation shows that permutation did not reduce PR-AUC or F1 relative to aligned DLG-Aug. Its gain is conditional and does not establish node-wise local/global alignment as the mechanism. The A03 224-row memory table was generated by a formula; publication memory evidence must use selected cells with actual full/cap logs. The A04 cross-file validator checks tables, manifest, run evidence, statistics, and claims before publication.
 
----
+## Reuse by the research family
 
-## 3. Dual-Mode Reproduction Architecture
-
-To maximize accessibility for both researchers without GPUs and teams verifying full retraining, the benchmark architecture provides two distinct execution modes:
-
-```mermaid
-graph TD
-    subgraph Mode1["Mode 1: Frozen-Artifact Instant Verification (< 1s)"]
-        RawCSV["artifacts/primary/benchmark_raw.csv<br>(Cryptographic Hash: 39a497...)"]
-        SupportMatrix["artifacts/primary/model_dataset_support_matrix.csv<br>(Cryptographic Hash: c58dbc...)"]
-        ReproScript["scripts/reproduce_frozen_artifacts.py"]
-        TablesOutput["Generated Publication Tables 1-8<br>+ Friedman & Wilcoxon Results"]
-        
-        RawCSV --> ReproScript
-        SupportMatrix --> ReproScript
-        ReproScript --> TablesOutput
-    end
-
-    subgraph Mode2["Mode 2: Full Benchmark Re-execution Pipeline"]
-        Configs["configs/benchmark/sci_round5_final.yaml"]
-        PrimaryRunner["experiments/benchmark/run_sci_round5_final.py"]
-        ControlRunner["experiments/benchmark/run_capacity_controls_m3.py"]
-        GPU["CUDA 12.1 Execution Hardware"]
-        NewRuns["355 Primary Runs + 45 Controls<br>(5 random seeds per pair)"]
-        
-        Configs --> PrimaryRunner
-        Configs --> ControlRunner
-        PrimaryRunner --> GPU
-        ControlRunner --> GPU
-        GPU --> NewRuns
-    end
-```
-
-### Running Mode 1:
-```bash
-python scripts/reproduce_frozen_artifacts.py --artifacts-dir artifacts --output-dir results/reproduced_tables
-```
-- **Runtime:** 0.40 seconds on standard CPU.
-- **Verification:** Recreates all statistical tables, ranking summaries, and p-values directly from the frozen primary data.
-
-### Running Mode 2:
-```bash
-python experiments/benchmark/run_sci_round5_final.py --config configs/benchmark/sci_round5_final.yaml
-```
-
----
-
-## 4. Statistical Testing Engine
-
-The evaluation engine avoids misleading arithmetic average comparisons by incorporating non-parametric hypothesis testing:
-
-### 4.1 Friedman Rank Test
-Evaluates whether statistically significant performance differences exist across detectors across all datasets:
-$$\chi_F^2 = \frac{12 N}{k(k+1)} \left[ \sum_{j=1}^k R_j^2 - \frac{k(k+1)^2}{4} \right]$$
-where $N$ is the number of datasets, $k$ is the number of models, and $R_j$ is the average rank of model $j$.
-
-### 4.2 Post-Hoc Wilcoxon Signed-Rank Test with Holm Correction
-For pairwise comparisons against baselines, the engine computes two-sided Wilcoxon signed-rank statistics and controls the Family-Wise Error Rate (FWER) using the step-down Holm-Bonferroni correction:
-$$p_{(i)} \le \frac{\alpha}{m - i + 1}$$
-
-Automated scripts in `src/analysis/add_benchmark_analysis.py` generate complete LaTeX tables (`table5_friedman.tex`, `table6_wilcoxon_holm.tex`) directly from raw benchmark runs.
+Stream and TDS can reuse the execution envelope schema, artifact hashing, fresh-process jobs, telemetry, and table validation. Each paper declares its own data loader, prediction unit, split, seed, metrics, baselines, and inference family. A later AMD/ROCm or LLM environment receives a separate lock and qualification. Its results are not merged into this frozen CUDA Benchmark release without a new protocol.

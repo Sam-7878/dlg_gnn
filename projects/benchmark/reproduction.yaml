@@ -1,0 +1,22 @@
+schema_version: 1
+project: benchmark
+release: benchmark-v2.0.0-mdpi-candidate
+python: ">=3.12"
+tested_os: "Ubuntu 26.04 on WSL2; GitHub CI Ubuntu"
+modes:
+  verify:
+    command: "python scripts/reproduce_project.py --project benchmark --mode verify"
+    estimated_minutes: "<5"
+    gpu_required: false
+    raw_datasets_required: false
+  paper:
+    command: "python scripts/reproduce_project.py --project benchmark --mode paper"
+    estimated_minutes: "<10"
+    gpu_required: false
+    raw_datasets_required: false
+  full:
+    command: "python scripts/reproduce_project.py --project benchmark --mode full --confirm-full"
+    estimated_minutes: "hours to days; manual campaign orchestration"
+    gpu_required: true
+    raw_datasets_required: true
+expected_outputs: "projects/benchmark/expected_outputs.json"

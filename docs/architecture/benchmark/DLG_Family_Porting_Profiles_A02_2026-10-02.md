@@ -1,5 +1,8 @@
 # DLG 연구군 공통 Process 및 논문별 Porting Profiles — A02
 
+> **Current Benchmark development and qualification:** `.venv_cuda` and `environment/locks/benchmark-a04-cuda.lock.txt` are frozen at Python 3.14.4, PyTorch 2.14.1+cu130, CUDA 13.0, PyG 2.8.0.post1, and PyGOD 1.1.0. Historical Round5 metrics were produced under an older environment; see [A04](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md). Stream, TDS, and future LLM work inherit the process interfaces, with separately qualified scientific and binary locks.
+
+
 **Date:** 2026-10-02  
 **Role:** Benchmark 작업지시서의 이식 부록. 각 논문의 기존 scientific contract를 보존하면서 공통 runtime/artifact/검증 계층을 재사용하기 위한 개발 명세.  
 **Scope:** 현재는 adapter/profile/fixture 준비, actual Stream/TDS 재실험은 Benchmark release 이후. LLM/ROCm은 미래 확장.

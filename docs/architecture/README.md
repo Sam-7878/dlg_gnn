@@ -22,21 +22,25 @@ This directory provides the authoritative reference for the system architecture,
 
 ## 2. Core Repository Architecture at a Glance
 
-The `dlg_gnn` codebase is structured around four primary subproject domains, organized symmetrically across tests, reports, and results:
+The repository operates on a clear **Two-Tier Architecture**:
+1. **Tier 1 (`projects/<project>/`)**: Dedicated reviewer-facing portals containing active manuscripts, final reports, canonical empirical results, and fast deterministic reproduction facades.
+2. **Tier 2 (`archive/<project>/`)**: Segregated historical archives for earlier development rounds, legacy preprints/MDPI submissions, intermediate outputs, and previous gates.
+3. **Core Library (`src/`)**: Shared, modular engines (`gog_fraud/`, `analysis/`) cleanly separated from project artifacts.
 
 ```mermaid
 graph TD
-    subgraph DLG_GNN_Ecosystem["DLG-GNN Modular Ecosystem"]
+    subgraph DLG_GNN_Ecosystem["DLG-GNN Modular Ecosystem (Two-Tier Structure)"]
         direction TB
-        A["Core DLG-GNN (dlg_gnn)<br>• 2-Phase Decoupled GNN<br>• Exact Sparse Reconstruction<br>• PyGOD Detector Compatibility"]
-        B["Benchmark Engine (benchmark)<br>• 10 Primary Datasets + LANL<br>• Mode 1 / Mode 2 Reproduction<br>• Non-Parametric Significance Tests"]
-        C["Streaming Monte Carlo (stream_mc)<br>• Bounded-State Sliding Window<br>• Dynamic Subgraph Store<br>• Real-Time Risk Propagation"]
-        D["Transaction Decomposition (tds)<br>• Bipartite & Multi-hop Graphs<br>• Micro-RAG Entity Extraction<br>• Uncertainty-Aware Scoring"]
+        A["Core DLG-GNN (dlg_gnn)<br>• Active: projects/dlg_gnn/<br>• Archive: archive/dlg_gnn/"]
+        B["Benchmark Engine (benchmark)<br>• Active: projects/benchmark/<br>• Archive: archive/benchmark/"]
+        C["Streaming Monte Carlo (stream_mc)<br>• Active: projects/stream_mc/<br>• Archive: archive/stream_mc/"]
+        D["Transaction Decomposition (tds)<br>• Active: projects/tds/<br>• Archive: archive/tds/"]
     end
 
     DataSources["Raw Graph & Transaction Data<br>(PyGOD / SNAP / Kaggle / Kafka)"] --> DLG_GNN_Ecosystem
-    DLG_GNN_Ecosystem --> Outputs["Outputs & Deployments<br>• Scalable Fraud Triage<br>• Replicable Benchmark Tables<br>• Real-Time Risk Routing"]
+    DLG_GNN_Ecosystem --> Outputs["Outputs & Deployments<br>• Standalone PyGOD Detectors<br>• Replicable Benchmark Evidence<br>• Real-Time Risk Routing"]
 ```
+
 
 ---
 

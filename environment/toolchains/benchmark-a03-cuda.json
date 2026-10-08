@@ -1,0 +1,35 @@
+{
+  "protocol": "EFFECTIVE_A03",
+  "document_id": "DLG-BENCH-V2-TOOLCHAIN-A03",
+  "generated_at": "2026-10-03T02:38:00+09:00",
+  "python": {
+    "version": "3.14.4",
+    "executable": "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+    "build": "GCC 13.x Linux WSL2"
+  },
+  "torch": {
+    "version": "2.14.1+cu130",
+    "cuda_available": true,
+    "cuda_version": "13.0"
+  },
+  "pyg": {
+    "version": "2.8.0.post1",
+    "pyg_lib": "0.9.0+pt214cu130"
+  },
+  "pygod": {
+    "version": "1.1.0",
+    "patched_modules": [
+      "gog_fraud.models.pygod.exact_reconstruction",
+      "gog_fraud.models.pygod.sparse_message",
+      "gog_fraud.models.pygod.gadnr"
+    ]
+  },
+  "hardware": {
+    "primary_production_gpu": "NVIDIA GeForce RTX 3090 (24.0 GB VRAM, CC 8.6, Gigabyte Gaming Box eGPU)",
+    "diagnostic_gpu": "NVIDIA GeForce RTX 4070 Laptop GPU (8.0 GB VRAM, CC 8.9)"
+  },
+  "locks": {
+    "lock_file": "dlg_gnn/environment/locks/benchmark-a03-cuda.lock.txt",
+    "verified_clean": true
+  }
+}

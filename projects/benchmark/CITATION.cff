@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite the benchmark manuscript once its public bibliographic identity is assigned."
+title: "A Reproducible and Scalability-Aware Benchmark for Graph Anomaly Detection with Decoupled Local-to-Global GNNs"
+authors:
+  - family-names: Park
+    given-names: SeongSu
+  - family-names: Kim
+    given-names: Ki-Hyung
+url: "https://github.com/Sam-7878/dlg_gnn/tree/main/projects/benchmark"

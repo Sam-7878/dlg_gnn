@@ -1,5 +1,8 @@
 # DLG-GNN Benchmark v2 Protocol — FROZEN PRE-RUN SPECIFICATION
 
+> **Historical pre-run record.** Current A04 development, qualification, and publication decisions, including the Python 3.14.4 / PyTorch 2.14.1+cu130 environment and diagnostic-only CONAD, are in [the A04 amendment](DLG_Benchmark_v2_Protocol_Amendment_A04_2026-10-03.md). Historical Round5 metric runs used an older execution environment. Preserve the original freeze below as a dated protocol record.
+
+
 **Protocol ID:** DLG-BENCH-V2.0  
 **Freeze date:** 2026-09-30 (Asia/Seoul)  
 **Status:** **FROZEN BEFORE V2 PERFORMANCE RUNS**  

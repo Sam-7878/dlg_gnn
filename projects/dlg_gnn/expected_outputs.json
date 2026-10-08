@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "project": "dlg_gnn",
+  "source_hashes": {
+    "src/gog_fraud/models/pygod/dlg_base.py": "4910c53e38a07872da46438591dc4ba2d5300b065c90489016599d96e293d1e8",
+    "src/gog_fraud/models/pygod/exact_reconstruction.py": "ebcc3f982d379b4928c5cd7511d5c87c2cff0229f734e937271d4b3c3f3656e3"
+  },
+  "fixture_sha256": "6ba8e17a17d96297dfc5bbf554aea4869f0ee10e5b38388926f2c82abe421c70"
+}

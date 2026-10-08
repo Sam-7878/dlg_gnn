@@ -8,41 +8,40 @@ This document maps the complete file layout of the `dlg_gnn` repository, explain
 
 ```text
 dlg_gnn/
-├── src/                         # Core Python package implementations
+├── src/                         # Reusable core Python packages
 │   ├── gog_fraud/               # Main DLG, GNN, and streaming AML engine
 │   └── analysis/                # Statistical ranking and homophily analysis
 ├── configs/                     # Declarative YAML configurations for models and experiments
-├── experiments/                 # Benchmark experiment entrypoints and control runners
-├── scripts/                     # Operational utilities (reproduction, env verification, packaging)
-├── tests/                       # Automated test suite (symmetrically organized)
+├── scripts/                     # Shared reproduction driver and operational utilities
+│   └── reproduce_project.py     # Unified verification & reproduction facade driver
+├── projects/                    # [TIER 1: ACTIVE] Reviewer-facing portal for 4 subprojects
+│   ├── dlg_gnn/                 # Published predecessor paper, verification, figures, and results
+│   ├── benchmark/               # A07 candidate paper, frozen evidence ZIP, final reports, and manuscript scripts
+│   ├── stream_mc/               # Active streaming manuscript, canonical R4 results, and verification reports
+│   └── tds/                     # Active TDS manuscript, paper-ready gate v8 results, and readiness reports
+├── archive/                     # [TIER 2: HISTORICAL] Archived legacy code, earlier evaluation rounds, drafts
+│   ├── dlg_gnn/                 # Historical run outputs (EXP-001~EXP-005) and early paper drafts
+│   ├── benchmark/               # Historical v1.0.0 artifacts, P1~P5 publications, releases, and previous results
+│   ├── stream_mc/               # Historical developmental rounds (R1~R3, sci_v3) and evaluation outputs
+│   └── tds/                     # Historical GraphRAG/scam revision rounds, preserved panel data, and gates
+├── tests/                       # Automated test suite (symmetrically organized by subproject)
 │   ├── dlg_gnn/                 # Unit & integration tests for core DLG-GNN models
-│   ├── benchmark/               # Tests for benchmark runners, artifacts, and publication gates
+│   ├── benchmark/               # Tests for benchmark runners and publication gates
 │   ├── stream_mc/               # Tests for streaming engine and router
 │   └── tds/                     # Tests for transaction decomposition & micro-RAG
-├── reports/                     # Human-readable execution and audit reports (symmetrically organized)
-│   ├── dlg_gnn/
-│   ├── benchmark/
-│   ├── stream_mc/
-│   └── tds/
-├── results/                     # Empirical result outputs and metric logs (symmetrically organized)
-│   ├── dlg_gnn/
-│   ├── benchmark/
-│   ├── stream_mc/
-│   └── tds/
-├── outputs/                     # Frozen publication artifacts, releases, and provenance manifests
-│   └── benchmark/manuscript_m5/ # Release archives, manifests, and canonical CSV tables
-├── publication/                 # Publication drafts, TeX sources, and camera-ready packages
-│   └── benchmark/               # Preprints.org and MDPI Applied Sciences bundles
-├── docs/                        # Technical documentation
-│   ├── architecture/            # This architectural documentation suite
-│   └── math/                    # Formal mathematical proofs (e.g., exact sparse reconstruction)
+├── local_storage/               # Git-ignored wheel-independent backups and LaTeX caches
+├── docs/                        # Technical documentation & work reports
+│   ├── architecture/            # Architectural documentation suite
+│   ├── work_reports/            # Chronological task work orders and implementation logs
+│   └── papers/                  # Paper index and pointers to active/archived manuscripts
 ├── pyproject.toml               # PEP 518/621 build and tool configuration
 ├── environment.yml              # Conda environment specification
 ├── INSTALL.md                   # Installation and environment setup instructions
 ├── LICENSE                      # Permissive MIT License
 ├── CITATION.cff                 # Citation metadata for academic reuse
-└── README.md                    # Root Benchmark Reproduction Landing Page
+└── README.md                    # Multi-project research landing page
 ```
+
 
 ---
 
@@ -137,32 +136,60 @@ configs/
 
 ---
 
-## 4. Tests, Reports, and Results Symmetry
+## 4. Two-Tier Organization: `projects/` (Active) vs `archive/` (Historical)
 
-To prevent code drift and preserve clean domain separation, `tests/`, `reports/`, and `results/` are structured identically:
+To prevent developmental clutter and provide an immediately comprehensible view for reviewers, all project-specific assets are divided into two clear tiers:
 
 ```mermaid
-graph LR
-    subgraph Structure["Standard Subproject Division"]
-        S1["dlg_gnn<br>(Core Models)"]
-        S2["benchmark<br>(Scientific Evaluation)"]
-        S3["stream_mc<br>(Streaming AML)"]
-        S4["tds<br>(Transaction Decomp)"]
+graph TD
+    subgraph RepoRoot["DLG-GNN Repository"]
+        Common["src/ (Shared Reusable Engines)<br>• gog_fraud: DLG, Exact Sparse, Streaming<br>• analysis: Statistical tests, homophily"]
+        Configs["configs/ (Declarative YAMLs)"]
+        Tests["tests/ (Symmetric Unit & Regression Tests)"]
     end
 
-    Structure --> Tests["tests/<br>• Unit & integration tests<br>• Regression gates"]
-    Structure --> Reports["reports/<br>• Audit markdown reports<br>• Summary logs"]
-    Structure --> Results["results/<br>• CSV / JSON outputs<br>• Raw metric runs"]
+    subgraph Tier1["projects/<project>/ (Tier 1: Reviewer-Facing Active Portals)"]
+        P1["dlg_gnn: Published paper v1, results, figures, verification"]
+        P2["benchmark: A07 candidate paper, frozen evidence ZIP, A06/A07 reports"]
+        P3["stream_mc: Active manuscript, canonical R4 results, verification report"]
+        P4["tds: Active TDS manuscript, paper-ready gate v8 results, readiness report"]
+    end
+
+    subgraph Tier2["archive/<project>/ (Tier 2: Historical Development Archives)"]
+        A1["dlg_gnn: Historical EXP-001~005 run outputs, draft copies"]
+        A2["benchmark: v1.0.0 artifacts, P1~P5 publications, releases, older results"]
+        A3["stream_mc: Developmental rounds R1~R3, sci_v3 outputs, standalone figures"]
+        A4["tds: GraphRAG rounds 2~4, scam revisions, preserved panel data, gate v6/v7"]
+    end
+
+    RepoRoot --> Tier1
+    RepoRoot --> Tier2
 ```
+
+### 4.1 Tier 1: `projects/<project>/` (Active Workspace)
+Each subproject folder contains only the latest, paper-ready materials needed for review and verification:
+- **`paper/`**: Active manuscript TeX, PDF, figures, and bibliography (`paper/current/` or `paper/published_v1/`).
+- **`reports/`**: Final audit, verification, and readiness reports.
+- **`results/` / `evidence/`**: Canonical evidence used in the paper (e.g. `frozen_a05_a06_evidence.zip` for benchmark; `canonical_r4` for stream_mc; `main_final_v2` for tds).
+- **`reproduction.yaml` & `reproduce.*`**: Deterministic reproduction facades driving `scripts/reproduce_project.py`.
+
+### 4.2 Tier 2: `archive/<project>/` (Historical Workspace)
+All intermediate artifacts, legacy experiments, previous evaluation rounds, and historical paper drafts are segregated by subproject under `archive/`:
+- **`archive/dlg_gnn/`**: Historical run outputs (`EXP-001` to `EXP-005`) and earlier paper drafts.
+- **`archive/benchmark/`**: Historical v1.0.0 preprint artifacts (`artifacts/`), older experimental runners (`experiments/`), publication packages (`publication/`), release workspaces (`release/`), environment provenance manifests (`provenance/`), and execution logs (`logs/`).
+- **`archive/stream_mc/`**: Intermediate benchmark rounds (`results_sci`, `results_sci_v2`, `sci_v3`, `sci_v3_submission_r1~r3`) and developmental run outputs.
+- **`archive/tds/`**: GraphRAG developmental iterations (`round_2` ~ `round_4`), scam revision stages (`scam_revision` ~ `round5`), GoG-SCIMain-v1 dataset and panel backups, and legacy gate files (`v6`, `v7`).
 
 ---
 
-## 5. Architectural Layering Rules
+## 5. Architectural Layering & Dependency Rules
 
 When modifying or extending the codebase, adhere to the following dependency hierarchy:
 
 1. **Common & Types (`src/gog_fraud/common/`)**: Zero dependencies on models or pipelines.
 2. **Data & Transforms (`src/gog_fraud/data/`)**: Depends only on PyTorch Geometric, PyTorch, and common types.
-3. **Model Layer (`src/gog_fraud/models/`)**: Depends on PyTorch, PyG, PyGOD, and data definitions. Must not import from `pipelines/` or `experiments/`.
+3. **Model Layer (`src/gog_fraud/models/`)**: Depends on PyTorch, PyG, PyGOD, and data definitions. Must not import from pipelines or project-specific manuscript scripts.
 4. **Streaming Layer (`src/gog_fraud/streaming/`)**: Depends on models and common data structures. Can be used as an independent library.
-5. **Pipelines & Experiments (`src/gog_fraud/pipelines/`, `experiments/`)**: Top-level orchestration. Imports models, data, configs, and evaluation routines.
+5. **Pipelines & Analysis (`src/gog_fraud/pipelines/`, `src/analysis/`)**: Top-level reusable orchestration and statistical evaluation.
+6. **Project Facades (`projects/<project>/`)**: Lightweight entry points calling `scripts/reproduce_project.py`. Must never reverse dependency flow or duplicate core logic.
+

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project": "benchmark",
+  "evidence_zip_sha256": "459a3721efd1c0e17e49315ca31e92331ae754ae1683068303bdc793a5feab08",
+  "alert_budget_sha256": "7d64d0733fd1090890aafffa5934fde09b483e546762d0a780cf86cf3c0cd131",
+  "primary_datasets": 13,
+  "primary_models": 7,
+  "supported_pairs": 80,
+  "possible_pairs": 91,
+  "approved_successes": 435
+}

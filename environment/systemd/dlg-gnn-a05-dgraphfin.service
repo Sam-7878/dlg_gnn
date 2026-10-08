@@ -1,0 +1,14 @@
+[Unit]
+Description=DLG-GNN A05 DGraphFin exact AnomalyDAE campaign
+ConditionPathExists=!/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/a05_anomalydae_large/campaign.done
+
+[Service]
+Type=oneshot
+WorkingDirectory=/mnt/d/_work/goat_bank/dlg_gnn
+ExecStart=/usr/bin/bash /mnt/d/_work/goat_bank/dlg_gnn/evaluation/benchmark/v2/scripts/a05_continue_dgraphfin.sh
+TimeoutStartSec=infinity
+Restart=on-failure
+RestartSec=900
+
+[Install]
+WantedBy=default.target
