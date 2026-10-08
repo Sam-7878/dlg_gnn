@@ -98,6 +98,14 @@
       "bytes": 9461,
       "sha256": "7817a1299dd087338e39811d41fcfa18ef3cee7ec062614f542d3f9209baa864"
     },
+    "projects/benchmark/evidence/astra_revision/gog_graph_family_audit.json": {
+      "bytes": 13019,
+      "sha256": "46bff7f42aae8829adb611529aabf964fc8602659d368aeecb207cc45eb6010a"
+    },
+    "projects/benchmark/evidence/astra_revision/gog_source_writer_audit.json": {
+      "bytes": 17551,
+      "sha256": "e371ed63d973e1c75d60a729e4724922995a8498b8f8cc52c1cf5eeb97ba77a7"
+    },
     "projects/benchmark/evidence/astra_revision/hybrid_tensor_audit.json": {
       "bytes": 18600,
       "sha256": "d832a052babf59a1c788c4c133ae35f3197be2d4599b9b672e304bd668885240"

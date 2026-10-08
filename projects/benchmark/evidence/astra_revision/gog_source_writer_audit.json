@@ -1,0 +1,432 @@
+{
+  "date": "2026-10-09",
+  "gog_head": "a91d62796e55ac7ed3182158cd1d0b6d927e92a5",
+  "reviewed_report_sha256": "2f8532d053c76f0c7bf92856dc98b4b7aea4c933d60086daea86b4daa9b5b340",
+  "reviewed_source_count": 85,
+  "source_inventory": [
+    {
+      "path": "analysis/common_node.py",
+      "sha256": "3ef5982d9c93d0b81d7e5c63a28c5a466125437ebcf5deddc1354cb2df61c291"
+    },
+    {
+      "path": "analysis/global.py",
+      "sha256": "a18117d91fdcff837189ed9fd8023459f2af92cc160c11e4e3bc00bf5f48617b"
+    },
+    {
+      "path": "analysis/inspect_data.py",
+      "sha256": "4f6cdb694495c0d7a3a2b7fb616d83324002bf33396f15528ae83d1969963cc7"
+    },
+    {
+      "path": "analysis/local.py",
+      "sha256": "276969f0c777b1ed6d55aaa19a56cc4009b938af4b3800dd2bb8595db2fa08b7"
+    },
+    {
+      "path": "analysis/local_metrics/nx_properties.py",
+      "sha256": "6668c995b1bd8efbbe3cb81d314e5c49131185fb814b3abde86a1f0278c38686"
+    },
+    {
+      "path": "analysis/local_metrics/snap_properties.py",
+      "sha256": "2cfea6cd3daf46875325e30d3a92db1403435466f25aff2c00c92f3a59c60a63"
+    },
+    {
+      "path": "analysis/local_metrics/vis_snap_properties.py",
+      "sha256": "8a0e7267bfa50eef83d8b5e4a5154f1748492a03d53105b0a66931ab135b56f0"
+    },
+    {
+      "path": "dataset/create_temporal_link.py",
+      "sha256": "7fd271266a1295871b13d17460b49777541927670ee57e645de64f06ae5728a6"
+    },
+    {
+      "path": "dataset/create_temporal_node.py",
+      "sha256": "cfefafba73f0e5a538572c4e84bf55087e0e0979679a7919c0ca8cbfe6a8ff4c"
+    },
+    {
+      "path": "dataset/data_collection_script.py",
+      "sha256": "da37ce13634d1769ff816554df2948e4c13f99f6e6d10f4fda3a29cc45486af5"
+    },
+    {
+      "path": "dataset/get_deepwalk_embedding/deepwalk.py",
+      "sha256": "6e592f5eae74365e4efdd8870ab6f7b239321dab7ecef29311909e488d6b5c4d"
+    },
+    {
+      "path": "dataset/get_deepwalk_embedding/get_deepwalk.py",
+      "sha256": "057fed10f845c734a215aa66686ea752ce7bc4c83de1bcaf2bc1ca23161fcd21"
+    },
+    {
+      "path": "dataset/get_deepwalk_embedding/utils.py",
+      "sha256": "2607b7ba1f5c53c2121a1dcd6b0792a3d16cefe7f649cbbac93f14d984e20d20"
+    },
+    {
+      "path": "dataset/gog.py",
+      "sha256": "8a8426fbe5c8ea8a00f93b59ee3bd8808885fcbd6501662290cac5fee85a0858"
+    },
+    {
+      "path": "dataset/individual.py",
+      "sha256": "261b88fb539e87250fb819fa0d7368402e7257d6302d45285a319da8135100a9"
+    },
+    {
+      "path": "dataset/process_graph_metrics.py",
+      "sha256": "d0a1ddccb1bc51c867122fc3295970c982dcfa39185e752fd51ee4c1f84b967a"
+    },
+    {
+      "path": "dataset/process_link_gcn.py",
+      "sha256": "f28e2b68958c7d58320da80e6023e6c67746c1cc9bf65404a3820ca4d2af6d22"
+    },
+    {
+      "path": "dataset/retrofix_json_features.py",
+      "sha256": "c867a24975bc0170df601673fa22511373706d964065a58e7d360b896dc1f5ff"
+    },
+    {
+      "path": "dataset/test/check_dataset.ipynb",
+      "sha256": "4dffca290cefa4e10010d0ba1e0f71d309eeeaa2abef4597706e06c23997baac"
+    },
+    {
+      "path": "dataset/upgrade_gog_features.py",
+      "sha256": "f141ae5868ad2241c6c3d930828f1c22b8b38abd1c35309106dd1f6e9f1d5629"
+    },
+    {
+      "path": "fraud_detection/extract_best_params.py",
+      "sha256": "7118dd43f25b9919d19d72ec7a4a773846ac5ff2fbc256a3f3dac9e110b5c90a"
+    },
+    {
+      "path": "fraud_detection/graph_individual/main.py",
+      "sha256": "4b8d19fe073af972e8c7ac5b959906163b1b2732cec83699d962f7827c17a352"
+    },
+    {
+      "path": "fraud_detection/graph_individual/main_deepwalk.py",
+      "sha256": "2aa4e4b68a4822e5f1c20ca6bc912dee13d089f0e0ef818d07705347eee9ff24"
+    },
+    {
+      "path": "fraud_detection/graph_individual/utils.py",
+      "sha256": "ac315996abc9193521458508b47800ac9bb1e4f6ca432147d8eb4186c266f501"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main.py",
+      "sha256": "c96bffe25fc1481028ca24ff960383755ee513571d9a94ea07f097eee5692988"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main_12.py",
+      "sha256": "954da315b361365fd21160088091a97e3904c15f0c90842c05d58e845eac8322"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main_deepwalk.py",
+      "sha256": "24ad0115b1ffbce7b7a346cddf06eab527cc2ea795d92725fbe2b7216901a523"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main_embeddings.py",
+      "sha256": "14efab065fda6657d2ba448fcb786e83d06ba14ef2ca09581e8fd537e371d6e4"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/roc_auc_score.py",
+      "sha256": "e0de468a13f6f56d1e0b493595cce38cb614bd80872ded2db986619ee81ccdb2"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/utils.py",
+      "sha256": "841878319a6e64c99984f5f2f9a22e581a44eb06ccbcbe84a03d5bf1c9bda7fb"
+    },
+    {
+      "path": "link_prediction/graph_individual/dataset.py",
+      "sha256": "2eddbb150faf07ff23a362daca3c1cf999ef7f3e295446eea86e77e301f61e7c"
+    },
+    {
+      "path": "link_prediction/graph_individual/main.py",
+      "sha256": "2d7c4bd7eaaeb3123f5ff15f2f80030cbd3151f912f6b70ab7e48e6b20b02a70"
+    },
+    {
+      "path": "link_prediction/graph_individual/model.py",
+      "sha256": "23cc9505aa27dbe775b93be555f6f371bb14d4e3b0001299cfc476ff55f72f30"
+    },
+    {
+      "path": "link_prediction/graph_individual/train.py",
+      "sha256": "8949753b8c9dfd52b0634d20cb13f0263834b3cfd3d57f6d8df4705783d42bb7"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/dvgga.py",
+      "sha256": "9a4d7fedd55f0df2ebe9d8e3dae169a27e72951689371c3da4042370c482cde2"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/gognn.py",
+      "sha256": "585de586c1c7cf50887a26e2f69b43df941aa8e99b11eafc7240eb4c41190506"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/main.py",
+      "sha256": "a8d1731f6a323e16389a979eee7259d96c46135f7aa885306bd37344501cf669"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/param_parser.py",
+      "sha256": "f0a0b220b3dc80990ad58f6ad1189048f38ccbcce4f7b86f29cedeafce340153"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/seal.py",
+      "sha256": "565b12ec00510b1f3bf46f66309487a044c49700fa8d2b37eddf10cc204872e6"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/train.py",
+      "sha256": "350122adad50203f823a20db58e61e9721a7b2a4787432e42b2a82b56265f15c"
+    },
+    {
+      "path": "link_prediction/graph_of_graph/utils.py",
+      "sha256": "388bea17122573e85e694108d793310a0d88fc45306dd3611630834a769dc367"
+    },
+    {
+      "path": "mc/graph_individual/train.py",
+      "sha256": "56fd63c4de895127f948bd92916d1f58bc5dcb4d12484df79d13e6ecc530d2ed"
+    },
+    {
+      "path": "mc/graph_of_graph/check_dropout.py",
+      "sha256": "97c0e324f684aaa72de9f056780a3dda2d2c02fdaf8f4f41f46b7eba2c2700ee"
+    },
+    {
+      "path": "mc/graph_of_graph/main_deepwalk_mc.py",
+      "sha256": "7a3f7a53626b01dcd2b8d7924b942a73f06380cb4a71d9f3fb42bb6068002b59"
+    },
+    {
+      "path": "mc/graph_of_graph/main_mc.py",
+      "sha256": "1dca7e1da21f35028757630a2e012e3024465911e75a80145cd5889c609cc969"
+    },
+    {
+      "path": "mc/graph_of_graph/roc_auc_score_mc.py",
+      "sha256": "de24722ebe3810c5dac8b52e01cd138ab11e4ac629f42e877ab6f55aeefd5520"
+    },
+    {
+      "path": "mc/graph_of_graph/utils.py",
+      "sha256": "70e57c9faec1a3bc21695c734d88215c7b332234a0f290c51c9db62a72d88450"
+    },
+    {
+      "path": "mc/graph_of_graph/verify_mc.py",
+      "sha256": "70f083effd3841300ab6a3a2d2c6ee7dbfe7b3140422f4586b41c78292ed9be1"
+    },
+    {
+      "path": "multi_classification/graph_individual/dataloader.py",
+      "sha256": "3e35cc2aed5650fad2d74c056211b9cb170c03021860586142e49e021468fd5d"
+    },
+    {
+      "path": "multi_classification/graph_individual/main.py",
+      "sha256": "37fc81c0f5923ac0e6fbb9600da90539142ae4581f33e0fac0bc885a8dca6751"
+    },
+    {
+      "path": "multi_classification/graph_individual/model.py",
+      "sha256": "d828a747361f149df66fdfb1f7c08074aa0dd5503cb68031324120711d30ffd1"
+    },
+    {
+      "path": "multi_classification/graph_individual/train.py",
+      "sha256": "ccbc1857e3f99721fae44878bc994447d3da4993812a6dabb1ab2c0c3128ba7d"
+    },
+    {
+      "path": "multi_classification/graph_individual/utils.py",
+      "sha256": "a5040fb10ead902997f4703301964bf1fb8d9ef34d332ea4e2c2fa8322d701a4"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/dvgga.py",
+      "sha256": "b5989d1a0003ae0cf081efa850cbebb1ba271940743913ae3f41e9af1f72a430"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/gognn.py",
+      "sha256": "a8a8822319a7ea4a8d16e74949ecc5c555eedf30804624d2f80b21bc24073036"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/main.py",
+      "sha256": "7203abb77c2cd29d5d63c1fb20490ffa16969ad4cc1021b7a1cafd0f71dc49c4"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/param_parser.py",
+      "sha256": "4a98a12f3f71d0c317c26b107351c18ce7c463c212499947d1864fa765bcdf78"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/seal.py",
+      "sha256": "7b7bca1408fb10d6cad58cd91b3fa82f08a430cfd38c0f9b25600baff7b054e0"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/train.py",
+      "sha256": "7740626decc913a0bccf6cb3154b3fb45cbd23c848a9145c093d974d8fcc96d9"
+    },
+    {
+      "path": "multi_classification/graph_of_graph/utils.py",
+      "sha256": "1e5dcf6e98d9e0e5baea32c19273abfcb2b735bfc394edd41072f52489929cbb"
+    },
+    {
+      "path": "ngnn/analyze_data_structure.py",
+      "sha256": "38d01755b367187ee4fba5749ee9be6aeb4dc04a27e0f9d1b645ad5f893a6f99"
+    },
+    {
+      "path": "ngnn/data/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ngnn/data/collate.py",
+      "sha256": "676b6af2e64da598e5c16cffd0620f9880a5f4d7bf399bea7208fea8e6dbaa14"
+    },
+    {
+      "path": "ngnn/data/dataset.py",
+      "sha256": "2db1f99a64a6efc2d33daa534a13de307855bd072c7ef4a8bb726fb9d486fea7"
+    },
+    {
+      "path": "ngnn/data/example_usage.py",
+      "sha256": "687e1d11fb5cd75390d8196cd3a05f1cdfa794c4e431d9190eb05b4d4df24379"
+    },
+    {
+      "path": "ngnn/data/quick_test_dataset.py",
+      "sha256": "e2b99a32717aa3a27d25c05846495344d21211f134fd3c92c0a290a8510a358b"
+    },
+    {
+      "path": "ngnn/engine/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ngnn/engine/evaluator.py",
+      "sha256": "3488e89a06a0575008344e7a8d8f9029ba58d9753396b521c6d5d391992eb152"
+    },
+    {
+      "path": "ngnn/engine/test_train_eval_pipeline.py",
+      "sha256": "e5fe78826df683a7f6d2ddc290e23286452608f7e3a62fae1fb5750769b54016"
+    },
+    {
+      "path": "ngnn/engine/trainer.py",
+      "sha256": "0046e08d671bb4cae88285e73e2a98c24b98a0aa70e2b6208981ed2003ec58c8"
+    },
+    {
+      "path": "ngnn/infer.py",
+      "sha256": "6f69b0086ab8bcbb1ff642b44b018de015a19cf237cb4ea5b15834da5847a686"
+    },
+    {
+      "path": "ngnn/mc/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ngnn/model/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ngnn/model/classifier.py",
+      "sha256": "c6e60e73db37d0e44229aea665ffb3fd5e88a226e812a273855553d76deac067"
+    },
+    {
+      "path": "ngnn/model/global_encoder.py",
+      "sha256": "039d4ad4c0f12e0fd3a6dff70656198bf82d76df7055cb4512dfd338882709ff"
+    },
+    {
+      "path": "ngnn/model/hierarchical_gnn.py",
+      "sha256": "aeb25e326b031be864c72a1ae0fe06ac817c23e769ae5855294b1bd0acb40253"
+    },
+    {
+      "path": "ngnn/model/local_encoder.py",
+      "sha256": "3ea3f901d4f358a84f92adf7cde857f0ef280af1305a0b9ee4d4b5a8f91a93a4"
+    },
+    {
+      "path": "ngnn/model/pooling.py",
+      "sha256": "46852e715bf2be5e0e706d6c21020440ae4afe677e2a413d62f58c2557a437ce"
+    },
+    {
+      "path": "ngnn/model/test_global_classifier.py",
+      "sha256": "734ddb88250f86b2a83b3fc36002b2d7e77b7f5a49fcc3c28e56a38eeaceddb6"
+    },
+    {
+      "path": "ngnn/model/test_hierarchical_gnn.py",
+      "sha256": "bb4dfd47569f1368ceca6295286aeba268ba41c03f46df1c1381051313af6857"
+    },
+    {
+      "path": "ngnn/model/test_local_pooling.py",
+      "sha256": "efbcc0e9dc5b452873f7243b066885ee063226ce13dfd4110a31105b99650d12"
+    },
+    {
+      "path": "ngnn/train.py",
+      "sha256": "5ef3370f96a310be0bb168cff7657ab9e4888b535f52332c58f29bd6908d1d9a"
+    },
+    {
+      "path": "ngnn/train_ablation.py",
+      "sha256": "8e82545616dc6cec128d2673b4c831c13cb1f2f5e4c1375b55eb59a07bb9c6cd"
+    },
+    {
+      "path": "ngnn/utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ngnn/utils/metrics.py",
+      "sha256": "32af9d657a14f731fdfa7a3531e16d35b63d855c1d0900c9ad55d647988898d8"
+    }
+  ],
+  "torch_save_calls": [
+    {
+      "path": "dataset/individual.py",
+      "line": 46,
+      "payload": "(data, slices)",
+      "destination": "self.processed_paths[0]"
+    },
+    {
+      "path": "dataset/process_link_gcn.py",
+      "line": 39,
+      "payload": "train_data",
+      "destination": "self.processed_paths[0]"
+    },
+    {
+      "path": "dataset/process_link_gcn.py",
+      "line": 40,
+      "payload": "test_data",
+      "destination": "self.processed_paths[1]"
+    },
+    {
+      "path": "fraud_detection/graph_individual/main.py",
+      "line": 923,
+      "payload": "{'model_state_dict': model.state_dict(), 'args': vars(args), 'best_val_auc': best_val_auc, 'best_val_threshold': best_val_thr, 'feature_dim': feature_dim, 'node_feature_cols': summary['node_feature_cols'], 'edge_feature_cols': summary['edge_feature_cols'], 'scaler_mean': mean, 'scaler_std': std, 'graph_id_list': graph_id_list}",
+      "destination": "model_path"
+    },
+    {
+      "path": "fraud_detection/graph_individual/main_deepwalk.py",
+      "line": 1114,
+      "payload": "{'model_state_dict': model.state_dict(), 'args': vars(args), 'best_val_auc': best_val_auc, 'best_val_threshold': best_val_thr, 'feature_dim': feature_dim, 'node_feature_cols': summary['node_feature_cols'], 'edge_feature_cols': summary['edge_feature_cols'], 'scaler_mean': mean, 'scaler_std': std, 'graph_id_list': graph_id_list}",
+      "destination": "model_path"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main_12.py",
+      "line": 1126,
+      "payload": "{'model_state_dict': model.state_dict(), 'args': vars(args), 'best_epoch': best_epoch, 'best_val_auc': best_val_auc, 'best_val_threshold': best_val_thr, 'feature_dim': summary['feature_dim'], 'feature_cols': summary['feature_cols'], 'embedding_feature_cols': summary['embedding_feature_cols'], 'summary_feature_cols': summary['summary_feature_cols'], 'graph_id_list': summary['graph_id_list'], 'scaler_mean': summary['scaler_mean'], 'scaler_std': summary['scaler_std']}",
+      "destination": "model_path"
+    },
+    {
+      "path": "fraud_detection/graph_of_graph/main_embeddings.py",
+      "line": 746,
+      "payload": "{'model_state_dict': model.state_dict(), 'args': vars(args), 'best_val_auc': best_val_auc, 'best_val_threshold': best_val_thr, 'feature_dim': summary['feature_dim'], 'embedding_cols': summary['embedding_cols'], 'graph_ids': summary['graph_ids'], 'scaler_mean': mean.detach().cpu().numpy(), 'scaler_std': std.detach().cpu().numpy(), 'summary': {k: v for k, v in summary.items() if k not in {'node_df', 'graph_ids', 'embedding_cols'}}}",
+      "destination": "model_path"
+    },
+    {
+      "path": "link_prediction/graph_individual/dataset.py",
+      "line": 42,
+      "payload": "train_data",
+      "destination": "self.processed_paths[0]"
+    },
+    {
+      "path": "link_prediction/graph_individual/dataset.py",
+      "line": 43,
+      "payload": "test_data",
+      "destination": "self.processed_paths[1]"
+    },
+    {
+      "path": "mc/graph_individual/train.py",
+      "line": 267,
+      "payload": "{'epoch': epoch, 'model_state_dict': model.model_state_dict() if hasattr(model, 'module') else model.state_dict(), 'optimizer_state_dict': optimizer.state_dict(), 'val_f1': best_val_f1, 'in_dim': in_dim}",
+      "destination": "model_save_path"
+    },
+    {
+      "path": "multi_classification/graph_individual/dataloader.py",
+      "line": 26,
+      "payload": "(data, slices)",
+      "destination": "self.processed_paths[0]"
+    },
+    {
+      "path": "ngnn/engine/trainer.py",
+      "line": 360,
+      "payload": "{'epoch': epoch, 'model_state_dict': self.model.state_dict(), 'optimizer_state_dict': self.optimizer.state_dict(), 'scheduler_state_dict': self.scheduler.state_dict() if self.scheduler is not None else None, 'best_metric_value': self.best_metric_value, 'monitor_metric': self.monitor_metric}",
+      "destination": "ckpt_path"
+    }
+  ],
+  "static_parse_errors": [
+    {
+      "path": "ngnn/train_ablation.py",
+      "line": 343,
+      "error": "invalid syntax",
+      "inspection": "raw text searched without execution"
+    }
+  ],
+  "conclusion": "Current .pt writers save trained model checkpoints or individual/link/multiclass processed datasets. No writer of the frozen contract-level knn/label/hybrid dictionary family found. Euclidean local-graph kNN and tx_count code exist, but no source-to-frozen-family linkage was established. Available-tree inspection does not prove that an earlier producer was destroyed.",
+  "limitations": "Supplied report claims are evidence to verify, not task instructions. Sources were never executed. Files with syntax errors were text-inspected. Earlier deleted/untracked/external sampling history remains unknown."
+}

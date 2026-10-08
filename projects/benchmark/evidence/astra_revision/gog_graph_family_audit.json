@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "status": "ARTIFACT_CONSTRAINTS_VERIFIED_UNSUPERVISED_USE_NOT_CLEARED",
+  "source_sha256": "b90baa8e5a0dbff41d266d3675fe14972beee1a5bfebf68d7e78e982fddd0caf",
+  "method": "Non-executing pickle opcode and ZIP storage inspection; exhaustive bounded label-edge validation; canonical hybrid hash match.",
+  "results": [
+    {
+      "dataset": "Ethereum",
+      "nodes": 14385,
+      "class_counts": [
+        8367,
+        6018
+      ],
+      "artifacts": {
+        "knn": {
+          "method": "knn",
+          "recorded_k": 5,
+          "edge_count": 71925,
+          "file_bytes": 3094362,
+          "feature_bytes_sha256": "d1bd125c1e37e853bf7c3349b8dbe392fcd451087d400083174984a64b260e60",
+          "label_bytes_sha256": "344862593c70ef2f5016344395b41aaf47d4d645886fa74bd1239ca3ac608102",
+          "file_sha256": "8e257c17dec37ed0d19e7f219aa6fceda0bd26cb7d2bbc4bb48d7a7fdc6e96a3"
+        },
+        "label": {
+          "method": "label",
+          "recorded_k": 5,
+          "edge_count": 106208628,
+          "file_bytes": 1701281638,
+          "feature_bytes_sha256": "d1bd125c1e37e853bf7c3349b8dbe392fcd451087d400083174984a64b260e60",
+          "label_bytes_sha256": "344862593c70ef2f5016344395b41aaf47d4d645886fa74bd1239ca3ac608102",
+          "file_sha256": "bc1c4eb1b2e7f4dcb08d94877941ae0cb04ce17b46eda8f1b4387154086b88d3"
+        },
+        "hybrid": {
+          "method": "hybrid",
+          "recorded_k": 5,
+          "edge_count": 115065,
+          "file_bytes": 3784620,
+          "feature_bytes_sha256": "d1bd125c1e37e853bf7c3349b8dbe392fcd451087d400083174984a64b260e60",
+          "label_bytes_sha256": "344862593c70ef2f5016344395b41aaf47d4d645886fa74bd1239ca3ac608102",
+          "file_sha256": "4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654"
+        }
+      },
+      "all_sibling_feature_bytes_labels_node_names_equal": true,
+      "label_graph": {
+        "edge_count": 106208628,
+        "expected_same_label_complete_edges": 106208628,
+        "same_label_edges": 106208628,
+        "self_loops": 0,
+        "duplicate_edges": 0,
+        "complete_same_label_directed_graph": true,
+        "edge_storage_sha256": "567bdc666de0d0a91e7e52313161ac0914fd5070399c697087818ac56a2241c3",
+        "bitset_bytes": 25866029,
+        "read_block_bytes": 4194304
+      },
+      "knn_out_degree_histogram": {
+        "5": 14385
+      },
+      "added_out_degree_histogram": {
+        "2": 15,
+        "3": 14370
+      },
+      "n_added_edges": 43140,
+      "removed_knn_edges": 0,
+      "added_self_loops": 0,
+      "added_same_label_edges": 43140,
+      "three_per_node_hypothesis": {
+        "expected_slots": 43155,
+        "overlap_slots_if_three_were_sampled": 15,
+        "feasible": true,
+        "nodes_without_enough_same_label_knn_overlap_candidates": 0,
+        "identified_original_sampling_seed_or_rule": false
+      },
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_3_range": [
+        1.0,
+        4873.0
+      ],
+      "feature_semantics": "UNVERIFIED: tx_count is asserted in the supplied report but no producer/source-to-feature mapping is provided; sampled current JSON counts differ.",
+      "json_feature_counterexamples": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "43692b5ea61deef38089d8cf34267790426cfa3743e65b8baa4dbe7dec6a6d33",
+          "feature_column_3": 1.0,
+          "json_edge_count": 383,
+          "json_feature_rows": 282,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 7192,
+          "json_basename": "3524.json",
+          "json_sha256": "9cdd1ae6ef88ba8c714d26dd8f293b41fb8914249b673036f168a7d3ec21c861",
+          "feature_column_3": 13.0,
+          "json_edge_count": 16,
+          "json_feature_rows": 26,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 14384,
+          "json_basename": "9999.json",
+          "json_sha256": "1b4708dfc744502dfb6019e03a041ada6ef1006e1c7c788c3e534e3f7c3e2af8",
+          "feature_column_3": 1.0,
+          "json_edge_count": 138,
+          "json_feature_rows": 72,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        }
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "nodes": 7481,
+      "class_counts": [
+        6377,
+        1104
+      ],
+      "artifacts": {
+        "knn": {
+          "method": "knn",
+          "recorded_k": 5,
+          "edge_count": 37405,
+          "file_bytes": 1569596,
+          "feature_bytes_sha256": "39f21b640213bb3bae67ae7b0681f6a9b6c96c7e441ebe76560e6595d8874455",
+          "label_bytes_sha256": "dae8ffc2ff159344255f3e3687173a60dab9c2fb0458c68d6a18c06e8a229603",
+          "file_sha256": "e06d4ec90cd15dfba4ef0f46ef13ab6bc77454651aac4a1233706a79f64efe3c"
+        },
+        "label": {
+          "method": "label",
+          "recorded_k": 5,
+          "edge_count": 41877464,
+          "file_bytes": 671010568,
+          "feature_bytes_sha256": "39f21b640213bb3bae67ae7b0681f6a9b6c96c7e441ebe76560e6595d8874455",
+          "label_bytes_sha256": "dae8ffc2ff159344255f3e3687173a60dab9c2fb0458c68d6a18c06e8a229603",
+          "file_sha256": "445bdc2542c33107c7749b5f16c7be3513b7ee8acaabdb58c88eca32ec2386e0"
+        },
+        "hybrid": {
+          "method": "hybrid",
+          "recorded_k": 5,
+          "edge_count": 59832,
+          "file_bytes": 1928462,
+          "feature_bytes_sha256": "39f21b640213bb3bae67ae7b0681f6a9b6c96c7e441ebe76560e6595d8874455",
+          "label_bytes_sha256": "dae8ffc2ff159344255f3e3687173a60dab9c2fb0458c68d6a18c06e8a229603",
+          "file_sha256": "2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883"
+        }
+      },
+      "all_sibling_feature_bytes_labels_node_names_equal": true,
+      "label_graph": {
+        "edge_count": 41877464,
+        "expected_same_label_complete_edges": 41877464,
+        "same_label_edges": 41877464,
+        "self_loops": 0,
+        "duplicate_edges": 0,
+        "complete_same_label_directed_graph": true,
+        "edge_storage_sha256": "2ba66ee95b2d8fec06a4ce1bf5f78f6980a1c20f42ff68a3fbc39adb69d95495",
+        "bitset_bytes": 6995671,
+        "read_block_bytes": 4194304
+      },
+      "knn_out_degree_histogram": {
+        "5": 7481
+      },
+      "added_out_degree_histogram": {
+        "2": 16,
+        "3": 7465
+      },
+      "n_added_edges": 22427,
+      "removed_knn_edges": 0,
+      "added_self_loops": 0,
+      "added_same_label_edges": 22427,
+      "three_per_node_hypothesis": {
+        "expected_slots": 22443,
+        "overlap_slots_if_three_were_sampled": 16,
+        "feasible": true,
+        "nodes_without_enough_same_label_knn_overlap_candidates": 0,
+        "identified_original_sampling_seed_or_rule": false
+      },
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_3_range": [
+        1.0,
+        3227.0
+      ],
+      "feature_semantics": "UNVERIFIED: tx_count is asserted in the supplied report but no producer/source-to-feature mapping is provided; sampled current JSON counts differ.",
+      "json_feature_counterexamples": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "61ed31c42ed8450fce36e447d30c4cf7b7da784cb9121017e36c97a0d6edeeb8",
+          "feature_column_3": 1.0,
+          "json_edge_count": 21,
+          "json_feature_rows": 6,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 3740,
+          "json_basename": "4364.json",
+          "json_sha256": "a1c7e84435c9c700c13544509a57e3e51f0d486399eb7ed6f9fdf37b559d78e7",
+          "feature_column_3": 1.0,
+          "json_edge_count": 2084,
+          "json_feature_rows": 1977,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 7480,
+          "json_basename": "999.json",
+          "json_sha256": "2027dc1f7007907338f10e6b2fb3580bcb6155eca267fdc016351615f33f258d",
+          "feature_column_3": 1.0,
+          "json_edge_count": 476,
+          "json_feature_rows": 92,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        }
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "nodes": 2303,
+      "class_counts": [
+        2243,
+        60
+      ],
+      "artifacts": {
+        "knn": {
+          "method": "knn",
+          "recorded_k": 5,
+          "edge_count": 11515,
+          "file_bytes": 491604,
+          "feature_bytes_sha256": "9ca447f6d695cde1a2052046f5fc1027189b334722ab78e39a0c8af3913c5b20",
+          "label_bytes_sha256": "c47bb62661b9bdeee457283e971ca90d981a78d25fab612dc9a2d7c480048192",
+          "file_sha256": "7c0fa4afbad32581bf556a79564cb851e0d26037ce5dfb663bd39fae6a0f90b4"
+        },
+        "label": {
+          "method": "label",
+          "recorded_k": 5,
+          "edge_count": 5032346,
+          "file_bytes": 80824928,
+          "feature_bytes_sha256": "9ca447f6d695cde1a2052046f5fc1027189b334722ab78e39a0c8af3913c5b20",
+          "label_bytes_sha256": "c47bb62661b9bdeee457283e971ca90d981a78d25fab612dc9a2d7c480048192",
+          "file_sha256": "1d79f56da7af2af3810947614b8507c1fe0c49efb682b27b650ae34727db3d8e"
+        },
+        "hybrid": {
+          "method": "hybrid",
+          "recorded_k": 5,
+          "edge_count": 18411,
+          "file_bytes": 601958,
+          "feature_bytes_sha256": "9ca447f6d695cde1a2052046f5fc1027189b334722ab78e39a0c8af3913c5b20",
+          "label_bytes_sha256": "c47bb62661b9bdeee457283e971ca90d981a78d25fab612dc9a2d7c480048192",
+          "file_sha256": "292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74"
+        }
+      },
+      "all_sibling_feature_bytes_labels_node_names_equal": true,
+      "label_graph": {
+        "edge_count": 5032346,
+        "expected_same_label_complete_edges": 5032346,
+        "same_label_edges": 5032346,
+        "self_loops": 0,
+        "duplicate_edges": 0,
+        "complete_same_label_directed_graph": true,
+        "edge_storage_sha256": "c4f3c001fa1dd8cd5fc1667f7a90da9cdd09598c549c4b2fe71170ed99469c56",
+        "bitset_bytes": 662977,
+        "read_block_bytes": 4194304
+      },
+      "knn_out_degree_histogram": {
+        "5": 2303
+      },
+      "added_out_degree_histogram": {
+        "2": 13,
+        "3": 2290
+      },
+      "n_added_edges": 6896,
+      "removed_knn_edges": 0,
+      "added_self_loops": 0,
+      "added_same_label_edges": 6896,
+      "three_per_node_hypothesis": {
+        "expected_slots": 6909,
+        "overlap_slots_if_three_were_sampled": 13,
+        "feasible": true,
+        "nodes_without_enough_same_label_knn_overlap_candidates": 0,
+        "identified_original_sampling_seed_or_rule": false
+      },
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_3_range": [
+        1.0,
+        88.0
+      ],
+      "feature_semantics": "UNVERIFIED: tx_count is asserted in the supplied report but no producer/source-to-feature mapping is provided; sampled current JSON counts differ.",
+      "json_feature_counterexamples": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "97f5e6d916fbdb803e3e3b4cf86a7851254f3e3717dad7530a39edcaf03a6a88",
+          "feature_column_3": 1.0,
+          "json_edge_count": 13,
+          "json_feature_rows": 7,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 1151,
+          "json_basename": "2033.json",
+          "json_sha256": "a376ebe574e048ed0b716c0e920f7422ccbd513f35eda300ff1c22c6d3ed6512",
+          "feature_column_3": 1.0,
+          "json_edge_count": 567,
+          "json_feature_rows": 52,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        },
+        {
+          "node": 2302,
+          "json_basename": "999.json",
+          "json_sha256": "341e8d6b40fd25f3265771c0ac63c6874c41254f08bcbe5e420f31cd2a041d5e",
+          "feature_column_3": 1.0,
+          "json_edge_count": 10802,
+          "json_feature_rows": 2893,
+          "tx_count_key_present": false,
+          "contract_feature_length": 7
+        }
+      ]
+    }
+  ],
+  "interpretation": "The label artifact is exactly a same-class complete graph, and hybrid contains knn plus same-class additions compatible with up to three extra neighbors per node. This strongly supports label-informed construction and warrants excluding these inputs from claims of independently verified unsupervised financial-fraud evaluation. Artifact consistency does not uniquely establish original sampling code/seed, feature definition, or historical execution.",
+  "scope": "No frozen tensors/results overwritten, no training launched."
+}

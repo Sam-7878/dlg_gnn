@@ -1,6 +1,6 @@
 # Dataset construction audit (2026-10-09)
 
-## Frozen contract tensors: unresolved publication gate
+## Frozen contract tensors: label-informed construction validity gate
 
 Safe inspection executes no pickle objects: `scripts/audit_hybrid_tensors.py` parses known torch ZIP storage and pickle opcodes, rejects unsupported layouts, and verifies the raw SHA-256 against the canonical manifest. All labels were compared with processed upstream CSV rows through the tensor’s contract-to-index JSON basenames; all 24,169 labels match. Twelve individual contract JSONs per chain were also checked.
 
@@ -73,3 +73,11 @@ The crypto dimensions in this A03 manifest are read from the raw tensors. Severa
 The author then identified `/mnt/d/_Work/goat_bank/gog/ngnn/train.py` and explained that earlier `.pt` files had likely been reused in later projects. Static tracing verifies `build_datasets → HierarchicalDataset → load_global_contract_graph`, which loads the configured existing Polygon hybrid tensor. `Trainer.save_checkpoint` writes `<run_name>_<tag>.pt` containing model/optimizer/scheduler state, epoch and validation metrics. It does not save the input tensor's `edge_index`, `embeddings` and `labels` schema. Thus this ngnn project is a consumer of the earlier graph and a producer of model checkpoints.
 
 Ignored Python/notebook source files in the current GoG tree were searched too. The raw data's `Cryptocurrency-Graphs-of-graphs-main.zip` has 89 members including 45 Python/notebook/Markdown files; none names hybrid/knn/label graph artifacts. Its existing `.pt` writers save processed individual/link-prediction datasets. The `global_graph-20251111T131334Z-1-001.zip` has six data-only members and no code. Archive hashes and the ngnn call-path source hashes are recorded in `evidence/astra_revision/ngnn_input_reuse_audit.json`. These checks support input reuse while leaving the initial producer unlocated; they do not establish that all historical code has been recovered.
+
+## Independent review of blockchain_dataset_audit.md
+
+The supplied report adds sibling label_graph.pt artifacts. These were independently verified through non-executing metadata parsing and bounded full-edge scans. Their directed edge counts are Ethereum 106,208,628, BSC 41,877,464 and Polygon 5,032,346: exactly the complete same-label graphs, without self-loops or duplicates. Each family's feature bytes, labels and node-name order match. Hybrid new outgoing neighbors number 3 for all but 15 / 16 / 13 nodes respectively, which have 2; same-label kNN overlap candidates make a three-per-node union feasible. This strongly supports label-informed construction and keeps these inputs outside independently verified label-independent fraud claims.
+
+The initial sampler/seed is unlocated and hidden overlap choices cannot be uniquely recovered. All artifacts record k=5 and method knn/label/hybrid; k=3 is inferred from constraints, not explicitly stored. Feature-column-3 tx_count is unverified; sampled current JSON edge/node counts differ. BSC's frozen maximum is 3227 rather than the reported 3012. The notebook's older polygon_hybrid.pt has 12,653 edges and a different schema.
+
+See reports/astra_revision/GOG_Graph_Family_Review.md, evidence/astra_revision/gog_graph_family_audit.json and gog_source_writer_audit.json. This follow-up updates the scientific assessment while preserving prior frozen results and manuscript PDFs. Corrected primary inference needs label-independent reconstruction/re-evaluation or diagnostic exclusion of these three datasets. Finding an earlier label-based writer would not by itself clear validity.
