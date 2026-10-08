@@ -23,3 +23,7 @@
 
 ## 설정 관리 (YAML Configs)
 - `configs/benchmark/` 디렉토리에 명시된 설정 파일들을 기반으로 모델 하이퍼파라미터(`lr`, `hid_dim`, `dropout` 등)가 조절되며 `_build_level1_model`, `_build_level1_trainer` 등의 팩토리 함수가 객체들을 적응할 수 있게 준비합니다. (이때의 인자와 도메인 언어가 통일되도록 인터페이스를 통합.)
+
+## Benchmark 파생 논문 데이터 경로 확인 (2026-10-09)
+
+이 문서는 `run_fraud_benchmark → FraudDataset → Level1/Level2/Fusion` 계층형 evaluation을 설명합니다. Benchmark A03에서 추가한 Ethereum/BSC/Polygon 셀은 `evaluation/benchmark/v2/scripts/a03_run_crypto_production.py`가 기존 `*_hybrid_graph.pt`를 직접 읽는 경로입니다. 원본 `GoG/labels.csv`의 Category 0→positive 매핑은 전체 24,169개 tensor node와 일치합니다. `global_graph/`는 contract mapping과 상호작용 edge를 제공하며, 주소 정렬 대조에서는 이 edge 집합과 frozen hybrid edge가 일치하지 않습니다. 따라서 위 계층형 pipeline 문서만으로 frozen hybrid의 원본 생성 과정을 확인했다고 간주하지 않습니다. 구체적 파일 해시와 대조 결과는 `projects/benchmark/DATASET_CONSTRUCTION_AUDIT.md` 및 `evidence/astra_revision/pipeline_lineage_audit.json`에 기록합니다. 원 DLG-GNN 논문의 지도학습 label 사용 자체에 관한 오류를 주장하는 감사는 아닙니다.

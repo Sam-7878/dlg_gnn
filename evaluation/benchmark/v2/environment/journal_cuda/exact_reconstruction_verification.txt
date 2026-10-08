@@ -1,0 +1,14 @@
+=== Phase C-01: Exact Structural Reconstruction Equivalence ===
+Device: cuda:1 (NVIDIA GeForce RTX 4070 Laptop GPU)
+Status: PASS
+
+[float64]
+  Loss: dense=4621.54839988, sparse=4621.54839988 (diff=0.00e+00)
+  Score max abs diff: 3.64e-12, rel diff: 5.07e-16
+  Grad max abs diff:  1.24e-14, rel diff: 7.71e-13
+  Passed: True
+[float32]
+  Loss: dense=4788.67919922, sparse=4788.67919922 (diff=0.00e+00)
+  Score max abs diff: 1.46e-03, rel diff: 2.33e-07
+  Grad max abs diff:  3.81e-06, rel diff: 5.59e-05
+  Passed: True

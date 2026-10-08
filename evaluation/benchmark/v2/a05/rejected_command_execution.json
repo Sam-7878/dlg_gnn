@@ -1,0 +1,6 @@
+{
+  "command": "git diff -- evaluation/benchmark/v2/environment/journal_cuda/fused_gcn_verification.json evaluation/benchmark/v2/environment/journal_cuda/smoke_summary_cuda1.json | head -100",
+  "exit_code": 0,
+  "stdout_path": "evaluation/benchmark/v2/a05/rejected_command_execution.log",
+  "applicable": true
+}

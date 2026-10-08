@@ -1,0 +1,65 @@
+{
+  "structural_audit": {
+    "leakage_found": false,
+    "report_path": "/mnt/d/_Work/goat_bank/dlg_gnn/reports/dataset_leakage_audit.md"
+  },
+  "shortcut_test": {
+    "representation": "context_text_tfidf",
+    "attribute": "fraud_label",
+    "bytes": 129.5,
+    "accuracy": 0.899,
+    "macro_f1": 0.4829,
+    "auc": 0.7071,
+    "n_samples": 2000,
+    "n_classes": 2,
+    "notes": "shortcut_test_tfidf_lr"
+  },
+  "attribute_inference_attacks": [
+    {
+      "representation": "full_risk_vector",
+      "attribute": "scam_category",
+      "bytes": 14.0,
+      "accuracy": 0.957,
+      "macro_f1": 0.7177,
+      "auc": 1.0,
+      "n_samples": 2000,
+      "n_classes": 10,
+      "notes": ""
+    },
+    {
+      "representation": "quantized_risk_vector",
+      "attribute": "scam_category",
+      "bytes": 14.0,
+      "accuracy": 0.957,
+      "macro_f1": 0.7179,
+      "auc": 1.0,
+      "n_samples": 2000,
+      "n_classes": 10,
+      "notes": ""
+    },
+    {
+      "representation": "noisy_risk_vector",
+      "attribute": "scam_category",
+      "bytes": 14.0,
+      "accuracy": 0.7405,
+      "macro_f1": 0.2397,
+      "auc": 0.902,
+      "n_samples": 2000,
+      "n_classes": 10,
+      "notes": ""
+    },
+    {
+      "representation": "minimal_risk_token",
+      "attribute": "scam_category",
+      "bytes": 14.0,
+      "accuracy": 0.6945,
+      "macro_f1": 0.082,
+      "auc": 0.5,
+      "n_samples": 2000,
+      "n_classes": 10,
+      "notes": ""
+    }
+  ],
+  "seed": 7,
+  "n_samples": 2000
+}

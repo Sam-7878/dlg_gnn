@@ -1,0 +1,4 @@
+events,rss_bytes,python_current_bytes,python_peak_bytes,cuda_allocated_bytes,cuda_reserved_bytes,store_entries,store_edges,store_serialized_bytes,cache_entries,cache_payload_bytes,queue_depth,trace_rows,trace_serialized_bytes,source_preload_logical_bytes,metric_array_bytes,reference_numpy_bytes,model_parameter_bytes,cpu_tensor_bytes
+0,1406251008,11068,387002,8591360,23068672,0,0,41,0,0,0,0,5,409420,9000,4425200,59156,0
+500,1409429504,540386,703146,8591360,23068672,12,204,40605,12,4596,0,500,158019,409420,9000,4425200,59156,0
+500,1409429504,189571,1688322,8591360,23068672,12,204,40605,12,4596,0,0,5,409420,9000,4425200,59156,0

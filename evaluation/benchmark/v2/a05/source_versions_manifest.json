@@ -1,0 +1,20 @@
+[
+  {
+    "source_path": "src/gog_fraud/models/pygod/shared_reconstruction.py",
+    "sha256": "e4eb45b7b3f739b0fcefab1689a901bb95578e2a9b6586e6a0f706589050ef7e",
+    "archived_path": "evaluation/benchmark/v2/a05/source_versions/e4eb45b7b3f739b0fcefab1689a901bb95578e2a9b6586e6a0f706589050ef7e/src/gog_fraud/models/pygod/shared_reconstruction.py",
+    "role": "BitcoinOTC/Ethereum execution source before RNG-resume fix"
+  },
+  {
+    "source_path": "src/gog_fraud/models/pygod/shared_reconstruction.py",
+    "sha256": "ff3d8fdfce3a7551c3483110406d91319cf0d3845f06448ee4775590c5e9f2cb",
+    "archived_path": "evaluation/benchmark/v2/a05/source_versions/ff3d8fdfce3a7551c3483110406d91319cf0d3845f06448ee4775590c5e9f2cb/src/gog_fraud/models/pygod/shared_reconstruction.py",
+    "role": "DGraphFin resumed execution source with CPU CUDA-RNG restore"
+  },
+  {
+    "source_path": "evaluation/benchmark/v2/scripts/a05_run_anomalydae_large.py",
+    "sha256": "33bd053f09baddeacfa6d98a3723d733af7e4460097dde34345d0930047af837",
+    "archived_path": "evaluation/benchmark/v2/a05/source_versions/33bd053f09baddeacfa6d98a3723d733af7e4460097dde34345d0930047af837/evaluation/benchmark/v2/scripts/a05_run_anomalydae_large.py",
+    "role": "Ethereum seeds42-44 runner before the dataset-specific threshold branch; recovered from exact tool patch history and checksum matched"
+  }
+]

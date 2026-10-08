@@ -1,0 +1,7 @@
+Chain,Partition,Targets,Min Eligible,Max Eligible,Violations,canonical_row_id
+Bsc,Test,1125,"17,020","17,020",0,0;1;2;3;4;5
+Bsc,Validation,1125,"16,761","17,020",0,0;1;2;3;4;5
+Ethereum,Test,2170,"16,827","17,020",0,0;1;2;3;4;5
+Ethereum,Validation,2170,"14,808","16,827",0,0;1;2;3;4;5
+Polygon,Test,353,"17,020","17,020",0,0;1;2;3;4;5
+Polygon,Validation,353,"17,020","17,020",0,0;1;2;3;4;5

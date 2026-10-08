@@ -1,0 +1,1299 @@
+{
+  "branch": "MC-B",
+  "claims": [
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "0673e48ad27cea0acdf7",
+        "a17c65f52a907c3be7ea",
+        "5f79390e9da86a114628",
+        "a05a60e31cf581b4f7fa",
+        "db0abe65ae7ccaa850fa"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "direct_only_f1",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "direct only f1",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "0673e48ad27cea0acdf77b32d4d4e8af4555254c14515ec39aded5dd5cf3ab21",
+        "a17c65f52a907c3be7ea01da653d64930384c0017e82762e89543b11a68bb4fe",
+        "5f79390e9da86a114628a15263a36e14912162c586532b683f432a5efb1f49de",
+        "a05a60e31cf581b4f7fa7d98f127e1338639fd5c18b040150da19bf55dd3ce55",
+        "db0abe65ae7ccaa850fa052ce09f99c922c3f223e13a41158c3ad1b68553fa16"
+      ],
+      "formatted_value": "0.600",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "f1",
+      "p_value": null,
+      "policy_config_id": [
+        "7b8818842faea375992cf8ee1c4131cda269eb1609ff58a590d6a676e8bb5a26",
+        "638ef4b9dfb3ede047813785192a81e5fc1b3b7978c4b5a36a5ff52348a2fe64",
+        "c82b838a1692bd842427a9b92f5aef71685f68967c280e2c6a8d35ead615f125",
+        "74e6f5914e4bf5f276d119035c5e0ced57cff5439c36d5aed98092b8684053aa",
+        "00c80b89206aa7dabb468a93fbf1617a3ed1e4ef9893da69056c11305caf0fb5"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6004224818650041,
+      "sd": 0.043763707668149805
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "0673e48ad27cea0acdf7",
+        "a17c65f52a907c3be7ea",
+        "5f79390e9da86a114628",
+        "a05a60e31cf581b4f7fa",
+        "db0abe65ae7ccaa850fa"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "direct_only_pr_auc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "direct only pr auc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "0673e48ad27cea0acdf77b32d4d4e8af4555254c14515ec39aded5dd5cf3ab21",
+        "a17c65f52a907c3be7ea01da653d64930384c0017e82762e89543b11a68bb4fe",
+        "5f79390e9da86a114628a15263a36e14912162c586532b683f432a5efb1f49de",
+        "a05a60e31cf581b4f7fa7d98f127e1338639fd5c18b040150da19bf55dd3ce55",
+        "db0abe65ae7ccaa850fa052ce09f99c922c3f223e13a41158c3ad1b68553fa16"
+      ],
+      "formatted_value": "0.634",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "pr_auc",
+      "p_value": null,
+      "policy_config_id": [
+        "7b8818842faea375992cf8ee1c4131cda269eb1609ff58a590d6a676e8bb5a26",
+        "638ef4b9dfb3ede047813785192a81e5fc1b3b7978c4b5a36a5ff52348a2fe64",
+        "c82b838a1692bd842427a9b92f5aef71685f68967c280e2c6a8d35ead615f125",
+        "74e6f5914e4bf5f276d119035c5e0ced57cff5439c36d5aed98092b8684053aa",
+        "00c80b89206aa7dabb468a93fbf1617a3ed1e4ef9893da69056c11305caf0fb5"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6338685798754273,
+      "sd": 0.029509233642373723
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "0673e48ad27cea0acdf7",
+        "a17c65f52a907c3be7ea",
+        "5f79390e9da86a114628",
+        "a05a60e31cf581b4f7fa",
+        "db0abe65ae7ccaa850fa"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "direct_only_fraud_recall",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "direct only fraud recall",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "0673e48ad27cea0acdf77b32d4d4e8af4555254c14515ec39aded5dd5cf3ab21",
+        "a17c65f52a907c3be7ea01da653d64930384c0017e82762e89543b11a68bb4fe",
+        "5f79390e9da86a114628a15263a36e14912162c586532b683f432a5efb1f49de",
+        "a05a60e31cf581b4f7fa7d98f127e1338639fd5c18b040150da19bf55dd3ce55",
+        "db0abe65ae7ccaa850fa052ce09f99c922c3f223e13a41158c3ad1b68553fa16"
+      ],
+      "formatted_value": "0.543",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "fraud_recall",
+      "p_value": null,
+      "policy_config_id": [
+        "7b8818842faea375992cf8ee1c4131cda269eb1609ff58a590d6a676e8bb5a26",
+        "638ef4b9dfb3ede047813785192a81e5fc1b3b7978c4b5a36a5ff52348a2fe64",
+        "c82b838a1692bd842427a9b92f5aef71685f68967c280e2c6a8d35ead615f125",
+        "74e6f5914e4bf5f276d119035c5e0ced57cff5439c36d5aed98092b8684053aa",
+        "00c80b89206aa7dabb468a93fbf1617a3ed1e4ef9893da69056c11305caf0fb5"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.5428571428571429,
+      "sd": 0.05095439578135078
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "0673e48ad27cea0acdf7",
+        "a17c65f52a907c3be7ea",
+        "5f79390e9da86a114628",
+        "a05a60e31cf581b4f7fa",
+        "db0abe65ae7ccaa850fa"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "direct_only_mcc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "direct only mcc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "0673e48ad27cea0acdf77b32d4d4e8af4555254c14515ec39aded5dd5cf3ab21",
+        "a17c65f52a907c3be7ea01da653d64930384c0017e82762e89543b11a68bb4fe",
+        "5f79390e9da86a114628a15263a36e14912162c586532b683f432a5efb1f49de",
+        "a05a60e31cf581b4f7fa7d98f127e1338639fd5c18b040150da19bf55dd3ce55",
+        "db0abe65ae7ccaa850fa052ce09f99c922c3f223e13a41158c3ad1b68553fa16"
+      ],
+      "formatted_value": "0.588",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mcc",
+      "p_value": null,
+      "policy_config_id": [
+        "7b8818842faea375992cf8ee1c4131cda269eb1609ff58a590d6a676e8bb5a26",
+        "638ef4b9dfb3ede047813785192a81e5fc1b3b7978c4b5a36a5ff52348a2fe64",
+        "c82b838a1692bd842427a9b92f5aef71685f68967c280e2c6a8d35ead615f125",
+        "74e6f5914e4bf5f276d119035c5e0ced57cff5439c36d5aed98092b8684053aa",
+        "00c80b89206aa7dabb468a93fbf1617a3ed1e4ef9893da69056c11305caf0fb5"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.5879223731574557,
+      "sd": 0.04396620765067575
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "0673e48ad27cea0acdf7",
+        "a17c65f52a907c3be7ea",
+        "5f79390e9da86a114628",
+        "a05a60e31cf581b4f7fa",
+        "db0abe65ae7ccaa850fa"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "direct_only_deep_rate",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "direct only deep rate",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "0673e48ad27cea0acdf77b32d4d4e8af4555254c14515ec39aded5dd5cf3ab21",
+        "a17c65f52a907c3be7ea01da653d64930384c0017e82762e89543b11a68bb4fe",
+        "5f79390e9da86a114628a15263a36e14912162c586532b683f432a5efb1f49de",
+        "a05a60e31cf581b4f7fa7d98f127e1338639fd5c18b040150da19bf55dd3ce55",
+        "db0abe65ae7ccaa850fa052ce09f99c922c3f223e13a41158c3ad1b68553fa16"
+      ],
+      "formatted_value": "0.000",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "7b8818842faea375992cf8ee1c4131cda269eb1609ff58a590d6a676e8bb5a26",
+        "638ef4b9dfb3ede047813785192a81e5fc1b3b7978c4b5a36a5ff52348a2fe64",
+        "c82b838a1692bd842427a9b92f5aef71685f68967c280e2c6a8d35ead615f125",
+        "74e6f5914e4bf5f276d119035c5e0ced57cff5439c36d5aed98092b8684053aa",
+        "00c80b89206aa7dabb468a93fbf1617a3ed1e4ef9893da69056c11305caf0fb5"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.0,
+      "sd": 0.0
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "5d3204ae6873413661c6",
+        "09061d27a692df755458",
+        "9c3a859409a16f20cd2a",
+        "eac772c8192702564c4f",
+        "6a47a4c30a8ca49992d3"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "primary_f1",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "primary f1",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "5d3204ae6873413661c6ae551bf0f8223f233cfead14c3f6f014db2f651ce69e",
+        "09061d27a692df755458c3b0d1b71dc5e68c827231b11191d2ae5ea77d1bb33a",
+        "9c3a859409a16f20cd2a1e5ede7eec8d71e7082d5481b74398ec0822b13234ef",
+        "eac772c8192702564c4f5a28a0de0ef18eab7ddc277fa99c77ab0c5d68de0c9f",
+        "6a47a4c30a8ca49992d3f5e0899e91bea83411a4dfd63094fdb661919bba40e4"
+      ],
+      "formatted_value": "0.598",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "f1",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "c196d8f51ba37b7f4ee031688dabd5bca4f1fdb895270ec1b4a49f203299ef29",
+        "255c2ec0d817867313ee59839e6111af22fe8b7de42afbb99fabaccb86b9b87f",
+        "2f8da9bf1373e9f4173978813edc3a627b79f4c60f3f4738044e2b82bd8e8dc3",
+        "d58590dd236a2df9ffa35a71931d80768a6fa14281767349076478eb6b26deb3"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.5979555191134283,
+      "sd": 0.05252339967952929
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "5d3204ae6873413661c6",
+        "09061d27a692df755458",
+        "9c3a859409a16f20cd2a",
+        "eac772c8192702564c4f",
+        "6a47a4c30a8ca49992d3"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "primary_pr_auc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "primary pr auc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "5d3204ae6873413661c6ae551bf0f8223f233cfead14c3f6f014db2f651ce69e",
+        "09061d27a692df755458c3b0d1b71dc5e68c827231b11191d2ae5ea77d1bb33a",
+        "9c3a859409a16f20cd2a1e5ede7eec8d71e7082d5481b74398ec0822b13234ef",
+        "eac772c8192702564c4f5a28a0de0ef18eab7ddc277fa99c77ab0c5d68de0c9f",
+        "6a47a4c30a8ca49992d3f5e0899e91bea83411a4dfd63094fdb661919bba40e4"
+      ],
+      "formatted_value": "0.656",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "pr_auc",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "c196d8f51ba37b7f4ee031688dabd5bca4f1fdb895270ec1b4a49f203299ef29",
+        "255c2ec0d817867313ee59839e6111af22fe8b7de42afbb99fabaccb86b9b87f",
+        "2f8da9bf1373e9f4173978813edc3a627b79f4c60f3f4738044e2b82bd8e8dc3",
+        "d58590dd236a2df9ffa35a71931d80768a6fa14281767349076478eb6b26deb3"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6560366920443386,
+      "sd": 0.015137426205236688
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "5d3204ae6873413661c6",
+        "09061d27a692df755458",
+        "9c3a859409a16f20cd2a",
+        "eac772c8192702564c4f",
+        "6a47a4c30a8ca49992d3"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "primary_fraud_recall",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "primary fraud recall",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "5d3204ae6873413661c6ae551bf0f8223f233cfead14c3f6f014db2f651ce69e",
+        "09061d27a692df755458c3b0d1b71dc5e68c827231b11191d2ae5ea77d1bb33a",
+        "9c3a859409a16f20cd2a1e5ede7eec8d71e7082d5481b74398ec0822b13234ef",
+        "eac772c8192702564c4f5a28a0de0ef18eab7ddc277fa99c77ab0c5d68de0c9f",
+        "6a47a4c30a8ca49992d3f5e0899e91bea83411a4dfd63094fdb661919bba40e4"
+      ],
+      "formatted_value": "0.520",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "fraud_recall",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "c196d8f51ba37b7f4ee031688dabd5bca4f1fdb895270ec1b4a49f203299ef29",
+        "255c2ec0d817867313ee59839e6111af22fe8b7de42afbb99fabaccb86b9b87f",
+        "2f8da9bf1373e9f4173978813edc3a627b79f4c60f3f4738044e2b82bd8e8dc3",
+        "d58590dd236a2df9ffa35a71931d80768a6fa14281767349076478eb6b26deb3"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.5204968944099378,
+      "sd": 0.09980498711927725
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "5d3204ae6873413661c6",
+        "09061d27a692df755458",
+        "9c3a859409a16f20cd2a",
+        "eac772c8192702564c4f",
+        "6a47a4c30a8ca49992d3"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "primary_mcc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "primary mcc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "5d3204ae6873413661c6ae551bf0f8223f233cfead14c3f6f014db2f651ce69e",
+        "09061d27a692df755458c3b0d1b71dc5e68c827231b11191d2ae5ea77d1bb33a",
+        "9c3a859409a16f20cd2a1e5ede7eec8d71e7082d5481b74398ec0822b13234ef",
+        "eac772c8192702564c4f5a28a0de0ef18eab7ddc277fa99c77ab0c5d68de0c9f",
+        "6a47a4c30a8ca49992d3f5e0899e91bea83411a4dfd63094fdb661919bba40e4"
+      ],
+      "formatted_value": "0.594",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mcc",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "c196d8f51ba37b7f4ee031688dabd5bca4f1fdb895270ec1b4a49f203299ef29",
+        "255c2ec0d817867313ee59839e6111af22fe8b7de42afbb99fabaccb86b9b87f",
+        "2f8da9bf1373e9f4173978813edc3a627b79f4c60f3f4738044e2b82bd8e8dc3",
+        "d58590dd236a2df9ffa35a71931d80768a6fa14281767349076478eb6b26deb3"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.593817943952627,
+      "sd": 0.04544808189834881
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "5d3204ae6873413661c6",
+        "09061d27a692df755458",
+        "9c3a859409a16f20cd2a",
+        "eac772c8192702564c4f",
+        "6a47a4c30a8ca49992d3"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "primary_deep_rate",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "primary deep rate",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "5d3204ae6873413661c6ae551bf0f8223f233cfead14c3f6f014db2f651ce69e",
+        "09061d27a692df755458c3b0d1b71dc5e68c827231b11191d2ae5ea77d1bb33a",
+        "9c3a859409a16f20cd2a1e5ede7eec8d71e7082d5481b74398ec0822b13234ef",
+        "eac772c8192702564c4f5a28a0de0ef18eab7ddc277fa99c77ab0c5d68de0c9f",
+        "6a47a4c30a8ca49992d3f5e0899e91bea83411a4dfd63094fdb661919bba40e4"
+      ],
+      "formatted_value": "0.391",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "c196d8f51ba37b7f4ee031688dabd5bca4f1fdb895270ec1b4a49f203299ef29",
+        "255c2ec0d817867313ee59839e6111af22fe8b7de42afbb99fabaccb86b9b87f",
+        "2f8da9bf1373e9f4173978813edc3a627b79f4c60f3f4738044e2b82bd8e8dc3",
+        "d58590dd236a2df9ffa35a71931d80768a6fa14281767349076478eb6b26deb3"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.390844298245614,
+      "sd": 0.479503689400569
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "961aa0cb7065a8a88f00",
+        "c5bbb6198850f67f63f2",
+        "ff0c683569683721bda7",
+        "5c64d023ccc6ce0b1c03",
+        "f8bac108612da9dab8a7"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "full_deep_f1",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "full deep f1",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "961aa0cb7065a8a88f00a3d64bf6901cc03b4fa8920a390543ebe15689d8ca75",
+        "c5bbb6198850f67f63f2693a32a00cc363d2803375fe02f2e165acd306978c79",
+        "ff0c683569683721bda7b00ec301ae2c71d31f88a9ab5f8a67c58ff63a19894a",
+        "5c64d023ccc6ce0b1c03c9cd1af09616e8f10d659706799bfb257c6f495a79a6",
+        "f8bac108612da9dab8a7dfb71fe7755cefd09f9ef53416a5e5af461a784666fc"
+      ],
+      "formatted_value": "0.627",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "f1",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "0e2463e4cd97a03fcd4698c681b6949bce0d022c431665103d28682d1c5f2d9c",
+        "c7530ca09a18aff2f798bd9de5706002c9bec435810de9128a866fb938074f71",
+        "44c6c4698212692d794ab71dda062c15e249ad954333c0fe4af200677a3fa4e5",
+        "37e0f6e3c82379929984eab6639764b1dc04616702408eeef435eebff4fa63ac"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6268411117516485,
+      "sd": 0.04162604937329961
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "961aa0cb7065a8a88f00",
+        "c5bbb6198850f67f63f2",
+        "ff0c683569683721bda7",
+        "5c64d023ccc6ce0b1c03",
+        "f8bac108612da9dab8a7"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "full_deep_pr_auc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "full deep pr auc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "961aa0cb7065a8a88f00a3d64bf6901cc03b4fa8920a390543ebe15689d8ca75",
+        "c5bbb6198850f67f63f2693a32a00cc363d2803375fe02f2e165acd306978c79",
+        "ff0c683569683721bda7b00ec301ae2c71d31f88a9ab5f8a67c58ff63a19894a",
+        "5c64d023ccc6ce0b1c03c9cd1af09616e8f10d659706799bfb257c6f495a79a6",
+        "f8bac108612da9dab8a7dfb71fe7755cefd09f9ef53416a5e5af461a784666fc"
+      ],
+      "formatted_value": "0.662",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "pr_auc",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "0e2463e4cd97a03fcd4698c681b6949bce0d022c431665103d28682d1c5f2d9c",
+        "c7530ca09a18aff2f798bd9de5706002c9bec435810de9128a866fb938074f71",
+        "44c6c4698212692d794ab71dda062c15e249ad954333c0fe4af200677a3fa4e5",
+        "37e0f6e3c82379929984eab6639764b1dc04616702408eeef435eebff4fa63ac"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6623495928077843,
+      "sd": 0.01899637334514658
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "961aa0cb7065a8a88f00",
+        "c5bbb6198850f67f63f2",
+        "ff0c683569683721bda7",
+        "5c64d023ccc6ce0b1c03",
+        "f8bac108612da9dab8a7"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "full_deep_fraud_recall",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "full deep fraud recall",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "961aa0cb7065a8a88f00a3d64bf6901cc03b4fa8920a390543ebe15689d8ca75",
+        "c5bbb6198850f67f63f2693a32a00cc363d2803375fe02f2e165acd306978c79",
+        "ff0c683569683721bda7b00ec301ae2c71d31f88a9ab5f8a67c58ff63a19894a",
+        "5c64d023ccc6ce0b1c03c9cd1af09616e8f10d659706799bfb257c6f495a79a6",
+        "f8bac108612da9dab8a7dfb71fe7755cefd09f9ef53416a5e5af461a784666fc"
+      ],
+      "formatted_value": "0.563",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "fraud_recall",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "0e2463e4cd97a03fcd4698c681b6949bce0d022c431665103d28682d1c5f2d9c",
+        "c7530ca09a18aff2f798bd9de5706002c9bec435810de9128a866fb938074f71",
+        "44c6c4698212692d794ab71dda062c15e249ad954333c0fe4af200677a3fa4e5",
+        "37e0f6e3c82379929984eab6639764b1dc04616702408eeef435eebff4fa63ac"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.5627329192546584,
+      "sd": 0.07863952564231753
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "961aa0cb7065a8a88f00",
+        "c5bbb6198850f67f63f2",
+        "ff0c683569683721bda7",
+        "5c64d023ccc6ce0b1c03",
+        "f8bac108612da9dab8a7"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "full_deep_mcc",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "full deep mcc",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "961aa0cb7065a8a88f00a3d64bf6901cc03b4fa8920a390543ebe15689d8ca75",
+        "c5bbb6198850f67f63f2693a32a00cc363d2803375fe02f2e165acd306978c79",
+        "ff0c683569683721bda7b00ec301ae2c71d31f88a9ab5f8a67c58ff63a19894a",
+        "5c64d023ccc6ce0b1c03c9cd1af09616e8f10d659706799bfb257c6f495a79a6",
+        "f8bac108612da9dab8a7dfb71fe7755cefd09f9ef53416a5e5af461a784666fc"
+      ],
+      "formatted_value": "0.618",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mcc",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "0e2463e4cd97a03fcd4698c681b6949bce0d022c431665103d28682d1c5f2d9c",
+        "c7530ca09a18aff2f798bd9de5706002c9bec435810de9128a866fb938074f71",
+        "44c6c4698212692d794ab71dda062c15e249ad954333c0fe4af200677a3fa4e5",
+        "37e0f6e3c82379929984eab6639764b1dc04616702408eeef435eebff4fa63ac"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 0.6181965592734786,
+      "sd": 0.037703743820741556
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "961aa0cb7065a8a88f00",
+        "c5bbb6198850f67f63f2",
+        "ff0c683569683721bda7",
+        "5c64d023ccc6ce0b1c03",
+        "f8bac108612da9dab8a7"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "full_deep_deep_rate",
+      "claim_status": "descriptive",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "full deep deep rate",
+      "evidence_lane": "offline_contract_detection",
+      "experiment_id": [
+        "961aa0cb7065a8a88f00a3d64bf6901cc03b4fa8920a390543ebe15689d8ca75",
+        "c5bbb6198850f67f63f2693a32a00cc363d2803375fe02f2e165acd306978c79",
+        "ff0c683569683721bda7b00ec301ae2c71d31f88a9ab5f8a67c58ff63a19894a",
+        "5c64d023ccc6ce0b1c03c9cd1af09616e8f10d659706799bfb257c6f495a79a6",
+        "f8bac108612da9dab8a7dfb71fe7755cefd09f9ef53416a5e5af461a784666fc"
+      ],
+      "formatted_value": "1.000",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "0e2463e4cd97a03fcd4698c681b6949bce0d022c431665103d28682d1c5f2d9c",
+        "c7530ca09a18aff2f798bd9de5706002c9bec435810de9128a866fb938074f71",
+        "44c6c4698212692d794ab71dda062c15e249ad954333c0fe4af200677a3fa4e5",
+        "37e0f6e3c82379929984eab6639764b1dc04616702408eeef435eebff4fa63ac"
+      ],
+      "population_id": "cad8767b7ffb5c876a00c90d847d61be595ac2c9b4a71e92e62462778b62b488",
+      "prediction_unit": "contract",
+      "raw_value": 1.0,
+      "sd": 0.0
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "274ebdf0316245ace239",
+        "88c47a0cda5f935e56d4",
+        "f91253f04201e0789e00",
+        "1529c452c84e570fa5bf",
+        "b4a1932cc433788e9fad"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_primary_deep_route_rate",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime primary deep route rate",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "274ebdf0316245ace2398bd44fa32d0b592e133586bedd688eea8f0d73001a95",
+        "88c47a0cda5f935e56d4f778f29da2e0a4af3e217deaabc056fa061b34af209c",
+        "f91253f04201e0789e0038d55ca576b1435cf0913cea2cba34d3a612c44d76d8",
+        "1529c452c84e570fa5bfc11f1b32fb83bf9e75f8c15307fab2dfbf5dad6015e1",
+        "b4a1932cc433788e9fadd162dbf5d5f9af1b5a77928065b3360a20ed7f9998de"
+      ],
+      "formatted_value": "0.614",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_route_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 0.614,
+      "sd": 0.0
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "274ebdf0316245ace239",
+        "88c47a0cda5f935e56d4",
+        "f91253f04201e0789e00",
+        "1529c452c84e570fa5bf",
+        "b4a1932cc433788e9fad"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_primary_mean_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime primary mean latency ms",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "274ebdf0316245ace2398bd44fa32d0b592e133586bedd688eea8f0d73001a95",
+        "88c47a0cda5f935e56d4f778f29da2e0a4af3e217deaabc056fa061b34af209c",
+        "f91253f04201e0789e0038d55ca576b1435cf0913cea2cba34d3a612c44d76d8",
+        "1529c452c84e570fa5bfc11f1b32fb83bf9e75f8c15307fab2dfbf5dad6015e1",
+        "b4a1932cc433788e9fadd162dbf5d5f9af1b5a77928065b3360a20ed7f9998de"
+      ],
+      "formatted_value": "6.167",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mean_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 6.1665673828,
+      "sd": 0.40698072526881757
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "274ebdf0316245ace239",
+        "88c47a0cda5f935e56d4",
+        "f91253f04201e0789e00",
+        "1529c452c84e570fa5bf",
+        "b4a1932cc433788e9fad"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_primary_P99_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime primary P99 latency ms",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "274ebdf0316245ace2398bd44fa32d0b592e133586bedd688eea8f0d73001a95",
+        "88c47a0cda5f935e56d4f778f29da2e0a4af3e217deaabc056fa061b34af209c",
+        "f91253f04201e0789e0038d55ca576b1435cf0913cea2cba34d3a612c44d76d8",
+        "1529c452c84e570fa5bfc11f1b32fb83bf9e75f8c15307fab2dfbf5dad6015e1",
+        "b4a1932cc433788e9fadd162dbf5d5f9af1b5a77928065b3360a20ed7f9998de"
+      ],
+      "formatted_value": "18.693",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "P99_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 18.692948062,
+      "sd": 4.397707318833091
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "274ebdf0316245ace239",
+        "88c47a0cda5f935e56d4",
+        "f91253f04201e0789e00",
+        "1529c452c84e570fa5bf",
+        "b4a1932cc433788e9fad"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_primary_throughput_events_per_second",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime primary throughput events per second",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "274ebdf0316245ace2398bd44fa32d0b592e133586bedd688eea8f0d73001a95",
+        "88c47a0cda5f935e56d4f778f29da2e0a4af3e217deaabc056fa061b34af209c",
+        "f91253f04201e0789e0038d55ca576b1435cf0913cea2cba34d3a612c44d76d8",
+        "1529c452c84e570fa5bfc11f1b32fb83bf9e75f8c15307fab2dfbf5dad6015e1",
+        "b4a1932cc433788e9fadd162dbf5d5f9af1b5a77928065b3360a20ed7f9998de"
+      ],
+      "formatted_value": "159.050",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "throughput_events_per_second",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888",
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 159.0496625237729,
+      "sd": 10.758089756164148
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "a23eda80158b44c2b746",
+        "e09c6c7ebcd8424338d4",
+        "35ef501a346c7dc255b7",
+        "76c78f2fa730e3dd141d",
+        "3ac38554e2e4b37845a0"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_full_deep_deep_route_rate",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime full deep deep route rate",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "a23eda80158b44c2b746caea1f4ba42ef4697f0efb81c9f9d7f979dd863a56fa",
+        "e09c6c7ebcd8424338d4bed27e2170740de13ff03fd334d572c846e9e95f96bb",
+        "35ef501a346c7dc255b72177816cd56cff32a01de084ffdf16e88f1797480bf1",
+        "76c78f2fa730e3dd141ded6cdceca53e1735e641323fafd20edd3920c6053720",
+        "3ac38554e2e4b37845a08ade86f49bf8e0d642bd4f3e9528343cbd0753c5dc8a"
+      ],
+      "formatted_value": "1.000",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_route_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 1.0,
+      "sd": 0.0
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "a23eda80158b44c2b746",
+        "e09c6c7ebcd8424338d4",
+        "35ef501a346c7dc255b7",
+        "76c78f2fa730e3dd141d",
+        "3ac38554e2e4b37845a0"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_full_deep_mean_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime full deep mean latency ms",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "a23eda80158b44c2b746caea1f4ba42ef4697f0efb81c9f9d7f979dd863a56fa",
+        "e09c6c7ebcd8424338d4bed27e2170740de13ff03fd334d572c846e9e95f96bb",
+        "35ef501a346c7dc255b72177816cd56cff32a01de084ffdf16e88f1797480bf1",
+        "76c78f2fa730e3dd141ded6cdceca53e1735e641323fafd20edd3920c6053720",
+        "3ac38554e2e4b37845a08ade86f49bf8e0d642bd4f3e9528343cbd0753c5dc8a"
+      ],
+      "formatted_value": "8.068",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mean_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 8.067810395999999,
+      "sd": 0.7118908242968395
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "a23eda80158b44c2b746",
+        "e09c6c7ebcd8424338d4",
+        "35ef501a346c7dc255b7",
+        "76c78f2fa730e3dd141d",
+        "3ac38554e2e4b37845a0"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_full_deep_P99_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime full deep P99 latency ms",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "a23eda80158b44c2b746caea1f4ba42ef4697f0efb81c9f9d7f979dd863a56fa",
+        "e09c6c7ebcd8424338d4bed27e2170740de13ff03fd334d572c846e9e95f96bb",
+        "35ef501a346c7dc255b72177816cd56cff32a01de084ffdf16e88f1797480bf1",
+        "76c78f2fa730e3dd141ded6cdceca53e1735e641323fafd20edd3920c6053720",
+        "3ac38554e2e4b37845a08ade86f49bf8e0d642bd4f3e9528343cbd0753c5dc8a"
+      ],
+      "formatted_value": "18.049",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "P99_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 18.049451102,
+      "sd": 3.7142337855902485
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "a23eda80158b44c2b746",
+        "e09c6c7ebcd8424338d4",
+        "35ef501a346c7dc255b7",
+        "76c78f2fa730e3dd141d",
+        "3ac38554e2e4b37845a0"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "runtime_full_deep_throughput_events_per_second",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "runtime full deep throughput events per second",
+      "evidence_lane": "raw_event_runtime",
+      "experiment_id": [
+        "a23eda80158b44c2b746caea1f4ba42ef4697f0efb81c9f9d7f979dd863a56fa",
+        "e09c6c7ebcd8424338d4bed27e2170740de13ff03fd334d572c846e9e95f96bb",
+        "35ef501a346c7dc255b72177816cd56cff32a01de084ffdf16e88f1797480bf1",
+        "76c78f2fa730e3dd141ded6cdceca53e1735e641323fafd20edd3920c6053720",
+        "3ac38554e2e4b37845a08ade86f49bf8e0d642bd4f3e9528343cbd0753c5dc8a"
+      ],
+      "formatted_value": "122.336",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "throughput_events_per_second",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6",
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "cc6e15bf3d7be04f6435aecd5353c81e5f30c318d74a3b0c1355b5c570dbd7f0",
+      "prediction_unit": "raw_event_runtime_trace",
+      "raw_value": 122.33553613311885,
+      "sd": 10.577655361804013
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "cb17e811caa902ee7909"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_primary_deep_route_rate",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated primary deep route rate",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "cb17e811caa902ee7909b4f980af9f10a2c573c0550e998331fd456b8775a3fa"
+      ],
+      "formatted_value": "0.500",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_route_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 0.49965,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "cb17e811caa902ee7909"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_primary_mean_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated primary mean latency ms",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "cb17e811caa902ee7909b4f980af9f10a2c573c0550e998331fd456b8775a3fa"
+      ],
+      "formatted_value": "5.606",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mean_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 5.60647357158,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "cb17e811caa902ee7909"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_primary_P99_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated primary P99 latency ms",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "cb17e811caa902ee7909b4f980af9f10a2c573c0550e998331fd456b8775a3fa"
+      ],
+      "formatted_value": "13.217",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "P99_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 13.216811739999995,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "cb17e811caa902ee7909"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_primary_throughput_events_per_second",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated primary throughput events per second",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "cb17e811caa902ee7909b4f980af9f10a2c573c0550e998331fd456b8775a3fa"
+      ],
+      "formatted_value": "174.044",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "throughput_events_per_second",
+      "p_value": null,
+      "policy_config_id": [
+        "9ebcdb90284f564441fcd528b7a9a5976e65fe39897b1096d39e1984d9d23888"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 174.04373988035164,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "6e404c16429a14b6f8e9"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_full_deep_deep_route_rate",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated full deep deep route rate",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "6e404c16429a14b6f8e9bc9792d039f488f3e0268ea2bb364d837ba2c4b4a815"
+      ],
+      "formatted_value": "1.000",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "deep_route_rate",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 1.0,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "6e404c16429a14b6f8e9"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_full_deep_mean_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated full deep mean latency ms",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "6e404c16429a14b6f8e9bc9792d039f488f3e0268ea2bb364d837ba2c4b4a815"
+      ],
+      "formatted_value": "7.994",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "mean_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 7.99371458168,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "6e404c16429a14b6f8e9"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_full_deep_P99_latency_ms",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated full deep P99 latency ms",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "6e404c16429a14b6f8e9bc9792d039f488f3e0268ea2bb364d837ba2c4b4a815"
+      ],
+      "formatted_value": "16.695",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "P99_latency_ms",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 16.694722989999992,
+      "sd": null
+    },
+    {
+      "adjusted_p_value": null,
+      "canonical_row_id": [
+        "6e404c16429a14b6f8e9"
+      ],
+      "ci_high": null,
+      "ci_low": null,
+      "claim_id": "integrated_full_deep_throughput_events_per_second",
+      "claim_status": "systems_measurement",
+      "config_sha256": "a64ed75fc67d4ebac69374cd08f30e2e71c2afdccb8d264ff6a398444c6a8d08",
+      "display_text": "integrated full deep throughput events per second",
+      "evidence_lane": "integrated_streaming",
+      "experiment_id": [
+        "6e404c16429a14b6f8e9bc9792d039f488f3e0268ea2bb364d837ba2c4b4a815"
+      ],
+      "formatted_value": "123.002",
+      "git_sha": "87f377e3753a8ee6111f8617dab3acab94c54a1d",
+      "metric": "throughput_events_per_second",
+      "p_value": null,
+      "policy_config_id": [
+        "7b57b77bf8289761dc4d02213997794643bbfb2cfe0e46894efae5133f7772d6"
+      ],
+      "population_id": "723b64145b4a75a2e87bbc2d732cfe8718c3c9de330c911476db7e03ff1d45ca",
+      "prediction_unit": "event_with_inherited_contract_label",
+      "raw_value": 123.0022435960243,
+      "sd": null
+    }
+  ],
+  "mc_T": 1,
+  "scope": "held-out descriptive detection and retrospective systems; strict per-target cutoff safety verified",
+  "source_hashes": {
+    "results/sci_v3_submission_r4/canonical/calibration_metrics.csv": "1d29c0e29fd3a409f2d40ada5dad16ae08ad6483cfcd740729f8d46e0c7bd823",
+    "results/sci_v3_submission_r4/canonical/cross_chain.csv": "a7e4af479b37ecce1bf9160e777e6be4f4b5ad433454d5aae99d18bd0d5d3db3",
+    "results/sci_v3_submission_r4/canonical/cross_chain_temporal_r4.csv": "e1fb532e30800f4ec38667d34e53da58c854861c18f056b6eedb2b6ca38abc53",
+    "results/sci_v3_submission_r4/canonical/experiment_registry.csv": "83c022f26f8bc2ad9d00f0de0c835202683bc85792cb043b42a06c543159e2b2",
+    "results/sci_v3_submission_r4/canonical/prediction_metrics.csv": "1ab7392d643ed061feee0310289c5a4130443beacc162cb90efd4b7d6ba9c30d",
+    "results/sci_v3_submission_r4/canonical/relation_temporal_audit.csv": "ea8c6eb5f27ef3b121f8c9cd7440519be4d1e0cb9755c1600967777aa3e966f9",
+    "results/sci_v3_submission_r4/canonical/routing_metrics.csv": "380c557770e528483787dbb94cb2e7a40282d0b04fbb0f14c71b4f13b95fab87",
+    "results/sci_v3_submission_r4/canonical/runtime_metrics.csv": "32b144ec00be175a119f248789bf315410536a522c8c309af0e9f056631e876f",
+    "results/sci_v3_submission_r4/canonical/statistics.csv": "3fd799f450c846ffc72f4e9d7d8ea2cea5c46c784d5e3005381fed5cd78f97f4",
+    "results/sci_v3_submission_r4/canonical/streaming_metrics.csv": "75ae39e694602582d63c8afecb8251cba84770baf02464dd282a43bd2e423904",
+    "results/sci_v3_submission_r4/canonical/temporal_split_audit.csv": "ab6dd16e537ce785bf3bcb02fc1d3a8c7d0f3af921519d81a74095a7110874f4"
+  },
+  "statistical_track": "B",
+  "table_sources": {
+    "calibration_metrics": [
+      "8f9f86202aa1d8a97642",
+      "487fcfd01f2ede3342c7",
+      "94cc989fc70fc712a99e",
+      "9ecc5e458d83fe24912d",
+      "6d02e9c9080f3f15630b",
+      "527b9b7204c8fea40083",
+      "1b1590f1324b27f04ecd",
+      "a13beaffd3c0ae4abf58",
+      "07243a56bfade7c55667",
+      "3912ea60d34ee48025c5",
+      "95ad2f235adf6c7542d1",
+      "b89ebc4a1c6dc8be2eca",
+      "a59dcdbe4f7ae89a0c3b",
+      "5d8b71c9fb386f805faa",
+      "1511e965eacf7c3e27c5",
+      "3b5d9e8f6ecaa685cf27",
+      "d6145bbd705afef9a64f",
+      "96d9e428c8372e6ac8e0",
+      "153b3756f8493ec0549a",
+      "561bf11afdd9bba70b55",
+      "269152011c91586a9403",
+      "f9121a214a29a6c12906",
+      "26ca6e5a4752826ffc15",
+      "d4f084341483ac62821c",
+      "b93338319965755fb82d",
+      "833f36601771db480e81",
+      "3dae97567d7c5d1f7db9",
+      "dc8df02615303ff57981",
+      "040847c0519b9e011691",
+      "35a3ed619e111c5265ac"
+    ],
+    "cross_chain_summary": [
+      "8cea1fa09d49af95f7da",
+      "f6527679ae2cad199676",
+      "3177b74be131cb38838c",
+      "c723030dae2a26624218",
+      "4c9b5a698792190cceb3",
+      "75d39cc3b20281d47408",
+      "5a1918b63919b0e83125",
+      "b54810e1e17108adbd12",
+      "2fba1faf5150da57ad81",
+      "771f53ec9a1da266f627",
+      "904aed842a2e70ab3568",
+      "984faf5d5fdeb4da3f94",
+      "d2b4532a0c2389bc05f2",
+      "0275d18af05458a33b46",
+      "9311fc0e127b52481e46"
+    ],
+    "cross_chain_summary_r4": [
+      "0",
+      "1",
+      "2"
+    ],
+    "integrated_streaming": [
+      "6e404c16429a14b6f8e9",
+      "cb17e811caa902ee7909"
+    ],
+    "main_predictive": [
+      "0673e48ad27cea0acdf7",
+      "5d3204ae6873413661c6",
+      "961aa0cb7065a8a88f00",
+      "a17c65f52a907c3be7ea",
+      "09061d27a692df755458",
+      "c5bbb6198850f67f63f2",
+      "5f79390e9da86a114628",
+      "9c3a859409a16f20cd2a",
+      "ff0c683569683721bda7",
+      "a05a60e31cf581b4f7fa",
+      "eac772c8192702564c4f",
+      "5c64d023ccc6ce0b1c03",
+      "db0abe65ae7ccaa850fa",
+      "6a47a4c30a8ca49992d3",
+      "f8bac108612da9dab8a7"
+    ],
+    "operating_point_identity": [
+      "0673e48ad27cea0acdf7",
+      "5d3204ae6873413661c6",
+      "961aa0cb7065a8a88f00",
+      "a17c65f52a907c3be7ea",
+      "09061d27a692df755458",
+      "c5bbb6198850f67f63f2",
+      "5f79390e9da86a114628",
+      "9c3a859409a16f20cd2a",
+      "ff0c683569683721bda7",
+      "a05a60e31cf581b4f7fa",
+      "eac772c8192702564c4f",
+      "5c64d023ccc6ce0b1c03",
+      "db0abe65ae7ccaa850fa",
+      "6a47a4c30a8ca49992d3",
+      "f8bac108612da9dab8a7",
+      "a23eda80158b44c2b746",
+      "e09c6c7ebcd8424338d4",
+      "35ef501a346c7dc255b7",
+      "76c78f2fa730e3dd141d",
+      "3ac38554e2e4b37845a0",
+      "274ebdf0316245ace239",
+      "88c47a0cda5f935e56d4",
+      "f91253f04201e0789e00",
+      "1529c452c84e570fa5bf",
+      "b4a1932cc433788e9fad",
+      "6e404c16429a14b6f8e9",
+      "cb17e811caa902ee7909"
+    ],
+    "primary_selective_frontier": [
+      "0673e48ad27cea0acdf7",
+      "5d3204ae6873413661c6",
+      "961aa0cb7065a8a88f00",
+      "a17c65f52a907c3be7ea",
+      "09061d27a692df755458",
+      "c5bbb6198850f67f63f2",
+      "5f79390e9da86a114628",
+      "9c3a859409a16f20cd2a",
+      "ff0c683569683721bda7",
+      "a05a60e31cf581b4f7fa",
+      "eac772c8192702564c4f",
+      "5c64d023ccc6ce0b1c03",
+      "db0abe65ae7ccaa850fa",
+      "6a47a4c30a8ca49992d3",
+      "f8bac108612da9dab8a7",
+      "a23eda80158b44c2b746",
+      "e09c6c7ebcd8424338d4",
+      "35ef501a346c7dc255b7",
+      "76c78f2fa730e3dd141d",
+      "3ac38554e2e4b37845a0",
+      "274ebdf0316245ace239",
+      "88c47a0cda5f935e56d4",
+      "f91253f04201e0789e00",
+      "1529c452c84e570fa5bf",
+      "b4a1932cc433788e9fad",
+      "6e404c16429a14b6f8e9",
+      "cb17e811caa902ee7909"
+    ],
+    "relation_temporal_audit": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "statistical_evidence": [
+      "09689595e8e789821ffb",
+      "7c5436b202cd47747f59",
+      "624a26ff166e6682fed2",
+      "836d7b1c55d910e33346",
+      "1f27fe2fb7aefa5ada22",
+      "aa536f5bd15070c01c56",
+      "39a32ecb07ea21402e00",
+      "8f7d1a2830ec3042af73",
+      "38e6bd31d390bbb38e78",
+      "aa9ac6b12ef8deb50147",
+      "03c38aff0bf8012442a0",
+      "56d40266863f1e27b458",
+      "c035e03616382598ef2f",
+      "37b06ae645f4a391734c",
+      "3a95dd79103d281351d1",
+      "ed32c307642053f78742",
+      "32a7dfab18a77d606959",
+      "ca5e07fd2a44f3e81775",
+      "8823870c213534e4cf3f",
+      "69b91081000ad60826ce"
+    ]
+  }
+}

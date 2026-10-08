@@ -1,125 +1,112 @@
-# Merge artifacts
-*.orig
-build/
-xbuild/
-_res/
-.venv/
-environment/wheelhouse/
-
+# Local environments, credentials, caches and binary installers
+.venv*/
+.env
+.env.*
+!.env.example
+/local_storage/
+/environment/wheelhouse*/
+*.pyc
+__pycache__/
 .pytest_cache/
-scratch/
-.gradle/
-.android/
+.mypy_cache/
+.ruff_cache/
 .idea/
 .vscode/
 .run/
+.gradle/
+.android/
 .cargo/
-.github/
-.git/
-release/
-debug/
-
-# Python bytecode
-__pycache__/
 lightning_logs/
-
-# docs/architecture/
-docs/work_reports/
-docs/papers/
-manuscript/
-publication/
-reports/
-archive/
-
-# GoG/
-outputs/
-result/
-results/
-graphs/
-dataset/test/
-data/
-wasm/
-
-# new wheel files for dev-environments
-environment/wheelhouse/
-
-tests/mock
-
-
-*.info
-*.address
-# intermediate data files
-*.csv
-
-# Text files
-*.txt
-*.log
-*.png
-*.pkl
+build/
+xbuild/
+_res/
+*.orig
+*.bak
+*.tmp
 *.pt
+*.pth
+*.pkl
+*.npy
+*.npz
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.whl
+*.zip
+# One curated, checksum-verified evidence bundle is a publication input.
+!/projects/benchmark/evidence/public_numeric_evidence.zip
 
-*.gz
+# Heavy generated runs, private/provider data and scratch stay local.
+/outputs/
+/data/
+/graphs/
+/dataset/test/
+/results/
+/result/
+/results_sci*/
+/scratch/
+/release/
+/manuscript/
+/publication/
+/reports/
+/wasm/
+/debug/
+/tests/mock/
+/docs/work_reports/
 
-**/__pycache__/
-**/__pycache__/**
-
-## projects folders.
-dlg_gnn/projects/benchmark/paper/
-
-results_sci_v2
-results_sci/
-
-# A04 publication evidence and exact environment locks
-!environment/locks/benchmark-a04-cuda.lock.txt
-!environment/locks/benchmark-a04-cuda.hashed.txt
-!evaluation/benchmark/v2/paper_ready_final/**
-reports/
-
-# Project and archive layout
-/local_storage/
-/environment/wheelhouse-*/
-**/*.whl
-**/venv-before-rename.tar.gz
-
-# Archive ignore rules (keep heavy caches and raw outputs local)
-/archive/**/outputs/
-/archive/**/results/
-/archive/**/data/
-/archive/**/scratch/
-/archive/**/submissions/*.zip
+# Historical archives: expose the small publication/provenance tier.
+/archive/*
+!/archive/benchmark/
+/archive/benchmark/*
+!/archive/benchmark/artifacts/
+!/archive/benchmark/publication/
+!/archive/benchmark/provenance/
+!/archive/benchmark/outputs/
+/archive/benchmark/outputs/*
+!/archive/benchmark/outputs/manuscript_m5/
+/archive/benchmark/outputs/manuscript_m5/*
+!/archive/benchmark/outputs/manuscript_m5/release/
 /projects/**/paper/history/
-/projects/benchmark/paper/current/*_candidate_review_package.zip
-/projects/benchmark/manuscript_base_a06
-/projects/**/paper/
-# LaTeX intermediates; curated TeX/Bib/PDF stay in each project paper folder.
+/docs/papers/*
+!/docs/papers/README.md
+/docs/work_reports/**/artifacts/
+/docs/work_reports/**/sorted_transactions/
+
+# Evaluation code, protocol, manifests and qualification reports are public.
+# Historical paper-ready copies/scores live in the frozen evidence ZIP.
+/evaluation/benchmark/v2/archive/
+/evaluation/benchmark/v2/logs/
+/evaluation/benchmark/v2/results/
+/evaluation/benchmark/v2/paper_ready*/
+/evaluation/benchmark/v2/a05/source_versions/
+
+# LaTeX build intermediates; unpublished manuscript sources are excluded below.
 *.aux
 *.bbl
 *.blg
 *.fdb_latexmk
 *.fls
 *.out
+*.log
 *.synctex.gz
+*.toc
+*.nav
+*.snm
+# CSV, TXT, PNG, .github workflows, public project evidence and environment locks
+# deliberately have no blanket ignore: these contain reviewer-facing inputs.
 
-# Project paper figures, data and reports remain visible despite generic ignores
-!/projects/**/paper/current/**/*.csv
-!/projects/**/paper/current/**/*.png
-!/projects/**/paper/published_v1/**/*.png
-!/projects/tds/paper/current/data/
-!/projects/benchmark/paper/current/A07_CANDIDATE_NOT_FOR_SUBMISSION.txt
-!/docs/papers/
-/docs/papers/*
-!/docs/papers/README.md
-!/projects/*/reports/
-!/archive/benchmark/artifacts/
-!/archive/benchmark/artifacts/**
-!/archive/benchmark/publication/
-!/archive/benchmark/publication/**
-!/archive/benchmark/outputs/
-!/archive/benchmark/outputs/manuscript_m5/
-!/archive/benchmark/outputs/manuscript_m5/release/
-!/archive/benchmark/outputs/manuscript_m5/release/**
-!/archive/benchmark/provenance/
-!/archive/benchmark/provenance/**
-
-## paper ready folder in evaluation
-/evaluation/benchmark/v2/
+# Author instruction (2026-10-09): publish evidence, keep unsubmitted manuscripts local.
+*.tex
+*.bib
+*.cls
+*.sty
+*.bst
+*.pdf
+/projects/**/paper/current/
+/projects/benchmark/manuscript_base_a06/
+/projects/benchmark/scripts/a07_build_manuscript.py
+/projects/benchmark/scripts/astra_revision.py
+/evaluation/benchmark/v2/scripts/a05_write_manuscript.py
+/evaluation/benchmark/v2/scripts/a06_build_submission.py
+/evaluation/benchmark/v2/scripts/a06_package_release.py

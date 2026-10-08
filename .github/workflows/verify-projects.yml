@@ -1,0 +1,18 @@
+name: Project integrity verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [dlg_gnn, benchmark, stream_mc, tds]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/reproduce_project.py --project ${{ matrix.project }} --mode verify

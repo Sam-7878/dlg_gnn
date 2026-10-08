@@ -1,0 +1,18 @@
+{
+  "dataset": "Ethereum",
+  "seed": 42,
+  "block_size": 256,
+  "projection_guard_seconds": 86400,
+  "measurement_plan": "one full-graph encoder forward plus first exact 256-row training block backward; 50*ceil(N/256) blocks is a lower-bound projection",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "gpu_total_bytes": 25769279488,
+  "status": "PREFLIGHT_FEASIBLE",
+  "nodes": 14385,
+  "edges": 115065,
+  "encoder_forward_seconds": 0.6416975730007834,
+  "first_block_forward_backward_seconds": 0.18288079900048615,
+  "blocks_per_epoch": 57,
+  "projected_50_epoch_lower_bound_seconds": 553.2951558014247,
+  "peak_allocated_mib": 501.33740234375,
+  "finite_score": true
+}

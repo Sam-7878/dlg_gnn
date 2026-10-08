@@ -1,0 +1,109 @@
+{
+  "comparison_policy": "Latency A and B are different estimands and must not share one latency claim or y-axis.",
+  "latency_a": {
+    "name": "Single-event end-to-end latency",
+    "paper_eligible_main_benchmark": false,
+    "reason": "different synthetic ordering and untrained controlled risk encoder",
+    "rows": [
+      {
+        "T": 1,
+        "events_per_sec": 314.46,
+        "mean_total_ms": 3.1801,
+        "median_total_ms": 2.7853,
+        "n_events": 100,
+        "p95_total_ms": 4.7782,
+        "p99_total_ms": 5.6103
+      },
+      {
+        "T": 5,
+        "events_per_sec": 173.65,
+        "mean_total_ms": 5.7589,
+        "median_total_ms": 5.6144,
+        "n_events": 100,
+        "p95_total_ms": 6.8227,
+        "p99_total_ms": 8.6307
+      },
+      {
+        "T": 10,
+        "events_per_sec": 101.28,
+        "mean_total_ms": 9.8734,
+        "median_total_ms": 9.4529,
+        "n_events": 100,
+        "p95_total_ms": 13.6706,
+        "p99_total_ms": 15.2723
+      },
+      {
+        "T": 20,
+        "events_per_sec": 54.47,
+        "mean_total_ms": 18.3572,
+        "median_total_ms": 18.0247,
+        "n_events": 100,
+        "p95_total_ms": 23.5001,
+        "p99_total_ms": 29.0335
+      },
+      {
+        "T": 30,
+        "events_per_sec": 38.59,
+        "mean_total_ms": 25.9142,
+        "median_total_ms": 23.9733,
+        "n_events": 100,
+        "p95_total_ms": 37.709,
+        "p99_total_ms": 49.4621
+      }
+    ],
+    "scope": "100 synthetic-time-ordered events; full controlled pipeline",
+    "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_3/real_e2e_latency.csv",
+    "source_sha256": "51a66b1f4697cbaa96516f5b45d469fe7f3eabb95af45fed0abbc70c88671a9d"
+  },
+  "latency_b": {
+    "aggregate": [
+      {
+        "T": 1,
+        "auc_pr": 0.464796683313911,
+        "ece": 0.16717584248971223,
+        "panel_elapsed_ms": 167.10584199995537,
+        "seed_count": 5
+      },
+      {
+        "T": 5,
+        "auc_pr": 0.4364600237969098,
+        "ece": 0.1283797514263393,
+        "panel_elapsed_ms": 291.557118000128,
+        "seed_count": 5
+      },
+      {
+        "T": 10,
+        "auc_pr": 0.4415736797710041,
+        "ece": 0.12846116478730546,
+        "panel_elapsed_ms": 443.8658920000762,
+        "seed_count": 5
+      },
+      {
+        "T": 20,
+        "auc_pr": 0.44795787721276775,
+        "ece": 0.12853972781204465,
+        "panel_elapsed_ms": 739.3928189999315,
+        "seed_count": 5
+      },
+      {
+        "T": 30,
+        "auc_pr": 0.4440636564263283,
+        "ece": 0.12876749380487587,
+        "panel_elapsed_ms": 1015.4274249998708,
+        "seed_count": 5
+      }
+    ],
+    "batch_size": 128,
+    "events": 3648,
+    "limitations": [
+      "timings are retained as sensitivity/runtime context, not hardware-normalized latency claims",
+      "absence of explicit warm-up and GPU synchronization prevents microbenchmark interpretation"
+    ],
+    "name": "Full held-out panel batched inference elapsed time",
+    "paper_eligible_runtime_context": true,
+    "scope": "model inference loop over all 3,648 test events in DataLoader batches of 128",
+    "source": "/mnt/d/_Work/goat_bank/dlg_gnn/results/graphrag/round_4/mc_sensitivity.csv",
+    "source_sha256": "81b95aca82c5daca434299da69af7c45f8669e5361760404f066df3249740d97"
+  },
+  "latency_scope_consistent": true
+}

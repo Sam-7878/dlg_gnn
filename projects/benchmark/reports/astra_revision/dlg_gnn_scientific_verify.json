@@ -1,0 +1,20 @@
+{
+  "detail": {
+    "fixture_sha256": "6ba8e17a17d96297dfc5bbf554aea4869f0ee10e5b38388926f2c82abe421c70",
+    "scientific_smoke": "PASS: deterministic DLG forward/backward/gate/exact-sparse fixture and PyGOD interface",
+    "source_hashes": "PASS"
+  },
+  "elapsed_seconds": 74.81,
+  "environment": {
+    "networkx": "3.7",
+    "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "pygod": "1.1.0",
+    "python": "3.14.4",
+    "scipy": "1.18.1",
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1"
+  },
+  "mode": "verify",
+  "project": "dlg_gnn",
+  "status": "PASS"
+}

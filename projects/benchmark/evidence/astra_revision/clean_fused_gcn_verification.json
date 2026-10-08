@@ -1,0 +1,29 @@
+{
+  "phase": "C-02",
+  "description": "Fused GCN equivalence (PyG COO reference vs SparseFusedGCN)",
+  "device": "cuda:1",
+  "gpu_name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "all_passed": true,
+  "results": {
+    "float64": {
+      "output_max_abs_diff": 2.220446049250313e-16,
+      "output_max_rel_diff": 1.1626675934307407e-13,
+      "x_grad_max_abs_diff": 4.996003610813204e-16,
+      "x_grad_max_rel_diff": 3.8585752042179327e-13,
+      "weight_grad_max_abs_diff": 1.4210854715202004e-14,
+      "tolerance_atol": 1e-09,
+      "tolerance_rtol": 1e-07,
+      "passed": true
+    },
+    "float32": {
+      "output_max_abs_diff": 8.940696716308594e-08,
+      "output_max_rel_diff": 4.789455124409869e-05,
+      "x_grad_max_abs_diff": 3.5762786865234375e-07,
+      "x_grad_max_rel_diff": 9.940088057192042e-05,
+      "weight_grad_max_abs_diff": 5.7220458984375e-06,
+      "tolerance_atol": 1e-05,
+      "tolerance_rtol": 0.0001,
+      "passed": true
+    }
+  }
+}

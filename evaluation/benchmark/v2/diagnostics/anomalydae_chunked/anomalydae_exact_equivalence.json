@@ -1,0 +1,493 @@
+{
+  "status": "PASS",
+  "reference": "PyGOD 1.1.0 AnomalyDAEBase dense full graph",
+  "candidate": "SharedAnomalyDAE existing exact sigmoid row-block backend",
+  "float32_tolerance": {
+    "atol": 1e-05,
+    "rtol": 0.0001
+  },
+  "float64_tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-08
+  },
+  "documented_reduction_order_limits": {
+    "post_adam_max_abs": 2e-05,
+    "metric_max_abs_delta_for_near_ties": 1e-05
+  },
+  "datasets": [
+    {
+      "dataset": "Cora-Syn",
+      "nodes": 2708,
+      "feature_dimension": 1433,
+      "block_size": 256,
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "checks": {
+        "attribute_reconstruction": {
+          "max_abs": 2.9802322387695312e-08,
+          "max_rel": 0.0038999132812023163,
+          "pass": true
+        },
+        "attribute_score": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.357423400349944e-07,
+          "pass": true
+        },
+        "structure_score": {
+          "max_abs": 3.814697265625e-06,
+          "max_rel": 1.4209220466909755e-07,
+          "pass": true
+        },
+        "total_score": {
+          "max_abs": 1.9073486328125e-06,
+          "max_rel": 1.3318400249318074e-07,
+          "pass": true
+        },
+        "mean_loss": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 6.066397162385329e-08,
+          "pass": true
+        },
+        "gradients": true,
+        "optimizer_step": true,
+        "final_score": {
+          "max_abs": 3.814697265625e-06,
+          "max_rel": 2.464170165694668e-07,
+          "pass": true
+        },
+        "final_order_spearman": 0.9999999992446549,
+        "metrics": {
+          "dense_roc_auc": 0.9298218406199628,
+          "exact_roc_auc": 0.9298241903875706,
+          "dense_pr_auc": 0.2148310240282073,
+          "exact_pr_auc": 0.2148310240282073
+        },
+        "max_post_update_parameter_abs": 4.244036972522736e-06,
+        "max_metric_abs_delta": 2.349767607823239e-06
+      },
+      "gradient_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 8.940696716308594e-08,
+          "max_rel": 0.00014370016288012266,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_rel": 1.7754783243617567e-07,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 4.656612873077393e-10,
+          "max_rel": 7.336277576541761e-06,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 1.7462298274040222e-10,
+          "max_rel": 2.1874086542084115e-06,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_rel": 1.120391317499525e-07,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 1.0089330544360564e-06,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 1.3969838619232178e-09,
+          "max_rel": 0.00010186340659856796,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 1.039049266182701e-06,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 1.862645149230957e-09,
+          "max_rel": 1.941307118613622e-06,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_rel": 1.2037065744152642e-07,
+          "pass": true
+        }
+      },
+      "updated_parameter_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 0.0002980264835059643,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 1.8129730960936286e-07,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 1.1463675519962635e-07,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 3.725290298461914e-09,
+          "max_rel": 1.0275623196775996e-07,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_rel": 1.1641534314321689e-07,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_rel": 6.668522587460757e-07,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 4.244036972522736e-06,
+          "max_rel": 0.0008940616971813142,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 3.6264430036681006e-07,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 4.0828251712810015e-07,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 6.513955952414108e-08,
+          "pass": true
+        }
+      },
+      "dense_final_score_sha256": "7a03f454eb63ba49e0f07847e5d0e3026b1b071659430a13c49ba05e8a53d7ab",
+      "exact_final_score_sha256": "92c37a5aa4ce9e34e3b12f3e5290fba6d9c5fff8dd3ec1d8103e352d19a6e95b"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "nodes": 6005,
+      "feature_dimension": 67,
+      "block_size": 256,
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "status": "PASS",
+      "checks": {
+        "attribute_reconstruction": {
+          "max_abs": 1.7881393432617188e-07,
+          "max_rel": 0.0004167035804130137,
+          "pass": true
+        },
+        "attribute_score": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 1.1485273176958799e-07,
+          "pass": true
+        },
+        "structure_score": {
+          "max_abs": 7.62939453125e-06,
+          "max_rel": 1.635850992443011e-07,
+          "pass": true
+        },
+        "total_score": {
+          "max_abs": 3.814697265625e-06,
+          "max_rel": 1.727643876847651e-07,
+          "pass": true
+        },
+        "mean_loss": {
+          "max_abs": 1.9073486328125e-06,
+          "max_rel": 7.973046933784644e-08,
+          "pass": true
+        },
+        "gradients": true,
+        "optimizer_step": true,
+        "final_score": {
+          "max_abs": 3.814697265625e-06,
+          "max_rel": 1.7815207797866606e-07,
+          "pass": true
+        },
+        "final_order_spearman": 0.9999999998891662,
+        "metrics": {
+          "dense_roc_auc": 0.8901149260848832,
+          "exact_roc_auc": 0.8901149260848831,
+          "dense_pr_auc": 0.20260710248680472,
+          "exact_pr_auc": 0.2026046042222601
+        },
+        "max_post_update_parameter_abs": 8.078757673501968e-06,
+        "max_metric_abs_delta": 2.4982645446258722e-06
+      },
+      "gradient_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 2.9802322387695312e-08,
+          "max_rel": 0.0005875335773453116,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 1.7959392550892517e-07,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 1.862645149230957e-09,
+          "max_rel": 8.278613677248359e-06,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 1.862645149230957e-09,
+          "max_rel": 9.084278644877486e-06,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 1.3161903211766912e-07,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_rel": 8.689743481227197e-06,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 1.862645149230957e-09,
+          "max_rel": 0.00034924596548080444,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 1.862645149230957e-09,
+          "max_rel": 8.081461419351399e-05,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 9.832551768340636e-06,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 3.725290298461914e-09,
+          "max_rel": 8.592393214712502e-07,
+          "pass": true
+        }
+      },
+      "updated_parameter_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 7.543712854385376e-08,
+          "max_rel": 7.435344741679728e-06,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 4.243266573666915e-07,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 3.725290298461914e-09,
+          "max_rel": 9.435833447923869e-08,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 1.6534551150471088e-06,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_rel": 2.3283068628643377e-07,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_rel": 9.063614015758503e-06,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 8.078757673501968e-06,
+          "max_rel": 0.0017280045431107283,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 2.3283064365386963e-09,
+          "max_rel": 7.806435746715579e-07,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_rel": 7.056569756969111e-06,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "pass": true
+        }
+      },
+      "dense_final_score_sha256": "efec57fbeac3ca647fda8b5b49917442dfe985023ec2eb8e2b9e9a7f7d22c80d",
+      "exact_final_score_sha256": "f5d2fc719806fe0afcaaa19981671bb42e663ca450a4f880c3006bc193f17513"
+    },
+    {
+      "dataset": "Cora-Syn",
+      "nodes": 2708,
+      "feature_dimension": 1433,
+      "block_size": 256,
+      "device": "cuda:0",
+      "dtype": "torch.float64",
+      "status": "PASS",
+      "checks": {
+        "attribute_reconstruction": {
+          "max_abs": 4.85722573273506e-17,
+          "max_rel": 1.0408340855860843e-11,
+          "pass": true
+        },
+        "attribute_score": {
+          "max_abs": 8.881784197001252e-16,
+          "max_rel": 2.190224973828186e-16,
+          "pass": true
+        },
+        "structure_score": {
+          "max_abs": 1.4210854715202004e-14,
+          "max_rel": 5.282498005412831e-16,
+          "pass": true
+        },
+        "total_score": {
+          "max_abs": 7.105427357601002e-15,
+          "max_rel": 4.508282789398128e-16,
+          "pass": true
+        },
+        "mean_loss": {
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "pass": true
+        },
+        "gradients": true,
+        "optimizer_step": true,
+        "final_score": {
+          "max_abs": 7.105427357601002e-15,
+          "max_rel": 4.512629238145453e-16,
+          "pass": true
+        },
+        "final_order_spearman": 1.0,
+        "metrics": {
+          "dense_roc_auc": 0.9298218406199626,
+          "exact_roc_auc": 0.9298218406199626,
+          "dense_pr_auc": 0.2148310240282073,
+          "exact_pr_auc": 0.2148310240282073
+        },
+        "max_post_update_parameter_abs": 2.7183116868556567e-14,
+        "max_metric_abs_delta": 0.0
+      },
+      "gradient_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 1.1102230246251565e-16,
+          "max_rel": 4.0996394647108136e-13,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 2.220446049250313e-16,
+          "max_rel": 2.5634673276555026e-16,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 8.673617379884035e-19,
+          "max_rel": 1.6186418895522225e-15,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 1.8973538018496328e-19,
+          "max_rel": 4.225252698155754e-15,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 2.220446049250313e-16,
+          "max_rel": 2.7362887838835764e-16,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 2.7755575615628914e-17,
+          "max_rel": 1.0711837227504554e-14,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 2.6020852139652106e-18,
+          "max_rel": 6.844026213814747e-13,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 1.3877787807814457e-17,
+          "max_rel": 1.9353916241188737e-15,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 3.469446951953614e-18,
+          "max_rel": 1.8726542761911398e-14,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 5.551115123125783e-17,
+          "max_rel": 8.071326446405416e-15,
+          "pass": true
+        }
+      },
+      "updated_parameter_comparison": {
+        "dense_stru.weight": {
+          "max_abs": 1.9081958235744878e-16,
+          "max_rel": 5.551109829169862e-13,
+          "pass": true
+        },
+        "dense_stru.bias": {
+          "max_abs": 1.734723475976807e-18,
+          "max_rel": 1.9016594553301286e-16,
+          "pass": true
+        },
+        "gat_layer.att_src": {
+          "max_abs": 1.734723475976807e-18,
+          "max_rel": 1.1907846689943192e-16,
+          "pass": true
+        },
+        "gat_layer.att_dst": {
+          "max_abs": 4.336808689942018e-19,
+          "max_rel": 2.3078893574001305e-16,
+          "pass": true
+        },
+        "gat_layer.bias": {
+          "max_abs": 8.673617379884035e-19,
+          "max_rel": 2.16840455874357e-16,
+          "pass": true
+        },
+        "gat_layer.lin.weight": {
+          "max_abs": 2.7755575615628914e-17,
+          "max_rel": 1.7323568486637201e-15,
+          "pass": true
+        },
+        "dense_attr_1.weight": {
+          "max_abs": 2.7183116868556567e-14,
+          "max_rel": 3.467771283891972e-12,
+          "pass": true
+        },
+        "dense_attr_1.bias": {
+          "max_abs": 1.734723475976807e-18,
+          "max_rel": 6.754777286353347e-16,
+          "pass": true
+        },
+        "dense_attr_2.weight": {
+          "max_abs": 1.3877787807814457e-17,
+          "max_rel": 2.038605695633181e-15,
+          "pass": true
+        },
+        "dense_attr_2.bias": {
+          "max_abs": 1.3877787807814457e-17,
+          "max_rel": 1.3003552885793568e-16,
+          "pass": true
+        }
+      },
+      "dense_final_score_sha256": "7e018d70ea3b6c2720a4be04085397b3ea6e6e69ec04c163cdc50a6287e0830e",
+      "exact_final_score_sha256": "88270648edbbc3f1b6f275c53077edbd1dc1eea87b971660e543ab1d810d6729"
+    }
+  ]
+}

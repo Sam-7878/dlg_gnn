@@ -1,0 +1,11 @@
+{
+  "calibration_baselines_sha256": "ee3689f6a86c0107b253e9852900ba6fe198432618f82512063ce8e798237b01",
+  "dataset_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "fit_scope": "validation only",
+  "seed_count": 5,
+  "temperature_scaling_sha256": "3da4aa75e1402e2373309c074f82221e962cc66bc9b5aebf55adcb127f85b711",
+  "test_events": 3648,
+  "test_positive": 107,
+  "test_source": "preserved raw predictions; no checkpoint test reinference",
+  "validation_events": 3647
+}

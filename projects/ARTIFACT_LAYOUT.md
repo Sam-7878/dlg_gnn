@@ -17,7 +17,7 @@
 | `reports/stream_mc/round_4/`, `results/stream_mc/sci_v3_submission_r4/` | StreamMC canonical R4 evidence & verification | Active: `projects/stream_mc/reports/`, `results/canonical_r4/`; older rounds R1~R3: `archive/stream_mc/results/` |
 | `reports/tds/main_final*`, `results/tds/main_final_v2/` | TDS Gate v8 results, model metrics, final reports | Active: `projects/tds/reports/`, `results/main_final_v2/`; developmental rounds: `archive/tds/reports/`, `results/` |
 | `archive/gog_scimain_v1_preserved_panel/`, `data/benchmark/gog_scimain_v1/` | TDS historical GoG-SCIMain-v1 dataset & panel | `archive/tds/data/` |
-| `evaluation/benchmark/`, `experiments/benchmark/`, `artifacts/` | Frozen benchmark campaign source & v1.0.0 artifacts | `projects/benchmark/evidence/frozen_a05_a06_evidence.zip` (portable reviewer evidence); historical: `archive/benchmark/artifacts/`, `experiments/` |
+| `evaluation/benchmark/`, `experiments/benchmark/`, `artifacts/` | Frozen benchmark campaign source & v1.0.0 artifacts | `projects/benchmark/evidence/public_numeric_evidence.zip` (portable reviewer evidence); historical: `archive/benchmark/artifacts/`, `experiments/` |
 | `publication/benchmark/`, `release/dlg_gnn_benchmark/` | Historical v1.0.0 publication and release workspaces | `archive/benchmark/publication/`, `archive/benchmark/release/` |
 | `outputs/` | Local raw/constructed graphs, checkpoints | `archive/<project>/outputs/` (Git-ignored) |
 | `logs/` | Benchmark execution logs (`benchmark.log`) | `archive/benchmark/logs/` (Git-ignored) |
@@ -29,3 +29,7 @@ The repository does not treat intermediate `.aux`, `.log`, checkpoints, wheels, 
 environment backups as active paper results. All four projects feature deterministic
 reproduction commands via `scripts/reproduce_project.py` with zero reliance on legacy paths.
 
+
+## Author visibility policy — 2026-10-09
+
+Active unsubmitted manuscript folders exist locally and are Git-ignored. Public project portals contain code and supporting evidence; the directory layout is not a promise that every local manuscript is uploaded. Benchmark public `verify` and `tables` do not use private manuscript inputs. The original frozen ZIP is local; its 641-file public derivative excludes manuscript writers.

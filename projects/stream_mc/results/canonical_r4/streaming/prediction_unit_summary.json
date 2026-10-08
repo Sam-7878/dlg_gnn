@@ -1,0 +1,31 @@
+{
+  "available_original_dataset": false,
+  "case": "S-B",
+  "directly_comparable_to_offline_f1": false,
+  "event_weighted_prevalence": 0.03097,
+  "events": 100000,
+  "events_before_training_reference_freeze": 100000,
+  "graph_cache_keys": [
+    "edge_index",
+    "x",
+    "graph_id",
+    "y"
+  ],
+  "labels_consistent_within_contract": true,
+  "live_deployment_claim_eligible": false,
+  "max_events_per_contract": 30,
+  "offline_prediction_unit": "contract",
+  "positive_contracts": 106,
+  "positive_events": 3097,
+  "prediction_frequency": "every event",
+  "prediction_unit": "event_with_inherited_contract_label",
+  "raw_event_end": 1704486179,
+  "raw_event_start": 1497902038,
+  "raw_source_note": "frozen chronological prefix sampled from per-contract transaction files; not complete chain traffic",
+  "source_sha256": "317798d945baa95ad23622418a39d0ceb0a3a840b787440e1b7226ff500f1dc9",
+  "test_contracts_before_global_training_reference_freeze": 662,
+  "top10_event_fraction": 0.003,
+  "training_reference_latest_event_end": 1709177759,
+  "unique_contract_prevalence": 0.03137951450562463,
+  "unique_contracts": 3378
+}

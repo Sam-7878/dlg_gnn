@@ -19,7 +19,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ("dlg_gnn", "benchmark", "stream_mc", "tds")
-EVIDENCE = ROOT / "projects/benchmark/evidence/frozen_a05_a06_evidence.zip"
+EVIDENCE = ROOT / "projects/benchmark/evidence/public_numeric_evidence.zip"
 A05 = "evaluation/benchmark/v2/paper_ready_a05/"
 PUB = A05 + "publication_evidence_a05/"
 
@@ -67,7 +67,7 @@ def verify_archive() -> zipfile.ZipFile:
 
 
 def benchmark_verify() -> dict[str, object]:
-    subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/artifact_manifest.py"), "--verify"],
+    subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/review_evidence_manifest.py"), "--verify"],
                    cwd=ROOT, check=True)
     with verify_archive() as archive:
         manifest = json.loads(archive.read(PUB + "dataset_manifest_canonical.json"))
@@ -123,6 +123,9 @@ def extract_paper_inputs() -> None:
 
 
 def benchmark_paper() -> dict[str, object]:
+    check((ROOT / "projects/benchmark/scripts/a07_build_manuscript.py").is_file()
+          and (ROOT / "projects/benchmark/manuscript_base_a06").is_dir(),
+          "Unsubmitted manuscript sources are intentionally withheld. Use --mode tables for public evidence regeneration; paper requires the author's local manuscript inputs.")
     result = benchmark_verify()
     extract_paper_inputs()
     script = ROOT / "projects/benchmark/scripts/a07_build_manuscript.py"
@@ -223,7 +226,7 @@ def source_verify(project: str) -> dict[str, object]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--project", choices=PROJECTS, required=True)
-    ap.add_argument("--mode", choices=("verify", "paper", "full"), required=True)
+    ap.add_argument("--mode", choices=("verify", "tables", "paper", "full"), required=True)
     ap.add_argument("--confirm-full", action="store_true")
     args = ap.parse_args()
     start = time.monotonic()
@@ -235,9 +238,15 @@ def main() -> None:
         print("Full rerun is manual campaign orchestration; no training was started by this facade.", file=sys.stderr)
         raise SystemExit(2)
     if args.project == "benchmark":
-        detail = benchmark_paper() if args.mode == "paper" else benchmark_verify()
+        if args.mode == "tables":
+            detail = benchmark_verify()
+            subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/build_review_evidence.py")], cwd=ROOT, check=True)
+            subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/review_evidence_manifest.py"), "--verify"], cwd=ROOT, check=True)
+            detail["tables"] = "PASS: frozen tables and seeded permutation statistics regenerated; no manuscript sources or training"
+        else:
+            detail = benchmark_paper() if args.mode == "paper" else benchmark_verify()
     else:
-        if args.mode == "paper":
+        if args.mode in ("paper", "tables"):
             raise SystemExit(f"{args.project} paper regeneration has not been qualified; verify only")
         detail = source_verify(args.project)
     print(json.dumps({"project":args.project,"mode":args.mode,"status":"PASS","environment":environment(),"detail":detail,"elapsed_seconds":round(time.monotonic()-start,2)},indent=2,sort_keys=True))

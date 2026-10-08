@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-10-09",
+  "evidence_zip_sha256": "459a3721efd1c0e17e49315ca31e92331ae754ae1683068303bdc793a5feab08",
+  "registry_records": 456,
+  "approved_successes": 435,
+  "additional_input_sha256": "4f1818051cc5370ca58a923c79d70c6949e138cbe0e7ffbbb02c8f165bd03d05",
+  "permutation_repetitions": 200000,
+  "permutation_seed": 20261008,
+  "s2_best_models": "DOMINANT / DLG-Aug",
+  "unresolved": [
+    "crypto original hybrid builder, remaining feature definition and label-independent construction (labels.csv mapping verified)",
+    "public immutable revision tag/commit",
+    "missing repaired crypto Aug raw scores/thresholds",
+    "matched AnomalyDAE cap/full measurement (comparative claim removed)",
+    "historical baseline loss curves and complete per-run defaults not uniformly retained"
+  ],
+  "public_numeric_evidence_sha256": "b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5",
+  "legacy_gog_connection": "PASS: A03 64-KiB partial hashes and A05 full hashes match all three GoG inputs; 267/269 patch sections newline-only, other two documentation; initial producer unresolved",
+  "ngnn_input_reuse": "PASS: ngnn consumes existing hybrid tensors and saves model checkpoints; current GoG sources/raw ZIP sources do not identify the initial hybrid producer"
+}

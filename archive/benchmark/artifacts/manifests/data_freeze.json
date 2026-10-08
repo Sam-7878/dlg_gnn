@@ -1,0 +1,136 @@
+{
+  "fixed_dataset_seed": 42,
+  "datasets": [
+    {
+      "dataset": "Elliptic",
+      "nodes": 46564,
+      "edges": 83188,
+      "features": 165,
+      "anomaly_label_ratio": 0.09760759384932566,
+      "label_provenance": "real labels",
+      "feature_hash": "2d0a8934969d3e2180f5e7f08027232de3e9bbeadf933f9593de1fc85c9ccc8b",
+      "label_hash": "179591f653eb22846bda17c10d728561dd9ec221d8479a81307cacdbbc5753e1",
+      "edge_hash": "f2b0887b8591ed86dfa4ce09e5b98e078ebe43859a62f148d5ade98d554af986",
+      "injection_hash": "bb120d7fba296e819747ceaa5ef557ca927fab89ab3c12913ac8d609bc43505e"
+    },
+    {
+      "dataset": "DGraphFin",
+      "nodes": 1225601,
+      "edges": 746271,
+      "features": 17,
+      "anomaly_label_ratio": 0.012654199857865651,
+      "label_provenance": "real labels",
+      "feature_hash": "640b74a64de2742c010d81fe035a65f279890c87da0945f91dc866e0c821eadb",
+      "label_hash": "86e45d6c1b495752c15dbc59d3c07e0ec76d55db4d1fad9336020d61725a5691",
+      "edge_hash": "6e1a93f99018a5ca0cdc08de6a8da3f8c0799230fd1d49e88c874a0a68e6831d",
+      "injection_hash": "25053b10e7d8b9a23c75d24eff9a0440b03defd14aad39f861a30aa897afb5d6"
+    },
+    {
+      "dataset": "Yelp",
+      "nodes": 716847,
+      "edges": 14004995,
+      "features": 300,
+      "anomaly_label_ratio": 0.00999934435102609,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "00e17927c0182a0c6b64f319f16618a6e5068f19dae13e7778bc8f9985a26763",
+      "label_hash": "27a660fbc5d9970071ee7dd3c83c72aa484ab99b06b13fcc0acbbc1a720ec982",
+      "edge_hash": "2e46ad595c6af51de12844255ce1b12bb6abd7c0778282feb59e2d0214cffae3",
+      "injection_hash": "0cdd97ecd10af2718af5d0dd836ee023bcb519a80349fc549e827d8b53096209"
+    },
+    {
+      "dataset": "Amazon",
+      "nodes": 13752,
+      "edges": 507378,
+      "features": 767,
+      "anomaly_label_ratio": 0.029959278650378125,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "acf457c12ab1560b0995a165aefbc2a6ac3cb455e9fa16c75eb3afcb31b2d11d",
+      "label_hash": "162edfbbd8c438cc06046ce391347ba3961ff75aabb94ece85f280f4cecb8479",
+      "edge_hash": "f9e072b2755458c79554340d19abada2a6b21abe1effa6f9e46d0e82e31ddc12",
+      "injection_hash": "2badd244c6203e3b499ba62c7832925f40c74d8fc3e12cd80470e79bc458c037"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "nodes": 6005,
+      "edges": 7409,
+      "features": 67,
+      "anomaly_label_ratio": 0.02997502081598668,
+      "label_provenance": "real labels",
+      "feature_hash": "0d99031513b990b9236451f6b2ce7ceea45cf38d857537c85067541dbd634eca",
+      "label_hash": "0ed86a2342c5cf515573f7f619c056370def68755f5c71de25b5ffa9be6d946e",
+      "edge_hash": "4acf24d148d79dea388f4207ea52572f032543cd3fdeee171dbfeed7d112fc22",
+      "injection_hash": "96fc7c21f184c945569d24e64af07faf757b56504d856f4b61cc58b3587383ef"
+    },
+    {
+      "dataset": "Flickr",
+      "nodes": 89250,
+      "edges": 1001494,
+      "features": 500,
+      "anomaly_label_ratio": 0.02,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "074ef3b830699663142cfd36277ee68da7c3dfccee3034f98fc319609dc5714c",
+      "label_hash": "0abe65c337cc4134547c007470b9557c39b70467c6c4fc3438ff7b23fc690460",
+      "edge_hash": "d0a16e042fe2694d95029d23e5c44be6bd66fed765e15407cfdb1367dd54345d",
+      "injection_hash": "8fe2ddc2ac8136fad50dbb520cf74762366c633b84d8e6a4df5e314c60c92d8f"
+    },
+    {
+      "dataset": "Reddit",
+      "nodes": 232965,
+      "edges": 114869737,
+      "features": 602,
+      "anomaly_label_ratio": 0.01999871225291353,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "d699bcc7cdbe07b51a92ba74d5a5f4a4f51ce712d96867537ac8a012d7fdbd92",
+      "label_hash": "13a3c7494bd59998421e6b3d3b4a561ed05de14d79f39d27b39b1294b3b3aa54",
+      "edge_hash": "a8e0add89a33a52f69a4f5a18e1633613a50771e641baf4ece5c3dfe40307642",
+      "injection_hash": "76e3a0d21b672ee89ec18a3090f1eed5ffa57604689100d24a620d4374c71c15"
+    },
+    {
+      "dataset": "Cora",
+      "nodes": 2708,
+      "edges": 11276,
+      "features": 1433,
+      "anomaly_label_ratio": 0.029911373707533235,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "669cbcb2db1be38d96a2ea59e9d6dd9b15db9415f7f1cda8f8948252ee0bf108",
+      "label_hash": "1ec183b943b6da543570b6d73948840e57074adf553ac61f8fe33ac46ea2cac1",
+      "edge_hash": "aa038fea0a5e10b11669c7a27c290fd1cb85acf73406ed3dd63673a5b63de317",
+      "injection_hash": "a90faa0dae8adbdc6e95e1a78f58e14c33d50be02c93f8f8e34cf49942b061eb"
+    },
+    {
+      "dataset": "CiteSeer",
+      "nodes": 3327,
+      "edges": 9914,
+      "features": 3703,
+      "anomaly_label_ratio": 0.029756537421100092,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "fc59f17da1f6bdda345ad531174f832d9dbe9302c15f899f6526d3fe4670ba84",
+      "label_hash": "04ff49a9e480ef0dc7f61903342d1d826e0296e9228dd12e70447dec878e154d",
+      "edge_hash": "7889bd3961ae5e3880d63c1c9043dca83a87324c69e8c074c60d6288e16aaab9",
+      "injection_hash": "2b0a4f1d45b4bc9665de9b810c84e3a4e977d00ac35e2fd7116efe571763a0f3"
+    },
+    {
+      "dataset": "PubMed",
+      "nodes": 19717,
+      "edges": 93958,
+      "features": 500,
+      "anomaly_label_ratio": 0.02997413399604402,
+      "label_provenance": "synthetic injection",
+      "feature_hash": "9fe39199d27c0ee65e0cc8fd1904590636cbf41fe489b00c925780db5e473dcf",
+      "label_hash": "9cf43301b17de09cf47643f7fe8eac16c900c63b64fddc3d80627c7328f9ae68",
+      "edge_hash": "b5c8acf71205795345973779899188a81a8558622d044e7f16531e6df068ecd9",
+      "injection_hash": "364de63ae09a05a1836b5da7b01c827b68c97c59078549e9c70ad2ba224ed117"
+    }
+  ],
+  "code_git_commit": "5299416924c4e7e42f2bceab5de8fff0886a815a",
+  "benchmark_source_hash": "ad7e44ff70f3a9e44fec55ada1afd74d45471678fb95c9032899bc0adea5db2e",
+  "config_hash": "391f2600f2d3a2c472f802767b5b7612c048e73ddfc3d03efea91a9416d5f7cf",
+  "backend_hash": "43a721c33ebf64bd01b5ca5c3e0bdda6e9f2d0edb1ada62d3defb37565c95a3a",
+  "git_dirty_paths": [
+    " M scripts/fig_roc_auc_comparison.py",
+    " M scripts/scratch_stats.py",
+    " M src/gog_fraud/pipelines/analyze_sci_round5.py",
+    " M src/gog_fraud/pipelines/run_sci_round5.py"
+  ],
+  "freeze_hash": "4375166a50f9f935dbe37b3669a741501e92ce5466e3659a5e429c4f051254c7"
+}

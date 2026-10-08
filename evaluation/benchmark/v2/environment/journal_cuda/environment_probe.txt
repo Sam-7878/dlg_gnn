@@ -1,0 +1,18 @@
+=== Environment Probe for Work Order A02 ===
+Backend: CUDA
+Python: 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]
+PyTorch: 2.14.1+cu130 (CUDA: 13.0)
+GPUs detected (2):
+  [0] NVIDIA GeForce RTX 3090 (24.0 GB, CC 8.6)
+  [1] NVIDIA GeForce RTX 4070 Laptop GPU (8.0 GB, CC 8.9)
+
+Key packages:
+  torch: 2.14.1
+  torchvision: 0.29.1
+  torchaudio: 2.11.0
+  torch-geometric: 2.8.0.post1
+  pygod: 1.1.0
+  scikit-learn: 1.9.1
+  numpy: 2.5.3
+  scipy: 1.18.1
+  pandas: 3.0.6

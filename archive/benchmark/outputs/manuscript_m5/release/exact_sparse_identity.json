@@ -1,0 +1,31 @@
+{
+  "formula_name": "exact_sparse_reconstruction_gram_identity",
+  "reference_file": "docs/math/exact_sparse_reconstruction.md",
+  "dense_form": "||A_i - z_i Z^T||_2^2",
+  "exact_sparse_identity": "sum_j A_{ij}^2 - 2 * <(A Z)_i, z_i> + z_i * (Z^T Z) * z_i^T",
+  "binary_special_case": "d_i - 2 * <(A Z)_i, z_i> + z_i * (Z^T Z) * z_i^T",
+  "terms": {
+    "term_1_degree": "sum_j A_{ij}^2 (reduces to d_i = sum_j A_{ij} for binary adjacency)",
+    "term_2_cross": "cross_i = sum_k (A Z)_{ik} Z_{ik} = <(A Z)_i, z_i>",
+    "term_3_gram": "z_i * (Z^T Z) * z_i^T = ((Z * G) * Z)_{i,:} where G = Z^T Z"
+  },
+  "erroneous_form_banned": "d_i - 2 * z_i * (Z^T A_{:,i}) + ||Z||_F^2 * ||z_i||^2",
+  "complexity": {
+    "arithmetic": "O(E * d + N * d^2)",
+    "dense_storage_avoided": "O(N^2)",
+    "stored_memory": "O(E + N * d + d^2)",
+    "peak_working_memory": "O(N * d + d^2)"
+  },
+  "generality": {
+    "directed": "Algebraically exact for row-oriented adjacency",
+    "weighted": "Algebraically exact using sum_j A_{ij}^2 and weighted sparse aggregation",
+    "self_loops": "Supported exactly via diagonal elements"
+  },
+  "numerical_verification": {
+    "test_modules": [
+      "tests/benchmark/manuscript_m4/test_release_exact_sparse_formula_matches_dense.py",
+      "tests/benchmark/manuscript_m5/test_exact_sparse_directed_weighted_cases.py"
+    ],
+    "verified_backends": ["exact_sparse", "dense_reference"]
+  }
+}

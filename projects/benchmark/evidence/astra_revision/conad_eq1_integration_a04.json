@@ -1,0 +1,22 @@
+{
+  "dataset": "Cora-Syn",
+  "seed": 42,
+  "epochs": 1,
+  "scope": "APPENDIX_DIAGNOSTIC_ONLY",
+  "paper_equation": "(1-y)*||h-h_aug||_2 + y*max(0,margin-||h-h_aug||_2)",
+  "reference": {
+    "contrastive_gradient_norm": 0.0,
+    "encoder_parameter_delta_after_one_step": 1.754919607749771,
+    "final_parameter_checksum": "fe116c420c8e310a42097660bd6290257d5c0a2a8557376c535586cbac41bb00",
+    "raw_score_sha256": "11cefa95f2e9491be901385f650cb3d6b8261f61b7f3f95ddeed6d1614a3632a"
+  },
+  "experimental_paper_eq1": {
+    "contrastive_gradient_norm": 0.14781348588998533,
+    "encoder_parameter_delta_after_one_step": 1.7583121468805125,
+    "final_parameter_checksum": "ea71949bcd206b31bec2069666f1bac35ac4ad45f752e6b910fa3351823deb49",
+    "raw_score_sha256": "9d65b851d29a65edb5973ab9dad6be11875849fb4b5a13b205fe92a226148f81"
+  },
+  "score_pearson": 0.9995905160903931,
+  "score_spearman": 0.9993913730867011,
+  "primary_ranking_eligible": false
+}

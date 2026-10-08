@@ -1,0 +1,1 @@
+/mnt/d/_Work/goat_bank/.venv

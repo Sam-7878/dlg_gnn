@@ -1,0 +1,549 @@
+{
+  "status": "PROVENANCE_REVIEW_REQUIRED",
+  "method": "non-executing pickle opcode inspection and typed ZIP storage parsing; known layout only",
+  "source_sha256": "60b6e0db5d9af76e1df69fe58fa6a2a1c5606836228a467cdb7c3ac683766f0d",
+  "results": [
+    {
+      "dataset": "Ethereum",
+      "hybrid_file_sha256": "4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654",
+      "knn_file_sha256": "8e257c17dec37ed0d19e7f219aa6fceda0bd26cb7d2bbc4bb48d7a7fdc6e96a3",
+      "n_nodes": 14385,
+      "n_hybrid_edges": 115065,
+      "n_knn_edges": 71925,
+      "n_added_edges": 43140,
+      "n_removed_knn_edges": 0,
+      "added_same_label_edges": 43140,
+      "added_edge_same_label_fraction": 1.0,
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_min": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_column_max": [
+        0.0,
+        0.0,
+        0.0,
+        4873.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features_equal_to_label_columns": [],
+      "upstream_label_alignment": {
+        "csv_basename": "ethereum_basic_metrics_processed.csv",
+        "csv_sha256": "13741c190b3e5b5f6526d85e749afdfe021673e72914d2be13d48718ad3eb3d7",
+        "n_checked": 14385,
+        "n_mismatches": 0,
+        "mapping": "contract_to_idx graph JSON basename -> processed CSV row"
+      },
+      "labels_csv_alignment": {
+        "labels_csv_sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+        "category_zero_positive": true,
+        "n_checked": 14385,
+        "missing_contracts": 0,
+        "n_mismatches": 0
+      },
+      "global_graph_comparison": {
+        "csv_sha256": "06f56708dc9609fc96ec139b0b5886e08c65f0fcca6f2b4ff14023dab7008494",
+        "mapping_sha256": "00a9410e29a5d6b2ded1f6f295dc5e903566f676dae1135a66dd92394842498f",
+        "source_rows": 1519617,
+        "rows_with_unretained_endpoint": 1308,
+        "retained_directed_edges_with_both_orientations": 3036618,
+        "hybrid_overlap": 4032,
+        "added_hybrid_overlap": 1267,
+        "same_label_fraction": 0.911880914886232,
+        "comparison": "Address-aligned, unweighted undirected union of retained CSV edges; no claim about builder causality."
+      },
+      "json_sample": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "43692b5ea61deef38089d8cf34267790426cfa3743e65b8baa4dbe7dec6a6d33",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 282
+        },
+        {
+          "node": 1307,
+          "json_basename": "11173.json",
+          "json_sha256": "aa6434c6e5ecfb263123f7a16fea65eca45a78c2f0381a37222f3717e45cf32e",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 158
+        },
+        {
+          "node": 2615,
+          "json_basename": "12350.json",
+          "json_sha256": "6285ee081ee155a4006c6c813689e5894bb3f6ae969f38b4ed14c1e617c5ee96",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 12.0,
+          "json_feature_rows": 27
+        },
+        {
+          "node": 3922,
+          "json_basename": "13527.json",
+          "json_sha256": "37eefdff7c7a76c928a8fc620a45348f4f44956ca39414f5432faa277b662407",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 2.0,
+          "json_feature_rows": 1416
+        },
+        {
+          "node": 5230,
+          "json_basename": "1759.json",
+          "json_sha256": "95212214ade2262bdd7c331e1364f79c0894f8bf66a3e4dc83927f5202f30d71",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1224.0,
+          "json_feature_rows": 3715
+        },
+        {
+          "node": 6538,
+          "json_basename": "2936.json",
+          "json_sha256": "96567d2f4298e71e51e364646edf215ce9b481c663e52d61e46caf7f79577b16",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 715
+        },
+        {
+          "node": 7845,
+          "json_basename": "4111.json",
+          "json_sha256": "b3ec6759a582cbaa6f85a84f8cd2ede107d0bfae220cf32d6c2cbeda76d9ce9f",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 941
+        },
+        {
+          "node": 9153,
+          "json_basename": "529.json",
+          "json_sha256": "413c3e4ef9efc0aaa96edf5016dfbe554f2a5465a393bfd7bdf6b6a9d5dc3c3b",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 64.0,
+          "json_feature_rows": 140
+        },
+        {
+          "node": 10461,
+          "json_basename": "6467.json",
+          "json_sha256": "3e4d6962074398100d2133af20eab51c38ffabe7dac0680f7b9aa32c1f2dd31b",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 107
+        },
+        {
+          "node": 11768,
+          "json_basename": "7643.json",
+          "json_sha256": "c9e6290cd319ba2c5aa3c655d1d75f86e0e593b85f783ed9b6f66a953a6a8a86",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 2598
+        },
+        {
+          "node": 13076,
+          "json_basename": "8820.json",
+          "json_sha256": "3f619b147778059cfa0d7413ff7b48c32d234100307bc63d08c3fa8b8cc14126",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 228.0,
+          "json_feature_rows": 522
+        },
+        {
+          "node": 14384,
+          "json_basename": "9999.json",
+          "json_sha256": "1b4708dfc744502dfb6019e03a041ada6ef1006e1c7c788c3e534e3f7c3e2af8",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 72
+        }
+      ],
+      "construction_causality": "UNVERIFIED: same-label edges observed; original builder required to determine label use"
+    },
+    {
+      "dataset": "BSC",
+      "hybrid_file_sha256": "2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883",
+      "knn_file_sha256": "e06d4ec90cd15dfba4ef0f46ef13ab6bc77454651aac4a1233706a79f64efe3c",
+      "n_nodes": 7481,
+      "n_hybrid_edges": 59832,
+      "n_knn_edges": 37405,
+      "n_added_edges": 22427,
+      "n_removed_knn_edges": 0,
+      "added_same_label_edges": 22427,
+      "added_edge_same_label_fraction": 1.0,
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_min": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_column_max": [
+        0.0,
+        0.0,
+        0.0,
+        3227.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features_equal_to_label_columns": [],
+      "upstream_label_alignment": {
+        "csv_basename": "bsc_basic_metrics_processed.csv",
+        "csv_sha256": "26da48e47156757d4af3760b1ad3d16474da25427512d4e5ae8f9c465919b354",
+        "n_checked": 7481,
+        "n_mismatches": 0,
+        "mapping": "contract_to_idx graph JSON basename -> processed CSV row"
+      },
+      "labels_csv_alignment": {
+        "labels_csv_sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+        "category_zero_positive": true,
+        "n_checked": 7481,
+        "missing_contracts": 0,
+        "n_mismatches": 0
+      },
+      "global_graph_comparison": {
+        "csv_sha256": "406535fb5f553f3b970b632fed2b6d260d581d167b35fcbeb7dbd04706d6e919",
+        "mapping_sha256": "5fe05425bdc7db3df4b444294dee67fefae70b348e9e3416dc390e03bee51ba8",
+        "source_rows": 515833,
+        "rows_with_unretained_endpoint": 122,
+        "retained_directed_edges_with_both_orientations": 1031422,
+        "hybrid_overlap": 1566,
+        "added_hybrid_overlap": 516,
+        "same_label_fraction": 0.7692564246254201,
+        "comparison": "Address-aligned, unweighted undirected union of retained CSV edges; no claim about builder causality."
+      },
+      "json_sample": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "61ed31c42ed8450fce36e447d30c4cf7b7da784cb9121017e36c97a0d6edeeb8",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 6
+        },
+        {
+          "node": 680,
+          "json_basename": "161.json",
+          "json_sha256": "10301f0a7d146d7bf5fc0ee2f7b229c51f19daae23375c9d1e61f29478e980c4",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 115
+        },
+        {
+          "node": 1360,
+          "json_basename": "2221.json",
+          "json_sha256": "799a5077533f6bd5ff4eebe9e44c0343506b251732e5a1ebd4940c646ff5a5d7",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 64
+        },
+        {
+          "node": 2040,
+          "json_basename": "2834.json",
+          "json_sha256": "76a8a6de26c98d90ff4b87c51b5bd17ea07ca3d2e115986ffde0643e2a8f2463",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 178
+        },
+        {
+          "node": 2720,
+          "json_basename": "3446.json",
+          "json_sha256": "22ab254d928460796802e61d70ae089ab6ced3bac367f52b74a2e0f172ee2e6c",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 254
+        },
+        {
+          "node": 3400,
+          "json_basename": "4058.json",
+          "json_sha256": "d1051636daaca0ee83fd4406213b9f2ba845065d9f212729827cb946405863f0",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 1351
+        },
+        {
+          "node": 4080,
+          "json_basename": "4670.json",
+          "json_sha256": "e64b4cfd04c94438cc61a506a9f484bcad7c8034ab87fce318a90597e0ca1a2f",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 969
+        },
+        {
+          "node": 4760,
+          "json_basename": "5282.json",
+          "json_sha256": "925423dfa37a912649e265b95f7e76acdc2fcf4623319899a58e045bcf27c5d0",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 111
+        },
+        {
+          "node": 5440,
+          "json_basename": "5895.json",
+          "json_sha256": "cb8ae43b0ef4b7ed6b28debdccee47c13519a749b46fe4e993135cd628bdc449",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 19
+        },
+        {
+          "node": 6120,
+          "json_basename": "6506.json",
+          "json_sha256": "831b462c0a3a70e7f169c780370369ebaa3ffc3666824b957d6e4e2d7b51e822",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 14
+        },
+        {
+          "node": 6800,
+          "json_basename": "7118.json",
+          "json_sha256": "32f9ca1e2f3864775984c48f10c62be2003bd00d22d54d98cdd392a6afd42b8c",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 8
+        },
+        {
+          "node": 7480,
+          "json_basename": "999.json",
+          "json_sha256": "2027dc1f7007907338f10e6b2fb3580bcb6155eca267fdc016351615f33f258d",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 92
+        }
+      ],
+      "construction_causality": "UNVERIFIED: same-label edges observed; original builder required to determine label use"
+    },
+    {
+      "dataset": "Polygon",
+      "hybrid_file_sha256": "292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74",
+      "knn_file_sha256": "7c0fa4afbad32581bf556a79564cb851e0d26037ce5dfb663bd39fae6a0f90b4",
+      "n_nodes": 2303,
+      "n_hybrid_edges": 18411,
+      "n_knn_edges": 11515,
+      "n_added_edges": 6896,
+      "n_removed_knn_edges": 0,
+      "added_same_label_edges": 6896,
+      "added_edge_same_label_fraction": 1.0,
+      "constant_zero_feature_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_column_min": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_column_max": [
+        0.0,
+        0.0,
+        0.0,
+        88.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features_equal_to_label_columns": [],
+      "upstream_label_alignment": {
+        "csv_basename": "polygon_basic_metrics_processed.csv",
+        "csv_sha256": "cb14a43a073e66b71d8d115f20f06e625f9228b77b9d24cf20cb1fa57abfbd4f",
+        "n_checked": 2303,
+        "n_mismatches": 0,
+        "mapping": "contract_to_idx graph JSON basename -> processed CSV row"
+      },
+      "labels_csv_alignment": {
+        "labels_csv_sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+        "category_zero_positive": true,
+        "n_checked": 2303,
+        "missing_contracts": 0,
+        "n_mismatches": 0
+      },
+      "global_graph_comparison": {
+        "csv_sha256": "7f0d6469f5005089391b26a60d6507771803bce3fb01448c9c7db2e74af74aaf",
+        "mapping_sha256": "b1334181dd54446c60e5ecf0d88b5380c41a3c7bd005dcfd892b905640db1d70",
+        "source_rows": 281681,
+        "rows_with_unretained_endpoint": 415,
+        "retained_directed_edges_with_both_orientations": 562532,
+        "hybrid_overlap": 1125,
+        "added_hybrid_overlap": 749,
+        "same_label_fraction": 0.989387270413061,
+        "comparison": "Address-aligned, unweighted undirected union of retained CSV edges; no claim about builder causality."
+      },
+      "json_sample": [
+        {
+          "node": 0,
+          "json_basename": "0.json",
+          "json_sha256": "97f5e6d916fbdb803e3e3b4cf86a7851254f3e3717dad7530a39edcaf03a6a88",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 7
+        },
+        {
+          "node": 209,
+          "json_basename": "1186.json",
+          "json_sha256": "c75e45ac15d0d49e0e8bcd71428eaccb7f2b4334394ea9b870204f29e94b7206",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 2348
+        },
+        {
+          "node": 418,
+          "json_basename": "1374.json",
+          "json_sha256": "3f1c9e7afbd82363ed04c9b6c983ad233bec83cc3d50f6dd1eecec70d1411db0",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 2381
+        },
+        {
+          "node": 627,
+          "json_basename": "1562.json",
+          "json_sha256": "1621db2d36da113dc678207e4e4ca8916ced8cc355b2706d11b5139ca7584dfb",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 1858
+        },
+        {
+          "node": 837,
+          "json_basename": "1751.json",
+          "json_sha256": "561ce461a7a72bdb9abf85f48618a9cca0633ff2febe8719a7984cd8cd543e41",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 29
+        },
+        {
+          "node": 1046,
+          "json_basename": "194.json",
+          "json_sha256": "784164f585c1898b711bf3605f229e40b772983ae9493c10b2b10a536efe78ac",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 23
+        },
+        {
+          "node": 1255,
+          "json_basename": "2127.json",
+          "json_sha256": "037506bbb1b3c57519948cfcda196863bfd75e1876e5d28ca453cfccf66fde53",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 4839
+        },
+        {
+          "node": 1464,
+          "json_basename": "243.json",
+          "json_sha256": "38f728e060ed3520011b194d062478ab1ce6629d7043a2d89a1e9e830543097d",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 5868
+        },
+        {
+          "node": 1674,
+          "json_basename": "432.json",
+          "json_sha256": "3a0c06b8b6b92de07bb18888ec4d2bfa170f351a8ff7d9d3d104c6eadefa9b94",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 67
+        },
+        {
+          "node": 1883,
+          "json_basename": "620.json",
+          "json_sha256": "12b9699b1f3c65b81d51cbe619ab45a1d1191e69b844a8a6630c048a5089380f",
+          "tensor_label": 1,
+          "json_label": 1,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 1065
+        },
+        {
+          "node": 2092,
+          "json_basename": "809.json",
+          "json_sha256": "caea3688b834da61346d33db788b53e1771b21b8f5f62a8d0dd2a307257bd75f",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 3
+        },
+        {
+          "node": 2302,
+          "json_basename": "999.json",
+          "json_sha256": "341e8d6b40fd25f3265771c0ac63c6874c41254f08bcbe5e420f31cd2a041d5e",
+          "tensor_label": 0,
+          "json_label": 0,
+          "feature_column_3": 1.0,
+          "json_feature_rows": 2893
+        }
+      ],
+      "construction_causality": "UNVERIFIED: same-label edges observed; original builder required to determine label use"
+    }
+  ],
+  "provided_pipeline_trace": {
+    "pipeline": "src/run_evaluation_pipeline.py",
+    "input": "existing polygon_hybrid_graph.pt",
+    "output": "data/benchmark/gog_microrag_stream_v1/polygon_hybrid_graph.pt",
+    "builder": "src/benchmark/semi_synthetic_builder.py",
+    "conclusion": "copies existing tensors or generates a 5000x32 simulated fallback; does not produce the three frozen raw 8-feature tensors"
+  },
+  "inference_limit": "No label-leakage causal conclusion is asserted without the original producer. Native financial-fraud generalization from these artifacts is not cleared."
+}

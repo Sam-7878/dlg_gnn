@@ -1,0 +1,121 @@
+{
+  "all_downloads_complete": false,
+  "all_extracted_sources_exact": true,
+  "audit_time_utc": "2026-09-03T14:18:05.859802+00:00",
+  "extracted_source_audit": [
+    {
+      "actual_files": 14464,
+      "all_source_files_exact": true,
+      "chain": "ethereum",
+      "expected_files": 14464,
+      "hash_mismatches": [],
+      "lineage": {
+        "evidence_package": "/mnt/d/_Work/goat_bank/dlg_gnn/docs/work_reports/_2026/102_stream_mc_round_2/DLG_StreamMC_SCI_Round2_Evidence_Package.zip",
+        "manifest_complete": true,
+        "member": "DLG_StreamMC_SCI_Round2_Evidence_Package/results_sci/manifests/ethereum.json",
+        "physical_root": "/mnt/d/_Work/_data/dataset/transactions",
+        "schema": "round2 file_hashes"
+      },
+      "missing_files": [],
+      "unexpected_files": []
+    }
+  ],
+  "official_distribution": {
+    "all_files_complete": false,
+    "distribution_root": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data",
+    "entries": [
+      {
+        "actual_bytes": 345834,
+        "expected_bytes": 345834,
+        "google_drive_file_id": "1ipgXQB57z5Rp413Zqdipac7cGTBpYxLR",
+        "relative_path": "global_graph/bsc_contract_to_number_mapping.json",
+        "sha256": "5fe05425bdc7db3df4b444294dee67fefae70b348e9e3416dc390e03bee51ba8",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 15344641,
+        "expected_bytes": 15344641,
+        "google_drive_file_id": "14BfGzkOJEme3fWo0-Y9cmxjl1MCcMkY7",
+        "relative_path": "global_graph/bsc_graph_more_than_1_ratio.csv",
+        "sha256": "406535fb5f553f3b970b632fed2b6d260d581d167b35fcbeb7dbd04706d6e919",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 697712,
+        "expected_bytes": 697712,
+        "google_drive_file_id": "1r7z5ffYIk9PXD8lJjnc5UUImY895App5",
+        "relative_path": "global_graph/ethereum_contract_to_number_mapping.json",
+        "sha256": "00a9410e29a5d6b2ded1f6f295dc5e903566f676dae1135a66dd92394842498f",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 46325637,
+        "expected_bytes": 46325637,
+        "google_drive_file_id": "1cTx1m4F67hyBTJgcEKbjlpOmBsd8SFQ_",
+        "relative_path": "global_graph/ethereum_graph_more_than_1_ratio.csv",
+        "sha256": "06f56708dc9609fc96ec139b0b5886e08c65f0fcca6f2b4ff14023dab7008494",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 103566,
+        "expected_bytes": 103566,
+        "google_drive_file_id": "1lhmf79NtbE-iscY1EX71TDrWlp7N7Phv",
+        "relative_path": "global_graph/polygon_contract_to_number_mapping.json",
+        "sha256": "b1334181dd54446c60e5ecf0d88b5380c41a3c7bd005dcfd892b905640db1d70",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 8214272,
+        "expected_bytes": 8214272,
+        "google_drive_file_id": "1iRKJou7gkBXt0TUz6Xwpq3gBSWEWsxOJ",
+        "relative_path": "global_graph/polygon_graph_more_than_1_ratio.csv",
+        "sha256": "7f0d6469f5005089391b26a60d6507771803bce3fb01448c9c7db2e74af74aaf",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 5671092781,
+        "expected_bytes": 5671092781,
+        "google_drive_file_id": "1P97qDEBaWmZfs8DldXo-oNBtVpShCXzY",
+        "relative_path": "transactions/bsc.zip",
+        "sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 4484986142,
+        "expected_bytes": 4484986142,
+        "google_drive_file_id": "13wgfMbvdcpiwyM5GEQBcWfDviW_Eseta",
+        "relative_path": "transactions/ethereum.zip",
+        "sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+        "size_match": true
+      },
+      {
+        "actual_bytes": null,
+        "expected_bytes": 2805020440,
+        "google_drive_file_id": "1OP7vC51RMFSmMp9dv1Mimb0aDcq1Nfv6",
+        "relative_path": "transactions/polygon.zip",
+        "sha256": null,
+        "size_match": false
+      },
+      {
+        "actual_bytes": null,
+        "expected_bytes": 1306970,
+        "google_drive_file_id": "1GggOxrUKHl_-2HaRlcVe9tiQPtJZWPR6",
+        "relative_path": "labels.csv",
+        "sha256": null,
+        "size_match": false
+      }
+    ],
+    "source": "https://drive.google.com/drive/folders/1VV5ht9Eh8WGtKfkS0ipIk0FNI7g-WJfJ"
+  },
+  "zip_inventory": [
+    {
+      "compressed_bytes": 4481537106,
+      "csv_members": 14464,
+      "first_member": "0x00000000000045166c45af0fc6e4cf31d9e14b9a.csv",
+      "last_member": "0xfffb92b92a9445d07cfd4ac80d21c91a6fd5a1bd.csv",
+      "path": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/transactions/ethereum.zip",
+      "sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+      "uncompressed_bytes": 15819841630
+    }
+  ]
+}

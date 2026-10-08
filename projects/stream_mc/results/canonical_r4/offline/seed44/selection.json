@@ -1,0 +1,24 @@
+{
+  "deep_map": {
+    "coefficient": 1.8943278612849204,
+    "intercept": -1.4121557870200416
+  },
+  "fast_map": {
+    "coefficient": 2.0162969886079316,
+    "intercept": -1.313270675514038
+  },
+  "fast_threshold": 0.28291180248571857,
+  "fast_weight": 0.7000000000000001,
+  "final_threshold": 0.49354013065090047,
+  "full_threshold": 0.364221934436344,
+  "mc_T": 1,
+  "model_id": "7120d6023081d7820cb3ae4a1230b91e15c90dee4978950b14a4a49ac6e56e5b",
+  "policy_config_id": "02f6acf8fe640a05a5e2815ed0f2a25388de3372a49183d6032b5ee0961a32f9",
+  "reference_sha256": "bbd11bd6d6c40a113c4a8cbfd9bbd61564c54b3b4fb8096e4709159d5f275edc",
+  "relation_mode": "timestamp_filtered_star",
+  "requested_budget": 0.1,
+  "route_cutoff": 0.18590951165118352,
+  "selection_partition": "validation",
+  "validation_deep_rate": 0.10032894736842106,
+  "validation_f1": 0.8149134487350199
+}

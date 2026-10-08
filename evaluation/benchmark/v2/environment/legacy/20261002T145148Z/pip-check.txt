@@ -1,0 +1,4 @@
+accelerate 1.14.0 requires huggingface-hub, which is not installed.
+accelerate 1.14.0 requires safetensors, which is not installed.
+beautifulsoup4 4.15.0 requires soupsieve, which is not installed.
+cffi 2.0.0 requires pycparser, which is not installed.

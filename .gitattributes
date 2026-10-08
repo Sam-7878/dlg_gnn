@@ -1,0 +1,18 @@
+# Preserve exact source and evidence bytes across Windows/WSL checkouts.
+# Editors should save new Python/shell files with LF.
+*.py -text
+*.sh -text
+*.yaml -text
+*.yml -text
+*.md -text
+# Publication manifests hash exact bytes, including intentional CSV CRLF.
+*.csv -text
+*.json -text
+*.tex -text
+*.bib -text
+*.txt -text
+*.pdf binary
+*.png binary
+*.zip binary
+*.pt binary
+*.npy binary

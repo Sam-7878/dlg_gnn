@@ -1,0 +1,9 @@
+dataset,model,support_status,num_approved_runs,seeds,failure_reason
+LANL-RedTeam,DOMINANT,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,AnomalyDAE,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,CoLA,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,GADNR,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,OCGNN,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,DLG-Base,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,DLG-Aug,SUPPORTED_EXACT,5,42;43;44;45;46,
+LANL-RedTeam,CONAD-PyGOD-1.1-reference,DIAGNOSTIC_ONLY,0,,Excluded from fair inference after loss-path audit

@@ -1,0 +1,15 @@
+dataset_name,domain,label_type,path,exists,size_bytes,size_mb,sha256_head,estimated_nodes,estimated_edges,status
+Elliptic,Blockchain / AML,real,/mnt/d/_Work/_data/DLG/Elliptic/raw/elliptic_txs_classes.csv,True,3305144,3.15,93e2e7b2405c735b,203769,234355,VERIFIED_PRESENT
+DGraphFin,Financial Loan Fraud,real,/mnt/d/_Work/_data/DLG/DGraphFin/dgraphfin.npz,True,680317982,648.8,d63ad60a56dfa55c,3700550,4300999,VERIFIED_PRESENT
+Yelp,Review Spam,real,/mnt/d/_Work/_data/DLG/Yelp/yelp_reviews.csv,True,255639,0.24,e182dd5fb27c71a0,45954,3846979,VERIFIED_PRESENT
+Amazon,E-Commerce Fraud,real,/mnt/d/_Work/_data/DLG/Amazon/amazon_reviews.csv,True,206489,0.2,476096cacb5c5ebe,11944,4398392,VERIFIED_PRESENT
+BitcoinOTC,Cryptocurrency Trust,real,/mnt/d/_Work/_data/DLG/BitcoinOTC/raw/soc-sign-bitcoinotc.csv,True,1011180,0.96,76bd9d8f1d3ff9a1,5881,35592,VERIFIED_PRESENT
+Cora-Syn,Citation / Benchmark,synthetic,/mnt/d/_Work/_data/DLG/Cora/Cora/raw/ind.cora.x,True,22119,0.02,23cfa55d91c6f624,2708,5429,VERIFIED_PRESENT
+CiteSeer-Syn,Citation / Benchmark,synthetic,/mnt/d/_Work/_data/DLG/CiteSeer/CiteSeer/raw/ind.citeseer.x,True,31087,0.03,d20de19150741e55,3327,4732,VERIFIED_PRESENT
+PubMed-Syn,Medical Citation,synthetic,/mnt/d/_Work/_data/DLG/PubMed/PubMed/raw/ind.pubmed.x,True,23172,0.02,fbe9cb5c47200d1b,19717,44338,VERIFIED_PRESENT
+Flickr-Syn,Social Network,synthetic,/mnt/d/_Work/_data/DLG/Flickr/raw,True,361081534,344.35,DIRECTORY_OR_MULTI_PART,89250,899756,VERIFIED_PRESENT
+Reddit-Syn,Social Forum,synthetic,/mnt/d/_Work/_data/DLG/Reddit/reddit_posts.csv,True,257736,0.25,058fb3a1dc7023e2,232965,11606919,VERIFIED_PRESENT
+Twitch-Syn,Streaming Social,synthetic,/mnt/d/_Work/_data/DLG/Twitch/EN,True,0,0.0,DIRECTORY_OR_MULTI_PART,7126,35324,VERIFIED_PRESENT
+CryptoScamDB,Web3 Scam / Phishing,real,/mnt/d/_Work/_data/DLG/CryptoScamDB/urls.csv,True,1430891,1.36,3636c262aadb4783,5600,14200,VERIFIED_PRESENT
+CryptoScamTracker,Web3 Fraud Addresses,real,/mnt/d/_Work/_data/DLG/CryptoScamTracker/dan_dataset.csv,True,1416783,1.35,eeea17c90c7b50c9,8400,21000,VERIFIED_PRESENT
+LANL-RedTeam,Enterprise Cybersecurity,external_real,/mnt/d/_Work/_data/DLG/LANL-RedTeam/redteam.txt,True,22986,0.02,6bbc0c7dff64e476,156117,140000000,VERIFIED_PRESENT

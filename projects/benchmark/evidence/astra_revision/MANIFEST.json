@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "scope": "Public numeric evidence; unpublished manuscript excluded",
+  "files": {
+    "projects/benchmark/evidence/astra_revision/a05_config_provenance_crypto_lanl.csv": {
+      "bytes": 116558,
+      "sha256": "3f792788e537543a3285e233f7f5d4229c260f71da34bcc06ee79d87989a5b19"
+    },
+    "projects/benchmark/evidence/astra_revision/anomalydae_exact_equivalence.json": {
+      "bytes": 15163,
+      "sha256": "138a754d713b0aa43977aecb9c22096e757aec73ff4f8f5d3c1d0e309fda7d88"
+    },
+    "projects/benchmark/evidence/astra_revision/approved_run_registry.csv": {
+      "bytes": 520581,
+      "sha256": "492aff21734e373c8257666f250e91a4a79ec3c51a60a6c7c6c7f1b2d8702938"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_baseline_sensitivity.csv": {
+      "bytes": 520,
+      "sha256": "9c94891889ee6523517d5fe7971b5d2b2e89899a6c6d6a8d3e06be42c9af1e8d"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_campaign_settings.csv": {
+      "bytes": 1077,
+      "sha256": "139fad3bead3850b8426f1dbba454fb6a1ca704db63a31c0b611da6b9c6c39be"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_cell_provenance.csv": {
+      "bytes": 10167,
+      "sha256": "e8fd6617a19bb384c771605dff851dbc885103be8ab42f6c4f312e882657ed13"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_elliptic_controls.csv": {
+      "bytes": 307,
+      "sha256": "cfabcc47f5b30e2db7705df67cb3ef0d866348853dabc28a7c24ba7706d5fb53"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_ethereum_threshold_audit.csv": {
+      "bytes": 2482,
+      "sha256": "91498ba3aaa836da9ece36a74bba977d43147e0c403c6e3713889ab3dd67b406"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_exact_qualification.csv": {
+      "bytes": 4251,
+      "sha256": "d2e6fd16b5dbfbf07744f7a5fbe05495ddd0255dd15dda1c29efed6d887d0157"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_friedman_permutation.csv": {
+      "bytes": 619,
+      "sha256": "bf348ea2c0d4dd2b6394c37d375bfaac728e7e082fe936552c8aba6b56af377d"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_label_provenance_sensitivity.csv": {
+      "bytes": 1530,
+      "sha256": "48e2ab0ec36327370da32c307b12578311f2c1529ab51c6643929ccb844edb52"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_matched_memory.csv": {
+      "bytes": 3565,
+      "sha256": "05a38cd45b6c503c30c049e36f25d6cc8f76878e04c7180c10fcad49d77c7dc6"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_mean_ranks.csv": {
+      "bytes": 555,
+      "sha256": "c3e335a72ba3dab06f564494b0297be126cefddc554d5ce7b019192df9df3476"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_model_defaults.csv": {
+      "bytes": 2358,
+      "sha256": "b099800658ae4bb49c47b21a5583c20742ad35bd90fbd3417ff245cd04a8122e"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_model_signatures.json": {
+      "bytes": 3886,
+      "sha256": "093f00153d1c372da3a6b1f09714977e7b9028b5cf4d18da50db56fae8a29280"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_run_auditability.csv": {
+      "bytes": 115412,
+      "sha256": "e37ea23fe10679d80c3da2ade34af72577e99f3869f130f49a8fa81e82d340fd"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_test_prevalence.csv": {
+      "bytes": 1310,
+      "sha256": "d0b9a11cb923820cc1ef2eaaa51c0c42861668791fcdf55d73274f393e2f2ed8"
+    },
+    "projects/benchmark/evidence/astra_revision/astra_unsupported_cells.csv": {
+      "bytes": 675,
+      "sha256": "484f3aac432534cf03d25aa7bfca46c9d7689c670157b28defcd5ece3938d00a"
+    },
+    "projects/benchmark/evidence/astra_revision/clean_exact_reconstruction_verification.json": {
+      "bytes": 1052,
+      "sha256": "aabbf5ae60276a5cbe07bc698b352b3cf1ec702e036c79a89a7c74134e435c18"
+    },
+    "projects/benchmark/evidence/astra_revision/clean_fused_gcn_verification.json": {
+      "bytes": 963,
+      "sha256": "66c3dc98451d719c5ab8ff8a2a4d904dc6b5909bbaa5bb69d3c928bdb862bde9"
+    },
+    "projects/benchmark/evidence/astra_revision/conad_eq1_integration_a04.json": {
+      "bytes": 949,
+      "sha256": "92eb0a1abc15949a6cbdb4206aa4f149e0b636ff537c05137cbc469c25bf0d75"
+    },
+    "projects/benchmark/evidence/astra_revision/dataset_manifest_canonical.json": {
+      "bytes": 40052,
+      "sha256": "30f9a5bf83e5f8843d03079671461d2745bf736589cb0f01162c408c7a605d56"
+    },
+    "projects/benchmark/evidence/astra_revision/exact_cpu_qualification.csv": {
+      "bytes": 5631,
+      "sha256": "2232fbf9f13d64e88dcaa2177eab51765ff66ad73eb085afa600a6efc7d7d6bd"
+    },
+    "projects/benchmark/evidence/astra_revision/exact_cpu_qualification.json": {
+      "bytes": 9461,
+      "sha256": "7817a1299dd087338e39811d41fcfa18ef3cee7ec062614f542d3f9209baa864"
+    },
+    "projects/benchmark/evidence/astra_revision/hybrid_tensor_audit.json": {
+      "bytes": 18600,
+      "sha256": "d832a052babf59a1c788c4c133ae35f3197be2d4599b9b672e304bd668885240"
+    },
+    "projects/benchmark/evidence/astra_revision/legacy_gog_connection_audit.json": {
+      "bytes": 5012,
+      "sha256": "26a4b51b9e414b93d823d8b3929008287211cea87a96fa82b11808c5dc8072e1"
+    },
+    "projects/benchmark/evidence/astra_revision/ngnn_input_reuse_audit.json": {
+      "bytes": 2407,
+      "sha256": "6c20ca1a5127a0817f9aef6b99df38abb7e6ea26f3cf9119a212e407a8c1581b"
+    },
+    "projects/benchmark/evidence/astra_revision/paper_metric_cells.csv": {
+      "bytes": 149916,
+      "sha256": "66137466e03b366d4af4f537c479fe86d51d1f3ad1a8d30bf738c485158014b5"
+    },
+    "projects/benchmark/evidence/astra_revision/pipeline_lineage_audit.json": {
+      "bytes": 2395,
+      "sha256": "366e9776eb942339b9e2752567212d519946124a325e32095aefec1aa6908517"
+    },
+    "projects/benchmark/evidence/astra_revision/statistics_pairwise_s1_s2.csv": {
+      "bytes": 502,
+      "sha256": "51daa126c05861518b169b5553ad203b0eeed9052e90884456df206e49aa046b"
+    },
+    "projects/benchmark/evidence/astra_revision/statistics_s1_s5.csv": {
+      "bytes": 1518,
+      "sha256": "25af182a8b1c1790a5ddcf0c1ea4454431115b991b60f6cdc59fde4b3d65984a"
+    },
+    "projects/benchmark/evidence/astra_revision/table_alert_budget_a07.csv": {
+      "bytes": 3830,
+      "sha256": "7d64d0733fd1090890aafffa5934fde09b483e546762d0a780cf86cf3c0cd131"
+    },
+    "projects/benchmark/evidence/astra_revision/table_dlg_ablation_elliptic_summary.csv": {
+      "bytes": 301,
+      "sha256": "be36b553d4751df37c8627036c7b77a8727f9b85139e080d1418198d095921e5"
+    },
+    "projects/benchmark/evidence/astra_revision/table_main_13_f1.csv": {
+      "bytes": 1895,
+      "sha256": "280fa026313cfdff1bfbf47162e77bbd14624d994c06ae837f8af29074772b1e"
+    },
+    "projects/benchmark/evidence/astra_revision/table_main_13_pr_auc.csv": {
+      "bytes": 1895,
+      "sha256": "d0fe4b5cec434128a3bbec74de7ea80ef9fe2bca7b852dcfaad0c494bca6b5cf"
+    },
+    "projects/benchmark/evidence/astra_revision/table_main_13_roc_auc.csv": {
+      "bytes": 1895,
+      "sha256": "0f9969784017e253e0d5cdc56bb6039bee7f90cdd47cff7d4f6f1cfaed6cd766"
+    },
+    "projects/benchmark/evidence/astra_revision/table_memory_selected_a04.csv": {
+      "bytes": 3565,
+      "sha256": "05a38cd45b6c503c30c049e36f25d6cc8f76878e04c7180c10fcad49d77c7dc6"
+    },
+    "projects/benchmark/evidence/astra_revision/table_support_lanl_24g.csv": {
+      "bytes": 569,
+      "sha256": "ddadf1888a41e3894d307b0cdb7c84894cd1c5767b326a92d2f4a7749cc70049"
+    },
+    "projects/benchmark/evidence/astra_revision/table_support_primary13_24g.csv": {
+      "bytes": 6265,
+      "sha256": "87982a72463a97d2b4b0a568a3fd00c092cfae211490cdf5d687c05b1239014f"
+    }
+  }
+}

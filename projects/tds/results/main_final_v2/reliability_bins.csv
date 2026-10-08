@@ -1,0 +1,76 @@
+bin,lower,upper,count,mean_confidence,empirical_positive_rate,method,selection_scope
+0,0.0,0.06666666666666667,102,0.04003117630980391,0.00980392156862745,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+1,0.06666666666666667,0.13333333333333333,478,0.106914399541841,0.006276150627615063,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+2,0.13333333333333333,0.2,1555,0.16802208253376205,0.0038585209003215433,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+3,0.2,0.26666666666666666,1068,0.22467959156367043,0.00749063670411985,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+4,0.26666666666666666,0.3333333333333333,216,0.2932779191666666,0.023148148148148147,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+5,0.3333333333333333,0.4,70,0.3613294915714285,0.14285714285714285,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+6,0.4,0.4666666666666667,40,0.42822116075,0.3,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+7,0.4666666666666667,0.5333333333333333,32,0.4961250625,0.25,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+8,0.5333333333333333,0.6,12,0.5685969516666667,0.5,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+9,0.6,0.6666666666666666,19,0.6424917921052632,0.5789473684210527,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+10,0.6666666666666666,0.7333333333333333,17,0.701505335882353,0.7058823529411765,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+11,0.7333333333333333,0.8,11,0.7731677490909091,0.6363636363636364,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+12,0.8,0.8666666666666667,10,0.825710996,0.6,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+13,0.8666666666666667,0.9333333333333333,6,0.8893878716666667,0.0,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+14,0.9333333333333333,1.0,12,0.9929719775,1.0,Best deterministic proposed (seed 37),maximum preserved validation AUC-PR
+0,0.0,0.06666666666666667,1161,0.03501449300046014,0.002583979328165375,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+1,0.06666666666666667,0.13333333333333333,1204,0.09794485437191795,0.0049833887043189366,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+2,0.13333333333333333,0.2,710,0.16139496231163047,0.015492957746478873,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+3,0.2,0.26666666666666666,294,0.22959660561311812,0.061224489795918366,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+4,0.26666666666666666,0.3333333333333333,123,0.2953837690799217,0.21951219512195122,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+5,0.3333333333333333,0.4,41,0.3558061711671876,0.24390243902439024,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+6,0.4,0.4666666666666667,36,0.44056296679708695,0.1111111111111111,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+7,0.4666666666666667,0.5333333333333333,35,0.4894729605742863,0.22857142857142856,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+8,0.5333333333333333,0.6,28,0.5641588994434902,0.32142857142857145,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+9,0.6,0.6666666666666666,10,0.6375089168548584,0.8,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+10,0.6666666666666666,0.7333333333333333,4,0.7111814320087433,0.5,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+11,0.7333333333333333,0.8,2,0.7661161720752716,0.5,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+12,0.8,0.8666666666666667,0,,,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+13,0.8666666666666667,0.9333333333333333,0,,,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+14,0.9333333333333333,1.0,0,,,"Best temporal baseline (tgat, seed 7)",maximum validation AUC-PR across TGN/TGAT runs
+0,0.0,0.06666666666666667,3033,0.029000141508545532,0.005275304978569074,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+1,0.06666666666666667,0.13333333333333333,338,0.09129416336901344,0.014792899408284023,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+2,0.13333333333333333,0.2,77,0.16169003126985132,0.05194805194805195,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+3,0.2,0.26666666666666666,33,0.22720795888944953,0.21212121212121213,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+4,0.26666666666666666,0.3333333333333333,28,0.29572768302314534,0.2857142857142857,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+5,0.3333333333333333,0.4,15,0.36164275932550793,0.3333333333333333,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+6,0.4,0.4666666666666667,16,0.43905465367728014,0.125,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+7,0.4666666666666667,0.5333333333333333,16,0.49913012475330554,0.25,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+8,0.5333333333333333,0.6,8,0.5671514666044004,0.375,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+9,0.6,0.6666666666666666,3,0.6367370930244046,0.3333333333333333,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+10,0.6666666666666666,0.7333333333333333,7,0.6996546039812983,0.7142857142857143,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+11,0.7333333333333333,0.8,8,0.774745453668003,0.75,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+12,0.8,0.8666666666666667,15,0.8280944963927528,0.5333333333333333,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+13,0.8666666666666667,0.9333333333333333,14,0.8929361516425354,0.6428571428571429,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+14,0.9333333333333333,1.0,37,0.9786621837775924,0.6486486486486487,Temperature-scaled proposed (seed 37),temperature fit on validation for selected proposed seed
+0,0.0,0.06666666666666667,75,0.048034529591946665,0.013333333333333334,Deep Ensemble,five frozen proposed checkpoints
+1,0.06666666666666667,0.13333333333333333,513,0.11113185692105264,0.005847953216374269,Deep Ensemble,five frozen proposed checkpoints
+2,0.13333333333333333,0.2,1814,0.16845279755567807,0.002205071664829107,Deep Ensemble,five frozen proposed checkpoints
+3,0.2,0.26666666666666666,897,0.22280440985507247,0.011148272017837236,Deep Ensemble,five frozen proposed checkpoints
+4,0.26666666666666666,0.3333333333333333,146,0.2960010296849315,0.08904109589041095,Deep Ensemble,five frozen proposed checkpoints
+5,0.3333333333333333,0.4,71,0.3620596036535211,0.16901408450704225,Deep Ensemble,five frozen proposed checkpoints
+6,0.4,0.4666666666666667,27,0.432632746962963,0.25925925925925924,Deep Ensemble,five frozen proposed checkpoints
+7,0.4666666666666667,0.5333333333333333,35,0.49763125245714285,0.5142857142857142,Deep Ensemble,five frozen proposed checkpoints
+8,0.5333333333333333,0.6,16,0.557535667375,0.375,Deep Ensemble,five frozen proposed checkpoints
+9,0.6,0.6666666666666666,19,0.6253747787368421,0.631578947368421,Deep Ensemble,five frozen proposed checkpoints
+10,0.6666666666666666,0.7333333333333333,8,0.70143016425,0.875,Deep Ensemble,five frozen proposed checkpoints
+11,0.7333333333333333,0.8,10,0.7679179792,0.3,Deep Ensemble,five frozen proposed checkpoints
+12,0.8,0.8666666666666667,6,0.8278849540000001,0.0,Deep Ensemble,five frozen proposed checkpoints
+13,0.8666666666666667,0.9333333333333333,0,,,Deep Ensemble,five frozen proposed checkpoints
+14,0.9333333333333333,1.0,11,0.9933709019999999,1.0,Deep Ensemble,five frozen proposed checkpoints
+0,0.0,0.06666666666666667,166,0.04865064099028675,0.0,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+1,0.06666666666666667,0.13333333333333333,1486,0.10806390086784658,0.005383580080753701,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+2,0.13333333333333333,0.2,1471,0.15754933255241332,0.002719238613188307,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+3,0.2,0.26666666666666666,261,0.22413956883831415,0.034482758620689655,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+4,0.26666666666666666,0.3333333333333333,104,0.2954224570519231,0.20192307692307693,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+5,0.3333333333333333,0.4,39,0.3640666125128206,0.1282051282051282,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+6,0.4,0.4666666666666667,45,0.42875873160000005,0.4,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+7,0.4666666666666667,0.5333333333333333,26,0.49970236600000006,0.5384615384615384,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+8,0.5333333333333333,0.6,15,0.5623798086666666,0.6,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+9,0.6,0.6666666666666666,8,0.63487331825,0.625,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+10,0.6666666666666666,0.7333333333333333,8,0.6997039065,0.25,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+11,0.7333333333333333,0.8,7,0.7608572259999999,0.14285714285714285,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+12,0.8,0.8666666666666667,1,0.815672614,0.0,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+13,0.8666666666666667,0.9333333333333333,0,,,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"
+14,0.9333333333333333,1.0,11,0.986389958909091,1.0,MC Dropout Ensemble T=10,"five frozen proposed checkpoints, T=10 each"

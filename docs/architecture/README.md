@@ -12,10 +12,10 @@ This directory provides the authoritative reference for the system architecture,
 |---|---|---|
 | [**01. System Overview**](01_system_overview.md) | High-level system architecture, core design philosophy, and four specialized subprojects (`dlg_gnn`, `benchmark`, `stream_mc`, `tds`) | All engineers, researchers, and architects |
 | [**02. Source Tree & Module Guide**](02_directory_and_source_structure.md) | Comprehensive source tree breakdown, package responsibilities (`src/`, `configs/`, `experiments/`, `scripts/`, `tests/`), and layering conventions | Developers modifying or navigating the codebase |
-| [**03. DLG-GNN Model Architecture**](03_dlg_gnn_model_architecture.md) | Two-phase decoupled local-to-global learning, ego-net aggregation, and the **Exact Sparse Message Reconstruction** engine ($O(\|E\|d + Nd^2)$ arithmetic, zero $N \times N$ dense allocation) | GNN model developers and algorithmic researchers |
-| [**04. Benchmark & Evaluation Engine**](04_benchmark_and_evaluation_engine.md) | Scientific reproducibility harness, 10 primary datasets, 8 detector configurations, Mode 1/Mode 2 reproduction pipelines, Friedman/Wilcoxon statistical testing | Empirical researchers and benchmark authors |
-| [**05. Streaming Monte Carlo Engine**](05_streaming_mc_engine.md) | Real-time streaming AML system, bounded-state sliding windows, dynamic relation tracking, subgraph caching, and priority transaction routing | Streaming data engineers and AML systems teams |
-| [**06. Transaction Decomposition System**](06_tds_transaction_decomposition.md) | Multi-hop transaction graph decomposition, bipartite graph conversion, LLM-assisted knowledge extraction, and uncertainty-aware micro-RAG | Graph intelligence and LLM-GNN engineers |
+| [**03. DLG-GNN Model Architecture**](dlg_gnn/03_dlg_gnn_model_architecture.md) | Two-phase decoupled local-to-global learning, ego-net aggregation, and the **Exact Sparse Message Reconstruction** engine ($O(\|E\|d + Nd^2)$ arithmetic, zero $N \times N$ dense allocation) | GNN model developers and algorithmic researchers |
+| [**04. Benchmark & Evaluation Engine**](benchmark/04_benchmark_and_evaluation_engine.md) | Scientific reproducibility harness, 13 primary datasets plus external LANL, seven inferential models and diagnostic CONAD, public verify/tables and local paper modes, Friedman/Wilcoxon statistical testing | Empirical researchers and benchmark authors |
+| [**05. Streaming Monte Carlo Engine**](stream_mc/05_streaming_mc_engine.md) | Real-time streaming AML system, bounded-state sliding windows, dynamic relation tracking, subgraph caching, and priority transaction routing | Streaming data engineers and AML systems teams |
+| [**06. Transaction Decomposition System**](tds/06_tds_transaction_decomposition.md) | Multi-hop transaction graph decomposition, bipartite graph conversion, LLM-assisted knowledge extraction, and uncertainty-aware micro-RAG | Graph intelligence and LLM-GNN engineers |
 | [**07. Cross-Project Reuse Guide**](07_cross_project_integration_guide.md) | **Step-by-step recipes and plug-and-play code snippets** for importing and reusing DLG-GNN components in external projects | External project developers integrating DLG modules |
 
 ---
@@ -49,13 +49,13 @@ graph TD
 If you are developing another project and want to reuse parts of `dlg_gnn`:
 
 1. **Need a Scalable Graph Anomaly Detector?**  
-   Import the PyGOD-compatible `DLG` class directly. See [03. DLG-GNN Model Architecture](03_dlg_gnn_model_architecture.md) and [07. Cross-Project Reuse Guide (Pattern A)](07_cross_project_integration_guide.md#pattern-a-standalone-pygod-anomaly-detector).
+   Import the PyGOD-compatible `DLG` class directly. See [03. DLG-GNN Model Architecture](dlg_gnn/03_dlg_gnn_model_architecture.md) and [07. Cross-Project Reuse Guide (Pattern A)](07_cross_project_integration_guide.md#pattern-a-standalone-pygod-anomaly-detector).
 2. **Hit an $O(N^2)$ Memory Wall in Adjacency Reconstruction?**  
-   Drop in `exact_reconstruction.py` to calculate exact Frobenius adjacency loss in $O(|E|d + Nd^2)$ without creating dense matrices. See [03. Model Architecture](03_dlg_gnn_model_architecture.md#4-exact-sparse-reconstruction-engine) and [07. Reuse Guide (Pattern B)](07_cross_project_integration_guide.md#pattern-b-reusing-exact-sparse-reconstruction-backend).
+   Drop in `exact_reconstruction.py` to calculate exact Frobenius adjacency loss in $O(|E|d + Nd^2)$ without creating dense matrices. See [03. Model Architecture](dlg_gnn/03_dlg_gnn_model_architecture.md#4-exact-sparse-reconstruction-engine) and [07. Reuse Guide (Pattern B)](07_cross_project_integration_guide.md#pattern-b-reusing-exact-sparse-reconstruction-backend).
 3. **Building a Real-Time AML / Fraud Detection Pipeline?**  
-   Use `stream_mc`'s bounded sliding-window engine and dynamic relation state manager. See [05. Streaming MC Engine](05_streaming_mc_engine.md) and [07. Reuse Guide (Pattern D)](07_cross_project_integration_guide.md#pattern-d-adopting-the-streaming-monte-carlo-pipeline).
+   Use `stream_mc`'s bounded sliding-window engine and dynamic relation state manager. See [05. Streaming MC Engine](stream_mc/05_streaming_mc_engine.md) and [07. Reuse Guide (Pattern D)](07_cross_project_integration_guide.md#pattern-d-adopting-the-streaming-monte-carlo-pipeline).
 4. **Need Rigorous Scientific Benchmarking for a New GNN?**  
-   Use the 10-dataset benchmark harness and automated Friedman/Wilcoxon statistical testing. See [04. Benchmark Engine](04_benchmark_and_evaluation_engine.md) and [07. Reuse Guide (Pattern C)](07_cross_project_integration_guide.md#pattern-c-reusing-the-benchmark-and-statistical-evaluation-engine).
+   Use the current 13-dataset benchmark harness and automated Friedman/Wilcoxon statistical testing. See [04. Benchmark Engine](benchmark/04_benchmark_and_evaluation_engine.md) and [07. Reuse Guide (Pattern C)](07_cross_project_integration_guide.md#pattern-c-reusing-the-benchmark-and-statistical-evaluation-engine).
 
 ---
 
@@ -66,3 +66,7 @@ Historical architectural design notes from earlier project phases (Level 1/2 dec
 - [`mc/`](mc/): Initial Monte Carlo strategy overview.
 - [`ngnn/`](ngnn/): Early neighborhood-GNN experimentation plan.
 - [`ngnn_precompute/`](ngnn_precompute/): Early precomputation dataflow notes.
+
+## Publication visibility amendment — 2026-10-09
+
+Unsubmitted manuscript TeX/Bib/PDF, inputs and manuscript writers stay local until the author changes this policy. Public project portals expose supporting numeric evidence, scientific code, protocols, audit reports and hash manifests. Benchmark public reproduction is `verify` and `tables`; `paper` requires private local inputs. See [visibility rules](08_publication_visibility.md) for archive identity and unresolved data-construction limitations.

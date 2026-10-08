@@ -1,0 +1,5 @@
+view,metric,comparison,n_complete,wilcoxon_statistic,raw_p,holm_adjusted_p,median_signed_delta,wins,ties,losses,significant_at_0_05
+S1,PR-AUC,DLG-Aug vs DLG-Base,5,4.0,0.4375,1.0,-0.0018175875619029502,1,0,4,False
+S1,PR-AUC,DLG-Aug vs DOMINANT,5,4.0,0.4375,1.0,-0.0002113017998006117,2,0,3,False
+S2,PR-AUC,DLG-Aug vs DLG-Base,13,40.0,0.7353515625,0.7353515625,-0.0012912138032761256,6,0,7,False
+S2,PR-AUC,DLG-Aug vs DOMINANT,13,30.0,0.305419921875,0.61083984375,-0.0003373371007282522,5,0,8,False

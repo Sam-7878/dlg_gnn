@@ -1,0 +1,40 @@
+{
+  "source": "docs/papers/_40_DLG_GNN (frozen original unchanged); docs/papers/_40_DLG_GNN.pdf",
+  "files": [
+    {
+      "path": "01_architecture.png",
+      "bytes": 164681,
+      "sha256": "9b5bc92a165e999fadb5ce81a1738fc5ce0308a2ccfddf2e7f9f76104ff1d540"
+    },
+    {
+      "path": "02_dlg-gnn_results.png",
+      "bytes": 218916,
+      "sha256": "376b6158407a6b621edb741e6bfb36f9adee865002aca154e15a9ec132c11689"
+    },
+    {
+      "path": "03_memory.png",
+      "bytes": 61788,
+      "sha256": "85a3f887baed89499280117bd9e79bfb9a48897655917d7748bb008684fceacd"
+    },
+    {
+      "path": "DLG-GNN_6p.tex",
+      "bytes": 22499,
+      "sha256": "69c1c8d29e5d401a5a7680268de9d1b5ddb58f303ff02fef8010a0c6be4474ad"
+    },
+    {
+      "path": "DLG-GNN_published_v1.pdf",
+      "bytes": 390644,
+      "sha256": "8fb36388525222e2f5ef196ef46ee545ad90b7f3a3b5f406e768fc5043766bb6"
+    },
+    {
+      "path": "graph_abstract.png",
+      "bytes": 67004,
+      "sha256": "c71b574b3c77652152c9f134693e05324a82c8338a313b3d53f036bf30ba4af0"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 5141,
+      "sha256": "e4d997cd9dfdf6695f942857e9663483a8499113bcf201d584fd75fc547d7500"
+    }
+  ]
+}

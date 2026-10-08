@@ -1,0 +1,48 @@
+{
+  "status": "EXISTING_INPUT_REUSE_VERIFIED_INITIAL_PRODUCER_UNRESOLVED",
+  "gog_head": "a91d62796e55ac7ed3182158cd1d0b6d927e92a5",
+  "sources": [
+    {
+      "path": "/mnt/d/_work/goat_bank/gog/ngnn/train.py",
+      "sha256": "5ef3370f96a310be0bb168cff7657ab9e4888b535f52332c58f29bd6908d1d9a",
+      "reference_line": 148,
+      "role": "build_datasets supplies the existing contract_graph_path to HierarchicalDataset"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/gog/ngnn/data/dataset.py",
+      "sha256": "2db1f99a64a6efc2d33daa534a13de307855bd072c7ef4a8bb726fb9d486fea7",
+      "reference_line": 239,
+      "role": "load_global_contract_graph calls torch.load on the configured existing graph"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/gog/ngnn/engine/trainer.py",
+      "sha256": "0046e08d671bb4cae88285e73e2a98c24b98a0aa70e2b6208981ed2003ec58c8",
+      "reference_line": 358,
+      "role": "save_checkpoint writes epoch/model_state_dict/optimizer_state_dict/scheduler_state_dict/metric, not edge_index/embeddings/labels"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/gog/ngnn/config/config.yaml",
+      "sha256": "80211159347e0fbf229179fc9dfc992b88e7a5e657c23409e0fb1325e4e35709",
+      "reference_line": 12,
+      "role": "contract_graph_path points to existing polygon_hybrid_graph.pt"
+    }
+  ],
+  "source_search": "Current GoG Python/notebook sources including ignored files; also inspected source members of raw GoG archives. No hybrid_graph/knn_graph/label_graph producer found. Absence in inspected trees does not rule out an earlier untracked/deleted/notebook producer elsewhere.",
+  "raw_archives": [
+    {
+      "path": "/mnt/d/_Work/_data/GoG/Cryptocurrency-Graphs-of-graphs-main.zip",
+      "sha256": "ad28954b0aca9c7ef3a83ae2d679b152375e0444348730c3fcdfd54bc912cf82",
+      "members": 89,
+      "source_members": 45,
+      "named_hybrid_knn_label_references": []
+    },
+    {
+      "path": "/mnt/d/_Work/_data/GoG/global_graph-20251111T131334Z-1-001.zip",
+      "sha256": "199710e0c289332918a662c0d53a679e85ddf3348ddb2bd20dd1d7e94cb24736",
+      "members": 6,
+      "source_members": 0,
+      "named_hybrid_knn_label_references": []
+    }
+  ],
+  "conclusion": "ngnn consumes the previous hybrid graph and saves trained-model checkpoints with the same .pt extension. This supports the author's reuse explanation without establishing the initial graph construction."
+}

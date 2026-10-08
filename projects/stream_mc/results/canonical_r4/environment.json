@@ -1,0 +1,9 @@
+{
+  "cuda": "12.1",
+  "device": "cuda",
+  "executable": "/mnt/d/_Work/goat_bank/.venv/bin/python",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "platform": "linux",
+  "python": "3.12.13 (main, May  6 2026, 18:46:41) [GCC 15.2.0]",
+  "torch": "2.5.1+cu121"
+}

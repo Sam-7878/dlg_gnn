@@ -1,0 +1,11 @@
+dataset,model,seed,initial_alpha,final_alpha,sigmoid_initial_alpha,sigmoid_final_alpha,latent_local_norm,latent_global_norm,parameter_count
+Cora-Syn,DLG-Base,42,0.5,0.4686,0.6225,0.6151,0.3116,9.025,201562
+Cora-Syn,DLG-Base,43,0.5,0.4639,0.6225,0.6139,0.0838,4.096,201562
+Cora-Syn,DLG-Base,44,0.5,0.4687,0.6225,0.6151,0.6156,21.423,201562
+Cora-Syn,DLG-Base,45,0.5,0.4637,0.6225,0.6139,0.55,48.4038,201562
+Cora-Syn,DLG-Base,46,0.5,0.4679,0.6225,0.6149,0.5587,17.1262,201562
+Elliptic,DLG-Base,42,0.5,0.4386,0.6225,0.6079,3.3196,6.5954,37990
+Elliptic,DLG-Base,43,0.5,0.4302,0.6225,0.6059,3.3934,5.7534,37990
+Elliptic,DLG-Base,44,0.5,0.4325,0.6225,0.6065,4.2939,7.7064,37990
+Elliptic,DLG-Base,45,0.5,0.4322,0.6225,0.6064,3.9701,8.0334,37990
+Elliptic,DLG-Base,46,0.5,0.435,0.6225,0.6071,3.5884,6.5703,37990

@@ -1,9 +1,11 @@
 # Benchmark local storage and binary inventory
 
-The current reviewer checkout needs `projects/benchmark/evidence/frozen_a05_a06_evidence.zip`
-(SHA-256 `459a3721efd1c0e17e49315ca31e92331ae754ae1683068303bdc793a5feab08`),
-the project paper source, and the reproduction driver. It does not need the
-multi-gigabyte local training workspace.
+The reviewer checkout needs `projects/benchmark/evidence/public_numeric_evidence.zip`
+(SHA-256 `b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5`),
+public revision evidence and the reproduction driver. Unsubmitted paper sources are local.
+The original frozen ZIP is preserved locally with SHA-256
+`459a3721efd1c0e17e49315ca31e92331ae754ae1683068303bdc793a5feab08`;
+the public derivative removes four manuscript writers and preserves all other payloads.
 
 | Location | Approximate size at migration | Policy |
 |---|---:|---|

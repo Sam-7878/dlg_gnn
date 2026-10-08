@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-09",
+  "method": "clean prospective public working-tree export; not a published Git commit",
+  "base_head": "f21ebd6348f1a781476d07823f01566e43d9fb8f",
+  "checkout": "/tmp/dlg-astra-public-1dzxlt7o",
+  "file_count": 1017,
+  "bytes": 136971339,
+  "private_manuscript_files": [],
+  "status": "FAIL",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "dlg_gnn",
+        "--mode",
+        "verify"
+      ],
+      "exit": 1,
+      "elapsed_seconds": 0.146,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 256, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 251, in main\n    detail = source_verify(args.project)\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 156, in source_verify\n    check(digest((ROOT/path).read_bytes()) == sha, f\"{project} source drift: {path}\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 33, in check\n    raise RuntimeError(message)\nRuntimeError: dlg_gnn source drift: src/gog_fraud/models/pygod/dlg_base.py\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 0.236,
+      "stdout": "PASS 36 public evidence hashes\n{\n  \"detail\": {\n    \"approved_successes\": 435,\n    \"archive_files\": 641,\n    \"archived_equivalence\": \"PASS\",\n    \"datasets\": 13,\n    \"models\": 7,\n    \"supported_pairs\": 80,\n    \"tiny_gram\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.19,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "stream_mc",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 0.045,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": null,\n    \"scientific_smoke\": \"SKIPPED: optional scientific dependencies unavailable\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.0,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"stream_mc\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "tds",
+        "--mode",
+        "verify"
+      ],
+      "exit": 1,
+      "elapsed_seconds": 0.074,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 256, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 251, in main\n    detail = source_verify(args.project)\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 156, in source_verify\n    check(digest((ROOT/path).read_bytes()) == sha, f\"{project} source drift: {path}\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/dlg-astra-public-1dzxlt7o/scripts/reproduce_project.py\", line 33, in check\n    raise RuntimeError(message)\nRuntimeError: tds source drift: tests/tds/micro_rag/graph_builder.py\n"
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "tables"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 3.826,
+      "stdout": "PASS 36 public evidence hashes\n{\n  \"status\": \"PASS\",\n  \"scope\": \"public evidence tables; no manuscript source; no training\",\n  \"permutations\": 200000,\n  \"s2_leaders\": \"DOMINANT / DLG-Aug\"\n}\nPASS 36 public evidence hashes\n{\n  \"detail\": {\n    \"approved_successes\": 435,\n    \"archive_files\": 641,\n    \"archived_equivalence\": \"PASS\",\n    \"datasets\": 13,\n    \"models\": 7,\n    \"supported_pairs\": 80,\n    \"tables\": \"PASS: frozen tables and seeded permutation statistics regenerated; no manuscript sources or training\",\n    \"tiny_gram\": \"PASS\"\n  },\n  \"elapsed_seconds\": 3.74,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"tables\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "paper"
+      ],
+      "exit": 1,
+      "expected_private_input_guard": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "mathematical_audit": {
+    "loss_value": 0.22499999403953552,
+    "h_grad_norm": 0.0,
+    "is_gradient_zero": true,
+    "explanation": "MarginRankingLoss(input1, input2, target) computes max(0, -target*(input1 - input2) + margin). When input1=h and input2=h, (input1 - input2) == 0 identically! Thus the loss reduces to constant margin (0.5), and its gradient with respect to h is EXACTLY ZERO."
+  },
+  "seed_records": [
+    {
+      "seed": 42,
+      "dom_loss": 3.2563507556915283,
+      "conad_loss": 1.6281758546829224,
+      "dom_weight_checksum": "22fbf2cbc71900ab",
+      "conad_weight_checksum": "078f852074eb9851",
+      "weights_identical": false,
+      "score_spearman_corr": 0.9999999999999999,
+      "score_pearson_corr": 1.0,
+      "score_conad_equals_dom_times_eta_max_diff": 1.1682510375976562e-05,
+      "conad_ranking_identical_to_dominant": true
+    },
+    {
+      "seed": 43,
+      "dom_loss": 3.308182716369629,
+      "conad_loss": 1.6540913581848145,
+      "dom_weight_checksum": "3bde7c8ddce46161",
+      "conad_weight_checksum": "9fd9bce5fcc8f3de",
+      "weights_identical": false,
+      "score_spearman_corr": 0.9999999999999999,
+      "score_pearson_corr": 1.0,
+      "score_conad_equals_dom_times_eta_max_diff": 3.933906555175781e-06,
+      "conad_ranking_identical_to_dominant": true
+    },
+    {
+      "seed": 44,
+      "dom_loss": 3.1795029640197754,
+      "conad_loss": 1.5897518396377563,
+      "dom_weight_checksum": "55252e81d693a2d7",
+      "conad_weight_checksum": "d3679aec3821ec84",
+      "weights_identical": false,
+      "score_spearman_corr": 0.9999999999999999,
+      "score_pearson_corr": 1.0,
+      "score_conad_equals_dom_times_eta_max_diff": 6.9141387939453125e-06,
+      "conad_ranking_identical_to_dominant": true
+    },
+    {
+      "seed": 45,
+      "dom_loss": 3.021893262863159,
+      "conad_loss": 1.5109463930130005,
+      "dom_weight_checksum": "d4f58cf5c7b9e33f",
+      "conad_weight_checksum": "42971f5ba6c73134",
+      "weights_identical": false,
+      "score_spearman_corr": 0.9999999999999999,
+      "score_pearson_corr": 1.0,
+      "score_conad_equals_dom_times_eta_max_diff": 4.887580871582031e-06,
+      "conad_ranking_identical_to_dominant": true
+    },
+    {
+      "seed": 46,
+      "dom_loss": 3.0265114307403564,
+      "conad_loss": 1.5132555961608887,
+      "dom_weight_checksum": "5d0a53b02aee94d1",
+      "conad_weight_checksum": "90995a1e2ba0473a",
+      "weights_identical": false,
+      "score_spearman_corr": 0.9999999999999999,
+      "score_pearson_corr": 1.0,
+      "score_conad_equals_dom_times_eta_max_diff": 2.956390380859375e-05,
+      "conad_ranking_identical_to_dominant": true
+    }
+  ],
+  "root_cause_conclusion": "ROOT CAUSE CONFIRMED: PyGOD's implementation of CONAD contains two fatal issues: 1) Upstream CONAD calls margin_loss_func(h, h, h_aug), passing (input1=h, input2=h). Because (input1 - input2) == 0, the contrastive loss has an analytical gradient of EXACTLY ZERO. 2) During inference, CONAD returns score = eta * reconstruction_score, which is merely a positive constant scalar multiple of DOMINANT's reconstruction score. In rank-based anomaly detection metrics (ROC-AUC and PR-AUC), scalar multiplication by eta preserves rankings identically (Spearman rho = 1.0). Hence, CONAD behaves as DOMINANT with inert contrastive loss and identical anomaly rankings."
+}

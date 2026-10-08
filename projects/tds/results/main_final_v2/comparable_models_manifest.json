@@ -1,0 +1,472 @@
+{
+  "dataset": "GoG-SCIMain-v1",
+  "dataset_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "device": "cuda",
+  "hash_contract": {
+    "all_match": true,
+    "entries": [
+      {
+        "actual_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+        "artifact": "graph.pt",
+        "expected_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/graph.pt"
+      },
+      {
+        "actual_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+        "artifact": "transactions.parquet",
+        "expected_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/transactions.parquet"
+      },
+      {
+        "actual_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+        "artifact": "split_manifest.json",
+        "expected_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/split_manifest.json"
+      },
+      {
+        "actual_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+        "artifact": "future_edge_audit.csv",
+        "expected_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/future_edge_audit.csv"
+      }
+    ]
+  },
+  "models": [
+    "tgat",
+    "tgn",
+    "fraudsage"
+  ],
+  "runs": [
+    {
+      "adaptive_ece": 0.09433383492145561,
+      "auc_pr": 0.3095181442038735,
+      "auc_roc": 0.8991203181951347,
+      "best_epoch": 4,
+      "best_validation_auc_pr": 0.6805416234215254,
+      "brier": 0.03544702800390359,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgat/seed7.pt",
+      "checkpoint_sha256": "0d29c13848de8521475043b155723a89e55f44981540340ce2c78079147d06e6",
+      "ece": 0.09522468515799694,
+      "f1": 0.2962962962962963,
+      "method": "TGAT-style temporal attention",
+      "model_key": "tgat",
+      "nll": 0.16324659437657904,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 7,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed7_test.csv",
+        "sha256": "acc97da047fc5a17659e2b61d6362665c3eb7d51b2532c89c404cfa6e873c645"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed7_validation.csv",
+        "sha256": "c251273b592a3709b274682a3a3bffa83554bfa5e3cfc17a3755635ed91fa41e"
+      }
+    },
+    {
+      "adaptive_ece": 0.11131301916535258,
+      "auc_pr": 0.3905368242106746,
+      "auc_roc": 0.915003681836537,
+      "best_epoch": 1,
+      "best_validation_auc_pr": 0.5946776544905663,
+      "brier": 0.036054639170857807,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgat/seed17.pt",
+      "checkpoint_sha256": "c81079babfbafc86e8de7eb2423206bd095fd2a90db974459368011dccf23c8c",
+      "ece": 0.11909216159256175,
+      "f1": 0.2620689655172414,
+      "method": "TGAT-style temporal attention",
+      "model_key": "tgat",
+      "nll": 0.180370028736257,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 17,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed17_test.csv",
+        "sha256": "2f718ee1212d38cbf9269a1559b339e8efcda90e0acbd2ec85875e6028fccd01"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed17_validation.csv",
+        "sha256": "36826f0b8ac20b98abbd1c7000db4dc2a0633134511025635d746268b3ee5996"
+      }
+    },
+    {
+      "adaptive_ece": 0.11528868913005122,
+      "auc_pr": 0.3946652979453892,
+      "auc_roc": 0.9052250407113467,
+      "best_epoch": 1,
+      "best_validation_auc_pr": 0.6481110383351152,
+      "brier": 0.03685556149364028,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgat/seed27.pt",
+      "checkpoint_sha256": "d694fb517f98fa5838426757f37bfda59bd3766e931547078f4d8b100e631d9f",
+      "ece": 0.11793570089962727,
+      "f1": 0.18181818181818182,
+      "method": "TGAT-style temporal attention",
+      "model_key": "tgat",
+      "nll": 0.184421043403486,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 27,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed27_test.csv",
+        "sha256": "7ebeb31e3777810f9a303c4fec3eedac3c44f942705ec96deb154682de5c50bd"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed27_validation.csv",
+        "sha256": "f7ebd31cb7421a62a01dbf26bce5e28917298ff8a1a79632296ff59c36ad7bb8"
+      }
+    },
+    {
+      "adaptive_ece": 0.08372505098809038,
+      "auc_pr": 0.3143960401547653,
+      "auc_roc": 0.8778923531290334,
+      "best_epoch": 4,
+      "best_validation_auc_pr": 0.6605238116007486,
+      "brier": 0.032730092691518366,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgat/seed37.pt",
+      "checkpoint_sha256": "e50402162bf8851f26666c374ecdc369e9f2068091fae44dd050873f16a17811",
+      "ece": 0.08543579608560418,
+      "f1": 0.23880597014925373,
+      "method": "TGAT-style temporal attention",
+      "model_key": "tgat",
+      "nll": 0.15564930779084046,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 37,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed37_test.csv",
+        "sha256": "fc2007478d63b114632d82b19bd7b854e75c231cb0cca7ed32c3ae7caaab55b1"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed37_validation.csv",
+        "sha256": "15fdbb53e7bd3ba6226cfe28b1521966c499607ff8c2e5618486660d89ed7bc5"
+      }
+    },
+    {
+      "adaptive_ece": 0.08848844807525574,
+      "auc_pr": 0.29678134392267774,
+      "auc_roc": 0.8755301712647834,
+      "best_epoch": 3,
+      "best_validation_auc_pr": 0.6558678584682628,
+      "brier": 0.0339527247862665,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgat/seed47.pt",
+      "checkpoint_sha256": "5dbc7fbf7f941cdddceb27db5e479643985d22074cd6097c84c655bb6f56759f",
+      "ece": 0.08893676192740699,
+      "f1": 0.23703703703703705,
+      "method": "TGAT-style temporal attention",
+      "model_key": "tgat",
+      "nll": 0.16053563480885913,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 47,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed47_test.csv",
+        "sha256": "a2b521ec1d77ae91a272740ebd549bb522f67902517baecf93c1ee2e492d5452"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed47_validation.csv",
+        "sha256": "970857219c326a0d9540c452211a533a4c52d1c33c5c2f95694866f75f35fb83"
+      }
+    },
+    {
+      "adaptive_ece": 0.0367552729533161,
+      "auc_pr": 0.23028337319422756,
+      "auc_roc": 0.894773375703046,
+      "best_epoch": 8,
+      "best_validation_auc_pr": 0.5843251123677419,
+      "brier": 0.031748219481511124,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgn/seed7.pt",
+      "checkpoint_sha256": "dfb5d9d6841644d365d7d818edf8c18d21cb716db2f86eca4315739c069acaf2",
+      "ece": 0.035374894500218475,
+      "f1": 0.1935483870967742,
+      "method": "TGN-style event memory",
+      "model_key": "tgn",
+      "nll": 0.12138342356746776,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 7,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed7_test.csv",
+        "sha256": "f374948fe3a13199189ff75a60f0c74ea488ed77a3dbf1ca8901197ec91e3e0b"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed7_validation.csv",
+        "sha256": "cad02f0bd5e0265f26b4885155cdb14d99858c8204fdafe138581c7f2dc0e154"
+      }
+    },
+    {
+      "adaptive_ece": 0.0252769718477881,
+      "auc_pr": 0.22966171654085638,
+      "auc_roc": 0.8936147189003582,
+      "best_epoch": 9,
+      "best_validation_auc_pr": 0.5673251835739138,
+      "brier": 0.029747042998322166,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgn/seed17.pt",
+      "checkpoint_sha256": "b2bf4ed4675136db6c8c33a52dbae96182d2aae078afd8b383811d8a0a1bfe8c",
+      "ece": 0.02616706591945663,
+      "f1": 0.20689655172413793,
+      "method": "TGN-style event memory",
+      "model_key": "tgn",
+      "nll": 0.11072790982586536,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 17,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed17_test.csv",
+        "sha256": "ef4d2d1c40654b991da654b1371adbc516345ece5ba1619153bdd90d224406df"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed17_validation.csv",
+        "sha256": "aff7e088ac1c963fdd7d8cfe074db9ec00d021edfed458465ed65268afa540be"
+      }
+    },
+    {
+      "adaptive_ece": 0.0441176876111162,
+      "auc_pr": 0.23196217339578487,
+      "auc_roc": 0.899972815113741,
+      "best_epoch": 5,
+      "best_validation_auc_pr": 0.5499795592502112,
+      "brier": 0.03346846306279544,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgn/seed27.pt",
+      "checkpoint_sha256": "d20fc5b7005d61db1f1a4ee46f80b1c8cb86dd65dac829b4625acae92fa4058c",
+      "ece": 0.04202244133966859,
+      "f1": 0.2535211267605634,
+      "method": "TGN-style event memory",
+      "model_key": "tgn",
+      "nll": 0.12951124444369363,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 27,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed27_test.csv",
+        "sha256": "b8473bfa231a29b71cb07c4810f9df612a068ce77b4959492dc0515a276e7f3a"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed27_validation.csv",
+        "sha256": "0c48e4aa40ab7cff435e68d4dff4dd1ce9666f0c7ca5d5acd981b3a1d9a134e1"
+      }
+    },
+    {
+      "adaptive_ece": 0.04231208620581995,
+      "auc_pr": 0.24783433846107875,
+      "auc_roc": 0.902525027250869,
+      "best_epoch": 5,
+      "best_validation_auc_pr": 0.6223928104467297,
+      "brier": 0.029750586747610403,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgn/seed37.pt",
+      "checkpoint_sha256": "6d85b4373b33c30337ed74419eb0d4dd03c315b93b53cf96aab88389ab56b1b2",
+      "ece": 0.042303461528515135,
+      "f1": 0.19047619047619047,
+      "method": "TGN-style event memory",
+      "model_key": "tgn",
+      "nll": 0.11563662080676056,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 37,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed37_test.csv",
+        "sha256": "beee4f4ee8fc2b19ce34c27296bcd4aca0ecbe560540e84c94114642aecfa895"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed37_validation.csv",
+        "sha256": "5287d654cad5f5d3265fa4480c3ee5cb62cdda449386594fd9c7f1ef540f9bd7"
+      }
+    },
+    {
+      "adaptive_ece": 0.04610801477489339,
+      "auc_pr": 0.22249748233484848,
+      "auc_roc": 0.900534988004339,
+      "best_epoch": 4,
+      "best_validation_auc_pr": 0.5413186771155555,
+      "brier": 0.03417055463514729,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/tgn/seed47.pt",
+      "checkpoint_sha256": "8fa47c5c2426376f5d848c167c15495a0a642ffb0a90cde391a5e27b8f85a06e",
+      "ece": 0.044199683544739056,
+      "f1": 0.21296296296296297,
+      "method": "TGN-style event memory",
+      "model_key": "tgn",
+      "nll": 0.14462330749987998,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 47,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed47_test.csv",
+        "sha256": "e2674d8fe03f9db4422517cc9b85a13b4d964f77475b6ae34f718a306a083e5d"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed47_validation.csv",
+        "sha256": "49e41b7da66906a1ca801ea8d8e4d1a051b04fca22ef298ccc397c22f46e9ceb"
+      }
+    },
+    {
+      "adaptive_ece": 0.24733135748037813,
+      "auc_pr": 0.3444585802083312,
+      "auc_roc": 0.9001813205520378,
+      "best_epoch": 10,
+      "best_validation_auc_pr": 0.7732254609510291,
+      "brier": 0.08887609024411865,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/fraudsage/seed7.pt",
+      "checkpoint_sha256": "f892ce003e845ec968d5d13f4a2313dc2efa8e47b1d84bdf110bc61c754f3bd1",
+      "ece": 0.24869438639960428,
+      "f1": 0.3465346534653465,
+      "method": "fraud-oriented GraphSAGE",
+      "model_key": "fraudsage",
+      "nll": 0.3387859233123852,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 7,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed7_test.csv",
+        "sha256": "baa8799bcdd2df3ec3ee319997a1df97107c0746f4769d09506b3149c7ba3236"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed7_validation.csv",
+        "sha256": "a2d89d7657c366106695dec0f2931190d564e24ed09edb0483c9a4b09d3d8c1e"
+      }
+    },
+    {
+      "adaptive_ece": 0.24273733649170032,
+      "auc_pr": 0.27057370859908525,
+      "auc_roc": 0.885622890202092,
+      "best_epoch": 10,
+      "best_validation_auc_pr": 0.7539428171061351,
+      "brier": 0.08776920987829887,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/fraudsage/seed17.pt",
+      "checkpoint_sha256": "62dbe769c0dbf0de5ef2738cc27357d2dadde2785038a9b86db316a01351461c",
+      "ece": 0.24336091090675865,
+      "f1": 0.25806451612903225,
+      "method": "fraud-oriented GraphSAGE",
+      "model_key": "fraudsage",
+      "nll": 0.33525648263597296,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 17,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed17_test.csv",
+        "sha256": "9fee86526e9e329a584aef3529e5820358e68873858c659891b4b6db96fae1f5"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed17_validation.csv",
+        "sha256": "e5241a07761e5e8a474376ca0d2818c4c1f7eeb566530918c936979b8afd2588"
+      }
+    },
+    {
+      "adaptive_ece": 0.28362120145813385,
+      "auc_pr": 0.27638735340199244,
+      "auc_roc": 0.8776732904533542,
+      "best_epoch": 14,
+      "best_validation_auc_pr": 0.7620139581741541,
+      "brier": 0.10975567601150948,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/fraudsage/seed27.pt",
+      "checkpoint_sha256": "30feb13d10e114d8cd6848483bc90eb05f6b459dbf2cec9965bbe1fd0171ff92",
+      "ece": 0.28460070125150017,
+      "f1": 0.25190839694656486,
+      "method": "fraud-oriented GraphSAGE",
+      "model_key": "fraudsage",
+      "nll": 0.3897063336308194,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 27,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed27_test.csv",
+        "sha256": "9963bfa53ded8e12cb18217b39860b28df5cab026e366d29bd7a4fbde6bc2cd1"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed27_validation.csv",
+        "sha256": "fa0fa62b86c8b991150e00d9c229f313fe32d0eb41198cc7ada77e3a866a624f"
+      }
+    },
+    {
+      "adaptive_ece": 0.247013167570051,
+      "auc_pr": 0.3332801173165708,
+      "auc_roc": 0.899141432669899,
+      "best_epoch": 12,
+      "best_validation_auc_pr": 0.7725290961474947,
+      "brier": 0.0883047612237631,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/fraudsage/seed37.pt",
+      "checkpoint_sha256": "a46328e51b322caf7120bb0faf7073cae696c4f1941811f02a195a26402077f5",
+      "ece": 0.24782614620083843,
+      "f1": 0.3188405797101449,
+      "method": "fraud-oriented GraphSAGE",
+      "model_key": "fraudsage",
+      "nll": 0.3381426989283172,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 37,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed37_test.csv",
+        "sha256": "0f40101fd463b272aed0e2bf977f5de182516b0715918f6ec770d3778060eea4"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed37_validation.csv",
+        "sha256": "7643bb223d35f5205035479bc8c47d00625904fa79ff62bed2fb68fb11f8dabf"
+      }
+    },
+    {
+      "adaptive_ece": 0.27200520807150097,
+      "auc_pr": 0.31731205684703756,
+      "auc_roc": 0.89422176004983,
+      "best_epoch": 10,
+      "best_validation_auc_pr": 0.7717675179433827,
+      "brier": 0.10171197211128523,
+      "checkpoint_path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/checkpoints/fraudsage/seed47.pt",
+      "checkpoint_sha256": "2cf901f2d0e6f431bea57a3084bdedda7b1b42a3a59923654887e85fb50b4061",
+      "ece": 0.2728918889892827,
+      "f1": 0.27472527472527475,
+      "method": "fraud-oriented GraphSAGE",
+      "model_key": "fraudsage",
+      "nll": 0.3720849523651689,
+      "positive_prevalence": 0.029331140350877194,
+      "seed": 47,
+      "test_access_count": 1,
+      "test_predictions": {
+        "events": 3648,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed47_test.csv",
+        "sha256": "b166550b7026eda393ba2e0e9180b85a67cb7682f0667928b536340c78794058"
+      },
+      "validation_predictions": {
+        "events": 3647,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed47_validation.csv",
+        "sha256": "7c55332e629f82682806eb9b9519a47b4eb02d72a638bb78f34c5f8e300edeba"
+      }
+    }
+  ],
+  "seeds": [
+    7,
+    17,
+    27,
+    37,
+    47
+  ]
+}

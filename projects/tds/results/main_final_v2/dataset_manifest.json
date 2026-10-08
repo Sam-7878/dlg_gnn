@@ -1,0 +1,118 @@
+{
+  "all_extracted_source_files_exact": true,
+  "chains": [
+    "ethereum",
+    "bsc",
+    "polygon"
+  ],
+  "context_policy": "excluded_from_main_detector_metrics",
+  "dataset_name": "GoG-SCIMain-v1",
+  "dataset_version": "gog-scimain-v1.0",
+  "derivative_manifest_note": "Rebuilt derivative manifest byte hashes differ because generated_at is regenerated; raw per-file hashes and all four packed hashes are exact.",
+  "exact_recovery": true,
+  "future_edge_audit_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+  "future_edge_count": 0,
+  "gnn_input_policy": "most recent 128 historical edges at or before event cutoff",
+  "graph_hash_failures": 0,
+  "graph_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "graph_source": "gog_sci_v2_pooled",
+  "independent_leakage_audit": {
+    "incomplete_checks": 0,
+    "paper_eligible": true,
+    "records_checked": 24316,
+    "status": "PASS",
+    "violations": 0
+  },
+  "label_provenance": "GoG upstream category; category 0 mapped to fraud per SCI v2 resolved semantics",
+  "label_semantics_sha256": "d15c20cf6a20f12938ab4432beb8930cbde1d2120a84f7f5ec2aa5bd5a507091",
+  "license": "CC BY-NC-SA 4.0 (official upstream repository)",
+  "license_availability": "upstream version/license metadata not present in local archive; author verification required before redistribution",
+  "n_events": 24316,
+  "official_dataset_url": "https://drive.google.com/drive/folders/1VV5ht9Eh8WGtKfkS0ipIk0FNI7g-WJfJ",
+  "official_repository": "https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs",
+  "official_repository_commit": "7264f1bf510f7ba4f5041ac7a29b606abc12f262",
+  "packed_hash_contract": {
+    "all_match": true,
+    "entries": [
+      {
+        "actual_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+        "artifact": "graph.pt",
+        "expected_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/graph.pt"
+      },
+      {
+        "actual_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+        "artifact": "transactions.parquet",
+        "expected_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/transactions.parquet"
+      },
+      {
+        "actual_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+        "artifact": "split_manifest.json",
+        "expected_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/split_manifest.json"
+      },
+      {
+        "actual_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+        "artifact": "future_edge_audit.csv",
+        "expected_sha256": "395cc4fe3c0c2198fbb25368f9cf843bd9de4352efcbcba8a7d8e77fd5e43f7f",
+        "match": true,
+        "path": "/mnt/d/_Work/goat_bank/dlg_gnn/data/benchmark/gog_scimain_v1/future_edge_audit.csv"
+      }
+    ]
+  },
+  "paper_eligible": true,
+  "preprocessing_commit": "a198438f099656adcfe673bce92596894e9a0abf",
+  "raw_downloads_complete": true,
+  "raw_source_files_verified": 24316,
+  "source_availability": "official public distribution reacquired and preserved locally",
+  "split": {
+    "test": {
+      "end_time": 1709251199,
+      "end_time_utc": "2024-02-29T23:59:59+00:00",
+      "event_ids_sha256": "e6ae116eb9e78bfa1e01bbd026b953438c81f2a4713b845d4349406010718283",
+      "fraud_ratio": 0.029331140350877194,
+      "n_events": 3648,
+      "n_negative": 3541,
+      "n_positive": 107,
+      "start_time": 1709182969,
+      "start_time_utc": "2024-02-29T05:02:49+00:00"
+    },
+    "train": {
+      "end_time": 1708407959,
+      "end_time_utc": "2024-02-20T05:45:59+00:00",
+      "event_ids_sha256": "21bebfd7794d4d0c2bee8c9dd1a6b87c724e03d5f87ee9d1b0733ba65f9324c7",
+      "fraud_ratio": 0.39850772575054344,
+      "n_events": 17021,
+      "n_negative": 10238,
+      "n_positive": 6783,
+      "start_time": 1497961441,
+      "start_time_utc": "2017-06-20T12:24:01+00:00"
+    },
+    "validation": {
+      "end_time": 1709182819,
+      "end_time_utc": "2024-02-29T05:00:19+00:00",
+      "event_ids_sha256": "33d2eeaab91ff3c105e87fac2e326561ef5f4572364465f7a22c7ca6416837a4",
+      "fraud_ratio": 0.08445297504798464,
+      "n_events": 3647,
+      "n_negative": 3339,
+      "n_positive": 308,
+      "start_time": 1708408439,
+      "start_time_utc": "2024-02-20T05:53:59+00:00"
+    }
+  },
+  "split_manifest_sha256": "7f388c5163293f5706cb07427747b1fc6988ae749c8d1a0e104e79b6d83accfa",
+  "split_type": "chronological_real",
+  "timestamp_semantics": "latest recorded on-chain event in each expanding contract graph",
+  "timestamp_source": "recorded_transaction_timestamp",
+  "timezone": "UTC (Unix epoch seconds)",
+  "transactions_sha256": "4d240fe8d5488f6f27fd1d475d039abfc96aa40aa6dc34d34a75dfa92be3df3d",
+  "upstream_manifest_sha256": {
+    "bsc": "c164649dd2174eb5dfeecf893570e719d616671f22fbe84f545afb7a945c83c4",
+    "ethereum": "eb56aae037fff024a19b0c8bda0a87897513c85aaf05238dc00a5e894855c9f6",
+    "polygon": "6903cd8610835f92eba86208abeda6b39b2b7a0b74b4b290245e28e8b1a10d76"
+  }
+}

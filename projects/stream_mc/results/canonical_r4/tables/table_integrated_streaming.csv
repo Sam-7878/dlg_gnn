@@ -1,0 +1,3 @@
+Policy,Events,Deep fraction,Events/s,P99 (ms),Peak RSS (MiB),canonical_row_id
+Full relational inference,100000,1.000,123.0,16.69,1475.3,6e404c16429a14b6f8e9;cb17e811caa902ee7909
+Primary selective policy,100000,0.500,174.0,13.22,1400.3,6e404c16429a14b6f8e9;cb17e811caa902ee7909

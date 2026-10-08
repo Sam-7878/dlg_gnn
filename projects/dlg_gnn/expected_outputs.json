@@ -2,8 +2,13 @@
   "schema_version": 1,
   "project": "dlg_gnn",
   "source_hashes": {
+    "src/gog_fraud/models/pygod/dlg_base.py": "fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888",
+    "src/gog_fraud/models/pygod/exact_reconstruction.py": "c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037"
+  },
+  "fixture_sha256": "6ba8e17a17d96297dfc5bbf554aea4869f0ee10e5b38388926f2c82abe421c70",
+  "previous_source_hashes_crlf": {
     "src/gog_fraud/models/pygod/dlg_base.py": "4910c53e38a07872da46438591dc4ba2d5300b065c90489016599d96e293d1e8",
     "src/gog_fraud/models/pygod/exact_reconstruction.py": "ebcc3f982d379b4928c5cd7511d5c87c2cff0229f734e937271d4b3c3f3656e3"
   },
-  "fixture_sha256": "6ba8e17a17d96297dfc5bbf554aea4869f0ee10e5b38388926f2c82abe421c70"
+  "hash_policy": "exact current source bytes; prior CRLF hashes retained for audit"
 }

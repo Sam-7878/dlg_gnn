@@ -1,0 +1,265 @@
+{
+  "historical_feature_hash": "0d99031513b990b9236451f6b2ce7ceea45cf38d857537c85067541dbd634eca",
+  "paths_examined": 42,
+  "historical_match_found": false,
+  "candidates": [
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/a04_constructed_graphs/BitcoinOTC.pt",
+      "size_bytes": 1778044,
+      "candidate_tensors": [
+        {
+          "tensor": "root.x",
+          "feature_hash": "02d7517c131c1bfcaf861a12db2564d8bd9116aeb81ba9ff40d6721857c69c71",
+          "historical_match": false
+        }
+      ],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/_data/DLG/BitcoinOTC/processed/data.pt",
+      "size_bytes": 8526800,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/00755ae5d32310e4a3fb3cbc.pt",
+      "size_bytes": 69415617,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/075263991427f2513a58260c.pt",
+      "size_bytes": 15736129,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/1fa33a1e75c546de658f559d.pt",
+      "size_bytes": 69415617,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/247b610e97bfd80dd45eaf3b.pt",
+      "size_bytes": 15736129,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/25080c0156895cf84abb72b6.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/39150967aa11647a8281bd6e.pt",
+      "size_bytes": 4817921,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/3ae1b60ee6ca34daba0b211f.pt",
+      "size_bytes": 5542977,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/3e4477d865b614a5df4266e8.pt",
+      "size_bytes": 69415617,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/42ad334595c6985f1528ee9c.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/4a030fff5071c1019c344e20.pt",
+      "size_bytes": 15736193,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/57c30712ca74f25e703de0cf.pt",
+      "size_bytes": 11336193,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/723f95c7594f44fe24796da3.pt",
+      "size_bytes": 69415617,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/77ef004b0fedfd1f137beea1.pt",
+      "size_bytes": 15736129,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/804a330408a1d669a78249b3.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/80780b6303edf665688c9deb.pt",
+      "size_bytes": 5542977,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/8623da5d7bdb433c975148f0.pt",
+      "size_bytes": 11336257,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/8b46566fd6e490fa75a65937.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/90e16aed6d118bd57ae6351d.pt",
+      "size_bytes": 11336193,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/955e24590a399a4a05f04b3c.pt",
+      "size_bytes": 15736129,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/96991a28af06c02d99d32cf6.pt",
+      "size_bytes": 4817921,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/9a6247155b64503b089ffef9.pt",
+      "size_bytes": 5542977,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/9cbdf40ae37bf581ff83606d.pt",
+      "size_bytes": 5543041,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/9f390f9fde8f19d4a4b6aac4.pt",
+      "size_bytes": 5542977,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/9fbac1d8026e0712d701809c.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/a58e6264de2aa2389115ced4.pt",
+      "size_bytes": 11336193,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/a6dcd79ee846fd553aff575a.pt",
+      "size_bytes": 4817921,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/a7fdf0af9b814423a3a7a3d0.pt",
+      "size_bytes": 69415681,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/ad65e8a81406d7079f60b933.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/e316a265182b9ce35844d798.pt",
+      "size_bytes": 11336193,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/e870e413fdddc447bbd0e84c.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/ef0e1e2fde98ecc07b8e5d99.pt",
+      "size_bytes": 4817921,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/f181eb10b7002266e410f888.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/f33a2799288f7e086ccf254f.pt",
+      "size_bytes": 4817921,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/fc4c1deb68b78b364a5ef6a6.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round5_final/checkpoints/fcc85ae2194b50dd2c748177.pt",
+      "size_bytes": 3321793,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round4c/checkpoints/1c84c527860c3425a129738e.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round4c/checkpoints/75647440de8413dca0ec6360.pt",
+      "size_bytes": 946307265,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round4c/checkpoints/7b5ff1b10eccf23c8805dbf6.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round4c/checkpoints/8a3b98c24d834b70b1d39655.pt",
+      "size_bytes": 36204737,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/outputs/benchmark/sci_round4c/checkpoints/bc2e4896d9517c90bc4f54cb.pt",
+      "size_bytes": 3321729,
+      "candidate_tensors": [],
+      "read_status": "OK"
+    }
+  ]
+}

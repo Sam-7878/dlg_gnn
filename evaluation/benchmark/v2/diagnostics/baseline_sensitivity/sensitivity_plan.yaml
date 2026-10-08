@@ -1,0 +1,36 @@
+title: "Gate A03-10: CoLA and OCGNN Reviewer-Defense Sensitivity Plan"
+purpose: "Pre-registered hyperparameter perturbation sensitivity to evaluate baseline robustness against parameter drift without post-hoc tuning."
+datasets:
+  - name: "Cora-Syn"
+    description: "Synthetic anomaly benchmark on Cora graph topology"
+  - name: "CiteSeer-Syn"
+    description: "Synthetic anomaly benchmark on CiteSeer graph topology"
+models:
+  CoLA:
+    varied_parameter: "batch_size"
+    description: "Mini-batch size for subgraph sampling and negative contrastive pair construction"
+    configs:
+      nearby_lower: 32
+      default: 64
+      nearby_upper: 128
+    fixed_parameters:
+      epoch: 50
+      lr: 0.001
+      weight_decay: 0.0
+  OCGNN:
+    varied_parameter: "contamination"
+    description: "Prior expected anomaly proportion controlling hypersphere radius margin"
+    configs:
+      nearby_lower: 0.05
+      default: 0.10
+      nearby_upper: 0.15
+    fixed_parameters:
+      epoch: 50
+      batch_size: 64
+      lr: 0.004
+seeds:
+  - 42
+  - 43
+  - 44
+expected_total_runs: 36 # 2 datasets * 2 models * 3 configs * 3 seeds
+output_table: "evaluation/benchmark/v2/paper_ready_a03/table_baseline_sensitivity.csv"

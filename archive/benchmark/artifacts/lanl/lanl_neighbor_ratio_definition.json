@@ -1,0 +1,30 @@
+{
+  "dataset": "LANL-RedTeam",
+  "canonical_graph_sha256": "689c2968fe3ece9494196515e6089d6db3f430530e55b8b410d116b27c920359",
+  "metric_name": "benign_source_edge_ratio",
+  "formula": "count(y[src] == 0 for edges with y[dst] == 1) / count(edges with y[dst] == 1)",
+  "numerator": 149881,
+  "denominator": 154082,
+  "ratio": 0.972735296790021,
+  "percentage": 97.2735296790021,
+  "display_percentage": "97.27%",
+  "directed_or_undirected": "directed",
+  "unique_neighbor_or_edge_incidence": "edge_incidence",
+  "graph_hash": "689c2968fe3ece9494196515e6089d6db3f430530e55b8b410d116b27c920359",
+  "manuscript_statement": "Among directed authentication events targeting compromised computers, 97.27% (149,881 of 154,082 incoming edges) originate from benign source systems.",
+  "alternative_peer_definition": {
+    "metric_name": "benign_peer_incidence_ratio",
+    "formula": "sum_u(|peers(u) cap Normal|) / sum_u(|peers(u)|) across u in Positives",
+    "numerator": 153877,
+    "denominator": 161259,
+    "ratio": 0.9542227100502917,
+    "percentage": 95.42227100502917,
+    "display_percentage": "95.42%",
+    "directed_or_undirected": "undirected",
+    "unique_neighbor_or_edge_incidence": "peer_incidence"
+  },
+  "deprecated_ratio_status": {
+    "unsupported_ratio": "96.6%",
+    "resolution": "Removed from manuscript and replaced with exact verified 97.27% (149,881 / 154,082) incoming edge ratio."
+  }
+}

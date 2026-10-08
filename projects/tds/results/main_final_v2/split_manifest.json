@@ -1,0 +1,40 @@
+{
+  "protocol": "fixed_pooled_temporal_holdout_70_15_15",
+  "selection_policy": "fractions frozen before model training; class support is an acceptance gate, not a metric-tuning criterion",
+  "groups": {
+    "train": {
+      "n_events": 17021,
+      "n_positive": 6783,
+      "n_negative": 10238,
+      "start_time": 1497961441,
+      "end_time": 1708407959,
+      "start_time_utc": "2017-06-20T12:24:01+00:00",
+      "end_time_utc": "2024-02-20T05:45:59+00:00",
+      "fraud_ratio": 0.39850772575054344,
+      "event_ids_sha256": "21bebfd7794d4d0c2bee8c9dd1a6b87c724e03d5f87ee9d1b0733ba65f9324c7"
+    },
+    "validation": {
+      "n_events": 3647,
+      "n_positive": 308,
+      "n_negative": 3339,
+      "start_time": 1708408439,
+      "end_time": 1709182819,
+      "start_time_utc": "2024-02-20T05:53:59+00:00",
+      "end_time_utc": "2024-02-29T05:00:19+00:00",
+      "fraud_ratio": 0.08445297504798464,
+      "event_ids_sha256": "33d2eeaab91ff3c105e87fac2e326561ef5f4572364465f7a22c7ca6416837a4"
+    },
+    "test": {
+      "n_events": 3648,
+      "n_positive": 107,
+      "n_negative": 3541,
+      "start_time": 1709182969,
+      "end_time": 1709251199,
+      "start_time_utc": "2024-02-29T05:02:49+00:00",
+      "end_time_utc": "2024-02-29T23:59:59+00:00",
+      "fraud_ratio": 0.029331140350877194,
+      "event_ids_sha256": "e6ae116eb9e78bfa1e01bbd026b953438c81f2a4713b845d4349406010718283"
+    }
+  },
+  "split_hash": "7df2e628e5e230fa33178bf36ced273c169b0f9ed263e4d6c10bec11dd85c6b6"
+}

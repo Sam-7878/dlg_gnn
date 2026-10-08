@@ -1,6 +1,6 @@
 schema_version: 1
 project: benchmark
-release: benchmark-v2.0.0-mdpi-candidate
+release: unpublished-candidate-public-evidence
 python: ">=3.12"
 tested_os: "Ubuntu 26.04 on WSL2; GitHub CI Ubuntu"
 modes:
@@ -9,7 +9,13 @@ modes:
     estimated_minutes: "<5"
     gpu_required: false
     raw_datasets_required: false
+  tables:
+    command: "python scripts/reproduce_project.py --project benchmark --mode tables"
+    gpu_required: false
+    raw_datasets_required: false
+    dependencies: [numpy, scipy]
   paper:
+    visibility: author-local-private-inputs-required
     command: "python scripts/reproduce_project.py --project benchmark --mode paper"
     estimated_minutes: "<10"
     gpu_required: false

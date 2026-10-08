@@ -1,0 +1,30 @@
+[
+  {
+    "project": "dlg_gnn",
+    "path": "src/gog_fraud/models/pygod/dlg_base.py",
+    "prior_crlf_sha256": "4910c53e38a07872da46438591dc4ba2d5300b065c90489016599d96e293d1e8",
+    "current_lf_sha256": "fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888",
+    "proof": "Expected hash exactly equals current bytes with LF converted to CRLF; source content unchanged."
+  },
+  {
+    "project": "dlg_gnn",
+    "path": "src/gog_fraud/models/pygod/exact_reconstruction.py",
+    "prior_crlf_sha256": "ebcc3f982d379b4928c5cd7511d5c87c2cff0229f734e937271d4b3c3f3656e3",
+    "current_lf_sha256": "c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037",
+    "proof": "Expected hash exactly equals current bytes with LF converted to CRLF; source content unchanged."
+  },
+  {
+    "project": "tds",
+    "path": "tests/tds/micro_rag/graph_builder.py",
+    "prior_crlf_sha256": "31eb1908c49bebf2fc9114366469a38ceec2ef23ef4376967f38f5947276513c",
+    "current_lf_sha256": "9d3ecc2d0ba8fa590501976c27b01bcf881edacf92c82d3c880c6143257ec80c",
+    "proof": "Expected hash exactly equals current bytes with LF converted to CRLF; source content unchanged."
+  },
+  {
+    "project": "tds",
+    "path": "tests/tds/micro_rag/data_loader.py",
+    "prior_crlf_sha256": "e59ecc2b7e8b0910d894d062a49a8760f36f1d68fcf2a6973d71f13e722baf01",
+    "current_lf_sha256": "67e52a7e44d9992475fe96e906ca93be4dc5925d8f66036a9b9c6070ddcf5c60",
+    "proof": "Expected hash exactly equals current bytes with LF converted to CRLF; source content unchanged."
+  }
+]

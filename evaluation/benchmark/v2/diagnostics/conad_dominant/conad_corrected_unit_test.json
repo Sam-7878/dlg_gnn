@@ -1,0 +1,18 @@
+{
+  "unit_test_status": "PASS",
+  "reference_implementation": {
+    "name": "CONAD-PyGOD-1.1-reference",
+    "loss": 0.09000000357627869,
+    "gradient_norm": 0.0,
+    "is_gradient_zero": true,
+    "diagnosis": "MarginRankingLoss(h, h, h_aug) reduces to constant margin; contrastive branch is inert."
+  },
+  "corrected_implementation": {
+    "name": "CONAD-corrected",
+    "loss": 0.13612858951091766,
+    "gradient_norm": 0.07379121333360672,
+    "is_gradient_zero": false,
+    "contrastive_active": true,
+    "formula": "L_con = mean((1 - y) * ||h - h_aug||^2 + y * max(0, margin - ||h - h_aug||)^2)"
+  }
+}

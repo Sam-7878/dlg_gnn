@@ -1,0 +1,33 @@
+{
+  "phase": "C-01",
+  "description": "Exact structural reconstruction equivalence (dense vs exact_sparse Gram)",
+  "device": "cuda:1",
+  "gpu_name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "all_passed": true,
+  "results": {
+    "float64": {
+      "loss_dense": 4621.548399875734,
+      "loss_sparse": 4621.548399875734,
+      "loss_abs_diff": 0.0,
+      "score_max_abs_diff": 3.637978807091713e-12,
+      "score_max_rel_diff": 5.074487387610587e-16,
+      "grad_max_abs_diff": 1.2434497875801753e-14,
+      "grad_max_rel_diff": 7.712179172289684e-13,
+      "tolerance_atol": 1e-10,
+      "tolerance_rtol": 1e-08,
+      "passed": true
+    },
+    "float32": {
+      "loss_dense": 4788.67919921875,
+      "loss_sparse": 4788.67919921875,
+      "loss_abs_diff": 0.0,
+      "score_max_abs_diff": 0.00146484375,
+      "score_max_rel_diff": 2.3344975375039212e-07,
+      "grad_max_abs_diff": 3.814697265625e-06,
+      "grad_max_rel_diff": 5.5888016504468396e-05,
+      "tolerance_atol": 1e-05,
+      "tolerance_rtol": 0.0001,
+      "passed": true
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "aggregate": [
+    {
+      "claim_gate": "NO_ROBUST_GAIN",
+      "claim_status": "descriptive",
+      "mean_delta": -0.002466962751575763,
+      "median_delta": -0.036272140704018296,
+      "metric": "f1",
+      "negative_seeds": 3,
+      "positive_seeds": 2,
+      "sd_delta": 0.08563999950934764,
+      "zero_seeds": 0
+    },
+    {
+      "claim_gate": "DESCRIPTIVE_POSITIVE",
+      "claim_status": "descriptive",
+      "mean_delta": 0.022168112168911146,
+      "median_delta": 0.01613352806147439,
+      "metric": "pr_auc",
+      "negative_seeds": 0,
+      "positive_seeds": 5,
+      "sd_delta": 0.01766721288877436,
+      "zero_seeds": 0
+    },
+    {
+      "claim_gate": "DESCRIPTIVE_POSITIVE",
+      "claim_status": "descriptive",
+      "mean_delta": 0.005895570795171401,
+      "median_delta": -0.02700886577996553,
+      "metric": "mcc",
+      "negative_seeds": 3,
+      "positive_seeds": 2,
+      "sd_delta": 0.07919788104759945,
+      "zero_seeds": 0
+    },
+    {
+      "claim_gate": "NO_ROBUST_GAIN",
+      "claim_status": "descriptive",
+      "mean_delta": -0.022360248447205,
+      "median_delta": -0.06832298136645965,
+      "metric": "fraud_recall",
+      "negative_seeds": 3,
+      "positive_seeds": 2,
+      "sd_delta": 0.13711100989480632,
+      "zero_seeds": 0
+    }
+  ],
+  "confirmatory_claim_allowed": false,
+  "hierarchical_bootstrap": "not estimated: same test contracts across five models; conditional per-model CIs only",
+  "predeclared": true,
+  "track": "B"
+}

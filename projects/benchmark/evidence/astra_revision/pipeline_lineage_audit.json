@@ -1,0 +1,33 @@
+{
+  "scope": "Static call-path audit; no external pickle executed, no training",
+  "sources": {
+    "src/gog_fraud/pipelines/run_fraud_benchmark.py": "a1334afea80d2f218f420ef7e6a3e91d2cdf7b0a6fce3d26c6497e9feb41e1ec",
+    "src/gog_fraud/pipelines/run_sci_evaluation.py": "4e59a7dfa250b03051bf5389d1fc0f1ae9ffe42b3144003410d2a6b5d37b4148",
+    "src/gog_fraud/pipelines/run_sci_round1_benchmark.py": "86ab889631f896f4eeb819a4b8fae81b8a99bba3938700ab1c9fc4e5e30fbf9e",
+    "src/gog_fraud/data/io/dataset.py": "1678f7bb0bf05c4b2610ba895d138b24ea988afac674d43d2ffb94f5382ebe2a",
+    "src/gog_fraud/data/io/label_loader.py": "9902d9a05f44e3eb0610534d1311f905417100f99a22a6ff408c444b0e88ebdc",
+    "src/gog_fraud/data/io/global_graph_loader.py": "452042f89fb29e0def144957de3a0f60d2c2d6c0b2855466f0de0413bd7c6a8f",
+    "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895",
+    "evaluation/benchmark/v2/scripts/a03_run_crypto_production.py": "6dc5750056e32386f52b5cd4d015661ad960b0c3a3e732c1f4a1a2d65062c0ef",
+    "evaluation/benchmark/v2/scripts/a03_rerun_crypto_dlg_aug.py": "97508d2dcd994d6ebffe8949da7b248f82a5cc52371476fd36a7b0d0a1ac68b3"
+  },
+  "paths": [
+    {
+      "entry": "src/gog_fraud/pipelines/run_fraud_benchmark.py",
+      "data": "FraudDataset -> transaction/label/global graph loaders",
+      "relation": "build_level2_graph -> embedding kNN / temporal window / shared entity; label attached separately",
+      "role": "hierarchical fraud/previous DLG pipeline; no writer of frozen *_hybrid_graph.pt found"
+    },
+    {
+      "entry": "src/gog_fraud/pipelines/run_sci_evaluation.py",
+      "data": "Round1 workflow dispatch -> run_sci_round1_benchmark._legacy_registries",
+      "role": "original ten-graph campaign; registry does not contain Ethereum/BSC/Polygon"
+    },
+    {
+      "entry": "evaluation/benchmark/v2/scripts/a03_run_crypto_production.py",
+      "data": "load_gog_graph reads existing *_hybrid_graph.pt; embeddings -> x, edge_index deduplicated, labels -> y",
+      "role": "actual added crypto benchmark input; producer provenance unresolved"
+    }
+  ],
+  "conclusion": "The indicated pipeline folder is core for dataset processing, but its existing hierarchy and the A03 frozen hybrid benchmark have different input/construction paths. Original global CSV and labels do not alone connect these paths."
+}

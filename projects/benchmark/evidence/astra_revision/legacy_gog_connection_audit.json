@@ -1,0 +1,139 @@
+{
+  "status": "INPUT_CONNECTION_VERIFIED_PRODUCER_UNRESOLVED",
+  "manifest_path": "evaluation/benchmark/v2/manifests/datasets/dataset_manifests_a03.csv",
+  "manifest_sha256": "9138301b5d95dbe4673d1ed051823e647897c59ab19638639082fe9beb05ac83",
+  "manifest_hash_definition": "First 16 hex digits of SHA256 of the first 65536 bytes; not the prefix of whole-file SHA256.",
+  "generator_path": "evaluation/benchmark/v2/scripts/a03_build_dataset_manifests.py",
+  "generator_sha256": "130a75c2e5ec5eb0e37375870ffdfc5a57103918a460acc1e3eef6e36a882dd2",
+  "crypto_inputs": [
+    {
+      "dataset": "Ethereum",
+      "path": "/mnt/d/_Work/_data/GoG/ethereum/ethereum_hybrid_graph.pt",
+      "recorded_head_sha256": "fa87502ab0027800",
+      "observed_head_sha256": "fa87502ab0027800",
+      "head_matches": true,
+      "full_sha256": "4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654"
+    },
+    {
+      "dataset": "BSC",
+      "path": "/mnt/d/_Work/_data/GoG/bsc/bsc_hybrid_graph.pt",
+      "recorded_head_sha256": "f4f44bcb5c1336c0",
+      "observed_head_sha256": "f4f44bcb5c1336c0",
+      "head_matches": true,
+      "full_sha256": "2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883"
+    },
+    {
+      "dataset": "Polygon",
+      "path": "/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt",
+      "recorded_head_sha256": "58c222d510780252",
+      "observed_head_sha256": "58c222d510780252",
+      "head_matches": true,
+      "full_sha256": "292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74"
+    }
+  ],
+  "patch_path": "evaluation/benchmark/v2/environment/legacy/20261002T145148Z/tracked-working-tree.patch",
+  "patch_sha256": "d035d823ef446ec7cc49e404f3e795ae7cc411033d4475dd8f8d46b5e6ce7649",
+  "patch_files": 269,
+  "newline_only_files": 267,
+  "semantic_changes": [
+    {
+      "path": "docs/DLG_GNN_Architecture_Report.md",
+      "removed_lines": 808,
+      "added_lines": 831,
+      "newline_only": false,
+      "hybrid_references": []
+    },
+    {
+      "path": "docs/math/exact_sparse_reconstruction.md",
+      "removed_lines": 82,
+      "added_lines": 86,
+      "newline_only": false,
+      "hybrid_references": []
+    }
+  ],
+  "hybrid_reference_files": [
+    {
+      "path": "configs/experiments/exp_001_static_dlg_gnn.yaml",
+      "removed_lines": 38,
+      "added_lines": 38,
+      "newline_only": true,
+      "hybrid_references": [
+        "  graph_path: data/gog/polygon_hybrid_graph.pt"
+      ]
+    },
+    {
+      "path": "configs/experiments/exp_002_streaming_dlg_gnn.yaml",
+      "removed_lines": 38,
+      "added_lines": 38,
+      "newline_only": true,
+      "hybrid_references": [
+        "  graph_path: data/gog/polygon_hybrid_graph.pt"
+      ]
+    },
+    {
+      "path": "configs/experiments/exp_003_mc_streaming.yaml",
+      "removed_lines": 41,
+      "added_lines": 41,
+      "newline_only": true,
+      "hybrid_references": [
+        "  graph_path: data/gog/polygon_hybrid_graph.pt"
+      ]
+    },
+    {
+      "path": "configs/experiments/exp_004_micro_rag.yaml",
+      "removed_lines": 38,
+      "added_lines": 38,
+      "newline_only": true,
+      "hybrid_references": [
+        "  graph_path: data/gog/polygon_hybrid_graph.pt"
+      ]
+    },
+    {
+      "path": "configs/experiments/exp_005_full_model.yaml",
+      "removed_lines": 41,
+      "added_lines": 41,
+      "newline_only": true,
+      "hybrid_references": [
+        "  graph_path: data/gog/polygon_hybrid_graph.pt"
+      ]
+    },
+    {
+      "path": "scripts/scratch_stats.py",
+      "removed_lines": 51,
+      "added_lines": 51,
+      "newline_only": true,
+      "hybrid_references": [
+        "    path = f\"/mnt/d/_Work/_data/GoG/{chain}/{chain}_hybrid_graph.pt\""
+      ]
+    },
+    {
+      "path": "src/data_generation/synthetic_context_generator.py",
+      "removed_lines": 201,
+      "added_lines": 201,
+      "newline_only": true,
+      "hybrid_references": [
+        "    gog_path = \"D:\\\\_Work\\\\_data\\\\GoG\\\\polygon\\\\polygon_hybrid_graph.pt\"",
+        "        gog_path = \"/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt\""
+      ]
+    },
+    {
+      "path": "tests/tds/micro_rag/run_phase2_3.py",
+      "removed_lines": 236,
+      "added_lines": 236,
+      "newline_only": true,
+      "hybrid_references": [
+        "    gog_path = \"/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt\""
+      ]
+    },
+    {
+      "path": "tests/tds/micro_rag/run_real_pipeline.py",
+      "removed_lines": 260,
+      "added_lines": 260,
+      "newline_only": true,
+      "hybrid_references": [
+        "    gog_path = \"/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt\""
+      ]
+    }
+  ],
+  "interpretation": "The manifest identifies exact existing GoG hybrid inputs. Patch change hunks were compared after CRLF normalization; references establish consumers, not the missing producer. Non-crypto manifest metadata includes hardcoded source dimensions and was superseded by loader-observed A04/A05 canonical inputs. No external pickle objects executed."
+}

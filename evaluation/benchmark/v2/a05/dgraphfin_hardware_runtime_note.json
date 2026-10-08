@@ -1,0 +1,111 @@
+{
+  "recorded_at": "2026-10-03T22:35:28.052653+09:00",
+  "dataset": "DGraphFin",
+  "model": "AnomalyDAE",
+  "reported_memory_clock_adjustment_mhz": -402,
+  "adjustment_evidence": "User reports a cumulative RTX 3090 memory-clock reduction of 402 MHz; the clock offset is not independently verified. Two observed clock samples are preserved in change_history.",
+  "telemetry": [
+    {
+      "uuid": "GPU-d85076de-b5c8-b1c8-f901-421545b321fd",
+      "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "driver_version": "616.92",
+      "clocks.current.memory": "405 MHz",
+      "memory.used": "489 MiB",
+      "utilization.gpu": "0 %",
+      "temperature.gpu": "44",
+      "power.draw": "3.81 W"
+    },
+    {
+      "uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+      "name": "NVIDIA GeForce RTX 3090",
+      "driver_version": "616.92",
+      "clocks.current.memory": "9400 MHz",
+      "memory.used": "13302 MiB",
+      "utilization.gpu": "95 %",
+      "temperature.gpu": "75",
+      "power.draw": "274.80 W"
+    }
+  ],
+  "last_saved_seed42_epochs": 7,
+  "preflight_predates_adjustment": true,
+  "algorithm_or_objective_changed": false,
+  "timing_disclosure": "The DGraphFin preflight runtime projection predates both reported memory-clock adjustments. For any resumed run, train_time_sec and total_wall_sec in the runner JSON cover only its final invocation, not prior interrupted segments.",
+  "change_history": [
+    {
+      "reported_at_or_recorded_at": "2026-10-03T22:35:28.052653+09:00",
+      "reported_cumulative_memory_clock_adjustment_mhz": -200,
+      "telemetry": [
+        {
+          "uuid": "GPU-d85076de-b5c8-b1c8-f901-421545b321fd",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "616.92",
+          "clocks.current.memory": "405 MHz",
+          "memory.used": "489 MiB",
+          "utilization.gpu": "0 %",
+          "temperature.gpu": "44",
+          "power.draw": "3.81 W"
+        },
+        {
+          "uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+          "name": "NVIDIA GeForce RTX 3090",
+          "driver_version": "616.92",
+          "clocks.current.memory": "9400 MHz",
+          "memory.used": "13302 MiB",
+          "utilization.gpu": "95 %",
+          "temperature.gpu": "75",
+          "power.draw": "274.80 W"
+        }
+      ]
+    },
+    {
+      "reported_at_or_recorded_at": "2026-10-03T22:54:27.653021+09:00",
+      "reported_cumulative_memory_clock_adjustment_mhz": -402,
+      "additional_user_report": "User reported reducing the RTX 3090 memory clock by another 200 MHz, for a reported total reduction of 402 MHz.",
+      "telemetry": [
+        {
+          "uuid": "GPU-d85076de-b5c8-b1c8-f901-421545b321fd",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "616.92",
+          "clocks.current.memory": "405 MHz",
+          "memory.used": "240 MiB",
+          "utilization.gpu": "0 %",
+          "temperature.gpu": "45",
+          "power.draw": "2.93 W"
+        },
+        {
+          "uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+          "name": "NVIDIA GeForce RTX 3090",
+          "driver_version": "616.92",
+          "clocks.current.memory": "9300 MHz",
+          "memory.used": "13302 MiB",
+          "utilization.gpu": "97 %",
+          "temperature.gpu": "73",
+          "power.draw": "274.66 W"
+        }
+      ]
+    }
+  ],
+  "latest_observation_at": "2026-10-03T22:54:27.653021+09:00",
+  "latest_telemetry": [
+    {
+      "uuid": "GPU-d85076de-b5c8-b1c8-f901-421545b321fd",
+      "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "driver_version": "616.92",
+      "clocks.current.memory": "405 MHz",
+      "memory.used": "240 MiB",
+      "utilization.gpu": "0 %",
+      "temperature.gpu": "45",
+      "power.draw": "2.93 W"
+    },
+    {
+      "uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+      "name": "NVIDIA GeForce RTX 3090",
+      "driver_version": "616.92",
+      "clocks.current.memory": "9300 MHz",
+      "memory.used": "13302 MiB",
+      "utilization.gpu": "97 %",
+      "temperature.gpu": "73",
+      "power.draw": "274.66 W"
+    }
+  ]
+}

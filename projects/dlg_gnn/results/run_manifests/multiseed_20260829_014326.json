@@ -1,0 +1,17 @@
+{
+  "experiment": "multiseed",
+  "git_commit": "a61e3b04052c",
+  "seeds": [
+    7,
+    17,
+    27,
+    37,
+    47
+  ],
+  "gnn_source": "simulated",
+  "config_sha256": "ca6858c789b07665",
+  "timestamp": "2026-08-29T01:43:26.018145Z",
+  "command": "python experiments/run_multiseed.py --config configs/base.yaml",
+  "python_version": "3.12.13",
+  "torch_version": "2.5.1+cu121"
+}

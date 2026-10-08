@@ -1,0 +1,20 @@
+{
+  "detail": {
+    "fixture_sha256": "03b0caeb34fc4a3bec1beb70ab28d4623fd40a650c89f0cd5e70981bc855a512",
+    "scientific_smoke": "PASS: deterministic entity graph and local-risk fixture",
+    "source_hashes": "PASS"
+  },
+  "elapsed_seconds": 5.04,
+  "environment": {
+    "networkx": "3.7",
+    "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "pygod": "1.1.0",
+    "python": "3.14.4",
+    "scipy": "1.18.1",
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1"
+  },
+  "mode": "verify",
+  "project": "tds",
+  "status": "PASS"
+}

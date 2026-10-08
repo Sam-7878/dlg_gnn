@@ -1,10 +1,10 @@
 # Benchmark data acquisition and construction
 
-The paths and hashes below come from the frozen A05 canonical manifest in `evidence/frozen_a05_a06_evidence.zip`. Upstream license and access terms must be checked at the provider before downloading; third-party raw datasets are not redistributed in this repository. A raw hash identifies the exact local input used by this release and may differ from a newly downloaded provider package.
+The paths and hashes below come from the frozen A05 canonical manifest in `evidence/public_numeric_evidence.zip`. Upstream license and access terms must be checked at the provider before downloading; third-party raw datasets are not redistributed in this repository. A raw hash identifies the exact local input used by this release and may differ from a newly downloaded provider package.
 
-**Access limitation:** The Ethereum, BSC and Polygon entries are locally constructed `*_hybrid_graph.pt` artifacts. The frozen manifest identifies their hashes and loader, but does not establish a public upstream download or redistribution permission. The repository URL shown below is a provenance/code location, not a dataset download. Consequently, an independent full rerun of those three graphs is not yet supported from public raw data alone; the evidence-only `verify` and `paper` paths remain available. LANL's listed `.pt` is also a constructed graph; obtain source logs from LANL subject to its terms.
+**Access limitation:** The Ethereum, BSC and Polygon entries are locally constructed `*_hybrid_graph.pt` artifacts. The frozen manifest identifies their hashes and loader, but does not establish a public upstream download or redistribution permission. The repository URL shown below is a provenance/code location, not a dataset download. Consequently, an independent full rerun of those three graphs is not yet supported from public raw data alone; the evidence-only `verify` and `tables` paths remain available. LANL's listed `.pt` is also a constructed graph; obtain source logs from LANL subject to its terms.
 
-Graph construction uses `evaluation/benchmark/v2/scripts/a04_build_dataset_manifest.py` and the frozen source snapshot/configs in the evidence ZIP. Follow `projects/benchmark/README.md` for the evidence-only reviewer path. The original raw path is retained for provenance, not as a portable path.
+Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_dataset_manifest.py` and the frozen source snapshot/configs in the evidence ZIP. Follow `projects/benchmark/README.md` for the evidence-only reviewer path. The original raw path is retained for provenance, not as a portable path.
 
 ## Elliptic
 
@@ -179,3 +179,9 @@ Graph construction uses `evaluation/benchmark/v2/scripts/a04_build_dataset_manif
 - Evaluation nodes: 16694; positives: 301; unit: destination_computer_node
 - Label provenance: `real_external_label`
 - Source evidence: lanl_graph.pt + lanl_ground_truth_freeze.json; 749 red-team events map to 301 nodes
+
+## Post-review tensor audit — 2026-10-09
+
+The frozen manifest’s `real_external_label` describes supplied labels, not a verified label-independent graph builder. Non-executing ZIP/opcode inspection confirmed raw artifact hashes and every node label against the upstream processed CSV. Hybrid tensors contain all sibling kNN edges, plus 43,140 / 22,427 / 6,896 additional edges (Ethereum / BSC / Polygon), all joining same-label nodes. Seven of eight feature columns are constant zero. The original hybrid generator and the meaning of the remaining feature are still required; these observations alone do not establish how edges were generated. See [construction audit](DATASET_CONSTRUCTION_AUDIT.md) and [machine-readable evidence](evidence/astra_revision/hybrid_tensor_audit.json).
+
+`src/run_evaluation_pipeline.py` reads an existing Polygon tensor and copies it into a streaming benchmark (or creates a simulated fallback). It does not establish provenance of the three original frozen hybrid tensors.

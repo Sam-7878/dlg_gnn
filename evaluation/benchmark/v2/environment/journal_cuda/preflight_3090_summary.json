@@ -1,0 +1,82 @@
+{
+  "gate": "G3",
+  "device": 0,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "total_memory_gb": 24.0,
+  "vram_allocation_tests": {
+    "4GB": {
+      "success": true,
+      "allocated_mb": 4096.0,
+      "alloc_time_sec": 0.281
+    },
+    "8GB": {
+      "success": true,
+      "allocated_mb": 8192.0,
+      "alloc_time_sec": 0.249
+    },
+    "14GB": {
+      "success": true,
+      "allocated_mb": 14336.0,
+      "alloc_time_sec": 0.437
+    },
+    "18GB": {
+      "success": true,
+      "allocated_mb": 18432.0,
+      "alloc_time_sec": 0.556
+    },
+    "20GB": {
+      "success": true,
+      "allocated_mb": 20480.0,
+      "alloc_time_sec": 0.625
+    }
+  },
+  "bandwidth_tests": {
+    "test_size_mb": 512,
+    "h2d_bandwidth_gbps": 2.05,
+    "d2h_bandwidth_gbps": 1.61,
+    "link_type": "Thunderbolt 4 / PCIe over eGPU link"
+  },
+  "preflight_model_tests": [
+    {
+      "model": "DOMINANT",
+      "runtime_sec": 5.66,
+      "peak_vram_mb": 24.19,
+      "finite_loss": true,
+      "finite_scores": true,
+      "status": "PASS"
+    },
+    {
+      "model": "CONAD",
+      "runtime_sec": 0.32,
+      "peak_vram_mb": 26.8,
+      "finite_loss": true,
+      "finite_scores": true,
+      "status": "PASS"
+    },
+    {
+      "model": "DLG-Base",
+      "runtime_sec": 0.15,
+      "peak_vram_mb": 25.23,
+      "finite_loss": true,
+      "finite_scores": true,
+      "status": "PASS"
+    },
+    {
+      "model": "DLG-Aug",
+      "runtime_sec": 0.2,
+      "peak_vram_mb": 24.17,
+      "finite_loss": true,
+      "finite_scores": true,
+      "status": "PASS"
+    },
+    {
+      "model": "AnomalyDAE",
+      "runtime_sec": 0.23,
+      "peak_vram_mb": 41.94,
+      "finite_loss": true,
+      "finite_scores": true,
+      "status": "PASS"
+    }
+  ],
+  "overall_status": "PASS"
+}

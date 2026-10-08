@@ -11,7 +11,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[3]
-ZIP = ROOT / "projects/benchmark/evidence/frozen_a05_a06_evidence.zip"
+ZIP = ROOT / "projects/benchmark/evidence/public_numeric_evidence.zip"
 P = "evaluation/benchmark/v2/paper_ready_a05/"
 M = ROOT / "projects/benchmark/paper/current/DLG-Benchmark_A07.tex"
 
@@ -41,7 +41,11 @@ def main() -> None:
         for stale in ("71/80", "355 primary", "10 primary datasets"):
             must(stale.lower() not in text.lower(), f"{name}: stale {stale}")
     must("13 primary" in manuscript and "Eighty of 91" in manuscript and "435" in manuscript, "manuscript counts missing")
-    must("controlled node-level injection" in manuscript and "five source/native-label" in manuscript, "label provenance missing")
+    must("controlled node-level injection" in manuscript and "two provider-native graphs" in manuscript
+         and "unresolved construction provenance" in manuscript, "label provenance audit missing")
+    must("DOMINANT / DLG-Aug (tied)" in manuscript, "S2 tied mean-rank leaders missing")
+    must("protocol-incomparable diagnostics" in manuscript, "crypto threshold-policy caveat missing")
+    must("will be inserted after archive publication" not in manuscript, "future publication placeholder remains")
     must("Selected Holm-Adjusted Pairwise Comparisons" in manuscript, "Holm table missing")
     must("BSC is the clearest negative" in manuscript, "BSC discussion missing")
     must("DR-GAD" not in manuscript, "unverified citation present")

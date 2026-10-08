@@ -1,0 +1,4 @@
+Source Chains,Target Chain,Primary F1,PR-AUC,Deep fraction,Temporal Violations,canonical_row_id
+bsc+polygon,Ethereum,0.659,0.752,0.396,0,0;1;2
+ethereum+bsc,Polygon,0.000,undefined,0.385,0,0;1;2
+ethereum+polygon,Bsc,0.289,0.239,0.384,0,0;1;2

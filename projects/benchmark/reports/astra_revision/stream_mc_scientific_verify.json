@@ -1,0 +1,20 @@
+{
+  "detail": {
+    "fixture_sha256": "f798a41e69afa1a46b58ed43932d9bf0ee52815e918a823b88a75a37844a056d",
+    "scientific_smoke": "PASS: ingestion, checkpoint/replay and bounded subgraph fixture",
+    "source_hashes": "PASS"
+  },
+  "elapsed_seconds": 30.95,
+  "environment": {
+    "networkx": "3.7",
+    "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "pygod": "1.1.0",
+    "python": "3.14.4",
+    "scipy": "1.18.1",
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1"
+  },
+  "mode": "verify",
+  "project": "stream_mc",
+  "status": "PASS"
+}

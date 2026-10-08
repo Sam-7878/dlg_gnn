@@ -1,0 +1,458 @@
+{
+  "all_identity_aligned": true,
+  "complete": true,
+  "entries": [
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/fraudsage/seed17_test.csv",
+      "sha256": "9fee86526e9e329a584aef3529e5820358e68873858c659891b4b6db96fae1f5",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed17_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/fraudsage/seed17_validation.csv",
+      "sha256": "e5241a07761e5e8a474376ca0d2818c4c1f7eeb566530918c936979b8afd2588",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/fraudsage/seed27_test.csv",
+      "sha256": "9963bfa53ded8e12cb18217b39860b28df5cab026e366d29bd7a4fbde6bc2cd1",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed27_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/fraudsage/seed27_validation.csv",
+      "sha256": "fa0fa62b86c8b991150e00d9c229f313fe32d0eb41198cc7ada77e3a866a624f",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/fraudsage/seed37_test.csv",
+      "sha256": "0f40101fd463b272aed0e2bf977f5de182516b0715918f6ec770d3778060eea4",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed37_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/fraudsage/seed37_validation.csv",
+      "sha256": "7643bb223d35f5205035479bc8c47d00625904fa79ff62bed2fb68fb11f8dabf",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/fraudsage/seed47_test.csv",
+      "sha256": "b166550b7026eda393ba2e0e9180b85a67cb7682f0667928b536340c78794058",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed47_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/fraudsage/seed47_validation.csv",
+      "sha256": "7c55332e629f82682806eb9b9519a47b4eb02d72a638bb78f34c5f8e300edeba",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/fraudsage/seed7_test.csv",
+      "sha256": "baa8799bcdd2df3ec3ee319997a1df97107c0746f4769d09506b3149c7ba3236",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/fraudsage/seed7_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/fraudsage/seed7_validation.csv",
+      "sha256": "a2d89d7657c366106695dec0f2931190d564e24ed09edb0483c9a4b09d3d8c1e",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/mc_dropout/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/mc_dropout/seed17_test.csv",
+      "sha256": "f2b3807c25a779489b93a3d5cd14dab487c6f85266b54e3dc692af3e9323a108",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/mc_dropout/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/mc_dropout/seed27_test.csv",
+      "sha256": "b87a196af90c54e86aa1099134d5a70679b6508e6f884c79ee4fe3f0fc2776f5",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/mc_dropout/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/mc_dropout/seed37_test.csv",
+      "sha256": "45e636f036b7f4bb3c907d53c345ea54189c7f336b29012bf3e98155cfe86c46",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/mc_dropout/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/mc_dropout/seed47_test.csv",
+      "sha256": "79e8ba26aaa0caf6015767c3d04ea2c2beedd37a163d095b4d4b7318bc5dadbe",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/mc_dropout/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/mc_dropout/seed7_test.csv",
+      "sha256": "c0eb91ba4c432af7267e922b46de23c298d63dfc8391bf33296451dc2c2f2954",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/proposed/seed17_test.csv",
+      "sha256": "b9d486c29c88ad1261a074eacef5e2b3d8030c0de676e3eb0f462de932027511",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed17_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/proposed/seed17_validation.csv",
+      "sha256": "d640f351cb2043269f047045314dab69d3638ee1d20c56af5a7c4422b20cd4cd",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/proposed/seed27_test.csv",
+      "sha256": "5d50be4cf055d9185be9456463da6b8c0b12dc87de47381dfa93b53e99cbcd6b",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed27_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/proposed/seed27_validation.csv",
+      "sha256": "ffa1e3b367084699d143bfb5c0b9740631935896bc4b6ce1f967a8f45b1bcf9b",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/proposed/seed37_test.csv",
+      "sha256": "9dd88ff62255ded2ebc759274375e51ef0a0e4d3f2cdc310d972cb33c3a5f2af",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed37_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/proposed/seed37_validation.csv",
+      "sha256": "5be0c581704389ed06634a08cc23181e42f178a760fcb04e4e5d6ab36a510286",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/proposed/seed47_test.csv",
+      "sha256": "bb709e50eafced301281d028a061b96dc0a8075fd384e47682b25f5e21fe554e",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed47_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/proposed/seed47_validation.csv",
+      "sha256": "5f60b0863c481893023c95033f7c36536ef278efbcfabf2c6472928db4a8e8b5",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/proposed/seed7_test.csv",
+      "sha256": "a7164c24f99e586b7009c80f275e05c045b6a2ff2832631f1000d229677f91e8",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/proposed/seed7_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/proposed/seed7_validation.csv",
+      "sha256": "722fd9eb646ebcc63153bfec048a05c97cb4eead43dd28b4218789156b580abf",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/temperature_scaled/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/temperature_scaled/seed17_test.csv",
+      "sha256": "ae55d0c502f6039ba4214bcee25c3dcb9e3cf52fe63ec0ba7641bcbedb3ea6da",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/temperature_scaled/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/temperature_scaled/seed27_test.csv",
+      "sha256": "aafb10b5cd332e0fa5d2aae3067af4e7a30145b35d38538c511b3ec325831b69",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/temperature_scaled/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/temperature_scaled/seed37_test.csv",
+      "sha256": "656338467be404b5db2998b3c75d734c2d7120efc313bff06c2251308b6d7b3b",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/temperature_scaled/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/temperature_scaled/seed47_test.csv",
+      "sha256": "6bdbf166fa2316be73c7c22672b4185a1cd59d69d51ffd4ae9e9ff0ab13ec0de",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/temperature_scaled/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/temperature_scaled/seed7_test.csv",
+      "sha256": "c423b6cba5a2e06e10dc963a72c32c10059ca3116ef023d164277b138cf1d32e",
+      "split": "test"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgat/seed17_test.csv",
+      "sha256": "2f718ee1212d38cbf9269a1559b339e8efcda90e0acbd2ec85875e6028fccd01",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed17_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgat/seed17_validation.csv",
+      "sha256": "36826f0b8ac20b98abbd1c7000db4dc2a0633134511025635d746268b3ee5996",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgat/seed27_test.csv",
+      "sha256": "7ebeb31e3777810f9a303c4fec3eedac3c44f942705ec96deb154682de5c50bd",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed27_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgat/seed27_validation.csv",
+      "sha256": "f7ebd31cb7421a62a01dbf26bce5e28917298ff8a1a79632296ff59c36ad7bb8",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgat/seed37_test.csv",
+      "sha256": "fc2007478d63b114632d82b19bd7b854e75c231cb0cca7ed32c3ae7caaab55b1",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed37_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgat/seed37_validation.csv",
+      "sha256": "15fdbb53e7bd3ba6226cfe28b1521966c499607ff8c2e5618486660d89ed7bc5",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgat/seed47_test.csv",
+      "sha256": "a2b521ec1d77ae91a272740ebd549bb522f67902517baecf93c1ee2e492d5452",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed47_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgat/seed47_validation.csv",
+      "sha256": "970857219c326a0d9540c452211a533a4c52d1c33c5c2f95694866f75f35fb83",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgat/seed7_test.csv",
+      "sha256": "acc97da047fc5a17659e2b61d6362665c3eb7d51b2532c89c404cfa6e873c645",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgat/seed7_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgat/seed7_validation.csv",
+      "sha256": "c251273b592a3709b274682a3a3bffa83554bfa5e3cfc17a3755635ed91fa41e",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed17_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgn/seed17_test.csv",
+      "sha256": "ef4d2d1c40654b991da654b1371adbc516345ece5ba1619153bdd90d224406df",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed17_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgn/seed17_validation.csv",
+      "sha256": "aff7e088ac1c963fdd7d8cfe074db9ec00d021edfed458465ed65268afa540be",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed27_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgn/seed27_test.csv",
+      "sha256": "b8473bfa231a29b71cb07c4810f9df612a068ce77b4959492dc0515a276e7f3a",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed27_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgn/seed27_validation.csv",
+      "sha256": "0c48e4aa40ab7cff435e68d4dff4dd1ce9666f0c7ca5d5acd981b3a1d9a134e1",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed37_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgn/seed37_test.csv",
+      "sha256": "beee4f4ee8fc2b19ce34c27296bcd4aca0ecbe560540e84c94114642aecfa895",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed37_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgn/seed37_validation.csv",
+      "sha256": "5287d654cad5f5d3265fa4480c3ee5cb62cdda449386594fd9c7f1ef540f9bd7",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed47_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgn/seed47_test.csv",
+      "sha256": "e2674d8fe03f9db4422517cc9b85a13b4d964f77475b6ae34f718a306a083e5d",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed47_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgn/seed47_validation.csv",
+      "sha256": "49e41b7da66906a1ca801ea8d8e4d1a051b04fca22ef298ccc397c22f46e9ceb",
+      "split": "validation"
+    },
+    {
+      "events": 3648,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed7_test.csv",
+      "positive": 107,
+      "relative_path": "raw_predictions/tgn/seed7_test.csv",
+      "sha256": "f374948fe3a13199189ff75a60f0c74ea488ed77a3dbf1ca8901197ec91e3e0b",
+      "split": "test"
+    },
+    {
+      "events": 3647,
+      "identity_aligned": true,
+      "path": "/mnt/d/_Work/goat_bank/dlg_gnn/results/main_final_v2/raw_predictions/tgn/seed7_validation.csv",
+      "positive": 308,
+      "relative_path": "raw_predictions/tgn/seed7_validation.csv",
+      "sha256": "cad02f0bd5e0265f26b4885155cdb14d99858c8204fdafe138581c7f2dc0e154",
+      "split": "validation"
+    }
+  ],
+  "expected_prediction_files": 50,
+  "prediction_files": 50
+}

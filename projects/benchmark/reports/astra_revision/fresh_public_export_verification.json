@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-09",
+  "method": "clean prospective public working-tree export; no private manuscript; not a published Git commit",
+  "base_head": "f21ebd6348f1a781476d07823f01566e43d9fb8f",
+  "checkout": "/tmp/dlg-astra-public-reviewed-_1mo7fzg",
+  "file_count": 1028,
+  "bytes": 137011479,
+  "private_manuscript_files": [],
+  "status": "PASS",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "dlg_gnn",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 0.057,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": null,\n    \"scientific_smoke\": \"SKIPPED: optional scientific dependencies unavailable\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.01,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"dlg_gnn\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 0.224,
+      "stdout": "PASS 39 public evidence hashes\n{\n  \"detail\": {\n    \"approved_successes\": 435,\n    \"archive_files\": 641,\n    \"archived_equivalence\": \"PASS\",\n    \"datasets\": 13,\n    \"models\": 7,\n    \"supported_pairs\": 80,\n    \"tiny_gram\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.18,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "stream_mc",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 0.047,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": null,\n    \"scientific_smoke\": \"SKIPPED: optional scientific dependencies unavailable\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.0,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"stream_mc\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "tds",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 0.048,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": null,\n    \"scientific_smoke\": \"SKIPPED: optional scientific dependencies unavailable\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 0.0,\n  \"environment\": {\n    \"networkx\": \"not installed (archive integrity verification remains available)\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"not installed (archive integrity verification remains available)\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"not installed (archive integrity verification remains available)\",\n    \"torch\": \"not installed (archive integrity verification remains available)\",\n    \"torch-geometric\": \"not installed (archive integrity verification remains available)\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"tds\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "tables"
+      ],
+      "exit": 0,
+      "seconds": 6.386,
+      "stdout": "PASS 39 public evidence hashes\n{\n  \"status\": \"PASS\",\n  \"scope\": \"public evidence tables; no manuscript source; no training\",\n  \"permutations\": 200000,\n  \"s2_leaders\": \"DOMINANT / DLG-Aug\"\n}\nPASS 39 public evidence hashes\n{\n  \"detail\": {\n    \"approved_successes\": 435,\n    \"archive_files\": 641,\n    \"archived_equivalence\": \"PASS\",\n    \"datasets\": 13,\n    \"models\": 7,\n    \"supported_pairs\": 80,\n    \"tables\": \"PASS: frozen tables and seeded permutation statistics regenerated; no manuscript sources or training\",\n    \"tiny_gram\": \"PASS\"\n  },\n  \"elapsed_seconds\": 6.27,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"tables\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "mode": "paper",
+      "exit": 1,
+      "expected_private_input_guard": true
+    }
+  ]
+}

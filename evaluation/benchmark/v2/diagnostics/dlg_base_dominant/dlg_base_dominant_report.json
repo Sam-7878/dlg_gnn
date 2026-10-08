@@ -1,0 +1,18 @@
+{
+  "dominant": {
+    "model_class": "ExactDOMINANTBase",
+    "total_parameters": 16672,
+    "architecture": "Single shared encoder -> decoupled attribute and structure decoders"
+  },
+  "dlg_base": {
+    "model_class": "ExactDLGBase",
+    "total_parameters": 20833,
+    "architecture": "Decoupled local-to-global encoder with learned alpha gating -> decoupled decoders",
+    "learned_alpha_sigmoid": 0.6145244836807251
+  },
+  "differentiation": {
+    "parameter_ratio": 1.25,
+    "encoder_separation": "DOMINANT forces one encoder for both scales; DLG-Base maintains separate local & global representations",
+    "adaptive_gating": "Learned alpha = 0.6145 balances local neighborhood vs multi-hop global context"
+  }
+}
