@@ -101,10 +101,14 @@ src/gog_fraud/pipelines/
 └── run_tuning_workflow.py       # Hyperparameter optimization workflow
 
 src/gog_fraud/data/
+├── level2/                      # Level 2 relational meta-graph construction
+│   ├── relation_builder.py      # Unsupervised relation builder (embedding k-NN, temporal, entity)
+│   └── dataset.py               # Level 2 graph dataset wrapper and persistence
 ├── dgraphfin_aligned.py         # DGraphFin dataset loader & aligner
 ├── preprocessing/               # Feature normalization & missing value imputation
 ├── splits/                      # Fixed seed train/val/test split generators
 └── transforms/                  # Anomaly injection transforms (-Syn protocol)
+
 ```
 
 ### 2.4 `src/analysis/` (Statistical & Empirical Analysis)

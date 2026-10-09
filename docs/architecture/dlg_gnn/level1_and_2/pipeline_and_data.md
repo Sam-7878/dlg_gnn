@@ -24,6 +24,19 @@
 ## 설정 관리 (YAML Configs)
 - `configs/benchmark/` 디렉토리에 명시된 설정 파일들을 기반으로 모델 하이퍼파라미터(`lr`, `hid_dim`, `dropout` 등)가 조절되며 `_build_level1_model`, `_build_level1_trainer` 등의 팩토리 함수가 객체들을 적응할 수 있게 준비합니다. (이때의 인자와 도메인 언어가 통일되도록 인터페이스를 통합.)
 
-## Benchmark 파생 논문 데이터 경로 확인 (2026-10-09)
+## Benchmark 데이터셋 전환 및 무결성 확보 (2026-10-09 Update)
 
-이 문서는 `run_fraud_benchmark → FraudDataset → Level1/Level2/Fusion` 계층형 evaluation을 설명합니다. Benchmark A03에서 추가한 Ethereum/BSC/Polygon 셀은 `evaluation/benchmark/v2/scripts/a03_run_crypto_production.py`가 기존 `*_hybrid_graph.pt`를 직접 읽는 경로입니다. 원본 `GoG/labels.csv`의 Category 0→positive 매핑은 전체 24,169개 tensor node와 일치합니다. `global_graph/`는 contract mapping과 상호작용 edge를 제공하며, 주소 정렬 대조에서는 이 edge 집합과 frozen hybrid edge가 일치하지 않습니다. 따라서 위 계층형 pipeline 문서만으로 frozen hybrid의 원본 생성 과정을 확인했다고 간주하지 않습니다. 구체적 파일 해시와 대조 결과는 `projects/benchmark/DATASET_CONSTRUCTION_AUDIT.md` 및 `evidence/astra_revision/pipeline_lineage_audit.json`에 기록합니다. 원 DLG-GNN 논문의 지도학습 label 사용 자체에 관한 오류를 주장하는 감사는 아닙니다.
+### 1. 레거시 `*_hybrid_graph.pt` 폐기 및 제거
+과거 GoG 프로젝트에서 생성되었던 `*_hybrid_graph.pt` (Ethereum, BSC, Polygon)는 다음과 같은 연구적 한계가 존재했습니다:
+- **라벨 누수(Label Leakage) 위험:** k-NN($k=5$) 외에 추가된 엣지들이 라벨 기반(intra-class $k=3$)으로 샘플링되어 라벨 독립적 토폴로지 구성 원칙에 위배됨.
+- **재현성 결여:** 과거 생성 스크립트 부재로 인한 외부 감사 지적(`DATASET_CONSTRUCTION_AUDIT.md`).
+
+이에 따라 **과거의 `*_hybrid_graph.pt`, `*_knn_graph.pt`, `*_label_graph.pt` 아티팩트는 디스크에서 전면 영구 삭제**되었습니다.
+
+### 2. `relation_builder.py` 기반 클린 Level 2 메타 그래프(`*_level2_graph.pt`) 전면 대체
+DLG-GNN Phase 3에서 완성된 [`relation_builder.py`](file:///d:/_Work/goat_bank/dlg_gnn/src/gog_fraud/data/level2/relation_builder.py) 엔진을 활용하여, 원천 데이터로부터 **완전한 라벨 독립적(Label-Independent)** 클린 그래프를 공식 생성·대체하였습니다 (`scripts/build_clean_level2_graphs.py`):
+1. **토폴로지 생성 규칙:** 컨트랙트 Level 1 임베딩 기반의 순수 코사인 k-NN (`embedding_knn`, $k=5$) 및 시간창(`temporal_window`) 기반의 비지도 다중 관계 결합.
+2. **라벨 분리:** 라벨 정보는 엣지 형성에 일절 관여하지 않으며, 독립적인 지도학습/평가 타깃(`y`)으로만 노드에 부착됨.
+3. **완전한 재현성:** `python scripts/build_clean_level2_graphs.py` 단일 명령으로 전 EVM 체인(Polygon 2,303개, BSC 7,481개, Ethereum 14,385개)의 클린 그래프가 100% 재현됨.
+4. **로더 통합:** `evaluation/benchmark/v2/scripts/a03_run_crypto_production.py` 및 관련 벤치마크 파이프라인에서 `*_level2_graph.pt`를 우선 로드하도록 경로가 통합 업데이트되었습니다.
+

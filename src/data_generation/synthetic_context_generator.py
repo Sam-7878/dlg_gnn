@@ -172,7 +172,9 @@ class SyntheticContextGenerator:
 def main():
     # Fallback simulation if GoG graph is not loaded yet
     # Try to load labels from standard GoG dataset path
-    gog_path = "D:\\_Work\\_data\\GoG\\polygon\\polygon_hybrid_graph.pt"
+    gog_path = "D:\\_Work\\_data\\GoG\\polygon\\polygon_level2_graph.pt"
+    if not os.path.exists(gog_path):
+        gog_path = "/mnt/d/_Work/_data/GoG/polygon/polygon_level2_graph.pt"
     if not os.path.exists(gog_path):
         gog_path = "/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt"
         

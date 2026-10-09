@@ -141,7 +141,9 @@ class SemiSyntheticBuilder:
         logger.info(f"Metadata saved to {os.path.join(self.output_dir, 'metadata.json')}")
 
 def main():
-    gog_path = "D:\\_Work\\_data\\GoG\\polygon\\polygon_hybrid_graph.pt"
+    gog_path = "D:\\_Work\\_data\\GoG\\polygon\\polygon_level2_graph.pt"
+    if not os.path.exists(gog_path):
+        gog_path = "/mnt/d/_Work/_data/GoG/polygon/polygon_level2_graph.pt"
     if not os.path.exists(gog_path):
         gog_path = "/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt"
         

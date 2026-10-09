@@ -12,6 +12,16 @@
 - 동일한 지갑 혹은 시간적으로 연결된 Subgraph를 연속적인 세탁 과정(Laundering Path / Campaign 흐름)으로 인식합니다.
 - `Level2GraphReadout`를 통해 메시지 패싱이 한 번 더 요약되며, 이로써 하나의 노드 스코어가 아닌 복합적 맥락이 반영된 최종 `Level2Output` 평가값이 도출됩니다. 
 
+## `RelationBuilder` (동적 메타 그래프 생성 엔진)
+- **위치:** `src/gog_fraud/data/level2/relation_builder.py`
+- **역할:** Level 1에서 추출된 고차원 표현체(임베딩, 스코어, 로짓)를 입력받아, 라벨 누수(Label Leakage) 없이 상위 계층 메타 그래프(`Level 2 PyG Data`)의 엣지와 속성을 동적으로 구축합니다.
+- **주요 관계 생성 모드 (`relation_modes`):**
+  1. **`embedding_knn` (핵심):** Level 1 임베딩 벡터 간 코사인 유사도(Cosine Similarity)를 계산하여 Top-k 이웃 간 엣지를 생성. (라벨과 독립적인 특성 공간 이웃 연결)
+  2. **`temporal_window`:** 트랜잭션 타임스탬프 순서에 따라 인접한 $W$개 선행 서브그래프들을 양방향 연결하여 시간적 자금 흐름 체인을 형성.
+  3. **`shared_entity`:** 컨트랙트 간 공통 상호작용 지갑이나 엔티티가 존재하는 경우 인접 행렬(`entity_adj`) 기반으로 엣지 결합.
+- **아티팩트 무결성:** 과거 GoG의 라벨 기반 하이브리드 그래프(`*_hybrid_graph.pt`)를 완전히 대체하여, 재현 가능하고 라벨 독립적인 공식 클린 그래프(`*_level2_graph.pt`)를 생성합니다 (`scripts/build_clean_level2_graphs.py`).
+
+
 ## Fusion Network 구성
 - 개별(Level 1) 평가값과 관계형(Level 2) 맥락 평가값을 결합하여 오탐률(False Positive)을 낮추기 위한 추론기입니다.
 - **위치:** `src/gog_fraud/pipelines/fusion.py` 등.

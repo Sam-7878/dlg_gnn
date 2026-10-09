@@ -1,8 +1,12 @@
+import os
 import torch
 import numpy as np
 
 for chain in ["polygon", "bsc", "ethereum"]:
-    path = f"/mnt/d/_Work/_data/GoG/{chain}/{chain}_hybrid_graph.pt"
+    path = f"/mnt/d/_Work/_data/GoG/{chain}/{chain}_level2_graph.pt"
+    if not os.path.exists(path):
+        path = f"/mnt/d/_Work/_data/GoG/{chain}/{chain}_hybrid_graph.pt"
+
     data = torch.load(path, map_location="cpu", weights_only=False)
     print("=" * 50)
     print(f"Chain: {chain}")

@@ -27,15 +27,25 @@ gpu_id = 0 if DEVICE.startswith("cuda") else -1
 
 
 def load_gog_graph(chain_name: str) -> Data:
-    pt_path = GOG_DATA_DIR / f"{chain_name}/{chain_name}_hybrid_graph.pt"
+    pt_path = GOG_DATA_DIR / f"{chain_name}/{chain_name}_level2_graph.pt"
+    if not pt_path.exists():
+        pt_path = GOG_DATA_DIR / f"{chain_name}/{chain_name}_hybrid_graph.pt"
+    if not pt_path.exists():
+        raise FileNotFoundError(f"Missing graph: {pt_path}")
     raw_dict = torch.load(pt_path, map_location="cpu", weights_only=False)
-    x = torch.from_numpy(raw_dict["embeddings"]).float()
+    if isinstance(raw_dict, Data):
+        data = raw_dict
+        if not hasattr(data, "num_nodes") or data.num_nodes is None:
+            data.num_nodes = data.x.size(0)
+        return data
+    x = torch.from_numpy(raw_dict["embeddings"]).float() if isinstance(raw_dict["embeddings"], np.ndarray) else raw_dict["embeddings"].float()
     edge_index = raw_dict["edge_index"].long()
     edge_index = torch.unique(edge_index, dim=1).contiguous()
     y = raw_dict["labels"].long().view(-1)
     data = Data(x=x, edge_index=edge_index, y=y)
     data.num_nodes = raw_dict["num_nodes"]
     return data
+
 
 
 def evaluate_split(y_true, scores, seed: int):
