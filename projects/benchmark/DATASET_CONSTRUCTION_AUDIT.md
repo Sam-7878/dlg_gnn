@@ -2,6 +2,8 @@
 
 ## Frozen contract tensors: label-informed construction validity gate
 
+**Historical snapshot:** the nine externally stored hybrid/knn/label files were deleted during the later migration. The following old-artifact checks describe their verified pre-deletion state and retained hashes, not current file availability. See the migration section at the end.
+
 Safe inspection executes no pickle objects: `scripts/audit_hybrid_tensors.py` parses known torch ZIP storage and pickle opcodes, rejects unsupported layouts, and verifies the raw SHA-256 against the canonical manifest. All labels were compared with processed upstream CSV rows through the tensor’s contract-to-index JSON basenames; all 24,169 labels match. Twelve individual contract JSONs per chain were also checked.
 
 | Dataset | Nodes | kNN edges | Hybrid edges | Added edges | Added edges sharing label |
@@ -81,3 +83,9 @@ The supplied report adds sibling label_graph.pt artifacts. These were independen
 The initial sampler/seed is unlocated and hidden overlap choices cannot be uniquely recovered. All artifacts record k=5 and method knn/label/hybrid; k=3 is inferred from constraints, not explicitly stored. Feature-column-3 tx_count is unverified; sampled current JSON edge/node counts differ. BSC's frozen maximum is 3227 rather than the reported 3012. The notebook's older polygon_hybrid.pt has 12,653 edges and a different schema.
 
 See reports/astra_revision/GOG_Graph_Family_Review.md, evidence/astra_revision/gog_graph_family_audit.json and gog_source_writer_audit.json. This follow-up updates the scientific assessment while preserving prior frozen results and manuscript PDFs. Corrected primary inference needs label-independent reconstruction/re-evaluation or diagnostic exclusion of these three datasets. Finding an earlier label-based writer would not by itself clear validity.
+
+## RelationBuilder migration: current final audit not passed
+
+The three new Level2 files exist; all nine old graph-family files are absent. A read-only typed-storage audit confirms new edge counts 143,820 / 74,780 / 23,000, x dimension 9, graph y length 1 and node labels length N. Feature values exactly match the legacy features, whose normalized vectors all equal e_3; cosine similarities are all 1. The inspected edge function passes a fixed-feature label counterfactual CPU check, but feature provenance and informative relations remain unresolved. Current A03 loaders return the scalar-y Data unchanged, violating node-evaluation label shape. Repeating the generation script would select that scalar y rather than N labels.
+
+The generator requires an existing graph tensor; it does not reconstruct the feature input from provider CSV/JSON. Archived paper canonical hashes and metrics still identify the old hybrid inputs. New topology and a changed source path do not make archived results into a new evaluation. See `reports/astra_revision/RelationBuilder_Migration_Final_Audit.md` and `evidence/astra_revision/relation_builder_migration_audit.json`. No input rewrite, training or paper rebuild occurred during this audit.

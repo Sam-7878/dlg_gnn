@@ -34,9 +34,14 @@
 이에 따라 **과거의 `*_hybrid_graph.pt`, `*_knn_graph.pt`, `*_label_graph.pt` 아티팩트는 디스크에서 전면 영구 삭제**되었습니다.
 
 ### 2. `relation_builder.py` 기반 클린 Level 2 메타 그래프(`*_level2_graph.pt`) 전면 대체
-DLG-GNN Phase 3에서 완성된 [`relation_builder.py`](file:///d:/_Work/goat_bank/dlg_gnn/src/gog_fraud/data/level2/relation_builder.py) 엔진을 활용하여, 원천 데이터로부터 **완전한 라벨 독립적(Label-Independent)** 클린 그래프를 공식 생성·대체하였습니다 (`scripts/build_clean_level2_graphs.py`):
-1. **토폴로지 생성 규칙:** 컨트랙트 Level 1 임베딩 기반의 순수 코사인 k-NN (`embedding_knn`, $k=5$) 및 시간창(`temporal_window`) 기반의 비지도 다중 관계 결합.
-2. **라벨 분리:** 라벨 정보는 엣지 형성에 일절 관여하지 않으며, 독립적인 지도학습/평가 타깃(`y`)으로만 노드에 부착됨.
-3. **완전한 재현성:** `python scripts/build_clean_level2_graphs.py` 단일 명령으로 전 EVM 체인(Polygon 2,303개, BSC 7,481개, Ethereum 14,385개)의 클린 그래프가 100% 재현됨.
-4. **로더 통합:** `evaluation/benchmark/v2/scripts/a03_run_crypto_production.py` 및 관련 벤치마크 파이프라인에서 `*_level2_graph.pt`를 우선 로드하도록 경로가 통합 업데이트되었습니다.
+`scripts/build_clean_level2_graphs.py`는 `relation_builder.py`의 `embedding_knn`, k=5, cosine 모드로 기존 tensor의 embedding에서 새 edge를 생성했습니다. 현재 활성 설정에는 temporal_window가 포함되지 않습니다.
 
+1. **확인된 edge 속성:** embedding을 고정한 CPU 반사실 검사에서 label을 전부 0 또는 1로 바꿔도 edge·weight·x가 동일했습니다. 이 함수의 직접 label 의존성이 제거됐다는 범위의 검증입니다.
+2. **Feature 출처:** 새 embedding은 이전 8차원 값과 동일하며, 양수인 column 3만 변합니다. 정규화 벡터가 모두 같아 cosine 유사도가 전부 1입니다. 원천 데이터에서 feature를 만드는 규칙과 tie 처리의 의미를 추가로 확정해야 합니다.
+3. **Target 계약:** 기본 builder의 y는 graph-level scalar입니다. 새 artifact의 labels는 N개지만 A03 loader는 scalar y를 사용하는 Data를 그대로 반환합니다. 노드별 평가 adapter가 필요합니다. 생성기 재실행에서도 N개 labels를 명시적으로 선택해야 합니다.
+4. **재현 범위:** 생성기는 기존 graph.pt에서 embedding을 가져옵니다. 원천 CSV/JSON만으로 재생성하는 경로와 반복 생성 계약은 아직 검증을 통과하지 않았습니다.
+5. **논문 결과:** 보존된 A05/A07 수치와 canonical manifest는 이전 hybrid input에 연결됩니다. 새 graph에서 평가한 결과로 교체되었다고 해석할 수 없습니다. 새 version manifest, 재평가, 표·통계·원고·PDF 반영 후 과학 감사를 진행해야 합니다.
+
+### 3. 독립 감사 상태
+
+**2026-10-09: 최종 과학 감사 미통과.** 세 chain의 새 파일 존재와 옛 9개 파일 삭제는 확인됐습니다. 위 계약·feature·재현·결과 계보 문제가 남아 있습니다. 상세 근거는 `projects/benchmark/reports/astra_revision/RelationBuilder_Migration_Final_Audit.md`와 `projects/benchmark/evidence/astra_revision/relation_builder_migration_audit.json`에 있습니다. 기존 frozen 기록은 과거 실행의 증거로 유지합니다.

@@ -1,0 +1,19 @@
+view,comparison,n,raw_p,wins,ties,losses,zero_method,method,holm_p
+S1_SevenModel_CompleteCase,DLG-Aug vs DOMINANT,8,1.0,4,0,4,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S1_SevenModel_CompleteCase,DLG-Aug vs AnomalyDAE,8,0.640625,4,0,4,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S1_SevenModel_CompleteCase,DLG-Aug vs CoLA,8,0.0078125,8,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.046875
+S1_SevenModel_CompleteCase,DLG-Aug vs GADNR,8,0.0078125,8,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.046875
+S1_SevenModel_CompleteCase,DLG-Aug vs OCGNN,8,0.0234375,7,0,1,wilcox,scipy auto (ties/zeros use documented algorithm),0.09375
+S1_SevenModel_CompleteCase,DLG-Aug vs DLG-Base,8,0.84375,3,0,5,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S2_ContinuityFive,DLG-Aug vs DOMINANT,13,0.83935546875,7,0,6,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S2_ContinuityFive,DLG-Aug vs CoLA,13,0.000244140625,13,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.0009765625
+S2_ContinuityFive,DLG-Aug vs OCGNN,13,0.001708984375,12,0,1,wilcox,scipy auto (ties/zeros use documented algorithm),0.005126953125
+S2_ContinuityFive,DLG-Aug vs DLG-Base,13,0.946044921875,7,0,6,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S3_FinancialBlockchainSix_MixedLabels,DLG-Aug vs DOMINANT,6,0.5625,4,0,2,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S3_FinancialBlockchainSix_MixedLabels,DLG-Aug vs CoLA,6,0.03125,6,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.125
+S3_FinancialBlockchainSix_MixedLabels,DLG-Aug vs OCGNN,6,0.21875,5,0,1,wilcox,scipy auto (ties/zeros use documented algorithm),0.65625
+S3_FinancialBlockchainSix_MixedLabels,DLG-Aug vs DLG-Base,6,0.5625,4,0,2,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S4_SyntheticSeven,DLG-Aug vs DOMINANT,7,0.578125,3,0,4,wilcox,scipy auto (ties/zeros use documented algorithm),1.0
+S4_SyntheticSeven,DLG-Aug vs CoLA,7,0.015625,7,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.0625
+S4_SyntheticSeven,DLG-Aug vs OCGNN,7,0.015625,7,0,0,wilcox,scipy auto (ties/zeros use documented algorithm),0.0625
+S4_SyntheticSeven,DLG-Aug vs DLG-Base,7,0.6875,3,0,4,wilcox,scipy auto (ties/zeros use documented algorithm),1.0

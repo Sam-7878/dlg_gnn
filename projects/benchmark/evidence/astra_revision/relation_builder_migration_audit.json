@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "status": "FINAL_SCIENTIFIC_AUDIT_NOT_PASSED",
+  "method": "Non-executing ZIP storage/pickle opcode parsing; trusted repository API CPU fixtures only.",
+  "source_sha256": "e8840b0021fd28ce640e917d446de9af54fdcecd975faad8897653681c2037a0",
+  "source_hashes": {
+    "scripts/build_clean_level2_graphs.py": "d3ca98a1a19dfc044cf06f9a2efa3c055a7012f63734a182333f482db14cfd4e",
+    "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895",
+    "evaluation/benchmark/v2/scripts/a03_run_crypto_production.py": "2c22096e0e944a3de896f2720d8289923e61391b4536c31b1bd4ea7cc0aa5f76",
+    "evaluation/benchmark/v2/scripts/a03_rerun_crypto_dlg_aug.py": "20b42e4933fc68f60d81826b6393981d7ce71a679ccf3f102501dd3ce3e239d3"
+  },
+  "results": [
+    {
+      "dataset": "Ethereum",
+      "new_file": "/mnt/d/_Work/_data/GoG/ethereum/ethereum_level2_graph.pt",
+      "new_sha256": "81f16b012ab90e0e29bc0452a0c592c67d2c96e1e7a296bbd37e4ce793989aad",
+      "nodes": 14385,
+      "edges": 143820,
+      "x_shape": [
+        14385,
+        9
+      ],
+      "y_shape": [
+        1
+      ],
+      "y_values": [
+        1.0
+      ],
+      "labels_shape": [
+        14385
+      ],
+      "node_label_contract_pass": false,
+      "labels_class_counts": [
+        8367,
+        6018
+      ],
+      "legacy_feature_values_unchanged": true,
+      "legacy_label_values_unchanged": true,
+      "constant_zero_embedding_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cosine_all_node_directions_identical": true,
+      "normalized_reference_direction": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_canonical_raw_source": "/mnt/d/_Work/_data/GoG/ethereum/ethereum_hybrid_graph.pt",
+      "old_canonical_raw_sha256": "4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654",
+      "current_matches_paper_canonical_input": false,
+      "old_canonical_edges": 115065,
+      "old_canonical_feature_dimension": 8,
+      "removed_legacy_files": {
+        "hybrid": true,
+        "knn": true,
+        "label": true
+      },
+      "counterfactual_label_probe": {
+        "nodes": 128,
+        "labels_all_zero_vs_all_one": true,
+        "topology_weights_features_unchanged": true,
+        "graph_y_changed": true
+      },
+      "repeat_builder_extraction_would_take_graph_y_label_count": 1
+    },
+    {
+      "dataset": "BSC",
+      "new_file": "/mnt/d/_Work/_data/GoG/bsc/bsc_level2_graph.pt",
+      "new_sha256": "fa97a2f52177d4bbb42e87cb3f2381a9e1aaadf71610a2f14a2a5c97bfce410c",
+      "nodes": 7481,
+      "edges": 74780,
+      "x_shape": [
+        7481,
+        9
+      ],
+      "y_shape": [
+        1
+      ],
+      "y_values": [
+        1.0
+      ],
+      "labels_shape": [
+        7481
+      ],
+      "node_label_contract_pass": false,
+      "labels_class_counts": [
+        6377,
+        1104
+      ],
+      "legacy_feature_values_unchanged": true,
+      "legacy_label_values_unchanged": true,
+      "constant_zero_embedding_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cosine_all_node_directions_identical": true,
+      "normalized_reference_direction": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_canonical_raw_source": "/mnt/d/_Work/_data/GoG/bsc/bsc_hybrid_graph.pt",
+      "old_canonical_raw_sha256": "2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883",
+      "current_matches_paper_canonical_input": false,
+      "old_canonical_edges": 59832,
+      "old_canonical_feature_dimension": 8,
+      "removed_legacy_files": {
+        "hybrid": true,
+        "knn": true,
+        "label": true
+      },
+      "counterfactual_label_probe": {
+        "nodes": 128,
+        "labels_all_zero_vs_all_one": true,
+        "topology_weights_features_unchanged": true,
+        "graph_y_changed": true
+      },
+      "repeat_builder_extraction_would_take_graph_y_label_count": 1
+    },
+    {
+      "dataset": "Polygon",
+      "new_file": "/mnt/d/_Work/_data/GoG/polygon/polygon_level2_graph.pt",
+      "new_sha256": "15f23b7481dd934635bda542e6ef74e12d7ca8bf0c61c3d66ab65a797e3d7a82",
+      "nodes": 2303,
+      "edges": 23000,
+      "x_shape": [
+        2303,
+        9
+      ],
+      "y_shape": [
+        1
+      ],
+      "y_values": [
+        1.0
+      ],
+      "labels_shape": [
+        2303
+      ],
+      "node_label_contract_pass": false,
+      "labels_class_counts": [
+        2243,
+        60
+      ],
+      "legacy_feature_values_unchanged": true,
+      "legacy_label_values_unchanged": true,
+      "constant_zero_embedding_columns": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cosine_all_node_directions_identical": true,
+      "normalized_reference_direction": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_canonical_raw_source": "/mnt/d/_Work/_data/GoG/polygon/polygon_hybrid_graph.pt",
+      "old_canonical_raw_sha256": "292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74",
+      "current_matches_paper_canonical_input": false,
+      "old_canonical_edges": 18411,
+      "old_canonical_feature_dimension": 8,
+      "removed_legacy_files": {
+        "hybrid": true,
+        "knn": true,
+        "label": true
+      },
+      "counterfactual_label_probe": {
+        "nodes": 128,
+        "labels_all_zero_vs_all_one": true,
+        "topology_weights_features_unchanged": true,
+        "graph_y_changed": true
+      },
+      "repeat_builder_extraction_would_take_graph_y_label_count": 1
+    }
+  ],
+  "component_status": {
+    "direct_label_use_in_edge_builder": "PASS for fixed embeddings in inspected mode and counterfactual fixtures",
+    "node_evaluation_label_contract": "FAIL: graph-level y has one entry",
+    "feature_provenance": "UNRESOLVED: same legacy values inherited",
+    "cosine_relation_information": "DEGENERATE: every normalized embedding equals the same vector",
+    "rebuild_from_provider_data": "FAIL: generator needs an existing graph artifact",
+    "repeat_generation_label_contract": "FAIL: existing Data.y preferred over Data.labels",
+    "manuscript_result_input_identity": "FAIL: canonical results still refer to old hybrid hashes"
+  },
+  "scope": "No graph rewrite, original-file restoration, neural training, paper rebuild or push performed.",
+  "supplied_report_sha256": "257aacc3a44f30f92592839bab6151bbfcee4563e41cff69226b58b257762b09"
+}

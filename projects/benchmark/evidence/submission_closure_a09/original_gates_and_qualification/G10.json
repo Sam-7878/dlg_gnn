@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "clean_export_verify_sha256": "89e7d9d2f725542dc9290723718426b65e37be53a557fe7c5c897f63d06c76a7",
+  "public_private_boundary_sha256": "3b8b5fba659c307f2dfeb20fb286db3b76291a1c3c21fbb9a0eefd9fcfb0137d",
+  "final_checker_tests_sha256": "9a7228ffee1c6b6106a04af03c663b3034df84203a100e2ad9bfa3a7c49ac10e",
+  "public_payload_manifest_sha256": "7dee9f941f3b49acacb290173e05169354e0bfd981ca05398395660f03a18c99",
+  "public_release_identity_sha256": "a8aaa51463643f187aa1800d2f9cb18c078a130fbfc1f5dcf895a27a424b0819",
+  "scope": "actual prospective public/private reproduction and shared fixture regression; no publication authorization"
+}

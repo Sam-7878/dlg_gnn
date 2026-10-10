@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "actual index/eligible working-tree and nested ZIP payloads",
+  "index_only_private_matches": [],
+  "private_payload_matches": [],
+  "archives": [
+    {
+      "path": "projects/benchmark/evidence/a08_public_numeric_evidence.zip",
+      "sha256": "b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100",
+      "private_matches": []
+    },
+    {
+      "path": "projects/benchmark/evidence/public_numeric_evidence.zip",
+      "sha256": "b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5",
+      "private_matches": []
+    }
+  ],
+  "raw_identifiers_scores_checkpoints": "local-only under declared source-access constraints",
+  "preserved_historical_public_numeric_exception": {
+    "archive_sha256": "b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5",
+    "scope": "previously public numeric score vectors and one measured-memory supporting plot, unchanged bytes; no A08 private scores"
+  },
+  "historical_git_content": "not removed from history; no history rewrite or push",
+  "generic_scientific_templates": "existing shared latex_exporter API is not an A08 manuscript writer; current unsubmitted writer excluded",
+  "scanner_sha256": "896c793025d7508c1ca94413d7f6cf65bda99edb9338750eeeb315687241535a"
+}

@@ -1,0 +1,58 @@
+{
+  "run_id": "bsc_contract_clean_v1__CoLA__seed44",
+  "dataset": "BSC",
+  "model": "CoLA",
+  "seed": "44",
+  "original_private_metric_sha256": "3891eaca0692b9c5dd2e373981c36245adc4600215702705e3cb431277f285ad",
+  "metrics": {
+    "ap": 0.1271273777115872,
+    "roc_auc": 0.42289649733492873,
+    "test_total": 1500,
+    "test_positives": 232,
+    "test_prevalence": 0.15466666666666667,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 1500,
+      "validation_positives": 225,
+      "threshold_kind": "finite",
+      "threshold": -18.146923065185547,
+      "validation_confusion": {
+        "tp": 219,
+        "fp": 1228,
+        "fn": 6,
+        "tn": 47,
+        "precision": 0.15134761575673808,
+        "recall": 0.9733333333333334,
+        "f1": 0.2619617224880383
+      }
+    },
+    "thresholded": {
+      "tp": 227,
+      "fp": 1226,
+      "fn": 5,
+      "tn": 42,
+      "precision": 0.15622849277357193,
+      "recall": 0.978448275862069,
+      "f1": 0.26943620178041544
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 75,
+        "precision": 0.06666666666666667,
+        "recall": 0.021551724137931036,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

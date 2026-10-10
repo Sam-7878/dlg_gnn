@@ -1,0 +1,66 @@
+{
+  "number_registry_sha256": "532651b28105ddd83194ee51e06084fd692d2f8555f671fbe2ef147296ff7cbf",
+  "test_support_sha256": "9e173d2dfef7bb8bdabcf35772a477ca8852e09d3290820ed84ad25fbb2374f8",
+  "records": [
+    {
+      "dataset": "Ethereum",
+      "leader": "OCGNN",
+      "values": {
+        "Base_AP": 0.41059231235579824,
+        "Aug_AP": 0.43586091641925606,
+        "AP_difference": 0.025268604063457822,
+        "leader_AP": 0.4996322562843236,
+        "mean_test_prevalence": 0.408918078119599,
+        "mean_always_positive_F1": 0.5803605200230803,
+        "Aug_test_F1": 0.5962821192861397
+      },
+      "approved_run_ids": [
+        "ethereum_contract_clean_v1__DLG-Aug__seed42",
+        "ethereum_contract_clean_v1__DLG-Aug__seed43",
+        "ethereum_contract_clean_v1__DLG-Aug__seed44",
+        "ethereum_contract_clean_v1__DLG-Aug__seed45",
+        "ethereum_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "leader": "AnomalyDAE",
+      "values": {
+        "Base_AP": 0.3390088904256042,
+        "Aug_AP": 0.34109284571612414,
+        "AP_difference": 0.002083955290519912,
+        "leader_AP": 0.36085624599184885,
+        "mean_test_prevalence": 0.14733333333333334,
+        "mean_always_positive_F1": 0.2567241993680708,
+        "Aug_test_F1": 0.45335638451173355
+      },
+      "approved_run_ids": [
+        "bsc_contract_clean_v1__DLG-Aug__seed42",
+        "bsc_contract_clean_v1__DLG-Aug__seed43",
+        "bsc_contract_clean_v1__DLG-Aug__seed44",
+        "bsc_contract_clean_v1__DLG-Aug__seed45",
+        "bsc_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "leader": "AnomalyDAE",
+      "values": {
+        "Base_AP": 0.08542292339493959,
+        "Aug_AP": 0.07305447781626102,
+        "AP_difference": -0.012368445578678569,
+        "leader_AP": 0.18780681409640118,
+        "mean_test_prevalence": 0.025902335456475585,
+        "mean_always_positive_F1": 0.05035198144977043,
+        "Aug_test_F1": 0.07562475644922453
+      },
+      "approved_run_ids": [
+        "polygon_contract_clean_v1__DLG-Aug__seed42",
+        "polygon_contract_clean_v1__DLG-Aug__seed43",
+        "polygon_contract_clean_v1__DLG-Aug__seed44",
+        "polygon_contract_clean_v1__DLG-Aug__seed45",
+        "polygon_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    }
+  ]
+}

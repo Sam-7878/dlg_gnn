@@ -36,3 +36,7 @@ The complete same-label sibling graphs and hybrid additions strongly support lab
 ## Subsequent GoG family report review
 
 GOG_Graph_Family_Review.md records exhaustive sibling verification and qualifications to the uploaded report. Stored k=5 does not identify the original three-neighbor sampler; tx_count is unverified and frozen BSC maximum is 3227. Label-informed evidence is now substantially stronger. Current PDFs were not revised again for this follow-up; prior layout/integrity PASS does not clear this issue.
+
+## RelationBuilder migration final audit
+
+`RelationBuilder_Migration_Final_Audit.md` records **NOT PASSED**. Fixed-feature direct label independence of the inspected edge builder passes, but new y has one graph target rather than N node targets; legacy features are unchanged and cosine-degenerate; raw-data reconstruction and repeat generation fail the target contract; frozen paper evidence still uses old hybrid hashes. Earlier unit/archive PASS results are not final scientific approval. No new model campaign or PDF rebuild has been performed for the migrated inputs.

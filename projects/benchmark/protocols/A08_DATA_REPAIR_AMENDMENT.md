@@ -1,0 +1,18 @@
+# A08 correction amendment — pre-evaluation specification
+
+Date: 2026-10-09 (Asia/Seoul). Protocol DLG-BENCH-A08-DATA-REPAIR-01.
+This is a post-review correction with prior A07 performance known; not original blind preregistration.
+
+The original provider transaction ZIPs are available at the declared local root. Only raw from/to observations generate the eight declared contract features. No historical PT/JSON embeddings, preprocessed feature CSV, encoder or label-informed graph is consumed. All raw CSV contracts are retained, including zero-activity files. Malformed endpoints block construction rather than silently dropping samples. Mint/burn zero-address observations are retained.
+
+Primary relation is k=5 nearest squared Euclidean distance in population-standardized features, binary undirected union, stable contract-ID ties, no input self-loops. This selects an interpretable observation-only route before any new detector scores. It is not learned Level1 encoding, not common-wallet adjacency, and not direct contract transfers. Transductive scaling uses all observable nodes; targets are attached separately. The shared hierarchical builder retains graph-level target semantics.
+
+Provider README and original dataset processing map Category 0 to fraud-positive. Targets join chain-qualified lowercase EVM addresses; missing targets remain -1 with a false valid mask and cannot enter evaluation. ZIP filename population expands beyond legacy JSON-conversion availability. Consequently old positional split membership cannot be blindly reused; new canonical stable-address order and actual recovered historical RandomState(seed) unstratified permutation implement 60/20/20. This differs from the historical comment that said stratified; labels are not used to tune membership. Counts/ID deltas are recorded after build, not forced to historical N/prevalence.
+
+Epochs: Ethereum 30, BSC/Polygon 40; DLG-Aug local pretraining 20. Seeds 42–46. Seven primary models; CONAD diagnostic only. Constructor/caller settings are recovered and frozen before production. No N>10000 hard-coded predicted OOM exclusion. Exact AnomalyDAE row chunk=256 follows A05. Other unchanged exact backends use current audited source. CoLA/OCGNN/GADNR keep recovered batch settings (32 small,64 above5000). Preflight uses fresh processes; deterministic OOM confirmed once. A FAILED_DATA/NUMERICAL/RUNTIME cell blocks completion.
+
+Operational guard: 86400 GPU seconds per model×dataset×seed, resolving historical ambiguous cell wording against original frozen per-seed scope. Waiting for GPU is excluded. Actual timeout and projected-not-run are distinct. RTX3090 eGPU is the primary device; user previously reported memory clock reduction by total402MHz, recorded as user-reported, not a measured active offset. Hardware identity/telemetry are saved per invocation. No hidden-size reductions or early stopping.
+
+Threshold: distinct finite validation score values plus reject-all; score>=threshold; maximum validation F1, tied F1 chooses largest threshold. No-positive validation gives explicit undefined threshold. Score orientation stays higher=anomalous. Alert budgets ceil(1%/5% test N), minimum1, stable-ID ties. All models share evaluator and safe raw scores with full input/split/config/source identities.
+
+Frozen archives/old scores are historical. New campaign uses a new manifest; unchanged noncrypto records may be reused only after source/input/metric dependency audit. Never attribute historical crypto scores to new input. Unsubmitted paper/source/writers remain local; public code/evidence excludes raw addresses, provider ZIPs, checkpoints and manuscript material pending explicit distribution permission. No push, history rewrite or submission is authorized here.

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "paper_build_manifest_sha256": "a0ead5cd7bc85531880621babf7082235ece0069957cce2bc52fd7cf5cfdf276",
+  "artifacts": [
+    {
+      "path": "projects/benchmark/paper/current/DLG-Benchmark_A08.pdf",
+      "sha256": "f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407",
+      "bytes": 292795,
+      "pages": 23
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/DLG-Benchmark_A08_MDPI.pdf",
+      "sha256": "91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1",
+      "bytes": 227771,
+      "pages": 22
+    }
+  ],
+  "supplement_disposition": "F1 and full pairwise panels integrated into both A08 appendices; A07 supplement preserved historical",
+  "scope": "actual neutral/MDPI compilation only; G9 every-page numeric/semantic/layout review and G10 package audit remain required"
+}

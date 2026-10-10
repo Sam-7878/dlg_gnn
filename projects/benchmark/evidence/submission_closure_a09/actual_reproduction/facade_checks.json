@@ -1,0 +1,24 @@
+[
+  {
+    "command": [
+      "bash",
+      "projects/benchmark/reproduce.sh",
+      "verify",
+      "--revision",
+      "a08"
+    ],
+    "returncode": 0,
+    "log": "facade_verify.log"
+  },
+  {
+    "command": [
+      "bash",
+      "projects/benchmark/reproduce.sh",
+      "tables",
+      "--revision",
+      "a08"
+    ],
+    "returncode": 0,
+    "log": "facade_tables.log"
+  }
+]

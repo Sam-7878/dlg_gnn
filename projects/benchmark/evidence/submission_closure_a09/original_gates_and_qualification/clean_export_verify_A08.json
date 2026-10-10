@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "checkout": "/mnt/d/_work/goat_bank/dlg_gnn/local_storage/benchmark/a08_data_repair/public_exports/dlg-a08-public-0un5d4bk",
+  "method": "empty prospective public export with exact-byte copies",
+  "base_head": "2f19c9a8122290492140a3a2d6e61b4bef5acb15",
+  "public_payload_manifest_sha256": "7dee9f941f3b49acacb290173e05169354e0bfd981ca05398395660f03a18c99",
+  "runs": [
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "dlg_gnn",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 50.644527599004505,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": \"6ba8e17a17d96297dfc5bbf554aea4869f0ee10e5b38388926f2c82abe421c70\",\n    \"scientific_smoke\": \"PASS: deterministic DLG forward/backward/gate/exact-sparse fixture and PyGOD interface\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 49.93,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"dlg_gnn\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.\n  warnings.warn(\n/tmp/dlg-a08-public-0un5d4bk/src/gog_fraud/models/pygod/exact_reconstruction.py:145: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:848.)\n  sparse_adj = torch.sparse_coo_tensor(\n"
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 0.3635618109983625,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"payload_count\": 226,\n  \"bundle_sha256\": \"b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100\",\n  \"scope\": \"current numeric integrity and identities; restricted raw scores not recomputed\",\n  \"current_runs\": 105,\n  \"historical_records\": 351,\n  \"historical_successes\": 350\n}\n{\n  \"detail\": {\n    \"revision\": \"a08\",\n    \"scope\": \"current public numeric integrity and run identity; FINAL_PASS and private raw-score/PDF review are separate\"\n  },\n  \"elapsed_seconds\": 0.19,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "stream_mc",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 22.941428016005375,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": \"f798a41e69afa1a46b58ed43932d9bf0ee52815e918a823b88a75a37844a056d\",\n    \"scientific_smoke\": \"PASS: ingestion, checkpoint/replay and bounded subgraph fixture\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 21.67,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"stream_mc\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.\n  warnings.warn(\n"
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "tds",
+        "--mode",
+        "verify"
+      ],
+      "exit": 0,
+      "seconds": 3.615893693000544,
+      "stdout": "{\n  \"detail\": {\n    \"fixture_sha256\": \"03b0caeb34fc4a3bec1beb70ab28d4623fd40a650c89f0cd5e70981bc855a512\",\n    \"scientific_smoke\": \"PASS: deterministic entity graph and local-risk fixture\",\n    \"source_hashes\": \"PASS\"\n  },\n  \"elapsed_seconds\": 3.49,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"verify\",\n  \"project\": \"tds\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "tables"
+      ],
+      "exit": 0,
+      "seconds": 2.863764467998408,
+      "stdout": "A08 public tables regenerated from approved numeric records; no raw-training/PDF claim\n{\n  \"detail\": {\n    \"revision\": \"a08\",\n    \"scope\": \"numeric tables from approved registry; raw scores and paper remain author-local\"\n  },\n  \"elapsed_seconds\": 2.78,\n  \"environment\": {\n    \"networkx\": \"3.7\",\n    \"os\": \"Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43\",\n    \"pygod\": \"1.1.0\",\n    \"python\": \"3.14.4\",\n    \"scipy\": \"1.18.1\",\n    \"torch\": \"2.14.1\",\n    \"torch-geometric\": \"2.8.0.post1\"\n  },\n  \"mode\": \"tables\",\n  \"project\": \"benchmark\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "paper"
+      ],
+      "exit": 1,
+      "expected_private_guard": true,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/dlg-a08-public-0un5d4bk/scripts/reproduce_project.py\", line 277, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/dlg-a08-public-0un5d4bk/scripts/reproduce_project.py\", line 245, in main\n    check(private.is_file(), \"Unsubmitted A08 manuscript writer/sources are intentionally withheld; paper requires author-local inputs. Public --mode tables only.\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/dlg-a08-public-0un5d4bk/scripts/reproduce_project.py\", line 33, in check\n    raise RuntimeError(message)\nRuntimeError: Unsubmitted A08 manuscript writer/sources are intentionally withheld; paper requires author-local inputs. Public --mode tables only.\n"
+    }
+  ],
+  "numeric_replay_identical": true,
+  "numeric_replay_hashes": {
+    "number_registry.json": "532651b28105ddd83194ee51e06084fd692d2f8555f671fbe2ef147296ff7cbf",
+    "statistics/statistics_s1_s4.json": "70f570f4fbdf8168019c68618fb2b6200cc3c6291fc264207c33f002ca440141",
+    "tables/alert_budget_crypto.csv": "6c65eccf5938dca0a6aa0a26e64963ee373e442cec24ed61b0106be9a01a4a9a",
+    "tables/support_matrix.csv": "b84dc6531adcaad016fe36b1f48c309d37e399c5cc138f63e62f042c7aa0adf0",
+    "tables/table_pr_auc.csv": "e4aa16b607377fb2876c3f3394ce525dc41e992b08c7e426036648119b4ab87d",
+    "tables/table_roc_auc.csv": "6774f464fab428b99e741029c08e7ca1264e3cfa9fbd5789aeb6f26263ebc643",
+    "tables/table_validation_f1.csv": "4db53059822016bb4cc35006b5f5341b4b2c98844506e2df4001525534512b50",
+    "statistics/label_provenance_sensitivity.csv": "c129fcfb3342ced15660589ed1170e7e48449f8e14630f9649276f81ed577ab2",
+    "statistics/mean_ranks.csv": "4133d740152549b8fa003b093ebc172f56fb1e9fe545a4737d0cab35ecdaafee",
+    "statistics/pairwise.csv": "17cba0786cdd192663c64fbb4b2bfb5406e578c0d2bb1838b4f80c8cefcac61c",
+    "statistics/s5_lanl_descriptive.csv": "6ff76ab7588c92bdc9519fda0df0bc99ba1383ddd8a5ad3b536215e423fb6ba3"
+  },
+  "private_paper_guard": "PASS",
+  "author_local_paper_replay": "PASS",
+  "author_local_log_sha256": "ad3c8bca5a5b246185f80624cb3ab5c2d7834c10e4e9a2773716a99a9f587667",
+  "reviewed_build_identity_unchanged": true,
+  "source_newline_policy": ".gitattributes preserves exact source/evidence bytes; no normalization performed",
+  "verification_original_checkout": "/tmp/dlg-a08-public-0un5d4bk",
+  "retention": "Exact-byte copy of the actual verified empty export, retained author-locally; all public payload files rehashed against the verified manifest"
+}

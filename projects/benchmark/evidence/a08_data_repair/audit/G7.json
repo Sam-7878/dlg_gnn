@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "approved_registry_sha256": "2757ffd1e94bd31082b1e496e8b55a25478c917a72654450f448b53fdb0d1569",
+  "number_registry_sha256": "532651b28105ddd83194ee51e06084fd692d2f8555f671fbe2ef147296ff7cbf",
+  "recompute_audit_sha256": "1c0d79a8c8a4452f63c3325d17efe872910451491b5030a559c812f3fd1ff347",
+  "statistics_sha256": "70f570f4fbdf8168019c68618fb2b6200cc3c6291fc264207c33f002ca440141",
+  "historical_reuse_sha256": "bc600526769a97fb8ff645808c75a6a62f48d4280bb504305c27b182a53229f4",
+  "aggregate_source_sha256": "0b8c708eba8a581b185597a45bd1fa63c68893359b7f39fee91537ed8965cfc6",
+  "scope": "new crypto raw-score-recomputed; unaffected preserved historical scalar tier; common-policy F1 superiority across all13 is not inferred"
+}

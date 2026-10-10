@@ -1,0 +1,24 @@
+{
+  "frozen_construction_facade_sha256": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+  "preserved_path": "projects/benchmark/evidence/a08_data_repair/source_versions/fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab/projects/benchmark/scripts/a08_data_repair.py",
+  "current_facade_sha256": "294a4d4329fc512f8420df16063141376e86d09144a03b62a30077a3ff208174",
+  "change": "acceptance dispatch now uses fail-closed actual final validator instead of unconditional interim rejection",
+  "scientific_functions": [
+    {
+      "function": "build",
+      "source_sha256": "f359fe940f93cb86576db49ff863d5b7a842d96e5340d811194183a51fd89522",
+      "unchanged": true
+    },
+    {
+      "function": "audit",
+      "source_sha256": "7e5c430c50e0f49b4d62ae8822b4d0bbd3835dd7f04158d0bc6f0e19ceacb692",
+      "unchanged": true
+    },
+    {
+      "function": "freeze",
+      "source_sha256": "1ce44d071f2f82a08edd761e3887c712ee730b6edecc2fd4722b9ccc51824f30",
+      "unchanged": true
+    }
+  ],
+  "new_input_or_training_revision": false
+}

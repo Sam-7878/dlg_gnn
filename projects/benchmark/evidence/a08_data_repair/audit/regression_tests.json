@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "tests": 32,
+  "failures_errors_skips": 0,
+  "xml_sha256": "c17e913cf7d1fbcab9ecf3868662c2f671ebef02ff30f9af3ed7cc3bc690a931",
+  "test_source_hashes": {
+    "tests/benchmark/a08/test_data_repair.py": "c6f03bcf60e0d35e2df68184912acafb250922262ed54cefa4f1f37d1d5c6fb7",
+    "tests/dlg_gnn/unit/test_phase3_level2.py": "674d913aaa5c4b15ad05aed264dd30f6cc6524f6b228693359f60cde702a476b"
+  },
+  "scope": "T01-15,T17-18 in A08 tests; T16 existing graph API tests; source import requires PYTHONPATH=src"
+}

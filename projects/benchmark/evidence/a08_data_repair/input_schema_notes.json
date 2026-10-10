@@ -1,0 +1,5 @@
+{
+  "source_manifest_hash": "per-chain exact raw observable construction manifest SHA256, resolved under construction_manifests/<chain>/observables_manifest.json; not the consolidated source_manifest.json",
+  "consolidated_source_manifest": "separately bound by G4.source_manifest_sha256",
+  "privacy": "array hashes, dimensions, source archive/code/member hashes only; raw member addresses and scores remain local"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "counterfactual_rebuild_sha256": "9cafe61f8521bf70dfdd148afc08cdf042d9113e6ca422a470c0e8127343c3af",
+  "whole_raw_five_condition_sha256": "7d72d27134c01db2f03eef4f7256e14f963996a0e45509f95da44d7bbe833344",
+  "specification_note": "Five complete raw-to-feature-to-relation executions per whole chain from provider ZIP only, paired with original/permuted/0/1 and unavailable labels; fixed split excluded from observable stage"
+}

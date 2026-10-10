@@ -1,0 +1,258 @@
+{
+  "time": "2026-10-09T14:28:55.103291+00:00",
+  "source_commit": "2f19c9a8122290492140a3a2d6e61b4bef5acb15",
+  "dirty_diff_sha256": "9dc38b8d23eb40a8467f811135422f7304c0e3c412fbb76caf887cbd64342537",
+  "interpreter": "/mnt/d/_work/goat_bank/.venv_cuda/bin/python",
+  "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "files": [
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/evidence/frozen_a05_a06_evidence.zip",
+      "exists": true,
+      "bytes": 21480052,
+      "sha256": "459a3721efd1c0e17e49315ca31e92331ae754ae1683068303bdc793a5feab08",
+      "visibility": "author-local frozen archive (includes manuscript material)",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/evidence/public_numeric_evidence.zip",
+      "exists": true,
+      "bytes": 21450806,
+      "sha256": "b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5",
+      "visibility": "public-evidence-or-historical-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/DATASET_CONSTRUCTION_AUDIT.md",
+      "exists": true,
+      "bytes": 13181,
+      "sha256": "3435c0644513fef0876519bba595063c8d1c11c6b7bc393a4b9580b69d76bdbf",
+      "visibility": "public-evidence-or-historical-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/evidence/astra_revision/MANIFEST.json",
+      "exists": true,
+      "bytes": 8200,
+      "sha256": "6b35e6bd3059b8e1c3b973764f69da52695e77e8066055e9fdc5345df1ac5d81",
+      "visibility": "public-evidence-or-historical-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/evidence/astra_revision/relation_builder_migration_audit.json",
+      "exists": true,
+      "bytes": 6682,
+      "sha256": "daac9b6e478a23e1032b6b44e32d19ce19962d0f95eda6e463c7ea273346f3bf",
+      "visibility": "public-evidence-or-historical-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/environment/locks/benchmark-a03-cuda.lock.txt",
+      "exists": true,
+      "bytes": 1412,
+      "sha256": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127",
+      "visibility": "public-evidence-or-historical-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/DLG-Benchmark_A07.pdf",
+      "exists": true,
+      "bytes": 337202,
+      "sha256": "d4cd3ef4d978b31b88d73d1ae914817120f888fc78290d2a0fad96ad3eafead7",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/figure_memory_measured_a05.pdf",
+      "exists": true,
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/Supplementary_F1_A07.pdf",
+      "exists": true,
+      "bytes": 61601,
+      "sha256": "773f43a402ed62938d7c6ab8f35eda27a5ade68233653a96d378792961f85b92",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/generated/figure_memory_measured_a05.pdf",
+      "exists": true,
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/DLG-Benchmark_A07_MDPI.pdf",
+      "exists": true,
+      "bytes": 255597,
+      "sha256": "404d75c4645c206a15121bcf9f575c5e6cf89ba17e24c57e99fd325dadde6514",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-ccby-eps-converted-to.pdf",
+      "exists": true,
+      "bytes": 10351,
+      "sha256": "48fa829c1f2c46d74ccad03100172d11fa8427cc13bb4ea381a30ce85f55de9b",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-mdpi-eps-converted-to.pdf",
+      "exists": true,
+      "bytes": 9760,
+      "sha256": "98c6ee5f670cb4e116a2d457579a9b2140838c0a89812f3bb6945d6eb6fe59b5",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-orcid.pdf",
+      "exists": true,
+      "bytes": 12671,
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-updates-eps-converted-to.pdf",
+      "exists": true,
+      "bytes": 10389,
+      "sha256": "12f831dc841f0f054f2af559f58fed9111aa8c0ac587cc9759a46a096b95e290",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/generated/figure_memory_measured_a05.pdf",
+      "exists": true,
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/astra_revision_appendix.tex",
+      "exists": true,
+      "bytes": 15291,
+      "sha256": "0722cf8b12f93b39ad319cf16ff8e79d61fbf329a4bb0305c631b0659a08fa02",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/DLG-Benchmark_A07.tex",
+      "exists": true,
+      "bytes": 67523,
+      "sha256": "2a6ce7f9af4a5ab304702c4ba94c07bda602494f4ebd888d1c967637f2faaec1",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/Supplementary_F1_A07.tex",
+      "exists": true,
+      "bytes": 3424,
+      "sha256": "ded60ed535902033a3c8dcc196a1f311022ab9460b0359c6dfc01a1efee7dbf0",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/DLG-Benchmark_A07_MDPI.tex",
+      "exists": true,
+      "bytes": 64150,
+      "sha256": "fef3ed7f103bb365309f018de54bf0376560250c762d1b20b83777b6ed409493",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/journalnames.tex",
+      "exists": true,
+      "bytes": 106500,
+      "sha256": "2ca0e43270b988a415fa56d91d1c3c24f5bbac3b51ace07c3af63c636ce103e8",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-ccby-eps-converted-to.tex",
+      "exists": true,
+      "bytes": 332,
+      "sha256": "a8f138f92e048ae85e215c3cf4142212ea8dd8d9eed8f92349ee46d243f34872",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-mdpi-eps-converted-to.tex",
+      "exists": true,
+      "bytes": 355,
+      "sha256": "270a6f0c592e886a27ce7cbc34611596f6f04f7e98154d5e8b861d7ed5f9e501",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_work/goat_bank/dlg_gnn/projects/benchmark/paper/current/mdpi/Definitions/logo-updates-eps-converted-to.tex",
+      "exists": true,
+      "bytes": 386,
+      "sha256": "012f1372f0d278682e8ed8a22ec708d6aaea324d0bfc4817a43a8875bda0e95f",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/labels.csv",
+      "exists": true,
+      "bytes": 1306970,
+      "sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/transactions/polygon.zip",
+      "exists": true,
+      "bytes": 2805020440,
+      "sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/GoG/polygon/polygon_level2_graph.pt",
+      "exists": true,
+      "bytes": 899797,
+      "sha256": "15f23b7481dd934635bda542e6ef74e12d7ca8bf0c61c3d66ab65a797e3d7a82",
+      "visibility": "author-local",
+      "role": "unqualified_migration"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/transactions/bsc.zip",
+      "exists": true,
+      "bytes": 5671092781,
+      "sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/GoG/bsc/bsc_level2_graph.pt",
+      "exists": true,
+      "bytes": 2888981,
+      "sha256": "fa97a2f52177d4bbb42e87cb3f2381a9e1aaadf71610a2f14a2a5c97bfce410c",
+      "visibility": "author-local",
+      "role": "unqualified_migration"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/transactions/ethereum.zip",
+      "exists": true,
+      "bytes": 4484986142,
+      "sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+      "visibility": "author-local",
+      "role": "source_or_preserved_evidence"
+    },
+    {
+      "path": "/mnt/d/_Work/_data/GoG/ethereum/ethereum_level2_graph.pt",
+      "exists": true,
+      "bytes": 5628965,
+      "sha256": "81f16b012ab90e0e29bc0452a0c592c67d2c96e1e7a296bbd37e4ce793989aad",
+      "visibility": "author-local",
+      "role": "unqualified_migration"
+    }
+  ],
+  "status": "PASS"
+}

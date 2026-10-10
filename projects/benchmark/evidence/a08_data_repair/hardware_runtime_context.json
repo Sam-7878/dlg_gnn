@@ -1,0 +1,18 @@
+{
+  "scope": "current run-bound actual device/framework fields; historical clock-offset report separately dated",
+  "current_device_names": [
+    "NVIDIA GeForce RTX 3090"
+  ],
+  "current_torch_versions": [
+    "2.14.1+cu130"
+  ],
+  "current_cuda_runtimes": [
+    "13.0"
+  ],
+  "current_run_count": 105,
+  "historical_note_sha256": "855cd9b1d83b591b32c7bc7076c9224c4091824aa646bf7e23df8a6cc21a3e92",
+  "reported_prior_memory_clock_offset_mhz": -402,
+  "current_offset_independently_verified": false,
+  "timing_scope": "current fresh-run fit-plus-inference segments cover complete declared budgets; old resumed DGraphFin segment times are not total training times",
+  "telemetry_policy": "author-local per-run and 30-second active NVIDIA telemetry; actual allocation/reservation peaks recorded per run"
+}

@@ -1,0 +1,58 @@
+{
+  "run_id": "bsc_contract_clean_v1__OCGNN__seed46",
+  "dataset": "BSC",
+  "model": "OCGNN",
+  "seed": "46",
+  "original_private_metric_sha256": "4a2efcbb8d5def096dd28ae8c3521efc84a43977f562ac7fb38520c3c6fe4f4c",
+  "metrics": {
+    "ap": 0.17450774129452648,
+    "roc_auc": 0.6067412102958324,
+    "test_total": 1500,
+    "test_positives": 203,
+    "test_prevalence": 0.13533333333333333,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 1500,
+      "validation_positives": 217,
+      "threshold_kind": "finite",
+      "threshold": -3.5425848960876465,
+      "validation_confusion": {
+        "tp": 194,
+        "fp": 907,
+        "fn": 23,
+        "tn": 376,
+        "precision": 0.17620345140781107,
+        "recall": 0.8940092165898618,
+        "f1": 0.2943854324734446
+      }
+    },
+    "thresholded": {
+      "tp": 177,
+      "fp": 932,
+      "fn": 26,
+      "tn": 365,
+      "precision": 0.15960324616771868,
+      "recall": 0.8719211822660099,
+      "f1": 0.2698170731707317
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 15,
+        "precision": 0.2,
+        "recall": 0.014778325123152709,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 75,
+        "precision": 0.18666666666666668,
+        "recall": 0.06896551724137931,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

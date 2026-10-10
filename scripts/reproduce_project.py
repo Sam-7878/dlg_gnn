@@ -228,6 +228,7 @@ def main() -> None:
     ap.add_argument("--project", choices=PROJECTS, required=True)
     ap.add_argument("--mode", choices=("verify", "tables", "paper", "full"), required=True)
     ap.add_argument("--confirm-full", action="store_true")
+    ap.add_argument("--revision", choices=("auto", "legacy-a07", "a08"), default="auto", help="Explicitly select historical or corrected evidence; no old-result fallback")
     args = ap.parse_args()
     start = time.monotonic()
     if args.mode == "full":
@@ -238,13 +239,33 @@ def main() -> None:
         print("Full rerun is manual campaign orchestration; no training was started by this facade.", file=sys.stderr)
         raise SystemExit(2)
     if args.project == "benchmark":
-        if args.mode == "tables":
+        a08_active = args.revision == "a08" or (args.revision == "auto" and (ROOT / "configs/benchmark/a08_crypto_clean_v1.yaml").exists())
+        if a08_active and args.mode == "paper":
+            private = ROOT / "projects/benchmark/scripts/a08_build_manuscript.py"
+            check(private.is_file(), "Unsubmitted A08 manuscript writer/sources are intentionally withheld; paper requires author-local inputs. Public --mode tables only.")
+            gate = ROOT / "projects/benchmark/evidence/a08_data_repair/audit/G7.json"
+            check(gate.is_file() and json.loads(gate.read_text()).get("status") == "PASS", "A08 raw-score registry is not yet approved; refusing historical PDF fallback")
+            subprocess.run([sys.executable, str(private)], cwd=ROOT, check=True)
+            detail = {"revision": "a08", "scope": "author-local actual new PDF build; semantic/visual audit separate"}
+        elif a08_active and args.mode == "tables":
+            registry = ROOT / "projects/benchmark/evidence/a08_data_repair/approved_registry.json"
+            check(registry.is_file(), "A08 campaign/registry not complete; historical tables require explicit --revision legacy-a07")
+            subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/a08_aggregate.py"), "--public-tables"], cwd=ROOT, check=True)
+            detail = {"revision": "a08", "scope": "numeric tables from approved registry; raw scores and paper remain author-local"}
+        elif a08_active and args.mode == "verify":
+            public = ROOT / "projects/benchmark/evidence/a08_public_release.json"
+            check(public.is_file(), "A08 current public evidence is not yet packaged; historical archive verification requires --revision legacy-a07")
+            subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/a08_public_evidence.py")], cwd=ROOT, check=True)
+            detail = {"revision": "a08", "scope": "current public numeric integrity and run identity; FINAL_PASS and private raw-score/PDF review are separate"}
+        elif args.mode == "tables":
             detail = benchmark_verify()
             subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/build_review_evidence.py")], cwd=ROOT, check=True)
             subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/review_evidence_manifest.py"), "--verify"], cwd=ROOT, check=True)
             detail["tables"] = "PASS: frozen tables and seeded permutation statistics regenerated; no manuscript sources or training"
         else:
             detail = benchmark_paper() if args.mode == "paper" else benchmark_verify()
+            detail["revision"] = "historical-a05-a07-archive"
+            detail["scope"] = "archive/evidence integrity only; not A08 scientific acceptance"
     else:
         if args.mode in ("paper", "tables"):
             raise SystemExit(f"{args.project} paper regeneration has not been qualified; verify only")

@@ -1,0 +1,654 @@
+{
+  "status": "PASS_LOCAL_PDF_REVIEW",
+  "artifacts": [
+    {
+      "path": "projects/benchmark/paper/current/a09/DLG-Benchmark_A09.pdf",
+      "sha256": "83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923",
+      "bytes": 311325,
+      "pages": 26,
+      "page_reviews": [
+        {
+          "page": 1,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-01.png",
+          "render_sha256": "6265337ce6a96245da7ec51bdfeb8b5a285a83de8cafa321dba65a47248ecc37",
+          "status": "PASS",
+          "observations": [
+            "Title, affiliations and abstract show 84/91, 420+35 and positive/neutral/negative AP; no journal logo or publisher header.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 2,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-02.png",
+          "render_sha256": "308a9dc126d1dbb267929bb2c26e81636e595d178c3a26d9f55fa720b48a37b9",
+          "status": "PASS",
+          "observations": [
+            "Related work distinguishes supervised, temporal and sampled methods; citations resolve and margins are clear.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 3,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-03.png",
+          "render_sha256": "4616304e59d341ba77795aa01096ea85b24c328ff043f6f5a0135a1173cf1432",
+          "status": "PASS",
+          "observations": [
+            "Scope table and exact Gram equation are readable; global GCN stage does not guarantee all-node access.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 4,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-04.png",
+          "render_sha256": "897be8a0ba29acfb36cce919e817d2d452fd5e2be23566dd70c01e9ce8972d63",
+          "status": "PASS",
+          "observations": [
+            "Provider citation/Category0 mapping and license observation are separate from author access policy; source table header fixed.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 5,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-05.png",
+          "render_sha256": "6f13adb4fbd21f345f76597eaea9d12db32eec4b5871c97cc94cbaf59b4e79de",
+          "status": "PASS",
+          "observations": [
+            "Observation-only features, canonical IDs and unstratified 60/20/20 split documented; corrected graph N/E/F/prevalence table intact.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 6,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-06.png",
+          "render_sha256": "b74e4585c424f44157739e59f175f0231b996dde70cbb0bbc80cc30cfe8d029a",
+          "status": "PASS",
+          "observations": [
+            "14-row portfolio preserves noncrypto counts and target provenance. Narrow last column wraps, without clipping.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 7,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-07.png",
+          "render_sha256": "3d95b3d0145c5a7b2878d0fbc8749ffc35281bfbf0c93395549e4da9f8b93c2e",
+          "status": "PASS",
+          "observations": [
+            "Numerical amendment, environments, epochs/seeds, validation threshold ties and alert policy present; counts exclude qualifications.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 8,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-08.png",
+          "render_sha256": "4461b65e192ed7ad332d4c2963300f6381c818475fa7398a784f00ccd9a70e3d",
+          "status": "PASS",
+          "observations": [
+            "AP mean/population-SD tables and three-chain result differences/leaders/test references agree with bound sources.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 9,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-09.png",
+          "render_sha256": "4556efeb7a13c9d802bba580e0df37f770b9683bc5045384466b9240675542af",
+          "status": "PASS",
+          "observations": [
+            "Lower absolute quality, Reddit/LANL decline and lack of superiority stated; ROC table readable.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 10,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-10.png",
+          "render_sha256": "c437db3b8dc95cf0c5b70a6145ac6d5271017811fcf183035a96b23d150071dc",
+          "status": "PASS",
+          "observations": [
+            "ROC part2, Friedman four views and rank part1 agree with source; MC plus-one p values shown.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 11,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-11.png",
+          "render_sha256": "d883ac1d34722e4d0df7082bee791d5003279a0341227b997d2cd688ccb2a9e0",
+          "status": "PASS",
+          "observations": [
+            "Rank part2, complete-case membership, provenance sensitivity and signed Aug differences are legible.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 12,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-12.png",
+          "render_sha256": "5e9e35076100d30b0c791ce57bb42b8c3185a70d6d6503fcef2fdd42c210a774",
+          "status": "PASS",
+          "observations": [
+            "21 device timing/memory rows readable; allocated memory is not driver VRAM, old 402MHz report is historical context.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 13,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-13.png",
+          "render_sha256": "53568712c0b504c7f23af35423ecf20d6221ee457d3c395d7055a30fc77a96a0",
+          "status": "PASS",
+          "observations": [
+            "Conclusions and author statements separate; actual approval and corrected public identity honestly pending; implementation appendix begins.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 14,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-14.png",
+          "render_sha256": "944ceb73c3f4e7873ae0fb477189d07dc40310c509eecc708889c5c08dafbb09",
+          "status": "PASS",
+          "observations": [
+            "Base/Aug equations, frozen local representation and current20 versus supersededA03 scope render correctly.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 15,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-15.png",
+          "render_sha256": "c818a98f9f40c6b8dccbf3b434f1b4567ef0959b2c24569998bf8706e846f0f5",
+          "status": "PASS",
+          "observations": [
+            "Exact squared residual/Gram derivation and arithmetic/storage distinction clear; sigmoid all-pairs cost retained.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 16,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-16.png",
+          "render_sha256": "72b24bf2d8d095a3c0ad8c64d8daace5c17ef414ea25ff2e8e0c2141351e1fbe",
+          "status": "PASS",
+          "observations": [
+            "Fused GCN normalization and support policy readable; GADNR rank-one formula begins without clipping.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 17,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-17.png",
+          "render_sha256": "07f6b1db72157aea8ba2624ec0fbf5a92aff0556af2d136ad4331724d06983c3",
+          "status": "PASS",
+          "observations": [
+            "Detached/log-ratio numerical convention retained; two F1 tables explicitly separate current and historical policies.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 18,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-18.png",
+          "render_sha256": "fb8702ba7e66259dff67196abc06463639cda40d03bcdb4d75fa8e4b438bfe9a",
+          "status": "PASS",
+          "observations": [
+            "Three-chain ceil/stable-tie alert precision/recall tables fit margins; low Polygon outcomes retained.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 19,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-19.png",
+          "render_sha256": "eed05ede2cbc623d76c07fe6ad00258a3f202bd8719f7656aa668f6514ad4e84",
+          "status": "PASS",
+          "observations": [
+            "All18 Wilcoxon/Holm rows including nonsignificant comparisons shown; archived controls/CONAD diagnostic not primary.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 20,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-20.png",
+          "render_sha256": "80ac751dd162db9c104ae8dacfcf2f75fbeae6356ba36e3ee89ec4e41a9a5419",
+          "status": "PASS",
+          "observations": [
+            "Pinned constructor/current caller settings and archived sensitivity have distinct provenance; chronology moved to appendix.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 21,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-21.png",
+          "render_sha256": "52272498ba66d16d30907da6247249edc299befb329556db4da99f1f676be56a",
+          "status": "PASS",
+          "observations": [
+            "All15 actual test-mask N/positives/negatives/prevalence/always-positive rows present; relative-error definitions distinguished.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 22,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-22.png",
+          "render_sha256": "97e715caec9b15a344726be963db644ac878577fc70c591b9592db14cd07e453",
+          "status": "PASS",
+          "observations": [
+            "Original and recovered numerical errors/tolerances displayed separately; twelve finite scalar cases do not replace16 original tests.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 23,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-23.png",
+          "render_sha256": "4533e637b5c529bfb7cc46f2a8bb1f95f47a29b6ea5d08932aa309d37c539185",
+          "status": "PASS",
+          "observations": [
+            "Seven unavailable cells distinguish measured preflight/historical OOM from undocumented cause; original GPU envelopes scoped.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 24,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-24.png",
+          "render_sha256": "4622e382a65040ccad52634ed1d797c51340f97661a612aa8b645f5502f84e71",
+          "status": "PASS",
+          "observations": [
+            "References8\u201321 fit; no unresolved citations or duplicated Proceedings phrase introduced.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        },
+        {
+          "page": 25,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-25.png",
+          "render_sha256": "dd8f850d0e19494f95d87a786d70b44926426a641ff5486bdb661b930aff83c7",
+          "status": "PASS",
+          "observations": [
+            "References22\u201335 fit; corrected G\u00fcnnemann umlaut visually verified in final render.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 26,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923/page-26.png",
+          "render_sha256": "921934cfa6a6b1f1e16429fd54e91665cc8941e5c6138b23ff29b351f87ddc95",
+          "status": "PASS",
+          "observations": [
+            "References36\u201347 include formal GoG/Elliptic/DGraph/SNAP/LANL origins and statistical/exact execution foundations.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image review of pixel-identical render; final-page bytes checked against inspected image"
+        }
+      ]
+    },
+    {
+      "path": "projects/benchmark/paper/current/a09/mdpi/DLG-Benchmark_A09_MDPI.pdf",
+      "sha256": "4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01",
+      "bytes": 249209,
+      "pages": 25,
+      "page_reviews": [
+        {
+          "page": 1,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-01.png",
+          "render_sha256": "622d48bc1c84139f4e03f0d6233df898ba007c2fedea6c47660f0712cc1acb69",
+          "status": "PASS",
+          "observations": [
+            "Official logo, author/ORCID, abstract and line numbers clear. Fabricated template DOI removed: manuscript not published/DOI unassigned.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 2,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-02.png",
+          "render_sha256": "74504737d8bb9961b59957bb9be03570f5d440ce7accf1a1ce6d3ca877ae166e",
+          "status": "PASS",
+          "observations": [
+            "Related work and contribution continuation fit; current header says prepared for Applied Sciences.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 3,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-03.png",
+          "render_sha256": "be01e56ed09874a695d5f44c5b944f0ee8be23044d3ed5d61d4c02cef97aeee0",
+          "status": "PASS",
+          "observations": [
+            "Scope table, Gram equation and stage semantics clear; primary GoG citation and provider URL readable.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 4,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-04.png",
+          "render_sha256": "dd166cd198f2029aa54681fabcce3596f006939ca7b048fe83f6ff067aaf98e0",
+          "status": "PASS",
+          "observations": [
+            "Provider Category0/hash/license and origin/access table clear; authors publication policy not described as proven legal ban.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 5,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-05.png",
+          "render_sha256": "618b82714eab4ed31bf716f326d73f456cb427f1392d9133e1bfef6d3716d55b",
+          "status": "PASS",
+          "observations": [
+            "Feature/similarity/split and counterfactual caveats present; corrected N/E/F/prevalence table fits.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 6,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-06.png",
+          "render_sha256": "dd865ada7cf4c6ef313f7bb6f058936fd8a9c98c0e643deeb36038a2fbaee636",
+          "status": "PASS",
+          "observations": [
+            "Portfolio14 rows and original target provenance readable; narrow provenance cells wrap within margins.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 7,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-07.png",
+          "render_sha256": "946e364d0aca8e0773636da1d401ee505c1e41ad3960693ac95ce848bc78fd25",
+          "status": "PASS",
+          "observations": [
+            "Environment/run budgets and validation/alert policy preserved; support84/91 and420+35 stated.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 8,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-08.png",
+          "render_sha256": "d0526edde3b5e664817bb315ea631c2dcb6113cd626e50fdc0a8ff3c9b77b991",
+          "status": "PASS",
+          "observations": [
+            "Two AP tables match frozen means/SD; ETH/BSC/Polygon effects, stronger competitors and actual test references stated.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 9,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-09.png",
+          "render_sha256": "7b7d59bd4b3de27b4c634bb1e8c7bb03300f34f157026c44711be0f6ed1bccae",
+          "status": "PASS",
+          "observations": [
+            "Four result interpretation paragraphs retain negative cases, MC/adjusted-p limitations and memory versus quality distinction.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 10,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-10.png",
+          "render_sha256": "b75de7c54a64a0315dae90170dbe1ccf3e7e86a3ce267300a76f34fb37b573b7",
+          "status": "PASS",
+          "observations": [
+            "ROC part2, Friedman4-view and rank part1 numbers/source agree; no superiority inference.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 11,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-11.png",
+          "render_sha256": "b1cb614d8c4f7d326097197ccaa0f28e60251ca6fdadbbd2d65090ec168dbd33",
+          "status": "PASS",
+          "observations": [
+            "Complete-case membership, provenance sensitivity, rankpart2 and signed augmentation table readable.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 12,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-12.png",
+          "render_sha256": "6c2c146ded40440b8f45ba22b2e2951eb897ae5de2cdbce348c8a9e0d0ca1068",
+          "status": "PASS",
+          "observations": [
+            "21 measured device rows and hardware qualification limits readable; discussion and conclusion remain conditional.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 13,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-13.png",
+          "render_sha256": "918f085529f945451871b60faa0ec8814a54e3ea74fd7986cba22b1052c6dd6b",
+          "status": "PASS",
+          "observations": [
+            "Conclusions and author/funding/data/AI/conflict paragraphs separate; C5 explicitly pending; Base appendix begins.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 14,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-14.png",
+          "render_sha256": "f6c6a0334239aa45632a606776cc862bb4150317fcf4c5caf2ee04d136de219a",
+          "status": "PASS",
+          "observations": [
+            "Base/Aug equations, detached frozen augmentation and20 current local epochs render without clipping.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 15,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-15.png",
+          "render_sha256": "d29a9178a3383f6cf56c15641ac73948437abc92f9a4185f843e940f52dfae2e",
+          "status": "PASS",
+          "observations": [
+            "Global score and Gram derivation/complexity fit; linear identity not applied to sigmoid structural decoder.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 16,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-16.png",
+          "render_sha256": "6cb40b1244cbdead60dd3eb40e557ce828cb1d9871e1310d575e4f05b9d8ff20",
+          "status": "PASS",
+          "observations": [
+            "Fused GCN normalization/transposed sparse operator and support policy fit; exact arithmetic limits retained.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 17,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-17.png",
+          "render_sha256": "7788329aa64f66c8d4eaae8308109eee0bd235563081575a3f55a5d46bf132d8",
+          "status": "PASS",
+          "observations": [
+            "GADNR rank-one formula/detachment and F1part1 render correctly; no new Gaussian-KL convention claimed.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 18,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-18.png",
+          "render_sha256": "67d5ee11eb42aef388cfe1fa0afe14dc7aed2a475876c718ee3d02b266511d15",
+          "status": "PASS",
+          "observations": [
+            "F1part2 plus ETH/BSC alert panels readable; historical threshold policies labeled descriptive.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 19,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-19.png",
+          "render_sha256": "64a3c8ae1a6733c9c730902e02e526bdc27cc969e65a3de8144edca4d6a8641d",
+          "status": "PASS",
+          "observations": [
+            "Polygon alerts, all18 Holm comparisons and archived Elliptic controls retained; Comparison/N columns readable.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 20,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-20.png",
+          "render_sha256": "803bba53ddcfc564113b0a45ec298ed4c1f2b779be4e508b8ea0ee59348e4405",
+          "status": "PASS",
+          "observations": [
+            "Archived CONAD and three-seed sensitivity clearly diagnostics; constructor settings not retrospectively upgraded.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 21,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-21.png",
+          "render_sha256": "b70c1415f82bd211ac88e972b75aa9fad599607626a1c96c126bcccca1906e94",
+          "status": "PASS",
+          "observations": [
+            "Actual caller defaults, excluded histories, final impact map and15 test support rows match evidence.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 22,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-22.png",
+          "render_sha256": "4b95a1396c3c5c768614f379a3223be0ac3440e7974d8f3ac0ee617e66bde145",
+          "status": "PASS",
+          "observations": [
+            "Original/recovered max errors and unchanged allclose tolerances/floors clear; qualification is not production retraining.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 23,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-23.png",
+          "render_sha256": "c5df47e128add0681765854b9163e60cf99194f097982887b9ef75bd592eb265",
+          "status": "PASS",
+          "observations": [
+            "Seven missing cells and GPU envelopes clearly distinguish observed versus unknown causes; references1\u20139 resolve.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 24,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-24.png",
+          "render_sha256": "b62d8152aae76c8a05fefa55c0e7cd5d333537f0e7e3b2e1c20c924c57e1c142",
+          "status": "PASS",
+          "observations": [
+            "References10\u201328 render with DOI/arXiv links and without doubled Proceedings phrase.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        },
+        {
+          "page": 25,
+          "render_path": "local_storage/benchmark/a09_submission_closure/pdf_render/4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01/page-25.png",
+          "render_sha256": "b85c6ff2e3e2a79b329d8daad6e12e18fe6b98267209c108fa89d59fd0cf75e1",
+          "status": "PASS",
+          "observations": [
+            "References29\u201347 fit; G\u00fcnnemann corrected, formal provider DOI/data sources and exact-execution foundations present.",
+            "No visual clipping, text/table overlap or unreadable equation/reference detected."
+          ],
+          "review_method": "manual view_image of final hash render"
+        }
+      ]
+    }
+  ],
+  "source_resolved_crosswalk_rows": 1394,
+  "primary_registry_displays_unchanged": 570,
+  "additional_support_qualification_displays": 127,
+  "crosswalk_sha256": "87972a867cef4aa85c11f7ebf9695c317ad2355516cc21c7b6d5f83ab08ef3f2",
+  "claim_reviews": [
+    {
+      "category": "primary_values",
+      "status": "PASS",
+      "observations": [
+        "570 original registered displays remain source-resolved in each PDF; approved A08 run set/primary numbers unchanged."
+      ]
+    },
+    {
+      "category": "metrics_statistics",
+      "status": "PASS",
+      "observations": [
+        "105 private raw-score metric dictionaries exactly match; full-precision tables/permutation/Holm byte identical, all18 family rows retained."
+      ]
+    },
+    {
+      "category": "support_no_skill",
+      "status": "PASS",
+      "observations": [
+        "15 actual masks provide pi and2pi/(1+pi); neither trained baseline nor exact finite-sample randomAP expectation claimed."
+      ]
+    },
+    {
+      "category": "conditional_results",
+      "status": "PASS",
+      "observations": [
+        "ETH positive/BSC small/POL negative and allthree competing leaders reported; Reddit/LANL negative retained; no general superiority/equivalence."
+      ]
+    },
+    {
+      "category": "numerics",
+      "status": "PASS",
+      "observations": [
+        "Original absolute-only observations separated from51 recovered quantities and12 scalar fixtures; original tolerances/scientific sources unchanged."
+      ]
+    },
+    {
+      "category": "resource_scope",
+      "status": "PASS",
+      "observations": [
+        "Seven unavailable cells sourced; onlythree observedOOMcases labeledOOM; no inferred current3090 impossibility or total interrupted wall time."
+      ]
+    },
+    {
+      "category": "provenance",
+      "status": "PASS",
+      "observations": [
+        "Formal primary sources and hash-matched providerREADME; sourcepopulation and constructed topology separate; old affectedcrypto excluded."
+      ]
+    },
+    {
+      "category": "privacy_approval",
+      "status": "PASS",
+      "observations": [
+        "Private mapping/scores/manuscripts author-policy scope; author approval/public corrected release/reviewer access honestly pending, not submission-ready."
+      ]
+    },
+    {
+      "category": "format_references",
+      "status": "PASS",
+      "observations": [
+        "Neutral no publisherjournal branding; MDPI officialclass preserved with unassigned publicationmetadata overrides; repaired table and G\u00fcnnemann inspected."
+      ]
+    }
+  ],
+  "manual_observation_sha256": "5615833b829a93aa3cd6d258489bd32e41eed783046deffec2e3c14899b9575f",
+  "approval": "PENDING_AUTHOR",
+  "public_release": "NOT_PUBLISHED"
+}

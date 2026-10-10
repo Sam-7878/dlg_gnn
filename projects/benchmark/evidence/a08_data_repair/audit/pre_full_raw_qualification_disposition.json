@@ -1,0 +1,15 @@
+{
+  "status": "PRESERVED_EXCLUDED",
+  "time_utc": "2026-10-09T15:19:58.108049+00:00",
+  "primary_predictions": 0,
+  "historical_completed_qualification_runs": [
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed42",
+      "original_status": "SUPPORTED_EXACT",
+      "preserved_path": "projects/benchmark/evidence/a08_data_repair/qualification_history/pre_full_raw_counterfactual/polygon_contract_clean_v1__DOMINANT__seed42.json",
+      "current_G5_use": "excluded; repeat under completed whole raw counterfactual and canonical execution binding"
+    }
+  ],
+  "partial_qualification_invocation": "AnomalyDAE interrupted by intentional supervisor stop before final raw gate; partial files preserved; not a resource failure",
+  "reason": "Strengthened full raw counterfactual verification and process-independent settings metadata binding; no changes to chosen primary hyperparameters."
+}

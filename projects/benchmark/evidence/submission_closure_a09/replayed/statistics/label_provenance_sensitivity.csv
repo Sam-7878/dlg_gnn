@@ -1,0 +1,21 @@
+group,model,n,mean_rank,datasets,scope
+strict_native_financial_two,DOMINANT,2,4.0,Elliptic;DGraphFin,descriptive; label provenance separate from topology
+strict_native_financial_two,CoLA,2,2.0,Elliptic;DGraphFin,descriptive; label provenance separate from topology
+strict_native_financial_two,OCGNN,2,4.0,Elliptic;DGraphFin,descriptive; label provenance separate from topology
+strict_native_financial_two,DLG-Base,2,4.0,Elliptic;DGraphFin,descriptive; label provenance separate from topology
+strict_native_financial_two,DLG-Aug,2,1.0,Elliptic;DGraphFin,descriptive; label provenance separate from topology
+clean_source_crypto_three,DOMINANT,3,2.6666666666666665,Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+clean_source_crypto_three,CoLA,3,5.0,Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+clean_source_crypto_three,OCGNN,3,3.0,Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+clean_source_crypto_three,DLG-Base,3,2.3333333333333335,Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+clean_source_crypto_three,DLG-Aug,3,2.0,Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+source_labeled_financial_five,DOMINANT,5,3.2,Elliptic;DGraphFin;Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+source_labeled_financial_five,CoLA,5,3.8,Elliptic;DGraphFin;Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+source_labeled_financial_five,OCGNN,5,3.4,Elliptic;DGraphFin;Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+source_labeled_financial_five,DLG-Base,5,3.0,Elliptic;DGraphFin;Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+source_labeled_financial_five,DLG-Aug,5,1.6,Elliptic;DGraphFin;Ethereum;BSC;Polygon,descriptive; label provenance separate from topology
+injected_eight,DOMINANT,8,1.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive; label provenance separate from topology
+injected_eight,CoLA,8,4.125,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive; label provenance separate from topology
+injected_eight,OCGNN,8,4.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive; label provenance separate from topology
+injected_eight,DLG-Base,8,1.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive; label provenance separate from topology
+injected_eight,DLG-Aug,8,2.25,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive; label provenance separate from topology

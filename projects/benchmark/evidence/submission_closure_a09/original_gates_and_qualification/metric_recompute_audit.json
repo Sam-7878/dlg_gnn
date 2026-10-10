@@ -1,0 +1,637 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run_id": "ethereum_contract_clean_v1__DOMINANT__seed42",
+      "raw_score_sha256": "e457c1f9c5c28f32565a190af286b49cc25df3683d8a14bfe9a54bbd142cb42d",
+      "metric_sha256": "c7ea1c1d77642c5bac130f2c0281962d3f92a4c0cbbfeea4f8a2e5d2c179cd2e",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DOMINANT__seed43",
+      "raw_score_sha256": "e4e0fb491e5965208eaaaefb6a76f7e9d3f10024885ae62fb6b0b2092a7b303e",
+      "metric_sha256": "573f3e21c8d5d5be1a96cb0b432988dc82b773515513dfc7c3ab4d5e0281f491",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DOMINANT__seed44",
+      "raw_score_sha256": "326b088b01ed258cb5fe2d24bf4e6e49897d02941b8569d1b3af0d43e9982740",
+      "metric_sha256": "7f504ef865e264ee375ee654fad232f93eac0223ba98afd24540b28503cf9c4d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DOMINANT__seed45",
+      "raw_score_sha256": "980fffcc50c8cf5dc6be55564ef16af963cdc630c3a6f53ca641de9798feecf3",
+      "metric_sha256": "cb8e90367d47e6bef38e47e456b241d69461268f40735fde6d2d1cf84ad640e4",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DOMINANT__seed46",
+      "raw_score_sha256": "7a316fb0b8c43ba226334a68708205a7952793cbc7d4de008fcbdf13fc00e04e",
+      "metric_sha256": "b08e45b7fb6fc5a8a128b2a8549268143c4f5b3e11af06af93471e40922a9f8a",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__AnomalyDAE__seed42",
+      "raw_score_sha256": "7b477d828c77682069b66d150c150f90d37fad003aa565a5ccecd9e120919bb3",
+      "metric_sha256": "5c01f61cbd1e47ccd103d18ae59afa5217acd8929c671f94a5c9b739a587b2d7",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__AnomalyDAE__seed43",
+      "raw_score_sha256": "fd12eb06be3babeaebacae34fd13afd01309bf963d42588d4cacce6a81882c64",
+      "metric_sha256": "e31041e2c1637a1f46ebb65012d2b8b4bc00c92bca1454ee8b942707033d85f2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__AnomalyDAE__seed44",
+      "raw_score_sha256": "0ddbb0c8bee5ac61b11467f90d139ae8863897ba65feb223b9325dd00c0fb1f1",
+      "metric_sha256": "73e341e0535d7eb7fec1f04b76963ce2d405613a576ff1981f9144c0f6fbb698",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__AnomalyDAE__seed45",
+      "raw_score_sha256": "4d834601137a9791a47e1b3aba524e028a9d9324620ef91ec49aca050d40a5b1",
+      "metric_sha256": "f0e15ae8b52b3569f9006fd66bce72b3c64af83e69471b049f28a522636f54fc",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__AnomalyDAE__seed46",
+      "raw_score_sha256": "ea0d0ba188dbccd324764a266df2cca1f1e59aafb2f5403d3b313eb2888e9faa",
+      "metric_sha256": "c8cb9b86bf5b33d92dc3ff04d385f0a80afc085bad9ffe46d072d10bd30aacd1",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__CoLA__seed42",
+      "raw_score_sha256": "51730d7df64f662946dcfcbdbc3086fd9d1732b26b4eec6db5c8ba1bc40371a3",
+      "metric_sha256": "24c7b73b42fb1553523cf1dd1e162ef0846c871d95b4c109336504b063cb7290",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__CoLA__seed43",
+      "raw_score_sha256": "c663cd120166d20b615ea016e7be4f5315e35ded0724567966e47c547041f2fb",
+      "metric_sha256": "5a9d1c1958c6ddf7919465c9e88f96448ad27ad40348797e8e35c34e25133588",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__CoLA__seed44",
+      "raw_score_sha256": "8b588627c6a560cec0e71c448314bc8e6b0898886a99bc7273b906603ecac7ac",
+      "metric_sha256": "2ccf0ba2b8b874f44c267464921e432d36522367f84b8dd28a6e345b6bed3395",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__CoLA__seed45",
+      "raw_score_sha256": "c606adf68482aa91b3e0e145c3513ef118636769293f26adf56e747e042c59b1",
+      "metric_sha256": "199e79008a450c2249e7f5ec4568bb7c0d0ba5d23781b1ebcd4acf2395b5fa48",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__CoLA__seed46",
+      "raw_score_sha256": "1653f61432badbdb0411d1281991c402df6865df934149372299a030c012558b",
+      "metric_sha256": "a12b1f6f62d687e7d182c41baa5659051831473f363fca7e240accdd4ab2ae91",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__GADNR__seed42",
+      "raw_score_sha256": "ddeb2d7c629ff33e0ca9cd204b5614959e62e79dc75cd07dd731de33cc12b02c",
+      "metric_sha256": "849e6da69b970b667e335ee4a49a9bfbac9e39b54c4a28154dcb49ba2f30fe4d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__GADNR__seed43",
+      "raw_score_sha256": "e445cbd61baa1c0afb6fd1ca5fb88d62d3498137a417b51e7b1b04c43b670c3a",
+      "metric_sha256": "003741b073690d5a120fb28eaaf4cd4feaded818cee8c5091e26e712f76df661",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__GADNR__seed44",
+      "raw_score_sha256": "253f0dcbf434c033f7a45ef1e4bc7b1146e119d63c22966d41c048826e1e2578",
+      "metric_sha256": "ec9dd27d67725668bf79e41bb7997a4c17ab2e9429a48a76f82a527aec9a9602",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__GADNR__seed45",
+      "raw_score_sha256": "7e50bc04766605fc28b69019633e03c1eba1b983740d0f773e42f22a0eb708a7",
+      "metric_sha256": "2ed6b838b687986e46cfa56733193897f84cfb326aaff2420fd9e14fe7d3080e",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__GADNR__seed46",
+      "raw_score_sha256": "7c0cccedb67dbb9567920b873bc0be2acb8a923ff08f738cb5503c72d576c7d1",
+      "metric_sha256": "c536595219a2c38a05ba6b4d5e4045bf3dec272c108b295ac099c1c4d4ccf415",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__OCGNN__seed42",
+      "raw_score_sha256": "b7f170853a3c3bbf1175ce8e9d4a652c3c98805b070813224e4cbef357ec58e8",
+      "metric_sha256": "e48599b6ce78b39b41c2b30b2719794554ca62d9bcdb3d420a82476a84e67c5d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__OCGNN__seed43",
+      "raw_score_sha256": "28d152b0a7a0d2c4a092da7d183e7dec20b109b4e336b695501e5825110ecd01",
+      "metric_sha256": "34d87f92b94f4d7086b0816ac06ef276f5cdef007ffd5253894931765adc56bc",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__OCGNN__seed44",
+      "raw_score_sha256": "e8ef132a918922d03fd55af03e3e2f3cf859ed9524222e8b75ed461009bf970e",
+      "metric_sha256": "181cbbf2cdc21a0f55440819166cab1fbadeabc5ae16cfededa1bc93fed93b8b",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__OCGNN__seed45",
+      "raw_score_sha256": "6f17b358ad1c6c2b09371c323f6de9302b4c659aca2d4809280c36a5885d367e",
+      "metric_sha256": "e7cd31165b16918ea13c732c38ebaeec01192f1b41773a2f35df3d1f0e30261e",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__OCGNN__seed46",
+      "raw_score_sha256": "0496425796c6c4c410b1af427c58d8a2bb7d07535a026a2b8a7044f0ba84bafd",
+      "metric_sha256": "0c2b387fdbed76a45b84b56a061ad065c897f44cfa188cbfe1d47c0ff902072b",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Base__seed42",
+      "raw_score_sha256": "36b9183aebad390170d50d147f71ee900feebee08b2da519bc24e7d28404f1fd",
+      "metric_sha256": "45ebb142d6e89cac0f065819d10e729ad9587a6f1d85f06dad7af7e6fe43917d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Base__seed43",
+      "raw_score_sha256": "c4ac5416348682c76cf684022d454d005ae7bc4e4f1e8d269f359254918aa086",
+      "metric_sha256": "a6c39f69dd12f54da467673e98e990328c4c2f6c9f63d2683f24a944575abd20",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Base__seed44",
+      "raw_score_sha256": "168f8bab12d292eb0283bc30b7bb919322237523caeb78e84d9475cc390d047d",
+      "metric_sha256": "244560db3cbcfe256e7815dc067b8c8a81e5927da9edb1293834fb5744350ba2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Base__seed45",
+      "raw_score_sha256": "cfad183e6c690e8a8a83bdeeadd291665efe8876e6f68e5e01e61c68d98d70ee",
+      "metric_sha256": "5ddf7b204d18bad0369c37e1bc15eab29c416cdf0b8e6ca0d56a72dcf6195daa",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Base__seed46",
+      "raw_score_sha256": "f9f7246eb287833074b009cc1bcb2b21885e6c73f0bc30e47ab1c58ce4bd1292",
+      "metric_sha256": "ab0b3b752f2b6d1ef10cb1a29b4c4831c68ce120affa34c370370c978a45e89f",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed42",
+      "raw_score_sha256": "6a7edc082381c04fe21bd30049e7e6c9fa548442b57afce08637ec9ec4dcf1a1",
+      "metric_sha256": "88b11f392724a3d58de4fca65b1537ca5a610b2f15a6c61eac1a6e8bb237912a",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed43",
+      "raw_score_sha256": "ae6d3f311e2eab6c40617847797c697f1faf39be2bbaf2b38b0f12dd16e24779",
+      "metric_sha256": "35c496eb057a6ecb4ebee8681485d8a89b1a6f88da54ff5325f4d142d79b72ff",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed44",
+      "raw_score_sha256": "531dfac0f0e86b5952d7d8c96c108b9de1276b19c1264a1b4612e16052906565",
+      "metric_sha256": "4e0aa28f015e9da22e0fc98df79f4064c19614300fbde1b77cdfcaef4dd1f763",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed45",
+      "raw_score_sha256": "044b885a0a6680c57134764d1ac75a7edc8b0438feb620bf14f4c4575db7a164",
+      "metric_sha256": "517da16ffe707298ec7c66e8c74e2108132ed7b5ac4104c4ec004494a7653802",
+      "status": "PASS"
+    },
+    {
+      "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed46",
+      "raw_score_sha256": "420ca88b66a5e5c38da182aef26fbf27f6648a838a29bb505d301410c39bc533",
+      "metric_sha256": "f89a3b8f16ff5c5b9296bf865300b9e420f5b21df12a4137b53a592d0246ee9d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DOMINANT__seed42",
+      "raw_score_sha256": "d75dbf73348b21401edbb7f85fb2e324fb58a7f25a4c353fea5613c329351b3f",
+      "metric_sha256": "08534a7c17e275a2f0bccd44dac731531a08f71d6c947963dbc20c5140295fa9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DOMINANT__seed43",
+      "raw_score_sha256": "374540b740d8b44f76136d6f37aaa1427480c315fe949ad1a1e1910f27a6bce4",
+      "metric_sha256": "8f3c15b1830ab932c5a8b9f81c787520f9b49901245cdaddb30cbaad2bf6c666",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DOMINANT__seed44",
+      "raw_score_sha256": "1a69a453339063f86e618f390c181d4cd5fa9f79c60f870347027431b7cad2a7",
+      "metric_sha256": "bb629fb1b545cd0df2bc12845175e5c60122d7833212c8954ce83e54e1f48e6e",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DOMINANT__seed45",
+      "raw_score_sha256": "0812de5d9d6e6f7611af88d013db7bedc7df719bc9d92abec15e892b3c56a849",
+      "metric_sha256": "4fffbd54a9f4375afbb3210a5992c60384a6379527a911202c8c3d5ff9e3b1ba",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DOMINANT__seed46",
+      "raw_score_sha256": "69b0dd8a1a13fe1a771c1f9f340e0cc9bd550aad6633c5335d57f90331145623",
+      "metric_sha256": "5525ca4c65034c4bcf3c007ebeccd6365a33b7dfb4cae99a5b2ef8f90225f4ce",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__AnomalyDAE__seed42",
+      "raw_score_sha256": "8b469fd0bfd37826da0c1c7ee9841c9c2e2ae7ebe9db185496f4c0c6811369b3",
+      "metric_sha256": "113b9e48096da36eb52e9f604fde15f005e85b55adc1d923dd0bd6e27dbe29dd",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__AnomalyDAE__seed43",
+      "raw_score_sha256": "a6230f49e5f6f297a22175078d494c9bb8b824f73ae2277c13bec3ca64009e1d",
+      "metric_sha256": "a52d71a78ba5d127f213c7c4ac9c4fb60c06a5978a1fb8afb4a6ae843ad176d9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__AnomalyDAE__seed44",
+      "raw_score_sha256": "ff1ffed848fd0c5806bfb7c426ee12a4e4ac99969766e75c8cc6860beb0214aa",
+      "metric_sha256": "221d6d21111dd0edc118f0ee62368456ae1695b5bfdfa7c0d19422c854f3390c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__AnomalyDAE__seed45",
+      "raw_score_sha256": "9b74ef7755db4070d34e21c0ca925c05e924c1e366679378f583c082bd8e6597",
+      "metric_sha256": "7466e51654a3f1263bdb8734262756b23f48ee8d9cecabbf83b5bbedbd6f6649",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__AnomalyDAE__seed46",
+      "raw_score_sha256": "5523ce42388144eef13de9074f6ac22c85fccb32ad54818d6e9d7edddabfc5e2",
+      "metric_sha256": "72418eb023960ce7b0a3ae1302ff97ea7afc9b4b06498ed1316ecc2c7edde4eb",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__CoLA__seed42",
+      "raw_score_sha256": "9062d945acba24d9ac03fb0e09ccd4809db27e4fc1fe4fbd3180a9cbd6812262",
+      "metric_sha256": "6263dfceb7b6019bfd3c27d90428231b29f1c22a9982c74bb63fe40761f19fd2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__CoLA__seed43",
+      "raw_score_sha256": "889342ee429fde80d85a1299ad1828eaef723c554509147e8028b23ef34b30f9",
+      "metric_sha256": "7d2a0627f0c16ee0133faf31038680f8f02891c93e18091b75b449880a880a00",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__CoLA__seed44",
+      "raw_score_sha256": "ff63e297581b09b6985fc1ed610830da406a5bc13430cab15e5c7549654e68f8",
+      "metric_sha256": "3891eaca0692b9c5dd2e373981c36245adc4600215702705e3cb431277f285ad",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__CoLA__seed45",
+      "raw_score_sha256": "c91068bf2c3d6ba8c6ecb1884a0225199cf90fe18e32a07c3b89dabfee7abbdf",
+      "metric_sha256": "45e52bc0b71fba555db24276f06a99fccb086a8ee76de7d2a9b3bcb361db4039",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__CoLA__seed46",
+      "raw_score_sha256": "ce9027efb84c207d9f57dd3ca728a3e2b92627bfbfb03c5aed3682a1c4e07e0b",
+      "metric_sha256": "eb0d8ed5b3e383bff393a1110bbe7703bef43218d44b52b13b3e5d684c0bcb2c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__GADNR__seed42",
+      "raw_score_sha256": "a23ed4fbde952e654b7689709adff237bce60bf87e8611b0339734877bdd284e",
+      "metric_sha256": "2ce8c82ebebec898ec0cfd5a62c2f0978476df472775071904dc92d5993e95e3",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__GADNR__seed43",
+      "raw_score_sha256": "5f294b292e13b03462812a527759abc0628fc7380e4a1c47458698dfec25e780",
+      "metric_sha256": "6cb220f8a585e3c96de4fe614f331342013edafec9667bccd15a2f2171d27fc2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__GADNR__seed44",
+      "raw_score_sha256": "a13fbc7a7441ed2a501059af09382f71d3cddb81362f055319d34aa0c2a528d1",
+      "metric_sha256": "746ede060d7cdf6481c5b01c94137bfa42b8eea21a36d18cc2a00e6aecf2046a",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__GADNR__seed45",
+      "raw_score_sha256": "47d8917e99105b6c5417df5e57767a5666b5bad66b9f29aa30ec7e119096e6e2",
+      "metric_sha256": "7ef44600c1c0b2d17f23700dd1f24dca10d466a364e1932fa4ee16ad9be0b397",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__GADNR__seed46",
+      "raw_score_sha256": "d4f95faa28420c510735e5371c72fa72b46f8cab204efe808ba2e6e674e42667",
+      "metric_sha256": "7b8f02e36d1b435a13b74a6f38606e019913eb45c429404b4ab6d2ffb4fe1598",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__OCGNN__seed42",
+      "raw_score_sha256": "36c9d913076af694756c7f5a4dbeea3f07603d14b7248feeb3b315472d8ad132",
+      "metric_sha256": "67dfafdcb48bc6c7217a23863fd5209e8b6ebe564143ebcdf278304e7b23409c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__OCGNN__seed43",
+      "raw_score_sha256": "834106f094274926b838606838fb1e90b12aca28f5c4ab91bc0b0e40139e2e6d",
+      "metric_sha256": "19a035daca3c4086d1fe2d8840a278665e49c1ecead9f524852ec0f8a27da4f2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__OCGNN__seed44",
+      "raw_score_sha256": "4a8ff0bc971187d41dd58fae12a8355903b18589fc6d59b5484925d37f60396f",
+      "metric_sha256": "91cbd32926d8c34becf272b220adfc7e0602bc04ad05b914db9c91406d097cd5",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__OCGNN__seed45",
+      "raw_score_sha256": "bf65b0835883ca1a5a21fdc20e2f423e10f3333a6b4ff8c86f53dc1c65d61239",
+      "metric_sha256": "ab11c30d131dcb9694a7b87b13d14ee50b93259b2a14c5f4689ccf4f183834fe",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__OCGNN__seed46",
+      "raw_score_sha256": "a0fe6f8fbcb88352435eba309d7f9d0cec9d4ef4e419a98c36ea733d3b61f630",
+      "metric_sha256": "4a2efcbb8d5def096dd28ae8c3521efc84a43977f562ac7fb38520c3c6fe4f4c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Base__seed42",
+      "raw_score_sha256": "6af978f460e6cd357bce1355a87e72532411a05cd3e12a827e52bf9e013f8ab4",
+      "metric_sha256": "5aa574858708cd00529e7858d283e4db2e02caea157ad040f685abcc30f10d3c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Base__seed43",
+      "raw_score_sha256": "5e3ce99868455025d1a079eb7d870205238e83c39bdf26c0832c67d7922a7c7d",
+      "metric_sha256": "00f9971aa41bf213baa83ea8a4e1bc8c0ff691e8df14395ef5e553ceccec15c9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Base__seed44",
+      "raw_score_sha256": "869c7c41408f3368225e3fcfd7c39f0db80f856ba5fb2b98134bf35dc5160ffc",
+      "metric_sha256": "e9a5c346a06f45e66b5e809c80888f3e0929b8d1200de61fb58368e354ec71ae",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Base__seed45",
+      "raw_score_sha256": "0e3d8a4d75c2f77b8ebc43fad4243172b4568276a255827d62915eb2cba2b730",
+      "metric_sha256": "0b090daf80d8f26fadb7e2e91e2d55565656bebdffb6d5d00e63bcdaaeccd254",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Base__seed46",
+      "raw_score_sha256": "f96b8ed4e896bb7622132c663a8fa81e91c6edd6018af6b291f05ec5d656f981",
+      "metric_sha256": "d9b745c23e190156711ab9aa3041befa36ae0ed8f4ed98f2396f34ac9495e798",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Aug__seed42",
+      "raw_score_sha256": "69b776722372d4537726bff4a95dfb197ed6eaad83f1cd35bac0a5f993168f90",
+      "metric_sha256": "8532974f566e989e394ac3257e3250561aaa3c98a3f92a0ed237812a4250d11f",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Aug__seed43",
+      "raw_score_sha256": "a5aeb9417dc5d57f3cad94c8ded90e49c29e9fa910b4ac771bfa0507869a15a8",
+      "metric_sha256": "8434508f4c41c094784d7c43016d4bd630a705bb754c1560079e51c18966cdea",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Aug__seed44",
+      "raw_score_sha256": "8f573e38994fb4d6278b28c8222e37ecaf3e2b8542233a1aedb438ad13846350",
+      "metric_sha256": "02eeddc7376fd3e5fee6a056cd0e08cd8bdeb768d33923553ff4faf354200bed",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Aug__seed45",
+      "raw_score_sha256": "07d22a723bc01e7fc8d4d5d00e140d6288e53c05fdf21e132c390e7b40a3ee44",
+      "metric_sha256": "d9610458da2b644ce4cc636c81b72b9fa3e837eb0059cb871139e2b76f0cf8a8",
+      "status": "PASS"
+    },
+    {
+      "run_id": "bsc_contract_clean_v1__DLG-Aug__seed46",
+      "raw_score_sha256": "ee86405f8c3794ed243947b43b5a467a6c25ac2aa12dff82fce0153a9188f315",
+      "metric_sha256": "e43500fd5c16be40ac63a0e29f06e869b12053da8d3dcc8f8f947cb542f0e46c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed42",
+      "raw_score_sha256": "ac80838903884596ddfc20cf0f8963a99b320aafd5db047a5ee8edcde91e9829",
+      "metric_sha256": "e77a6716b56d9ebfc2c5eb65d66e34c9df72d4517ca52c505eafe341e43b962d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed43",
+      "raw_score_sha256": "31a2410fa7142a6852b21bb80257aa2a2b9e752e2033534721fed9fbcdd76fa7",
+      "metric_sha256": "8296482b46956cfc50e9b5246ca9ad366081a99f77ccc90d3c846059125c6c86",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed44",
+      "raw_score_sha256": "c29402b14a4e4a7e53bc62af2e3eebff880818e30fd5e7a223889f009b7610be",
+      "metric_sha256": "18fa4e72a432db75c26ff4f314aae243a387bbfca8a3c388492f3c284e1d724c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed45",
+      "raw_score_sha256": "2d7b117aeb219a5504345c2e19014f9827bbe9c15ec21c162b9a4e8c5e90c3f0",
+      "metric_sha256": "940e5166ecf88a753caa45374c822bc47dfbe7b48e2480c1dada21d1665db8c7",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DOMINANT__seed46",
+      "raw_score_sha256": "df661c43a22ee1710a11180e44d73a4611fc242cada4a607ee4e23bcbf98b9b0",
+      "metric_sha256": "8c7d66082c6433cbca782d4b5b20e7c170c1b195925fcff5d53f336d7f4e1c23",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__AnomalyDAE__seed42",
+      "raw_score_sha256": "29ebcbb46ece314f54770f703b40be4834877ed11a44cefd8b2d527b9544d04a",
+      "metric_sha256": "3891a98fc29585ec93e876e6f18c3456aeb285d9547ccbb79ffe0adb0afb2905",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__AnomalyDAE__seed43",
+      "raw_score_sha256": "606c4b246cfa269b8f56ed1c009b25b03332e9ddbe932219730f3fb5961e9f02",
+      "metric_sha256": "cf828b3d8a0df8db401ef71f07da2d59a4bcead6d0316dd5d4ae4ba4af94f8a2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__AnomalyDAE__seed44",
+      "raw_score_sha256": "cbac7b994c1d2e94789659f26d2bb93ffad9ebf6cddd4d4f31f6eab932b13d4d",
+      "metric_sha256": "c09f1019811a730a37aeb7aa21504d3cc9b9fc89a3fc6ea35250fa6f02eb3b38",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__AnomalyDAE__seed45",
+      "raw_score_sha256": "1da04cafa15664ce919e7b0c4db3d176d58a301d046a3c717e4bce57c7b115c1",
+      "metric_sha256": "3d2d4ae0e6c864a264e1509a2076db6b370fb55a1faefc3f0d5f0f044d040ab8",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__AnomalyDAE__seed46",
+      "raw_score_sha256": "05b2333413860fea84847f6c0ec50381a5fed7efc537b6181f8b3c7322a963ef",
+      "metric_sha256": "0717916b7552df2bd7fcf7b6732eea000703acae17c3af0eb5bdc48d64516f2b",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__CoLA__seed42",
+      "raw_score_sha256": "4ad44eb7955cb029c68c29653b7d6ff94fa3a1a46e27a14825b22f4c32efd4fb",
+      "metric_sha256": "28e99b50eca572143300e79a55691114d3c732d1a69c2ce78dee2eee59ac24c1",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__CoLA__seed43",
+      "raw_score_sha256": "6f761537297768971cb3c7adbb9e500f529d1b6352d6b56554192e6ac80cdce9",
+      "metric_sha256": "9696745a16d40b4f2951b345d2b891f1a662a04d6161a1b00a2c405ab0431629",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__CoLA__seed44",
+      "raw_score_sha256": "9727f5b2b8d499f0379d3b5c76b73fed6435577e91881708d9bfe981fb21f07a",
+      "metric_sha256": "57709053ddcf9a494d610c2d71c04a17c27d0bfd4f5f9015009cb5614294dc74",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__CoLA__seed45",
+      "raw_score_sha256": "6f3b942a146231e315fef02833afae2d88d59c433c3d70d0ad7011735511a905",
+      "metric_sha256": "f4f4c1eb9d288b3436ad505013fdd1a0d12f0710c2f311ff4002384b406cf612",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__CoLA__seed46",
+      "raw_score_sha256": "883579e333f066b6d60a29af7a9fec301695c24a39e69ec6123554aad8562178",
+      "metric_sha256": "ff45929afc09cbf42befe21730f215d3b82be9743ca2478b20fcf1f649ec75c9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__GADNR__seed42",
+      "raw_score_sha256": "a094a5a5c56e4447a395d8c766d8c6f142797878fbd9dfc4650fba1da85feeb5",
+      "metric_sha256": "b12b2218c625c2087f65be4fef7c77c680dea1e674b72b7e469fcf312c5a10b1",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__GADNR__seed43",
+      "raw_score_sha256": "4cdee3b5230c1ec3e37b8bbe9c33ee1b18010ef118c8a34260aa1ae7911384ce",
+      "metric_sha256": "a88b19896598049eb7787e558037f8c7524a9f7be17e9cd8f17aa02709c779bd",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__GADNR__seed44",
+      "raw_score_sha256": "66897589d8cffb3c0f8f786a7a0db81add82ca8a065bb2cfa3073c4e861013d8",
+      "metric_sha256": "0a9f56524c3c7ebce490d14510122baeb2c429f3206d49a7873a2cac334bda94",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__GADNR__seed45",
+      "raw_score_sha256": "9a5931880b5be727fdb4cabee5e7c959e64933e7a7e7d4a27e9e225339cfe39b",
+      "metric_sha256": "e36015c5f0226585ad5e247e76f6a45c1c39ec2537425d51a5b2bc7ff11859f1",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__GADNR__seed46",
+      "raw_score_sha256": "9921bd3e7d4f0908fb8cf78272083cd31379d18139f9dabd9b22e85f85e3ece5",
+      "metric_sha256": "264f71d0085a3bbcd78fa29cb9b5a1418033d4021261fce401168422fac48eb8",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__OCGNN__seed42",
+      "raw_score_sha256": "f2b8ddb779639ca54d7fc591fb416fbd3e7f84a67b010e2434b12edefed102dd",
+      "metric_sha256": "671a3e6babcbf6492e61d2eb08cee4a7b8f3b4f09055f83b2040cd6236e62707",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__OCGNN__seed43",
+      "raw_score_sha256": "2cbcae1d1e0f5fa9b88062d3c2e67d710d63099fc180b0cf28f17b6d17c5da46",
+      "metric_sha256": "df554e51ea63c498a111317bbdc15f901c3a5c4f57cc806fc7f9bb2030347fe1",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__OCGNN__seed44",
+      "raw_score_sha256": "95dcf7d1187c992d09c5ee4865815ea698026eca72fd50fb2c77fb720d5a5dac",
+      "metric_sha256": "c26bc7657227608a650485e85efc18c728029d0f3671469236e4f9050b8c996b",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__OCGNN__seed45",
+      "raw_score_sha256": "bf6b3fda6930da5541a84556a0556f1b7909744f5eadbfea77f3b4cfca6d7eef",
+      "metric_sha256": "f36adb7e2d7ef8368ec5505eafd3e9f4f3e123d4145166676f4353074dfbc5bf",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__OCGNN__seed46",
+      "raw_score_sha256": "45272e5ccd0632e966b405d20f0fd004ee47721a7a75f79eca99728d2c9d56b9",
+      "metric_sha256": "3c19f5db98b172192c3137eeeb092c2977ae9af41ae4e3f3647b47f5e53de11d",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Base__seed42",
+      "raw_score_sha256": "cec3a43da364e0cf020c61a4d777e4b0edf2590434b23cfe8c4076a58c5fca15",
+      "metric_sha256": "cb791ac48c2161b803a50faf23e73cfb99f794b2a70312fa29570a95fcde008c",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Base__seed43",
+      "raw_score_sha256": "fe68568cebdac6a027ae37259b36a851b596f6da9240680beee7dadd20edbfe2",
+      "metric_sha256": "5d4866cfc6ff1ce9dc029967f9cc3cd42ab5a5aa7ee5ceb21ad0b013e8eae7c9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Base__seed44",
+      "raw_score_sha256": "7bc595167fe66c91c707c8f4c9770716b829fcfc15ab0e0dce13c00c767e61e6",
+      "metric_sha256": "57a386da98a375f041e3bffefa95cace95c1feb09b196417f9c2668cc0ed9fe2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Base__seed45",
+      "raw_score_sha256": "6eb65d12608a4af62751f341d5bb88a68eed89b939373efe3818112b719a49f8",
+      "metric_sha256": "8670de79efdce8f71759cb94e409baf55e1d55a8b92cbdd2bfb2d5f0670a8800",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Base__seed46",
+      "raw_score_sha256": "aa2c5a7617feab469942b30666280f5266115c1e7f5b21ee68d0405a96091eaa",
+      "metric_sha256": "b316e020bcc4e693864817b1fd47a520c5f15bcd1f5d8c1582a075ab7180d2f6",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Aug__seed42",
+      "raw_score_sha256": "e604469fe6eaeafa57bb5791b111ac28b53acca296b39932919f3be5d683d4db",
+      "metric_sha256": "23d6010fd0e24614a81169b14b0d70327e0753dcfc866044e9c73c934a513b2a",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Aug__seed43",
+      "raw_score_sha256": "7ad07132905b0e3898a3e719e9fc1a0d2dcc25df1faccb7a612b7dec4d548f3a",
+      "metric_sha256": "b08cf9109a95047d67de0b31d08bc4692cb5756ee2162168ef85617b31a792d9",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Aug__seed44",
+      "raw_score_sha256": "d09f04e40da3c51bdcda7da111bedfc5b5531c5b413deb41accdc9387490db76",
+      "metric_sha256": "738ca7cca10ef4c73b96c59e559fed6a09d2e0b18c8cde0883bf05e844d1e300",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Aug__seed45",
+      "raw_score_sha256": "1501dbe055d0882261cdf7829f5c495d26f3768e99d3bf5db1feb93a17139db9",
+      "metric_sha256": "8f6b90996e48774bedfa509af89c64f2382be9574f6749b3aed357fa04888ac2",
+      "status": "PASS"
+    },
+    {
+      "run_id": "polygon_contract_clean_v1__DLG-Aug__seed46",
+      "raw_score_sha256": "8e0c77ebb5dae88ff8521befc0ca0e93162e80fb2200ba0b157c1095c6ba6f16",
+      "metric_sha256": "2b71c5ab3190d14518c29a3d329b6d267500cbbf5b62c9ddaddcfb49135aea1c",
+      "status": "PASS"
+    }
+  ],
+  "definition": "AP via average_precision_score; raw score direction fixed; no fabricated historical score",
+  "ddof": 0
+}

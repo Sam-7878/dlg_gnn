@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "chain": "polygon",
+      "source_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+      "member_manifest_sha256": "00edcd70f36beb356fc48069160929a97b5446805276f9d976f01ed972fbbd8c",
+      "member_count": 2353,
+      "source_access": "provider downloaded research archive; no redistribution permission asserted",
+      "raw_observable_fields": [
+        "from",
+        "to"
+      ],
+      "fit_population": "all observed raw contracts, transductive label-blind"
+    },
+    {
+      "chain": "bsc",
+      "source_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+      "member_manifest_sha256": "40bf7852ad163226b518c42427df810169007882b78de57a5e3f5ff620fe0998",
+      "member_count": 7499,
+      "source_access": "provider downloaded research archive; no redistribution permission asserted",
+      "raw_observable_fields": [
+        "from",
+        "to"
+      ],
+      "fit_population": "all observed raw contracts, transductive label-blind"
+    },
+    {
+      "chain": "ethereum",
+      "source_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+      "member_manifest_sha256": "57735450468b29cf323ba195d2aad879717805811e1274712aac7ea4683ba1bf",
+      "member_count": 14464,
+      "source_access": "provider downloaded research archive; no redistribution permission asserted",
+      "raw_observable_fields": [
+        "from",
+        "to"
+      ],
+      "fit_population": "all observed raw contracts, transductive label-blind"
+    }
+  ],
+  "labels_sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+  "label_mapping": {
+    "source_field": "Category",
+    "positive_code": 0,
+    "binary_positive": 1,
+    "others": 0,
+    "join": "chain-qualified normalized contract ID",
+    "unknown": "-1 / invalid mask"
+  },
+  "provider_readme_sha256": "f72c335251c0aea7bf96e494e502416eba2628d23ba41c4f7a54962e43a2b7db",
+  "source_mapping_code_sha256": "d0a1ddccb1bc51c867122fc3295970c982dcfa39185e752fd51ee4c1f84b967a"
+}

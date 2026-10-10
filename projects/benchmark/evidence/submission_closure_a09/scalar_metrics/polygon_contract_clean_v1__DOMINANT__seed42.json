@@ -1,0 +1,58 @@
+{
+  "run_id": "polygon_contract_clean_v1__DOMINANT__seed42",
+  "dataset": "Polygon",
+  "model": "DOMINANT",
+  "seed": "42",
+  "original_private_metric_sha256": "e77a6716b56d9ebfc2c5eb65d66e34c9df72d4517ca52c505eafe341e43b962d",
+  "metrics": {
+    "ap": 0.13908269284063998,
+    "roc_auc": 0.6755494505494505,
+    "test_total": 471,
+    "test_positives": 16,
+    "test_prevalence": 0.03397027600849257,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 471,
+      "validation_positives": 14,
+      "threshold_kind": "finite",
+      "threshold": 2.13131046295166,
+      "validation_confusion": {
+        "tp": 5,
+        "fp": 15,
+        "fn": 9,
+        "tn": 442,
+        "precision": 0.25,
+        "recall": 0.35714285714285715,
+        "f1": 0.29411764705882354
+      }
+    },
+    "thresholded": {
+      "tp": 4,
+      "fp": 11,
+      "fn": 12,
+      "tn": 444,
+      "precision": 0.26666666666666666,
+      "recall": 0.25,
+      "f1": 0.25806451612903225
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 5,
+        "precision": 0.4,
+        "recall": 0.125,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 24,
+        "precision": 0.16666666666666666,
+        "recall": 0.25,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

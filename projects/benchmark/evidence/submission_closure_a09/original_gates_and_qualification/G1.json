@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "feature_spec_sha256": "f263fcdce5642d902caf6788dfa8d16b46f6772e7aed8ef5221cc3fd94453b93",
+  "relation_spec_sha256": "0ba3937a60d3ed498ca9879e0e4989f1fbc5b923d3f8745aa38ad8c692f5204b",
+  "amendment_sha256": "37073698d0c0b7420a0495fd5cdcc72e7f6371fc66aad10e6fccc117f4a13b66",
+  "scope": "observable CSV fields and pre-score construction policy established from available provider ZIP schema; labels joined separately"
+}

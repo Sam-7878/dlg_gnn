@@ -1,0 +1,243 @@
+{
+  "status": "PASS",
+  "time": "2026-10-09T14:57:52.298793+00:00",
+  "results": [
+    {
+      "chain": "polygon",
+      "status": "PASS",
+      "N": 2353,
+      "E": 15368,
+      "F": 8,
+      "positive_count": 62,
+      "unknown_count": 0,
+      "raw_only_two_builds_equal": true,
+      "raw_build_without_label_argument": true,
+      "counterfactual_scope": "Entire raw observable construction A/B has no labels interface; four separate whole-population target attachments plus unavailable-label rejection; no learned encoder",
+      "label_conditions": [
+        {
+          "condition": "original",
+          "x_hash": "c82af686366783681caf79d2a7215d9d2380a203b55cf4954645db72c86c0992",
+          "edge_hash": "d6f826da8bd2b37b9a0df60864cc94818ea2b681bdb1d17fad35aef440871659",
+          "label_hash": "b75df91703d00a58d9e76a0d9857e40c4987e995ad83560019a8707675250182"
+        },
+        {
+          "condition": "permuted",
+          "x_hash": "c82af686366783681caf79d2a7215d9d2380a203b55cf4954645db72c86c0992",
+          "edge_hash": "d6f826da8bd2b37b9a0df60864cc94818ea2b681bdb1d17fad35aef440871659",
+          "label_hash": "e6dd2b0dee273a53fb4f8a569b2e9c53affcd51dd9e62cd4c536c0f85565f1b4"
+        },
+        {
+          "condition": "all_zero",
+          "x_hash": "c82af686366783681caf79d2a7215d9d2380a203b55cf4954645db72c86c0992",
+          "edge_hash": "d6f826da8bd2b37b9a0df60864cc94818ea2b681bdb1d17fad35aef440871659",
+          "label_hash": "d9251f41dc6d5010e9aad7c3df77d1fd84b203965f538def763a3fd83edbdfd6"
+        },
+        {
+          "condition": "all_one",
+          "x_hash": "c82af686366783681caf79d2a7215d9d2380a203b55cf4954645db72c86c0992",
+          "edge_hash": "d6f826da8bd2b37b9a0df60864cc94818ea2b681bdb1d17fad35aef440871659",
+          "label_hash": "85f80cb7c3dcd28a1c1cc3d2edd5aa23d6e23e2266980a4f10b117bf6e644516"
+        }
+      ],
+      "row_shuffle_invariant": true,
+      "unique_feature_rows": 2347,
+      "unique_normalized_directions": 2347,
+      "zero_norm_rows": 0,
+      "column_variance": [
+        1.0000011920928955,
+        0.9999985694885254,
+        1.0000003576278687,
+        1.0000001192092896,
+        0.9999983310699463,
+        1.0000041723251343,
+        1.0000014305114746,
+        1.0000022649765015
+      ],
+      "column_min": [
+        -1.806052327156067,
+        -1.9350398778915405,
+        -2.337158203125,
+        -2.3618574142456055,
+        -2.461052894592285,
+        -0.12772540748119354,
+        -1.3632806539535522,
+        -2.0021870136260986
+      ],
+      "column_max": [
+        2.262082576751709,
+        2.126682996749878,
+        1.7821780443191528,
+        1.7900563478469849,
+        1.994337558746338,
+        29.74700164794922,
+        2.907695770263672,
+        1.3022964000701904
+      ],
+      "degree_min": 5,
+      "degree_max": 12,
+      "isolates": 0,
+      "self_loops": 0,
+      "content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f"
+    },
+    {
+      "chain": "bsc",
+      "status": "PASS",
+      "N": 7499,
+      "E": 48462,
+      "F": 8,
+      "positive_count": 1105,
+      "unknown_count": 0,
+      "raw_only_two_builds_equal": true,
+      "raw_build_without_label_argument": true,
+      "counterfactual_scope": "Entire raw observable construction A/B has no labels interface; four separate whole-population target attachments plus unavailable-label rejection; no learned encoder",
+      "label_conditions": [
+        {
+          "condition": "original",
+          "x_hash": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6",
+          "edge_hash": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa",
+          "label_hash": "80c17d8aa67d48addf1479aaac69374264c2ec75a6d08ab9b5dafc94f588b15a"
+        },
+        {
+          "condition": "permuted",
+          "x_hash": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6",
+          "edge_hash": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa",
+          "label_hash": "6ea64f90eeb09817df1c9e7b9114ac37d72739130e58a89cbfd388710e061d1b"
+        },
+        {
+          "condition": "all_zero",
+          "x_hash": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6",
+          "edge_hash": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa",
+          "label_hash": "d98342cd24835c8d4636ddfafa40fc38e3fa0fb6319af5bd4619a264bab2ad2d"
+        },
+        {
+          "condition": "all_one",
+          "x_hash": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6",
+          "edge_hash": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa",
+          "label_hash": "df4774b121694884cfbd93891eafe48f8401fdc1347bc899067fb4fd55b96609"
+        }
+      ],
+      "row_shuffle_invariant": true,
+      "unique_feature_rows": 7418,
+      "unique_normalized_directions": 7418,
+      "zero_norm_rows": 0,
+      "column_variance": [
+        1.0000017881393433,
+        0.9999992251396179,
+        0.9999966621398926,
+        0.9999991655349731,
+        0.9999974966049194,
+        0.9999648928642273,
+        0.9999902844429016,
+        0.9999995827674866
+      ],
+      "column_min": [
+        -2.0870919227600098,
+        -2.040969133377075,
+        -2.109816312789917,
+        -2.3283426761627197,
+        -2.5174472332000732,
+        -0.15850307047367096,
+        -1.275944709777832,
+        -2.3059422969818115
+      ],
+      "column_max": [
+        2.488459587097168,
+        1.8562556505203247,
+        1.413764238357544,
+        1.5291889905929565,
+        2.0278124809265137,
+        27.387714385986328,
+        2.7223615646362305,
+        1.6771488189697266
+      ],
+      "degree_min": 5,
+      "degree_max": 13,
+      "isolates": 0,
+      "self_loops": 0,
+      "content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162"
+    },
+    {
+      "chain": "ethereum",
+      "status": "PASS",
+      "N": 14464,
+      "E": 95098,
+      "F": 8,
+      "positive_count": 6031,
+      "unknown_count": 0,
+      "raw_only_two_builds_equal": true,
+      "raw_build_without_label_argument": true,
+      "counterfactual_scope": "Entire raw observable construction A/B has no labels interface; four separate whole-population target attachments plus unavailable-label rejection; no learned encoder",
+      "label_conditions": [
+        {
+          "condition": "original",
+          "x_hash": "1f81598e6f137ec99fe151ffd618d71bac0abbaf9be017c4ad6167303adbe775",
+          "edge_hash": "88fde00cb5d99251d1931fe1bc92735d7f27ecbce41bc2be58e5d313dfd208e9",
+          "label_hash": "898b3a7d70edc90ba56e4e71d434e06029703af5f975406082badd27bb3da0b1"
+        },
+        {
+          "condition": "permuted",
+          "x_hash": "1f81598e6f137ec99fe151ffd618d71bac0abbaf9be017c4ad6167303adbe775",
+          "edge_hash": "88fde00cb5d99251d1931fe1bc92735d7f27ecbce41bc2be58e5d313dfd208e9",
+          "label_hash": "f27b41055347254317ff6ad4486630c2297c5a4261a20b06c09edb5360698762"
+        },
+        {
+          "condition": "all_zero",
+          "x_hash": "1f81598e6f137ec99fe151ffd618d71bac0abbaf9be017c4ad6167303adbe775",
+          "edge_hash": "88fde00cb5d99251d1931fe1bc92735d7f27ecbce41bc2be58e5d313dfd208e9",
+          "label_hash": "d9146b2dc6d94e09b1f882f3c5ad3afd4661707b66376e13d0cf430205b90986"
+        },
+        {
+          "condition": "all_one",
+          "x_hash": "1f81598e6f137ec99fe151ffd618d71bac0abbaf9be017c4ad6167303adbe775",
+          "edge_hash": "88fde00cb5d99251d1931fe1bc92735d7f27ecbce41bc2be58e5d313dfd208e9",
+          "label_hash": "c0105fa663d9724e4369445fb889b06453e937720871770871d64597828e549b"
+        }
+      ],
+      "row_shuffle_invariant": true,
+      "unique_feature_rows": 14108,
+      "unique_normalized_directions": 14108,
+      "zero_norm_rows": 0,
+      "column_variance": [
+        1.0000011920928955,
+        0.9999935030937195,
+        0.9999985098838806,
+        0.9999964833259583,
+        1.0000028610229492,
+        0.999899685382843,
+        1.0000494718551636,
+        0.9999916553497314
+      ],
+      "column_min": [
+        -1.9307368993759155,
+        -2.0416390895843506,
+        -2.6636505126953125,
+        -2.6037802696228027,
+        -2.515153408050537,
+        -0.16639786958694458,
+        -0.8007334470748901,
+        -1.3076965808868408
+      ],
+      "column_max": [
+        2.916545867919922,
+        1.9547815322875977,
+        1.7289361953735352,
+        1.6785836219787598,
+        2.093189239501953,
+        41.484737396240234,
+        2.93279767036438,
+        2.4961206912994385
+      ],
+      "degree_min": 5,
+      "degree_max": 26,
+      "isolates": 0,
+      "self_loops": 0,
+      "content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859"
+    }
+  ],
+  "code_hashes": {
+    "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+    "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+    "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+    "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+  }
+}

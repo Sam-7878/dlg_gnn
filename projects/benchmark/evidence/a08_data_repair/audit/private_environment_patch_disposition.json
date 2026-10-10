@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "path": "evaluation/benchmark/v2/environment/legacy/20261002T145148Z/tracked-working-tree.patch",
+  "local_bytes": 2591468,
+  "unchanged_local_sha256": "d035d823ef446ec7cc49e404f3e795ae7cc411033d4475dd8f8d46b5e6ce7649",
+  "tracked_index_manuscript_content_observed": true,
+  "action": "untracked only; local working file including user edits preserved; .gitignore exclusion added",
+  "history_rewrite": false,
+  "commit_or_push": false,
+  "scope": "Legacy patch includes LaTeX generator source/templates. Its local history is preserved and excluded from current public evidence. Marker detection alone does not establish the submission status of every embedded template; broader current private boundary audit pending.",
+  "observed_source": "src/gog_fraud/reporting/latex_exporter.py"
+}

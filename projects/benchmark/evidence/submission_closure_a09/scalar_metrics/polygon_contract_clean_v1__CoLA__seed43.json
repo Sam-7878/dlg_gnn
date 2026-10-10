@@ -1,0 +1,58 @@
+{
+  "run_id": "polygon_contract_clean_v1__CoLA__seed43",
+  "dataset": "Polygon",
+  "model": "CoLA",
+  "seed": "43",
+  "original_private_metric_sha256": "9696745a16d40b4f2951b345d2b891f1a662a04d6161a1b00a2c405ab0431629",
+  "metrics": {
+    "ap": 0.02011570710730727,
+    "roc_auc": 0.4023715415019763,
+    "test_total": 471,
+    "test_positives": 11,
+    "test_prevalence": 0.02335456475583864,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 471,
+      "validation_positives": 9,
+      "threshold_kind": "finite",
+      "threshold": -13.25050163269043,
+      "validation_confusion": {
+        "tp": 9,
+        "fp": 433,
+        "fn": 0,
+        "tn": 29,
+        "precision": 0.020361990950226245,
+        "recall": 1.0,
+        "f1": 0.03991130820399113
+      }
+    },
+    "thresholded": {
+      "tp": 10,
+      "fp": 433,
+      "fn": 1,
+      "tn": 27,
+      "precision": 0.022573363431151242,
+      "recall": 0.9090909090909091,
+      "f1": 0.04405286343612335
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

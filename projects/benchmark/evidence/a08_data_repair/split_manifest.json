@@ -1,0 +1,182 @@
+[
+  {
+    "dataset_id": "polygon_contract_clean_v1",
+    "seed": 42,
+    "masks": {
+      "train_mask": "2304d7e38ef8d912ba28bdde514c42dd8ffb9c21543c75341ed83e6dff42949a",
+      "val_mask": "437955e24a8f6129c482a4aac655c4e6f2dbd1fd040d3fa63a43dec9f0ef017c",
+      "test_mask": "61b6f1101fdd78488c464beb288ab85e331b24c9895a3e00bbb1c74afca6d02d"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "polygon_contract_clean_v1",
+    "seed": 43,
+    "masks": {
+      "train_mask": "dfc0f44c63a82d81d2c5857f733c0c1a4813d5433ac686eeccf83153f715623c",
+      "val_mask": "fa03559da3c02d25e0d60d8918d54d59ff4c295801bd4c8ccd3256deb7e638db",
+      "test_mask": "ec2dd2329245338d059b5f9c86b4d6517fcc72f1ff3dc418e80310b5477bf1f9"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "polygon_contract_clean_v1",
+    "seed": 44,
+    "masks": {
+      "train_mask": "9048715247b214565d1bc282ca761646254a6bb90dace1e126b8e78daec7598f",
+      "val_mask": "2dd3541b09218b1835d341280f388524e73b26b6c6cf678a33f4052d54dcab62",
+      "test_mask": "c46a092e22a486444f6e7ab4de6c9526a5eaa93a8322c6f4bb2fbad295073393"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "polygon_contract_clean_v1",
+    "seed": 45,
+    "masks": {
+      "train_mask": "0462d88deb940094fd7a327ea727a89510482e6a5baa11be698c76381aa3f333",
+      "val_mask": "00c26ee374fa90c951b7fa20c282bc11c59d724303e71ea01b7899778f47d26f",
+      "test_mask": "bdf85a17f5444a0b10c458a8406b7e3bbdb3c5f48d0e1a09ac6295d37f319736"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "polygon_contract_clean_v1",
+    "seed": 46,
+    "masks": {
+      "train_mask": "bd9772f6e24740f7d75e2e5171e75c9443de5af38626849b6907aaba59848f5e",
+      "val_mask": "b3da1094709b8a4c9c531c344b18a67123b1510e066df6f84380c817efa54db9",
+      "test_mask": "c2601249853a3ab5f1de70132523c606eed5313c716cf3b2269fbec8fb900d67"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "bsc_contract_clean_v1",
+    "seed": 42,
+    "masks": {
+      "train_mask": "d711f70d88b5970e2fef3b9425d4a0f58120dd3579c517c275c766fa9b950e33",
+      "val_mask": "caabd20179e8b9baa29ac8dd144ee56975e959cc2c94cc952aa09e933ce2644b",
+      "test_mask": "f60a26611939da080925a7d55148f631edca5bac552206ad8379251ff7cab15d"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "bsc_contract_clean_v1",
+    "seed": 43,
+    "masks": {
+      "train_mask": "c13c92c656be7cdc0d1f472fc76335bc03f9e8a0472ad69af99831fcb517d630",
+      "val_mask": "8d2050096bfbc76aea07d9d6fafd85124f31b59f6afb2ba075ea751886cf7995",
+      "test_mask": "f9bc65ea05bce6e8ca0e15603be8dc593763b6af8da07335e9085e094ff4bb32"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "bsc_contract_clean_v1",
+    "seed": 44,
+    "masks": {
+      "train_mask": "9a57cc6ed7540a97bcb78bc25beae06ca9cd26c61dba54f688a6ac833b633bda",
+      "val_mask": "50a156ed2f3749bf31e917ba5ea1fbcea93b8d5415cdab08e286d71a822e75f1",
+      "test_mask": "b0f87c0fb7142068bed832341bf0a9033e07cbab94094450d4266ea4a31516c7"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "bsc_contract_clean_v1",
+    "seed": 45,
+    "masks": {
+      "train_mask": "d4eefd1ed2ed87e83911c69323c753e5342fa3f7faebaedce934bf60ff26d952",
+      "val_mask": "081dbc1fd582ee7d691bbac4da298a241aa05354abbdf32ebf6a5d36619dc1d0",
+      "test_mask": "f9518c567552864e24f69fe1803f544a680ac4e714095db00a4b31ca81c723a7"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "bsc_contract_clean_v1",
+    "seed": 46,
+    "masks": {
+      "train_mask": "eadede871c685c5b3165d616602d8de459345832aa926e076f6a395118639c9c",
+      "val_mask": "2bd3f1a9deba07cf3310e7acd904d9805784d5eb067396812165e85f139759f7",
+      "test_mask": "7434c0bf52b0b4fa2e40c008bb54e04c054fc6df601d27d40c9ee06c1f3a7f3e"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "ethereum_contract_clean_v1",
+    "seed": 42,
+    "masks": {
+      "train_mask": "48909901297ed5ac8cc1efec738ddf4b3c295b01479841f18fe8602795ab05d4",
+      "val_mask": "bf191bde8c099893e6d92433e95443ec5d9c4716fcfc98fc5178f780e600b277",
+      "test_mask": "f519074edf5e6ecec345eedcfeb27dac02e40804e0dfde596ee6fbdd0ea3de0a"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "ethereum_contract_clean_v1",
+    "seed": 43,
+    "masks": {
+      "train_mask": "dcba1efa604aefd4330b20d9a376a53f8151192ec45128c9d6034741bb779f83",
+      "val_mask": "ceb7cc35d71147943ceb0a5e4ab48abbf9bd653b5383b0a5c2cf8335f793f83b",
+      "test_mask": "f311f2c7a583a0f85d1aceba6124a0fbca725f6eb0e12a1ae6e12f8ad9f869db"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "ethereum_contract_clean_v1",
+    "seed": 44,
+    "masks": {
+      "train_mask": "e625b8f36cbc90cbe77feebfa65ae745071397401b93b818dad55ad7d0a5d85e",
+      "val_mask": "9a608ade9be9dbf9dee440b6a3a0fc26d226eed0fca962663450ffcdefe94713",
+      "test_mask": "3627942aa1e1f45cc8a90753c7d579c6323165bcf0bc2cd6e255d0ac5b3a33de"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "ethereum_contract_clean_v1",
+    "seed": 45,
+    "masks": {
+      "train_mask": "fe4e05d8e87e07a8671be340dd9d1960379245052fdc2f41eb44bcaa42e1d1b7",
+      "val_mask": "fb0300a016fb36797d655f8cfacda7a5b2db0f9bf228a5f0096d176d82807eb5",
+      "test_mask": "35271a5c27412958b9db773cbf9e9aa2eef771decc6b1da8b3c65fc8415871c4"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  },
+  {
+    "dataset_id": "ethereum_contract_clean_v1",
+    "seed": 46,
+    "masks": {
+      "train_mask": "cfeaa7eb3768198e7809fb046935584f60d690a8180295c3ff3f3a80eb093bff",
+      "val_mask": "129863dc851ce32ba7fc3e2a62b82aca4488f2357557fb119d303c5d271bf565",
+      "test_mask": "27fce2baab415b3dd129a70b1e867132666a23dd84ddaaaf149103e53626b95a"
+    },
+    "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+    "prior_membership_preserved": false,
+    "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+  }
+]

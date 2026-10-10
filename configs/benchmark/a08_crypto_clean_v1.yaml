@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "protocol_id": "DLG-BENCH-A08-DATA-REPAIR-01",
+  "campaign_id": "benchmark_a08_crypto_clean_v1",
+  "raw_root": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data",
+  "legacy_provider_root": "/mnt/d/_Work/_data/GoG",
+  "relation": {"mode": "raw_feature_knn", "metric": "euclidean", "k": 5, "weights": "binary", "tie_rule": "stable contract ID ascending", "symmetrization": "undirected union", "self_loops": false},
+  "preprocessing": "log1p counts, unchanged fractions, population z-score, transductive label-blind full raw population",
+  "models": ["DOMINANT", "AnomalyDAE", "CoLA", "GADNR", "OCGNN", "DLG-Base", "DLG-Aug"],
+  "seeds": [42, 43, 44, 45, 46],
+  "epochs": {"ethereum": 30, "bsc": 40, "polygon": 40},
+  "local_epochs": 20,
+  "gpu_uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+  "guard_scope": "per_model_dataset_seed",
+  "guard_seconds": 86400,
+  "threshold": {"candidate_rule": "distinct validation raw score values plus reject_all", "operator": ">=", "objective": "maximum validation F1", "tie_rule": "largest threshold", "missing_validation_positive": "UNDEFINED_VALIDATION_SUPPORT"},
+  "alert_budgets": [0.01, 0.05],
+  "alert_count": "max(1,ceil(q*N_test))",
+  "alert_tie_rule": "stable node ID ascending",
+  "score_orientation": "higher means anomalous; no label-based inversion",
+  "publication": "author-local manuscript; no push or submission authorized"
+}

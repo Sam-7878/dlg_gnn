@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "pdf_review_sha256": "64d47718a767df9e1e284c38ca556c94e9f65a6990692be87e1d591aa14894a3",
+  "paper_number_crosswalk_sha256": "733bf6dbd0c7193aa90005535ca2a0f1a739472ab6dd29cbaac6ad506a20c68c",
+  "paper_number_registry_sha256": "8a202f0b0c709d9c205afaf7e4c000d6cebffd25e0c16892636645b680671aff",
+  "claim_evidence_map_sha256": "e69a9bb09c9291b3288735fa7edc1f07be82949a44c395069b05d76db2332d2f",
+  "scope": "actual both-PDF every-page review plus all registered numeric displays"
+}

@@ -1,0 +1,11 @@
+# A08 data correction and reevaluation — active work
+
+A08 supersedes the old crypto input for current inference only after its new input freeze. Historical A05/A06 evidence and the first unqualified relation-builder migration are retained with distinct identities and are not approved sources for the new campaign.
+
+Authoritative correction policy: `projects/benchmark/protocols/A08_DATA_REPAIR_AMENDMENT.md`; config: `configs/benchmark/a08_crypto_clean_v1.yaml`. The original provider CSV ZIPs supply all contract endpoint observations. Eight declared counts/fractions replace unexplained inherited embeddings. Label-blind full-population standardization and deterministic k=5 Euclidean neighbors produce a binary undirected feature-similarity graph. Labels join separately by stable chain-qualified addresses; the shared graph-level relation API is preserved and strict node views are created only at the benchmark boundary.
+
+Original CSV population includes more contracts than the legacy converted JSON artifacts; new stable-address masks and their reason are recorded, not mislabeled as preserved historical membership. Seeds42–46, Ethereum30/BSC·Polygon40 global epochs, Aug20 local epochs, validation-only distinct-score maximum-F1 threshold, higher-is-anomalous orientation and24-hour/model-dataset-seed guard are fixed before new predictive scores. Old/new scores are never combined within a cell.
+
+Current completion status is recorded in `projects/benchmark/reports/a08_data_repair/FINAL_ACCEPTANCE_A08.json`. Unit/API and small CUDA qualification PASS do not imply new training/PDF or scientific FINAL_PASS. G0–G10 include actual two-workspace raw-only builds, target/label-independent observations, full affected comparison matrix, raw-score recomputation, dynamic statistics, private manuscript/PDF generation, every-page numeric/visual review and clean public/local reproduction.
+
+Source and project placement follow the existing shared-src/project-facade architecture. Raw inputs, addresses, checkpoints and manuscript material remain author-local under explicit distribution boundaries. No automatic push/history rewrite/submission is authorized. Stream/TDS API regressions and historical shared-input impacts are reported separately; Benchmark PASS is not family-wide scientific PASS.

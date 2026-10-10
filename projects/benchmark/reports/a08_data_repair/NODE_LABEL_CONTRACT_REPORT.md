@@ -1,0 +1,9 @@
+# A08 node target repair — execution in progress
+
+The shared hierarchical `build_level2_graph` API was not changed. Its graph-level y remains legitimate. `benchmark_node_adapter.node_view` creates a separate contract-node view and rejects scalar node targets, invalid lengths/types/coding, target-alias conflicts, duplicate IDs, nonfinite features/weights, invalid edges and overlapping/invalid masks. Isolated nodes are retained by explicit num_nodes and the stable ID list.
+
+The two historical A03 loaders now require an explicit frozen A08 manifest; no level2/hybrid/knn path fallback or unsafe external pickle load occurs. Historical script main entrypoints reject direct execution to prevent overwriting old campaign evidence. The generator entrypoint routes to the raw-only versioned facade. Previous source bytes are preserved locally in source_history/.
+
+Execution: `PYTHONPATH=src .venv_cuda/bin/python -m pytest tests/benchmark/a08/test_data_repair.py tests/dlg_gnn/unit/test_phase3_level2.py`: **32 passed**, 0 failures/errors/skips. The first collection attempt omitted PYTHONPATH and failed import; this was corrected without environment installation. JUnit bytes/hash and test-source hashes are retained in audit/regression_tests.json.
+
+Actual three-chain node adapters were subsequently validated on both whole raw builds, with N=2353/7499/14464 for Polygon/BSC/Ethereum, N-length targets and stable IDs. `audit/counterfactual_and_rebuild.json` binds the actual contract checks, and `audit/raw_full_counterfactual.json` additionally records all five complete raw-to-relation conditions per chain. G2–G5 passed and fresh primary GPU training subsequently completed105/105. Fixture/API and real-input qualification remain distinct from full acceptance; current G6–G10/FINAL_PASS status is in FINAL_ACCEPTANCE_A08.json.

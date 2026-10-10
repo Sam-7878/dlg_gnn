@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "relation_modes": ["raw_feature_knn"],
+  "metric": "squared Euclidean distance on standardized raw-derived feature vectors",
+  "k": 5,
+  "tie_policy": "ascending chain-qualified canonical contract address, fixed before scores",
+  "orientation": "each row chooses k nonself neighbors; final graph is symmetric binary union",
+  "weight_definition": "unit/binary for all models; distances not edge weights",
+  "symmetrization": "union",
+  "duplicate_reduction": "binary set union",
+  "self_loop_policy": "no input loops; model-specific GCN normalization loops declared by original model",
+  "source_population": "all contract CSV files in original chain ZIP, including empty CSVs",
+  "normalization": "global transductive label-blind z-score, shared by all models/seeds",
+  "implementation_symbol": "gog_fraud.data.crypto_raw.deterministic_knn",
+  "computation": "float64 block_size=256; direct squared differences; stable argsort; no full NxN allocation",
+  "cosine": "not the primary metric; fully identical normalized directions fail in cosine diagnostic mode",
+  "interpretation": "feature-similarity relation between token contracts, not a direct contract-to-contract transfer or observed common-wallet edge",
+  "selection": "fixed from source schema and degeneracy audit before new predictive scores; no HPO"
+}

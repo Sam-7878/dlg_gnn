@@ -1,0 +1,19 @@
+{
+  "status": "PASS_LOCAL_AUTHORIZATION_PENDING",
+  "current_pdf_sha256": [
+    "83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923",
+    "4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01"
+  ],
+  "actual_pages_reviewed": 51,
+  "source_resolved_displays": 1394,
+  "companion_zip_files": 189,
+  "indexed_payload_files": 187,
+  "duplicate_zip_entries": 0,
+  "original_A08_files_unchanged": 374,
+  "current_execution_source_files": 57,
+  "clean_source_compilation": "2/2 PASS_BYTE_IDENTICAL",
+  "outer_documents_separate": true,
+  "submission_ready": false,
+  "approval": "PENDING_C5",
+  "publication": "NOT_EXECUTED"
+}

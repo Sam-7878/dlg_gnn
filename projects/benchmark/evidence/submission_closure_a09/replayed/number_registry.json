@@ -1,0 +1,3831 @@
+{
+  "datasets": 13,
+  "models": 7,
+  "primary_supported_pairs": 84,
+  "primary_successes": 420,
+  "external_successes": 35,
+  "cells": [
+    {
+      "dataset": "Elliptic",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.06817041207063056,
+      "sd": 0.003592369652326968,
+      "run_ids": [
+        "b10f80dd-99d3-443b-af20-35f098a3a1a5",
+        "6226f756-3ff2-4760-bb58-bfbb9dc50489",
+        "3a8b1001-473d-4ca6-a745-0efd673b0fc5",
+        "8fb42dbe-29e7-4514-98e6-a5988f97f369",
+        "7b4b0ea3-806f-4ece-9b1c-f59ecd369017"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.34319194245342177,
+      "sd": 0.036652567531742127,
+      "run_ids": [
+        "b10f80dd-99d3-443b-af20-35f098a3a1a5",
+        "6226f756-3ff2-4760-bb58-bfbb9dc50489",
+        "3a8b1001-473d-4ca6-a745-0efd673b0fc5",
+        "8fb42dbe-29e7-4514-98e6-a5988f97f369",
+        "7b4b0ea3-806f-4ece-9b1c-f59ecd369017"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.18501941137907013,
+      "sd": 0.005382263376164068,
+      "run_ids": [
+        "b10f80dd-99d3-443b-af20-35f098a3a1a5",
+        "6226f756-3ff2-4760-bb58-bfbb9dc50489",
+        "3a8b1001-473d-4ca6-a745-0efd673b0fc5",
+        "8fb42dbe-29e7-4514-98e6-a5988f97f369",
+        "7b4b0ea3-806f-4ece-9b1c-f59ecd369017"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.05376733050077579,
+      "sd": 0.0018555307128314197,
+      "run_ids": [
+        "b493f53b-a256-4c4b-9f2d-50d7ba74d074",
+        "fbf63ea6-a49f-4e53-bf7e-664bb854cf36",
+        "3a36f218-57c7-4939-862a-7088129c93a6",
+        "e2af8377-b6ad-45f3-85ac-d6d17d993af9",
+        "728397ae-b072-4fc3-84aa-1a44a075504d"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.12955793030158658,
+      "sd": 0.02456135951551125,
+      "run_ids": [
+        "b493f53b-a256-4c4b-9f2d-50d7ba74d074",
+        "fbf63ea6-a49f-4e53-bf7e-664bb854cf36",
+        "3a36f218-57c7-4939-862a-7088129c93a6",
+        "e2af8377-b6ad-45f3-85ac-d6d17d993af9",
+        "728397ae-b072-4fc3-84aa-1a44a075504d"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.17781081901989626,
+      "sd": 7.84123041135168e-05,
+      "run_ids": [
+        "b493f53b-a256-4c4b-9f2d-50d7ba74d074",
+        "fbf63ea6-a49f-4e53-bf7e-664bb854cf36",
+        "3a36f218-57c7-4939-862a-7088129c93a6",
+        "e2af8377-b6ad-45f3-85ac-d6d17d993af9",
+        "728397ae-b072-4fc3-84aa-1a44a075504d"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.0946502240341828,
+      "sd": 0.0021084213811036613,
+      "run_ids": [
+        "345c74ad-5004-4e60-8071-66ffce98120d",
+        "2a68fc5c-ff7e-4403-a236-b2ef26b5f859",
+        "cd3dffd7-a596-4b1c-91f3-b09e54224211",
+        "ec06ecb8-8e45-4904-9571-2b55c66dbfce",
+        "c514801a-2635-41ad-8b30-9ef214f03c78"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.4877650146931643,
+      "sd": 0.008772895850048595,
+      "run_ids": [
+        "345c74ad-5004-4e60-8071-66ffce98120d",
+        "2a68fc5c-ff7e-4403-a236-b2ef26b5f859",
+        "cd3dffd7-a596-4b1c-91f3-b09e54224211",
+        "ec06ecb8-8e45-4904-9571-2b55c66dbfce",
+        "c514801a-2635-41ad-8b30-9ef214f03c78"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.17821566442290931,
+      "sd": 0.0002623688062430255,
+      "run_ids": [
+        "345c74ad-5004-4e60-8071-66ffce98120d",
+        "2a68fc5c-ff7e-4403-a236-b2ef26b5f859",
+        "cd3dffd7-a596-4b1c-91f3-b09e54224211",
+        "ec06ecb8-8e45-4904-9571-2b55c66dbfce",
+        "c514801a-2635-41ad-8b30-9ef214f03c78"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.06666657363820841,
+      "sd": 0.004618471480860554,
+      "run_ids": [
+        "d60a566a-77dc-4ac2-82b5-496d9107ea53",
+        "ab399ee7-7bfb-424f-ade8-b0005a12a927",
+        "375acc0f-2ce2-4914-b78b-c4884fdf707d",
+        "990946ea-f4f4-4701-8777-ce5be29e0ef7",
+        "0b4f774f-3649-4137-b74e-cc5a71745074"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.3140422472716629,
+      "sd": 0.04663023070745314,
+      "run_ids": [
+        "d60a566a-77dc-4ac2-82b5-496d9107ea53",
+        "ab399ee7-7bfb-424f-ade8-b0005a12a927",
+        "375acc0f-2ce2-4914-b78b-c4884fdf707d",
+        "990946ea-f4f4-4701-8777-ce5be29e0ef7",
+        "0b4f774f-3649-4137-b74e-cc5a71745074"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.17959016176250955,
+      "sd": 0.0023096864954604457,
+      "run_ids": [
+        "d60a566a-77dc-4ac2-82b5-496d9107ea53",
+        "ab399ee7-7bfb-424f-ade8-b0005a12a927",
+        "375acc0f-2ce2-4914-b78b-c4884fdf707d",
+        "990946ea-f4f4-4701-8777-ce5be29e0ef7",
+        "0b4f774f-3649-4137-b74e-cc5a71745074"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.0686545048220036,
+      "sd": 0.002205338997120172,
+      "run_ids": [
+        "bbd00c84-2739-4081-8ab8-9ed4717cce3d",
+        "1da4235b-cfd3-4210-bba0-639baa3eadae",
+        "6a237752-6534-4eee-85b2-9a96604e07fe",
+        "300d2bcc-d886-4678-a5be-8d69bf027dd0",
+        "23939a22-8133-4288-a9f7-2ca896190625"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.3499593154894237,
+      "sd": 0.022123014723235537,
+      "run_ids": [
+        "bbd00c84-2739-4081-8ab8-9ed4717cce3d",
+        "1da4235b-cfd3-4210-bba0-639baa3eadae",
+        "6a237752-6534-4eee-85b2-9a96604e07fe",
+        "300d2bcc-d886-4678-a5be-8d69bf027dd0",
+        "23939a22-8133-4288-a9f7-2ca896190625"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.1817449028444182,
+      "sd": 0.001562978685473262,
+      "run_ids": [
+        "bbd00c84-2739-4081-8ab8-9ed4717cce3d",
+        "1da4235b-cfd3-4210-bba0-639baa3eadae",
+        "6a237752-6534-4eee-85b2-9a96604e07fe",
+        "300d2bcc-d886-4678-a5be-8d69bf027dd0",
+        "23939a22-8133-4288-a9f7-2ca896190625"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.10365343819379536,
+      "sd": 0.0042946350836190195,
+      "run_ids": [
+        "ffa8454a-4589-4661-b281-1a319163649b",
+        "babe5d3b-637c-49d8-a710-9aba478d08e2",
+        "9d5796dc-33e3-4747-95a6-3f68ec0b6676",
+        "7c50f388-aa94-47fb-87b7-1774b434e8d3",
+        "04a77f8a-ba5b-4012-b0c0-b97531dea84f"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.570530094472471,
+      "sd": 0.022753510846510658,
+      "run_ids": [
+        "ffa8454a-4589-4661-b281-1a319163649b",
+        "babe5d3b-637c-49d8-a710-9aba478d08e2",
+        "9d5796dc-33e3-4747-95a6-3f68ec0b6676",
+        "7c50f388-aa94-47fb-87b7-1774b434e8d3",
+        "04a77f8a-ba5b-4012-b0c0-b97531dea84f"
+      ]
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.2239361469670577,
+      "sd": 0.014659239858621604,
+      "run_ids": [
+        "ffa8454a-4589-4661-b281-1a319163649b",
+        "babe5d3b-637c-49d8-a710-9aba478d08e2",
+        "9d5796dc-33e3-4747-95a6-3f68ec0b6676",
+        "7c50f388-aa94-47fb-87b7-1774b434e8d3",
+        "04a77f8a-ba5b-4012-b0c0-b97531dea84f"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.010232161067880515,
+      "sd": 0.00015467081789768554,
+      "run_ids": [
+        "38a9e66a-449d-4c5a-94a8-a1555c0dc50c",
+        "ccd3b4f0-164a-4da2-8ec5-40f1409a0aee",
+        "ed88fc86-d29d-446f-8e73-85b92b71d888",
+        "d73fa977-3307-4756-901d-5d6e1c126de2",
+        "0b8d5078-6b28-4c3a-bab7-471f5d854e5c"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.40876355233018513,
+      "sd": 0.00488407810633016,
+      "run_ids": [
+        "38a9e66a-449d-4c5a-94a8-a1555c0dc50c",
+        "ccd3b4f0-164a-4da2-8ec5-40f1409a0aee",
+        "ed88fc86-d29d-446f-8e73-85b92b71d888",
+        "d73fa977-3307-4756-901d-5d6e1c126de2",
+        "0b8d5078-6b28-4c3a-bab7-471f5d854e5c"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.02499310027231341,
+      "sd": 2.9039564142972067e-05,
+      "run_ids": [
+        "38a9e66a-449d-4c5a-94a8-a1555c0dc50c",
+        "ccd3b4f0-164a-4da2-8ec5-40f1409a0aee",
+        "ed88fc86-d29d-446f-8e73-85b92b71d888",
+        "d73fa977-3307-4756-901d-5d6e1c126de2",
+        "0b8d5078-6b28-4c3a-bab7-471f5d854e5c"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.011941393426693526,
+      "sd": 0.003119942511230144,
+      "run_ids": [
+        "A05-DGraphFin-AnomalyDAE-seed42",
+        "A05-DGraphFin-AnomalyDAE-seed43",
+        "A05-DGraphFin-AnomalyDAE-seed44",
+        "A05-DGraphFin-AnomalyDAE-seed45",
+        "A05-DGraphFin-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.4691156857012495,
+      "sd": 0.09710734790568139,
+      "run_ids": [
+        "A05-DGraphFin-AnomalyDAE-seed42",
+        "A05-DGraphFin-AnomalyDAE-seed43",
+        "A05-DGraphFin-AnomalyDAE-seed44",
+        "A05-DGraphFin-AnomalyDAE-seed45",
+        "A05-DGraphFin-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.02860364054190722,
+      "sd": 0.004709739735148367,
+      "run_ids": [
+        "A05-DGraphFin-AnomalyDAE-seed42",
+        "A05-DGraphFin-AnomalyDAE-seed43",
+        "A05-DGraphFin-AnomalyDAE-seed44",
+        "A05-DGraphFin-AnomalyDAE-seed45",
+        "A05-DGraphFin-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.012676875778330904,
+      "sd": 0.0002921919542055879,
+      "run_ids": [
+        "31eca9a3-a9bd-44fd-a9e9-a983df330b08",
+        "e44785a8-d3d0-4b86-bd5a-bc7b355e9038",
+        "a2e28894-fcd2-47bc-ab61-e62c1e5d2ba8",
+        "591a0ae3-3c01-45a7-a33c-aaf29122ebc1",
+        "b6e2fe5c-42d3-46b5-9114-971a0ef18db2"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.49936101373608366,
+      "sd": 0.008843385082110787,
+      "run_ids": [
+        "31eca9a3-a9bd-44fd-a9e9-a983df330b08",
+        "e44785a8-d3d0-4b86-bd5a-bc7b355e9038",
+        "a2e28894-fcd2-47bc-ab61-e62c1e5d2ba8",
+        "591a0ae3-3c01-45a7-a33c-aaf29122ebc1",
+        "b6e2fe5c-42d3-46b5-9114-971a0ef18db2"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.0252748307966994,
+      "sd": 0.0005746487176618681,
+      "run_ids": [
+        "31eca9a3-a9bd-44fd-a9e9-a983df330b08",
+        "e44785a8-d3d0-4b86-bd5a-bc7b355e9038",
+        "a2e28894-fcd2-47bc-ab61-e62c1e5d2ba8",
+        "591a0ae3-3c01-45a7-a33c-aaf29122ebc1",
+        "b6e2fe5c-42d3-46b5-9114-971a0ef18db2"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.01257832427374055,
+      "sd": 0.0014864570651121965,
+      "run_ids": [
+        "9d6cfc8c-f6a7-4ee3-a44b-5c5bf480f011",
+        "e93376df-a501-496b-91bd-325dfb822cc1",
+        "dc748220-1d1f-40b0-abf0-297359e1f7d3",
+        "5b024914-10a4-42c1-b0f5-8ff6745cf7ce",
+        "77b3c388-4582-4f64-aaba-10e3d00a76ae"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.49505858391372515,
+      "sd": 0.048559342416693047,
+      "run_ids": [
+        "9d6cfc8c-f6a7-4ee3-a44b-5c5bf480f011",
+        "e93376df-a501-496b-91bd-325dfb822cc1",
+        "dc748220-1d1f-40b0-abf0-297359e1f7d3",
+        "5b024914-10a4-42c1-b0f5-8ff6745cf7ce",
+        "77b3c388-4582-4f64-aaba-10e3d00a76ae"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.02793724496262267,
+      "sd": 0.0033580026736700053,
+      "run_ids": [
+        "9d6cfc8c-f6a7-4ee3-a44b-5c5bf480f011",
+        "e93376df-a501-496b-91bd-325dfb822cc1",
+        "dc748220-1d1f-40b0-abf0-297359e1f7d3",
+        "5b024914-10a4-42c1-b0f5-8ff6745cf7ce",
+        "77b3c388-4582-4f64-aaba-10e3d00a76ae"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.010089006987997539,
+      "sd": 0.00020999650179871938,
+      "run_ids": [
+        "17a2fd86-7aa8-4e6c-a7c0-d5290253d2d6",
+        "ccf71171-d661-4141-8c7b-69eabf6f44e7",
+        "8cf4598f-0178-4240-a07c-da7f6fac18a6",
+        "a25a5996-9994-42c5-9a40-5e5be4b539bd",
+        "b40a757e-c4d3-4030-a7ff-a0ce0e196e91"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.4091737417154618,
+      "sd": 0.008571190674706157,
+      "run_ids": [
+        "17a2fd86-7aa8-4e6c-a7c0-d5290253d2d6",
+        "ccf71171-d661-4141-8c7b-69eabf6f44e7",
+        "8cf4598f-0178-4240-a07c-da7f6fac18a6",
+        "a25a5996-9994-42c5-9a40-5e5be4b539bd",
+        "b40a757e-c4d3-4030-a7ff-a0ce0e196e91"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.025007983830343507,
+      "sd": 7.962131612577554e-06,
+      "run_ids": [
+        "17a2fd86-7aa8-4e6c-a7c0-d5290253d2d6",
+        "ccf71171-d661-4141-8c7b-69eabf6f44e7",
+        "8cf4598f-0178-4240-a07c-da7f6fac18a6",
+        "a25a5996-9994-42c5-9a40-5e5be4b539bd",
+        "b40a757e-c4d3-4030-a7ff-a0ce0e196e91"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.01344244480974346,
+      "sd": 0.0016603443872558086,
+      "run_ids": [
+        "ba181a94-ffcc-4a4f-8699-0690eaaf4534",
+        "39d110da-6c81-40e1-a891-0e3150eaf9ec",
+        "5a001063-f303-4ff7-b4b6-10285124abb5",
+        "9b2087bc-e819-4ed1-b449-c4ada401e0e3",
+        "d7f99eff-a8a2-44c0-a1fa-fd79f79db9bd"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.518548157486219,
+      "sd": 0.03643000344768049,
+      "run_ids": [
+        "ba181a94-ffcc-4a4f-8699-0690eaaf4534",
+        "39d110da-6c81-40e1-a891-0e3150eaf9ec",
+        "5a001063-f303-4ff7-b4b6-10285124abb5",
+        "9b2087bc-e819-4ed1-b449-c4ada401e0e3",
+        "d7f99eff-a8a2-44c0-a1fa-fd79f79db9bd"
+      ]
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.029561155350495638,
+      "sd": 0.005261821058506728,
+      "run_ids": [
+        "ba181a94-ffcc-4a4f-8699-0690eaaf4534",
+        "39d110da-6c81-40e1-a891-0e3150eaf9ec",
+        "5a001063-f303-4ff7-b4b6-10285124abb5",
+        "9b2087bc-e819-4ed1-b449-c4ada401e0e3",
+        "d7f99eff-a8a2-44c0-a1fa-fd79f79db9bd"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.8810378363868283,
+      "sd": 0.026118734751240855,
+      "run_ids": [
+        "A05-BitcoinOTC-DOMINANT-seed42",
+        "A05-BitcoinOTC-DOMINANT-seed43",
+        "A05-BitcoinOTC-DOMINANT-seed44",
+        "A05-BitcoinOTC-DOMINANT-seed45",
+        "A05-BitcoinOTC-DOMINANT-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9882251973910057,
+      "sd": 0.007969993668225326,
+      "run_ids": [
+        "A05-BitcoinOTC-DOMINANT-seed42",
+        "A05-BitcoinOTC-DOMINANT-seed43",
+        "A05-BitcoinOTC-DOMINANT-seed44",
+        "A05-BitcoinOTC-DOMINANT-seed45",
+        "A05-BitcoinOTC-DOMINANT-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.9329031461355324,
+      "sd": 0.005388798624306769,
+      "run_ids": [
+        "A05-BitcoinOTC-DOMINANT-seed42",
+        "A05-BitcoinOTC-DOMINANT-seed43",
+        "A05-BitcoinOTC-DOMINANT-seed44",
+        "A05-BitcoinOTC-DOMINANT-seed45",
+        "A05-BitcoinOTC-DOMINANT-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.7947713962257209,
+      "sd": 0.017629064856487426,
+      "run_ids": [
+        "A05-BitcoinOTC-AnomalyDAE-seed42",
+        "A05-BitcoinOTC-AnomalyDAE-seed43",
+        "A05-BitcoinOTC-AnomalyDAE-seed44",
+        "A05-BitcoinOTC-AnomalyDAE-seed45",
+        "A05-BitcoinOTC-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.9670793759774193,
+      "sd": 0.02139817867916734,
+      "run_ids": [
+        "A05-BitcoinOTC-AnomalyDAE-seed42",
+        "A05-BitcoinOTC-AnomalyDAE-seed43",
+        "A05-BitcoinOTC-AnomalyDAE-seed44",
+        "A05-BitcoinOTC-AnomalyDAE-seed45",
+        "A05-BitcoinOTC-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.8385425039795635,
+      "sd": 0.03549529721649337,
+      "run_ids": [
+        "A05-BitcoinOTC-AnomalyDAE-seed42",
+        "A05-BitcoinOTC-AnomalyDAE-seed43",
+        "A05-BitcoinOTC-AnomalyDAE-seed44",
+        "A05-BitcoinOTC-AnomalyDAE-seed45",
+        "A05-BitcoinOTC-AnomalyDAE-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.4936000647038458,
+      "sd": 0.03592851874111049,
+      "run_ids": [
+        "A05-BitcoinOTC-CoLA-seed42",
+        "A05-BitcoinOTC-CoLA-seed43",
+        "A05-BitcoinOTC-CoLA-seed44",
+        "A05-BitcoinOTC-CoLA-seed45",
+        "A05-BitcoinOTC-CoLA-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.8035335850783841,
+      "sd": 0.016945290361569037,
+      "run_ids": [
+        "A05-BitcoinOTC-CoLA-seed42",
+        "A05-BitcoinOTC-CoLA-seed43",
+        "A05-BitcoinOTC-CoLA-seed44",
+        "A05-BitcoinOTC-CoLA-seed45",
+        "A05-BitcoinOTC-CoLA-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.5399840513186536,
+      "sd": 0.02148864107291121,
+      "run_ids": [
+        "A05-BitcoinOTC-CoLA-seed42",
+        "A05-BitcoinOTC-CoLA-seed43",
+        "A05-BitcoinOTC-CoLA-seed44",
+        "A05-BitcoinOTC-CoLA-seed45",
+        "A05-BitcoinOTC-CoLA-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.8125155311752996,
+      "sd": 0.22964761086919167,
+      "run_ids": [
+        "A05-BitcoinOTC-GADNR-seed42",
+        "A05-BitcoinOTC-GADNR-seed43",
+        "A05-BitcoinOTC-GADNR-seed44",
+        "A05-BitcoinOTC-GADNR-seed45",
+        "A05-BitcoinOTC-GADNR-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.9237136209329824,
+      "sd": 0.13008700361389822,
+      "run_ids": [
+        "A05-BitcoinOTC-GADNR-seed42",
+        "A05-BitcoinOTC-GADNR-seed43",
+        "A05-BitcoinOTC-GADNR-seed44",
+        "A05-BitcoinOTC-GADNR-seed45",
+        "A05-BitcoinOTC-GADNR-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.8675409138055651,
+      "sd": 0.20360429101946473,
+      "run_ids": [
+        "A05-BitcoinOTC-GADNR-seed42",
+        "A05-BitcoinOTC-GADNR-seed43",
+        "A05-BitcoinOTC-GADNR-seed44",
+        "A05-BitcoinOTC-GADNR-seed45",
+        "A05-BitcoinOTC-GADNR-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.028981352852165902,
+      "sd": 0.00498515355901857,
+      "run_ids": [
+        "A05-BitcoinOTC-OCGNN-seed42",
+        "A05-BitcoinOTC-OCGNN-seed43",
+        "A05-BitcoinOTC-OCGNN-seed44",
+        "A05-BitcoinOTC-OCGNN-seed45",
+        "A05-BitcoinOTC-OCGNN-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.49262539573559144,
+      "sd": 0.08382915784639848,
+      "run_ids": [
+        "A05-BitcoinOTC-OCGNN-seed42",
+        "A05-BitcoinOTC-OCGNN-seed43",
+        "A05-BitcoinOTC-OCGNN-seed44",
+        "A05-BitcoinOTC-OCGNN-seed45",
+        "A05-BitcoinOTC-OCGNN-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.07880339821550841,
+      "sd": 0.010627418523235616,
+      "run_ids": [
+        "A05-BitcoinOTC-OCGNN-seed42",
+        "A05-BitcoinOTC-OCGNN-seed43",
+        "A05-BitcoinOTC-OCGNN-seed44",
+        "A05-BitcoinOTC-OCGNN-seed45",
+        "A05-BitcoinOTC-OCGNN-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.8274424025751423,
+      "sd": 0.01635963167690868,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Base-seed42",
+        "A05-BitcoinOTC-DLG-Base-seed43",
+        "A05-BitcoinOTC-DLG-Base-seed44",
+        "A05-BitcoinOTC-DLG-Base-seed45",
+        "A05-BitcoinOTC-DLG-Base-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9873990159057101,
+      "sd": 0.005621309823378286,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Base-seed42",
+        "A05-BitcoinOTC-DLG-Base-seed43",
+        "A05-BitcoinOTC-DLG-Base-seed44",
+        "A05-BitcoinOTC-DLG-Base-seed45",
+        "A05-BitcoinOTC-DLG-Base-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.925558095792667,
+      "sd": 0.0024561083961800742,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Base-seed42",
+        "A05-BitcoinOTC-DLG-Base-seed43",
+        "A05-BitcoinOTC-DLG-Base-seed44",
+        "A05-BitcoinOTC-DLG-Base-seed45",
+        "A05-BitcoinOTC-DLG-Base-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.8211012475838336,
+      "sd": 0.016285095434053178,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Aug-seed42",
+        "A05-BitcoinOTC-DLG-Aug-seed43",
+        "A05-BitcoinOTC-DLG-Aug-seed44",
+        "A05-BitcoinOTC-DLG-Aug-seed45",
+        "A05-BitcoinOTC-DLG-Aug-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9875119197467292,
+      "sd": 0.0071112278704756095,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Aug-seed42",
+        "A05-BitcoinOTC-DLG-Aug-seed43",
+        "A05-BitcoinOTC-DLG-Aug-seed44",
+        "A05-BitcoinOTC-DLG-Aug-seed45",
+        "A05-BitcoinOTC-DLG-Aug-seed46"
+      ]
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.9260225966161342,
+      "sd": 0.007217840054547283,
+      "run_ids": [
+        "A05-BitcoinOTC-DLG-Aug-seed42",
+        "A05-BitcoinOTC-DLG-Aug-seed43",
+        "A05-BitcoinOTC-DLG-Aug-seed44",
+        "A05-BitcoinOTC-DLG-Aug-seed45",
+        "A05-BitcoinOTC-DLG-Aug-seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.3971456468319312,
+      "sd": 0.02028866498018514,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DOMINANT__seed42",
+        "ethereum_contract_clean_v1__DOMINANT__seed43",
+        "ethereum_contract_clean_v1__DOMINANT__seed44",
+        "ethereum_contract_clean_v1__DOMINANT__seed45",
+        "ethereum_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.43363286459460204,
+      "sd": 0.02835184433775458,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DOMINANT__seed42",
+        "ethereum_contract_clean_v1__DOMINANT__seed43",
+        "ethereum_contract_clean_v1__DOMINANT__seed44",
+        "ethereum_contract_clean_v1__DOMINANT__seed45",
+        "ethereum_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.5829282371630915,
+      "sd": 0.01602337237095996,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DOMINANT__seed42",
+        "ethereum_contract_clean_v1__DOMINANT__seed43",
+        "ethereum_contract_clean_v1__DOMINANT__seed44",
+        "ethereum_contract_clean_v1__DOMINANT__seed45",
+        "ethereum_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.398610411391528,
+      "sd": 0.03339066505293443,
+      "run_ids": [
+        "ethereum_contract_clean_v1__AnomalyDAE__seed42",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed43",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed44",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed45",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.473386000897383,
+      "sd": 0.027228925087149445,
+      "run_ids": [
+        "ethereum_contract_clean_v1__AnomalyDAE__seed42",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed43",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed44",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed45",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.5837316561073042,
+      "sd": 0.015833530744413488,
+      "run_ids": [
+        "ethereum_contract_clean_v1__AnomalyDAE__seed42",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed43",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed44",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed45",
+        "ethereum_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.36479802110184667,
+      "sd": 0.015789247414344818,
+      "run_ids": [
+        "ethereum_contract_clean_v1__CoLA__seed42",
+        "ethereum_contract_clean_v1__CoLA__seed43",
+        "ethereum_contract_clean_v1__CoLA__seed44",
+        "ethereum_contract_clean_v1__CoLA__seed45",
+        "ethereum_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.4212406668161551,
+      "sd": 0.007823532797454527,
+      "run_ids": [
+        "ethereum_contract_clean_v1__CoLA__seed42",
+        "ethereum_contract_clean_v1__CoLA__seed43",
+        "ethereum_contract_clean_v1__CoLA__seed44",
+        "ethereum_contract_clean_v1__CoLA__seed45",
+        "ethereum_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.580235931520912,
+      "sd": 0.012715360758273656,
+      "run_ids": [
+        "ethereum_contract_clean_v1__CoLA__seed42",
+        "ethereum_contract_clean_v1__CoLA__seed43",
+        "ethereum_contract_clean_v1__CoLA__seed44",
+        "ethereum_contract_clean_v1__CoLA__seed45",
+        "ethereum_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.39755406460071707,
+      "sd": 0.017298243248317524,
+      "run_ids": [
+        "ethereum_contract_clean_v1__GADNR__seed42",
+        "ethereum_contract_clean_v1__GADNR__seed43",
+        "ethereum_contract_clean_v1__GADNR__seed44",
+        "ethereum_contract_clean_v1__GADNR__seed45",
+        "ethereum_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.4787530000477377,
+      "sd": 0.016455191016523856,
+      "run_ids": [
+        "ethereum_contract_clean_v1__GADNR__seed42",
+        "ethereum_contract_clean_v1__GADNR__seed43",
+        "ethereum_contract_clean_v1__GADNR__seed44",
+        "ethereum_contract_clean_v1__GADNR__seed45",
+        "ethereum_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.5797249259463575,
+      "sd": 0.015129326813602672,
+      "run_ids": [
+        "ethereum_contract_clean_v1__GADNR__seed42",
+        "ethereum_contract_clean_v1__GADNR__seed43",
+        "ethereum_contract_clean_v1__GADNR__seed44",
+        "ethereum_contract_clean_v1__GADNR__seed45",
+        "ethereum_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.4996322562843236,
+      "sd": 0.0797785856273796,
+      "run_ids": [
+        "ethereum_contract_clean_v1__OCGNN__seed42",
+        "ethereum_contract_clean_v1__OCGNN__seed43",
+        "ethereum_contract_clean_v1__OCGNN__seed44",
+        "ethereum_contract_clean_v1__OCGNN__seed45",
+        "ethereum_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.6007289184543373,
+      "sd": 0.14916381419063313,
+      "run_ids": [
+        "ethereum_contract_clean_v1__OCGNN__seed42",
+        "ethereum_contract_clean_v1__OCGNN__seed43",
+        "ethereum_contract_clean_v1__OCGNN__seed44",
+        "ethereum_contract_clean_v1__OCGNN__seed45",
+        "ethereum_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.6436731546513788,
+      "sd": 0.050073721412074494,
+      "run_ids": [
+        "ethereum_contract_clean_v1__OCGNN__seed42",
+        "ethereum_contract_clean_v1__OCGNN__seed43",
+        "ethereum_contract_clean_v1__OCGNN__seed44",
+        "ethereum_contract_clean_v1__OCGNN__seed45",
+        "ethereum_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.41059231235579824,
+      "sd": 0.020143548751982137,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Base__seed42",
+        "ethereum_contract_clean_v1__DLG-Base__seed43",
+        "ethereum_contract_clean_v1__DLG-Base__seed44",
+        "ethereum_contract_clean_v1__DLG-Base__seed45",
+        "ethereum_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.4867209949428621,
+      "sd": 0.0271758332015906,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Base__seed42",
+        "ethereum_contract_clean_v1__DLG-Base__seed43",
+        "ethereum_contract_clean_v1__DLG-Base__seed44",
+        "ethereum_contract_clean_v1__DLG-Base__seed45",
+        "ethereum_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.5907742754730514,
+      "sd": 0.008868546527969425,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Base__seed42",
+        "ethereum_contract_clean_v1__DLG-Base__seed43",
+        "ethereum_contract_clean_v1__DLG-Base__seed44",
+        "ethereum_contract_clean_v1__DLG-Base__seed45",
+        "ethereum_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.43586091641925606,
+      "sd": 0.03420421833614436,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Aug__seed42",
+        "ethereum_contract_clean_v1__DLG-Aug__seed43",
+        "ethereum_contract_clean_v1__DLG-Aug__seed44",
+        "ethereum_contract_clean_v1__DLG-Aug__seed45",
+        "ethereum_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.5326107977162268,
+      "sd": 0.03551812055196023,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Aug__seed42",
+        "ethereum_contract_clean_v1__DLG-Aug__seed43",
+        "ethereum_contract_clean_v1__DLG-Aug__seed44",
+        "ethereum_contract_clean_v1__DLG-Aug__seed45",
+        "ethereum_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Ethereum",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.5962821192861397,
+      "sd": 0.012247954207713577,
+      "run_ids": [
+        "ethereum_contract_clean_v1__DLG-Aug__seed42",
+        "ethereum_contract_clean_v1__DLG-Aug__seed43",
+        "ethereum_contract_clean_v1__DLG-Aug__seed44",
+        "ethereum_contract_clean_v1__DLG-Aug__seed45",
+        "ethereum_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.22992666789241828,
+      "sd": 0.025350789464415057,
+      "run_ids": [
+        "bsc_contract_clean_v1__DOMINANT__seed42",
+        "bsc_contract_clean_v1__DOMINANT__seed43",
+        "bsc_contract_clean_v1__DOMINANT__seed44",
+        "bsc_contract_clean_v1__DOMINANT__seed45",
+        "bsc_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.646416231705028,
+      "sd": 0.033665318467807126,
+      "run_ids": [
+        "bsc_contract_clean_v1__DOMINANT__seed42",
+        "bsc_contract_clean_v1__DOMINANT__seed43",
+        "bsc_contract_clean_v1__DOMINANT__seed44",
+        "bsc_contract_clean_v1__DOMINANT__seed45",
+        "bsc_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.31497586205300276,
+      "sd": 0.03319017979377464,
+      "run_ids": [
+        "bsc_contract_clean_v1__DOMINANT__seed42",
+        "bsc_contract_clean_v1__DOMINANT__seed43",
+        "bsc_contract_clean_v1__DOMINANT__seed44",
+        "bsc_contract_clean_v1__DOMINANT__seed45",
+        "bsc_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.36085624599184885,
+      "sd": 0.018066985211531283,
+      "run_ids": [
+        "bsc_contract_clean_v1__AnomalyDAE__seed42",
+        "bsc_contract_clean_v1__AnomalyDAE__seed43",
+        "bsc_contract_clean_v1__AnomalyDAE__seed44",
+        "bsc_contract_clean_v1__AnomalyDAE__seed45",
+        "bsc_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.7742873005391857,
+      "sd": 0.01596280408588906,
+      "run_ids": [
+        "bsc_contract_clean_v1__AnomalyDAE__seed42",
+        "bsc_contract_clean_v1__AnomalyDAE__seed43",
+        "bsc_contract_clean_v1__AnomalyDAE__seed44",
+        "bsc_contract_clean_v1__AnomalyDAE__seed45",
+        "bsc_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.45920088699918216,
+      "sd": 0.031411720458885316,
+      "run_ids": [
+        "bsc_contract_clean_v1__AnomalyDAE__seed42",
+        "bsc_contract_clean_v1__AnomalyDAE__seed43",
+        "bsc_contract_clean_v1__AnomalyDAE__seed44",
+        "bsc_contract_clean_v1__AnomalyDAE__seed45",
+        "bsc_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.1251746418087903,
+      "sd": 0.012806890057955494,
+      "run_ids": [
+        "bsc_contract_clean_v1__CoLA__seed42",
+        "bsc_contract_clean_v1__CoLA__seed43",
+        "bsc_contract_clean_v1__CoLA__seed44",
+        "bsc_contract_clean_v1__CoLA__seed45",
+        "bsc_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.43857414053774885,
+      "sd": 0.03136293960299809,
+      "run_ids": [
+        "bsc_contract_clean_v1__CoLA__seed42",
+        "bsc_contract_clean_v1__CoLA__seed43",
+        "bsc_contract_clean_v1__CoLA__seed44",
+        "bsc_contract_clean_v1__CoLA__seed45",
+        "bsc_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.2581622386862037,
+      "sd": 0.015574614111068079,
+      "run_ids": [
+        "bsc_contract_clean_v1__CoLA__seed42",
+        "bsc_contract_clean_v1__CoLA__seed43",
+        "bsc_contract_clean_v1__CoLA__seed44",
+        "bsc_contract_clean_v1__CoLA__seed45",
+        "bsc_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.1560555378932969,
+      "sd": 0.015191869128101677,
+      "run_ids": [
+        "bsc_contract_clean_v1__GADNR__seed42",
+        "bsc_contract_clean_v1__GADNR__seed43",
+        "bsc_contract_clean_v1__GADNR__seed44",
+        "bsc_contract_clean_v1__GADNR__seed45",
+        "bsc_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.5010026277819204,
+      "sd": 0.020943417701450785,
+      "run_ids": [
+        "bsc_contract_clean_v1__GADNR__seed42",
+        "bsc_contract_clean_v1__GADNR__seed43",
+        "bsc_contract_clean_v1__GADNR__seed44",
+        "bsc_contract_clean_v1__GADNR__seed45",
+        "bsc_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.2529335432258508,
+      "sd": 0.014063485738041202,
+      "run_ids": [
+        "bsc_contract_clean_v1__GADNR__seed42",
+        "bsc_contract_clean_v1__GADNR__seed43",
+        "bsc_contract_clean_v1__GADNR__seed44",
+        "bsc_contract_clean_v1__GADNR__seed45",
+        "bsc_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.16150323718889203,
+      "sd": 0.017420289877337944,
+      "run_ids": [
+        "bsc_contract_clean_v1__OCGNN__seed42",
+        "bsc_contract_clean_v1__OCGNN__seed43",
+        "bsc_contract_clean_v1__OCGNN__seed44",
+        "bsc_contract_clean_v1__OCGNN__seed45",
+        "bsc_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.5295234611055115,
+      "sd": 0.07194142574473884,
+      "run_ids": [
+        "bsc_contract_clean_v1__OCGNN__seed42",
+        "bsc_contract_clean_v1__OCGNN__seed43",
+        "bsc_contract_clean_v1__OCGNN__seed44",
+        "bsc_contract_clean_v1__OCGNN__seed45",
+        "bsc_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.2775546310921476,
+      "sd": 0.021569551955094295,
+      "run_ids": [
+        "bsc_contract_clean_v1__OCGNN__seed42",
+        "bsc_contract_clean_v1__OCGNN__seed43",
+        "bsc_contract_clean_v1__OCGNN__seed44",
+        "bsc_contract_clean_v1__OCGNN__seed45",
+        "bsc_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.3390088904256042,
+      "sd": 0.025979799917791,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Base__seed42",
+        "bsc_contract_clean_v1__DLG-Base__seed43",
+        "bsc_contract_clean_v1__DLG-Base__seed44",
+        "bsc_contract_clean_v1__DLG-Base__seed45",
+        "bsc_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.7620276168471849,
+      "sd": 0.021528708716354896,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Base__seed42",
+        "bsc_contract_clean_v1__DLG-Base__seed43",
+        "bsc_contract_clean_v1__DLG-Base__seed44",
+        "bsc_contract_clean_v1__DLG-Base__seed45",
+        "bsc_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.46596948762802703,
+      "sd": 0.02088651901011178,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Base__seed42",
+        "bsc_contract_clean_v1__DLG-Base__seed43",
+        "bsc_contract_clean_v1__DLG-Base__seed44",
+        "bsc_contract_clean_v1__DLG-Base__seed45",
+        "bsc_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.34109284571612414,
+      "sd": 0.023842308804807918,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Aug__seed42",
+        "bsc_contract_clean_v1__DLG-Aug__seed43",
+        "bsc_contract_clean_v1__DLG-Aug__seed44",
+        "bsc_contract_clean_v1__DLG-Aug__seed45",
+        "bsc_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.7551478553392732,
+      "sd": 0.01654664266170063,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Aug__seed42",
+        "bsc_contract_clean_v1__DLG-Aug__seed43",
+        "bsc_contract_clean_v1__DLG-Aug__seed44",
+        "bsc_contract_clean_v1__DLG-Aug__seed45",
+        "bsc_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "BSC",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.45335638451173355,
+      "sd": 0.02592319409929016,
+      "run_ids": [
+        "bsc_contract_clean_v1__DLG-Aug__seed42",
+        "bsc_contract_clean_v1__DLG-Aug__seed43",
+        "bsc_contract_clean_v1__DLG-Aug__seed44",
+        "bsc_contract_clean_v1__DLG-Aug__seed45",
+        "bsc_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.10712369489281981,
+      "sd": 0.03754594190047455,
+      "run_ids": [
+        "polygon_contract_clean_v1__DOMINANT__seed42",
+        "polygon_contract_clean_v1__DOMINANT__seed43",
+        "polygon_contract_clean_v1__DOMINANT__seed44",
+        "polygon_contract_clean_v1__DOMINANT__seed45",
+        "polygon_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.6283243186911138,
+      "sd": 0.06529421310973012,
+      "run_ids": [
+        "polygon_contract_clean_v1__DOMINANT__seed42",
+        "polygon_contract_clean_v1__DOMINANT__seed43",
+        "polygon_contract_clean_v1__DOMINANT__seed44",
+        "polygon_contract_clean_v1__DOMINANT__seed45",
+        "polygon_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.22158566120771775,
+      "sd": 0.07172558637724318,
+      "run_ids": [
+        "polygon_contract_clean_v1__DOMINANT__seed42",
+        "polygon_contract_clean_v1__DOMINANT__seed43",
+        "polygon_contract_clean_v1__DOMINANT__seed44",
+        "polygon_contract_clean_v1__DOMINANT__seed45",
+        "polygon_contract_clean_v1__DOMINANT__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.18780681409640118,
+      "sd": 0.05051954404972385,
+      "run_ids": [
+        "polygon_contract_clean_v1__AnomalyDAE__seed42",
+        "polygon_contract_clean_v1__AnomalyDAE__seed43",
+        "polygon_contract_clean_v1__AnomalyDAE__seed44",
+        "polygon_contract_clean_v1__AnomalyDAE__seed45",
+        "polygon_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.79773074152804,
+      "sd": 0.03011225320551518,
+      "run_ids": [
+        "polygon_contract_clean_v1__AnomalyDAE__seed42",
+        "polygon_contract_clean_v1__AnomalyDAE__seed43",
+        "polygon_contract_clean_v1__AnomalyDAE__seed44",
+        "polygon_contract_clean_v1__AnomalyDAE__seed45",
+        "polygon_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.21047801718769463,
+      "sd": 0.05769373426974712,
+      "run_ids": [
+        "polygon_contract_clean_v1__AnomalyDAE__seed42",
+        "polygon_contract_clean_v1__AnomalyDAE__seed43",
+        "polygon_contract_clean_v1__AnomalyDAE__seed44",
+        "polygon_contract_clean_v1__AnomalyDAE__seed45",
+        "polygon_contract_clean_v1__AnomalyDAE__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.02322957129843863,
+      "sd": 0.006819316435239439,
+      "run_ids": [
+        "polygon_contract_clean_v1__CoLA__seed42",
+        "polygon_contract_clean_v1__CoLA__seed43",
+        "polygon_contract_clean_v1__CoLA__seed44",
+        "polygon_contract_clean_v1__CoLA__seed45",
+        "polygon_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.42598056236282655,
+      "sd": 0.05333310879058681,
+      "run_ids": [
+        "polygon_contract_clean_v1__CoLA__seed42",
+        "polygon_contract_clean_v1__CoLA__seed43",
+        "polygon_contract_clean_v1__CoLA__seed44",
+        "polygon_contract_clean_v1__CoLA__seed45",
+        "polygon_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.027650776645395957,
+      "sd": 0.023846835731962605,
+      "run_ids": [
+        "polygon_contract_clean_v1__CoLA__seed42",
+        "polygon_contract_clean_v1__CoLA__seed43",
+        "polygon_contract_clean_v1__CoLA__seed44",
+        "polygon_contract_clean_v1__CoLA__seed45",
+        "polygon_contract_clean_v1__CoLA__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.026030622144394062,
+      "sd": 0.006201150242948567,
+      "run_ids": [
+        "polygon_contract_clean_v1__GADNR__seed42",
+        "polygon_contract_clean_v1__GADNR__seed43",
+        "polygon_contract_clean_v1__GADNR__seed44",
+        "polygon_contract_clean_v1__GADNR__seed45",
+        "polygon_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.46372381011607755,
+      "sd": 0.1071704268504299,
+      "run_ids": [
+        "polygon_contract_clean_v1__GADNR__seed42",
+        "polygon_contract_clean_v1__GADNR__seed43",
+        "polygon_contract_clean_v1__GADNR__seed44",
+        "polygon_contract_clean_v1__GADNR__seed45",
+        "polygon_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.01882512407167464,
+      "sd": 0.01646115997389629,
+      "run_ids": [
+        "polygon_contract_clean_v1__GADNR__seed42",
+        "polygon_contract_clean_v1__GADNR__seed43",
+        "polygon_contract_clean_v1__GADNR__seed44",
+        "polygon_contract_clean_v1__GADNR__seed45",
+        "polygon_contract_clean_v1__GADNR__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.0700339558899439,
+      "sd": 0.05004763086002866,
+      "run_ids": [
+        "polygon_contract_clean_v1__OCGNN__seed42",
+        "polygon_contract_clean_v1__OCGNN__seed43",
+        "polygon_contract_clean_v1__OCGNN__seed44",
+        "polygon_contract_clean_v1__OCGNN__seed45",
+        "polygon_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.5497627796641618,
+      "sd": 0.0761459157717539,
+      "run_ids": [
+        "polygon_contract_clean_v1__OCGNN__seed42",
+        "polygon_contract_clean_v1__OCGNN__seed43",
+        "polygon_contract_clean_v1__OCGNN__seed44",
+        "polygon_contract_clean_v1__OCGNN__seed45",
+        "polygon_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.03967664258685931,
+      "sd": 0.03739549513013572,
+      "run_ids": [
+        "polygon_contract_clean_v1__OCGNN__seed42",
+        "polygon_contract_clean_v1__OCGNN__seed43",
+        "polygon_contract_clean_v1__OCGNN__seed44",
+        "polygon_contract_clean_v1__OCGNN__seed45",
+        "polygon_contract_clean_v1__OCGNN__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.08542292339493959,
+      "sd": 0.0290286863199443,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Base__seed42",
+        "polygon_contract_clean_v1__DLG-Base__seed43",
+        "polygon_contract_clean_v1__DLG-Base__seed44",
+        "polygon_contract_clean_v1__DLG-Base__seed45",
+        "polygon_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.766019817930965,
+      "sd": 0.046273752674076796,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Base__seed42",
+        "polygon_contract_clean_v1__DLG-Base__seed43",
+        "polygon_contract_clean_v1__DLG-Base__seed44",
+        "polygon_contract_clean_v1__DLG-Base__seed45",
+        "polygon_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.12922441605368434,
+      "sd": 0.0360498350301222,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Base__seed42",
+        "polygon_contract_clean_v1__DLG-Base__seed43",
+        "polygon_contract_clean_v1__DLG-Base__seed44",
+        "polygon_contract_clean_v1__DLG-Base__seed45",
+        "polygon_contract_clean_v1__DLG-Base__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.07305447781626102,
+      "sd": 0.02189778466231395,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Aug__seed42",
+        "polygon_contract_clean_v1__DLG-Aug__seed43",
+        "polygon_contract_clean_v1__DLG-Aug__seed44",
+        "polygon_contract_clean_v1__DLG-Aug__seed45",
+        "polygon_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.7115939522995929,
+      "sd": 0.03818667042697718,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Aug__seed42",
+        "polygon_contract_clean_v1__DLG-Aug__seed43",
+        "polygon_contract_clean_v1__DLG-Aug__seed44",
+        "polygon_contract_clean_v1__DLG-Aug__seed45",
+        "polygon_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Polygon",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.07562475644922453,
+      "sd": 0.04373035287320246,
+      "run_ids": [
+        "polygon_contract_clean_v1__DLG-Aug__seed42",
+        "polygon_contract_clean_v1__DLG-Aug__seed43",
+        "polygon_contract_clean_v1__DLG-Aug__seed44",
+        "polygon_contract_clean_v1__DLG-Aug__seed45",
+        "polygon_contract_clean_v1__DLG-Aug__seed46"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.07485847185237979,
+      "sd": 0.0015845827689837519,
+      "run_ids": [
+        "0c740955-2980-4b43-b66a-7dd40ad09bf1",
+        "f4f5cd0a-6b9f-458a-82f4-35ddb47cab39",
+        "b9ac5244-f0d2-4325-a291-6409d8b7fcc4",
+        "a0bad5e5-e1f8-41c7-89b9-8f0c4fb0f489",
+        "40609dff-5d0e-49b1-a526-33805f92af59"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9347645493139763,
+      "sd": 0.0011499786536472785,
+      "run_ids": [
+        "0c740955-2980-4b43-b66a-7dd40ad09bf1",
+        "f4f5cd0a-6b9f-458a-82f4-35ddb47cab39",
+        "b9ac5244-f0d2-4325-a291-6409d8b7fcc4",
+        "a0bad5e5-e1f8-41c7-89b9-8f0c4fb0f489",
+        "40609dff-5d0e-49b1-a526-33805f92af59"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.15052171707174863,
+      "sd": 0.002719030055895968,
+      "run_ids": [
+        "0c740955-2980-4b43-b66a-7dd40ad09bf1",
+        "f4f5cd0a-6b9f-458a-82f4-35ddb47cab39",
+        "b9ac5244-f0d2-4325-a291-6409d8b7fcc4",
+        "a0bad5e5-e1f8-41c7-89b9-8f0c4fb0f489",
+        "40609dff-5d0e-49b1-a526-33805f92af59"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.017393640215723656,
+      "sd": 0.0036927108063654302,
+      "run_ids": [
+        "1ba308db-24e9-47e2-8585-bad193b58656",
+        "03a42fbb-8b89-4710-97f0-8a9c874848f3",
+        "d7880252-6f54-4e31-8715-a3c5bf510e66",
+        "fccd60cd-a0c5-4497-8503-9da8cddbacf2",
+        "5fd3c5ae-2304-424f-8edf-4e5d5645fd48"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.4250134455248693,
+      "sd": 0.08030255916206987,
+      "run_ids": [
+        "1ba308db-24e9-47e2-8585-bad193b58656",
+        "03a42fbb-8b89-4710-97f0-8a9c874848f3",
+        "d7880252-6f54-4e31-8715-a3c5bf510e66",
+        "fccd60cd-a0c5-4497-8503-9da8cddbacf2",
+        "5fd3c5ae-2304-424f-8edf-4e5d5645fd48"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.05734826837599164,
+      "sd": 0.008308603945207006,
+      "run_ids": [
+        "1ba308db-24e9-47e2-8585-bad193b58656",
+        "03a42fbb-8b89-4710-97f0-8a9c874848f3",
+        "d7880252-6f54-4e31-8715-a3c5bf510e66",
+        "fccd60cd-a0c5-4497-8503-9da8cddbacf2",
+        "5fd3c5ae-2304-424f-8edf-4e5d5645fd48"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.006941440929926611,
+      "sd": 0.00031023511083713213,
+      "run_ids": [
+        "2554c4ab-f8f9-4315-8ab0-51b757510df1",
+        "3a855184-cddf-4d2f-9dd5-6dfa5ad80d4b",
+        "8b2eee25-b628-464b-ae90-816e89be6569",
+        "89f4589a-6e3b-40d6-8721-1e09f3593387",
+        "7c71ae0b-a703-4d40-ad84-a20398341147"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.34609569488436437,
+      "sd": 0.02834030297041194,
+      "run_ids": [
+        "2554c4ab-f8f9-4315-8ab0-51b757510df1",
+        "3a855184-cddf-4d2f-9dd5-6dfa5ad80d4b",
+        "8b2eee25-b628-464b-ae90-816e89be6569",
+        "89f4589a-6e3b-40d6-8721-1e09f3593387",
+        "7c71ae0b-a703-4d40-ad84-a20398341147"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.01996123417144966,
+      "sd": 0.00029512186484796405,
+      "run_ids": [
+        "2554c4ab-f8f9-4315-8ab0-51b757510df1",
+        "3a855184-cddf-4d2f-9dd5-6dfa5ad80d4b",
+        "8b2eee25-b628-464b-ae90-816e89be6569",
+        "89f4589a-6e3b-40d6-8721-1e09f3593387",
+        "7c71ae0b-a703-4d40-ad84-a20398341147"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.08256542896057081,
+      "sd": 0.0026188819588446903,
+      "run_ids": [
+        "54a081fb-45dd-4193-9c8b-96ab50195193",
+        "1c2cddda-1081-4712-be37-75ec7226c11a",
+        "aec5f246-64bc-4ebb-abc4-4e6892bacfef",
+        "b06103c0-9d7e-49a6-8ebf-5ce2d9ea8fc5",
+        "d9fa2b33-efde-4cd9-a7ce-9214e28a7432"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9384877314706477,
+      "sd": 0.0012389272791887955,
+      "run_ids": [
+        "54a081fb-45dd-4193-9c8b-96ab50195193",
+        "1c2cddda-1081-4712-be37-75ec7226c11a",
+        "aec5f246-64bc-4ebb-abc4-4e6892bacfef",
+        "b06103c0-9d7e-49a6-8ebf-5ce2d9ea8fc5",
+        "d9fa2b33-efde-4cd9-a7ce-9214e28a7432"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.16302726604665846,
+      "sd": 0.002275334444527973,
+      "run_ids": [
+        "54a081fb-45dd-4193-9c8b-96ab50195193",
+        "1c2cddda-1081-4712-be37-75ec7226c11a",
+        "aec5f246-64bc-4ebb-abc4-4e6892bacfef",
+        "b06103c0-9d7e-49a6-8ebf-5ce2d9ea8fc5",
+        "d9fa2b33-efde-4cd9-a7ce-9214e28a7432"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.0832345756681611,
+      "sd": 0.0025516378350396783,
+      "run_ids": [
+        "d582d9ba-32aa-435e-bf95-ee04317cc7e4",
+        "4984bb93-05ff-4577-b926-3d0a8a88df70",
+        "a732f627-8a35-464e-b323-90286f587488",
+        "87f044ec-8ccf-44ae-b1c7-66dd4bb16d42",
+        "9136e056-f2e2-4db3-9e22-e58bb6c37215"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9399862632221312,
+      "sd": 0.0013633415840932995,
+      "run_ids": [
+        "d582d9ba-32aa-435e-bf95-ee04317cc7e4",
+        "4984bb93-05ff-4577-b926-3d0a8a88df70",
+        "a732f627-8a35-464e-b323-90286f587488",
+        "87f044ec-8ccf-44ae-b1c7-66dd4bb16d42",
+        "9136e056-f2e2-4db3-9e22-e58bb6c37215"
+      ]
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.16686327514052202,
+      "sd": 0.004193793503501282,
+      "run_ids": [
+        "d582d9ba-32aa-435e-bf95-ee04317cc7e4",
+        "4984bb93-05ff-4577-b926-3d0a8a88df70",
+        "a732f627-8a35-464e-b323-90286f587488",
+        "87f044ec-8ccf-44ae-b1c7-66dd4bb16d42",
+        "9136e056-f2e2-4db3-9e22-e58bb6c37215"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.13013616245720455,
+      "sd": 0.009541912009700107,
+      "run_ids": [
+        "641bcfe8-ff88-4175-9154-da27428e703b",
+        "9ae64ff4-5c21-480a-ae2f-22b7fa2c2c5f",
+        "0f3439ba-c4b6-4686-b4f6-6df5e64e82ee",
+        "8b1a9314-1a09-440e-babc-a2c6de3f21a5",
+        "e0d1799d-1804-49f0-b436-00e58f8bd089"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.8122900685579542,
+      "sd": 0.017609766592810994,
+      "run_ids": [
+        "641bcfe8-ff88-4175-9154-da27428e703b",
+        "9ae64ff4-5c21-480a-ae2f-22b7fa2c2c5f",
+        "0f3439ba-c4b6-4686-b4f6-6df5e64e82ee",
+        "8b1a9314-1a09-440e-babc-a2c6de3f21a5",
+        "e0d1799d-1804-49f0-b436-00e58f8bd089"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.2635912983130805,
+      "sd": 0.012574742004072943,
+      "run_ids": [
+        "641bcfe8-ff88-4175-9154-da27428e703b",
+        "9ae64ff4-5c21-480a-ae2f-22b7fa2c2c5f",
+        "0f3439ba-c4b6-4686-b4f6-6df5e64e82ee",
+        "8b1a9314-1a09-440e-babc-a2c6de3f21a5",
+        "e0d1799d-1804-49f0-b436-00e58f8bd089"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.2734043373532005,
+      "sd": 0.16630508919604942,
+      "run_ids": [
+        "d9584a10-aebc-47bf-b3e0-1cb2f808b56a",
+        "033881ee-9e98-4a4e-9eaf-71605b516a06",
+        "039f2c1f-cb96-43f9-9b67-47b680ec99c2",
+        "9b61ddbc-70b7-4c63-a04c-0c3ab8373d00",
+        "25ab8e5a-a2a0-4f57-970e-a66b25e71fe7"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.6862491812346254,
+      "sd": 0.08566822406178794,
+      "run_ids": [
+        "d9584a10-aebc-47bf-b3e0-1cb2f808b56a",
+        "033881ee-9e98-4a4e-9eaf-71605b516a06",
+        "039f2c1f-cb96-43f9-9b67-47b680ec99c2",
+        "9b61ddbc-70b7-4c63-a04c-0c3ab8373d00",
+        "25ab8e5a-a2a0-4f57-970e-a66b25e71fe7"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.3332463612647817,
+      "sd": 0.164708504575674,
+      "run_ids": [
+        "d9584a10-aebc-47bf-b3e0-1cb2f808b56a",
+        "033881ee-9e98-4a4e-9eaf-71605b516a06",
+        "039f2c1f-cb96-43f9-9b67-47b680ec99c2",
+        "9b61ddbc-70b7-4c63-a04c-0c3ab8373d00",
+        "25ab8e5a-a2a0-4f57-970e-a66b25e71fe7"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.09894109584555552,
+      "sd": 0.014284718187510153,
+      "run_ids": [
+        "4473f5f0-4280-4e9a-bab7-bfa852dc3c47",
+        "5a8b90cf-01a9-41d8-bf36-c92fd9d808c9",
+        "d01f765d-f1be-4347-b9cb-8ba4dd0749b2",
+        "bbe1517b-4b98-4d0b-9dd8-8f89e498b65b",
+        "bf7d12f6-2b98-4eeb-bfb6-271d6ad362b9"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.6543661664313474,
+      "sd": 0.04212419060041349,
+      "run_ids": [
+        "4473f5f0-4280-4e9a-bab7-bfa852dc3c47",
+        "5a8b90cf-01a9-41d8-bf36-c92fd9d808c9",
+        "d01f765d-f1be-4347-b9cb-8ba4dd0749b2",
+        "bbe1517b-4b98-4d0b-9dd8-8f89e498b65b",
+        "bf7d12f6-2b98-4eeb-bfb6-271d6ad362b9"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.1630128663793665,
+      "sd": 0.03218191335991987,
+      "run_ids": [
+        "4473f5f0-4280-4e9a-bab7-bfa852dc3c47",
+        "5a8b90cf-01a9-41d8-bf36-c92fd9d808c9",
+        "d01f765d-f1be-4347-b9cb-8ba4dd0749b2",
+        "bbe1517b-4b98-4d0b-9dd8-8f89e498b65b",
+        "bf7d12f6-2b98-4eeb-bfb6-271d6ad362b9"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.03380233775595515,
+      "sd": 0.00041595418001492425,
+      "run_ids": [
+        "1014165f-2ec4-4e6b-9e79-146053027598",
+        "cea5a0c0-6f4a-45f0-b8f5-d7a21e9f527e",
+        "929a1204-2635-43cb-8456-c05a87b1d072",
+        "07473d68-357a-4785-b03e-bd921ef6932b",
+        "bd1f4124-38fb-4aad-ba3d-26d2fccbe5d2"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.5531984978384594,
+      "sd": 0.009816042557904971,
+      "run_ids": [
+        "1014165f-2ec4-4e6b-9e79-146053027598",
+        "cea5a0c0-6f4a-45f0-b8f5-d7a21e9f527e",
+        "929a1204-2635-43cb-8456-c05a87b1d072",
+        "07473d68-357a-4785-b03e-bd921ef6932b",
+        "bd1f4124-38fb-4aad-ba3d-26d2fccbe5d2"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.06496570655152815,
+      "sd": 0.0023228021160727227,
+      "run_ids": [
+        "1014165f-2ec4-4e6b-9e79-146053027598",
+        "cea5a0c0-6f4a-45f0-b8f5-d7a21e9f527e",
+        "929a1204-2635-43cb-8456-c05a87b1d072",
+        "07473d68-357a-4785-b03e-bd921ef6932b",
+        "bd1f4124-38fb-4aad-ba3d-26d2fccbe5d2"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.024901492643932648,
+      "sd": 0.0014585618523620168,
+      "run_ids": [
+        "b7037323-4748-4400-9a4e-bc1d5b284ddd",
+        "5143cb2b-921d-4f8e-a0ad-6c8a2ffe4324",
+        "d775556f-90bd-4a44-a9bd-2b9d1c3d1adc",
+        "4d264831-2e34-4f25-843c-41eafcb9077b",
+        "eb98bf97-23c6-4a9b-8a92-19cf3e6c1a9a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.4242128935532234,
+      "sd": 0.018718774028847997,
+      "run_ids": [
+        "b7037323-4748-4400-9a4e-bc1d5b284ddd",
+        "5143cb2b-921d-4f8e-a0ad-6c8a2ffe4324",
+        "d775556f-90bd-4a44-a9bd-2b9d1c3d1adc",
+        "4d264831-2e34-4f25-843c-41eafcb9077b",
+        "eb98bf97-23c6-4a9b-8a92-19cf3e6c1a9a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.057498743787548524,
+      "sd": 0.0008356442242912287,
+      "run_ids": [
+        "b7037323-4748-4400-9a4e-bc1d5b284ddd",
+        "5143cb2b-921d-4f8e-a0ad-6c8a2ffe4324",
+        "d775556f-90bd-4a44-a9bd-2b9d1c3d1adc",
+        "4d264831-2e34-4f25-843c-41eafcb9077b",
+        "eb98bf97-23c6-4a9b-8a92-19cf3e6c1a9a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.12447582320378037,
+      "sd": 0.00862471458675652,
+      "run_ids": [
+        "cfd4d533-02f0-4ba3-993d-bd4215b1bf10",
+        "fe817c6a-4642-4c9d-8b53-6cbda3749ff5",
+        "a424803e-d8c3-4245-bfc1-45000cf153bb",
+        "33a30de7-2434-4e8d-8a26-840d3d143aa8",
+        "13e10d66-2f1d-4dec-be44-0fb9d76f289a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.8098241655871095,
+      "sd": 0.017480454801319663,
+      "run_ids": [
+        "cfd4d533-02f0-4ba3-993d-bd4215b1bf10",
+        "fe817c6a-4642-4c9d-8b53-6cbda3749ff5",
+        "a424803e-d8c3-4245-bfc1-45000cf153bb",
+        "33a30de7-2434-4e8d-8a26-840d3d143aa8",
+        "13e10d66-2f1d-4dec-be44-0fb9d76f289a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.25130425448471594,
+      "sd": 0.013641568120823611,
+      "run_ids": [
+        "cfd4d533-02f0-4ba3-993d-bd4215b1bf10",
+        "fe817c6a-4642-4c9d-8b53-6cbda3749ff5",
+        "a424803e-d8c3-4245-bfc1-45000cf153bb",
+        "33a30de7-2434-4e8d-8a26-840d3d143aa8",
+        "13e10d66-2f1d-4dec-be44-0fb9d76f289a"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.13022378062530296,
+      "sd": 0.007758175060842544,
+      "run_ids": [
+        "e814adcc-2f85-4a7f-8955-c5736912f141",
+        "d1403923-6f48-4181-bc4a-a00d4b4daa96",
+        "7688d476-96e1-4217-81a5-f39e454131f6",
+        "59f49303-470f-4dbf-80a7-7edfd5690f6b",
+        "aab983bd-7f17-4628-90f5-1defbb4e4164"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.8104353648418507,
+      "sd": 0.0180785364225216,
+      "run_ids": [
+        "e814adcc-2f85-4a7f-8955-c5736912f141",
+        "d1403923-6f48-4181-bc4a-a00d4b4daa96",
+        "7688d476-96e1-4217-81a5-f39e454131f6",
+        "59f49303-470f-4dbf-80a7-7edfd5690f6b",
+        "aab983bd-7f17-4628-90f5-1defbb4e4164"
+      ]
+    },
+    {
+      "dataset": "Amazon-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.2632530396927839,
+      "sd": 0.017376197047969093,
+      "run_ids": [
+        "e814adcc-2f85-4a7f-8955-c5736912f141",
+        "d1403923-6f48-4181-bc4a-a00d4b4daa96",
+        "7688d476-96e1-4217-81a5-f39e454131f6",
+        "59f49303-470f-4dbf-80a7-7edfd5690f6b",
+        "aab983bd-7f17-4628-90f5-1defbb4e4164"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.40692288073744975,
+      "sd": 0.008172804255524874,
+      "run_ids": [
+        "5f081b08-c540-48ba-a0e9-c98333a99cd3",
+        "f2a2ac29-6bf3-493a-b8b7-2cdab340465e",
+        "b21713e4-0c20-4b80-970e-56ae21d968e2",
+        "79d903a7-3ee4-42fb-b7ee-26a14db9f9cb",
+        "7fb46699-e462-4585-86e5-f2040d642cce"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9699741526027357,
+      "sd": 0.0006430614328747278,
+      "run_ids": [
+        "5f081b08-c540-48ba-a0e9-c98333a99cd3",
+        "f2a2ac29-6bf3-493a-b8b7-2cdab340465e",
+        "b21713e4-0c20-4b80-970e-56ae21d968e2",
+        "79d903a7-3ee4-42fb-b7ee-26a14db9f9cb",
+        "7fb46699-e462-4585-86e5-f2040d642cce"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.4684674669583601,
+      "sd": 0.0074634140129771565,
+      "run_ids": [
+        "5f081b08-c540-48ba-a0e9-c98333a99cd3",
+        "f2a2ac29-6bf3-493a-b8b7-2cdab340465e",
+        "b21713e4-0c20-4b80-970e-56ae21d968e2",
+        "79d903a7-3ee4-42fb-b7ee-26a14db9f9cb",
+        "7fb46699-e462-4585-86e5-f2040d642cce"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.1606324861806951,
+      "sd": 0.041927123804964765,
+      "run_ids": [
+        "6f254d8b-f11f-48af-af6f-a9b3da72f51e",
+        "197147e2-f632-4af4-82f2-facd8a9a0654",
+        "5ab07223-e9ba-4213-a9f6-2e38a2bb10f3",
+        "6c5faff8-6d9c-4cfc-a94d-f0acf94d196b",
+        "2ddb2d1b-90e4-4105-814f-f0e699bb04a5"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.7657278900853229,
+      "sd": 0.025625901430145974,
+      "run_ids": [
+        "6f254d8b-f11f-48af-af6f-a9b3da72f51e",
+        "197147e2-f632-4af4-82f2-facd8a9a0654",
+        "5ab07223-e9ba-4213-a9f6-2e38a2bb10f3",
+        "6c5faff8-6d9c-4cfc-a94d-f0acf94d196b",
+        "2ddb2d1b-90e4-4105-814f-f0e699bb04a5"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.2806382792066205,
+      "sd": 0.05329319470118167,
+      "run_ids": [
+        "6f254d8b-f11f-48af-af6f-a9b3da72f51e",
+        "197147e2-f632-4af4-82f2-facd8a9a0654",
+        "5ab07223-e9ba-4213-a9f6-2e38a2bb10f3",
+        "6c5faff8-6d9c-4cfc-a94d-f0acf94d196b",
+        "2ddb2d1b-90e4-4105-814f-f0e699bb04a5"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.02049832924336429,
+      "sd": 0.00040822843973318005,
+      "run_ids": [
+        "c8b75b63-14bf-4f76-9356-43ff9b23f912",
+        "0118e069-6a48-4317-b0a8-507485248902",
+        "0c0f9520-4830-4403-92b0-b29ad8362ca4",
+        "cdf99cfa-40b4-4e88-93dc-20a1efa0ef3a",
+        "e5e1b853-51d6-4e43-a4d9-56fabe3c5c5e"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.5154739326772828,
+      "sd": 0.004703001572795888,
+      "run_ids": [
+        "c8b75b63-14bf-4f76-9356-43ff9b23f912",
+        "0118e069-6a48-4317-b0a8-507485248902",
+        "0c0f9520-4830-4403-92b0-b29ad8362ca4",
+        "cdf99cfa-40b4-4e88-93dc-20a1efa0ef3a",
+        "e5e1b853-51d6-4e43-a4d9-56fabe3c5c5e"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.040636507688860415,
+      "sd": 0.0005215307186732656,
+      "run_ids": [
+        "c8b75b63-14bf-4f76-9356-43ff9b23f912",
+        "0118e069-6a48-4317-b0a8-507485248902",
+        "0c0f9520-4830-4403-92b0-b29ad8362ca4",
+        "cdf99cfa-40b4-4e88-93dc-20a1efa0ef3a",
+        "e5e1b853-51d6-4e43-a4d9-56fabe3c5c5e"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.40443865931923045,
+      "sd": 0.009258330551777863,
+      "run_ids": [
+        "6ebff5e4-e20b-41df-9495-609fabdb2285",
+        "1abf537f-badf-4cbc-827d-92ad0b292616",
+        "7a5e8c10-a45e-452e-92ca-f9d125aa3d91",
+        "b821f9e8-ab67-433f-b57d-1a92cf4ac1ce",
+        "40977e6e-063b-4ce8-857e-7f1528543a61"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9690417228229457,
+      "sd": 0.00044890360734389323,
+      "run_ids": [
+        "6ebff5e4-e20b-41df-9495-609fabdb2285",
+        "1abf537f-badf-4cbc-827d-92ad0b292616",
+        "7a5e8c10-a45e-452e-92ca-f9d125aa3d91",
+        "b821f9e8-ab67-433f-b57d-1a92cf4ac1ce",
+        "40977e6e-063b-4ce8-857e-7f1528543a61"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.46417502496496754,
+      "sd": 0.004951642055905393,
+      "run_ids": [
+        "6ebff5e4-e20b-41df-9495-609fabdb2285",
+        "1abf537f-badf-4cbc-827d-92ad0b292616",
+        "7a5e8c10-a45e-452e-92ca-f9d125aa3d91",
+        "b821f9e8-ab67-433f-b57d-1a92cf4ac1ce",
+        "40977e6e-063b-4ce8-857e-7f1528543a61"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.338826879759909,
+      "sd": 0.009134101036918913,
+      "run_ids": [
+        "907c551e-20da-4b34-89da-dd3576c03945",
+        "4aa9b26e-efd2-4e07-b56d-a384bab2be45",
+        "b1bbe8b9-822d-46ef-a24d-4ab07e7a8f0a",
+        "c1513190-6732-4833-9d09-63ad795a7b3e",
+        "d6a5e92a-0e62-45bf-8bc8-27d31f33ad23"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9656729119178917,
+      "sd": 0.0005545518786894361,
+      "run_ids": [
+        "907c551e-20da-4b34-89da-dd3576c03945",
+        "4aa9b26e-efd2-4e07-b56d-a384bab2be45",
+        "b1bbe8b9-822d-46ef-a24d-4ab07e7a8f0a",
+        "c1513190-6732-4833-9d09-63ad795a7b3e",
+        "d6a5e92a-0e62-45bf-8bc8-27d31f33ad23"
+      ]
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.42886847057792854,
+      "sd": 0.006191712863710472,
+      "run_ids": [
+        "907c551e-20da-4b34-89da-dd3576c03945",
+        "4aa9b26e-efd2-4e07-b56d-a384bab2be45",
+        "b1bbe8b9-822d-46ef-a24d-4ab07e7a8f0a",
+        "c1513190-6732-4833-9d09-63ad795a7b3e",
+        "d6a5e92a-0e62-45bf-8bc8-27d31f33ad23"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.46103536742714163,
+      "sd": 0.008011761234517627,
+      "run_ids": [
+        "38175864-59b6-4082-a24c-7f88e290ea9f",
+        "d980d85b-ab6d-45d3-a31f-60a5f1b7ae46",
+        "e15e5a89-5911-467c-815d-1c88fb50a256",
+        "7c48fd9a-4471-4f62-9220-8ecdaa0fbe5d",
+        "14b947f5-2048-45a4-90b5-8ef0f782335f"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9813225335671196,
+      "sd": 0.0006399234088929637,
+      "run_ids": [
+        "38175864-59b6-4082-a24c-7f88e290ea9f",
+        "d980d85b-ab6d-45d3-a31f-60a5f1b7ae46",
+        "e15e5a89-5911-467c-815d-1c88fb50a256",
+        "7c48fd9a-4471-4f62-9220-8ecdaa0fbe5d",
+        "14b947f5-2048-45a4-90b5-8ef0f782335f"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.5161790035746923,
+      "sd": 0.004427711562345434,
+      "run_ids": [
+        "38175864-59b6-4082-a24c-7f88e290ea9f",
+        "d980d85b-ab6d-45d3-a31f-60a5f1b7ae46",
+        "e15e5a89-5911-467c-815d-1c88fb50a256",
+        "7c48fd9a-4471-4f62-9220-8ecdaa0fbe5d",
+        "14b947f5-2048-45a4-90b5-8ef0f782335f"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.47612059165674625,
+      "sd": 0.018473308956059368,
+      "run_ids": [
+        "0bcf840d-ecca-40d1-881f-f6d0e392f8fe",
+        "7f3a587b-d1ed-45b8-b80a-3a8322414bbb",
+        "1a975c6c-dfb8-4a17-b8b8-205275aeb2b3",
+        "bc0ecc5f-c578-4759-847b-2283d779b982",
+        "366cc217-2305-45c9-8438-963f03d972e9"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.9814484675883957,
+      "sd": 0.00394928867742726,
+      "run_ids": [
+        "0bcf840d-ecca-40d1-881f-f6d0e392f8fe",
+        "7f3a587b-d1ed-45b8-b80a-3a8322414bbb",
+        "1a975c6c-dfb8-4a17-b8b8-205275aeb2b3",
+        "bc0ecc5f-c578-4759-847b-2283d779b982",
+        "366cc217-2305-45c9-8438-963f03d972e9"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.5302553430889317,
+      "sd": 0.01748286066345943,
+      "run_ids": [
+        "0bcf840d-ecca-40d1-881f-f6d0e392f8fe",
+        "7f3a587b-d1ed-45b8-b80a-3a8322414bbb",
+        "1a975c6c-dfb8-4a17-b8b8-205275aeb2b3",
+        "bc0ecc5f-c578-4759-847b-2283d779b982",
+        "366cc217-2305-45c9-8438-963f03d972e9"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.044724838077647794,
+      "sd": 0.01902669177775788,
+      "run_ids": [
+        "9abc4e5f-e4ed-44ec-a889-87e56c68e48c",
+        "488f70dd-721b-4ed7-ba39-4ecb60766bfb",
+        "7aacfe0a-947f-4e08-97a2-8e2590de0379",
+        "53c9e28d-addc-420b-9945-d09c472fe171",
+        "e45aea94-7c10-439c-b785-a3e529f1da27"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.3293749171532344,
+      "sd": 0.10776983046731871,
+      "run_ids": [
+        "9abc4e5f-e4ed-44ec-a889-87e56c68e48c",
+        "488f70dd-721b-4ed7-ba39-4ecb60766bfb",
+        "7aacfe0a-947f-4e08-97a2-8e2590de0379",
+        "53c9e28d-addc-420b-9945-d09c472fe171",
+        "e45aea94-7c10-439c-b785-a3e529f1da27"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.11411183062936088,
+      "sd": 0.04057593184487769,
+      "run_ids": [
+        "9abc4e5f-e4ed-44ec-a889-87e56c68e48c",
+        "488f70dd-721b-4ed7-ba39-4ecb60766bfb",
+        "7aacfe0a-947f-4e08-97a2-8e2590de0379",
+        "53c9e28d-addc-420b-9945-d09c472fe171",
+        "e45aea94-7c10-439c-b785-a3e529f1da27"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.02471378291716682,
+      "sd": 0.004592990892977827,
+      "run_ids": [
+        "ff051c50-3909-4c83-8661-40d3e0af16a1",
+        "08fbbe60-7fbc-433d-aa42-ace80cb851c1",
+        "12e1055e-f737-46b9-b961-8dc7f6f8837d",
+        "b2961fc9-5600-4612-aeb2-9056d186a644",
+        "8075afd8-b912-4cc7-b5b5-93a3f2ec564c"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.5013761711734461,
+      "sd": 0.07635662190008814,
+      "run_ids": [
+        "ff051c50-3909-4c83-8661-40d3e0af16a1",
+        "08fbbe60-7fbc-433d-aa42-ace80cb851c1",
+        "12e1055e-f737-46b9-b961-8dc7f6f8837d",
+        "b2961fc9-5600-4612-aeb2-9056d186a644",
+        "8075afd8-b912-4cc7-b5b5-93a3f2ec564c"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.06049942331661993,
+      "sd": 0.012272186030271203,
+      "run_ids": [
+        "ff051c50-3909-4c83-8661-40d3e0af16a1",
+        "08fbbe60-7fbc-433d-aa42-ace80cb851c1",
+        "12e1055e-f737-46b9-b961-8dc7f6f8837d",
+        "b2961fc9-5600-4612-aeb2-9056d186a644",
+        "8075afd8-b912-4cc7-b5b5-93a3f2ec564c"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.4569491255877187,
+      "sd": 0.012500391606768366,
+      "run_ids": [
+        "0df701de-e436-46dc-997b-887cedcde280",
+        "9547f700-3f3a-47ce-a83c-242d30e47abd",
+        "a833dde7-381c-42bf-b28b-da07052b4691",
+        "4c226011-09e6-4a8d-8b1e-d2eac2ab68f2",
+        "053c1564-b8c5-4a9a-a6a6-e0ed0afca3a2"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.980993394419408,
+      "sd": 0.0010196678586135521,
+      "run_ids": [
+        "0df701de-e436-46dc-997b-887cedcde280",
+        "9547f700-3f3a-47ce-a83c-242d30e47abd",
+        "a833dde7-381c-42bf-b28b-da07052b4691",
+        "4c226011-09e6-4a8d-8b1e-d2eac2ab68f2",
+        "053c1564-b8c5-4a9a-a6a6-e0ed0afca3a2"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.5138378144409124,
+      "sd": 0.006265619134408013,
+      "run_ids": [
+        "0df701de-e436-46dc-997b-887cedcde280",
+        "9547f700-3f3a-47ce-a83c-242d30e47abd",
+        "a833dde7-381c-42bf-b28b-da07052b4691",
+        "4c226011-09e6-4a8d-8b1e-d2eac2ab68f2",
+        "053c1564-b8c5-4a9a-a6a6-e0ed0afca3a2"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.4599189380860402,
+      "sd": 0.010724030732557037,
+      "run_ids": [
+        "de04b5e2-02e4-43dd-a447-75df362bb928",
+        "97c38b7b-5ebd-40b0-aba8-9c48ca0df94b",
+        "8325ffc1-e156-4aac-b7ce-852aa2f3713a",
+        "b6ad8f7b-e4a9-499d-b4ed-d928c49c9fb2",
+        "aa71aad1-89c3-494f-9a65-fe3acc88cacb"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9811896309869313,
+      "sd": 0.0004863668090630861,
+      "run_ids": [
+        "de04b5e2-02e4-43dd-a447-75df362bb928",
+        "97c38b7b-5ebd-40b0-aba8-9c48ca0df94b",
+        "8325ffc1-e156-4aac-b7ce-852aa2f3713a",
+        "b6ad8f7b-e4a9-499d-b4ed-d928c49c9fb2",
+        "aa71aad1-89c3-494f-9a65-fe3acc88cacb"
+      ]
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.5109500890882608,
+      "sd": 0.004726277696950551,
+      "run_ids": [
+        "de04b5e2-02e4-43dd-a447-75df362bb928",
+        "97c38b7b-5ebd-40b0-aba8-9c48ca0df94b",
+        "8325ffc1-e156-4aac-b7ce-852aa2f3713a",
+        "b6ad8f7b-e4a9-499d-b4ed-d928c49c9fb2",
+        "aa71aad1-89c3-494f-9a65-fe3acc88cacb"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.4739860995399267,
+      "sd": 0.031706501436630924,
+      "run_ids": [
+        "adfa7e3c-e8ed-4cbf-af8b-b677a009dff0",
+        "1e14c90b-87b7-443a-8887-49cd61e80e8f",
+        "de954487-8372-41a5-b45a-b118d2abaab0",
+        "8f568ba0-7062-4dcb-9595-50ab1ed31273",
+        "288bc885-9108-4a70-9f0f-2f90a07576d8"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.984350732864286,
+      "sd": 0.0016514456088961387,
+      "run_ids": [
+        "adfa7e3c-e8ed-4cbf-af8b-b677a009dff0",
+        "1e14c90b-87b7-443a-8887-49cd61e80e8f",
+        "de954487-8372-41a5-b45a-b118d2abaab0",
+        "8f568ba0-7062-4dcb-9595-50ab1ed31273",
+        "288bc885-9108-4a70-9f0f-2f90a07576d8"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.685203439137267,
+      "sd": 0.023428357711234634,
+      "run_ids": [
+        "adfa7e3c-e8ed-4cbf-af8b-b677a009dff0",
+        "1e14c90b-87b7-443a-8887-49cd61e80e8f",
+        "de954487-8372-41a5-b45a-b118d2abaab0",
+        "8f568ba0-7062-4dcb-9595-50ab1ed31273",
+        "288bc885-9108-4a70-9f0f-2f90a07576d8"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.44940190781577166,
+      "sd": 0.036865438426426894,
+      "run_ids": [
+        "758b463d-1d6a-49d1-9f4c-be00daa3a9bc",
+        "80888b4a-9ac0-4a4e-bcb2-0aa8db464cbf",
+        "fdd9a7d6-39e2-442d-af17-614167aff713",
+        "9ca3b997-12b3-4eb3-bff0-adccea38017a",
+        "23e4d1cf-dcdb-4baf-b693-3b1fcce353f7"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.961866044323726,
+      "sd": 0.0036803656637202763,
+      "run_ids": [
+        "758b463d-1d6a-49d1-9f4c-be00daa3a9bc",
+        "80888b4a-9ac0-4a4e-bcb2-0aa8db464cbf",
+        "fdd9a7d6-39e2-442d-af17-614167aff713",
+        "9ca3b997-12b3-4eb3-bff0-adccea38017a",
+        "23e4d1cf-dcdb-4baf-b693-3b1fcce353f7"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.43985908167695253,
+      "sd": 0.05310913684930707,
+      "run_ids": [
+        "758b463d-1d6a-49d1-9f4c-be00daa3a9bc",
+        "80888b4a-9ac0-4a4e-bcb2-0aa8db464cbf",
+        "fdd9a7d6-39e2-442d-af17-614167aff713",
+        "9ca3b997-12b3-4eb3-bff0-adccea38017a",
+        "23e4d1cf-dcdb-4baf-b693-3b1fcce353f7"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.029901300213188552,
+      "sd": 0.00038860759059780543,
+      "run_ids": [
+        "f6e03387-3ccc-446a-9a55-60e31c9b7839",
+        "e72a7c42-4984-406c-8007-7054411a5f9c",
+        "f3892222-8141-47ae-808d-9df306a30d47",
+        "21587f1b-3763-44f7-ab78-d9bd0a3b698a",
+        "c49a3f91-af8d-4d63-a960-ebdf1d2b7371"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.5078438981809719,
+      "sd": 0.013302177849528784,
+      "run_ids": [
+        "f6e03387-3ccc-446a-9a55-60e31c9b7839",
+        "e72a7c42-4984-406c-8007-7054411a5f9c",
+        "f3892222-8141-47ae-808d-9df306a30d47",
+        "21587f1b-3763-44f7-ab78-d9bd0a3b698a",
+        "c49a3f91-af8d-4d63-a960-ebdf1d2b7371"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.04497369487978938,
+      "sd": 0.016133114298130476,
+      "run_ids": [
+        "f6e03387-3ccc-446a-9a55-60e31c9b7839",
+        "e72a7c42-4984-406c-8007-7054411a5f9c",
+        "f3892222-8141-47ae-808d-9df306a30d47",
+        "21587f1b-3763-44f7-ab78-d9bd0a3b698a",
+        "c49a3f91-af8d-4d63-a960-ebdf1d2b7371"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.09506139510777731,
+      "sd": 0.09582617370892166,
+      "run_ids": [
+        "8bb7f456-0079-409d-ad50-76709fc70452",
+        "596a7359-9678-4fa1-9946-b765cacd47cc",
+        "9063b27a-8255-48b2-b62c-3aaca644aa73",
+        "119ecf78-9092-465a-8a6c-86a9b779dd68",
+        "137e15cc-f70d-4efb-970e-b4850a1d75ed"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.6800163581600135,
+      "sd": 0.1512874541458273,
+      "run_ids": [
+        "8bb7f456-0079-409d-ad50-76709fc70452",
+        "596a7359-9678-4fa1-9946-b765cacd47cc",
+        "9063b27a-8255-48b2-b62c-3aaca644aa73",
+        "119ecf78-9092-465a-8a6c-86a9b779dd68",
+        "137e15cc-f70d-4efb-970e-b4850a1d75ed"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.1596752469749922,
+      "sd": 0.19027025077044976,
+      "run_ids": [
+        "8bb7f456-0079-409d-ad50-76709fc70452",
+        "596a7359-9678-4fa1-9946-b765cacd47cc",
+        "9063b27a-8255-48b2-b62c-3aaca644aa73",
+        "119ecf78-9092-465a-8a6c-86a9b779dd68",
+        "137e15cc-f70d-4efb-970e-b4850a1d75ed"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.03018634581482214,
+      "sd": 0.000675847555398768,
+      "run_ids": [
+        "2462fb24-0bdd-49e2-a998-614d9f5a7ac0",
+        "3b7cbee0-640d-4ac5-ae9f-27b42fce9ca1",
+        "f05b9e72-e962-4bdb-8a34-593870ed56ad",
+        "fa6add70-9c54-442b-b3da-8dac6c48465e",
+        "afbfc821-33b2-4f04-9cbf-e0daf39e3828"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.4916122706458366,
+      "sd": 0.007508725146785847,
+      "run_ids": [
+        "2462fb24-0bdd-49e2-a998-614d9f5a7ac0",
+        "3b7cbee0-640d-4ac5-ae9f-27b42fce9ca1",
+        "f05b9e72-e962-4bdb-8a34-593870ed56ad",
+        "fa6add70-9c54-442b-b3da-8dac6c48465e",
+        "afbfc821-33b2-4f04-9cbf-e0daf39e3828"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.0584579385102507,
+      "sd": 0.0007371709753743503,
+      "run_ids": [
+        "2462fb24-0bdd-49e2-a998-614d9f5a7ac0",
+        "3b7cbee0-640d-4ac5-ae9f-27b42fce9ca1",
+        "f05b9e72-e962-4bdb-8a34-593870ed56ad",
+        "fa6add70-9c54-442b-b3da-8dac6c48465e",
+        "afbfc821-33b2-4f04-9cbf-e0daf39e3828"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.4758137463544309,
+      "sd": 0.030072621519673905,
+      "run_ids": [
+        "844c50d7-c138-426a-80bc-697f8110ab9f",
+        "b235dea1-5b92-4997-a231-0a08bcd6e7ec",
+        "10791486-3bdb-4b67-8e66-ea8bba4a8a85",
+        "f7a37188-3b03-434c-951c-d59d9a62aaa6",
+        "b2301a17-30e9-4710-a41a-8aa10aa6bdcc"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9844869352711825,
+      "sd": 0.0015781950410383744,
+      "run_ids": [
+        "844c50d7-c138-426a-80bc-697f8110ab9f",
+        "b235dea1-5b92-4997-a231-0a08bcd6e7ec",
+        "10791486-3bdb-4b67-8e66-ea8bba4a8a85",
+        "f7a37188-3b03-434c-951c-d59d9a62aaa6",
+        "b2301a17-30e9-4710-a41a-8aa10aa6bdcc"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.6891844925573427,
+      "sd": 0.02399580512160305,
+      "run_ids": [
+        "844c50d7-c138-426a-80bc-697f8110ab9f",
+        "b235dea1-5b92-4997-a231-0a08bcd6e7ec",
+        "10791486-3bdb-4b67-8e66-ea8bba4a8a85",
+        "f7a37188-3b03-434c-951c-d59d9a62aaa6",
+        "b2301a17-30e9-4710-a41a-8aa10aa6bdcc"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.47199739510602995,
+      "sd": 0.03227866817020812,
+      "run_ids": [
+        "0f4df855-f5db-4586-b68c-bb8ab9e9ced0",
+        "47a61e8a-3cd2-4190-9fd5-c502468b635a",
+        "929b9590-3c5a-4aed-9d2d-869b0e608227",
+        "b9dc46a9-1d5f-4420-9cf0-38d191115608",
+        "4dda3181-3212-4d4d-ba57-2778ff13eb02"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.984226421832602,
+      "sd": 0.0016851265054970924,
+      "run_ids": [
+        "0f4df855-f5db-4586-b68c-bb8ab9e9ced0",
+        "47a61e8a-3cd2-4190-9fd5-c502468b635a",
+        "929b9590-3c5a-4aed-9d2d-869b0e608227",
+        "b9dc46a9-1d5f-4420-9cf0-38d191115608",
+        "4dda3181-3212-4d4d-ba57-2778ff13eb02"
+      ]
+    },
+    {
+      "dataset": "Cora-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.6865435907860061,
+      "sd": 0.024965691690085064,
+      "run_ids": [
+        "0f4df855-f5db-4586-b68c-bb8ab9e9ced0",
+        "47a61e8a-3cd2-4190-9fd5-c502468b635a",
+        "929b9590-3c5a-4aed-9d2d-869b0e608227",
+        "b9dc46a9-1d5f-4420-9cf0-38d191115608",
+        "4dda3181-3212-4d4d-ba57-2778ff13eb02"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.5989221324150906,
+      "sd": 0.0311863619600963,
+      "run_ids": [
+        "55b942ad-d37a-4820-9119-fdc47a70d7ef",
+        "ab977b04-fb47-4186-a0c3-4d111523cb45",
+        "2a709b40-8f4a-4136-bd38-e5f9784f8720",
+        "08c1c1c9-303f-4c5d-b226-9fcc8ccaa3e3",
+        "7d25487c-07fb-44e0-93df-ead743197c50"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9779702602230482,
+      "sd": 0.005746395885713109,
+      "run_ids": [
+        "55b942ad-d37a-4820-9119-fdc47a70d7ef",
+        "ab977b04-fb47-4186-a0c3-4d111523cb45",
+        "2a709b40-8f4a-4136-bd38-e5f9784f8720",
+        "08c1c1c9-303f-4c5d-b226-9fcc8ccaa3e3",
+        "7d25487c-07fb-44e0-93df-ead743197c50"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.7489133514257208,
+      "sd": 0.00973041498794362,
+      "run_ids": [
+        "55b942ad-d37a-4820-9119-fdc47a70d7ef",
+        "ab977b04-fb47-4186-a0c3-4d111523cb45",
+        "2a709b40-8f4a-4136-bd38-e5f9784f8720",
+        "08c1c1c9-303f-4c5d-b226-9fcc8ccaa3e3",
+        "7d25487c-07fb-44e0-93df-ead743197c50"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.550710543867505,
+      "sd": 0.06469778934040721,
+      "run_ids": [
+        "d40ce374-83ff-4549-9fea-cbf114f3f0d3",
+        "fc8d1421-6e12-43f8-ad90-336fde1388ab",
+        "7fd88b39-a27c-4fd5-8d5d-43e1b035b984",
+        "36fcdc01-6896-419e-a85b-43bcd7783c5a",
+        "8ce185e5-3a39-447d-a85d-90d135c2c6e7"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.9762713754646841,
+      "sd": 0.005162515218429824,
+      "run_ids": [
+        "d40ce374-83ff-4549-9fea-cbf114f3f0d3",
+        "fc8d1421-6e12-43f8-ad90-336fde1388ab",
+        "7fd88b39-a27c-4fd5-8d5d-43e1b035b984",
+        "36fcdc01-6896-419e-a85b-43bcd7783c5a",
+        "8ce185e5-3a39-447d-a85d-90d135c2c6e7"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.5618352612607853,
+      "sd": 0.04155669937785751,
+      "run_ids": [
+        "d40ce374-83ff-4549-9fea-cbf114f3f0d3",
+        "fc8d1421-6e12-43f8-ad90-336fde1388ab",
+        "7fd88b39-a27c-4fd5-8d5d-43e1b035b984",
+        "36fcdc01-6896-419e-a85b-43bcd7783c5a",
+        "8ce185e5-3a39-447d-a85d-90d135c2c6e7"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.030369024342743765,
+      "sd": 0.0022335826401856432,
+      "run_ids": [
+        "d206f363-009e-400d-8477-949aae3856b1",
+        "ad8dbd01-80a6-48d7-b550-50704ebc319e",
+        "308fa74e-c7a5-48cf-b44f-01c6b5fe372b",
+        "e517bee2-92c0-47b2-a72f-b69e3d006858",
+        "4a129beb-2a28-4c5c-86b3-010b9dcb2e44"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.4962205700123916,
+      "sd": 0.020912627207469205,
+      "run_ids": [
+        "d206f363-009e-400d-8477-949aae3856b1",
+        "ad8dbd01-80a6-48d7-b550-50704ebc319e",
+        "308fa74e-c7a5-48cf-b44f-01c6b5fe372b",
+        "e517bee2-92c0-47b2-a72f-b69e3d006858",
+        "4a129beb-2a28-4c5c-86b3-010b9dcb2e44"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.0411829077865139,
+      "sd": 0.015912288522099496,
+      "run_ids": [
+        "d206f363-009e-400d-8477-949aae3856b1",
+        "ad8dbd01-80a6-48d7-b550-50704ebc319e",
+        "308fa74e-c7a5-48cf-b44f-01c6b5fe372b",
+        "e517bee2-92c0-47b2-a72f-b69e3d006858",
+        "4a129beb-2a28-4c5c-86b3-010b9dcb2e44"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.3662486214240419,
+      "sd": 0.13716782520069098,
+      "run_ids": [
+        "9f0be4fd-1afd-4efb-a8f6-51ca176599c5",
+        "02fb2b3f-7b4c-4a03-b3e6-26ec0e5cec7b",
+        "fe444295-0838-4298-b08a-50c88ebc373e",
+        "05ef6878-368d-4684-a487-48dee3b141da",
+        "8f5437cb-7d33-468e-b960-a59d7ed76afd"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.9184807930607187,
+      "sd": 0.029722677446801602,
+      "run_ids": [
+        "9f0be4fd-1afd-4efb-a8f6-51ca176599c5",
+        "02fb2b3f-7b4c-4a03-b3e6-26ec0e5cec7b",
+        "fe444295-0838-4298-b08a-50c88ebc373e",
+        "05ef6878-368d-4684-a487-48dee3b141da",
+        "8f5437cb-7d33-468e-b960-a59d7ed76afd"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.5421662272214822,
+      "sd": 0.15898980197149376,
+      "run_ids": [
+        "9f0be4fd-1afd-4efb-a8f6-51ca176599c5",
+        "02fb2b3f-7b4c-4a03-b3e6-26ec0e5cec7b",
+        "fe444295-0838-4298-b08a-50c88ebc373e",
+        "05ef6878-368d-4684-a487-48dee3b141da",
+        "8f5437cb-7d33-468e-b960-a59d7ed76afd"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.03007705641398588,
+      "sd": 4.226695969164065e-05,
+      "run_ids": [
+        "c994b8e3-a537-46be-9455-0a83144084af",
+        "d4bea412-fb9c-43f4-9f01-bceedf948f01",
+        "fa97a179-bc7b-45f2-a0fc-782513ab7bb8",
+        "ad0f1573-0b9f-49d5-bcf7-5bcaadb6b0f1",
+        "31d4e889-1f5f-4686-abbe-fbb790bb1a45"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.49944237918215606,
+      "sd": 0.0018525299117380558,
+      "run_ids": [
+        "c994b8e3-a537-46be-9455-0a83144084af",
+        "d4bea412-fb9c-43f4-9f01-bceedf948f01",
+        "fa97a179-bc7b-45f2-a0fc-782513ab7bb8",
+        "ad0f1573-0b9f-49d5-bcf7-5bcaadb6b0f1",
+        "31d4e889-1f5f-4686-abbe-fbb790bb1a45"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.05839767916990812,
+      "sd": 7.966564175989686e-05,
+      "run_ids": [
+        "c994b8e3-a537-46be-9455-0a83144084af",
+        "d4bea412-fb9c-43f4-9f01-bceedf948f01",
+        "fa97a179-bc7b-45f2-a0fc-782513ab7bb8",
+        "ad0f1573-0b9f-49d5-bcf7-5bcaadb6b0f1",
+        "31d4e889-1f5f-4686-abbe-fbb790bb1a45"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.6004435547534234,
+      "sd": 0.03288828406649501,
+      "run_ids": [
+        "fdee4a5e-b2f6-42c5-a882-8ea5d0e7be23",
+        "cb970229-4ab3-4b11-b5a5-b7ceeec8c711",
+        "227b6da1-75af-48cf-8e69-d8bc8efe14ef",
+        "12aa8158-ac27-4f04-bbde-605e2886112a",
+        "0139bac0-231b-426a-8be6-50c4b482c569"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9777472118959107,
+      "sd": 0.005756551689322555,
+      "run_ids": [
+        "fdee4a5e-b2f6-42c5-a882-8ea5d0e7be23",
+        "cb970229-4ab3-4b11-b5a5-b7ceeec8c711",
+        "227b6da1-75af-48cf-8e69-d8bc8efe14ef",
+        "12aa8158-ac27-4f04-bbde-605e2886112a",
+        "0139bac0-231b-426a-8be6-50c4b482c569"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.7501667341347366,
+      "sd": 0.008795297166614365,
+      "run_ids": [
+        "fdee4a5e-b2f6-42c5-a882-8ea5d0e7be23",
+        "cb970229-4ab3-4b11-b5a5-b7ceeec8c711",
+        "227b6da1-75af-48cf-8e69-d8bc8efe14ef",
+        "12aa8158-ac27-4f04-bbde-605e2886112a",
+        "0139bac0-231b-426a-8be6-50c4b482c569"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.5991523409501471,
+      "sd": 0.030852323707817618,
+      "run_ids": [
+        "04203a49-2858-47e1-b8e4-f582051ef4d9",
+        "4f6c16a1-b8e4-4595-a6ff-9199cdf2f120",
+        "458f6e53-9d63-4a28-8336-9ad6d8b4d6fd",
+        "1e9626a5-11d1-4d54-bdd8-59715000dbbf",
+        "2f0be04e-14d7-4143-a26d-a3cd458f1811"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9778612143742255,
+      "sd": 0.005811928666377061,
+      "run_ids": [
+        "04203a49-2858-47e1-b8e4-f582051ef4d9",
+        "4f6c16a1-b8e4-4595-a6ff-9199cdf2f120",
+        "458f6e53-9d63-4a28-8336-9ad6d8b4d6fd",
+        "1e9626a5-11d1-4d54-bdd8-59715000dbbf",
+        "2f0be04e-14d7-4143-a26d-a3cd458f1811"
+      ]
+    },
+    {
+      "dataset": "CiteSeer-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.7489133514257208,
+      "sd": 0.00973041498794362,
+      "run_ids": [
+        "04203a49-2858-47e1-b8e4-f582051ef4d9",
+        "4f6c16a1-b8e4-4595-a6ff-9199cdf2f120",
+        "458f6e53-9d63-4a28-8336-9ad6d8b4d6fd",
+        "1e9626a5-11d1-4d54-bdd8-59715000dbbf",
+        "2f0be04e-14d7-4143-a26d-a3cd458f1811"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.1607120781811407,
+      "sd": 0.005591627406833029,
+      "run_ids": [
+        "4d31453f-08a7-41c4-bdf2-014e5588ed0f",
+        "143cf8e1-a292-48cc-bc8a-bba452dfd262",
+        "085ee73f-5dd4-42e7-b14b-3c4822a19cff",
+        "7f5aeaea-fc5d-445b-aa0c-48a4cc3461bc",
+        "ee2b4611-cc12-4ff5-ae29-1721d10dca3e"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.9264732668986042,
+      "sd": 0.0026361539637865324,
+      "run_ids": [
+        "4d31453f-08a7-41c4-bdf2-014e5588ed0f",
+        "143cf8e1-a292-48cc-bc8a-bba452dfd262",
+        "085ee73f-5dd4-42e7-b14b-3c4822a19cff",
+        "7f5aeaea-fc5d-445b-aa0c-48a4cc3461bc",
+        "ee2b4611-cc12-4ff5-ae29-1721d10dca3e"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.35431777291119615,
+      "sd": 0.004049064388856291,
+      "run_ids": [
+        "4d31453f-08a7-41c4-bdf2-014e5588ed0f",
+        "143cf8e1-a292-48cc-bc8a-bba452dfd262",
+        "085ee73f-5dd4-42e7-b14b-3c4822a19cff",
+        "7f5aeaea-fc5d-445b-aa0c-48a4cc3461bc",
+        "ee2b4611-cc12-4ff5-ae29-1721d10dca3e"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.6836831529964005,
+      "sd": 0.015225958874561985,
+      "run_ids": [
+        "8150c5ac-82b1-47a6-9b9d-901dc270ab0e",
+        "e826e9ce-8c90-4f89-8eff-24dcf8f77644",
+        "3e6aa8aa-e391-436d-982e-4135ac780767",
+        "eda5644d-3795-40fd-8fe6-fc46154db200",
+        "8eb81e40-8cd8-416e-822d-a62881c89764"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.9885986177016711,
+      "sd": 0.00023751406711861213,
+      "run_ids": [
+        "8150c5ac-82b1-47a6-9b9d-901dc270ab0e",
+        "e826e9ce-8c90-4f89-8eff-24dcf8f77644",
+        "3e6aa8aa-e391-436d-982e-4135ac780767",
+        "eda5644d-3795-40fd-8fe6-fc46154db200",
+        "8eb81e40-8cd8-416e-822d-a62881c89764"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.6778702415540409,
+      "sd": 0.0057312696369584875,
+      "run_ids": [
+        "8150c5ac-82b1-47a6-9b9d-901dc270ab0e",
+        "e826e9ce-8c90-4f89-8eff-24dcf8f77644",
+        "3e6aa8aa-e391-436d-982e-4135ac780767",
+        "eda5644d-3795-40fd-8fe6-fc46154db200",
+        "8eb81e40-8cd8-416e-822d-a62881c89764"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.07046513312443813,
+      "sd": 0.01859500872047977,
+      "run_ids": [
+        "dbc49dd4-4b8e-44cf-9821-be1eb07c861c",
+        "a3bb52eb-7948-4de9-931c-2c272239fff7",
+        "999528a6-928a-4363-b48e-598868d33473",
+        "680fb920-d21a-4088-8ce5-819025d6de8a",
+        "ef532162-7217-4f56-94e7-61ca223b3331"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.5559705763485958,
+      "sd": 0.023202870265283705,
+      "run_ids": [
+        "dbc49dd4-4b8e-44cf-9821-be1eb07c861c",
+        "a3bb52eb-7948-4de9-931c-2c272239fff7",
+        "999528a6-928a-4363-b48e-598868d33473",
+        "680fb920-d21a-4088-8ce5-819025d6de8a",
+        "ef532162-7217-4f56-94e7-61ca223b3331"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.11112500426389108,
+      "sd": 0.015407725889572843,
+      "run_ids": [
+        "dbc49dd4-4b8e-44cf-9821-be1eb07c861c",
+        "a3bb52eb-7948-4de9-931c-2c272239fff7",
+        "999528a6-928a-4363-b48e-598868d33473",
+        "680fb920-d21a-4088-8ce5-819025d6de8a",
+        "ef532162-7217-4f56-94e7-61ca223b3331"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.10142639431758176,
+      "sd": 0.03510885654925912,
+      "run_ids": [
+        "f99bcd19-c636-4c4d-8209-4951650a6b75",
+        "feb87ed4-16ac-489c-a7dc-d6b1c65b914f",
+        "c856844d-0f18-4dc5-bd0f-62b2600df7e8",
+        "783d0725-cc8d-4b0a-aeb8-0d0d40a24c10",
+        "b9101efe-8150-4219-80f2-a32343d941a7"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.8221504404645156,
+      "sd": 0.11958684474139386,
+      "run_ids": [
+        "f99bcd19-c636-4c4d-8209-4951650a6b75",
+        "feb87ed4-16ac-489c-a7dc-d6b1c65b914f",
+        "c856844d-0f18-4dc5-bd0f-62b2600df7e8",
+        "783d0725-cc8d-4b0a-aeb8-0d0d40a24c10",
+        "b9101efe-8150-4219-80f2-a32343d941a7"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.245511536391061,
+      "sd": 0.10008493002197401,
+      "run_ids": [
+        "f99bcd19-c636-4c4d-8209-4951650a6b75",
+        "feb87ed4-16ac-489c-a7dc-d6b1c65b914f",
+        "c856844d-0f18-4dc5-bd0f-62b2600df7e8",
+        "783d0725-cc8d-4b0a-aeb8-0d0d40a24c10",
+        "b9101efe-8150-4219-80f2-a32343d941a7"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.030048944739918614,
+      "sd": 2.030501414346305e-05,
+      "run_ids": [
+        "f38bd113-23f8-4032-a6ce-2b1dcd9214e1",
+        "5f7a239a-8c0d-47bc-99d2-23fb615a037c",
+        "b81af452-2f84-4e4c-9803-d393aaa7aacb",
+        "7fb503dc-2999-434b-9572-58a2713224a1",
+        "40b89b9e-ac99-4d2e-adab-34260c3befb2"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.49998954303042975,
+      "sd": 0.00042269963257154204,
+      "run_ids": [
+        "f38bd113-23f8-4032-a6ce-2b1dcd9214e1",
+        "5f7a239a-8c0d-47bc-99d2-23fb615a037c",
+        "b81af452-2f84-4e4c-9803-d393aaa7aacb",
+        "7fb503dc-2999-434b-9572-58a2713224a1",
+        "40b89b9e-ac99-4d2e-adab-34260c3befb2"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.05834469226882237,
+      "sd": 3.827436178766024e-05,
+      "run_ids": [
+        "f38bd113-23f8-4032-a6ce-2b1dcd9214e1",
+        "5f7a239a-8c0d-47bc-99d2-23fb615a037c",
+        "b81af452-2f84-4e4c-9803-d393aaa7aacb",
+        "7fb503dc-2999-434b-9572-58a2713224a1",
+        "40b89b9e-ac99-4d2e-adab-34260c3befb2"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.162318363943243,
+      "sd": 0.005979162592184566,
+      "run_ids": [
+        "94730787-3412-41ef-bdf0-00756ee21201",
+        "41867621-9c82-4cb8-9f4c-0da36d277845",
+        "feff0a36-53fa-4673-b1ae-cd1f867d0bf3",
+        "77fcba32-9f65-4067-86ac-e1734fb4f8a9",
+        "6a11c234-3bf1-425a-9af7-ff834279a582"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.9271838462429803,
+      "sd": 0.002722366854327746,
+      "run_ids": [
+        "94730787-3412-41ef-bdf0-00756ee21201",
+        "41867621-9c82-4cb8-9f4c-0da36d277845",
+        "feff0a36-53fa-4673-b1ae-cd1f867d0bf3",
+        "77fcba32-9f65-4067-86ac-e1734fb4f8a9",
+        "6a11c234-3bf1-425a-9af7-ff834279a582"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.3560533768408036,
+      "sd": 0.005043105312124783,
+      "run_ids": [
+        "94730787-3412-41ef-bdf0-00756ee21201",
+        "41867621-9c82-4cb8-9f4c-0da36d277845",
+        "feff0a36-53fa-4673-b1ae-cd1f867d0bf3",
+        "77fcba32-9f65-4067-86ac-e1734fb4f8a9",
+        "6a11c234-3bf1-425a-9af7-ff834279a582"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.16050077638134005,
+      "sd": 0.005755108464885524,
+      "run_ids": [
+        "40db937a-2734-46d4-ae8b-8348312e5d71",
+        "407b2a88-a571-4c68-bf0b-7424acfe6cb0",
+        "b06c4070-5964-41fa-b5c8-bc98f38373e8",
+        "5cee9617-42ef-48ec-adac-bda80ca4c458",
+        "64008465-817e-4ee7-b15c-cc1a0c533d84"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.9263726538940906,
+      "sd": 0.0027052847441870723,
+      "run_ids": [
+        "40db937a-2734-46d4-ae8b-8348312e5d71",
+        "407b2a88-a571-4c68-bf0b-7424acfe6cb0",
+        "b06c4070-5964-41fa-b5c8-bc98f38373e8",
+        "5cee9617-42ef-48ec-adac-bda80ca4c458",
+        "64008465-817e-4ee7-b15c-cc1a0c533d84"
+      ]
+    },
+    {
+      "dataset": "PubMed-Syn",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.35431001421593616,
+      "sd": 0.004012806726151879,
+      "run_ids": [
+        "40db937a-2734-46d4-ae8b-8348312e5d71",
+        "407b2a88-a571-4c68-bf0b-7424acfe6cb0",
+        "b06c4070-5964-41fa-b5c8-bc98f38373e8",
+        "5cee9617-42ef-48ec-adac-bda80ca4c458",
+        "64008465-817e-4ee7-b15c-cc1a0c533d84"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DOMINANT",
+      "metric": "pr_auc",
+      "mean": 0.1348162,
+      "sd": 0.03945447139881613,
+      "run_ids": [
+        "cac7b2b7-9093-4a36-a002-1b582847e830",
+        "9ae61097-4df9-44fc-a9dc-170021fa359d",
+        "a227b7ef-4e4f-420c-a7ec-6ab43ecc7e58",
+        "1a506403-e22f-47e6-bd6f-046b20308fab",
+        "84e9343c-3616-48a7-bb30-f7868b72d924"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DOMINANT",
+      "metric": "roc_auc",
+      "mean": 0.799742,
+      "sd": 0.023685028165488873,
+      "run_ids": [
+        "cac7b2b7-9093-4a36-a002-1b582847e830",
+        "9ae61097-4df9-44fc-a9dc-170021fa359d",
+        "a227b7ef-4e4f-420c-a7ec-6ab43ecc7e58",
+        "1a506403-e22f-47e6-bd6f-046b20308fab",
+        "84e9343c-3616-48a7-bb30-f7868b72d924"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DOMINANT",
+      "metric": "validation_f1",
+      "mean": 0.1740182,
+      "sd": 0.056938571883741525,
+      "run_ids": [
+        "cac7b2b7-9093-4a36-a002-1b582847e830",
+        "9ae61097-4df9-44fc-a9dc-170021fa359d",
+        "a227b7ef-4e4f-420c-a7ec-6ab43ecc7e58",
+        "1a506403-e22f-47e6-bd6f-046b20308fab",
+        "84e9343c-3616-48a7-bb30-f7868b72d924"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "AnomalyDAE",
+      "metric": "pr_auc",
+      "mean": 0.0450304,
+      "sd": 0.022425028451264,
+      "run_ids": [
+        "f45578fc-6f31-44ba-b84c-15e3bfd209d5",
+        "d5576876-2c94-4e9c-b5bb-5846027453c5",
+        "6d3b6755-c7af-4013-aa1a-9f381430eb14",
+        "60a7b65c-415c-4a96-85f1-a933b7267599",
+        "18393e36-406c-42d2-90a4-5de7d4156b95"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "AnomalyDAE",
+      "metric": "roc_auc",
+      "mean": 0.5548268000000001,
+      "sd": 0.050157275992222694,
+      "run_ids": [
+        "f45578fc-6f31-44ba-b84c-15e3bfd209d5",
+        "d5576876-2c94-4e9c-b5bb-5846027453c5",
+        "6d3b6755-c7af-4013-aa1a-9f381430eb14",
+        "60a7b65c-415c-4a96-85f1-a933b7267599",
+        "18393e36-406c-42d2-90a4-5de7d4156b95"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "AnomalyDAE",
+      "metric": "validation_f1",
+      "mean": 0.06883679999999999,
+      "sd": 0.03731015706962382,
+      "run_ids": [
+        "f45578fc-6f31-44ba-b84c-15e3bfd209d5",
+        "d5576876-2c94-4e9c-b5bb-5846027453c5",
+        "6d3b6755-c7af-4013-aa1a-9f381430eb14",
+        "60a7b65c-415c-4a96-85f1-a933b7267599",
+        "18393e36-406c-42d2-90a4-5de7d4156b95"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "CoLA",
+      "metric": "pr_auc",
+      "mean": 0.019982800000000002,
+      "sd": 0.004077057242669031,
+      "run_ids": [
+        "9c03b4a1-8e7d-4bd2-95ae-95340038905a",
+        "18d759b4-109a-4b40-83c2-3be62ef804ca",
+        "4e204615-f9bb-4a91-9f31-93057362ecc5",
+        "fb6e2851-6d5f-4536-aa54-5fa1b6867328",
+        "853c583a-008c-4422-abf9-409944de20b9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "CoLA",
+      "metric": "roc_auc",
+      "mean": 0.4663208,
+      "sd": 0.06869396167757395,
+      "run_ids": [
+        "9c03b4a1-8e7d-4bd2-95ae-95340038905a",
+        "18d759b4-109a-4b40-83c2-3be62ef804ca",
+        "4e204615-f9bb-4a91-9f31-93057362ecc5",
+        "fb6e2851-6d5f-4536-aa54-5fa1b6867328",
+        "853c583a-008c-4422-abf9-409944de20b9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "CoLA",
+      "metric": "validation_f1",
+      "mean": 0.029521400000000003,
+      "sd": 0.013314790672030861,
+      "run_ids": [
+        "9c03b4a1-8e7d-4bd2-95ae-95340038905a",
+        "18d759b4-109a-4b40-83c2-3be62ef804ca",
+        "4e204615-f9bb-4a91-9f31-93057362ecc5",
+        "fb6e2851-6d5f-4536-aa54-5fa1b6867328",
+        "853c583a-008c-4422-abf9-409944de20b9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "GADNR",
+      "metric": "pr_auc",
+      "mean": 0.18055519999999997,
+      "sd": 0.03459617671593207,
+      "run_ids": [
+        "b1a27700-cc75-40e9-a52c-7930f947206c",
+        "bb472459-ee72-4c4e-928d-458bcd137928",
+        "07fa20fc-117b-47dd-98e5-ecf47cc7e8e2",
+        "ef8a610b-4322-4682-bcae-aa394b3bedca",
+        "1f624705-eed9-4029-9e4d-b10b07a57252"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "GADNR",
+      "metric": "roc_auc",
+      "mean": 0.826055,
+      "sd": 0.019465970255807968,
+      "run_ids": [
+        "b1a27700-cc75-40e9-a52c-7930f947206c",
+        "bb472459-ee72-4c4e-928d-458bcd137928",
+        "07fa20fc-117b-47dd-98e5-ecf47cc7e8e2",
+        "ef8a610b-4322-4682-bcae-aa394b3bedca",
+        "1f624705-eed9-4029-9e4d-b10b07a57252"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "GADNR",
+      "metric": "validation_f1",
+      "mean": 0.24746360000000003,
+      "sd": 0.046450386859960606,
+      "run_ids": [
+        "b1a27700-cc75-40e9-a52c-7930f947206c",
+        "bb472459-ee72-4c4e-928d-458bcd137928",
+        "07fa20fc-117b-47dd-98e5-ecf47cc7e8e2",
+        "ef8a610b-4322-4682-bcae-aa394b3bedca",
+        "1f624705-eed9-4029-9e4d-b10b07a57252"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "OCGNN",
+      "metric": "pr_auc",
+      "mean": 0.0454212,
+      "sd": 0.019564283737464046,
+      "run_ids": [
+        "7cc82588-daf2-4fe2-9095-6c9ffc94825e",
+        "be89a3f7-ed5f-4ecd-9b18-96c8825ba728",
+        "ae628402-accc-4437-86c9-4909d7dc35c3",
+        "1bf8f0f8-a756-4a60-9dd6-3949c9f16929",
+        "563bb62a-ec35-4314-87c2-a4e33e1f34d9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "OCGNN",
+      "metric": "roc_auc",
+      "mean": 0.376171,
+      "sd": 0.09446027940462594,
+      "run_ids": [
+        "7cc82588-daf2-4fe2-9095-6c9ffc94825e",
+        "be89a3f7-ed5f-4ecd-9b18-96c8825ba728",
+        "ae628402-accc-4437-86c9-4909d7dc35c3",
+        "1bf8f0f8-a756-4a60-9dd6-3949c9f16929",
+        "563bb62a-ec35-4314-87c2-a4e33e1f34d9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "OCGNN",
+      "metric": "validation_f1",
+      "mean": 0.0567758,
+      "sd": 0.011200698931763144,
+      "run_ids": [
+        "7cc82588-daf2-4fe2-9095-6c9ffc94825e",
+        "be89a3f7-ed5f-4ecd-9b18-96c8825ba728",
+        "ae628402-accc-4437-86c9-4909d7dc35c3",
+        "1bf8f0f8-a756-4a60-9dd6-3949c9f16929",
+        "563bb62a-ec35-4314-87c2-a4e33e1f34d9"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Base",
+      "metric": "pr_auc",
+      "mean": 0.13669199999999998,
+      "sd": 0.02102012740208774,
+      "run_ids": [
+        "fad43582-bd59-4ac7-9485-bb3331f42023",
+        "4b0b4584-fe19-4551-b716-8c438ff26690",
+        "f8241914-19a5-44bb-bf67-c09dbba28171",
+        "f2bd9a66-599c-4a0d-8463-e69d972010cf",
+        "809b355e-8039-4a87-99f6-e9f6b64b0e5e"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Base",
+      "metric": "roc_auc",
+      "mean": 0.7923039999999999,
+      "sd": 0.0403968209095716,
+      "run_ids": [
+        "fad43582-bd59-4ac7-9485-bb3331f42023",
+        "4b0b4584-fe19-4551-b716-8c438ff26690",
+        "f8241914-19a5-44bb-bf67-c09dbba28171",
+        "f2bd9a66-599c-4a0d-8463-e69d972010cf",
+        "809b355e-8039-4a87-99f6-e9f6b64b0e5e"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Base",
+      "metric": "validation_f1",
+      "mean": 0.21122520000000003,
+      "sd": 0.02270163780347136,
+      "run_ids": [
+        "fad43582-bd59-4ac7-9485-bb3331f42023",
+        "4b0b4584-fe19-4551-b716-8c438ff26690",
+        "f8241914-19a5-44bb-bf67-c09dbba28171",
+        "f2bd9a66-599c-4a0d-8463-e69d972010cf",
+        "809b355e-8039-4a87-99f6-e9f6b64b0e5e"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Aug",
+      "metric": "pr_auc",
+      "mean": 0.11144240000000001,
+      "sd": 0.04247213061102539,
+      "run_ids": [
+        "953800b5-5333-4e8c-81a5-4ccfda12d662",
+        "d5e3bb9b-478a-44d5-a54b-3a677a96cc67",
+        "d4350aa2-2b9a-4fdd-9b7d-80162cd0df03",
+        "92328889-3a97-46b2-b8b9-286eeaae0d00",
+        "47a5e3df-a5ac-4cce-ae17-58ae71e61e89"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Aug",
+      "metric": "roc_auc",
+      "mean": 0.7187553999999999,
+      "sd": 0.09035891083141719,
+      "run_ids": [
+        "953800b5-5333-4e8c-81a5-4ccfda12d662",
+        "d5e3bb9b-478a-44d5-a54b-3a677a96cc67",
+        "d4350aa2-2b9a-4fdd-9b7d-80162cd0df03",
+        "92328889-3a97-46b2-b8b9-286eeaae0d00",
+        "47a5e3df-a5ac-4cce-ae17-58ae71e61e89"
+      ]
+    },
+    {
+      "dataset": "LANL-RedTeam",
+      "model": "DLG-Aug",
+      "metric": "validation_f1",
+      "mean": 0.1683334,
+      "sd": 0.04098803846294672,
+      "run_ids": [
+        "953800b5-5333-4e8c-81a5-4ccfda12d662",
+        "d5e3bb9b-478a-44d5-a54b-3a677a96cc67",
+        "d4350aa2-2b9a-4fdd-9b7d-80162cd0df03",
+        "92328889-3a97-46b2-b8b9-286eeaae0d00",
+        "47a5e3df-a5ac-4cce-ae17-58ae71e61e89"
+      ]
+    }
+  ]
+}

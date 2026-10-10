@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "source_sha256": "0b8c708eba8a581b185597a45bd1fa63c68893359b7f39fee91537ed8965cfc6",
+  "RNG": "numpy.default_rng(20261008), single stream S1-S4",
+  "B": 200000,
+  "batch": 2000,
+  "tie_rank": "average",
+  "extreme_rule": ">= statistic - 1e-12",
+  "p_rule": "(extreme+1)/(200000+1)",
+  "Holm": "full Aug-vs-each family separately per S1-S4",
+  "artifacts": [
+    {
+      "path": "number_registry.json",
+      "bytes": 118517,
+      "sha256": "532651b28105ddd83194ee51e06084fd692d2f8555f671fbe2ef147296ff7cbf",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "statistics/label_provenance_sensitivity.csv",
+      "bytes": 2752,
+      "sha256": "c129fcfb3342ced15660589ed1170e7e48449f8e14630f9649276f81ed577ab2",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "statistics/mean_ranks.csv",
+      "bytes": 2844,
+      "sha256": "4133d740152549b8fa003b093ebc172f56fb1e9fe545a4737d0cab35ecdaafee",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "statistics/pairwise.csv",
+      "bytes": 2325,
+      "sha256": "17cba0786cdd192663c64fbb4b2bfb5406e578c0d2bb1838b4f80c8cefcac61c",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "statistics/s5_lanl_descriptive.csv",
+      "bytes": 621,
+      "sha256": "6ff76ab7588c92bdc9519fda0df0bc99ba1383ddd8a5ad3b536215e423fb6ba3",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "statistics/statistics_s1_s4.json",
+      "bytes": 2705,
+      "sha256": "70f570f4fbdf8168019c68618fb2b6200cc3c6291fc264207c33f002ca440141",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "tables/alert_budget_crypto.csv",
+      "bytes": 6698,
+      "sha256": "6c65eccf5938dca0a6aa0a26e64963ee373e442cec24ed61b0106be9a01a4a9a",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "tables/support_matrix.csv",
+      "bytes": 5037,
+      "sha256": "b84dc6531adcaad016fe36b1f48c309d37e399c5cc138f63e62f042c7aa0adf0",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "tables/table_pr_auc.csv",
+      "bytes": 2155,
+      "sha256": "e4aa16b607377fb2876c3f3394ce525dc41e992b08c7e426036648119b4ab87d",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "tables/table_roc_auc.csv",
+      "bytes": 2155,
+      "sha256": "6774f464fab428b99e741029c08e7ca1264e3cfa9fbd5789aeb6f26263ebc643",
+      "byte_identical_to_A08": true
+    },
+    {
+      "path": "tables/table_validation_f1.csv",
+      "bytes": 2155,
+      "sha256": "4db53059822016bb4cc35006b5f5341b4b2c98844506e2df4001525534512b50",
+      "byte_identical_to_A08": true
+    }
+  ]
+}

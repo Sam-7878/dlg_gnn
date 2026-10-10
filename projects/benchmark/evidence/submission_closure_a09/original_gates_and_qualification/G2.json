@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "regression_sha256": "8e6f7018fa322a174bec7852622a6a77eeeb4a8ef5b16c51e0fe5ff2cb5ac6cb",
+  "actual_three_chain_contract_sha256": "9cafe61f8521bf70dfdd148afc08cdf042d9113e6ca422a470c0e8127343c3af",
+  "source_contract": "graph API unchanged; explicit separate N-vector node targets"
+}

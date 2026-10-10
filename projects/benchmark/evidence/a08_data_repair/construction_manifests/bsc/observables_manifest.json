@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "source": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/transactions/bsc.zip",
+  "source_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+  "builder_code_hashes": {
+    "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+    "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+    "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+    "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+  },
+  "feature_names": [
+    "log_transaction_rows",
+    "log_unique_senders",
+    "log_unique_receivers",
+    "log_unique_addresses",
+    "log_unique_directed_pairs",
+    "self_transfer_fraction",
+    "reciprocal_pair_fraction",
+    "repeated_pair_fraction"
+  ],
+  "labels_accessed": false,
+  "scientific_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+  "serialized_file_sha256": "ba365ace26a7b6cfa6bc8f79d5853a0a973f1bb1f2223bf9132dd266fbf1b839",
+  "arrays": {
+    "node_ids": {
+      "shape": [
+        7499
+      ],
+      "dtype": "<U46",
+      "sha256": "3319e67509738c18508e6c9a2f27fcbd813ece297adaca392610086fbb28ecce"
+    },
+    "raw_features": {
+      "shape": [
+        7499,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "8a38d5e9e99fef54a74f953d54b5e1636612620d973ecff46cd77bd6af8b79bb"
+    },
+    "x": {
+      "shape": [
+        7499,
+        8
+      ],
+      "dtype": "<f4",
+      "sha256": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6"
+    },
+    "preprocessing_mean": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "301850142166f54709b8a374dce75be4244ad63c55988859aec3cf77020918b7"
+    },
+    "preprocessing_scale": {
+      "shape": [
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "7c368464f9342b2e16ecab1e2530c44ba809010811b034ec25ee2c7c55002ead"
+    },
+    "edge_index": {
+      "shape": [
+        2,
+        48462
+      ],
+      "dtype": "<i8",
+      "sha256": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa"
+    }
+  },
+  "raw_member_manifest_sha256": "40bf7852ad163226b518c42427df810169007882b78de57a5e3f5ff620fe0998",
+  "relation_audit": {
+    "metric": "euclidean",
+    "k": 5,
+    "kth_boundary_tie_rows": 147,
+    "tie_rule": "ascending stable contract ID",
+    "directedness": "undirected union",
+    "weights": "binary unit",
+    "self_loops": false,
+    "duplicate_rule": "binary union"
+  },
+  "build_time": "2026-10-09T14:38:45.198919+00:00"
+}

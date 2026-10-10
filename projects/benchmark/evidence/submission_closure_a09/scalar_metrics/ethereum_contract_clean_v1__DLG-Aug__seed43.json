@@ -1,0 +1,58 @@
+{
+  "run_id": "ethereum_contract_clean_v1__DLG-Aug__seed43",
+  "dataset": "Ethereum",
+  "model": "DLG-Aug",
+  "seed": "43",
+  "original_private_metric_sha256": "35c496eb057a6ecb4ebee8681485d8a89b1a6f88da54ff5325f4d142d79b72ff",
+  "metrics": {
+    "ap": 0.43524732924265735,
+    "roc_auc": 0.5424591235974547,
+    "test_total": 2893,
+    "test_positives": 1246,
+    "test_prevalence": 0.4306947805046664,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 2893,
+      "validation_positives": 1192,
+      "threshold_kind": "finite",
+      "threshold": 2.292695999145508,
+      "validation_confusion": {
+        "tp": 1151,
+        "fp": 1502,
+        "fn": 41,
+        "tn": 199,
+        "precision": 0.43384847342630983,
+        "recall": 0.9656040268456376,
+        "f1": 0.5986996098829649
+      }
+    },
+    "thresholded": {
+      "tp": 1199,
+      "fp": 1431,
+      "fn": 47,
+      "tn": 216,
+      "precision": 0.455893536121673,
+      "recall": 0.9622792937399679,
+      "f1": 0.6186790505675954
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 29,
+        "precision": 0.41379310344827586,
+        "recall": 0.009630818619582664,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 145,
+        "precision": 0.3310344827586207,
+        "recall": 0.038523274478330656,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

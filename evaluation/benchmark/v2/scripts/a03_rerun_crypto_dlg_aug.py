@@ -26,26 +26,12 @@ DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 gpu_id = 0 if DEVICE.startswith("cuda") else -1
 
 
-def load_gog_graph(chain_name: str) -> Data:
-    pt_path = GOG_DATA_DIR / f"{chain_name}/{chain_name}_level2_graph.pt"
-    if not pt_path.exists():
-        pt_path = GOG_DATA_DIR / f"{chain_name}/{chain_name}_hybrid_graph.pt"
-    if not pt_path.exists():
-        raise FileNotFoundError(f"Missing graph: {pt_path}")
-    raw_dict = torch.load(pt_path, map_location="cpu", weights_only=False)
-    if isinstance(raw_dict, Data):
-        data = raw_dict
-        if not hasattr(data, "num_nodes") or data.num_nodes is None:
-            data.num_nodes = data.x.size(0)
-        return data
-    x = torch.from_numpy(raw_dict["embeddings"]).float() if isinstance(raw_dict["embeddings"], np.ndarray) else raw_dict["embeddings"].float()
-    edge_index = raw_dict["edge_index"].long()
-    edge_index = torch.unique(edge_index, dim=1).contiguous()
-    y = raw_dict["labels"].long().view(-1)
-    data = Data(x=x, edge_index=edge_index, y=y)
-    data.num_nodes = raw_dict["num_nodes"]
-    return data
-
+def load_gog_graph(chain_name: str, *, manifest_path=None, seed=42) -> Data:
+    """A08 strict loader. Historical runs are preserved, never regenerated here."""
+    from gog_fraud.data.benchmark_node_adapter import load_frozen_node_graph
+    if manifest_path is None:
+        raise ValueError("Explicit frozen A08 input manifest required; no graph cache fallback")
+    return load_frozen_node_graph(manifest_path, chain_name.lower()+"_contract_clean_v1", seed)
 
 
 def evaluate_split(y_true, scores, seed: int):
@@ -162,4 +148,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit("Archived A03 campaign entry point: use the versioned A08 runner; old results are immutable")

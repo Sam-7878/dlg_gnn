@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "cuda_exactness_sha256": "18f67bb53ccce466322e0b82484b31f1d0003e47c98f22fc048510c4696f2bec",
+  "actual_chain_integration": [
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DOMINANT__seed42.json",
+      "sha256": "9d75ac2fa3a3e9792db2a0ac5358c17f91fca08bbc44d108cc22f8624f4fb10c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__AnomalyDAE__seed42.json",
+      "sha256": "e7740667cba5a9d33f7bba282fffa173ebc65c5c500fc3ef4ce02cf19c8c10e9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__CoLA__seed42.json",
+      "sha256": "8192de428e22f0543ff90bbfc5ed091c18c730f7e7bad0d9d2fcd4c9d0823d3e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__GADNR__seed42.json",
+      "sha256": "7cf7900cfeabefe571a3e1e5d618a42873e2616a982dfe4ba678c058e6bae7c2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__OCGNN__seed42.json",
+      "sha256": "7dcfd48e4c59e2a0dfb15ac080d4ac0333c363b77abb7a38be3e9ec385efcd72"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Base__seed42.json",
+      "sha256": "021414c2d8396c4e9d61e1a498fca3deacbda4ad2d281cf9cdce0863f389de85"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Aug__seed42.json",
+      "sha256": "b3139e2d7f708f09a6b7b6f290e0590a68cfe4fa3f850fa658fb47af4649fcb0"
+    }
+  ],
+  "scope": "seven actual Polygon one-epoch integrations on frozen input; CUDA primitive checks; production not yet completed"
+}

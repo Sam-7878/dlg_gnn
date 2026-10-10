@@ -1,6 +1,9 @@
 schema_version: 1
 project: benchmark
 release: unpublished-candidate-public-evidence
+current_revision: a08-execution-revision2
+current_scientific_acceptance: FINAL_PASS
+historical_archive: public_numeric_evidence.zip
 python: ">=3.12"
 tested_os: "Ubuntu 26.04 on WSL2; GitHub CI Ubuntu"
 modes:
@@ -9,11 +12,15 @@ modes:
     estimated_minutes: "<5"
     gpu_required: false
     raw_datasets_required: false
+    scope: current-A08-public-payload-and-run-identity-integrity-scientific-acceptance-separate
+    prerequisite: curated-A08-numeric-bundle-and-outer-checksum
+    historical_command: "python scripts/reproduce_project.py --project benchmark --mode verify --revision legacy-a07"
   tables:
     command: "python scripts/reproduce_project.py --project benchmark --mode tables"
     gpu_required: false
     raw_datasets_required: false
     dependencies: [numpy, scipy]
+    prerequisite: approved-A08-numeric-registry-and-G7-binding
   paper:
     visibility: author-local-private-inputs-required
     command: "python scripts/reproduce_project.py --project benchmark --mode paper"

@@ -9,7 +9,7 @@
   "permutation_seed": 20261008,
   "s2_best_models": "DOMINANT / DLG-Aug",
   "unresolved": [
-    "crypto hybrid label-informed structural validity; sampler/seed and feature semantics remain unverified; corrected label-independent evaluation or diagnostic exclusion required",
+    "new Level2 node-label contract, inherited/cosine-degenerate feature provenance, raw-input rebuild/idempotence and new evaluation/manuscript linkage",
     "public immutable revision tag/commit",
     "missing repaired crypto Aug raw scores/thresholds",
     "matched AnomalyDAE cap/full measurement (comparative claim removed)",
@@ -27,5 +27,20 @@
     "feature_column_3_tx_count": "UNVERIFIED",
     "primary_unsupervised_use": "NOT_CLEARED; label-informed family strongly supported",
     "manuscript_pdf_followup": "Not rebuilt; prior hashes preserved"
+  },
+  "relation_builder_migration_followup": {
+    "status": "FINAL_SCIENTIFIC_AUDIT_NOT_PASSED",
+    "component_status": {
+      "direct_label_use_in_edge_builder": "PASS for fixed embeddings in inspected mode and counterfactual fixtures",
+      "node_evaluation_label_contract": "FAIL: graph-level y has one entry",
+      "feature_provenance": "UNRESOLVED: same legacy values inherited",
+      "cosine_relation_information": "DEGENERATE: every normalized embedding equals the same vector",
+      "rebuild_from_provider_data": "FAIL: generator needs an existing graph artifact",
+      "repeat_generation_label_contract": "FAIL: existing Data.y preferred over Data.labels",
+      "manuscript_result_input_identity": "FAIL: canonical results still refer to old hybrid hashes"
+    },
+    "report": "RelationBuilder_Migration_Final_Audit.md",
+    "raw_old_graph_family_availability": "DELETED by preceding migration; historical hashes/audits retained",
+    "paper_result_input_identity": "OLD HYBRID; NOT NEW LEVEL2"
   }
 }

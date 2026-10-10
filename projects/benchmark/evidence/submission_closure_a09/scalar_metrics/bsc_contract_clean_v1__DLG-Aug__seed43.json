@@ -1,0 +1,58 @@
+{
+  "run_id": "bsc_contract_clean_v1__DLG-Aug__seed43",
+  "dataset": "BSC",
+  "model": "DLG-Aug",
+  "seed": "43",
+  "original_private_metric_sha256": "8434508f4c41c094784d7c43016d4bd630a705bb754c1560079e51c18966cdea",
+  "metrics": {
+    "ap": 0.37374085092850595,
+    "roc_auc": 0.7522718253968254,
+    "test_total": 1500,
+    "test_positives": 240,
+    "test_prevalence": 0.16,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 1500,
+      "validation_positives": 218,
+      "threshold_kind": "finite",
+      "threshold": 3.0540671348571777,
+      "validation_confusion": {
+        "tp": 126,
+        "fp": 205,
+        "fn": 92,
+        "tn": 1077,
+        "precision": 0.3806646525679758,
+        "recall": 0.5779816513761468,
+        "f1": 0.45901639344262296
+      }
+    },
+    "thresholded": {
+      "tp": 144,
+      "fp": 236,
+      "fn": 96,
+      "tn": 1024,
+      "precision": 0.37894736842105264,
+      "recall": 0.6,
+      "f1": 0.4645161290322581
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 15,
+        "precision": 0.4666666666666667,
+        "recall": 0.029166666666666667,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 75,
+        "precision": 0.4266666666666667,
+        "recall": 0.13333333333333333,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

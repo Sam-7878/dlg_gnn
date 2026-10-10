@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scope": "unchanged hierarchical/stream/temporal API and impact disposition only; no Stream/TDS prediction or manuscript approval",
+  "source_hashes": [
+    {
+      "path": "src/gog_fraud/pipelines/run_streaming_replay.py",
+      "sha256": "59490267adcc2a8eb0d22b050a3660e9f2e6d1df5b3bac06dd8b50ee108ec499",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/io/streaming_dataset.py",
+      "sha256": "3c34cc1b77ffec852988ea7d7df40636b5780941cd0296fdb8d093f52152c2d5",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/io/dataset.py",
+      "sha256": "1678f7bb0bf05c4b2610ba895d138b24ea988afac674d43d2ffb94f5382ebe2a",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/level2/relation_builder.py",
+      "sha256": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/splits/temporal_split.py",
+      "sha256": "5c9e1df5afde464e4613824a998adf5ded3c64da4dd30ab63260eb2502d5fff7",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/splits/rolling_origin.py",
+      "sha256": "3cb04e70176364df1b1cbe75dfd33d05017b9d939dca93c4e4cc44366deb8649",
+      "a08_semantics_changed": false
+    },
+    {
+      "path": "src/gog_fraud/data/validation/temporal_leakage.py",
+      "sha256": "ebcf3e9c351a5ad4cf484f758f6e90b10d13e7fdb4f67c7cd68e6b05adaa3c6e",
+      "a08_semantics_changed": false
+    }
+  ],
+  "family_tests": 7,
+  "failures": 0,
+  "junit_sha256": "a447de5144a593d2730771068ba02a98ca08f1b7a35380b0131dd286bf8d62b4",
+  "graph_api_tests": "15 existing phase3 tests in regression_tests.json",
+  "empirical_disposition": {
+    "benchmark_crypto": "all seven detectors must retrain on corrected frozen raw contract graphs",
+    "stream_mc": "existing historical outputs preserved; source representation/temporal fit-population/target auditing required before empirical reuse across corrected provider populations",
+    "tds": "historical outputs preserved; rolling-origin/split/scaler fit contract remains separate; no transfer of static transductive benchmark normalization or claimed scientific clearance"
+  }
+}

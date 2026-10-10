@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "scope": "five complete whole-chain raw-to-feature-to-relation executions for each chain; no learned encoder; target attachment separate",
+  "results": [
+    {
+      "chain": "polygon",
+      "status": "PASS",
+      "raw_to_relation_conditions": [
+        {
+          "condition": "unavailable",
+          "workspace": "build_a",
+          "observable_content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f",
+          "target_hash": "UNAVAILABLE",
+          "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+          "target_attachment_status": "BLOCKED_MISSING_LABEL_FILE",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "original",
+          "workspace": "build_b",
+          "observable_content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f",
+          "target_hash": "b75df91703d00a58d9e76a0d9857e40c4987e995ad83560019a8707675250182",
+          "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "permuted",
+          "workspace": "build_permuted",
+          "observable_content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f",
+          "target_hash": "e6dd2b0dee273a53fb4f8a569b2e9c53affcd51dd9e62cd4c536c0f85565f1b4",
+          "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_zero",
+          "workspace": "build_zero",
+          "observable_content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f",
+          "target_hash": "d9251f41dc6d5010e9aad7c3df77d1fd84b203965f538def763a3fd83edbdfd6",
+          "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_one",
+          "workspace": "build_one",
+          "observable_content_hash": "549b098ba688a3437f8152d817f08115a85d3b139cc0c2a622c005908fd9eb7f",
+          "target_hash": "85f80cb7c3dcd28a1c1cc3d2edd5aa23d6e23e2266980a4f10b117bf6e644516",
+          "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        }
+      ],
+      "fixed_split_record": "split construction excluded from observable stage; same canonical IDs used for all target scenarios"
+    },
+    {
+      "chain": "bsc",
+      "status": "PASS",
+      "raw_to_relation_conditions": [
+        {
+          "condition": "unavailable",
+          "workspace": "build_a",
+          "observable_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+          "target_hash": "UNAVAILABLE",
+          "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+          "target_attachment_status": "BLOCKED_MISSING_LABEL_FILE",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "original",
+          "workspace": "build_b",
+          "observable_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+          "target_hash": "80c17d8aa67d48addf1479aaac69374264c2ec75a6d08ab9b5dafc94f588b15a",
+          "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "permuted",
+          "workspace": "build_permuted",
+          "observable_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+          "target_hash": "6ea64f90eeb09817df1c9e7b9114ac37d72739130e58a89cbfd388710e061d1b",
+          "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_zero",
+          "workspace": "build_zero",
+          "observable_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+          "target_hash": "d98342cd24835c8d4636ddfafa40fc38e3fa0fb6319af5bd4619a264bab2ad2d",
+          "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_one",
+          "workspace": "build_one",
+          "observable_content_hash": "9dd8891ae13bb12300793fe04fc1d49ca73a86414cef217e0a3608f92e4d9162",
+          "target_hash": "df4774b121694884cfbd93891eafe48f8401fdc1347bc899067fb4fd55b96609",
+          "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        }
+      ],
+      "fixed_split_record": "split construction excluded from observable stage; same canonical IDs used for all target scenarios"
+    },
+    {
+      "chain": "ethereum",
+      "status": "PASS",
+      "raw_to_relation_conditions": [
+        {
+          "condition": "unavailable",
+          "workspace": "build_a",
+          "observable_content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859",
+          "target_hash": "UNAVAILABLE",
+          "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+          "target_attachment_status": "BLOCKED_MISSING_LABEL_FILE",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "original",
+          "workspace": "build_b",
+          "observable_content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859",
+          "target_hash": "898b3a7d70edc90ba56e4e71d434e06029703af5f975406082badd27bb3da0b1",
+          "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "permuted",
+          "workspace": "build_permuted",
+          "observable_content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859",
+          "target_hash": "f27b41055347254317ff6ad4486630c2297c5a4261a20b06c09edb5360698762",
+          "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_zero",
+          "workspace": "build_zero",
+          "observable_content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859",
+          "target_hash": "d9146b2dc6d94e09b1f882f3c5ad3afd4661707b66376e13d0cf430205b90986",
+          "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        },
+        {
+          "condition": "all_one",
+          "workspace": "build_one",
+          "observable_content_hash": "ae5f725d6b813121fe9cecb15240b32e87ada512acdc1177cbc760dbdcc04859",
+          "target_hash": "c0105fa663d9724e4369445fb889b06453e937720871770871d64597828e549b",
+          "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+          "target_attachment_status": "N_VECTOR_ATTACHED_SEPARATELY",
+          "existing_graph_as_input": false
+        }
+      ],
+      "fixed_split_record": "split construction excluded from observable stage; same canonical IDs used for all target scenarios"
+    }
+  ],
+  "script_sha256": "f957ce50068dc35a6205872efdc3605ee11f2be8756cf21a3cc78f2335312755",
+  "primitive_source_sha256": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2"
+}

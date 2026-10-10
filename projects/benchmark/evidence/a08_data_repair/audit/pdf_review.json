@@ -1,0 +1,494 @@
+{
+  "semantic_status": "PASS",
+  "layout_status": "PASS",
+  "artifacts": [
+    {
+      "path": "projects/benchmark/paper/current/DLG-Benchmark_A08.pdf",
+      "sha256": "f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407",
+      "bytes": 292795,
+      "pages": 23,
+      "page_reviews": [
+        {
+          "page": 1,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-01.png",
+          "render_sha256": "741693e948ffea19efd964e6894fe178b3b208cacbed0bba17d9b99e1fcbd61f",
+          "status": "PASS",
+          "observations": [
+            "Title, authors, date and ORCID intact. Abstract distinguishes 84/91 supported pairs, 420 primary plus 35 external successes and corrected versus historical evidence; no overflow."
+          ]
+        },
+        {
+          "page": 2,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-02.png",
+          "render_sha256": "4c59eb63eb3b62afbf50c60fda402cdaa178518a4b505d46fbca8fdf96525723",
+          "status": "PASS",
+          "observations": [
+            "Related work and three contributions distinguish supervised/context/temporal tasks; numbered citations resolved; no universal superiority claim."
+          ]
+        },
+        {
+          "page": 3,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-03.png",
+          "render_sha256": "eb4d77b498adf987323c576bc1f5b0f5f099ecaa541296b278ed6822fb4094c7",
+          "status": "PASS",
+          "observations": [
+            "Scope Table 1 and Gram Eq. 1 readable. AnomalyDAE storage O(BN) and arithmetic O(N\u00b2) distinguished; Base/Aug differences are not a causal feature toggle."
+          ]
+        },
+        {
+          "page": 4,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-04.png",
+          "render_sha256": "af4610c9652c16145eed4e426c2b3dafc94408d6e7516540b9021978f8c5a83d",
+          "status": "PASS",
+          "observations": [
+            "All eight observable features, k=5 Euclidean stable ties, full-population scaling and unstratified 60/20/20 splits stated. Targets joined after observables; two builds and 15 counterfactuals. Table 2 has Polygon 2353/15368/8/2.63%, BSC 7499/48462/8/14.74%, Ethereum 14464/95098/8/41.70%."
+          ]
+        },
+        {
+          "page": 5,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-05.png",
+          "render_sha256": "f607b0a9ee043eea0834816707cb3455ee9d6f67cf4b6facd5d7f168d7526821",
+          "status": "PASS",
+          "observations": [
+            "Portfolio Table 3 shows all 14 datasets and provenance/taxonomy. Corrected crypto overrides historical input rows; table-only page is intentional and legible."
+          ]
+        },
+        {
+          "page": 6,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-06.png",
+          "render_sha256": "ed0c75d55000c177d449272aac6b351c5ff05667ddb19b2eff5ba139721b0a8d",
+          "status": "PASS",
+          "observations": [
+            "Numerical amendment and historical/new environments separated. Epochs 30 Ethereum/40 BSC and Polygon, local 20, seeds 42\u201346. Validation F1 largest-threshold tie rule and test >= policy readable; restored 1%/5% alert paragraph and historical F1 limitation complete."
+          ]
+        },
+        {
+          "page": 7,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-07.png",
+          "render_sha256": "bae0283c40a32a75d95c89facb979417ec9311534380800c0e809287a6c9975a",
+          "status": "PASS",
+          "observations": [
+            "AP Tables 4\u20135 show all datasets and models, five-seed population SD. Base/Aug Ethereum .4106/.4359, BSC .3390/.3411, Polygon .0854/.0731; unsupported N/A and external LANL explicit; columns readable."
+          ]
+        },
+        {
+          "page": 8,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-08.png",
+          "render_sha256": "c3994579e51449bd6fd8327d62f151bf2e8c88e8fc3e6a47992eb19ac77c30f6",
+          "status": "PASS",
+          "observations": [
+            "ROC Tables 6\u20137 complete; Ethereum GADNR .4788 \u00b1 .0165. Re-viewed original PNG after display artifact: all labels and columns visible with no overlap."
+          ]
+        },
+        {
+          "page": 9,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-09.png",
+          "render_sha256": "131d375f0c26160621dac6b61fe72b942af126ff450c1daf640090948ddf3ec5",
+          "status": "PASS",
+          "observations": [
+            "Omnibus Table 8 and mean-rank Tables 9\u201310 readable. S1 n=8 p=.000005, S2 n=13 p=.000020, S3 n=6 p=.193584, S4 n=7 p=.000005; full memberships and view-specific N/A explicit."
+          ]
+        },
+        {
+          "page": 10,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-10.png",
+          "render_sha256": "4dd1ca875fa1055fd61f7e3f07ce9c6aba82724e117ddb01e04cb10f3aacfdbc",
+          "status": "PASS",
+          "observations": [
+            "Descriptive provenance ranks Table 11 include native 2, crypto 3, financial 5, injected 8 members; injected BitcoinOTC is distinguished from S4. Monte Carlo plus-one formula excludes p=0. Table 12 Aug-minus-Base +.0350/+.0253/+.0021/\u2212.0124; hardware qualification limits and historical 402 MHz report clear."
+          ]
+        },
+        {
+          "page": 11,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-11.png",
+          "render_sha256": "9fe46fff45a4200f397d8eeec69f8218fb639a801ca0381ea38a7d29f4c3fff6",
+          "status": "PASS",
+          "observations": [
+            "Resource Table 13 contains all 21 chain/model measurements with fit+inference seconds and max allocated GiB. Fresh measurements separated from interrupted DGraphFin segments. Limitations reject causal old/new comparison and portable memory guarantees; approval remains pending."
+          ]
+        },
+        {
+          "page": 12,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-12.png",
+          "render_sha256": "0ce859c2b9449ad1c5855da32a70cd43c1fb776e5385794d3424f0fd929dc4f9",
+          "status": "PASS",
+          "observations": [
+            "Funding and availability distinguish public numeric evidence, restricted raw sources and private unsubmitted manuscript. Base architecture Eqs. 2\u20136 fits margins."
+          ]
+        },
+        {
+          "page": 13,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-13.png",
+          "render_sha256": "17e8e20fb7138f58e6a6e83aff6362dca8765c2e1805e8df7ce8b05c7427b027",
+          "status": "PASS",
+          "observations": [
+            "Aug local GCN, 20-epoch pretraining, frozen concatenation and global score without local-score fusion explicit. Eqs. 7\u201317 legible."
+          ]
+        },
+        {
+          "page": 14,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-14.png",
+          "render_sha256": "461890ebd3004a9f57bcee105eda4d8b05491856edf1284056e49e13aecf493b",
+          "status": "PASS",
+          "observations": [
+            "Gram identity Eqs. 18\u201320, coalesced duplicates and self loops readable. Sigmoid AnomalyDAE retains all-pairs arithmetic; GCN normalization Eqs. 21\u201323 fit."
+          ]
+        },
+        {
+          "page": 15,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-15.png",
+          "render_sha256": "75775180260b346fcfd770253a92801752badf2a56b3926811d041fcf2087008",
+          "status": "PASS",
+          "observations": [
+            "Sparse GCN tests are not a full stochastic trajectory guarantee; support statuses not performance scores. GADNR rank-one expression retains implemented log orientation, detachment, identity regularizer and float64/float32 cast with no clipping/jitter; continuation equations legible."
+          ]
+        },
+        {
+          "page": 16,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-16.png",
+          "render_sha256": "8a644d2b959350a8a8cd15eadc15941ff3ea9cfa47904d2b1ab67b0efbacfd5b",
+          "status": "PASS",
+          "observations": [
+            "F1 Tables 14\u201315 distinguish corrected crypto common validation policy from descriptive historical policies. All rows and population SD readable."
+          ]
+        },
+        {
+          "page": 17,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-17.png",
+          "render_sha256": "814aa748d8c4cabb2372ffef57b0d37d36b6745522aaeefb5440965dfdbe50e6",
+          "status": "PASS",
+          "observations": [
+            "Alert P/R at 1% and 5% Tables 16\u201318 readable for all three chains; ceil counts and stable-ID ties stated; Polygon CoLA/GADNR zeros are actual scored results."
+          ]
+        },
+        {
+          "page": 18,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-18.png",
+          "render_sha256": "7d5915b6ede802e7ecbdfa315c60b3110e44d4912ecb08919ffac21ab91dbbb4",
+          "status": "PASS",
+          "observations": [
+            "All 18 pairwise comparisons shown, W/T/L and N plus raw/Holm p. Narrow comparison wraps still readable; no cropped values. S1 CoLA/GADNR Holm .04688 and S2 CoLA .00098, OCGNN .00513 match current families."
+          ]
+        },
+        {
+          "page": 19,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-19.png",
+          "render_sha256": "0621e912cd9f23c673a2407f8c1f2f601994dc39388e1096d06f742c96aa38f2",
+          "status": "PASS",
+          "observations": [
+            "Elliptic control variants are historical diagnostic means, Base-70 unmatched budget; CONAD one-epoch diagnostic excludes primary inference, Spearman .999391. Historical constructor defaults not treated as run-bound identities."
+          ]
+        },
+        {
+          "page": 20,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-20.png",
+          "render_sha256": "3dea77c77d5733803447bf119a77d327c998bc52f0e70389950ad781470b0452",
+          "status": "PASS",
+          "observations": [
+            "A03 three-seed Cora/CiteSeer sensitivity panel remains post-hoc diagnostic, not HPO replacement; resolved corrected defaults separate. First references readable."
+          ]
+        },
+        {
+          "page": 21,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-21.png",
+          "render_sha256": "98961afcab4e792a1ff8d99e8a0d0bc4aabb5826c89f21ba08351529b377e4a7",
+          "status": "PASS",
+          "observations": [
+            "References 6\u201319 readable; baseline and supervised/context citations resolved without placeholders."
+          ]
+        },
+        {
+          "page": 22,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-22.png",
+          "render_sha256": "dbb5580d5b577ef7ac3c7105912bb1ca4e2b5b7ad1adc5c87f010474fd6f49b5",
+          "status": "PASS",
+          "observations": [
+            "References 20\u201334 readable, including temporal/context and evaluation foundations; no overlap."
+          ]
+        },
+        {
+          "page": 23,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407/page-23.png",
+          "render_sha256": "af6bdd8ab3460db71ac19fada9f961dbc893f4523f78c39b19ae48722b0deb23",
+          "status": "PASS",
+          "observations": [
+            "References 35\u201342 readable including Demsar, Holm and matrix-factorization foundations; no empty extra page."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/DLG-Benchmark_A08_MDPI.pdf",
+      "sha256": "91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1",
+      "bytes": 227771,
+      "pages": 22,
+      "page_reviews": [
+        {
+          "page": 1,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-01.png",
+          "render_sha256": "0f6789aa78fb205570167373964becc46fcb72c8f678d230c31dd39d14c83fd7",
+          "status": "PASS",
+          "observations": [
+            "Title/authors/affiliations/ORCID and abstract scopes/counts intact. Draft citation/received/accepted/footer placeholders are template metadata; pending approval and immutable public identity stated in body; line numbers clear."
+          ]
+        },
+        {
+          "page": 2,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-02.png",
+          "render_sha256": "c0890383907ec080f5521908862db0f4df8c60a941440881112d6f18e77ff085",
+          "status": "PASS",
+          "observations": [
+            "Related work links and citations resolved; scope separation and continuation into models section readable."
+          ]
+        },
+        {
+          "page": 3,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-03.png",
+          "render_sha256": "3dd77e7f9924edaa710219cc1deb765972acc617ea65cac2ecd385a0590d5144",
+          "status": "PASS",
+          "observations": [
+            "Table 1 and Gram Eq. 1 fit. AnomalyDAE storage/arithmetic distinction, node unit, raw features and constructed rather than observed crypto topology explicit."
+          ]
+        },
+        {
+          "page": 4,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-04.png",
+          "render_sha256": "ee8f7c9cd06f70107ecda64f66dc93490072c7b679a6fb24879a67b5784f77f2",
+          "status": "PASS",
+          "observations": [
+            "Full population, splits and 15 counterfactuals described; Table 2 chain counts, dimensions and positive fractions match evidence; no overflow."
+          ]
+        },
+        {
+          "page": 5,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-05.png",
+          "render_sha256": "d1a3696b5419ca498124c22fae6c3508839c48f217ab95f85f80271fffc0e6b2",
+          "status": "PASS",
+          "observations": [
+            "Portfolio Table 3 contains all 14 datasets and provenance. Large edge counts close to adjacent column but remain distinct/readable; historical crypto provenance superseded explicitly."
+          ]
+        },
+        {
+          "page": 6,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-06.png",
+          "render_sha256": "1f3734f8cca7d51802d47092ff9263f41b99ae2a1d9290d70ec072a804bc494b",
+          "status": "PASS",
+          "observations": [
+            "Numerical amendment, old/new environments, 30/40/20 epochs and seeds 42\u201346 readable. Validation largest threshold ties, test >= and ceil 1%/5% alert policy complete. 84/91, 420+35 counts explicit."
+          ]
+        },
+        {
+          "page": 7,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-07.png",
+          "render_sha256": "eea843949a14269f938eb9ed1557f93ff955ab6898115aa6559a1fb182c03c86",
+          "status": "PASS",
+          "observations": [
+            "AP Tables 4\u20135 contain all seven models and 14 datasets with population SD and N/A. Crypto Base/Aug .4106/.4359, .3390/.3411, .0854/.0731 match current evidence; LANL external."
+          ]
+        },
+        {
+          "page": 8,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-08.png",
+          "render_sha256": "9fdf863badba5b9790a73d45c6267bfb96a8dc80c274c6b583e50ab1c4ed3e2d",
+          "status": "PASS",
+          "observations": [
+            "ROC Tables 6\u20137 legible and complete. Re-viewed original PNG separately after transient image display artifact; all dataset labels and headers intact. Ethereum GADNR .4788 \u00b1 .0165."
+          ]
+        },
+        {
+          "page": 9,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-09.png",
+          "render_sha256": "67c7d1816852cafd02bf86733a3891abcba0cefd5f9273121940d0ca0a24b108",
+          "status": "PASS",
+          "observations": [
+            "Omnibus Table 8, mean-rank Tables 9\u201310 and complete-case member lists readable; n=8/13/6/7 and current p-values correct; no unjustified equivalence inference."
+          ]
+        },
+        {
+          "page": 10,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-10.png",
+          "render_sha256": "29bb1d577135322b88feeeb4d13888fd893486136afe2a4671d097554f08acd3",
+          "status": "PASS",
+          "observations": [
+            "Provenance ranks Table 11 and members distinguish injected 8 from S4 seven; plus-one Monte Carlo and mixed seed variation limitations explicit. Table 12 all four Aug-minus-Base values correct. Qualification and historical 402 MHz versus current hardware limits readable."
+          ]
+        },
+        {
+          "page": 11,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-11.png",
+          "render_sha256": "e79fafd4e664ae9af08192382cc4410662ff8aa5617b747ffcf676dfb8ee61d4",
+          "status": "PASS",
+          "observations": [
+            "Resource Table 13 all 21 rows, fit+inference seconds/max allocated GiB legible. Discussion states new population/threshold differences, scalar-only historical limits and no portable 8/24 GiB guarantees; author approval pending."
+          ]
+        },
+        {
+          "page": 12,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-12.png",
+          "render_sha256": "c044b7d5dcdde065fe73413caafc2835084e159af200b0d6bcf64f2764a2f88f",
+          "status": "PASS",
+          "observations": [
+            "Availability continues accurately: immutable author-approved public revision required before submission, restricted provider raw data, public aggregates versus private scores and TeX/PDF. AI assistance disclosure and Base/Aug Eqs. A1\u2013A6 readable."
+          ]
+        },
+        {
+          "page": 13,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-13.png",
+          "render_sha256": "36c92766df4ba2d49f2e2a865b86dbcdfce8f779efca9f543a753391974eaf99",
+          "status": "PASS",
+          "observations": [
+            "Aug Eqs. A7\u2013A16 legible: frozen local embedding concatenation, no local-score fusion, historical 20-epoch description consistent with current protocol. Dense adjacency target rationale explicit."
+          ]
+        },
+        {
+          "page": 14,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-14.png",
+          "render_sha256": "6e2ca14f0e262441297134af31534dfe3789b454f9a57ed6c2c7b620ec6797d5",
+          "status": "PASS",
+          "observations": [
+            "Gram Eqs. A17\u2013A19 and fused sparse GCN Eqs. A20\u2013A22 fit; coalescing/self loops and sigmoid block arithmetic accurately scoped; no margin overflow."
+          ]
+        },
+        {
+          "page": 15,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-15.png",
+          "render_sha256": "2a8f2080ec6df425b9adfea9aa79eadcdab1b4b3f7f739af07c9272e1dbec2b3",
+          "status": "PASS",
+          "observations": [
+            "Support-aware policy and GADNR numerical repair Eqs. A23\u2013A24 readable as one continued expression. Implemented orientation, detachment, dtype, one-sample identity case and nonfinite failure explicit; no trajectory identity claim."
+          ]
+        },
+        {
+          "page": 16,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-16.png",
+          "render_sha256": "e96316f71e6c1c9bca3e13d1a5c5613033beb515adda5585b3f0dbfa617d1659",
+          "status": "PASS",
+          "observations": [
+            "F1 Tables A1\u2013A2 readable; historical policies separate from new crypto common policy; no full-suite threshold superiority claim."
+          ]
+        },
+        {
+          "page": 17,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-17.png",
+          "render_sha256": "4ab67469e6e2a131652cf0907627f739083ac8ab67f95a8db3cdbf028c54ee12",
+          "status": "PASS",
+          "observations": [
+            "Alert Tables A3\u2013A5 complete for Ethereum/BSC/Polygon with P/R at 1% and 5%, population SD, ceil counts and stable ties; actual zero recall values shown."
+          ]
+        },
+        {
+          "page": 18,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-18.png",
+          "render_sha256": "7a7e8296abf46c62fb789c6d611df32e31e359d0b9f85eb829690cce784605ce",
+          "status": "PASS",
+          "observations": [
+            "All 18 pairwise family rows Table A6 fit. W/T/L, n and raw/Holm p-values legible despite wrapped comparison labels; no favorable row selection."
+          ]
+        },
+        {
+          "page": 19,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-19.png",
+          "render_sha256": "8c0467d91f2e2b709cc0bba4f16cd1139c77b67d890bbc88b4ee2eb70e2e8780",
+          "status": "PASS",
+          "observations": [
+            "Preserved Elliptic controls Table A7, one-epoch CONAD diagnostic Table A8 and historical constructors A9 clearly exclude new primary inference and causal attribution; Spearman .999391 and diagnostics readable."
+          ]
+        },
+        {
+          "page": 20,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-20.png",
+          "render_sha256": "c082bc7c6e1f52e4fc89d52e6f3eacfe4b32891ddcb36328f15e2abfbbc00028",
+          "status": "PASS",
+          "observations": [
+            "Three-seed sensitivity Table A10 and actual corrected defaults Table A11 readable, separated from post-result tuning. References 1\u20137 begin, all links and continuation clear."
+          ]
+        },
+        {
+          "page": 21,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-21.png",
+          "render_sha256": "bb90ca108cebd89f93fc504866c17591e1aa80d1dbd278ea8e8fd166b46e8b88",
+          "status": "PASS",
+          "observations": [
+            "References 7\u201326 readable, including contemporary anomaly, supervised fraud and temporal context. Line numbers and links fit; no unresolved citations."
+          ]
+        },
+        {
+          "page": 22,
+          "render_path": "local_storage/benchmark/a08_data_repair/pdf_render/91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1/page-22.png",
+          "render_sha256": "227ceaf3aa4eccf523817fb9853782b7b74bdb5959c76279348b8ebdcb4e86dc",
+          "status": "PASS",
+          "observations": [
+            "References 26\u201342 readable, with Demsar/Holm and Gram-related matrix factorization sources; final page complete, no empty appendix page."
+          ]
+        }
+      ]
+    }
+  ],
+  "claim_reviews": [
+    {
+      "category": "input_provenance",
+      "status": "PASS",
+      "observations": [
+        "Both PDFs state observation-only raw transaction features, label-blind feature-neighbor edges, target join after construction, full population and unstratified splits; two independent builds and 15 actual counterfactuals match source construction records."
+      ]
+    },
+    {
+      "category": "threshold_and_metric_policy",
+      "status": "PASS",
+      "observations": [
+        "Current crypto uses raw-score validation F1 with reject-all and largest threshold tie, unchanged >= test threshold and ceil 1%/5% alerts/stable ties. Historical F1 remains descriptive under original policies; AP means use five seeds and ddof=0."
+      ]
+    },
+    {
+      "category": "support_and_run_counts",
+      "status": "PASS",
+      "observations": [
+        "Both abstracts/results say 84/91 supported primary pairs and 420 primary plus 35 external successes. Current fresh crypto is 105/105; archived failed first execution and qualifications are excluded."
+      ]
+    },
+    {
+      "category": "statistical_scope",
+      "status": "PASS",
+      "observations": [
+        "All current n=8/13/6/7 complete-case memberships, mean ranks, four provenance descriptive groups and 18 full Holm family comparisons are shown. Monte Carlo B=200000 uses plus-one p, unsupported values remain N/A and non-rejection is not equivalence."
+      ]
+    },
+    {
+      "category": "resource_claims",
+      "status": "PASS",
+      "observations": [
+        "Fresh corrected-chain fit-plus-inference seconds and max allocated GiB are per actual run, no interrupted DGraphFin segment treated as total duration. Historical 402 MHz report is separate from current unverified clock; no portable or matched AnomalyDAE 8/24 GiB claim."
+      ]
+    },
+    {
+      "category": "old_new_population_comparison",
+      "status": "PASS",
+      "observations": [
+        "Both manuscripts disclose feature/topology/population and threshold policy changes, exclude old crypto primary predictions, and reject old/new causal topology attribution or restored favorable seeds."
+      ]
+    },
+    {
+      "category": "public_private_availability",
+      "status": "PASS",
+      "observations": [
+        "Both data statements preserve restricted raw provider data, private unsubmitted TeX/PDF and local raw predictions. Author-approved immutable public revision remains required before submission; GitHub code statement is distinct from unpublished corrected evidence."
+      ]
+    },
+    {
+      "category": "historical_diagnostics",
+      "status": "PASS",
+      "observations": [
+        "Elliptic controls, CONAD one-epoch diagnostic, A03 limited sensitivity and historical constructor rows retain diagnostic tiers and do not replace A08 cells or explain new crypto causal outcomes."
+      ]
+    },
+    {
+      "category": "citations_and_equations",
+      "status": "PASS",
+      "observations": [
+        "All 42 references and citation links visually resolved; Gram and sigmoid complexity differentiated; GADNR determinant/Sherman-Morrison continuation retains original implementation convention/detachment/no jitter. Appendix unique MDPI equation links compiled without duplicate warnings."
+      ]
+    }
+  ],
+  "manual_observation_sha256": "12c26ca55dbf1d3f50a7ab6b71c0af7b6e792d82805dc8aa083ef852a1aecd66",
+  "scope": "actual every-page visual/semantic review and numeric source/lineage crosswalk; author submission approval remains separate"
+}

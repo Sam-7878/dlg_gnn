@@ -34,8 +34,9 @@ _res/
 *.7z
 *.whl
 *.zip
-# One curated, checksum-verified evidence bundle is a publication input.
+# Curated numeric evidence bundles are publication inputs; raw/private ZIPs remain ignored.
 !/projects/benchmark/evidence/public_numeric_evidence.zip
+!/projects/benchmark/evidence/a08_public_numeric_evidence.zip
 
 # Heavy generated runs, private/provider data and scratch stay local.
 /outputs/
@@ -110,3 +111,13 @@ _res/
 /evaluation/benchmark/v2/scripts/a05_write_manuscript.py
 /evaluation/benchmark/v2/scripts/a06_build_submission.py
 /evaluation/benchmark/v2/scripts/a06_package_release.py
+# A08 author-local manuscript generator and publication output.
+/projects/benchmark/scripts/a08_build_manuscript.py
+# Environment snapshots can embed unsubmitted manuscript source/writers.
+# Preserve these patches locally; a .gitignore rule alone cannot untrack them.
+/evaluation/benchmark/v2/environment/**/tracked-working-tree.patch
+
+# A09 unsubmitted manuscript writer; evidence/code helpers remain reviewable.
+/projects/benchmark/scripts/a09_build_manuscript.py
+# Curated scalar/provenance candidate; no raw vectors or private manuscript.
+!/projects/benchmark/evidence/a09_submission_closure_companion.zip

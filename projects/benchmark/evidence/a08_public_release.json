@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "revision": "a08",
+  "publication_status": "LOCAL_CANDIDATE_NOT_PUBLISHED",
+  "bundle_path": "projects/benchmark/evidence/a08_public_numeric_evidence.zip",
+  "bundle_sha256": "b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100",
+  "manifest_sha256": "35534d37acf28ad373c0f682869369319e965cfc16ae66c79e86b01a077bdd6e",
+  "payload_count": 226
+}

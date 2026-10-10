@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "6 real raw CSV examples independently recomputed;3 whole-population standardization checks; no label access or builder feature function calls",
+  "selection": "first2 nonempty CSVs no larger than15KB in lexicographic archive member order; not chosen using targets or scores",
+  "checks": [
+    {
+      "chain": "polygon",
+      "check": "all-node standardization via independent math.fsum",
+      "population": 2353,
+      "status": "PASS",
+      "float64_atol": 1e-10,
+      "float32_atol": 1e-06,
+      "float32_rtol": 1e-06
+    },
+    {
+      "chain": "polygon",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "a26350d92b95f54af1a3c87f51bda26096e3c38473e122d79195082de7e13090",
+      "raw_member_sha256": "f397cda2fded798699635348cfbfe0550d36049f4fffe54fbade2e85e44a720e",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "chain": "polygon",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "a0853c5374a7b46e805aea8f31a6cfad2d050e5075332ed28521696467403554",
+      "raw_member_sha256": "42bc2afddb2c95774d2d7b989b647c915a9fdc630a88c3d4e84772683f09642c",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "chain": "bsc",
+      "check": "all-node standardization via independent math.fsum",
+      "population": 7499,
+      "status": "PASS",
+      "float64_atol": 1e-10,
+      "float32_atol": 1e-06,
+      "float32_rtol": 1e-06
+    },
+    {
+      "chain": "bsc",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "925055b1b8100d85dac0ab56b9ddb321516d94e35f134568ca29c227a21e53bf",
+      "raw_member_sha256": "2c1cb18df77d410a641bd921acc8e787b05d95a7980c3394a6df3ca13addd9ad",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "chain": "bsc",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "785bb0c5145334c97cc1d24b464d04a62c492142f66c9ef6a24fbb22d774edc0",
+      "raw_member_sha256": "aeb3e84bed0fd653dd1822bafecd1382f4ee088293882b33b2c16bbe0e8ef63c",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "chain": "ethereum",
+      "check": "all-node standardization via independent math.fsum",
+      "population": 14464,
+      "status": "PASS",
+      "float64_atol": 1e-10,
+      "float32_atol": 1e-06,
+      "float32_rtol": 1e-06
+    },
+    {
+      "chain": "ethereum",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "d2f3a50f4938d2aa7a8188cf0991ca1c42d2ce513ced97d17c11bbf3a8db7605",
+      "raw_member_sha256": "34a63c9dd06253a532dbde3711f44e0c93f4b248f7af69c8e8d09c5fdfc98270",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "chain": "ethereum",
+      "check": "all8 raw features via csv/set arithmetic",
+      "stable_id_sha256": "d4f9d73d3f8339efeb1c90bdc2409a672e31fa0cfc01803f3b60153b6dcad868",
+      "raw_member_sha256": "71a2ab5142384a97263b6b5bdb358eac2c5fec93b9afeaf04efa1bee7a7f4da9",
+      "max_abs_error": 0.0,
+      "atol": 1e-12,
+      "status": "PASS"
+    }
+  ],
+  "private_values_sha256": "d8f37ecfdbc4195c1ab2a99f6ed8b83e93690bf8649d6ba559f9f24e62c0e223",
+  "script_sha256": "bb2945179392a9c43bd959acd330287024c6949e8a2e4041adc4e0f72a4f4cb8"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "evidence": "inventory.json / old_input_denylist.json / impact_map.csv",
+  "inventory_sha256": "51c185b4292df87ce25fabf04c3d190b0b73485ae5e1cb04637c68221c438640",
+  "impact_map_sha256": "b468d96df5fdbec8801f53e161bbc75b557ff1ce80e728125d750789f449427f",
+  "scope": "source availability/preservation/impact inventory; future production readiness not implied"
+}

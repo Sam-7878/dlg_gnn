@@ -1,0 +1,1141 @@
+{
+  "zip_sha256": "b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100",
+  "payload_count": 227,
+  "payload": [
+    {
+      "path": "configs/benchmark/a08_crypto_clean_v1.yaml",
+      "bytes": 1410,
+      "sha256": "c6f4fb6de204e2a35e9165c4f52d695013bde77e79b300af1ae3698586663588"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/approved_registry.json",
+      "bytes": 1003986,
+      "sha256": "2757ffd1e94bd31082b1e496e8b55a25478c917a72654450f448b53fdb0d1569"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G0.json",
+      "bytes": 384,
+      "sha256": "0f5b4621e29393661d0759f1197ff2d4268528fe747aad0be1392d9afac300d7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G1.json",
+      "bytes": 443,
+      "sha256": "21ced11bd65522b5b9a626aa586aca9c398de202aa6dc8a4b879a59cf58eb7a3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G2.json",
+      "bytes": 307,
+      "sha256": "b874543d376f73d036a20fe71ce2ca701b08a5507d373ca0a1753b1816a490bb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G3.json",
+      "bytes": 451,
+      "sha256": "5c11a6a8044149de6e61f208b3ba51372e7905897658538bdaacff3091e84aa2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G4.json",
+      "bytes": 1085,
+      "sha256": "d16f208f3358e1f4b13ce803ce7f1ac80fea66f56971707ba0b39d83b4218070"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G5.json",
+      "bytes": 2218,
+      "sha256": "c33440d2f735f130b4288a93fabc034cd029d6ec6735c9a6bafd818b9664354d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G6.json",
+      "bytes": 23038,
+      "sha256": "c50e17a770acbc8e46a88b4bc1089cbfb08267d80154b55d2e007970615ba2f0"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/G7.json",
+      "bytes": 748,
+      "sha256": "acb24804b6e72b3685c9a3165a2cc83ec95147b1f7ea398497654510ea4752a7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/counterfactual_and_rebuild.json",
+      "bytes": 9242,
+      "sha256": "9cafe61f8521bf70dfdd148afc08cdf042d9113e6ca422a470c0e8127343c3af"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/cuda_exactness.json",
+      "bytes": 14956,
+      "sha256": "18f67bb53ccce466322e0b82484b31f1d0003e47c98f22fc048510c4696f2bec"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/family_impact.json",
+      "bytes": 2263,
+      "sha256": "1c03beaff808e4f69a34ef2d04928febe8e37df7b7e55cf26e2ca1a60e8c0628"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/gadnr_numerical_qualification.json",
+      "bytes": 4313,
+      "sha256": "09b554ced3b29efe8d4bba4c7ed390fda15dd48dcf52561e16a36c20147a41df"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/gadnr_numerical_repair_disposition.json",
+      "bytes": 660,
+      "sha256": "2c9468815de30921c833eb695cfe4a0212af443f87c3262b171b5e8b8efb3cc9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/historical_reuse.json",
+      "bytes": 322443,
+      "sha256": "bc600526769a97fb8ff645808c75a6a62f48d4280bb504305c27b182a53229f4"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/metric_recompute_audit.json",
+      "bytes": 29741,
+      "sha256": "1c0d79a8c8a4452f63c3325d17efe872910451491b5030a559c812f3fd1ff347"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/preprediction_settings_metadata_amendment.json",
+      "bytes": 4029,
+      "sha256": "7b5154c1bd780fc648c431137c3adc53b779ef704fd54b103fbf5d7e9123111d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/raw_feature_examples.json",
+      "bytes": 3389,
+      "sha256": "3f38299e9a1e950690b19fed02152cb7bfe34d89f6d19a9e043d90ad10acddec"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/raw_full_counterfactual.json",
+      "bytes": 8413,
+      "sha256": "7d72d27134c01db2f03eef4f7256e14f963996a0e45509f95da44d7bbe833344"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/audit/regression_tests.json",
+      "bytes": 523,
+      "sha256": "8e6f7018fa322a174bec7852622a6a77eeeb4a8ef5b16c51e0fe5ff2cb5ac6cb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/confusion_matrices.csv",
+      "bytes": 13308,
+      "sha256": "dd434fcaf749007d7135d6a451a5d714e9a9b3bb93bdd36b9b73b5b8e99ace7d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/construction_manifests/bsc/observables_manifest.json",
+      "bytes": 2698,
+      "sha256": "b53567866edd2fdfc25245006e63ace2086bee450defc41875788e9fe624b087"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/construction_manifests/ethereum/observables_manifest.json",
+      "bytes": 2706,
+      "sha256": "e6323e909997725c5813890bfbf53885e9debd5a598f63b0b238ae1538654d3c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/construction_manifests/polygon/observables_manifest.json",
+      "bytes": 2701,
+      "sha256": "2b5a0adbae1929c1bfa3b4c2c1e0363926655106e1d3d16e24a5daf72e4e45c9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_manifest.json",
+      "bytes": 6520,
+      "sha256": "f6387759e3e94630d2ccb24baf0a8dce1dd00a0ccde9851de7691f602749e8b2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/049f7b0cba348d2185fa43aaa5a3756bca9307b004cf783cf7d2f7e598732eb0/installed_pygod/detector/anomalydae.py",
+      "bytes": 7632,
+      "sha256": "049f7b0cba348d2185fa43aaa5a3756bca9307b004cf783cf7d2f7e598732eb0"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/0fa3fd739676a56ad3bcc66ecab64bdc10f14613968a8f4930322f37409d184a/installed_pygod/detector/gadnr.py",
+      "bytes": 21396,
+      "sha256": "0fa3fd739676a56ad3bcc66ecab64bdc10f14613968a8f4930322f37409d184a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/15f940d67202371b87da71b37e2c0d661f9e53e8ff0e18871d428867104f96b2/installed_pygod/detector/base.py",
+      "bytes": 23649,
+      "sha256": "15f940d67202371b87da71b37e2c0d661f9e53e8ff0e18871d428867104f96b2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/160fc3393271f7c1917193f42e529378ca127cafb04cf67448fa7dd594c87d4a/src/gog_fraud/models/a08_gadnr_numerics.py",
+      "bytes": 2578,
+      "sha256": "160fc3393271f7c1917193f42e529378ca127cafb04cf67448fa7dd594c87d4a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f/src/gog_fraud/models/pygod/shared_reconstruction.py",
+      "bytes": 24304,
+      "sha256": "1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/19b26f7f56d0fd5e93b5c54a356433f8562e6aeb572aca3f70bb375bdd9dc8eb/src/gog_fraud/data/dgraphfin_aligned.py",
+      "bytes": 3540,
+      "sha256": "19b26f7f56d0fd5e93b5c54a356433f8562e6aeb572aca3f70bb375bdd9dc8eb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/1d862bf780ab83ba4eb008eecd94cca23258c71d4b87289c268d8beb5482f37b/src/gog_fraud/models/pygod/dlg_full.py",
+      "bytes": 10002,
+      "sha256": "1d862bf780ab83ba4eb008eecd94cca23258c71d4b87289c268d8beb5482f37b"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/2312bdb5f076a18a7cb6313b219b608a5ed77fd896e301be94ff22cc2af04416/installed_pygod/nn/adone.py",
+      "bytes": 7791,
+      "sha256": "2312bdb5f076a18a7cb6313b219b608a5ed77fd896e301be94ff22cc2af04416"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/23cdf7f31846bd4679fd5ca78945a720064d5945113732b2783af66f0a3ee445/installed_pygod/detector/gae.py",
+      "bytes": 6369,
+      "sha256": "23cdf7f31846bd4679fd5ca78945a720064d5945113732b2783af66f0a3ee445"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/27fa6e0920d34c726b2c35e825cdd2a20d65d7b6c5d2b24446bd4efe8de2f4f3/installed_pygod/detector/conad.py",
+      "bytes": 10667,
+      "sha256": "27fa6e0920d34c726b2c35e825cdd2a20d65d7b6c5d2b24446bd4efe8de2f4f3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/2a1c5d368a2612f289eb57a89165a5a8b269e7df3998848542d439299d36d75c/src/gog_fraud/data/benchmark_metrics.py",
+      "bytes": 3552,
+      "sha256": "2a1c5d368a2612f289eb57a89165a5a8b269e7df3998848542d439299d36d75c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/2ca966c464bcfa3f3f359c83c6bbabde872fa6f46b532a42b048c54bbaaf6024/installed_pygod/detector/done.py",
+      "bytes": 8581,
+      "sha256": "2ca966c464bcfa3f3f359c83c6bbabde872fa6f46b532a42b048c54bbaaf6024"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/30a0bf0af9f450433d637992a55898a7461da9976f2c89363d5ea7c97b4ea4aa/installed_pygod/nn/cola.py",
+      "bytes": 2706,
+      "sha256": "30a0bf0af9f450433d637992a55898a7461da9976f2c89363d5ea7c97b4ea4aa"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/340cda6add1147f09298dfabb21a4ab7e85dd1784ddc6a43072d38d1765ac7c5/installed_pygod/nn/encoder.py",
+      "bytes": 1509,
+      "sha256": "340cda6add1147f09298dfabb21a4ab7e85dd1784ddc6a43072d38d1765ac7c5"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2/src/gog_fraud/data/crypto_raw.py",
+      "bytes": 7508,
+      "sha256": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/3679027a6cd364ed19e5ad2c64a2b8f8ce85a98c6618d399426c9f98a396772a/installed_pygod/detector/__init__.py",
+      "bytes": 666,
+      "sha256": "3679027a6cd364ed19e5ad2c64a2b8f8ce85a98c6618d399426c9f98a396772a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/3c9976eb34dc59dfe75d38f14b7ccdaeea7a70ec305bce89df7ca88d40bddc41/installed_pygod/nn/anomalydae.py",
+      "bytes": 3543,
+      "sha256": "3c9976eb34dc59dfe75d38f14b7ccdaeea7a70ec305bce89df7ca88d40bddc41"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/3d32b2357cfec961ef2f7be6f9848ae66fa4f5c8ed9d20c87cf38a1a80344a6a/installed_pygod/utils/score_converter.py",
+      "bytes": 903,
+      "sha256": "3d32b2357cfec961ef2f7be6f9848ae66fa4f5c8ed9d20c87cf38a1a80344a6a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/4acf88afca9137d902adb5e84b4526d79979b0b7a6a47c34af1a77a387ceb4cf/installed_pygod/utils/__init__.py",
+      "bytes": 82,
+      "sha256": "4acf88afca9137d902adb5e84b4526d79979b0b7a6a47c34af1a77a387ceb4cf"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9/installed_pygod/nn/functional.py",
+      "bytes": 5353,
+      "sha256": "5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/5d4b00cbcc56ece5057b432a2a7ce64bcac5accde45620a260465a9113b9c012/src/gog_fraud/models/pygod/sparse_message.py",
+      "bytes": 6020,
+      "sha256": "5d4b00cbcc56ece5057b432a2a7ce64bcac5accde45620a260465a9113b9c012"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/5f2ca900bb48e2239eefd2b2863ebaab27303666fc22bf4c93e48feeef99e26c/installed_pygod/nn/gaan.py",
+      "bytes": 4232,
+      "sha256": "5f2ca900bb48e2239eefd2b2863ebaab27303666fc22bf4c93e48feeef99e26c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/666e7e6e5878957049d9061e9d29d32740c2acf92ed12805a2cafead8dbb964e/src/gog_fraud/models/pygod/__init__.py",
+      "bytes": 134,
+      "sha256": "666e7e6e5878957049d9061e9d29d32740c2acf92ed12805a2cafead8dbb964e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/6713bd24196eda1d624b68a8ea7ab2737c39018ecabcf56602304b10bbb72175/installed_pygod/detector/anomalous.py",
+      "bytes": 4330,
+      "sha256": "6713bd24196eda1d624b68a8ea7ab2737c39018ecabcf56602304b10bbb72175"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/6ce5f90e4ade4b5d8ae8dc2162384ad0d21f097fb4780d32cd9b7abc8b03f74a/installed_pygod/nn/guide.py",
+      "bytes": 9378,
+      "sha256": "6ce5f90e4ade4b5d8ae8dc2162384ad0d21f097fb4780d32cd9b7abc8b03f74a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/6cf20817145063b5fbb5fef610d26ac81d576c251b05c252bf8f07ab7d2da294/src/gog_fraud/models/pygod/data_adapter.py",
+      "bytes": 4587,
+      "sha256": "6cf20817145063b5fbb5fef610d26ac81d576c251b05c252bf8f07ab7d2da294"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/6ebc159b5f35dab490d4cae0059e8a0d8edebb42b692c393e288eca79217c4ab/installed_pygod/detector/scan.py",
+      "bytes": 5362,
+      "sha256": "6ebc159b5f35dab490d4cae0059e8a0d8edebb42b692c393e288eca79217c4ab"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/713be1fdad8ad77cb30ab2c6ea845ade88bcd9a1d2cea12a7abb792411e9861a/src/gog_fraud/models/pygod/stable_reconstruction.py",
+      "bytes": 2532,
+      "sha256": "713be1fdad8ad77cb30ab2c6ea845ade88bcd9a1d2cea12a7abb792411e9861a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/795c3f2e716b2947838730a7c44d37ce24d8afc7a73e2480fb21978a58b1522a/installed_pygod/nn/dmgd.py",
+      "bytes": 6731,
+      "sha256": "795c3f2e716b2947838730a7c44d37ce24d8afc7a73e2480fb21978a58b1522a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/7a8142b648a923d01fb150c7803e19c1564d05f6446eb174c46ce6341ec02721/installed_pygod/nn/__init__.py",
+      "bytes": 578,
+      "sha256": "7a8142b648a923d01fb150c7803e19c1564d05f6446eb174c46ce6341ec02721"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/7e0a4c7325362a558f130fc1d025869cb80abc7bff4938530287270b09bc46de/installed_pygod/utils/utility.py",
+      "bytes": 11054,
+      "sha256": "7e0a4c7325362a558f130fc1d025869cb80abc7bff4938530287270b09bc46de"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127/environment/locks/benchmark-a03-cuda.lock.txt",
+      "bytes": 1412,
+      "sha256": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/82c357d49ecff6ea572129957687a969df3f26cb248895164a2d8f59d3698aaf/src/gog_fraud/models/pygod/dlg_full_base.py",
+      "bytes": 5138,
+      "sha256": "82c357d49ecff6ea572129957687a969df3f26cb248895164a2d8f59d3698aaf"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/8489beb3dbe92ca2a6d71bbb9858600a994d64e7a56e313c43bfb534c09ad678/installed_pygod/nn/gae.py",
+      "bytes": 4341,
+      "sha256": "8489beb3dbe92ca2a6d71bbb9858600a994d64e7a56e313c43bfb534c09ad678"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/84db04caaef4fc2612407a07019c8d830a5c9cf768051daa23d5b92bcb023a0a/installed_pygod/nn/decoder.py",
+      "bytes": 2538,
+      "sha256": "84db04caaef4fc2612407a07019c8d830a5c9cf768051daa23d5b92bcb023a0a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/86a9ba24ee34f4e3865d860c2bfe622f9609dd702da0d6ba17dc3b49fb15618d/installed_pygod/detector/one.py",
+      "bytes": 5823,
+      "sha256": "86a9ba24ee34f4e3865d860c2bfe622f9609dd702da0d6ba17dc3b49fb15618d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/94a1fddae6bc36dbe110ae766c2d99e1642773eafb02fd0fa336b85a9cf26468/src/gog_fraud/pipelines/benchmark_crypto.py",
+      "bytes": 11100,
+      "sha256": "94a1fddae6bc36dbe110ae766c2d99e1642773eafb02fd0fa336b85a9cf26468"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/9901d1dffa2b55bb61f9cbf1506f335325ed148dccec91d394e6948d61155e86/src/gog_fraud/data/benchmark_lineage.py",
+      "bytes": 5793,
+      "sha256": "9901d1dffa2b55bb61f9cbf1506f335325ed148dccec91d394e6948d61155e86"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/PyGOD_LICENSE.txt",
+      "bytes": 1320,
+      "sha256": "c5766ccb3b8159eb259ba6ff5e081c63428108033490b252e775f6353f8f9e4b"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/a2cad916709f5919ceefcd7820a9c204819ca42540c87157241200d1e188ab40/installed_pygod/detector/dominant.py",
+      "bytes": 6710,
+      "sha256": "a2cad916709f5919ceefcd7820a9c204819ca42540c87157241200d1e188ab40"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9/src/gog_fraud/models/pygod/gadnr.py",
+      "bytes": 22095,
+      "sha256": "a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/a5463a9ac0ce8d5ec7dcd405dd10416ba3f958bdece35dc360fc361dbea343c7/installed_pygod/nn/nn.py",
+      "bytes": 5154,
+      "sha256": "a5463a9ac0ce8d5ec7dcd405dd10416ba3f958bdece35dc360fc361dbea343c7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791/src/gog_fraud/data/benchmark_node_adapter.py",
+      "bytes": 5441,
+      "sha256": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/a869ade9da1e8d52bbb2ffaee37bcf847542915b87f8748adc4450f3389b3a78/src/gog_fraud/models/pygod/dlg.py",
+      "bytes": 6790,
+      "sha256": "a869ade9da1e8d52bbb2ffaee37bcf847542915b87f8748adc4450f3389b3a78"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/af3f2725243fec409fb2185b004c0387a9d6c06e794f66cd5260a166addd62a8/installed_pygod/nn/dominant.py",
+      "bytes": 4568,
+      "sha256": "af3f2725243fec409fb2185b004c0387a9d6c06e794f66cd5260a166addd62a8"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/b6060bc764c29da367d2aacc3346af824c5e5c18240245a454e163ae55703447/installed_pygod/detector/ocgnn.py",
+      "bytes": 6286,
+      "sha256": "b6060bc764c29da367d2aacc3346af824c5e5c18240245a454e163ae55703447"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/b9823830b47961f69ec97a1943e2a344a28ea462ffa244d28ef4eeede4f17990/installed_pygod/detector/gaan.py",
+      "bytes": 7115,
+      "sha256": "b9823830b47961f69ec97a1943e2a344a28ea462ffa244d28ef4eeede4f17990"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/bac68e93a091aa6ec8c547a7f87cf97fba23a3fae7a7fddc4c23d1ef2a8f004d/installed_pygod/detector/radar.py",
+      "bytes": 4221,
+      "sha256": "bac68e93a091aa6ec8c547a7f87cf97fba23a3fae7a7fddc4c23d1ef2a8f004d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/c070dd66d3de6b749626f29e561f59280392757d6f559c50851e9c68f1a8fde7/installed_pygod/nn/gadnr.py",
+      "bytes": 23670,
+      "sha256": "c070dd66d3de6b749626f29e561f59280392757d6f559c50851e9c68f1a8fde7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037/src/gog_fraud/models/pygod/exact_reconstruction.py",
+      "bytes": 11608,
+      "sha256": "c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/c86ca77807e3e3588b5d6997ce21377ce6e5f0989ff408b15a41de13bdf77de4/installed_pygod/nn/done.py",
+      "bytes": 7863,
+      "sha256": "c86ca77807e3e3588b5d6997ce21377ce6e5f0989ff408b15a41de13bdf77de4"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/e000d619e27b0b816a8b8aacebd11d81d97f5c91eccd1dd9cd215b19eed0f9eb/installed_pygod/detector/cola.py",
+      "bytes": 6041,
+      "sha256": "e000d619e27b0b816a8b8aacebd11d81d97f5c91eccd1dd9cd215b19eed0f9eb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/e2d207948282ffa127933363d1c89976c80b03a6a9a7a71a7454137071c71538/installed_pygod/detector/guide.py",
+      "bytes": 7851,
+      "sha256": "e2d207948282ffa127933363d1c89976c80b03a6a9a7a71a7454137071c71538"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/e5dd4683098d9c19452f8420062728498d8bf719d30f4a9e847b18e00869d7f3/installed_pygod/nn/conv.py",
+      "bytes": 2138,
+      "sha256": "e5dd4683098d9c19452f8420062728498d8bf719d30f4a9e847b18e00869d7f3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/eb8996d83cfbd9f8072007679b4b941f10253a30cbca3f6d5a6cd975f22c7586/installed_pygod/nn/ocgnn.py",
+      "bytes": 3653,
+      "sha256": "eb8996d83cfbd9f8072007679b4b941f10253a30cbca3f6d5a6cd975f22c7586"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/fcc6c5ec354645c1a12bd59656a5820a0a8cc0accd208946d26a26663497741e/installed_pygod/detector/dmgd.py",
+      "bytes": 7217,
+      "sha256": "fcc6c5ec354645c1a12bd59656a5820a0a8cc0accd208946d26a26663497741e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888/src/gog_fraud/models/pygod/dlg_base.py",
+      "bytes": 6980,
+      "sha256": "fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/fe3d6f9542952989ebca6f8d22e626e19b88d782645758650d3df79a488ec472/installed_pygod/detector/adone.py",
+      "bytes": 8984,
+      "sha256": "fe3d6f9542952989ebca6f8d22e626e19b88d782645758650d3df79a488ec472"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/execution_sources/manifest.json",
+      "bytes": 17430,
+      "sha256": "fd830af7e14be2eaf45c2238aef2c3d99721415d780d6c1f4c96ae5ef3183b50"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/feature_spec.yaml",
+      "bytes": 2207,
+      "sha256": "f263fcdce5642d902caf6788dfa8d16b46f6772e7aed8ef5221cc3fd94453b93"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/hardware_runtime_context.json",
+      "bytes": 804,
+      "sha256": "e63240a83232343bffab98c5409c871c7007daab61dc23d33db671c3dde7ea69"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/historical_hardware_runtime_note.json",
+      "bytes": 4096,
+      "sha256": "855cd9b1d83b591b32c7bc7076c9224c4091824aa646bf7e23df8a6cc21a3e92"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/input_manifest.json",
+      "bytes": 23696,
+      "sha256": "3b1be3807e47e3c1539a66b8665ca298543f4c33042f93a3842628a7ee8f9f76"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/input_schema_notes.json",
+      "bytes": 418,
+      "sha256": "312a636519c951e2c056e6f5b89437b1660bfcfee330292d139c3f565414087c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/model_settings_frozen.json",
+      "bytes": 26319,
+      "sha256": "ba52637a91d6a6e52085262efb0620d3a9ec16ebbe0ff1241244136191f9c02e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/number_registry.json",
+      "bytes": 118517,
+      "sha256": "532651b28105ddd83194ee51e06084fd692d2f8555f671fbe2ef147296ff7cbf"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/old_input_denylist.json",
+      "bytes": 933,
+      "sha256": "f53dc5f5e825c07754d6f57ff9aafda3c8c6523bd99f2ceebdf56f639ac3332f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/planned_cells.csv",
+      "bytes": 7516,
+      "sha256": "6e083e7d15627cfc886d9794cc2231169ee0f8da719b0b2805605c709cf16094"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/bsc_contract_clean_v1__GADNR__seed42.json",
+      "bytes": 11881,
+      "sha256": "834df51480aa4fd8738a7873df2d9d81844c009c66057cb73252a0dc7262b0a7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__AnomalyDAE__seed42.json",
+      "bytes": 11348,
+      "sha256": "2d4215f28a57f043222e9539ce625a523014c752e33efb26f2309843bc331046"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__CoLA__seed42.json",
+      "bytes": 11151,
+      "sha256": "9578dcfb645db2549e94ce5918fe2ae886190aefc9f32a5db4a7a14b3885cd54"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Aug__seed42.json",
+      "bytes": 11468,
+      "sha256": "e1a753737db48371b237a0d02a7454139882691942913d555eb935e0ce010bcb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Base__seed42.json",
+      "bytes": 11285,
+      "sha256": "7b79da5361f03c2760206a10afebb1ee47ae7fbb12aba100795f346702e92364"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DOMINANT__seed42.json",
+      "bytes": 11290,
+      "sha256": "97f3d6f34afbd4883b952d4bff7c7ec11fcebbc1592698728bc2a25de7b930f9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__GADNR__seed42.json",
+      "bytes": 11774,
+      "sha256": "1878b0d6da7e45a300032cf5b5145604d2f0d95563a6ac0507e3c733c1be6829"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__OCGNN__seed42.json",
+      "bytes": 11277,
+      "sha256": "7805ad41eaab4a9157daad2e1fe4994a4773a575502d72b64a6a78c67994f4de"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/relation_spec.yaml",
+      "bytes": 1341,
+      "sha256": "0ba3937a60d3ed498ca9879e0e4989f1fbc5b923d3f8745aa38ad8c692f5204b"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__AnomalyDAE__seed42.json",
+      "bytes": 11394,
+      "sha256": "b17873c8da5d4fbc4a0846f8fa95d7435b23484c6b92c43db80346fef3ca809f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__AnomalyDAE__seed43.json",
+      "bytes": 11412,
+      "sha256": "c3c4a906e27e2c1eb4fade2bd20aaba268ab2687772d2d4936aab73765ae71fa"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__AnomalyDAE__seed44.json",
+      "bytes": 11427,
+      "sha256": "8cad7950a4b09221033268bdf8ea9ea4139a2e8d19181fb3ac99c9d30f8b5bf1"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__AnomalyDAE__seed45.json",
+      "bytes": 11410,
+      "sha256": "244f0858398ef94316e064457d3df5596e834612fc8921e183fdc2113e8057d8"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__AnomalyDAE__seed46.json",
+      "bytes": 11410,
+      "sha256": "660c4569fb582f36d6cc65920a365f76afc6aa9dc4d76531fb918163f02860a6"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__CoLA__seed42.json",
+      "bytes": 11234,
+      "sha256": "a141e9ae96cb6edd20715cbc3e49f92fb3feaf343c583fc4aadf6ee693209739"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__CoLA__seed43.json",
+      "bytes": 11192,
+      "sha256": "9548e8e4fac58639664eb1b64ffe66978c80f516608b714d82edaae262fb9aeb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__CoLA__seed44.json",
+      "bytes": 11210,
+      "sha256": "71c35441c23022f9daa006a987a4200a857ce3b9df5d3dc07a5ae3ebb6182da7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__CoLA__seed45.json",
+      "bytes": 11179,
+      "sha256": "4cccfca468c061eece7f20460545eed87c772b046f19b23b24d4da3a407fe0ac"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__CoLA__seed46.json",
+      "bytes": 11249,
+      "sha256": "e0b40bca9d8c38f6e281a080c925621834e5d5510a01ac2c3bba3841346b0bc8"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Aug__seed42.json",
+      "bytes": 11544,
+      "sha256": "fcf8fa162183571800cc6bdce9daab21711d72c5083d9e1179650f03d9b560cc"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Aug__seed43.json",
+      "bytes": 11519,
+      "sha256": "898aa5e25838fb094313173648a189eb02b38c5dc6be0ef4bbcb5bd05346a1a4"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Aug__seed44.json",
+      "bytes": 11536,
+      "sha256": "9fd175479287e0315281b33484be132c57f0b421ad13e2fac455c78bc54f86eb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Aug__seed45.json",
+      "bytes": 11547,
+      "sha256": "e971df9f0482123dd79a6198ace59560dc0c3aeea7efd76abc20645a249ff0a2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Aug__seed46.json",
+      "bytes": 11532,
+      "sha256": "e96c2eeec90e37bdce441d590435efd42f18de8aefce87b59323946b9ac53df0"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Base__seed42.json",
+      "bytes": 11321,
+      "sha256": "47429390370959c99eec3b68ae6d8707e381a6cfd2d33dec01b198737997041c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Base__seed43.json",
+      "bytes": 11281,
+      "sha256": "644f84ff4b7276d43f39fd3e58572d6b6c9842e996d20538dd6f7656094ecf87"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Base__seed44.json",
+      "bytes": 11339,
+      "sha256": "98591b272e3a19c5e589f4d6874b7f1f22c33211e473106788e7b4f80393b4e0"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Base__seed45.json",
+      "bytes": 11337,
+      "sha256": "cb8c7ac161d323c6e7d14ffb7a9f0ab88eca0b240822ca399e80356f274ffe51"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DLG-Base__seed46.json",
+      "bytes": 11354,
+      "sha256": "62a738facac09e695a10a6a0638c43516965f96129b4c0b88a25a17282219747"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DOMINANT__seed42.json",
+      "bytes": 11337,
+      "sha256": "a1b93d8cbb084b83e94a0e360c682ac212269d26a7fd94f1631dfa5cd5704b89"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DOMINANT__seed43.json",
+      "bytes": 11305,
+      "sha256": "d23fc4217e1baf75019744614537b9fa1d87c25a13a012ef925a2a4d0ad896b4"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DOMINANT__seed44.json",
+      "bytes": 11336,
+      "sha256": "9debc740f40395677553dd6fca1f35c227e9aa3a8f523e04c69d071711e5220d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DOMINANT__seed45.json",
+      "bytes": 11352,
+      "sha256": "e112a5cff0aa82298bde4c53bb58208ca8d51d0684e0a12fe2441b4fcced2e73"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__DOMINANT__seed46.json",
+      "bytes": 11322,
+      "sha256": "37ff2dad040cd901151d1a0e13d02a04176c219247ea11d987f18385fd1e4a9b"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__GADNR__seed42.json",
+      "bytes": 11888,
+      "sha256": "46a227ca637799aa749d2d6e99e08e37a44537093f8de6dcfa85fe24b9d2a368"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__GADNR__seed43.json",
+      "bytes": 11860,
+      "sha256": "fdc31f87c83294bd44815348fb2fbb0e8fbefa9192695fade6255763cd2b966f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__GADNR__seed44.json",
+      "bytes": 11877,
+      "sha256": "852a4229fd9206259e594603675265e372330ad5418d4843b3e8d829e8b0cf51"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__GADNR__seed45.json",
+      "bytes": 11872,
+      "sha256": "0bdb5d9b5fc9d0a5ef24ca7f983583f7d057a8ae5f89581b16a7b2568d468f76"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__GADNR__seed46.json",
+      "bytes": 11872,
+      "sha256": "ce5d292d912d10d68b3cab7b2affdc6f5a666adaada34ca81fd5f48b200752a7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__OCGNN__seed42.json",
+      "bytes": 11331,
+      "sha256": "e725a08f4f0e225d89ba51b1a44e738252085798839f685135f0e62b0437c03c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__OCGNN__seed43.json",
+      "bytes": 11294,
+      "sha256": "9b00b8ac0a9b3b8166ae50d6cc09432253a5cf009cd27b30144e51e668afaba5"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__OCGNN__seed44.json",
+      "bytes": 11319,
+      "sha256": "8af85384714efc15db0556adf82c946f252bda52f0a37e3477ac59c1fbc93653"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__OCGNN__seed45.json",
+      "bytes": 11336,
+      "sha256": "b4df2c083135ae4eb022f74e9fa1e54bbf789f21b58bfc330e7dfc8fc08f1140"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/bsc_contract_clean_v1__OCGNN__seed46.json",
+      "bytes": 11321,
+      "sha256": "c5545a7814ec60bf468b0852f7b463a677427cb03d444bd2349ee7ac713c37fe"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__AnomalyDAE__seed42.json",
+      "bytes": 11407,
+      "sha256": "54af63cbe42276c0d77dbf2a580fbfb082898ee148bb7c3c4acc0be8ae507d32"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__AnomalyDAE__seed43.json",
+      "bytes": 11438,
+      "sha256": "3ed10a6cd2dbc4446b04ce1d14238fee61124377d1135ed5c3a3d49ba74ea43a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__AnomalyDAE__seed44.json",
+      "bytes": 11402,
+      "sha256": "43b9cd94e19cf1bb5e443017aae71cd85086a6fce8896636f162961480536488"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__AnomalyDAE__seed45.json",
+      "bytes": 11412,
+      "sha256": "93aee0ec49a1ab6fafd10e5f3b559f36b10322d910c824ba492b81d276a0ecb5"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__AnomalyDAE__seed46.json",
+      "bytes": 11433,
+      "sha256": "27e097b9f1e29fd851120b9f81e5860366fe0248d0755feceffedac104d8d51e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__CoLA__seed42.json",
+      "bytes": 11249,
+      "sha256": "b1f3550943fda570e650420a1df3094b5528a23af72a475507c5a4b3c86a1567"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__CoLA__seed43.json",
+      "bytes": 11247,
+      "sha256": "2f1b073738c86b0bb8a91969b4c8c21afef866997df0fdb7f9228d3c53abecb2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__CoLA__seed44.json",
+      "bytes": 11252,
+      "sha256": "ded1864a368c72d9438cbc0a4ea55cfc86c738fd41b85650b0c6003d49cb8b7c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__CoLA__seed45.json",
+      "bytes": 11254,
+      "sha256": "ce7597c2f7072da78c13d64c67758e78385a0b3957b4115991052b8ee2ea1b4a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__CoLA__seed46.json",
+      "bytes": 11258,
+      "sha256": "270c0fb6273990fe3835d48594329cd0f1a857c57927b35d413aec8bc5a2c13c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Aug__seed42.json",
+      "bytes": 11562,
+      "sha256": "37760a1d8ac20f1e0fe90a695248e1e98efcd5837a0a487364d310330e06a2ca"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Aug__seed43.json",
+      "bytes": 11561,
+      "sha256": "2731b26d9df2854b96d7d80d10cd2cbfc4b1fb4927f7154b1c2835ed718404fd"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Aug__seed44.json",
+      "bytes": 11558,
+      "sha256": "30a0aafc35175391f45042e3bcfd641f6607013a6f83f9cdd8d1051c718e939f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Aug__seed45.json",
+      "bytes": 11560,
+      "sha256": "98154833b1bda80fef29a015990b9a74e0bb09ae8a64a2bf517ea56bd66e9133"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Aug__seed46.json",
+      "bytes": 11560,
+      "sha256": "27ac495cfcd16a965d28b10182d90f0889ab3fa4c39b794867312cccadc38a6f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Base__seed42.json",
+      "bytes": 11367,
+      "sha256": "8d5eedbb34990474142b8d5649dba8167d1f4da611172723bc6ce1f7d93225c6"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Base__seed43.json",
+      "bytes": 11362,
+      "sha256": "6276e41f5077e8372754459c5e0f1ee83e3456cb9e2dacf95153c3008ba077dc"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Base__seed44.json",
+      "bytes": 11350,
+      "sha256": "2db8b558ef94adab12707bae7625d8100f554c31bf5f8388c14e0990427b5c41"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Base__seed45.json",
+      "bytes": 11367,
+      "sha256": "a9e5ae4782698b737ddcc1de71c866be236b846854897b998ad6dce5a97879a7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DLG-Base__seed46.json",
+      "bytes": 11362,
+      "sha256": "b51f577e6abf221c7d3fc0bc5ed387c1885325c973bd49bb2c7c1a5d69edc7b3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DOMINANT__seed42.json",
+      "bytes": 11360,
+      "sha256": "508ed376ca722932063ea3e33bbe4d3c30d57491f70937e1ca7b506e10290dbf"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DOMINANT__seed43.json",
+      "bytes": 11347,
+      "sha256": "b482c40fb3522538862c52c28f9d5cc791ff01dd135c8fa9524d5d3a7b723872"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DOMINANT__seed44.json",
+      "bytes": 11329,
+      "sha256": "f359009d3581e592aeb096f7bc6b947b1ddafdd6d06fd1f7d9b4a25f158c549a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DOMINANT__seed45.json",
+      "bytes": 11361,
+      "sha256": "caa63d1c863e6d63bca73dc846651040965d807241d9777f51679f8923cb1ff2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__DOMINANT__seed46.json",
+      "bytes": 11363,
+      "sha256": "ec9043e13e622552aedfd2f5016e31db0035227ca5071b569d0e9bc11a4a3fc4"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__GADNR__seed42.json",
+      "bytes": 11885,
+      "sha256": "8466be9bd81b61410ba2371e9661f56e46b5a8bc60fff74db949f0ef82510072"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__GADNR__seed43.json",
+      "bytes": 11901,
+      "sha256": "33eff6072468be94a619291e1140787422b3860025b0ddbf4b28b0a9572a6a93"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__GADNR__seed44.json",
+      "bytes": 11899,
+      "sha256": "1aa61605a0f67ecf1a710dcd23dde9c77760ea9238311122357579697ddb4338"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__GADNR__seed45.json",
+      "bytes": 11853,
+      "sha256": "b9f4652eb9cda9bd1bbd9719ee49e627cdadf4879cf006735a00320a1805ecd8"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__GADNR__seed46.json",
+      "bytes": 11865,
+      "sha256": "4d3c56e6bcd8e0c179f90aa8bf604bcdcc6f4a0ae784b5ea2bd8dbf6daa0c5a5"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__OCGNN__seed42.json",
+      "bytes": 11348,
+      "sha256": "f7a98f3fdfacbc5fc2235b2cc13d2ec3e72d88bbcf71b03493fe48cb45a137c1"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__OCGNN__seed43.json",
+      "bytes": 11332,
+      "sha256": "3c513811bb612cf4131174f019458889cac5281e0d24c48a85201e9074c2ba3d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__OCGNN__seed44.json",
+      "bytes": 11350,
+      "sha256": "63c89e0b12e56d8923370f34120c31371aa3f93e06448a094d2fb0acca43e7e3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__OCGNN__seed45.json",
+      "bytes": 11327,
+      "sha256": "9919d808dccbf3ecb123b6399587b3ef0573148e3ce8850d8e425ccc678f33b2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/ethereum_contract_clean_v1__OCGNN__seed46.json",
+      "bytes": 11337,
+      "sha256": "e98918d9e7012b9f6cb22a9473239b84c8c4415ac50ae5dab6df5d8d14dc1cf3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__AnomalyDAE__seed42.json",
+      "bytes": 11349,
+      "sha256": "a795ff526cdd5b8295724023ea28d7e9d90809d62126915658fe0eb56d56e0d6"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__AnomalyDAE__seed43.json",
+      "bytes": 11338,
+      "sha256": "32bf38a983660878ae39d0273c381354a5853f261ce583a47be82059e4a3ccbb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__AnomalyDAE__seed44.json",
+      "bytes": 11386,
+      "sha256": "da15c52a2140c6ffe5a76110d6dd7b4ea2df796e1c0b8982b9052591c703023e"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__AnomalyDAE__seed45.json",
+      "bytes": 11382,
+      "sha256": "962c14d87634f1ad1f564d037b2b668bfeaed1f33103c3312c7ca8e6ec36776f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__AnomalyDAE__seed46.json",
+      "bytes": 11354,
+      "sha256": "ff866fa18c811e6139b4245259af2f1456a212ab79e422e740323d45457a091a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__CoLA__seed42.json",
+      "bytes": 11166,
+      "sha256": "bb68cfc1d1f4cb04a8d5075c53956c060b54b82cdc068e6cc1ff419274893400"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__CoLA__seed43.json",
+      "bytes": 11163,
+      "sha256": "1425b6ca47c04e66a7ec3d70e6fb392b5cef1a8febc8ea3366d4b3b2ae93960a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__CoLA__seed44.json",
+      "bytes": 11131,
+      "sha256": "2ed29590e033c3826ddf25710290944f01ca241158b73560ba2cd3b7b5192148"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__CoLA__seed45.json",
+      "bytes": 11128,
+      "sha256": "1bb7fefa145b34403f01c737cd02d8e4c660b01bcb874a1d66fcb6e75a7c45ae"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__CoLA__seed46.json",
+      "bytes": 11178,
+      "sha256": "8cb51fc3606641b56ebbbbf11ab36bf773a3a073f977a3cbfe48ecaf194af0c9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Aug__seed42.json",
+      "bytes": 11475,
+      "sha256": "5814f310a52580c484422e4a2a84ec9e00524927ff92ed6edbb10418946c389b"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Aug__seed43.json",
+      "bytes": 11432,
+      "sha256": "0d98b78c89743015680c3b34c2ad02fd29c47c94f82e21bcd61f6fe44c9c080c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Aug__seed44.json",
+      "bytes": 11516,
+      "sha256": "315e890296f74d9cba4533d15cd12cc75bcc8bc7ca33c176eb81c33bafcc3797"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Aug__seed45.json",
+      "bytes": 11525,
+      "sha256": "cbfd7b74664f2336335f8f5e4fc14828c90fb93919d3d76675bc06b597f97995"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Aug__seed46.json",
+      "bytes": 11497,
+      "sha256": "8020a39675d515a0ba8af92ea836114aeae647c11a67318214702fa37d2839e3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Base__seed42.json",
+      "bytes": 11263,
+      "sha256": "a904772a0402e7ee80249e6901613d8d7e45c0c95586d1e3421114d1e9f5c888"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Base__seed43.json",
+      "bytes": 11288,
+      "sha256": "47522dc94a18d4b1ef555374330ea8ec7a45f3ea57c7b3ea47d0b278e73b27fd"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Base__seed44.json",
+      "bytes": 11315,
+      "sha256": "ea526ed3ea4879cb511e86d1d1b24fbef604f18394608b5ef97c13b56f74f24c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Base__seed45.json",
+      "bytes": 11320,
+      "sha256": "e5148328bbd794e0603de9c2c965b782a62cf1f018fbd5cb6260235599a32e6f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DLG-Base__seed46.json",
+      "bytes": 11315,
+      "sha256": "51851943c4ad845931d1bd9b9a50fceb4b383e4a2a72f2e3c87e93c25c68350d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DOMINANT__seed42.json",
+      "bytes": 11276,
+      "sha256": "447b9fd0829209394df351ec7f773439e4cec3cb1d9278e864d5d549b86d694a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DOMINANT__seed43.json",
+      "bytes": 11300,
+      "sha256": "7b8b1f5560cfd76a69025164b4ae7ecd928a4d70d1e000fcda628ec1ad679641"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DOMINANT__seed44.json",
+      "bytes": 11326,
+      "sha256": "dedb19ac6180c85116bc70948c45ba8a68db5d632819e30c3a6ad59a15680359"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DOMINANT__seed45.json",
+      "bytes": 11311,
+      "sha256": "440c078894f126453fb25932d134166d38c62331faa0e5f6543c0369d2c7506f"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__DOMINANT__seed46.json",
+      "bytes": 11300,
+      "sha256": "d3e988069451bc8124dc4eafa144c7d312161df1fd6343a4ba71e7f6dbf915ff"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__GADNR__seed42.json",
+      "bytes": 11814,
+      "sha256": "b00de5a199740c3ec9b98f5799ea1f3006b6a5a064629c40c86b5f739dac43b5"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__GADNR__seed43.json",
+      "bytes": 11826,
+      "sha256": "b65d1a1958e7a344c0c51113326f3bc1ca5620e5979b0c0c984fe466964b36b7"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__GADNR__seed44.json",
+      "bytes": 11773,
+      "sha256": "1dcf62e7c7b960d56fa4520d8549262049243ff63bb45155a8634adb242b01c6"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__GADNR__seed45.json",
+      "bytes": 11752,
+      "sha256": "86535690bb06ea543616eff541e01cd7ee6b1ace232c59f80fe5e57946e75b76"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__GADNR__seed46.json",
+      "bytes": 11824,
+      "sha256": "c674c890431dab39c341e8706a70e978d2b9533d8d2526b3542a0d34369b0149"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__OCGNN__seed42.json",
+      "bytes": 11245,
+      "sha256": "c7e839ed0943e18a0c37bba342dc22ffa28eb0d7b50c332002162061c966eadf"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__OCGNN__seed43.json",
+      "bytes": 11304,
+      "sha256": "47eca889ac344b1bec152f593c22df449529b853414e18ed204d26df5a87d42a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__OCGNN__seed44.json",
+      "bytes": 11265,
+      "sha256": "0c27dfcf26987cdd14155814df631852a30195d0208be7a49ce3d487974c7283"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__OCGNN__seed45.json",
+      "bytes": 11252,
+      "sha256": "d006eca66eb2781985ea04be6498436269710dba780fefdeba95be1646e422ad"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/run_manifests/polygon_contract_clean_v1__OCGNN__seed46.json",
+      "bytes": 11287,
+      "sha256": "c06b2e9fe49f6de6a45e646eeb36aa0e7d2a7dfed101d65c413de75b51196bcb"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/source_manifest.json",
+      "bytes": 2059,
+      "sha256": "00827e070e48a4571a1987f929aa2156d00c499eeb52b171314577b33de6a685"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/source_versions/fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab/projects/benchmark/scripts/a08_data_repair.py",
+      "bytes": 15342,
+      "sha256": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/source_versions/manifest.json",
+      "bytes": 1062,
+      "sha256": "cfb5da14f08314491a1fde17179735bf6ef6fb7e7bcab78f8cd4ccb278e01913"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/split_manifest.json",
+      "bytes": 10248,
+      "sha256": "8038752b9416b51b9172cb6ff7c5134d971ed82906fd4394ab8e62fd89078e78"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/statistics/label_provenance_sensitivity.csv",
+      "bytes": 2752,
+      "sha256": "c129fcfb3342ced15660589ed1170e7e48449f8e14630f9649276f81ed577ab2"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/statistics/mean_ranks.csv",
+      "bytes": 2844,
+      "sha256": "4133d740152549b8fa003b093ebc172f56fb1e9fe545a4737d0cab35ecdaafee"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/statistics/pairwise.csv",
+      "bytes": 2325,
+      "sha256": "17cba0786cdd192663c64fbb4b2bfb5406e578c0d2bb1838b4f80c8cefcac61c"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/statistics/s5_lanl_descriptive.csv",
+      "bytes": 621,
+      "sha256": "6ff76ab7588c92bdc9519fda0df0bc99ba1383ddd8a5ad3b536215e423fb6ba3"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/statistics/statistics_s1_s4.json",
+      "bytes": 2705,
+      "sha256": "70f570f4fbdf8168019c68618fb2b6200cc3c6291fc264207c33f002ca440141"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/tables/alert_budget_crypto.csv",
+      "bytes": 6698,
+      "sha256": "6c65eccf5938dca0a6aa0a26e64963ee373e442cec24ed61b0106be9a01a4a9a"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/tables/support_matrix.csv",
+      "bytes": 5037,
+      "sha256": "b84dc6531adcaad016fe36b1f48c309d37e399c5cc138f63e62f042c7aa0adf0"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/tables/table_pr_auc.csv",
+      "bytes": 2155,
+      "sha256": "e4aa16b607377fb2876c3f3394ce525dc41e992b08c7e426036648119b4ab87d"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/tables/table_roc_auc.csv",
+      "bytes": 2155,
+      "sha256": "6774f464fab428b99e741029c08e7ca1264e3cfa9fbd5789aeb6f26263ebc643"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/tables/table_validation_f1.csv",
+      "bytes": 2155,
+      "sha256": "4db53059822016bb4cc35006b5f5341b4b2c98844506e2df4001525534512b50"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/threshold_audit.csv",
+      "bytes": 16917,
+      "sha256": "d46077d06459eb5793258e748d9d887c7de904b2808024f060a2197d9484675b"
+    },
+    {
+      "path": "projects/benchmark/protocols/A08_DATA_REPAIR_AMENDMENT.md",
+      "bytes": 3771,
+      "sha256": "37073698d0c0b7420a0495fd5cdcc72e7f6371fc66aad10e6fccc117f4a13b66"
+    },
+    {
+      "path": "projects/benchmark/protocols/A08_NUMERICAL_REPAIR_AMENDMENT_2026-10-10.md",
+      "bytes": 2264,
+      "sha256": "66a93c3d84a217ece1449e3d4a020cc3b91b50fb34d5bb11f145bd2b368e5322"
+    },
+    {
+      "path": "projects/benchmark/scripts/a08_aggregate.py",
+      "bytes": 16181,
+      "sha256": "0b8c708eba8a581b185597a45bd1fa63c68893359b7f39fee91537ed8965cfc6"
+    },
+    {
+      "path": "release_manifest.json",
+      "bytes": 55838,
+      "sha256": "35534d37acf28ad373c0f682869369319e965cfc16ae66c79e86b01a077bdd6e"
+    }
+  ]
+}

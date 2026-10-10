@@ -1,0 +1,845 @@
+{
+  "polygon": {
+    "DOMINANT": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "weight": 0.5
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "AnomalyDAE": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "score_chunk_size": 256
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "backbone": null,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "emb_dim": 64,
+        "alpha": 0.5,
+        "theta": 1.0,
+        "eta": 1.0,
+        "weight": 0.5,
+        "positive_weight_attribute": 0.5,
+        "positive_weight_structure": 0.5,
+        "sigmoid_structure": true,
+        "reconstruction_backend": "chunked_exact",
+        "score_chunk_size": 256,
+        "message_backend": "pyg_coo_reference"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='chunked_exact', score_chunk_size=512, gradient_checkpointing=False, **kwargs)"
+    },
+    "CoLA": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 32
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 32,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=4, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "GADNR": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 32
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 1,
+        "dropout": 0.0,
+        "weight_decay": 0.0003,
+        "lr": 0.01,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 32,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "encoder_layers": 1,
+        "deg_dec_layers": 4,
+        "fea_dec_layers": 3,
+        "sample_size": 2,
+        "sample_time": 3,
+        "neigh_loss": "KL",
+        "lambda_loss1": 0.01,
+        "lambda_loss2": 0.1,
+        "lambda_loss3": 0.8,
+        "real_loss": true,
+        "neighbor_num_list": null,
+        "neighbor_dict": null,
+        "id_mapping": null,
+        "full_batch": null,
+        "tot_nodes": 0
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=1, deg_dec_layers=4, fea_dec_layers=3, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, sample_size=2, sample_time=3, neigh_loss='KL', lambda_loss1=0.01, lambda_loss2=0.1, lambda_loss3=0.8, real_loss=True, lr=0.01, epoch=100, dropout=0.0, weight_decay=0.0003, act=<function relu>, gpu=-1, batch_size=0, num_neigh=-1, contamination=0.1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "OCGNN": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 32
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 2,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 32,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "beta": 0.5,
+        "warmup": 2,
+        "eps": 0.001
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=2, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, beta=0.5, warmup=2, eps=0.001, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "DLG-Base": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "alpha": 0.5,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "DLG-Aug": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "l1_epochs": 20
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "l1_hops": 2,
+        "l1_epochs": 20,
+        "l1_hid_dim": 64,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "_orig_dim": null,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    }
+  },
+  "bsc": {
+    "DOMINANT": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "weight": 0.5
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "AnomalyDAE": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "score_chunk_size": 256
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "backbone": null,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "emb_dim": 64,
+        "alpha": 0.5,
+        "theta": 1.0,
+        "eta": 1.0,
+        "weight": 0.5,
+        "positive_weight_attribute": 0.5,
+        "positive_weight_structure": 0.5,
+        "sigmoid_structure": true,
+        "reconstruction_backend": "chunked_exact",
+        "score_chunk_size": 256,
+        "message_backend": "pyg_coo_reference"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='chunked_exact', score_chunk_size=512, gradient_checkpointing=False, **kwargs)"
+    },
+    "CoLA": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=4, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "GADNR": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 1,
+        "dropout": 0.0,
+        "weight_decay": 0.0003,
+        "lr": 0.01,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "encoder_layers": 1,
+        "deg_dec_layers": 4,
+        "fea_dec_layers": 3,
+        "sample_size": 2,
+        "sample_time": 3,
+        "neigh_loss": "KL",
+        "lambda_loss1": 0.01,
+        "lambda_loss2": 0.1,
+        "lambda_loss3": 0.8,
+        "real_loss": true,
+        "neighbor_num_list": null,
+        "neighbor_dict": null,
+        "id_mapping": null,
+        "full_batch": null,
+        "tot_nodes": 0
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=1, deg_dec_layers=4, fea_dec_layers=3, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, sample_size=2, sample_time=3, neigh_loss='KL', lambda_loss1=0.01, lambda_loss2=0.1, lambda_loss3=0.8, real_loss=True, lr=0.01, epoch=100, dropout=0.0, weight_decay=0.0003, act=<function relu>, gpu=-1, batch_size=0, num_neigh=-1, contamination=0.1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "OCGNN": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 2,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "beta": 0.5,
+        "warmup": 2,
+        "eps": 0.001
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=2, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, beta=0.5, warmup=2, eps=0.001, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "DLG-Base": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "alpha": 0.5,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "DLG-Aug": {
+      "caller": {
+        "epoch": 40,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "l1_epochs": 20
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 40,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "l1_hops": 2,
+        "l1_epochs": 20,
+        "l1_hid_dim": 64,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "_orig_dim": null,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    }
+  },
+  "ethereum": {
+    "DOMINANT": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "weight": 0.5
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "AnomalyDAE": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "score_chunk_size": 256
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "backbone": null,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "emb_dim": 64,
+        "alpha": 0.5,
+        "theta": 1.0,
+        "eta": 1.0,
+        "weight": 0.5,
+        "positive_weight_attribute": 0.5,
+        "positive_weight_structure": 0.5,
+        "sigmoid_structure": true,
+        "reconstruction_backend": "chunked_exact",
+        "score_chunk_size": 256,
+        "message_backend": "pyg_coo_reference"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='chunked_exact', score_chunk_size=512, gradient_checkpointing=False, **kwargs)"
+    },
+    "CoLA": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=4, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "GADNR": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 1,
+        "dropout": 0.0,
+        "weight_decay": 0.0003,
+        "lr": 0.01,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "encoder_layers": 1,
+        "deg_dec_layers": 4,
+        "fea_dec_layers": 3,
+        "sample_size": 2,
+        "sample_time": 3,
+        "neigh_loss": "KL",
+        "lambda_loss1": 0.01,
+        "lambda_loss2": 0.1,
+        "lambda_loss3": 0.8,
+        "real_loss": true,
+        "neighbor_num_list": null,
+        "neighbor_dict": null,
+        "id_mapping": null,
+        "full_batch": null,
+        "tot_nodes": 0
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=1, deg_dec_layers=4, fea_dec_layers=3, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, sample_size=2, sample_time=3, neigh_loss='KL', lambda_loss1=0.01, lambda_loss2=0.1, lambda_loss3=0.8, real_loss=True, lr=0.01, epoch=100, dropout=0.0, weight_decay=0.0003, act=<function relu>, gpu=-1, batch_size=0, num_neigh=-1, contamination=0.1, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "OCGNN": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 64
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 2,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 64,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "beta": 0.5,
+        "warmup": 2,
+        "eps": 0.001
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "torch_geometric.nn.models.basic_gnn.GCN"
+      },
+      "constructor_signature": "(hid_dim=64, num_layers=2, dropout=0.0, weight_decay=0.0, act=<function relu>, backbone=<class 'torch_geometric.nn.models.basic_gnn.GCN'>, contamination=0.1, lr=0.004, epoch=100, gpu=-1, batch_size=0, num_neigh=-1, beta=0.5, warmup=2, eps=0.001, verbose=0, save_emb=False, compile_model=False, **kwargs)"
+    },
+    "DLG-Base": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "alpha": 0.5,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    },
+    "DLG-Aug": {
+      "caller": {
+        "epoch": 30,
+        "gpu": 0,
+        "verbose": 0,
+        "batch_size": 0,
+        "l1_epochs": 20
+      },
+      "scalar_attributes": {
+        "contamination": 0.1,
+        "verbose": 0,
+        "decision_score_": null,
+        "in_dim": null,
+        "num_nodes": null,
+        "hid_dim": 64,
+        "num_layers": 4,
+        "dropout": 0.0,
+        "weight_decay": 0.0,
+        "lr": 0.004,
+        "epoch": 30,
+        "device": "cuda:0",
+        "batch_size": 0,
+        "gan": false,
+        "model": null,
+        "save_emb": false,
+        "compile_model": false,
+        "l1_hops": 2,
+        "l1_epochs": 20,
+        "l1_hid_dim": 64,
+        "weight": 0.5,
+        "sigmoid_s": false,
+        "_orig_dim": null,
+        "sigmoid_structure": false,
+        "reconstruction_backend": "exact_sparse",
+        "score_chunk_size": 8192,
+        "message_backend": "sparse_fused"
+      },
+      "callable_attributes": {
+        "act": "torch.nn.functional.relu",
+        "backbone": "gog_fraud.models.pygod.sparse_message.SparseFusedGCN"
+      },
+      "constructor_signature": "(*args, reconstruction_backend='exact_sparse', score_chunk_size=8192, gradient_checkpointing=True, message_backend='sparse_fused', **kwargs)"
+    }
+  }
+}

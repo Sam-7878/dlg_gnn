@@ -1,0 +1,8 @@
+dataset,model,mean_ap,scope
+LANL-RedTeam,DOMINANT,0.1348162,single graph descriptive; no omnibus inference
+LANL-RedTeam,AnomalyDAE,0.0450304,single graph descriptive; no omnibus inference
+LANL-RedTeam,CoLA,0.019982800000000002,single graph descriptive; no omnibus inference
+LANL-RedTeam,GADNR,0.18055519999999997,single graph descriptive; no omnibus inference
+LANL-RedTeam,OCGNN,0.0454212,single graph descriptive; no omnibus inference
+LANL-RedTeam,DLG-Base,0.13669199999999998,single graph descriptive; no omnibus inference
+LANL-RedTeam,DLG-Aug,0.11144240000000001,single graph descriptive; no omnibus inference

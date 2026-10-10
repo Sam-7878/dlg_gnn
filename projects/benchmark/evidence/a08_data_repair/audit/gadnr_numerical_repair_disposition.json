@@ -1,0 +1,9 @@
+{
+  "status": "PRESERVED_EXCLUDED_FROM_ACTIVE_PRIMARY",
+  "time": "2026-10-09T16:55:48.649860+00:00",
+  "successes_preserved": 50,
+  "failure": "BSC GADNR seed42 float32 covariance determinant ratio became negative; not OOM or resource unsupported",
+  "new_execution_required": "all105 primary runs and7 model qualifications will restart from fresh initialization after exact-objective numerical qualification; frozen raw inputs/splits/caller hyperparameters unchanged",
+  "old_execution_sha256": "2da20a4b6eeb876d37799e37e63c7c60a4fa7f35f26d09803107876402884b80",
+  "new_results_policy": "no old/new backend seed mixture; old artifacts preserved unchanged"
+}

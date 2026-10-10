@@ -1,0 +1,32 @@
+[
+  {
+    "dataset": "Ethereum",
+    "class": "UNQUALIFIED_MIGRATION",
+    "sha256": "81f16b012ab90e0e29bc0452a0c592c67d2c96e1e7a296bbd37e4ce793989aad"
+  },
+  {
+    "dataset": "Ethereum",
+    "class": "HISTORICAL_LABEL_INFORMED",
+    "sha256": "4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654"
+  },
+  {
+    "dataset": "BSC",
+    "class": "UNQUALIFIED_MIGRATION",
+    "sha256": "fa97a2f52177d4bbb42e87cb3f2381a9e1aaadf71610a2f14a2a5c97bfce410c"
+  },
+  {
+    "dataset": "BSC",
+    "class": "HISTORICAL_LABEL_INFORMED",
+    "sha256": "2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883"
+  },
+  {
+    "dataset": "Polygon",
+    "class": "UNQUALIFIED_MIGRATION",
+    "sha256": "15f23b7481dd934635bda542e6ef74e12d7ca8bf0c61c3d66ab65a797e3d7a82"
+  },
+  {
+    "dataset": "Polygon",
+    "class": "HISTORICAL_LABEL_INFORMED",
+    "sha256": "292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74"
+  }
+]

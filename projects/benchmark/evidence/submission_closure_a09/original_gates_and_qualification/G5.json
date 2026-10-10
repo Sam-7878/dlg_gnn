@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "cuda_exactness_sha256": "18f67bb53ccce466322e0b82484b31f1d0003e47c98f22fc048510c4696f2bec",
+  "actual_chain_integration": [
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DOMINANT__seed42.json",
+      "sha256": "97f3d6f34afbd4883b952d4bff7c7ec11fcebbc1592698728bc2a25de7b930f9"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__AnomalyDAE__seed42.json",
+      "sha256": "2d4215f28a57f043222e9539ce625a523014c752e33efb26f2309843bc331046"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__CoLA__seed42.json",
+      "sha256": "9578dcfb645db2549e94ce5918fe2ae886190aefc9f32a5db4a7a14b3885cd54"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__GADNR__seed42.json",
+      "sha256": "1878b0d6da7e45a300032cf5b5145604d2f0d95563a6ac0507e3c733c1be6829"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__OCGNN__seed42.json",
+      "sha256": "7805ad41eaab4a9157daad2e1fe4994a4773a575502d72b64a6a78c67994f4de"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Base__seed42.json",
+      "sha256": "7b79da5361f03c2760206a10afebb1ee47ae7fbb12aba100795f346702e92364"
+    },
+    {
+      "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/polygon_contract_clean_v1__DLG-Aug__seed42.json",
+      "sha256": "e1a753737db48371b237a0d02a7454139882691942913d555eb935e0ce010bcb"
+    }
+  ],
+  "gadnr_numerical_qualification_sha256": "09b554ced3b29efe8d4bba4c7ed390fda15dd48dcf52561e16a36c20147a41df",
+  "failed_chain_integration": {
+    "path": "projects/benchmark/evidence/a08_data_repair/qualification_runs/bsc_contract_clean_v1__GADNR__seed42.json",
+    "sha256": "834df51480aa4fd8738a7873df2d9d81844c009c66057cb73252a0dc7262b0a7"
+  },
+  "scope": "seven actual Polygon and failed-chain BSC one-epoch integrations; exact-objective GADNR arithmetic qualified; primary not yet completed"
+}

@@ -1,0 +1,15 @@
+{
+  "source_project": "Multi-Chain Graphs of Graphs",
+  "authors": "Bingqiao Luo; Zhen Zhang; Qian Wang; Bingsheng He",
+  "paper_year": 2024,
+  "doi": "10.52202/079017-0894",
+  "repository": "https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs",
+  "download": "https://drive.google.com/drive/folders/1VV5ht9Eh8WGtKfkS0ipIk0FNI7g-WJfJ",
+  "local_provider_README_sha256": "f72c335251c0aea7bf96e494e502416eba2628d23ba41c4f7a54962e43a2b7db",
+  "frozen_provider_README_sha256": "f72c335251c0aea7bf96e494e502416eba2628d23ba41c4f7a54962e43a2b7db",
+  "mapping": "README Category0=fraud; derived target=1 for Category0, 0 for other observed categories, -1 missing",
+  "source_population": "original per-token transfer CSVs; derived feature-similarity relation is not provider global graph",
+  "license_observation": "upstream LICENSE downloaded 2026-10-10 says CC BY-NC-SA4.0; this is a source observation, not a new redistribution or reviewer-sharing authorization",
+  "source_manifest_sha256": "00827e070e48a4571a1987f929aa2156d00c499eeb52b171314577b33de6a685",
+  "author_source_confirmation": "pending coauthor review; technical README hash equality established"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests": 55,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "xml_sha256": "b8f1b8fc40036cc407816982e1125a66db143105c833c492434b1b0b461b7321",
+  "test_sources": {
+    "tests/benchmark/a08/test_final_acceptance.py": "da5ea674fc1aaf2a15740672ba2c6422ab00bc1792fd0d27f1935d7fc4221015",
+    "tests/benchmark/a08/test_public_evidence.py": "8f2fcc89809a0b0211b73a426aea2b237d49b13ab7ad55d093e54c650524488a"
+  },
+  "validator_source_sha256": "4c9411b178fba4a0c74eb91ead54cc44531f90933c1c236c2eef687a5bf04994",
+  "public_checker_source_sha256": "a9a65f792140f3c0a8774b42051fef0c8d89f4552c251e113b42c19572897b85",
+  "scope": "55 fail-closed/private-boundary fixtures including four semantic claim crosswalk negatives; full actual acceptance separately requires G0\u2013G10"
+}

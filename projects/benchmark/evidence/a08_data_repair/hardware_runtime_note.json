@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "campaign_id": "benchmark_a08_crypto_clean_v1",
+  "device": "NVIDIA GeForce RTX3090 eGPU",
+  "gpu_uuid": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+  "prior_user_report": "RTX3090 memory clock reduced twice, total402MHz, during A05; not independently measured as an A08 offset",
+  "latest_user_report": "RTX3090 enabled for continuation",
+  "measurement_policy": "fresh-process fit-plus-inference elapsed time and actual peak memory per A08 run; no A05 interrupted segment time reused",
+  "gpu_clock_evidence": "per-run launch telemetry plus30-second active sampling; clock readings are actual instantaneous clocks, not offset verification",
+  "qualification_monitor_issue": "minimal systemd PATH omitted nvidia-smi; addressed with absolute /usr/lib/wsl/lib/nvidia-smi in supervisor; CUDA model execution unaffected; earlier qualification telemetry missing, actual torch peak counters retained",
+  "scope": "device-specific eGPU execution evidence, not a matched8/24GiB cap benchmark"
+}

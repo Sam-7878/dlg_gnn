@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "input_manifest_sha256": "3b1be3807e47e3c1539a66b8665ca298543f4c33042f93a3842628a7ee8f9f76",
+  "split_manifest_sha256": "8038752b9416b51b9172cb6ff7c5134d971ed82906fd4394ab8e62fd89078e78",
+  "planned_cells_sha256": "6e083e7d15627cfc886d9794cc2231169ee0f8da719b0b2805605c709cf16094",
+  "model_settings_sha256": "ba52637a91d6a6e52085262efb0620d3a9ec16ebbe0ff1241244136191f9c02e",
+  "source_manifest_sha256": "00827e070e48a4571a1987f929aa2156d00c499eeb52b171314577b33de6a685",
+  "config_sha256": "c6f4fb6de204e2a35e9165c4f52d695013bde77e79b300af1ae3698586663588",
+  "execution_manifest_sha256": "f6387759e3e94630d2ccb24baf0a8dce1dd00a0ccde9851de7691f602749e8b2",
+  "whole_raw_five_condition_sha256": "7d72d27134c01db2f03eef4f7256e14f963996a0e45509f95da44d7bbe833344",
+  "qualification_precondition": "Whole five-condition raw construction verified before qualification or production; existing input bytes and masks unchanged",
+  "numerical_execution_revision": 2,
+  "numerical_amendment_sha256": "66a93c3d84a217ece1449e3d4a020cc3b91b50fb34d5bb11f145bd2b368e5322"
+}

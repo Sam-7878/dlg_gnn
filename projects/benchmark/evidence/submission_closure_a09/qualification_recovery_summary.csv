@@ -1,0 +1,52 @@
+family,case,layers,quantity,device,max_abs,max_relative_with_floor,max_tolerance_fraction,atol,rtol,relative_floor,status,source_record
+Gram,binary undirected,NA,score,RTX3090 CUDA float32,1.52587890625e-05,2.381000001605571e-07,0.002323002787306905,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,binary undirected,NA,loss,RTX3090 CUDA float32,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,binary undirected,NA,gradient,RTX3090 CUDA float32,1.9073486328125e-06,2.576657891495415e-07,0.002346243243664503,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,binary undirected,NA,update,RTX3090 CUDA float32,9.313225746154785e-10,9.313225746154785e-09,8.5204686911311e-05,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,2,forward,RTX3090 CUDA float32,5.960464477539063e-08,1.678133969562623e-07,0.001073601539246738,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,2,input_grad,RTX3090 CUDA float32,3.725290298461914e-09,3.725290298461914e-08,0.000314768694806844,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,2,parameter_gradients,RTX3090 CUDA float32,7.450580596923828e-09,7.450580596923828e-08,0.0006039206637069583,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,2,update,RTX3090 CUDA float32,1.4901161193847656e-08,8.6570786095308e-08,0.0005475813522934914,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,4,forward,RTX3090 CUDA float32,7.916241884231567e-09,7.916241884231567e-08,0.0007416309672407806,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,4,input_grad,RTX3090 CUDA float32,5.820766091346741e-11,5.820766091346741e-10,5.801902261737268e-06,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,4,parameter_gradients,RTX3090 CUDA float32,1.862645149230957e-09,1.862645149230957e-08,0.00015621229249518365,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,binary undirected,4,update,RTX3090 CUDA float32,2.9802322387695312e-08,6.843163902203742e-08,0.0005565274623222649,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,weighted duplicates self_loops,NA,score,RTX3090 CUDA float32,1.52587890625e-05,2.2417236777982907e-07,0.002190239727497101,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,weighted duplicates self_loops,NA,loss,RTX3090 CUDA float32,7.62939453125e-06,1.115587338063051e-07,0.0011139585403725505,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,weighted duplicates self_loops,NA,gradient,RTX3090 CUDA float32,1.9073486328125e-06,5.960464477539062e-07,0.0035511513706296682,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+Gram,weighted duplicates self_loops,NA,update,RTX3090 CUDA float32,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,2,forward,RTX3090 CUDA float32,5.960464477539063e-08,2.2351741790771484e-07,0.0017844255780801177,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,2,input_grad,RTX3090 CUDA float32,3.725290298461914e-09,3.725290298461914e-08,0.0003220220096409321,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,2,parameter_gradients,RTX3090 CUDA float32,1.4901161193847656e-08,1.0161140551190329e-07,0.0006041456363163888,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,2,update,RTX3090 CUDA float32,1.4901161193847656e-08,1.0903793423722163e-07,0.0006296433275565505,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,4,forward,RTX3090 CUDA float32,1.4901161193847656e-08,1.4901161193847656e-07,0.000883935543242842,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,4,input_grad,RTX3090 CUDA float32,4.656612873077393e-10,4.6566128730773926e-09,4.493632150115445e-05,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,4,parameter_gradients,RTX3090 CUDA float32,3.725290298461914e-09,3.725290298461914e-08,0.00025267645833082497,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+fused_GCN,weighted duplicates self_loops,4,update,RTX3090 CUDA float32,3.725290298461914e-09,3.725290298461914e-08,0.00024320432567037642,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+AnomalyDAE_row_block,binary undirected,NA,forward,RTX3090 CUDA float32,1.1920928955078125e-07,6.489049155788962e-07,0.005131924990564585,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+AnomalyDAE_row_block,binary undirected,NA,score,RTX3090 CUDA float32,2.384185791015625e-07,9.026023661817817e-08,0.0008696782169863582,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+AnomalyDAE_row_block,binary undirected,NA,gradient,RTX3090 CUDA float32,4.470348358154297e-08,4.470348358154297e-07,0.0025988456327468157,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+AnomalyDAE_row_block,binary undirected,NA,update,RTX3090 CUDA float32,5.122274160385132e-08,5.122274160385132e-07,0.004545941017568111,1e-05,0.0001,0.1,PASS,qualification_recovery/cuda_fixture.json
+GADNR sampled model,cpu,1,center_embedding,cpu float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cpu,1,degree_output,cpu float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cpu,1,loss_and_scores,cpu float32/cast from float64 scalar,2.1457672119140625e-06,2.066581828330527e-06,0.01885034888982773,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cpu,1,parameter_gradients,cpu float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cpu,1,one_Adam_update,cpu float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cuda:0,1,center_embedding,cuda:0 float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cuda:0,1,degree_output,cuda:0 float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cuda:0,1,loss_and_scores,cuda:0 float32/cast from float64 scalar,2.1457672119140625e-06,1.731544102767657e-06,0.016022494062781334,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cuda:0,1,parameter_gradients,cuda:0 float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR sampled model,cuda:0,1,one_Adam_update,cuda:0 float32/cast from float64 scalar,0.0,0.0,0.0,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+AnomalyDAE_row_block,binary undirected,NA,mean loss,RTX3090 CUDA float32,2.384185791015625e-07,6.859847445639389e-08,0.0006667994312010705,1e-05,0.0001,0.1,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=8,scale=0.1",NA,detached scalar,CPU float64,0.0,0.0,0.0,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=8,scale=1.0",NA,detached scalar,CPU float64,8.881784197001252e-16,8.881784197001253e-17,5.83884150513509e-09,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=8,scale=100.0",NA,detached scalar,CPU float64,0.0,0.0,0.0,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=64,scale=0.1",NA,detached scalar,CPU float64,0.0,0.0,0.0,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=64,scale=1.0",NA,detached scalar,CPU float64,1.4210854715202004e-14,2.3229403755319007e-16,1.9965753783449925e-08,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=1,H=64,scale=100.0",NA,detached scalar,CPU float64,0.0,0.0,0.0,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=8,scale=0.1",NA,detached scalar,CPU float64,1.429412144204889e-15,1.4294121442048891e-16,1.4163224349296369e-08,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=8,scale=1.0",NA,detached scalar,CPU float64,2.6645352591003757e-15,2.6645352591003756e-16,1.5004638888506736e-08,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=8,scale=100.0",NA,detached scalar,CPU float64,9.342329576611519e-09,1.2294613541506874e-13,1.2292995769076469e-05,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=64,scale=0.1",NA,detached scalar,CPU float64,8.493206138382448e-15,8.493206138382448e-16,8.190814843316815e-08,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=64,scale=1.0",NA,detached scalar,CPU float64,2.842170943040401e-14,4.558328509347147e-16,3.928300161984859e-08,1e-07,1e-08,10.0,PASS,qualification_recovery.json
+GADNR scalar implemented term,"valid=2,H=64,scale=100.0",NA,detached scalar,CPU float64,4.400499165058136e-08,6.98842074547377e-14,6.98830976431663e-06,1e-07,1e-08,10.0,PASS,qualification_recovery.json

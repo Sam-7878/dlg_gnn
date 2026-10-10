@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "campaign_id": "benchmark_a08_crypto_clean_v1",
+  "datasets": [
+    {
+      "schema_version": 1,
+      "dataset_id": "polygon_contract_clean_v1",
+      "dataset_version": 1,
+      "prediction_unit": "contract_node",
+      "artifact_relative_path": "contract_graph.npz",
+      "serialized_file_sha256": "cba36b0055481c0cac94fb75b898ea55e480fb9e93728fa47b1cf80e42ca14f5",
+      "scientific_content_hash": "dfb836c1ce83ea8a1553ffaae7e39800207a94f857721cf23b5a1e44852cf11b",
+      "N": 2353,
+      "E": 15368,
+      "F": 8,
+      "positive_count": 62,
+      "unknown_count": 0,
+      "feature_spec_hash": "f263fcdce5642d902caf6788dfa8d16b46f6772e7aed8ef5221cc3fd94453b93",
+      "relation_spec_hash": "0ba3937a60d3ed498ca9879e0e4989f1fbc5b923d3f8745aa38ad8c692f5204b",
+      "source_manifest_hash": "2b5a0adbae1929c1bfa3b4c2c1e0363926655106e1d3d16e24a5daf72e4e45c9",
+      "raw_zip_sha256": "d4156b2cb85f92717df6734b205c69ca4da2ebe687999791a10f03b97d46f86e",
+      "label_source_hash": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "config_hash": "c6f4fb6de204e2a35e9165c4f52d695013bde77e79b300af1ae3698586663588",
+      "environment_lock_hash": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127",
+      "arrays": {
+        "node_ids": "c5707410987ba22685acbd8ce877545c1f710451fa565d95b281516637157537",
+        "raw_features": "21ea08517cf42ca9f6baf44b5c140479bcc77571d37dd23e46d9feaba49540f2",
+        "x": "c82af686366783681caf79d2a7215d9d2380a203b55cf4954645db72c86c0992",
+        "preprocessing_mean": "fc9b28e33ab80fad8b2b7c3937390de9e2c37a7f56bde1db692d8bab68b935eb",
+        "preprocessing_scale": "1301964d74fb2afb8c47b698334309bb219c583e05d61701560dcf0c5be68c5e",
+        "edge_index": "d6f826da8bd2b37b9a0df60864cc94818ea2b681bdb1d17fad35aef440871659",
+        "labels": "b75df91703d00a58d9e76a0d9857e40c4987e995ad83560019a8707675250182",
+        "label_valid_mask": "c1faf3592f102f093200031b7dd59c4ee20ba046adc35d17067a23443326b059",
+        "train_mask_42": "2304d7e38ef8d912ba28bdde514c42dd8ffb9c21543c75341ed83e6dff42949a",
+        "val_mask_42": "437955e24a8f6129c482a4aac655c4e6f2dbd1fd040d3fa63a43dec9f0ef017c",
+        "test_mask_42": "61b6f1101fdd78488c464beb288ab85e331b24c9895a3e00bbb1c74afca6d02d",
+        "train_mask_43": "dfc0f44c63a82d81d2c5857f733c0c1a4813d5433ac686eeccf83153f715623c",
+        "val_mask_43": "fa03559da3c02d25e0d60d8918d54d59ff4c295801bd4c8ccd3256deb7e638db",
+        "test_mask_43": "ec2dd2329245338d059b5f9c86b4d6517fcc72f1ff3dc418e80310b5477bf1f9",
+        "train_mask_44": "9048715247b214565d1bc282ca761646254a6bb90dace1e126b8e78daec7598f",
+        "val_mask_44": "2dd3541b09218b1835d341280f388524e73b26b6c6cf678a33f4052d54dcab62",
+        "test_mask_44": "c46a092e22a486444f6e7ab4de6c9526a5eaa93a8322c6f4bb2fbad295073393",
+        "train_mask_45": "0462d88deb940094fd7a327ea727a89510482e6a5baa11be698c76381aa3f333",
+        "val_mask_45": "00c26ee374fa90c951b7fa20c282bc11c59d724303e71ea01b7899778f47d26f",
+        "test_mask_45": "bdf85a17f5444a0b10c458a8406b7e3bbdb3c5f48d0e1a09ac6295d37f319736",
+        "train_mask_46": "bd9772f6e24740f7d75e2e5171e75c9443de5af38626849b6907aaba59848f5e",
+        "val_mask_46": "b3da1094709b8a4c9c531c344b18a67123b1510e066df6f84380c817efa54db9",
+        "test_mask_46": "c2601249853a3ab5f1de70132523c606eed5313c716cf3b2269fbec8fb900d67"
+      },
+      "split_records": [
+        {
+          "dataset_id": "polygon_contract_clean_v1",
+          "seed": 42,
+          "masks": {
+            "train_mask": "2304d7e38ef8d912ba28bdde514c42dd8ffb9c21543c75341ed83e6dff42949a",
+            "val_mask": "437955e24a8f6129c482a4aac655c4e6f2dbd1fd040d3fa63a43dec9f0ef017c",
+            "test_mask": "61b6f1101fdd78488c464beb288ab85e331b24c9895a3e00bbb1c74afca6d02d"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "polygon_contract_clean_v1",
+          "seed": 43,
+          "masks": {
+            "train_mask": "dfc0f44c63a82d81d2c5857f733c0c1a4813d5433ac686eeccf83153f715623c",
+            "val_mask": "fa03559da3c02d25e0d60d8918d54d59ff4c295801bd4c8ccd3256deb7e638db",
+            "test_mask": "ec2dd2329245338d059b5f9c86b4d6517fcc72f1ff3dc418e80310b5477bf1f9"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "polygon_contract_clean_v1",
+          "seed": 44,
+          "masks": {
+            "train_mask": "9048715247b214565d1bc282ca761646254a6bb90dace1e126b8e78daec7598f",
+            "val_mask": "2dd3541b09218b1835d341280f388524e73b26b6c6cf678a33f4052d54dcab62",
+            "test_mask": "c46a092e22a486444f6e7ab4de6c9526a5eaa93a8322c6f4bb2fbad295073393"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "polygon_contract_clean_v1",
+          "seed": 45,
+          "masks": {
+            "train_mask": "0462d88deb940094fd7a327ea727a89510482e6a5baa11be698c76381aa3f333",
+            "val_mask": "00c26ee374fa90c951b7fa20c282bc11c59d724303e71ea01b7899778f47d26f",
+            "test_mask": "bdf85a17f5444a0b10c458a8406b7e3bbdb3c5f48d0e1a09ac6295d37f319736"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "polygon_contract_clean_v1",
+          "seed": 46,
+          "masks": {
+            "train_mask": "bd9772f6e24740f7d75e2e5171e75c9443de5af38626849b6907aaba59848f5e",
+            "val_mask": "b3da1094709b8a4c9c531c344b18a67123b1510e066df6f84380c817efa54db9",
+            "test_mask": "c2601249853a3ab5f1de70132523c606eed5313c716cf3b2269fbec8fb900d67"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        }
+      ],
+      "scientific_status": "FROZEN_APPROVED_INPUT",
+      "freeze_time_utc": "2026-10-09T14:58:44.508068+00:00",
+      "supersedes": "historical label-informed hybrid and unqualified migration, retained in denylist"
+    },
+    {
+      "schema_version": 1,
+      "dataset_id": "bsc_contract_clean_v1",
+      "dataset_version": 1,
+      "prediction_unit": "contract_node",
+      "artifact_relative_path": "contract_graph.npz",
+      "serialized_file_sha256": "19a21d9d0cfe044a4e362ae42160f0a5e32368105228dbbee631ff4fe4e8981e",
+      "scientific_content_hash": "8be68aa720dc95b7390e3343cd471bfd6bdbe0bca4e50d3f6cc6317d0986ea5c",
+      "N": 7499,
+      "E": 48462,
+      "F": 8,
+      "positive_count": 1105,
+      "unknown_count": 0,
+      "feature_spec_hash": "f263fcdce5642d902caf6788dfa8d16b46f6772e7aed8ef5221cc3fd94453b93",
+      "relation_spec_hash": "0ba3937a60d3ed498ca9879e0e4989f1fbc5b923d3f8745aa38ad8c692f5204b",
+      "source_manifest_hash": "b53567866edd2fdfc25245006e63ace2086bee450defc41875788e9fe624b087",
+      "raw_zip_sha256": "4c13344a6a7833a22576d7e1db89e0a55b50966fda499fd2e84f3bfe525177d1",
+      "label_source_hash": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "config_hash": "c6f4fb6de204e2a35e9165c4f52d695013bde77e79b300af1ae3698586663588",
+      "environment_lock_hash": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127",
+      "arrays": {
+        "node_ids": "3319e67509738c18508e6c9a2f27fcbd813ece297adaca392610086fbb28ecce",
+        "raw_features": "8a38d5e9e99fef54a74f953d54b5e1636612620d973ecff46cd77bd6af8b79bb",
+        "x": "91fb6cee45aaf9af41d2dddb5685431412e2d7fc6898ca3f63d02d49a75c32a6",
+        "preprocessing_mean": "301850142166f54709b8a374dce75be4244ad63c55988859aec3cf77020918b7",
+        "preprocessing_scale": "7c368464f9342b2e16ecab1e2530c44ba809010811b034ec25ee2c7c55002ead",
+        "edge_index": "2b1ae4ff5d6e798ccd0b9d338ad91fbcbcf0a0d8579d67d048a0242011d8a3fa",
+        "labels": "80c17d8aa67d48addf1479aaac69374264c2ec75a6d08ab9b5dafc94f588b15a",
+        "label_valid_mask": "cefe28951c99656ed256f1a348e612f3ab528b8c75fb5faaba8fe217fe163e3d",
+        "train_mask_42": "d711f70d88b5970e2fef3b9425d4a0f58120dd3579c517c275c766fa9b950e33",
+        "val_mask_42": "caabd20179e8b9baa29ac8dd144ee56975e959cc2c94cc952aa09e933ce2644b",
+        "test_mask_42": "f60a26611939da080925a7d55148f631edca5bac552206ad8379251ff7cab15d",
+        "train_mask_43": "c13c92c656be7cdc0d1f472fc76335bc03f9e8a0472ad69af99831fcb517d630",
+        "val_mask_43": "8d2050096bfbc76aea07d9d6fafd85124f31b59f6afb2ba075ea751886cf7995",
+        "test_mask_43": "f9bc65ea05bce6e8ca0e15603be8dc593763b6af8da07335e9085e094ff4bb32",
+        "train_mask_44": "9a57cc6ed7540a97bcb78bc25beae06ca9cd26c61dba54f688a6ac833b633bda",
+        "val_mask_44": "50a156ed2f3749bf31e917ba5ea1fbcea93b8d5415cdab08e286d71a822e75f1",
+        "test_mask_44": "b0f87c0fb7142068bed832341bf0a9033e07cbab94094450d4266ea4a31516c7",
+        "train_mask_45": "d4eefd1ed2ed87e83911c69323c753e5342fa3f7faebaedce934bf60ff26d952",
+        "val_mask_45": "081dbc1fd582ee7d691bbac4da298a241aa05354abbdf32ebf6a5d36619dc1d0",
+        "test_mask_45": "f9518c567552864e24f69fe1803f544a680ac4e714095db00a4b31ca81c723a7",
+        "train_mask_46": "eadede871c685c5b3165d616602d8de459345832aa926e076f6a395118639c9c",
+        "val_mask_46": "2bd3f1a9deba07cf3310e7acd904d9805784d5eb067396812165e85f139759f7",
+        "test_mask_46": "7434c0bf52b0b4fa2e40c008bb54e04c054fc6df601d27d40c9ee06c1f3a7f3e"
+      },
+      "split_records": [
+        {
+          "dataset_id": "bsc_contract_clean_v1",
+          "seed": 42,
+          "masks": {
+            "train_mask": "d711f70d88b5970e2fef3b9425d4a0f58120dd3579c517c275c766fa9b950e33",
+            "val_mask": "caabd20179e8b9baa29ac8dd144ee56975e959cc2c94cc952aa09e933ce2644b",
+            "test_mask": "f60a26611939da080925a7d55148f631edca5bac552206ad8379251ff7cab15d"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "bsc_contract_clean_v1",
+          "seed": 43,
+          "masks": {
+            "train_mask": "c13c92c656be7cdc0d1f472fc76335bc03f9e8a0472ad69af99831fcb517d630",
+            "val_mask": "8d2050096bfbc76aea07d9d6fafd85124f31b59f6afb2ba075ea751886cf7995",
+            "test_mask": "f9bc65ea05bce6e8ca0e15603be8dc593763b6af8da07335e9085e094ff4bb32"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "bsc_contract_clean_v1",
+          "seed": 44,
+          "masks": {
+            "train_mask": "9a57cc6ed7540a97bcb78bc25beae06ca9cd26c61dba54f688a6ac833b633bda",
+            "val_mask": "50a156ed2f3749bf31e917ba5ea1fbcea93b8d5415cdab08e286d71a822e75f1",
+            "test_mask": "b0f87c0fb7142068bed832341bf0a9033e07cbab94094450d4266ea4a31516c7"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "bsc_contract_clean_v1",
+          "seed": 45,
+          "masks": {
+            "train_mask": "d4eefd1ed2ed87e83911c69323c753e5342fa3f7faebaedce934bf60ff26d952",
+            "val_mask": "081dbc1fd582ee7d691bbac4da298a241aa05354abbdf32ebf6a5d36619dc1d0",
+            "test_mask": "f9518c567552864e24f69fe1803f544a680ac4e714095db00a4b31ca81c723a7"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "bsc_contract_clean_v1",
+          "seed": 46,
+          "masks": {
+            "train_mask": "eadede871c685c5b3165d616602d8de459345832aa926e076f6a395118639c9c",
+            "val_mask": "2bd3f1a9deba07cf3310e7acd904d9805784d5eb067396812165e85f139759f7",
+            "test_mask": "7434c0bf52b0b4fa2e40c008bb54e04c054fc6df601d27d40c9ee06c1f3a7f3e"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        }
+      ],
+      "scientific_status": "FROZEN_APPROVED_INPUT",
+      "freeze_time_utc": "2026-10-09T14:59:05.111901+00:00",
+      "supersedes": "historical label-informed hybrid and unqualified migration, retained in denylist"
+    },
+    {
+      "schema_version": 1,
+      "dataset_id": "ethereum_contract_clean_v1",
+      "dataset_version": 1,
+      "prediction_unit": "contract_node",
+      "artifact_relative_path": "contract_graph.npz",
+      "serialized_file_sha256": "9083dfb5d7e297482f2c9f3c1d79290ab71983d24a0c68a0df937e20c8253053",
+      "scientific_content_hash": "d7ec325980bbd15ec98c2b3dc32efb95f983b8d29e180109fb3d8fae6b4ad7f9",
+      "N": 14464,
+      "E": 95098,
+      "F": 8,
+      "positive_count": 6031,
+      "unknown_count": 0,
+      "feature_spec_hash": "f263fcdce5642d902caf6788dfa8d16b46f6772e7aed8ef5221cc3fd94453b93",
+      "relation_spec_hash": "0ba3937a60d3ed498ca9879e0e4989f1fbc5b923d3f8745aa38ad8c692f5204b",
+      "source_manifest_hash": "e6323e909997725c5813890bfbf53885e9debd5a598f63b0b238ae1538654d3c",
+      "raw_zip_sha256": "6d1f6797475ecfb3b2edcd5eedbcfd8708c4808486d0afb88634d4951636c5d2",
+      "label_source_hash": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "config_hash": "c6f4fb6de204e2a35e9165c4f52d695013bde77e79b300af1ae3698586663588",
+      "environment_lock_hash": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127",
+      "arrays": {
+        "node_ids": "c10d204cb8eb6de8fbaa26d1c5c38b50ad1306735da99dfd2200418ef6a2d547",
+        "raw_features": "5a2d53a70b5deb7cc58ba5294a3b7ae0e72b0c4908ceda186aa81bec23da9a5a",
+        "x": "1f81598e6f137ec99fe151ffd618d71bac0abbaf9be017c4ad6167303adbe775",
+        "preprocessing_mean": "b3655e8a4efa39897e6159c7d75108918ba0f76535f4978b7fae877fb1e65441",
+        "preprocessing_scale": "ad6c4eb885024b2eee375e34234e205173a07c95177dbcfa0857d99c000929cf",
+        "edge_index": "88fde00cb5d99251d1931fe1bc92735d7f27ecbce41bc2be58e5d313dfd208e9",
+        "labels": "898b3a7d70edc90ba56e4e71d434e06029703af5f975406082badd27bb3da0b1",
+        "label_valid_mask": "99e1901f21215d23041f5fb44a25854fcd2b555b717d7ea2f9aa6a24e065f575",
+        "train_mask_42": "48909901297ed5ac8cc1efec738ddf4b3c295b01479841f18fe8602795ab05d4",
+        "val_mask_42": "bf191bde8c099893e6d92433e95443ec5d9c4716fcfc98fc5178f780e600b277",
+        "test_mask_42": "f519074edf5e6ecec345eedcfeb27dac02e40804e0dfde596ee6fbdd0ea3de0a",
+        "train_mask_43": "dcba1efa604aefd4330b20d9a376a53f8151192ec45128c9d6034741bb779f83",
+        "val_mask_43": "ceb7cc35d71147943ceb0a5e4ab48abbf9bd653b5383b0a5c2cf8335f793f83b",
+        "test_mask_43": "f311f2c7a583a0f85d1aceba6124a0fbca725f6eb0e12a1ae6e12f8ad9f869db",
+        "train_mask_44": "e625b8f36cbc90cbe77feebfa65ae745071397401b93b818dad55ad7d0a5d85e",
+        "val_mask_44": "9a608ade9be9dbf9dee440b6a3a0fc26d226eed0fca962663450ffcdefe94713",
+        "test_mask_44": "3627942aa1e1f45cc8a90753c7d579c6323165bcf0bc2cd6e255d0ac5b3a33de",
+        "train_mask_45": "fe4e05d8e87e07a8671be340dd9d1960379245052fdc2f41eb44bcaa42e1d1b7",
+        "val_mask_45": "fb0300a016fb36797d655f8cfacda7a5b2db0f9bf228a5f0096d176d82807eb5",
+        "test_mask_45": "35271a5c27412958b9db773cbf9e9aa2eef771decc6b1da8b3c65fc8415871c4",
+        "train_mask_46": "cfeaa7eb3768198e7809fb046935584f60d690a8180295c3ff3f3a80eb093bff",
+        "val_mask_46": "129863dc851ce32ba7fc3e2a62b82aca4488f2357557fb119d303c5d271bf565",
+        "test_mask_46": "27fce2baab415b3dd129a70b1e867132666a23dd84ddaaaf149103e53626b95a"
+      },
+      "split_records": [
+        {
+          "dataset_id": "ethereum_contract_clean_v1",
+          "seed": 42,
+          "masks": {
+            "train_mask": "48909901297ed5ac8cc1efec738ddf4b3c295b01479841f18fe8602795ab05d4",
+            "val_mask": "bf191bde8c099893e6d92433e95443ec5d9c4716fcfc98fc5178f780e600b277",
+            "test_mask": "f519074edf5e6ecec345eedcfeb27dac02e40804e0dfde596ee6fbdd0ea3de0a"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "ethereum_contract_clean_v1",
+          "seed": 43,
+          "masks": {
+            "train_mask": "dcba1efa604aefd4330b20d9a376a53f8151192ec45128c9d6034741bb779f83",
+            "val_mask": "ceb7cc35d71147943ceb0a5e4ab48abbf9bd653b5383b0a5c2cf8335f793f83b",
+            "test_mask": "f311f2c7a583a0f85d1aceba6124a0fbca725f6eb0e12a1ae6e12f8ad9f869db"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "ethereum_contract_clean_v1",
+          "seed": 44,
+          "masks": {
+            "train_mask": "e625b8f36cbc90cbe77feebfa65ae745071397401b93b818dad55ad7d0a5d85e",
+            "val_mask": "9a608ade9be9dbf9dee440b6a3a0fc26d226eed0fca962663450ffcdefe94713",
+            "test_mask": "3627942aa1e1f45cc8a90753c7d579c6323165bcf0bc2cd6e255d0ac5b3a33de"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "ethereum_contract_clean_v1",
+          "seed": 45,
+          "masks": {
+            "train_mask": "fe4e05d8e87e07a8671be340dd9d1960379245052fdc2f41eb44bcaa42e1d1b7",
+            "val_mask": "fb0300a016fb36797d655f8cfacda7a5b2db0f9bf228a5f0096d176d82807eb5",
+            "test_mask": "35271a5c27412958b9db773cbf9e9aa2eef771decc6b1da8b3c65fc8415871c4"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        },
+        {
+          "dataset_id": "ethereum_contract_clean_v1",
+          "seed": 46,
+          "masks": {
+            "train_mask": "cfeaa7eb3768198e7809fb046935584f60d690a8180295c3ff3f3a80eb093bff",
+            "val_mask": "129863dc851ce32ba7fc3e2a62b82aca4488f2357557fb119d303c5d271bf565",
+            "test_mask": "27fce2baab415b3dd129a70b1e867132666a23dd84ddaaaf149103e53626b95a"
+          },
+          "policy": "RandomState(seed) permutation of canonical valid stable IDs; 60/20/20, unstratified as actual historical code",
+          "prior_membership_preserved": false,
+          "reason": "raw population includes contracts excluded by old converted JSON availability; canonical address order replaces unverified old positional mapping"
+        }
+      ],
+      "scientific_status": "FROZEN_APPROVED_INPUT",
+      "freeze_time_utc": "2026-10-09T14:59:21.842029+00:00",
+      "supersedes": "historical label-informed hybrid and unqualified migration, retained in denylist"
+    }
+  ]
+}

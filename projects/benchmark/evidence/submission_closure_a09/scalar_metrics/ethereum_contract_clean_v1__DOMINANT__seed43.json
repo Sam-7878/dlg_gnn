@@ -1,0 +1,58 @@
+{
+  "run_id": "ethereum_contract_clean_v1__DOMINANT__seed43",
+  "dataset": "Ethereum",
+  "model": "DOMINANT",
+  "seed": "43",
+  "original_private_metric_sha256": "573f3e21c8d5d5be1a96cb0b432988dc82b773515513dfc7c3ab4d5e0281f491",
+  "metrics": {
+    "ap": 0.43210941157303717,
+    "roc_auc": 0.4807310533963693,
+    "test_total": 2893,
+    "test_positives": 1246,
+    "test_prevalence": 0.4306947805046664,
+    "operating_point": {
+      "threshold_source": "validation",
+      "candidate_rule": "distinct raw scores plus reject_all",
+      "operator": ">=",
+      "tie_rule": "largest threshold",
+      "validation_total": 2893,
+      "validation_positives": 1192,
+      "threshold_kind": "finite",
+      "threshold": 1.7063519954681396,
+      "validation_confusion": {
+        "tp": 1183,
+        "fp": 1617,
+        "fn": 9,
+        "tn": 84,
+        "precision": 0.4225,
+        "recall": 0.9924496644295302,
+        "f1": 0.592685370741483
+      }
+    },
+    "thresholded": {
+      "tp": 1231,
+      "fp": 1545,
+      "fn": 15,
+      "tn": 102,
+      "precision": 0.4434438040345821,
+      "recall": 0.9879614767255217,
+      "f1": 0.6121332670313276
+    },
+    "alert_budgets": {
+      "0.01": {
+        "k": 29,
+        "precision": 0.3793103448275862,
+        "recall": 0.00882825040128411,
+        "score_boundary_ties": 1
+      },
+      "0.05": {
+        "k": 145,
+        "precision": 0.5103448275862069,
+        "recall": 0.0593900481540931,
+        "score_boundary_ties": 1
+      }
+    },
+    "undefined_policy": "AP/recall/F1 undefined with no positives; ROC needs both classes; no predicted positives precision=0"
+  },
+  "redaction": "selected_node_ids omitted; scalar budgets retained; original hash identifies private original"
+}

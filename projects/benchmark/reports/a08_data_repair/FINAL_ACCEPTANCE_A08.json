@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "required_gate_ids": [
+    "G0",
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "G9",
+    "G10"
+  ],
+  "final_scientific_status": "FINAL_PASS",
+  "submission_readiness": "NOT_CLEARED",
+  "public_release_status": "AWAITING_AUTHOR_AUTHORIZATION",
+  "blockers": [],
+  "detail": {
+    "gates": [
+      {
+        "id": "G0",
+        "sha256": "0f5b4621e29393661d0759f1197ff2d4268528fe747aad0be1392d9afac300d7"
+      },
+      {
+        "id": "G1",
+        "sha256": "21ced11bd65522b5b9a626aa586aca9c398de202aa6dc8a4b879a59cf58eb7a3"
+      },
+      {
+        "id": "G2",
+        "sha256": "b874543d376f73d036a20fe71ce2ca701b08a5507d373ca0a1753b1816a490bb"
+      },
+      {
+        "id": "G3",
+        "sha256": "5c11a6a8044149de6e61f208b3ba51372e7905897658538bdaacff3091e84aa2"
+      },
+      {
+        "id": "G4",
+        "sha256": "d16f208f3358e1f4b13ce803ce7f1ac80fea66f56971707ba0b39d83b4218070"
+      },
+      {
+        "id": "G5",
+        "sha256": "c33440d2f735f130b4288a93fabc034cd029d6ec6735c9a6bafd818b9664354d"
+      },
+      {
+        "id": "G6",
+        "sha256": "c50e17a770acbc8e46a88b4bc1089cbfb08267d80154b55d2e007970615ba2f0"
+      },
+      {
+        "id": "G7",
+        "sha256": "acb24804b6e72b3685c9a3165a2cc83ec95147b1f7ea398497654510ea4752a7"
+      },
+      {
+        "id": "G8",
+        "sha256": "6c95c4ed4cd5a40f60df9e2c60a1fef29e67a57262f88f57c048820bf292b59a"
+      },
+      {
+        "id": "G9",
+        "sha256": "e5e4e05799d9c9c423de8297cfae44f12823f1ceecd2684319d6ce78389dc847"
+      },
+      {
+        "id": "G10",
+        "sha256": "543aad6b12dfceae79ec4c28b6043447ee2e43e7626210043473e9e004d8c542"
+      }
+    ],
+    "current_pdf_hashes": {
+      "projects/benchmark/paper/current/DLG-Benchmark_A08.pdf": "f2001b4c519507f427c6dc33ff31b237778b5401d70ab73bb43e8c0cf4372407",
+      "projects/benchmark/paper/current/mdpi/DLG-Benchmark_A08_MDPI.pdf": "91179ba5565761e1f9b1b2c65c8f681722896b0162b71f21f5df0898601528e1"
+    },
+    "primary_planned_runs": 105,
+    "scope": "current A08 scientific/package verification; author approval/publication separate"
+  }
+}

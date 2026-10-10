@@ -14,12 +14,12 @@
 
 ## `RelationBuilder` (동적 메타 그래프 생성 엔진)
 - **위치:** `src/gog_fraud/data/level2/relation_builder.py`
-- **역할:** Level 1에서 추출된 고차원 표현체(임베딩, 스코어, 로짓)를 입력받아, 라벨 누수(Label Leakage) 없이 상위 계층 메타 그래프(`Level 2 PyG Data`)의 엣지와 속성을 동적으로 구축합니다.
+- **역할:** 임베딩·스코어·로짓을 입력받아 상위 계층 메타 그래프의 edge와 속성을 구축합니다. embedding_knn의 직접 edge 연산은 label을 참조하지 않으며, 입력 표현체의 생성·학습·split 독립성은 별도로 검증해야 합니다.
 - **주요 관계 생성 모드 (`relation_modes`):**
   1. **`embedding_knn` (핵심):** Level 1 임베딩 벡터 간 코사인 유사도(Cosine Similarity)를 계산하여 Top-k 이웃 간 엣지를 생성. (라벨과 독립적인 특성 공간 이웃 연결)
-  2. **`temporal_window`:** 트랜잭션 타임스탬프 순서에 따라 인접한 $W$개 선행 서브그래프들을 양방향 연결하여 시간적 자금 흐름 체인을 형성.
+  2. **`temporal_window`:** 제공된 timestamp 순서에 따라 인접한 W개 선행 서브그래프를 양방향 연결합니다. metadata timestamp가 없으면 graph_id 순서로 대체되므로 실제 시간 관계로 해석하려면 timestamp 출처 확인이 필요합니다.
   3. **`shared_entity`:** 컨트랙트 간 공통 상호작용 지갑이나 엔티티가 존재하는 경우 인접 행렬(`entity_adj`) 기반으로 엣지 결합.
-- **아티팩트 무결성:** 과거 GoG의 라벨 기반 하이브리드 그래프(`*_hybrid_graph.pt`)를 완전히 대체하여, 재현 가능하고 라벨 독립적인 공식 클린 그래프(`*_level2_graph.pt`)를 생성합니다 (`scripts/build_clean_level2_graphs.py`).
+- **아티팩트 무결성:** 새 `*_level2_graph.pt`가 생성됐지만 현재 crypto artifact는 legacy feature를 상속하고 scalar graph y를 가집니다. 노드 평가 계약, 원천 feature 재생성, cosine 동점 처리 및 논문 결과 연동은 독립 감사 미통과 상태입니다 (`RelationBuilder_Migration_Final_Audit.md`).
 
 
 ## Fusion Network 구성

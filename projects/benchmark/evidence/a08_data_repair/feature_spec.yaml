@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "prediction_unit": "contract_node",
+  "source": "provider original transactions/{chain}.zip; one contract-address CSV per node",
+  "source_fields": ["from", "to"],
+  "population": "all uniquely named raw contract CSVs; empty activity retained; no label-driven selection",
+  "window": "entire provider static observation period; no causal/temporal task claim",
+  "normalization": "lowercase trimmed validated EVM address; zero address retained as mint/burn observation",
+  "missing_rule": "malformed/missing endpoints fail closed; no zero imputation or row skipping",
+  "features": [
+    {"name": "log_transaction_rows", "definition": "log1p(number of raw CSV rows)"},
+    {"name": "log_unique_senders", "definition": "log1p(distinct from addresses)"},
+    {"name": "log_unique_receivers", "definition": "log1p(distinct to addresses)"},
+    {"name": "log_unique_addresses", "definition": "log1p(distinct union of from and to)"},
+    {"name": "log_unique_directed_pairs", "definition": "log1p(distinct ordered from,to pairs)"},
+    {"name": "self_transfer_fraction", "definition": "raw from==to rows / raw rows; zero for empty CSV"},
+    {"name": "reciprocal_pair_fraction", "definition": "nonself distinct directed pairs whose reverse exists / number of nonself distinct pairs; zero denominator gives zero"},
+    {"name": "repeated_pair_fraction", "definition": "1 - number distinct ordered pairs / number raw rows; zero for empty CSV"}
+  ],
+  "aggregation_unit": "one token contract transfer history",
+  "preprocessing": {"fit_population": "all raw contracts of chain, transductive and label-blind", "transform": "population mean/std z-score; constant-column scale=1", "raw_dtype": "float64", "model_dtype": "float32"},
+  "implementation_symbol": "gog_fraud.data.crypto_raw.transaction_features / build_observables",
+  "label_dependency": "none; label CSV not an argument or read by observable builder",
+  "raw_example_check": "tests/benchmark/a08/test_data_repair.py includes manually counted raw CSV; actual per-contract member hashes/counts recorded in local build manifest",
+  "legacy_features": "not read; no inherited embeddings, amount columns, zero score or ID feature"
+}

@@ -1,0 +1,610 @@
+{
+  "status": "PASS",
+  "dtype": "float32",
+  "device": "NVIDIA GeForce RTX 3090",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "seed": 20261008,
+  "atol": 1e-05,
+  "rtol": 0.0001,
+  "scope": "small CUDA forward/loss/score/gradient/one-update; primary defaults dropout=0; not full trajectory equivalence",
+  "results": [
+    {
+      "path": "Gram",
+      "case": "binary undirected",
+      "checks": {
+        "score": {
+          "max_abs": 1.52587890625e-05,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "loss": {
+          "max_abs": 0.0,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "gradient": {
+          "max_abs": 1.9073486328125e-06,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "update": {
+          "max_abs": 9.313225746154785e-10,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        }
+      }
+    },
+    {
+      "path": "fused_GCN",
+      "case": "binary undirected",
+      "layers": 2,
+      "dropout": 0,
+      "checks": {
+        "forward": {
+          "max_abs": 5.960464477539063e-08,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "input_grad": {
+          "max_abs": 3.725290298461914e-09,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "parameter_gradients": [
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ],
+        "update": [
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "path": "fused_GCN",
+      "case": "binary undirected",
+      "layers": 4,
+      "dropout": 0,
+      "checks": {
+        "forward": {
+          "max_abs": 7.916241884231567e-09,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "input_grad": {
+          "max_abs": 5.820766091346741e-11,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "parameter_gradients": [
+          {
+            "max_abs": 2.3283064365386963e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.3283064365386963e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 3.637978807091713e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 3.4924596548080444e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.862645149230957e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.3283064365386963e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ],
+        "update": [
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.862645149230957e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "path": "Gram",
+      "case": "weighted duplicates self_loops",
+      "checks": {
+        "score": {
+          "max_abs": 1.52587890625e-05,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "loss": {
+          "max_abs": 7.62939453125e-06,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "gradient": {
+          "max_abs": 1.9073486328125e-06,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "update": {
+          "max_abs": 0.0,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        }
+      }
+    },
+    {
+      "path": "fused_GCN",
+      "case": "weighted duplicates self_loops",
+      "layers": 2,
+      "dropout": 0,
+      "checks": {
+        "forward": {
+          "max_abs": 1.1920928955078125e-07,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "input_grad": {
+          "max_abs": 3.725290298461914e-09,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "parameter_gradients": [
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ],
+        "update": [
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "path": "fused_GCN",
+      "case": "weighted duplicates self_loops",
+      "layers": 4,
+      "dropout": 0,
+      "checks": {
+        "forward": {
+          "max_abs": 1.4901161193847656e-08,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "input_grad": {
+          "max_abs": 4.656612873077393e-10,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "parameter_gradients": [
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.3969838619232178e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.862645149230957e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ],
+        "update": [
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.862645149230957e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 3.725290298461914e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 0.0,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "path": "AnomalyDAE_row_block",
+      "case": "binary undirected",
+      "n": 17,
+      "f": 8,
+      "chunk_size": 4,
+      "dropout": 0,
+      "one_step_after_all_blocks": true,
+      "checks": {
+        "forward": {
+          "max_abs": 2.384185791015625e-07,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "score": {
+          "max_abs": 2.384185791015625e-07,
+          "atol": 1e-05,
+          "rtol": 0.0001,
+          "pass": true
+        },
+        "gradient": [
+          {
+            "max_abs": 3.725290298461914e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.9802322387695312e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.9802322387695312e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.9802322387695312e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.9802322387695312e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 2.9802322387695312e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ],
+        "update": [
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 3.4924596548080444e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 4.656612873077393e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 7.450580596923828e-09,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 4.470348358154297e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 1.4901161193847656e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 4.656612873077393e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 3.725290298461914e-08,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          },
+          {
+            "max_abs": 9.313225746154785e-10,
+            "atol": 1e-05,
+            "rtol": 0.0001,
+            "pass": true
+          }
+        ]
+      }
+    }
+  ],
+  "source_hashes": {
+    "projects/benchmark/scripts/a08_cuda_qualification.py": "eb54cf629be942e48393214a745927ace691abadf25f730873894b42f1e25678",
+    "src/gog_fraud/models/pygod/exact_reconstruction.py": "c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037",
+    "src/gog_fraud/models/pygod/sparse_message.py": "5d4b00cbcc56ece5057b432a2a7ce64bcac5accde45620a260465a9113b9c012",
+    "src/gog_fraud/models/pygod/shared_reconstruction.py": "1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f"
+  }
+}
