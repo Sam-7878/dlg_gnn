@@ -1,6 +1,6 @@
 schema_version: 1
 project: benchmark
-release: unpublished-candidate-public-evidence
+release: benchmark-a09-2026-10-10
 current_revision: a08-execution-revision2
 current_scientific_acceptance: FINAL_PASS
 historical_archive: public_numeric_evidence.zip
@@ -33,3 +33,8 @@ modes:
     gpu_required: true
     raw_datasets_required: true
 expected_outputs: "projects/benchmark/expected_outputs.json"
+
+editorial_closure: a09-c1-c6-complete
+public_release_url: https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10
+public_scientific_commit: 2cc6f85afc44830eb7eee92d709c6eb8d567ba2d
+platform_submission: NOT_EXECUTED

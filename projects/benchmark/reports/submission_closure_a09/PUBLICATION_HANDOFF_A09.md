@@ -25,3 +25,11 @@ A08 ZIP은226payload +release_manifest1개이며 총227실파일이다. A09compa
 - 게시한 ZIP이 위 hash와 다르면 변경 이유 및 실제 배포본 hash/manifest.
 
 게시된 자료를 새 위치에서 다운로드하여 해당 commit과 artifact hashes를 대조하고 verify/tables를 실행한다. 이후 승인/실제 공개 위치를 원고에 반영하고 두PDF와 private LaTeX source ZIP을 재생성·검토해 C5/C6를 마감한다. 아직 agent에 플랫폼 업로드 또는 실제 submit 수행을 요청한 것은 아니다.
+
+## 게시 및 독립 검증 완료
+
+공개 release: https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10
+
+Scientific commit: 2cc6f85afc44830eb7eee92d709c6eb8d567ba2d
+
+GitHub immutable=true이며 인증 없는 artifact 다운로드와 tagged checkout의 verify/tables가 실제 PASS이다. 현재 public_retrieval_verification.json이 그 별도 원기록이다. Frozen ZIP을 다시 작성하지 않았다. 최종 private PDF/LaTeX 제출 패키지는 별도 C6 검토를 마친다. 플랫폼 실제 투고는 실행하지 않았다.

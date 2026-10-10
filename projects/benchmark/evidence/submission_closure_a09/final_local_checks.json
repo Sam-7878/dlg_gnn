@@ -1,19 +1,35 @@
 {
-  "status": "PASS_LOCAL_AUTHORIZATION_PENDING",
+  "status": "PASS_A09_SUBMISSION_CLOSURE",
+  "verified_at_utc": "2026-10-10T15:08:32.100702+00:00",
   "current_pdf_sha256": [
-    "83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923",
-    "4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01"
+    "50a7d5246f2fbb476ac80ba887df472c965e62e5cb9a8820ee2864b5289d6d1a",
+    "cd14978cc62de67b2ebf0e0a9350fb6968657898592c6f116c9555bd148e7be0"
   ],
-  "actual_pages_reviewed": 51,
+  "actual_pages_reviewed": 52,
+  "review_method_counts": {
+    "total_final_pages": 52,
+    "exact_png_hash_reuse_from_prior_actual_manual_review": 22,
+    "direct_changed_page_view_image_inspections": 30
+  },
   "source_resolved_displays": 1394,
   "companion_zip_files": 189,
   "indexed_payload_files": 187,
-  "duplicate_zip_entries": 0,
+  "frozen_ZIP_bytes_unchanged": {
+    "public_numeric_evidence.zip": "b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5",
+    "a08_public_numeric_evidence.zip": "b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100",
+    "a09_submission_closure_companion.zip": "336c7bcdaa50c68582be78161ccea3c769cf214d1b71a5d327e98709d1de94f5"
+  },
   "original_A08_files_unchanged": 374,
   "current_execution_source_files": 57,
+  "actual_public_checkout_scientific_source_binding": "PASS",
   "clean_source_compilation": "2/2 PASS_BYTE_IDENTICAL",
+  "public_retrieval": "PASS",
+  "public_numeric_replay": "PASS_BYTE_IDENTICAL",
+  "public_private_boundary": "PASS_ACTUAL_TREE_AND_NESTED_ZIPS",
   "outer_documents_separate": true,
-  "submission_ready": false,
-  "approval": "PENDING_C5",
-  "publication": "NOT_EXECUTED"
+  "submission_ready": true,
+  "approval": "CONFIRMED_BY_USER",
+  "publication": "IMMUTABLE_GITHUB_RELEASE_PUBLISHED",
+  "actual_platform_submission": "NOT_EXECUTED",
+  "journal_acceptance": "NOT_DETERMINED"
 }

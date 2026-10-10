@@ -1,6 +1,6 @@
 # A09 evidence handoff and reproduction
 
-A09 is an editorial/evidence closure of A08 execution revision2. No corrected input, production setting, seed, score or scientific source was changed. Original A08 acceptance/PDFs remain authoritative historical identities. This directory is a local candidate; it is not a public release or submission approval.
+A09 is an editorial/evidence closure of A08 execution revision2. No corrected input, production setting, seed, score or scientific source was changed. Original A08 acceptance/PDFs remain authoritative historical identities. The frozen numeric packages and scientific checkout are publicly released; current closure records separately document explicit user-reported coauthor approval and independent retrieval.
 
 ## Packages
 
@@ -36,9 +36,9 @@ All 351 preserved historical metric members are independently hash-checked: 350 
 
 ## Access and approval boundary
 
-GoG source: Luo et al., NeurIPS2024, DOI10.52202/079017-0894; repository `https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs` links the original ZIPs/labels. The local provider README SHA matches the frozen manifest, including Category0=fraud. Upstream LICENSE downloaded on2026-10-10 identifies CC BY-NC-SA4.0; no new redistribution permission is inferred. Derived mappings/raw scores and unsubmitted manuscript are withheld from GitHub by author policy, not automatically because of a legal prohibition. Controlled reviewer provision and final source/funding/conflict/AI disclosures require author confirmation.
+GoG source: Luo et al., NeurIPS2024, DOI10.52202/079017-0894; repository `https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs` links the original ZIPs/labels. The local provider README SHA matches the frozen manifest, including Category0=fraud. Upstream LICENSE downloaded on2026-10-10 identifies CC BY-NC-SA4.0; no new redistribution permission is inferred. Derived mappings/raw scores and unsubmitted manuscript are withheld from GitHub by author policy, not automatically because of a legal prohibition. The user confirmed coauthor approval of the source/funding/conflict/AI disclosures and the controlled reviewer-access scope. Any actual private delivery still requires recipient/channel and delivered-file records.
 
-Public `paper` deliberately rejects absent private manuscript sources. Author-local neutral/preprint and MDPI PDFs/source ZIPs are separate editorial-system candidates. No commit/push/release/submission has been executed. `submission_ready` remains false until actual coauthor approval and an authorized immutable public evidence identity with retrieval verification exist.
+Public `paper` deliberately rejects absent private manuscript sources. Author-local neutral/preprint and MDPI PDFs/source ZIPs are separate editorial-system candidates. Commit/push and immutable release publication are authorized and completed. Actual journal/Preprints.org upload or submission has not been performed. Final C5/C6 status and current private PDF identities are in submission_closure_manifest.json.
 
 ## Qualification recovery and final local packaging
 
@@ -47,7 +47,13 @@ The original CUDA records did not retain relative tensor observations or the Ano
 ```bash
 CUDA_VISIBLE_DEVICES=GPU-ab53069a-3217-ee09-80f8-748b5fdbd156 CUBLAS_WORKSPACE_CONFIG=:4096:8 /mnt/d/_work/goat_bank/.venv_cuda/bin/python projects/benchmark/scripts/a09_recover_qualification.py
 /mnt/d/_work/goat_bank/.venv_cuda/bin/python projects/benchmark/scripts/a09_pdf_review.py --finalize
-/mnt/d/_work/goat_bank/.venv_cuda/bin/python projects/benchmark/scripts/a09_package_closure.py
+/mnt/d/_work/goat_bank/.venv_cuda/bin/python projects/benchmark/scripts/a09_package_closure.py --private-only
 ```
 
-The PDF finalizer requires actual every-page manual observations bound to current PDF/PNG hashes; it cannot generate author approval. Packaging compiles both exact private source ZIPs in fresh directories and requires byte-identical reviewed PDFs. Both existing numeric ZIPs are preserved. The companion inventory excludes its own two index files, which are themselves in the ZIP; the outer closure manifest and response report are separately delivered and not recursively inside that ZIP. A09 closure helpers are delivered under `closure_helpers/` as source snapshots; their runtime imports still require the repository checkout and preserved private inputs where stated.
+The PDF finalizer requires actual every-page manual observations bound to current PDF/PNG hashes; it cannot generate author approval. After approval, --private-only compiles both exact private source ZIPs in fresh directories and requires byte-identical reviewed PDFs. Both existing numeric ZIPs are preserved. The companion inventory excludes its own two index files, which are themselves in the ZIP; the outer closure manifest and response report are separately delivered and not recursively inside that ZIP. A09 closure helpers are delivered under `closure_helpers/` as source snapshots; their runtime imports still require the repository checkout and preserved private inputs where stated.
+
+## Actual public identity and independent replay
+
+Scientific/source tag: [benchmark-a09-2026-10-10](https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10); commit [2cc6f85afc44830eb7eee92d709c6eb8d567ba2d](https://github.com/Sam-7878/dlg_gnn/commit/2cc6f85afc44830eb7eee92d709c6eb8d567ba2d). GitHub reports immutable=true. Both ZIPs plus SHA256SUMS were downloaded without credentials, their hashes matched, and an actual tagged clone passed verify/tables with byte-identical numeric outputs. See public_retrieval_verification.json for commands, hashes and scope.
+
+The companion ZIP retains the reviewed pre-publication snapshot (including its then-current PDF review). Current authorization/publication/retrieval and final PDF reviews are later outer documents, separately committed; they were not retroactively inserted in the immutable companion. evidence_inventory.csv indexes the frozen ZIP payload, not every subsequently updated file in this directory. Current source helpers can differ from the snapshots in closure_helpers; scientific execution source hashes remain unchanged.

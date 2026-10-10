@@ -1,17 +1,17 @@
 # A09 — Review Response and Submission Closure
 
-**상태: 로컬 증거 검증·편집·PDF 검토 완료, C5 승인/공개 identity 대기. `SUBMISSION_READY=false`.**
+**상태: C1–C6 완료. 공동저자 확인·승인, 허가된 immutable GitHub 공개, 독립 다운로드/verify/tables, 최종 52페이지 검토 완료. `SUBMISSION_READY=true`. 실제 플랫폼 투고는 미실행.**
 
 2026-10-10. A09 작업지시서 C1–C6에 대한 실제 수행 기록이다. 신규 production training은 0회이며 A08 execution revision2의 105 corrected crypto 실행, 350 historical success 및 1 historical failure의 원래 등급을 유지한다. 초기 50success/1failure, qualification, 과거 label-informed crypto는 현재 결과 수에 더하지 않았다.
 
 | 항목 | 판정 | 실제 조치와 증거 |
 |---|---|---|
 | C1 | PASS_LOCAL | 105 raw-score metric JSON 정확 일치, 351 historical member 해시, full-precision 표·200000permutation·전체18Holm byte-identical replay, 새 public checkout verify/tables exit0. 기존226payload ZIP+189file companion 인계. |
-| C2 | PASS_TECHNICAL | 3chain actual input/X/E/target/split 및35run final map, providerREADME hash 일치/Category0 mapping, 14dataset origins/injection source. 원천·공개 정책의 최종 저자 확인은 C5. |
+| C2 | PASS | 3chain actual input/X/E/target/split 및35run final map, providerREADME hash 일치/Category0 mapping, 14dataset origins/injection source. 원천·공개 정책도 C5 사용자 확인 완료. |
 | C3 | PASS_LOCAL | 기존 absolute/허용오차 기록 보존; 누락 상대오차·mean loss는 동일 tiny fixtures만 회수. 7미지원 셀을 실제 OOM/원인 미기록으로 구분. |
 | C4 | PASS | 기존 primary 값 보존; 15test-support rows/no-skill reference, 조건부 효과·경쟁모델 우세·낮은 절대품질·비우월성 설명, 개발 이력 부록 이동. |
-| C5 | PENDING | 공동저자 승인, 공개 허가와 실제 immutable evidence URL/commit/release 및 다운로드 재검증이 아직 없다. Reviewer access도 저자 결정 대기. |
-| C6 | PASS_LOCAL | neutral26page+MDPI25page, source-resolved1394display, 모든51rendered page 시각 검토, 두 ZIP clean compile/PDF byte-identical. C5 완료 후 availability/approval 문구 재생성·해시/검토 갱신 필요. |
+| C5 | PASS | 사용자 공동저자 확인·승인 및 Agent 게시 허가. GitHub immutable release, 인증 없는 다운로드 해시·tagged checkout verify/tables PASS. 심사 자료는 승인된 private request 범위이며 실제 전달 미실행. |
+| C6 | PASS | 실제 공개 주소·승인 문구 반영. neutral27page+MDPI25page, source-resolved1394display, 52페이지 검토(22 exact-PNG reuse/30 direct view), 두 private ZIP clean compile/PDF byte-identical. |
 
 ## C1 — 실파일 재검산과 인계 범위
 
@@ -67,10 +67,10 @@ Abstract/Introduction의 긴 개발 이력은 provenance appendix로 이동했�
 
 | 파일 | Pages | SHA256 |
 |---|---:|---|
-| DLG-Benchmark_A09.pdf | 26 | `83fe56816d1c1c312e24ad5b8f14e1b258df319c958152abe0ef2ffec7b84923` |
-| DLG-Benchmark_A09_MDPI.pdf | 25 | `4c034589ef8460bb6708f24ae3794ace66fd09e55049d34a2637eaaa80d0dd01` |
+| DLG-Benchmark_A09.pdf | 27 | `50a7d5246f2fbb476ac80ba887df472c965e62e5cb9a8820ee2864b5289d6d1a` |
+| DLG-Benchmark_A09_MDPI.pdf | 25 | `cd14978cc62de67b2ebf0e0a9350fb6968657898592c6f116c9555bd148e7be0` |
 
-`Final_PDF_Review_A09.md`/`pdf_review.json`은51페이지별 관찰과 실제PNG/PDFSHA를 보유한다. 25neutral페이지는 이미 수동 확인한 render와 최종pixel이 동일함을 확인했고 수정된25쪽은 다시 열었다. MDPI최종25페이지는 모두 열어 검토했다. 숫자1394개는 원 source-resolution과 실제PDF표시/페이지를 대조했으며 text검색만으로 검사하지 않았다. Original570display perPDF는 유지된다.
+`Final_PDF_Review_A09.md`/`pdf_review.json`은 현재52페이지별 관찰과 실제PNG/PDFSHA를 보유한다. 22페이지는 이전 실제 수동 검토 PNG와 최종 SHA가 정확히 같아 재사용했고 달라진30페이지는 view_image로 직접 열었다. 실제 PDF annotation의 commit/release URL도 검사했다. 숫자1394개는 원 source-resolution과 실제PDF표시/페이지를 대조했으며 text검색만으로 검사하지 않았다. Original570display perPDF는 유지된다.
 
 ## 실제 인계 파일 identity
 
@@ -79,25 +79,29 @@ Abstract/Introduction의 긴 개발 이력은 provenance appendix로 이동했�
 | projects/benchmark/evidence/public_numeric_evidence.zip | 21450806 | `b1caab1124404eb6ac4dcd909007c69ceab2410e02f84363d53b0f8465b0c7f5` |
 | projects/benchmark/evidence/a08_public_numeric_evidence.zip | 993748 | `b1ae519a058784ed1d8306d2986748de6832e142209502e984030ff35b18e100` |
 | projects/benchmark/evidence/a09_submission_closure_companion.zip | 566235 | `336c7bcdaa50c68582be78161ccea3c769cf214d1b71a5d327e98709d1de94f5` |
-| local_storage/benchmark/a09_submission_closure/submission_packages/DLG-Benchmark_A09_LaTeX_submission.zip | 31762 | `b8a725cc321cd7b9be6105832434ba1a85ec77ac891069b4393fc9dc3794a055` |
-| local_storage/benchmark/a09_submission_closure/submission_packages/DLG-Benchmark_A09_MDPI_LaTeX_submission.zip | 1068727 | `f01f5c17cbdb6f6fa0c4eff9118ade830c80412a819df253cfa6bf75b220ecbc` |
+| local_storage/benchmark/a09_submission_closure/submission_packages/DLG-Benchmark_A09_LaTeX_submission.zip | 31983 | `63a31bd3cf13a8722fdee1894c746eadfe01e447aba9257db64dba7dc6b548e7` |
+| local_storage/benchmark/a09_submission_closure/submission_packages/DLG-Benchmark_A09_MDPI_LaTeX_submission.zip | 1068942 | `aa05b71b4ae30cf0fd40a42882baac7a9e5911d40a247f277ba7f85560b4a49b` |
 
 A09companion은189실파일이다. `evidence_inventory.csv`/`companion_payload_manifest.json`는187payload의 상대경로·bytes·SHA를 기록하며 그 두 index도 ZIP에 들어 있다. **이 response와 outer closure manifest는 별도 인계 문서이며 ZIP 안에 재귀적으로 포함되지 않는다.** 기존 ZIP에 포함된 과학 source/config/locks와 repo facades의 범위는 README에서 구분한다.
 
-Public/private검사는 새 contract IDs/scores/arrays/checkpoints/privatewriter/TeX/Bib/PDF가 companion에 없는지 확인했다. 두private submissionZIP와 원고/writer는 gitignore로 계속 제외하며 curatedcompanionZIP만 exception으로 추가했다. Commit/push/index추가/release/논문upload/투고를 수행하지 않았다.
+Public/private검사는 새 contract IDs/scores/arrays/checkpoints/privatewriter/TeX/Bib/PDF가 companion에 없는지 확인했다. 두private submissionZIP와 원고/writer는 gitignore로 계속 제외하며 curatedcompanionZIP만 exception으로 추가했다. 허가된 supporting evidence commit/push/immutable release를 완료했다. 논문 플랫폼 upload/투고는 수행하지 않았다.
 
 ## 보존 및 승인 경계
 
 374originalA08files 및57actualexecution-source hashes(설치된PyGOD namespace 포함)가 일치했다. OriginalA08acceptanceSHA: `8a6d786034a29d18de0c8042a28950d5f244d533dbb9d84ef9bd3ad57f1f1f58`. OriginalA08PDF/source/초기 실패/ZIP/G0–10은 그대로 남아 있다. RTX3090 연결은 수치 fixture 실행 허용이며 공동저자·출판 승인이 아니다.
 
-**C5에서 필요한 실제 결정:** 공동저자 과학적 결과·원천/Category0·old-result제외·최종 원고·기여·지원금·이해상충·AI표기·공개 범위·reviewer access·Preprints/MDPI 투고 동의. 이후 scientificsource/numericevidence를 저자가 직접 게시할지 또는 agentcommit/push/versionedrelease를 허가할지 결정한다. 실제 공개immutableURL/commit 및 다운로드hash/verify/tables가 확인된 뒤 availability와 pending문구를 사실에 맞게 업데이트하고 PDF/sourceZIP/숫자/해시/페이지 검토를 갱신한다.
+**C5 실제 마감:** 공동저자 확인·승인 및 Agent 공개 허가를 명시적 사용자 답변으로 기록했고 실제 공개URL/commit/ZIPhash/verify/tables를 독립 검증했다. Availability/approval/access 문구와 두PDF/sourceZIP을 갱신하여 C6 전 페이지 검토와 clean source 재컴파일을 마쳤다.
 
 이번 작업에서 새 대규모 학습·추가seed·신규baseline·Stream/TDS/LLM 확장·GPU구매는 수행하지 않았다. C5까지 닫힌 후 추가 연구 없이 제출 마감한다. 게재 판단은 편집부/심사자에게 있다.
 
-## 저자 승인 후 추가 기록 — 2026-10-10T14:44:32Z
+## 과거 승인 선택 기록 — 2026-10-10T14:44:32Z (후속 게시 허가로 변경됨)
 
 사용자가 “공동저자 확인 완료, 승인합니다”라고 명시적으로 답했다. 검토된 두PDF와 본 보고서의 수정 결과·출처/매핑·원고·기여/지원금/이해상충/AI·공개/심사 접근·Preprints/MDPI 동의에 대한 사용자 확인을 author-local 승인 기록에 보존했다. 공동저자의 별도 서명을 직접 수신했다고 표현하지 않는다.
 
-사용자는 “제가 직접 게시하고 URL/commit을 전달하겠습니다”라고 선택했다. 따라서 agent는 commit/push/release하지 않는다. C5의 승인 부분은 사용자 확인으로 충족되었고, 실제 author-published evidence identity와 다운로드 검증은 대기 중이다. 이전 본문에서의 pending 표현은 승인 전 검사 시점의 상태다. `PUBLICATION_HANDOFF_A09.md`가 현재 게시 인계 범위와 예상 hashes를 안내한다.
+사용자는 “제가 직접 게시하고 URL/commit을 전달하겠습니다”라고 선택했다. 이 최초 선택 당시에는 Agent가 게시하지 않는 상태였으나, 이후 사용자가 Agent의 commit/push/versioned release 게시를 명시 허가했다. C5의 승인 부분은 사용자 확인으로 충족되었고, 실제 author-published evidence identity와 다운로드 검증은 대기 중이다. 이전 본문에서의 pending 표현은 승인 전 검사 시점의 상태다. `PUBLICATION_HANDOFF_A09.md`가 현재 게시 인계 범위와 예상 hashes를 안내한다.
 
-기존 reviewed PDF/소스ZIP/companion bytes는 이번 승인 기록으로 변경하지 않는다. 실제 URL/commit 수신 후 Data Availability와 approval wording을 갱신하고 두PDF/소스ZIP/해시/최종검토를 다시 연결한다. `submission_ready=false`는 이 남은 공개·재검증 단계 때문에 유지한다.
+이 최초 승인 기록 당시에는 기존 reviewed PDF/소스ZIP/companion bytes를 변경하지 않았다. 실제 URL/commit 수신 후 Data Availability와 approval wording을 갱신하고 두PDF/소스ZIP/해시/최종검토를 다시 연결한다. 당시 `submission_ready=false`였으며, 아래 후속 공개·재검증·최종 PDF 검토 완료 후 현재 true로 마감했다.
+
+## C5 publication closure update
+
+The user explicitly confirmed coauthor approval and then authorized the agent to commit/push/release the declared public scientific source/protocol/lock and numeric evidence. This supersedes only the earlier author-personal-publication choice. Scientific commit: `2cc6f85afc44830eb7eee92d709c6eb8d567ba2d`. Actual immutable release: https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10. Two unchanged ZIP assets and SHA256SUMS were anonymously retrieved; the actual tagged clone passed verify/tables, with all current numeric table/statistic bytes unchanged. The public paper facade correctly rejects private manuscript inputs. The frozen companion remains the reviewed pre-publication snapshot; later C5/C6 documents are separate. No manuscript/raw mapping/new node scores/checkpoints were posted, and no platform submission was executed.
