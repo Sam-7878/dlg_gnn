@@ -1,5 +1,7 @@
 # Benchmark v2 evidence and reproduction
 
+**Published evidence:** A09 supporting evidence is publicly released at [benchmark-a09-2026-10-10](https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10), scientific commit `2cc6f85afc44830eb7eee92d709c6eb8d567ba2d`. Earlier `NOT_CLEARED` or local-candidate statuses describe pre-publication snapshots. This immutable release identity is authoritative for the published assets; manuscript submission remains a separate author action. The [A10 minor submission finishing report](reports/minor_submission_a10/FINAL_HANDOFF.md) records the later author-local Keywords correction without changing the release or scientific results.
+
 ## Current science: completed A08; A09 submission closure
 
 A08 replaces the label-informed Ethereum/BSC/Polygon hybrid inputs with raw-transfer-derived, label-independent contract features and a declared binary Euclidean 5-neighbor similarity graph. The actual provider populations are 14,464 / 7,499 / 2,353 contracts, respectively, with eight features. See [the correction protocol](protocols/A08_DATA_REPAIR_AMENDMENT.md), [input evidence](evidence/a08_data_repair/) and [execution report](reports/a08_data_repair/NEW_CAMPAIGN_REPORT.md).
