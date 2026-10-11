@@ -231,6 +231,19 @@ def main() -> None:
     ap.add_argument("--revision", choices=("auto", "legacy-a07", "a08"), default="auto", help="Explicitly select historical or corrected evidence; no old-result fallback")
     args = ap.parse_args()
     start = time.monotonic()
+    if args.project == "stream_mc" and args.revision != "legacy-a07":
+        project = ROOT / "projects/stream_mc/scripts"
+        if args.mode == "full":
+            check(args.confirm_full, "Explicit --confirm-full required; no training started")
+            command = [sys.executable, str(project / "r01_full_reproduce.py"), "--confirm-full"]
+        elif args.mode == "paper":
+            check((ROOT / "projects/stream_mc/paper/current/r01/preprint.tex").is_file(),
+                  "Unsubmitted manuscript sources are author-local; public numeric verification remains available")
+            command = [sys.executable, str(project / "r01_validate.py"), "--mode", "paper"]
+        else:
+            command = [sys.executable, str(project / "r01_public.py"), "--mode", args.mode]
+        subprocess.run(command, cwd=ROOT, check=True)
+        return
     if args.mode == "full":
         print("FULL RE-EXECUTION IS EXPENSIVE. Requires third-party datasets, GPU resources and campaign-specific commands.", file=sys.stderr)
         if not args.confirm_full:

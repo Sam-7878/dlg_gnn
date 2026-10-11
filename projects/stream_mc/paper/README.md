@@ -1,8 +1,13 @@
 # StreamMC paper workspace
 
-`current/` is the active SelectiveStream manuscript source, bibliography,
-figures, tables and supplementary source formerly under `manuscript/`.
-`current/audit_latex.py` now resolves this directory from its own file path.
+`current/r01/` is the active DLG-SelectiveStream R01 scientific content,
+neutral preprint/free-format journal wrappers, bibliography, generated tables,
+figures and standalone supplement. Root submission/supplement entry points are
+compatibility wrappers pointing to that content after closure. The original
+reviewed directory is preserved in the immutable R01 input snapshot ZIP.
+`current/audit_latex.py` delegates to actual clean TeX/BibTeX validation, not
+the historical superficial string checks.
 `history/` is a Git-ignored local archive of the earlier `_41_01_Stream`
 draft, presentation and figures; it is not the current paper. The StreamMC
-`verify` facade checks deterministic core behavior, not the paper results.
+`verify` facade recomputes raw prediction metrics and exact paired statistics;
+private `paper` compilation and all-page visual checks remain separate.

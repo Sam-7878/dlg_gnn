@@ -121,3 +121,21 @@ _res/
 /projects/benchmark/scripts/a09_build_manuscript.py
 # Curated scalar/provenance candidate; no raw vectors or private manuscript.
 !/projects/benchmark/evidence/a09_submission_closure_companion.zip
+# Project-local optional wheels, never scientific artifacts.
+/projects/stream_mc/.deps/
+/projects/stream_mc/scripts/r01_build_paper.py
+/projects/stream_mc/results/selectivestream_r01_20261011/input_snapshot.zip
+/projects/stream_mc/results/selectivestream_r01_20261011/raw_event_schema.json
+/projects/stream_mc/results/selectivestream_r01_20261011/cache_inventory.json
+/projects/stream_mc/results/selectivestream_r01_20261011/**/*.checkpoint*
+# Raw numeric/input/model bytes are curated in the auditable ZIP rather than duplicated.
+/projects/stream_mc/results/selectivestream_r01_20261011/models/
+/projects/stream_mc/results/selectivestream_r01_20261011/public_inputs/
+/projects/stream_mc/results/selectivestream_r01_20261011/runtime/budget_predictions/
+/projects/stream_mc/results/selectivestream_r01_20261011/runtime/offline_v2/budget_predictions/
+/projects/stream_mc/results/selectivestream_r01_20261011/runtime/*/event_trace.csv
+/projects/stream_mc/results/selectivestream_r01_20261011/analysis/*_paired_predictions.csv
+/projects/stream_mc/results/public_input_reproduction/
+/projects/stream_mc/results/public_alias_replay/
+!/projects/stream_mc/evidence/r01_numeric_evidence.zip
+!/projects/stream_mc/results/selectivestream_r01_20261011/training_sources.zip

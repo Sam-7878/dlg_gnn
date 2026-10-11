@@ -377,3 +377,80 @@ def save_level2_graph(graph: Data, path: str) -> str:
     path.parent.mkdir(parents=True, exist_ok=True)
     torch.save(graph, path)
     return str(path)
+
+
+class HistoricalReferenceIndex:
+    """Exact, label-free target stars for bounded selective inference.
+
+    The immutable index contains only declared training snapshots. Per-target
+    eligibility and self-exclusion are applied before selecting neighbors.
+    Ties use stable reference IDs; no N-by-N similarity matrix is allocated.
+    This constrains retrieval only, not model/label availability in real time.
+    """
+
+    def __init__(self, embeddings, scores, reference_ids, cutoffs, *, k=8,
+                 metric='euclidean'):
+        import numpy as np
+        from scipy.spatial import cKDTree
+        self.embeddings = np.asarray(embeddings, dtype=np.float32)
+        self.scores = np.asarray(scores, dtype=np.float32).reshape(-1)
+        self.ids = np.asarray(reference_ids, dtype=str)
+        self.cutoffs = np.asarray(cutoffs, dtype=np.int64)
+        if not (len(self.embeddings) == len(self.scores) == len(self.ids) == len(self.cutoffs)):
+            raise ValueError('reference fields have unequal lengths')
+        if len(set(self.ids)) != len(self.ids) or not np.isfinite(self.embeddings).all():
+            raise ValueError('invalid reference IDs or nonfinite embeddings')
+        if metric not in ('euclidean', 'cosine') or k < 1:
+            raise ValueError('unsupported retrieval configuration')
+        self.k, self.metric = k, metric
+        self.search_embeddings = self.embeddings.astype(np.float64)
+        if metric == 'cosine':
+            norms = np.linalg.norm(self.search_embeddings, axis=1, keepdims=True)
+            self.search_embeddings /= np.maximum(norms, 1e-12)
+        self.tree = cKDTree(self.search_embeddings)
+        self.latest_selected_cutoff = None
+
+    def query(self, embedding, target_cutoff, target_id=''):
+        import numpy as np
+        query = np.asarray(embedding, dtype=np.float64)
+        if not np.isfinite(query).all(): raise ValueError('nonfinite target embedding')
+        if self.metric == 'cosine': query = query / max(np.linalg.norm(query), 1e-12)
+        eligible = (self.cutoffs <= int(target_cutoff)) & (self.ids != target_id)
+        available = int(eligible.sum())
+        count = min(self.k, available)
+        if not count: return np.empty(0, dtype=np.int64), available
+        requested = min(len(self.ids), max(count * 2, 16))
+        while True:
+            distance, indices = self.tree.query(query, k=requested, workers=1)
+            indices = np.atleast_1d(indices); distance = np.atleast_1d(distance)
+            mask = eligible[indices]; selected = indices[mask]; valid_distances = distance[mask]
+            if len(selected) >= count:
+                radius = float(valid_distances[count - 1])
+                # Query all boundary ties before the stable-ID tie break.
+                tied = np.asarray(self.tree.query_ball_point(query, np.nextafter(radius, np.inf)), dtype=np.int64)
+                tied = tied[eligible[tied]]
+                actual = np.linalg.norm(self.search_embeddings[tied] - query, axis=1)
+                order = np.lexsort((self.ids[tied], actual))
+                result = tied[order[:count]]
+                self.latest_selected_cutoff = int(self.cutoffs[result].max())
+                return result, available
+            if requested == len(self.ids): raise RuntimeError('eligible retrieval accounting error')
+            requested = min(len(self.ids), requested * 2)
+
+    def target_graph(self, embedding, score, target_cutoff, target_id=''):
+        import hashlib
+        import numpy as np
+        neighbors, available = self.query(embedding, target_cutoff, target_id)
+        n = len(neighbors)
+        refs = np.column_stack((self.embeddings[neighbors], self.scores[neighbors]))
+        features = np.concatenate((refs, np.r_[embedding, score][None]), axis=0).astype(np.float32)
+        edge_index = torch.tensor([list(range(n)) + [n] * n,
+                                   [n] * n + list(range(n))], dtype=torch.long)
+        graph = Data(x=torch.from_numpy(features), edge_index=edge_index,
+                     target_index=torch.tensor([n]), num_nodes=n + 1)
+        audit = {'reference_count':n, 'eligible_reference_count':available,
+                 'selected_reference_ids_hash':hashlib.sha256('\n'.join(self.ids[neighbors]).encode()).hexdigest(),
+                 'selected_reference_max_cutoff':int(self.cutoffs[neighbors].max()) if n else None,
+                 'fallback': 'no_eligible_reference' if not n else '',
+                 'reference_payload_bytes':int(self.embeddings.nbytes + self.scores.nbytes + self.cutoffs.nbytes)}
+        return graph, audit

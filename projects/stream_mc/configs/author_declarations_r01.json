@@ -1,0 +1,14 @@
+{
+  "basis": "User-supplied Benchmark A09/A10 manuscript and explicit 2026-10-11 confirmation to use its Funding/corresponding author/ORCID information",
+  "source_path": "projects/benchmark/paper/current/a10/DLG-Benchmark_A09_Preprints_Final.tex",
+  "authors": [
+    {"name": "Seong-Su Park", "orcid": "0009-0008-4056-3875", "department": "Computer Engineering", "email": "parky@ajou.ac.kr"},
+    {"name": "Ki-Hyung Kim", "orcid": "0000-0002-2321-4475", "department": "Cyber Security", "email": "kkim86@ajou.ac.kr", "corresponding": true}
+  ],
+  "institution": "Ajou University, Suwon 16499, Republic of Korea",
+  "funding": {"agency": "Institute of Information & Communications Technology Planning & Evaluation (IITP)", "funder": "Korea Government (MSIT)", "grant_number": "IITP-2026-RS-2021-II211835"},
+  "conflicts_of_interest": "No conflict of interest, from author-supplied declaration",
+  "author_contributions": "Conceptualization: both; methodology, software, validation, analysis, data curation, original draft: Park; review, supervision, funding acquisition: Kim; adopted from supplied companion declaration for author review",
+  "exact_final_r01_version_approved_by_all_authors": false,
+  "final_approval_note": "Companion-paper approval is not approval of a subsequently generated R01 version. No submission performed."
+}

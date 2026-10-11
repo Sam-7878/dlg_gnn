@@ -1,0 +1,72 @@
+revision: DLG-SelectiveStream-R01
+role: descriptive specification of executed r01.json and frozen Python sources
+authoritative_run_config: configs/r01.json
+local:
+  primary: GIN
+  input: [log1p_in_degree, log1p_out_degree, log1p_total_degree]
+  layers: 2
+  hidden: 32
+  gin_mlp: [Linear, ReLU, Linear]
+  gin_epsilon: 0
+  gin_train_epsilon: false
+  gin_aggregation: sum
+  edge_flow: source_to_target
+  added_self_loop_edges: false
+  after_convolution: [ReLU, Dropout_0.2]
+  normalization: none
+  readout: [mean, max]
+  embedding_width: 64
+  head: [Linear_64_to_32, ReLU, Dropout_0.2, Linear_32_to_1]
+  gatv2_control:
+    heads: 4
+    out_channels_per_head: 8
+    concatenate_heads: true
+    add_self_loops: true
+    share_weights: false
+    residual: false
+    attention_dropout: 0.2
+    negative_slope: 0.2
+relational:
+  input_width: 65
+  local_score_input: raw_sigmoid_not_calibrated
+  input_normalization: LayerNorm_eps_1e-5_affine
+  layers: 2
+  heads: 4
+  out_channels_per_head: 8
+  concatenate_heads: true
+  add_self_loops: true
+  share_weights: false
+  residual: false
+  attention_dropout: 0.2
+  negative_slope: 0.2
+  after_convolution: [LayerNorm, ELU, Dropout_0.2]
+  target_position: last_node_of_independent_star
+  head: Linear_32_to_1
+relation_builder:
+  module: gog_fraud.data.level2.relation_builder.HistoricalReferenceIndex
+  exact_search: cKDTree_with_eligible_candidate_expansion_and_boundary_ties
+  metric: euclidean
+  k: 8
+  tie_break: distance_then_stable_reference_id
+  edges: independent_bidirectional_binary_similarity_star
+  reference_cutoff: not_after_target
+  self_exclusion: true
+  hybrid_graph_input: false
+training:
+  optimizer: Adam
+  learning_rate: 0.001
+  loss: BCEWithLogitsLoss
+  positive_weight: source_train_negative_count_over_positive_count
+  local_epochs: 5
+  local_batch: 128
+  relational_epochs: 20
+  relational_batch: 256
+  freeze_local_before_relation: true
+  joint_training: false
+  scheduler: none
+  early_stopping: false
+  seeds: [11, 22, 33, 44, 55]
+  device: cuda:0
+  torch_threads: 1
+  deterministic_algorithms: true
+  cublas_workspace_config: ':4096:8'

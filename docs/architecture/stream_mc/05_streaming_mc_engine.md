@@ -1,6 +1,44 @@
 # 05. Streaming Monte Carlo Engine (`stream_mc`)
 
-This document details the architecture of **`stream_mc`**, a dynamic streaming graph anomaly detection and Anti-Money Laundering (AML) risk-scoring engine designed for real-time, low-latency financial transaction streams.
+## Current scientific path — DLG-SelectiveStream R01 (2026-10-11)
+
+The authoritative R01 implementation is `src/gog_fraud/streaming/selective.py`,
+`selective_engine.py` and `selective_state.py`, with project-owned configurations,
+experiments and evidence under `projects/stream_mc`. Relations use the shared
+`data/level2/relation_builder.py` historical reference index; no hybrid graph
+artifact is consumed. Primary inference is deterministic GIN → frozen margin
+router → optional GATv2 independent similarity star. MC is an ablation.
+
+This is retrospective contract-snapshot classification plus bounded-state
+systems replay. Cached edge-time lineage and label availability are unknown;
+training/calibration can postdate historical targets. Zero future-reference
+retrieval violations do not establish full temporal validity. No live AML
+safety, <50ms SLA, universal tail-latency improvement, global exactly-once,
+dynamic online adaptation or whole-process constant-memory guarantee is made.
+
+Declared engine boundaries:5000 resident contracts,128 nodes/edges per contract,
+90event-day TTL,10000/64MiB immutable-feature cache,512 retry queue and1000 trace
+buffer. Immutable train references/search index/model, input preload, population
+accounting and checkpoint copies are separate structures. Logical byte budget,
+serialized bytes, RSS and GPU allocated/reserved bytes are distinct measurements.
+References can exceed cache capacity; misses reload immutable arrays. Snapshot
+degree features and live replay updates use the same three degree observables,
+not amount/velocity features described in the historical concept below.
+
+R01 uses25 independent model identities, six fixed budgets/four routers,
+separate contract/prefix/long workloads, actual cap crossing/churn/cache/TTL/queue
+tests and abrupt local checkpoint recovery. Exact configs, raw provenance,
+failure scope and reproduction commands are in `projects/stream_mc/protocols`
+and `REPRODUCE.md`. Public scientific evidence excludes unsubmitted paper sources.
+
+## Historical concept (not the validated R01 path)
+
+The following sections preserve an earlier aspirational streaming-AML design.
+Their performance targets, synthetic diagram and legacy command are not R01
+experimental results or production guarantees, and must not be cited as such.
+
+This historical document outlined **`stream_mc`** as a dynamic streaming graph
+anomaly/AML engine intended for real-time financial streams.
 
 ---
 

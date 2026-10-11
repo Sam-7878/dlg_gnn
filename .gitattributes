@@ -16,3 +16,6 @@
 *.zip binary
 *.pt binary
 *.npy binary
+*.npz binary
+*.jsonl -text
+*.lock -text
