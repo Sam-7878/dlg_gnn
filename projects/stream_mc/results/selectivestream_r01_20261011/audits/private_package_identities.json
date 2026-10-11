@@ -1,0 +1,18 @@
+[
+  {
+    "bytes": 1028691,
+    "main_pdf_sha256": "d79c60cefcf9c5dc577c10496147d1c50ea9d23b8f8954b28deb32ad09f87d63",
+    "package": "projects/stream_mc/paper/current/r01/packages/preprint_package.zip",
+    "private_not_git": true,
+    "sha256": "92e19213c314805868b26c82d1be2121b19319ab5ee5dd12d9f0175298f54a04",
+    "supplement_pdf_sha256": "3ae6791d23b86f2b7fdfd9392980c3e8c21fb6cc9962f0225975e97c2bad3501"
+  },
+  {
+    "bytes": 1031009,
+    "main_pdf_sha256": "161355d21ba3510c5d2547494392c62707a8dc3f593641492d111a0a5d9f026a",
+    "package": "projects/stream_mc/paper/current/r01/packages/journal_package.zip",
+    "private_not_git": true,
+    "sha256": "f5396241d3e659814d88bc6003397a6b1419e0a8bd7a700509b5920c60e3f030",
+    "supplement_pdf_sha256": "3ae6791d23b86f2b7fdfd9392980c3e8c21fb6cc9962f0225975e97c2bad3501"
+  }
+]

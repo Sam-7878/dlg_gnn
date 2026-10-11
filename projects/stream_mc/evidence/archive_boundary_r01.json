@@ -1,0 +1,24 @@
+{
+  "archive_bytes": 258850451,
+  "archive_sha256": "97bbdf52f19673a1d0406f4bc1593129d79d70e0b2b1b7dee3cbcbf3dc814d2f",
+  "evidence_text_members_scanned_for_literal_0x40_addresses": 436,
+  "hosted_public_release_verified": false,
+  "literal_address_member_count": 0,
+  "private_manuscript_members": [],
+  "private_rendered_abstracts": [
+    {
+      "abstract_words_pdftotext": 196,
+      "entry": "preprint",
+      "pdf_sha256": "d79c60cefcf9c5dc577c10496147d1c50ea9d23b8f8954b28deb32ad09f87d63"
+    },
+    {
+      "abstract_words_pdftotext": 196,
+      "entry": "journal",
+      "pdf_sha256": "161355d21ba3510c5d2547494392c62707a8dc3f593641492d111a0a5d9f026a"
+    }
+  ],
+  "scope": "actual member boundaries and literal-address scan; hashes/aliases remain linkable, not anonymous; code and documentation are excluded from address scan",
+  "source_abstract_words": 196,
+  "word_count_scope": "whitespace tokens in actual first-page PDF extraction; hyphenated line joins may affect counting",
+  "zip_members": 1001
+}

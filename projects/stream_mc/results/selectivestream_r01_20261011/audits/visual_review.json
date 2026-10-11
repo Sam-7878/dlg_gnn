@@ -1,0 +1,23 @@
+{
+  "run_id": "selectivestream_r01_20261011",
+  "review_date": "2026-10-11",
+  "reviewer": "Codex implementation-side visual inspection",
+  "scope": "Rendered-page layout inspection on the same host, not external peer review or author submission approval",
+  "all_pages_reviewed": true,
+  "total_pages_reviewed": 32,
+  "unresolved_clipping_or_overlap_count": 0,
+  "pdfs": [
+    {"entry": "preprint.tex", "pages_reviewed": 13, "pdf_sha256": "d79c60cefcf9c5dc577c10496147d1c50ea9d23b8f8954b28deb32ad09f87d63"},
+    {"entry": "journal.tex", "pages_reviewed": 13, "pdf_sha256": "161355d21ba3510c5d2547494392c62707a8dc3f593641492d111a0a5d9f026a"},
+    {"entry": "supplement.tex", "pages_reviewed": 6, "pdf_sha256": "3ae6791d23b86f2b7fdfd9392980c3e8c21fb6cc9962f0225975e97c2bad3501"}
+  ],
+  "inspection": {
+    "render_dpi": 110,
+    "contact_sheets_inspected_individually": ["preprint_sheet_1.png", "preprint_sheet_2.png", "preprint_sheet_3.png", "preprint_sheet_4.png", "journal_sheet_1.png", "journal_sheet_2.png", "journal_sheet_3.png", "journal_sheet_4.png", "supplement_sheet_1.png", "supplement_sheet_2.png"],
+    "additional_full_page_inspection": ["preprint/page-08.png", "supplement/page-3.png", "supplement/page-4.png"],
+    "observations": "No visible clipping or overlap. Tables, axes, captions, author footnotes, declarations and reference pages inspected. Dense tables checked at full-page resolution. Whitespace on final reference pages is intentional, not missing content.",
+    "limitations": "Visual inspection cannot establish scientific validity or author approval; embedded font types and numeric-source checks have separate scope."
+  },
+  "external_independent_approval": false,
+  "exact_version_author_approval": false
+}

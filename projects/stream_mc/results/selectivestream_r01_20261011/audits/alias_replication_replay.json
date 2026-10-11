@@ -1,0 +1,14 @@
+{
+  "replay": {
+    "N_input": 525,
+    "N_measured": 500,
+    "decision_route_state_event_order_disagreements": 0,
+    "ignored_intentionally": "different run/reference/contract-alias identity, input string byte accounting, timing/ingestion timestamps and allocator instrumentation",
+    "max_score_difference": 0.0,
+    "original_trace_sha256": "b126b54b0b52f96f1ed3a18c7089bd8daacefe27a1ead7a685666236a00e73e7",
+    "replica_trace_sha256": "878318cb21bf62853052de94d033fa1ba62e17228f2a52faab9e558c69ed2053",
+    "timing_not_expected_identical": true
+  },
+  "scope": "actual same-host seed11 alias-input reconstruction/rerun; distinct identities, not independent external review or prospective source reconstruction",
+  "score_tolerance": 1e-06
+}

@@ -7,6 +7,9 @@
 *.md -text
 # Publication manifests hash exact bytes, including intentional CSV CRLF.
 *.csv -text
+# csv.DictWriter intentionally emits CRLF. Audit whitespace without changing
+# any exact-byte scientific checksum or disabling genuine trailing-space checks.
+*.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.json -text
 *.tex -text
 *.bib -text

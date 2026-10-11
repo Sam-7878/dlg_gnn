@@ -1,0 +1,167 @@
+{
+  "archive_sha256": "97bbdf52f19673a1d0406f4bc1593129d79d70e0b2b1b7dee3cbcbf3dc814d2f",
+  "author_local_private_source_builds": [
+    {
+      "actual_clean_build": true,
+      "commands": [
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "preprint.tex"
+        ],
+        [
+          "bibtex",
+          "preprint"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "preprint.tex"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "preprint.tex"
+        ]
+      ],
+      "entry": "preprint.tex",
+      "overflow_count": 0,
+      "pdf_sha256": "f9cb2c0d6833482538fb50cea5af3120beb680873fa336b9da3520fb0af3b727",
+      "unresolved_count": 0
+    },
+    {
+      "actual_clean_build": true,
+      "commands": [
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ],
+        [
+          "bibtex",
+          "supplement"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ]
+      ],
+      "entry": "supplement.tex",
+      "overflow_count": 0,
+      "pdf_sha256": "4f2de284ae52273960c4a08e62f39d9c1afa1918c388432362b9d4ee6fdaadc5",
+      "unresolved_count": 0
+    },
+    {
+      "actual_clean_build": true,
+      "commands": [
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "journal.tex"
+        ],
+        [
+          "bibtex",
+          "journal"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "journal.tex"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "journal.tex"
+        ]
+      ],
+      "entry": "journal.tex",
+      "overflow_count": 0,
+      "pdf_sha256": "0125cfdc33f3cd8d6198bcd7c7e3f353f4ea6c008c9c63e4387cffa6e7d1a0e3",
+      "unresolved_count": 0
+    },
+    {
+      "actual_clean_build": true,
+      "commands": [
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ],
+        [
+          "bibtex",
+          "supplement"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ],
+        [
+          "pdflatex",
+          "-halt-on-error",
+          "-file-line-error",
+          "-interaction=nonstopmode",
+          "supplement.tex"
+        ]
+      ],
+      "entry": "supplement.tex",
+      "overflow_count": 0,
+      "pdf_sha256": "72dac358f5786c6c708d8d4432cee3e5543f51e4ce3af8ecf69a96ba056fd70b",
+      "unresolved_count": 0
+    }
+  ],
+  "commands": [
+    {
+      "exit_code": 0,
+      "mode": "verify",
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"model_identities\": 25,\n  \"raw_metric_rows\": 280,\n  \"exact_paired_tests\": 5,\n  \"separate_historical_exact_paired_tests\": 5,\n  \"scope\": \"archive/source integrity and aligned raw AP/confusion/paired exact statistics; not new training, visual review, or independent scientific approval\"\n}\n"
+    },
+    {
+      "exit_code": 0,
+      "mode": "tables",
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"model_identities\": 25,\n  \"raw_metric_rows\": 280,\n  \"exact_paired_tests\": 5,\n  \"separate_historical_exact_paired_tests\": 5,\n  \"scope\": \"archive/source integrity and aligned raw AP/confusion/paired exact statistics; not new training, visual review, or independent scientific approval\"\n}\n"
+    }
+  ],
+  "external_independent_approval": false,
+  "fresh_checkout_binary_part_assembly": "PASS: only manifest and parts supplied; actual verifier reconstructed and checked full ZIP",
+  "no_original_training_inputs_or_scientific_packages_needed": true,
+  "paper_scope": "fresh local source extraction and real compiler; not independently received author release",
+  "recomputed_tables": {
+    "exact_statistics.csv": "826945059faaf8621293fd37ab31b876e5a87b306378eeaa87fa21606805a48f",
+    "historical_exact_statistics.csv": "737ad6ad71e32842fa5fa267feafa1e4db9a5035b3803d760c86ce8590d0e69b",
+    "primary_metrics.csv": "9aabd44d779bba7843276d21616411a12d0e60a161052df9a856a4629349a8c3"
+  },
+  "reviewer": "Codex implementation-side verification",
+  "scope": "same agent, fresh standard-library-only venv and clean workspace on same host; local copy of Git-sized parts, not public re-download or external independent reviewer",
+  "stdlib_only_numeric_verification": "PASS"
+}

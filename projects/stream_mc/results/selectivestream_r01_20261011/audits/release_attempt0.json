@@ -1,0 +1,10 @@
+{
+  "run_id": "selectivestream_r01_20261011",
+  "procedure": "r01_release.py, first candidate attempt",
+  "actual_exit_code": 2,
+  "interruption": "Implementation-side SIGINT to the exact active packaging process; traceback ended KeyboardInterrupt in repeated numpy NPZ member decompression during elementwise input roundtrip.",
+  "qualifying_release_created": false,
+  "scientific_training_or_timing_reexecuted": false,
+  "repair": "Read recovered edges, offsets and node counts once before the same elementwise comparison loop; rerun packaging. No weakened input equality check.",
+  "source_identity_limit": "Process-start source hashing was not instrumented for this interrupted packaging attempt; it is not treated as a scientific execution or successful release."
+}

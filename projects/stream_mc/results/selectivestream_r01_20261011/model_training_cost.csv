@@ -1,0 +1,66 @@
+model_id,stage,parameters,training_seconds,training_time_scope
+loco_bsc_GIN_seed11,local,5409,4.724512560999983,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed11,relational,6755,17.520026873999996,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed22,local,5409,4.238669609999988,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed22,relational,6755,15.911408852000022,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed33,local,5409,4.233325606000108,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed33,relational,6755,16.08083264600009,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed44,local,5409,4.182895958000017,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed44,relational,6755,15.947423244999982,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed55,local,5409,4.154414301000088,"frozen actual training loop, includes host iteration"
+loco_bsc_GIN_seed55,relational,6755,15.288485905000016,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed11,local,5409,3.143666603999918,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed11,relational,6755,10.216889276000074,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed22,local,5409,3.1167411050000737,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed22,relational,6755,10.799993178000022,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed33,local,5409,3.0518491580000955,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed33,relational,6755,11.732927550000113,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed44,local,5409,2.775740636999899,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed44,relational,6755,10.182242135000024,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed55,local,5409,2.7922056949998932,"frozen actual training loop, includes host iteration"
+loco_ethereum_GIN_seed55,relational,6755,10.236983593000105,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed11,local,5409,5.588588646000062,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed11,relational,6755,20.626117954000165,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed22,local,5409,5.445008042999916,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed22,relational,6755,20.83067965200007,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed33,local,5409,5.560669178000126,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed33,relational,6755,20.831012870999984,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed44,local,5409,6.711623609000071,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed44,relational,6755,23.07834435000018,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed55,local,5409,6.747360888000003,"frozen actual training loop, includes host iteration"
+loco_polygon_GIN_seed55,relational,6755,21.49825733800003,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed11,local,4609,10.73652333300015,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed11,relational,6755,24.549896260999958,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed22,local,4609,10.953254915000116,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed22,relational,6755,23.196414097999877,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed33,local,4609,10.958465867000086,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed33,relational,6755,24.091278552000176,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed44,local,4609,10.484289019000016,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed44,relational,6755,25.253783041999895,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed55,local,4609,11.191239784000118,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GATv2_seed55,relational,6755,25.41193651399999,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed11,local,5409,6.066621666000174,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed11,relational,6755,22.52521105400001,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed11,degree_mlp,417,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed11,relational_mlp,4225,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed11,degree_logistic,12,,not recorded separately
+pooled_snapshot_GIN_seed22,local,5409,5.74374789400008,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed22,relational,6755,24.73717959800001,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed22,degree_mlp,417,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed22,relational_mlp,4225,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed22,degree_logistic,12,,not recorded separately
+pooled_snapshot_GIN_seed33,local,5409,6.082135459000028,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed33,relational,6755,24.704592022000043,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed33,degree_mlp,417,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed33,relational_mlp,4225,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed33,degree_logistic,12,,not recorded separately
+pooled_snapshot_GIN_seed44,local,5409,6.582666679999875,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed44,relational,6755,24.187189710999974,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed44,degree_mlp,417,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed44,relational_mlp,4225,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed44,degree_logistic,12,,not recorded separately
+pooled_snapshot_GIN_seed55,local,5409,5.970579175000012,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed55,relational,6755,25.194653330999927,"frozen actual training loop, includes host iteration"
+pooled_snapshot_GIN_seed55,degree_mlp,417,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed55,relational_mlp,4225,,not recorded separately; no fabricated training cost
+pooled_snapshot_GIN_seed55,degree_logistic,12,,not recorded separately
