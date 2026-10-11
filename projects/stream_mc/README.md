@@ -19,8 +19,10 @@ negatives, not independently proven benign. Polygon test has no positives.
 
 Read [REPRODUCE.md](REPRODUCE.md), [CHANGELOG_R01.md](CHANGELOG_R01.md),
 [CLAIM_LEDGER.md](CLAIM_LEDGER.md) and [CLOSURE_R01.md](CLOSURE_R01.md).
-The release candidate is `evidence/r01_numeric_evidence.zip`; its companion
-JSON records exact bytes and hashes. This is a **local** release candidate, not
+Git distributes the release candidate as `evidence/r01_numeric_evidence.zip.part001`
+and subsequent ordered parts of at most90MiB each. The verifier assembles the
+ignored local `evidence/r01_numeric_evidence.zip`; its companion JSON records
+exact part/full bytes and hashes. This is a **local** release candidate, not
 an already uploaded or publicly hosted release.
 
 ```bash

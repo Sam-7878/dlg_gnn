@@ -45,7 +45,7 @@ Stable aliases have separate derivative identities, not original file hashes.
 
 Post-timing tests detected that retrieval's empty fallback field overwrote
 the final invalid-relational/soft-timeout reason. The metadata composition is
-fixed and all29 tests pass; the failed first final-test attempt is preserved.
+fixed and all29 tests passed at that repair stage; the failed first final-test attempt is preserved.
 Checkpoint identity now includes the full fit/calibrator file for every lane
 and validates weight/reference bytes. Abrupt restart is rerun under this
 amendment; original runtime measurements retain archived v1 code identity.
@@ -63,3 +63,20 @@ as `selectivestream_r01_20261011_offline_v2`, under `runtime/offline_v2`.
 Old predictions/timings and frozen v1 source remain intact, not silently
 overwritten or presented as the corrected measurements. Model/policy fits are
 unchanged; v2 source and method-parity results identify the active frontier.
+
+Final distribution tests:33 passed, including exact part assembly and rejection
+of corrupted parts, unsafe paths and wrong complete hashes. All32 rendered
+pages were actually inspected, with three clean builds and196-word PDF abstracts.
+Five disclosed-input seed11 models were actually retrained: local/relational
+parameter tensors are bit-identical, main and light-control predictions agree
+within the unchanged guard. A525-event prefix rerun has exactly equal scores
+and no label/route/state/order differences. This is same-host implementation-side
+reproduction, not an independent external reviewer or a second25-model study.
+
+The interrupted first packaging check repeatedly decompressed the same NPZ
+arrays. Its KeyboardInterrupt/non-success receipt is retained. The repaired
+check reads arrays once and still checks every original edge/node element.
+The approximately247MiB numeric archive is distributed through <=90MiB Git
+parts with exact part/full hashes, not an unpushable oversized Git blob or a
+claimed hosted release. Manuscript sources/PDFs remain private. The fresh
+workspace check receives only these parts, not an already assembled ZIP.

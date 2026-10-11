@@ -34,6 +34,13 @@ Numeric regeneration goes to `results/public_recomputed_r01`, not the frozen
 release. These checks do **not** independently validate provider label truth,
 missing edge/label availability, author approval, or deployment safety.
 
+Git tracks the evidence as ordered binary parts of at most90MiB each, with
+per-part and complete-ZIP SHA-256/byte lengths in `evidence/r01_release.json`.
+The public verifier first checks every part and atomically assembles the
+ignored local `r01_numeric_evidence.zip` if absent. It then checks all ZIP
+members. No Git LFS/server/network download is required for this local-clone
+path; this is not a claim that the repository has been pushed or hosted.
+
 ## 2. Disclosed bounded-input retraining (GPU; explicit opt-in)
 
 Install the pinned optional project-local PyArrow dependency as shown in
@@ -131,6 +138,7 @@ retimed by this repair. Source archives identify v1 and v2 separately.
 python projects/stream_mc/scripts/r01_generate.py --paper
 python projects/stream_mc/scripts/r01_validate.py --mode fixtures
 python projects/stream_mc/scripts/r01_validate.py --mode paper
+python projects/stream_mc/scripts/r01_final_audits.py --packages
 python projects/stream_mc/scripts/r01_release.py
 python projects/stream_mc/scripts/r01_validate.py --mode release
 ```
@@ -145,6 +153,27 @@ Public bundles exclude paper sources/PDFs. Private preprint/journal packages
 include source, bibliography, figures, generated tables and separate PDFs.
 Manifest excludes itself/checksum sidecars to avoid cyclic hashes. PDF metadata
 may change on recompilation; scientific numeric inputs remain frozen.
+
+Before the final package, execute the smaller disclosed-input GPU audit:
+
+```bash
+python projects/stream_mc/scripts/r01_full_reproduce.py --confirm-full --seed 11
+python projects/stream_mc/scripts/r01_public_replay.py --confirm-full \
+  --population prefix --policy margin
+python projects/stream_mc/scripts/r01_replication_audit.py --mode all
+# Rebuild the candidate to include the actual replication receipt.
+python projects/stream_mc/scripts/r01_release.py
+python projects/stream_mc/scripts/r01_public.py --mode verify
+python projects/stream_mc/scripts/r01_archive_audit.py --paper
+python projects/stream_mc/scripts/r01_cleanroom.py --paper
+python projects/stream_mc/scripts/r01_closure.py
+```
+
+Archive-boundary, cleanroom and closure receipts bind the final archive hash
+and remain outside it to avoid cyclic identities. Do not repackage after
+cleanroom verification without rerunning these final checks. This five-model
+audit covers one seed, not a second 25-model campaign. New light-head training
+costs are labeled a new probe and do not fill the missing original wall times.
 
 ## Limitations and approval
 

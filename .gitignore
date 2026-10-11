@@ -137,5 +137,6 @@ _res/
 /projects/stream_mc/results/selectivestream_r01_20261011/analysis/*_paired_predictions.csv
 /projects/stream_mc/results/public_input_reproduction/
 /projects/stream_mc/results/public_alias_replay/
-!/projects/stream_mc/evidence/r01_numeric_evidence.zip
+# Assembled ZIP exceeds common Git-host file limits. Exact binary parts are tracked.
+/projects/stream_mc/evidence/r01_numeric_evidence.zip
 !/projects/stream_mc/results/selectivestream_r01_20261011/training_sources.zip

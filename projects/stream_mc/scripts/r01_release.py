@@ -47,11 +47,12 @@ def input_kit(cfg,out):
     pd.DataFrame(event_rows).to_csv(dest/'events.csv',index=False)
     # The input export is checked elementwise, not declared equivalent by construction alone.
     with np.load(dest/'bounded_edges.npz',allow_pickle=False) as recovered:
+        recovered_edges=recovered['edges'];recovered_offsets=recovered['edge_offsets'];recovered_nodes=recovered['node_counts']
         i=0
         for split in ('train','validation','test'):
             for graph in cache['graphs'][split]:
-                assert np.array_equal(graph.edge_index.numpy(),recovered['edges'][:,recovered['edge_offsets'][i]:recovered['edge_offsets'][i+1]])
-                assert graph.num_nodes==recovered['node_counts'][i];i+=1
+                assert np.array_equal(graph.edge_index.numpy(),recovered_edges[:,recovered_offsets[i]:recovered_offsets[i+1]])
+                assert graph.num_nodes==recovered_nodes[i];i+=1
     assert [aliases[i] for i in ids]==sorted(aliases.values()),'alias tie ordering changed'
     write(dest/'transform.json',{'source_cache_sha256':sha256(ROOT/cfg['graph_cache']),'N_snapshots':len(meta),'edge_and_node_roundtrip':'exact elementwise',
         'split_and_graph_order':'preserved','reference_tie_order':'global lexicographic original sample_id rank, zero-padded within each chain; verified order preserved',
@@ -93,6 +94,8 @@ def main():
     for path in sorted((PROJECT/'configs').glob('*.yaml')):include(path,'configs/'+path.name)
     include(PROJECT/'configs/author_declarations_r01.json','configs/author_declarations_r01.json')
     include(PROJECT/'requirements-parquet.txt','environment/requirements-parquet.txt')
+    probe=PROJECT/'results/public_input_reproduction/training_cost_probe.json'
+    if probe.is_file():include(probe,'replication/seed11_alias_input_training_cost_probe.json')
     tex_version=subprocess.check_output(['pdflatex','--version'],text=True)
     bib_version=subprocess.check_output(['bibtex','--version'],text=True)
     payload['environment/tex_versions.txt']=(tex_version+'\n'+bib_version).encode()
@@ -133,7 +136,9 @@ def main():
     code_paths=runners+list((ROOT/'src/gog_fraud/streaming').glob('*.py'))+list((ROOT/'src/gog_fraud/data/io').glob('*.py'))+list((ROOT/'src/gog_fraud/data/level2').glob('*.py'))+list((ROOT/'tests/stream_mc').rglob('*.py'))+[ROOT/'src/gog_fraud/__init__.py']
     code_hashes={str(path.relative_to(ROOT)):sha256(path) for path in code_paths}
     for path in code_paths:include(path,'code/'+str(path.relative_to(ROOT)))
-    for path in PROJECT.glob('*.md'):include(path,'documentation/'+path.name)
+    for path in PROJECT.glob('*.md'):
+        # Closure receipts bind this archive's hash and live separately.
+        if path.name not in ('CLOSURE_R01.md','CLAIM_LEDGER.md'):include(path,'documentation/'+path.name)
     for path in (PROJECT/'protocols').glob('*'):
         if path.is_file():include(path,'protocols/'+path.name)
     manifest={'run_id':cfg['run_id'],'revision_id':cfg['revision_id'],'files':{name:{'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()} for name,data in sorted(payload.items())},
@@ -148,7 +153,14 @@ def main():
     with zipfile.ZipFile(archive,'w') as bundle:
         for name,data in sorted(payload.items()):archive_write(bundle,name,data)
         archive_write(bundle,'release_manifest.json',(json.dumps(manifest,sort_keys=True,indent=2)+'\n').encode())
-    write(evidence/'r01_release.json',{'run_id':cfg['run_id'],'archive_sha256':sha256(archive),'archive_bytes':archive.stat().st_size,'file_count':len(payload),'source_hashes':code_hashes,'hosted_public_release':False})
+    parts=[];part_limit=90*2**20
+    with archive.open('rb') as source:
+        index=1
+        while block:=source.read(part_limit):
+            name=f'r01_numeric_evidence.zip.part{index:03d}';(evidence/name).write_bytes(block)
+            parts.append({'name':name,'bytes':len(block),'sha256':hashlib.sha256(block).hexdigest()});index+=1
+    write(evidence/'r01_release.json',{'run_id':cfg['run_id'],'archive_sha256':sha256(archive),'archive_bytes':archive.stat().st_size,'file_count':len(payload),'source_hashes':code_hashes,'hosted_public_release':False,
+        'parts':parts,'parts_format':'binary concatenation in listed order','git_distribution':'only <=90MiB binary parts and this exact manifest are tracked; assembled ZIP is ignored and recreated after clone'})
     # Local manifest checks actual original artifacts, separately from the curated derivative archive.
     files={str(p.relative_to(out)):sha256(p) for p in sorted(out.rglob('*')) if p.is_file() and p.name not in ('release_manifest.json','checksums.sha256') and '.checkpoint' not in p.name and p.suffix!='.tmp'}
     write(out/'release_manifest.json',{'run_id':cfg['run_id'],'config_sha256':sha256(CONFIG),'files':files,'public_archive_sha256':sha256(archive),'exclusions':'manifest itself, checksums sidecar, transient/opaque checkpoints; paper bytes are linked through separate build audit'})

@@ -11,7 +11,7 @@ def main():
     import torch
     out=output();report={'scope':'actual same-host seed11 alias-input reconstruction/rerun; distinct identities, not independent external review or prospective source reconstruction','score_tolerance':1e-6}
     if args.mode in ('retrain','all'):
-        replica=PROJECT/'results/public_input_reproduction/models';records=[]
+        replica=PROJECT/'results/public_input_reproduction/models';records=[];control_records=[]
         paths=sorted(replica.glob('*/complete.json'))
         assert len(paths)==5,'expected actual seed11 pooled GIN/GATv2 plus three source-only fits'
         for completed in paths:
@@ -28,7 +28,17 @@ def main():
             for name in ('local.pt','relational.pt'):
                 a=torch.load(old/name,map_location='cpu',weights_only=False)['state_dict'];b=torch.load(new/name,map_location='cpu',weights_only=False)['state_dict']
                 assert a.keys()==b.keys() and all(torch.equal(a[k],b[k]) for k in a),'parameter tensor difference: '+new.name+'/'+name
+            if (new/'controls.pt').is_file():
+                for method in ('degree_logistic','degree_MLP','relational_MLP','knn_mean'):
+                    a=pd.read_parquet(old/f'{method}_predictions.parquet');b=pd.read_parquet(new/f'{method}_predictions.parquet')
+                    assert len(a)==len(b) and np.array_equal(a.label,b.label)
+                    difference=max(float(np.max(np.abs(a[c].to_numpy()-b[c].to_numpy()))) for c in ('raw_probability','probability'))
+                    changes=int(np.sum(a.prediction.to_numpy()!=b.prediction.to_numpy()))
+                    assert difference<=1e-6 and changes==0,(method,difference,changes)
+                    control_records.append({'model_id':new.name,'control':method,'N':len(a),'max_score_difference':difference,'label_disagreements':changes,
+                        'original_prediction_sha256':sha256(old/f'{method}_predictions.parquet'),'replica_prediction_sha256':sha256(new/f'{method}_predictions.parquet')})
         report['retraining']={'N_completed_models':5,'seeds':[11],'prediction_comparisons':records,'local_and_relational_parameter_tensors_bit_identical':True,'checkpoint_file_bytes_not_equal_expected':'new timing/run/alias metadata, not numerical weight tensors',
+            'light_control_prediction_comparisons':control_records,
             'light_head_training_probe_sha256':sha256(PROJECT/'results/public_input_reproduction/training_cost_probe.json'),'original_light_head_training_wall_time_still_unrecorded':True}
     if args.mode in ('replay','all'):
         old=out/'runtime/prefix_margin_repeat0/event_trace.csv';new=PROJECT/'results/public_alias_replay/runtime/prefix_margin_repeat0/event_trace.csv'

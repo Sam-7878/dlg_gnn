@@ -6,7 +6,10 @@ import hashlib
 import io
 import json
 import math
+import os
+import re
 import statistics
+import tempfile
 import zipfile
 from pathlib import Path
 
@@ -55,8 +58,39 @@ def holm(values):
     return adjusted
 
 
+def ensure_archive(path=EVIDENCE,expected_path=None):
+    """Assemble ignored local ZIP from hash-checked Git-sized binary parts."""
+    path=Path(path)
+    expected_path=expected_path or PROJECT/'evidence/r01_release.json'
+    expected=json.loads(Path(expected_path).read_text())
+    if path.is_file():return path
+    parts=expected.get('parts',[])
+    require(parts and expected.get('parts_format')=='binary concatenation in listed order','missing evidence ZIP or supported parts')
+    path.parent.mkdir(parents=True,exist_ok=True)
+    temporary=None
+    try:
+        with tempfile.NamedTemporaryFile(prefix='.r01_assemble_',suffix='.tmp',dir=path.parent,delete=False) as handle:
+            temporary=Path(handle.name);total=hashlib.sha256();size=0
+            for index,part in enumerate(parts,1):
+                require(part['name']==f'r01_numeric_evidence.zip.part{index:03d}' and re.fullmatch(r'r01_numeric_evidence\.zip\.part[0-9]{3}',part['name']),'unsafe/noncontiguous part name')
+                source=path.parent/part['name'];require(source.is_file(),'missing evidence part '+part['name'])
+                digest=hashlib.sha256();count=0
+                with source.open('rb') as member:
+                    for block in iter(lambda:member.read(2**20),b''):
+                        digest.update(block);total.update(block);handle.write(block);count+=len(block);size+=len(block)
+                require(count==part['bytes'] and digest.hexdigest()==part['sha256'],'part SHA/size mismatch: '+part['name'])
+            require(size==expected['archive_bytes'] and total.hexdigest()==expected['archive_sha256'],'assembled evidence SHA/size mismatch')
+            handle.flush();os.fsync(handle.fileno())
+        os.replace(temporary,path)
+        temporary=None
+    finally:
+        if temporary is not None:temporary.unlink(missing_ok=True)
+    return path
+
+
 def verified_archive(path=EVIDENCE,expected_path=None):
     expected_path=expected_path or PROJECT/'evidence/r01_release.json'
+    path=ensure_archive(path,expected_path)
     expected=json.loads(Path(expected_path).read_text());require(path.is_file(),'missing R01 evidence ZIP')
     require(sha(path.read_bytes())==expected['archive_sha256'],'archive SHA-256 mismatch')
     archive=zipfile.ZipFile(path);names=archive.namelist()
