@@ -1,0 +1,28 @@
+[
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_identity_audit.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_00.log",
+    "log_sha256": "774a5c7513783d7c496a8ee63b1c97b614402c894b8399746463d76840226875",
+    "seconds": 24.853338956832886
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/stream_mc",
+      "--junitxml=/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/results/selectivestream_r01_20261011/audits/pytest_final.xml"
+    ],
+    "exit_code": 1,
+    "log": "execution_logs/final_01.log",
+    "log_sha256": "7800826d3943c9c41a7408a7308e6745eea7d8494ce2de7f4cf30e1f69e2e6e1",
+    "seconds": 31.311694383621216
+  }
+]

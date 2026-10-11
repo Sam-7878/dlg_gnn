@@ -1,0 +1,21 @@
+{
+  "analysis_status": "revision plan recorded after historical test review; not prospective preregistration",
+  "config_sha256": "d9b40dcdbfb82b92f3277ea167560bfe3a60ed2223f40dfba40f4a0ee3f34b41",
+  "input_snapshot_sha256": "e1cd9b05a336ccf7a97f6929f78c5364d478a2f191fb94bae0f039ac99b03992",
+  "inputs": {
+    "graph_cache": "0fff3b048f96554976061a5f8c781db24e6a08c3cd32bd6737caf81fc648a72e",
+    "historical_registry": "83c022f26f8bc2ad9d00f0de0c835202683bc85792cb043b42a06c543159e2b2",
+    "raw_events": "317798d945baa95ad23622418a39d0ceb0a3a840b787440e1b7226ff500f1dc9"
+  },
+  "review_input_archive_claimed_sha256": "6a0e13355016faa95a710d6512b2305817afae84a7ca32c20127733bc0b0cd14",
+  "review_zip_available": false,
+  "review_zip_note": "Directory snapshot has its own hash; do not claim byte identity with reviewed ZIP.",
+  "run_id": "selectivestream_r01_20261011",
+  "scientific_baseline_commit": "f9cf49d5469ff817b712ad2b80eac15d4f246fcc",
+  "scope": "retrospective contract snapshots and systems replay; label availability and raw edge time remain unknown",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r01_common.py": "f437b0bc340179c5669a2d6c72867f2db7079b518cf57b141282eeaee3944ef9",
+    "projects/stream_mc/scripts/r01_inventory.py": "7e6ae4615f47e3aca2b98427d1e2f9729f45e3ae0cd668a753608d20de208837",
+    "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+  }
+}

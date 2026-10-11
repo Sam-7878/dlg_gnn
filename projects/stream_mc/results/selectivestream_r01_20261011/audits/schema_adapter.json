@@ -1,0 +1,22 @@
+{
+  "contract_predictions": {
+    "contract_id": "public sample_key is SHA256 original chain-qualified sample ID; transformed IDs are not original addresses",
+    "feature_max_event_time": "unknown in snapshot input kit; live replay accepted event timestamps distinct",
+    "label_available_time": "unknown; CSV missing value, never imputed",
+    "local_logit": "pre-sigmoid logit not persisted; clipped probability log-odds is derivable but not the original exact raw logit",
+    "policy_fit_data_max_time": "per-model calibration_data_max_time; reused source validation",
+    "relational_logit": "pre-sigmoid logit not persisted; stored counterfactual_full_raw_probability is a sigmoid probability, not an actual selected-branch logit",
+    "route_score": "derivable from frozen family formula and local probability/benefit features; route_threshold recorded",
+    "snapshot_cutoff": "retained event_end",
+    "split_id": "test in paired_predictions filename; source validation records separately named"
+  },
+  "event_trace": {
+    "checkpoint_id": "hash of actual persisted checkpoint at50000; replay cursor every event",
+    "dropped": "none silently dropped; accepted false + rejection_reason separates duplicate/late; rejected_events in summary",
+    "eviction_reason": "state cumulative counters sampled; individual eviction ID is not retained",
+    "gpu": "allocated/reserved every event; utilization percent not sampled",
+    "rss": "system_trace every1000events and last, not every event",
+    "source_read": "100000-row preload outside scoring clock; source population bookkeeping is unbounded harness, not bounded engine"
+  },
+  "scope": "adapter identifies provided/derived/unknown/sampled fields; not fabricated fully populated required schema"
+}

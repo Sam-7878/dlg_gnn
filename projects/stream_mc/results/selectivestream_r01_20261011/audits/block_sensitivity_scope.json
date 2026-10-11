@@ -1,0 +1,13 @@
+{
+  "day_analysis": "post-hoc exploratory500 draws; few days, not robust graph/temporal dependence adjustment",
+  "day_block_counts": [
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "month_block_count": 1,
+  "month_bootstrap_informative": false,
+  "month_intervals": "degenerate, not uncertainty evidence"
+}

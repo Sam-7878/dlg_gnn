@@ -1,0 +1,76 @@
+[
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_identity_audit.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_00.log",
+    "log_sha256": "774a5c7513783d7c496a8ee63b1c97b614402c894b8399746463d76840226875",
+    "seconds": 24.093376636505127
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/stream_mc",
+      "--junitxml=/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/results/selectivestream_r01_20261011/audits/pytest_final.xml"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_01.log",
+    "log_sha256": "cc5d6508b3f659975c6315df0db273aa09dfe222e5fe40cc9eb8ac1ba098fc1e",
+    "seconds": 30.02279782295227
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_validate.py",
+      "--mode",
+      "fixtures"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_02.log",
+    "log_sha256": "d488068dbc5c19981546fda6faa1774cc978f4962fc34e8028c2eec6c6252850",
+    "seconds": 0.97117018699646
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_stress.py",
+      "--mode",
+      "restart"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_03.log",
+    "log_sha256": "fb3b1fdf6aa7dbe53097517da9eba852b9838f027767dc6082b61451fc818161",
+    "seconds": 101.24040818214417
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_controls_timing.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/final_04.log",
+    "log_sha256": "c3320a7b3fe8afca797158df799c8eeaf25f4927b24ee87484925818c70cd640",
+    "seconds": 117.4270658493042
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_final_audits.py"
+    ],
+    "exit_code": 1,
+    "log": "execution_logs/final_05.log",
+    "log_sha256": "3b49dbd7d1e8c3988189a211f907eec6be8a9afb4e5d88ea7c4a02d75ef95392",
+    "seconds": 30.349649906158447
+  }
+]

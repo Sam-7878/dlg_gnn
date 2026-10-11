@@ -1,0 +1,6 @@
+{
+  "N_cells": 540,
+  "cost": "actual batched local + retrieval + only selected relational forward; no deep-fraction proxy",
+  "device": "cuda:0",
+  "source_sha256": "5bbce34c54d97f4139aff73a333b8f6164950caa20b992bca325d00624502528"
+}

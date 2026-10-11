@@ -1,0 +1,10 @@
+{
+  "N_actual_runtime_runs": 540,
+  "N_fitted_policy_cells": 180,
+  "counterfactual_full_scores_distinguished_from_selected_execution": true,
+  "label_disagreements": 0,
+  "max_score_difference": 4.282488369478088e-07,
+  "measurement_run_id": "selectivestream_r01_20261011_offline_v2",
+  "route_disagreements": 0,
+  "score_tolerance": 1e-06
+}

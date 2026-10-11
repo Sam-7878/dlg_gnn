@@ -1,0 +1,394 @@
+[
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_source_freeze.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_00.log",
+    "log_sha256": "f9807f051b077844fae0bbd9b06861b1b8af0a438fc4c8835f2a92d14a0d82e3",
+    "seconds": 0.3250153064727783
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/stream_mc",
+      "--junitxml=/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/results/selectivestream_r01_20261011/audits/pytest.xml"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_01.log",
+    "log_sha256": "1b705422e282cbcf6e77b647643718c7de931a53a8f344736b484b4460626a3e",
+    "seconds": 35.43342089653015
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_validate.py",
+      "--mode",
+      "fixtures"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_02.log",
+    "log_sha256": "683eb41d2fd645479ad11926edd28670749c94214e8b328ebb524c471952a3cb",
+    "seconds": 0.3546438217163086
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_analysis.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_03.log",
+    "log_sha256": "7403f01cf17efecb68c238644a375a91642cbb916a2977b7fb4630a41cf2506d",
+    "seconds": 62.22213125228882
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_stress.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_04.log",
+    "log_sha256": "7e610419093e3b6a9c1ec22714356e3150439433c6ff8c148124112cb236fcd9",
+    "seconds": 122.56187033653259
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "offline"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_05.log",
+    "log_sha256": "a5654f0ad7ce08151963026e4290ac184eca0ea79de6f65767680b5190e09a9c",
+    "seconds": 560.1363954544067
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "local",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_06.log",
+    "log_sha256": "a5dfb3bd506420778f551e6687699016ae0a585e87abb73a3052b6cede2c45b2",
+    "seconds": 28.10886526107788
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "local",
+      "--repeat",
+      "1"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_07.log",
+    "log_sha256": "5b2d0dd77ebeb4001cf9b2661dd70321f2fe238a761bbd146dadfd89a30eeae1",
+    "seconds": 29.609763622283936
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "local",
+      "--repeat",
+      "2"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_08.log",
+    "log_sha256": "4e4fa6f03dfbebb33de730e6289a8df37612bdb345cf4d800dcb014a3cf69b59",
+    "seconds": 29.364768743515015
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "local",
+      "--repeat",
+      "3"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_09.log",
+    "log_sha256": "831c9a80754f80998ce47f73a46175fae40e4ace8ca0a777e599de4225ac469d",
+    "seconds": 27.95828366279602
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "local",
+      "--repeat",
+      "4"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_10.log",
+    "log_sha256": "c42c19ccfa8fa775bd58da6f39849ce20a8f9743d7a73f6d1f70ba6c4e17630a",
+    "seconds": 34.59415054321289
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "margin",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_11.log",
+    "log_sha256": "22c0e09045ff49c2b9c3bc94ffd69ef4d8cc9760e2ad36d4d381307035dcf453",
+    "seconds": 42.82420802116394
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "margin",
+      "--repeat",
+      "1"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_12.log",
+    "log_sha256": "cd0f39e9732de096339c6bf8d9c758dc7c2a1b16e36d844cf6df4cb2e6dccf79",
+    "seconds": 44.57072472572327
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "margin",
+      "--repeat",
+      "2"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_13.log",
+    "log_sha256": "75cec03f944b869a921a09a7ba841a59dffadd949531beb6caa1026486a2b5db",
+    "seconds": 46.970261335372925
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "margin",
+      "--repeat",
+      "3"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_14.log",
+    "log_sha256": "4848c6cf5ff7833c6d05043e11de8ef1ba5f5ad746b129b29d8f46678843a7f7",
+    "seconds": 40.81785702705383
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "margin",
+      "--repeat",
+      "4"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_15.log",
+    "log_sha256": "12da7dce2153ba907094a1763ff770c53d10da06f9a56c4caa5f9f89d7868b02",
+    "seconds": 41.070716857910156
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "full",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_16.log",
+    "log_sha256": "97157bd23ab0406f4eb2e2d7481aacc577e44f2be97dddc42db9b048efd44a41",
+    "seconds": 39.86018657684326
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "full",
+      "--repeat",
+      "1"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_17.log",
+    "log_sha256": "369f866e21f2605dceb483831abc9705c9967a3e1e618667486ce56b64edbce8",
+    "seconds": 34.089935541152954
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "full",
+      "--repeat",
+      "2"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_18.log",
+    "log_sha256": "e3f3af49034a0f7a38ff93a36d96af677b83374e1fd83449705621ee4fc0539d",
+    "seconds": 36.81245398521423
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "full",
+      "--repeat",
+      "3"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_19.log",
+    "log_sha256": "a4e1ef7d7b26970f3d85ddd9257de568909f0a4d2e5ed0a5a340b247da993774",
+    "seconds": 39.054428815841675
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "prefix",
+      "--policy",
+      "full",
+      "--repeat",
+      "4"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_20.log",
+    "log_sha256": "3eb7ac6115fc0d188ee4eb511922d5a4f09b9743258d95f2aeb32ecde12daa4e",
+    "seconds": 37.12416124343872
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "long",
+      "--policy",
+      "local",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_21.log",
+    "log_sha256": "6dc002551fe4353f0f32668c7adef7499321d1ce326f80996cc8a84dadb0c3b5",
+    "seconds": 406.3351843357086
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "long",
+      "--policy",
+      "margin",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_22.log",
+    "log_sha256": "e43c7cbf36764d19ce2d1b94823025f3a959dffa9296e049965c23106532e866",
+    "seconds": 1107.4802904129028
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_replay.py",
+      "--mode",
+      "long",
+      "--policy",
+      "full",
+      "--repeat",
+      "0"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/all_23.log",
+    "log_sha256": "4d57a18ce48cf3fa5d62adde526e3a3ff66c50b53cf82a6f181edeaa44f97c7c",
+    "seconds": 1052.9649307727814
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_generate.py",
+      "--paper"
+    ],
+    "exit_code": 1,
+    "log": "execution_logs/all_24.log",
+    "log_sha256": "78bfad81c55a137a7fab82f10be839db3b7a3886dacee019e2c80d846880614f",
+    "seconds": 0.09310722351074219
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "N_cells": 180,
+  "frontier": "actual v2 selected forwards; AP recomputed from those scores; no event timings or subjects mixed",
+  "max_abs_AP_difference": 0.0026986506746625727,
+  "primary_snapshot_statistics": "archived canonical counterfactual-full scores composed with frozen route",
+  "scope": "within-guard float32 batch score changes can rearrange tied/near-tied rankings; AP need not be bit identical"
+}

@@ -1,0 +1,39 @@
+{
+  "amended_engine_sha256": "681aa4bbf22de72ade8a2f36c816d8ab3bec304b8d675db32483e508490541a7",
+  "amendment": "constructor validates original weight/reference bytes and includes full policy-fit file SHA for all lanes; predict removes retrieval fallback metadata before composing final timeout/invalid-score outcome; numeric scoring and routing unchanged",
+  "checkpoint_identity_schema": 2,
+  "compared_methods": [
+    "SelectivePredictor/predict",
+    "SelectivePredictor/predict_batch",
+    "SelectivePredictor/route",
+    "SelectivePredictor/synchronize",
+    "SelectiveReplayEngine/__init__",
+    "SelectiveReplayEngine/checkpoint",
+    "SelectiveReplayEngine/process",
+    "SelectiveReplayEngine/restore"
+  ],
+  "non_constructor_AST_identical_after_explicit_fallback_metadata_normalization": true,
+  "normalized_expression": "audit.pop('fallback',None); removes retrieval metadata overwrite, not numerical scoring",
+  "observations": [
+    {
+      "case": "full-lane calibration-only change",
+      "error": "checkpoint identity mismatch",
+      "rejected": true
+    },
+    {
+      "case": "local.pt bytes changed",
+      "error": "model artifact SHA-256 mismatch",
+      "rejected": true
+    },
+    {
+      "case": "reference.npz bytes changed",
+      "error": "reference artifact SHA-256 mismatch",
+      "rejected": true
+    }
+  ],
+  "restart_scope": "rerun before/during/after local-file failure separately under amended identity; see restart_audit.json",
+  "run_id": "selectivestream_r01_20261011",
+  "runtime_scope": "original 540 offline +18 event runs timed v1; v2 identity amendment is not retroactively described as timed",
+  "timed_engine_v1_sha256": "8e4e8ce7c41a750298bf2032c3c3cc12691379cccc19742ca3c56197c8ae4c27",
+  "timed_runtime_source_archive_sha256": "e6430e545abe62dd04bf6e82c60d46a372c4ed9363468242e9f958632035e397"
+}

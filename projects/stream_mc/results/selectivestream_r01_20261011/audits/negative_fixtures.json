@@ -1,0 +1,67 @@
+[
+  {
+    "actual_exit_code": 1,
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py",
+      "--negative-case",
+      "hash_mismatch"
+    ],
+    "detected": true,
+    "error": "SHA-256 mismatch: payload.csv",
+    "fixture": "hash_mismatch",
+    "stderr_excerpt": "Traceback (most recent call last):\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 103, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 93, in main\n    if args.negative_case:negative_case(args.negative_case);return\n                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 79, in negative_case\n    if name=='hash_mismatch':hashes(base,{'payload.csv':'0'*64})\n                             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 18, in hashes\n    if sha256(path)!=expected:raise ValueError('SHA-256 mismatch: '+name)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: SHA-256 mismatch: payload.csv\n"
+  },
+  {
+    "actual_exit_code": 1,
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py",
+      "--negative-case",
+      "missing_input"
+    ],
+    "detected": true,
+    "error": "missing artifact: absent.csv",
+    "fixture": "missing_input",
+    "stderr_excerpt": "Traceback (most recent call last):\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 103, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 93, in main\n    if args.negative_case:negative_case(args.negative_case);return\n                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 80, in negative_case\n    elif name=='missing_input':hashes(base,{'absent.csv':'0'*64})\n                               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 17, in hashes\n    if not path.is_file():raise ValueError('missing artifact: '+name)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: missing artifact: absent.csv\n"
+  },
+  {
+    "actual_exit_code": 1,
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py",
+      "--negative-case",
+      "mixed_experiment_id"
+    ],
+    "detected": true,
+    "error": "mixed experiment/run identity",
+    "fixture": "mixed_experiment_id",
+    "stderr_excerpt": "_validate.py\", line 93, in main\n    if args.negative_case:negative_case(args.negative_case);return\n                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 81, in negative_case\n    elif name=='mixed_experiment_id':identity([{'run_id':'r','experiment_id':'pooled'},{'run_id':'r','experiment_id':'loco_eth'}],'r','pooled')\n                                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 23, in identity\n    if any(r['run_id']!=expected_run or r['experiment_id']!=expected_experiment for r in records):raise ValueError('mixed experiment/run identity')\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: mixed experiment/run identity\n"
+  },
+  {
+    "actual_exit_code": 1,
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py",
+      "--negative-case",
+      "missing_tikz"
+    ],
+    "detected": true,
+    "error": "TeX build failed (1): main.tex",
+    "fixture": "missing_tikz",
+    "stderr_excerpt": "ojects/stream_mc/scripts/r01_validate.py\", line 103, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 93, in main\n    if args.negative_case:negative_case(args.negative_case);return\n                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 85, in negative_case\n    clean_build(base,'main.tex',base/'logs')\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 43, in clean_build\n    (destination/(stem+'.failed.log')).write_text('\\n'.join(output_text));raise ValueError(f'TeX build failed ({result.returncode}): {entry}')\n                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: TeX build failed (1): main.tex\n"
+  },
+  {
+    "actual_exit_code": 1,
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py",
+      "--negative-case",
+      "missing_table"
+    ],
+    "detected": true,
+    "error": "TeX build failed (1): main.tex",
+    "fixture": "missing_table",
+    "stderr_excerpt": "ojects/stream_mc/scripts/r01_validate.py\", line 103, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 93, in main\n    if args.negative_case:negative_case(args.negative_case);return\n                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 85, in negative_case\n    clean_build(base,'main.tex',base/'logs')\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r01_validate.py\", line 43, in clean_build\n    (destination/(stem+'.failed.log')).write_text('\\n'.join(output_text));raise ValueError(f'TeX build failed ({result.returncode}): {entry}')\n                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: TeX build failed (1): main.tex\n"
+  }
+]

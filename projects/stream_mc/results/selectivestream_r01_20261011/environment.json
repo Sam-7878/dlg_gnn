@@ -1,0 +1,26 @@
+{
+  "cuda": "13.0",
+  "executable": "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+  "gpus": [
+    {
+      "bytes": 25769279488,
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 3090"
+    },
+    {
+      "bytes": 8585216000,
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    }
+  ],
+  "numpy": "2.5.3",
+  "os_release": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+  "pandas": "3.0.6",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "pyg": "2.8.0.post1",
+  "pygod": "1.1.0",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "torch": "2.14.1+cu130"
+}

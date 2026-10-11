@@ -1,0 +1,12 @@
+{
+  "analysis_scope": "descriptive after historical test inspection",
+  "bootstrap": "paired class-stratified contract; separate 500 replicate month-block sensitivity",
+  "completed_model_identities": 25,
+  "expected": 25,
+  "metric": "sklearn average_precision_score, not trapezoidal PR-AUC",
+  "negative_only_AP_F1_undefined": true,
+  "paired_family_size": 5,
+  "pooled_GIN_seed_count": 5,
+  "registry_hash": "2b177d1effbb6d399a8cc4d17cae93e198571bdce05eb47e434215d4bea45cbf",
+  "seed_mean_not_pooled_predictions": true
+}

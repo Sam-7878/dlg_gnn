@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "42afdc50a75705e920cb71b00fb7a4654f0c75c97e7ad624698e398c8c29fd6e",
+  "baseline_commit": "f9cf49d5469ff817b712ad2b80eac15d4f246fcc",
+  "development_sidecar_hashes_in_model_records": "workspace snapshot at process start; not all were imported by training",
+  "dirty_revision_source_hashes": {
+    "projects/stream_mc/scripts/r01_common.py": "1aff6c506e48ec145e7350280e6b4325ed802cff1424200a044ed4217a0f1f9b",
+    "projects/stream_mc/scripts/r01_train.py": "438df9ac7fe26953df3ddf27298d246d0fb328d2de7b4fea16a3d7d992f31a63",
+    "src/gog_fraud/data/level2/relation_builder.py": "653393b1ed5404717713d3913ace74f35b4fd2ba6440d78f164abe0500b351f0",
+    "src/gog_fraud/streaming/selective.py": "d7b5c1bd4cd003c5b2d1d030cfbc658310ecebe86da2497f47cbe8eb07fd14d7"
+  },
+  "not_claimed_clean_commit": true,
+  "run_id": "selectivestream_r01_20261011",
+  "scope": "four execution-critical project/core training sources verified against all 25 process-start records"
+}

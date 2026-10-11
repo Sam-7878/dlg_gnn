@@ -1,0 +1,87 @@
+{
+  "N_cells": 180,
+  "N_cells_over_initial_1e6_guard": 31,
+  "fresh_execution_trials": [
+    {
+      "deterministic_algorithms": false,
+      "difference_from_expected": 0.0003579564569771293,
+      "local_embedding_block_difference": 6.866455078125e-05,
+      "local_raw_block_difference": 1.1920928955078125e-07,
+      "repeat": 0,
+      "score": 0.04214945638758392,
+      "target_route": true,
+      "torch_threads": 16
+    },
+    {
+      "deterministic_algorithms": false,
+      "difference_from_expected": 0.0003579564569771293,
+      "local_embedding_block_difference": 5.340576171875e-05,
+      "local_raw_block_difference": 1.1920928955078125e-07,
+      "repeat": 1,
+      "score": 0.04214945638758392,
+      "target_route": true,
+      "torch_threads": 16
+    },
+    {
+      "deterministic_algorithms": false,
+      "difference_from_expected": 0.0003579743645880512,
+      "local_embedding_block_difference": 6.866455078125e-05,
+      "local_raw_block_difference": 1.6391277313232422e-07,
+      "repeat": 2,
+      "score": 0.04214947429519484,
+      "target_route": true,
+      "torch_threads": 16
+    },
+    {
+      "deterministic_algorithms": true,
+      "difference_from_expected": 0.0,
+      "local_embedding_block_difference": 0.0,
+      "local_raw_block_difference": 0.0,
+      "repeat": 0,
+      "score": 0.04179149993060679,
+      "target_route": true,
+      "torch_threads": 1
+    },
+    {
+      "deterministic_algorithms": true,
+      "difference_from_expected": 0.0,
+      "local_embedding_block_difference": 0.0,
+      "local_raw_block_difference": 0.0,
+      "repeat": 1,
+      "score": 0.04179149993060679,
+      "target_route": true,
+      "torch_threads": 1
+    },
+    {
+      "deterministic_algorithms": true,
+      "difference_from_expected": 0.0,
+      "local_embedding_block_difference": 0.0,
+      "local_raw_block_difference": 0.0,
+      "repeat": 2,
+      "score": 0.04179149993060679,
+      "target_route": true,
+      "torch_threads": 1
+    }
+  ],
+  "global_max_score_difference": 0.0003579728689038983,
+  "prediction_disagreements": 0,
+  "route_disagreements": 0,
+  "scope": "same mathematical model/fit; audit local embedding/retrieval sensitivity to runtime determinism, not assumed just full/selected batch arithmetic",
+  "source_audit": "v1 offline() did not call seed_all(), unlike train_one() and replay(); deterministic flags/thread setting were not enforced in that process",
+  "status": "diagnostic observations; initial guard failure preserved, not an automatic PASS or performance equivalence assertion",
+  "worst_case": {
+    "actual_selected_score": 0.04214947279951069,
+    "cell": "seed55_random_q0.75_random0.npz",
+    "expected_score": 0.04179149993060679,
+    "final_threshold": 0.2478950384782007,
+    "full_forward_batch_size": 256,
+    "full_to_saved_raw_difference": 0.0,
+    "raw_batch_difference": 0.0,
+    "recomposed_selected_to_actual_score_difference": 0.0003579728689038983,
+    "reexecuted_full_raw_probability": 0.2560758888721466,
+    "reexecuted_selected_raw_probability": 0.2560758888721466,
+    "row_index": 2195,
+    "saved_full_raw_probability": 0.2560758888721466,
+    "selected_forward_batch_size": 92
+  }
+}

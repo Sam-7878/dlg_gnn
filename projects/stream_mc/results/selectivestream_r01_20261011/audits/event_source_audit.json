@@ -1,0 +1,10 @@
+{
+  "N_events": 100000,
+  "N_unique_contracts": 3378,
+  "future_reference_violations": 0,
+  "label_scope": "contract research label inherited by event; not each-transfer fraud truth",
+  "provider_label_mismatch_events": 0,
+  "provider_label_missing_events": 0,
+  "raw_input_sha256": "317798d945baa95ad23622418a39d0ceb0a3a840b787440e1b7226ff500f1dc9",
+  "source_event_ids_duplicate_count": 0
+}

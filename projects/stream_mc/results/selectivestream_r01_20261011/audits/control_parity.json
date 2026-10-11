@@ -1,0 +1,7 @@
+{
+  "N_runs": 90,
+  "max_score_difference": 3.4520838620988314e-07,
+  "prediction_disagreements": 0,
+  "raw_trace_sha256": "21cfac43eb92c5ec09939cfcfc3a6e6f27d2e96fee2c2f72a82b6f011b9d9302",
+  "scope": "actual matched batch128 inference; light-control training wall time unavailable"
+}

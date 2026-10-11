@@ -1,0 +1,9 @@
+{
+  "GPU": "actual allocated/reserved measurements; no GPU-utilization percentage inferred",
+  "RSS": "sampled process high-water measurement; immutable input preload and instrumentation outside bounded core",
+  "identifier_limits": "characters, not encoded UTF-8 bytes",
+  "logical_state_payload": "fixed-width ASCII field accounting for tested source IDs; not exact Python object/RSS bytes, and not a Unicode allocation bound",
+  "reported_reference_and_index_component_bytes_are_not_additive": true,
+  "search_embeddings_and_tree_data_share_memory": true,
+  "shared_bytes": 8714240
+}

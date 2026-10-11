@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="29" time="28.624" timestamp="2026-10-11T11:19:45.082438+09:00" hostname="HS-4070"><testcase classname="tests.stream_mc.selection.test_router" name="test_dual_threshold_boundaries" time="0.000" /><testcase classname="tests.stream_mc.selection.test_router" name="test_risk_sensitive_routing_overrides_confidence" time="0.000" /><testcase classname="tests.stream_mc.selection.test_router" name="test_invalid_thresholds_rejected" time="0.000" /><testcase classname="tests.stream_mc.selection.test_router" name="test_threshold_tuning_is_validation_only" time="0.001" /><testcase classname="tests.stream_mc.streaming.test_bounded_state" name="test_subgraph_is_recent_bounded_and_snapshot_restores" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_bounded_state" name="test_embedding_cache_enforces_lru_ttl_and_versions" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_bounded_state" name="test_queue_keeps_higher_risk_under_backpressure_and_expires" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_bounded_state" name="test_relation_state_rejects_future_and_expires" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_engine" name="test_engine_emits_routing_trace_and_stable_prediction_hash" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_stateful_stream" name="test_replay_and_restore_are_equivalent" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_stateful_stream" name="test_malformed_records_are_quarantined" time="0.000" /><testcase classname="tests.stream_mc.streaming.test_stateful_stream" name="test_merged_multichain_stream_is_chronological" time="0.000" /><testcase classname="tests.stream_mc.test_public_numeric_r01" name="test_grouped_tie_average_precision" time="0.000" /><testcase classname="tests.stream_mc.test_public_numeric_r01" name="test_negative_support_remains_undefined" time="0.000" /><testcase classname="tests.stream_mc.test_public_numeric_r01" name="test_historical_exact_holm_family" time="0.000" /><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_empty_graph_abstains" time="0.179" /><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_cold_start_local_at_final_threshold" time="0.164" /><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_cache_miss_then_hit_loads_immutable_references" time="0.179" /><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_invalid_local_abstains" time="0.121" /><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_invalid_relational_falls_back_to_local" time="0.101"><failure message="AssertionError: assert ('' == 'invalid_relational_score'&#10;  &#10;  - invalid_relational_score)">predictor = &lt;gog_fraud.streaming.selective_engine.SelectivePredictor object at 0x7bb1d50d1a70&gt;
+
+    def test_invalid_relational_falls_back_to_local(predictor):
+        class Invalid(torch.nn.Module):
+            def forward(self,data):return torch.tensor([float('nan')])
+        predictor.deep=Invalid();result=predictor.predict(graph(),2**31)
+&gt;       assert result['fallback']=='invalid_relational_score' and result['escalated']
+E       AssertionError: assert ('' == 'invalid_relational_score'
+E         
+E         - invalid_relational_score)
+
+tests/stream_mc/test_selectivestream_fallbacks.py:52: AssertionError</failure></testcase><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_soft_timeout_before_relational" time="0.114"><failure message="AssertionError: assert ('' == 'soft_timeout...re_relational'&#10;  &#10;  - soft_timeout_before_relational)">predictor = &lt;gog_fraud.streaming.selective_engine.SelectivePredictor object at 0x7bb1d50ca8d0&gt;
+
+    def test_soft_timeout_before_relational(predictor):
+        predictor.timeout_seconds=1e-100;result=predictor.predict(graph(),2**31)
+&gt;       assert result['fallback']=='soft_timeout_before_relational' and not result['escalated']
+E       AssertionError: assert ('' == 'soft_timeout...re_relational'
+E         
+E         - soft_timeout_before_relational)
+
+tests/stream_mc/test_selectivestream_fallbacks.py:58: AssertionError</failure></testcase><testcase classname="tests.stream_mc.test_selectivestream_fallbacks" name="test_soft_timeout_after_relational" time="0.145"><failure message="AssertionError: assert ('' == 'soft_timeout...er_relational'&#10;  &#10;  - soft_timeout_after_relational)">predictor = &lt;gog_fraud.streaming.selective_engine.SelectivePredictor object at 0x7bb1d4e7d590&gt;
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7bb1d4efc510&gt;
+
+    def test_soft_timeout_after_relational(predictor,monkeypatch):
+        predictor.timeout_seconds=.55
+        ticks=iter([0.,.1,.2,.3,.4,.5,.6,.7,.8,.9])
+        monkeypatch.setattr(inference.time,'perf_counter',lambda:next(ticks))
+        result=predictor.predict(graph(),2**31)
+&gt;       assert result['fallback']=='soft_timeout_after_relational' and result['escalated']
+E       AssertionError: assert ('' == 'soft_timeout...er_relational'
+E         
+E         - soft_timeout_after_relational)
+
+tests/stream_mc/test_selectivestream_fallbacks.py:67: AssertionError</failure></testcase><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_exact_eligible_ties_and_self_exclusion" time="0.005" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_label_free_reference_and_invalid_fields" time="0.000" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_bn_frozen_during_dropout_only_and_mode_restored" time="0.026" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_negative_only_denominators_and_threshold_tie" time="0.065" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_state_capacity_ttl_dup_late_and_degree" time="0.007" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_cache_and_queue_caps" time="0.000" /><testcase classname="tests.stream_mc.test_selectivestream_r01" name="test_checkpoint_identity_and_hash_failures" time="0.001" /></testsuite></testsuites>

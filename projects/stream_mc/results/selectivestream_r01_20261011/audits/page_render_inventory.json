@@ -1,0 +1,157 @@
+[
+  {
+    "N_pages": 13,
+    "document": "preprint",
+    "page_images": [
+      {
+        "path": "paper/current/r01/visual/preprint/page-01.png",
+        "sha256": "4c717ba4d7c6ca49564181987803f2883224418005e12dd6bc93fd2ba5dce00d"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-02.png",
+        "sha256": "4bb8317b774b1264a7832b68807475e9dd6dd0bb079645264fe4499716640908"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-03.png",
+        "sha256": "74c3f5e5a40b28d53aa9c5b393c6117e19ed5e1910d869e154bb49a865d6599c"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-04.png",
+        "sha256": "296f3a3badaf9f25af14deab0ca0094551a6d6e6e20a27e3a28aa980812ecaca"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-05.png",
+        "sha256": "a3db5df604e444f9cfd45cf8a4e899c341ea4c941040680b916992f35b2080a4"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-06.png",
+        "sha256": "5f6bce90185043815d1e913cce666e96b846993c7ea0c00af6e2f41d257e4e66"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-07.png",
+        "sha256": "1f02e05f777e0c9e92c8e896bd400986229bd1af4424b91bb3ca950a6ac89737"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-08.png",
+        "sha256": "e688129de9b9253dd5d01ca35c64fed396f78ee57915eaa64647833f091e3f73"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-09.png",
+        "sha256": "4c87d36a45865b7b18b57d01f7f1595315dc8968a1d0789f4746efaac4a9c4cf"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-10.png",
+        "sha256": "3f20c51e3a0ee513984dc8adcd45148722d01f442e7085fd7d0cf5c2eb81d0b0"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-11.png",
+        "sha256": "c253088e862825c30d4be0c09b2789bb02f17e946dedd28369bbc719c98a0c4e"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-12.png",
+        "sha256": "7d2ad375849080f136cbeb93fb202da482df498be2281457ed79ce26d4d6b6f2"
+      },
+      {
+        "path": "paper/current/r01/visual/preprint/page-13.png",
+        "sha256": "5755a276c913711c392c3cff1844faa24275f8fc51583866f0ee419e42fd17ef"
+      }
+    ],
+    "pdf_sha256": "d79c60cefcf9c5dc577c10496147d1c50ea9d23b8f8954b28deb32ad09f87d63",
+    "render_dpi": 110,
+    "rendering_is_not_visual_approval": true
+  },
+  {
+    "N_pages": 13,
+    "document": "journal",
+    "page_images": [
+      {
+        "path": "paper/current/r01/visual/journal/page-01.png",
+        "sha256": "6384e8fc1de5dc566562652460e89b458b02145a88976518795fd60c7bca3ed5"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-02.png",
+        "sha256": "4bb8317b774b1264a7832b68807475e9dd6dd0bb079645264fe4499716640908"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-03.png",
+        "sha256": "74c3f5e5a40b28d53aa9c5b393c6117e19ed5e1910d869e154bb49a865d6599c"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-04.png",
+        "sha256": "296f3a3badaf9f25af14deab0ca0094551a6d6e6e20a27e3a28aa980812ecaca"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-05.png",
+        "sha256": "a3db5df604e444f9cfd45cf8a4e899c341ea4c941040680b916992f35b2080a4"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-06.png",
+        "sha256": "5f6bce90185043815d1e913cce666e96b846993c7ea0c00af6e2f41d257e4e66"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-07.png",
+        "sha256": "1f02e05f777e0c9e92c8e896bd400986229bd1af4424b91bb3ca950a6ac89737"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-08.png",
+        "sha256": "e688129de9b9253dd5d01ca35c64fed396f78ee57915eaa64647833f091e3f73"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-09.png",
+        "sha256": "4c87d36a45865b7b18b57d01f7f1595315dc8968a1d0789f4746efaac4a9c4cf"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-10.png",
+        "sha256": "3f20c51e3a0ee513984dc8adcd45148722d01f442e7085fd7d0cf5c2eb81d0b0"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-11.png",
+        "sha256": "c253088e862825c30d4be0c09b2789bb02f17e946dedd28369bbc719c98a0c4e"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-12.png",
+        "sha256": "7d2ad375849080f136cbeb93fb202da482df498be2281457ed79ce26d4d6b6f2"
+      },
+      {
+        "path": "paper/current/r01/visual/journal/page-13.png",
+        "sha256": "5755a276c913711c392c3cff1844faa24275f8fc51583866f0ee419e42fd17ef"
+      }
+    ],
+    "pdf_sha256": "161355d21ba3510c5d2547494392c62707a8dc3f593641492d111a0a5d9f026a",
+    "render_dpi": 110,
+    "rendering_is_not_visual_approval": true
+  },
+  {
+    "N_pages": 6,
+    "document": "supplement",
+    "page_images": [
+      {
+        "path": "paper/current/r01/visual/supplement/page-1.png",
+        "sha256": "747ff51a77a93eba0a93f63822a2ec9f094c81ed385b26ab917f12c7323498d2"
+      },
+      {
+        "path": "paper/current/r01/visual/supplement/page-2.png",
+        "sha256": "6c6bd8c0538d0ea3ecae5e9faaf0341ac307dfe0a144a35f824989604891e69c"
+      },
+      {
+        "path": "paper/current/r01/visual/supplement/page-3.png",
+        "sha256": "3e520951921f630ddf4cb81acb500d994c20de259c2933c6a4ed9581c3f37bd3"
+      },
+      {
+        "path": "paper/current/r01/visual/supplement/page-4.png",
+        "sha256": "864aeadfbf6807df139b7843c3ab076a1e6e809e70a8238b0d5a4e4926b899b4"
+      },
+      {
+        "path": "paper/current/r01/visual/supplement/page-5.png",
+        "sha256": "99aa1661235e86534da73917341f2c01992bc244893d6c1972e30333285d884b"
+      },
+      {
+        "path": "paper/current/r01/visual/supplement/page-6.png",
+        "sha256": "bbb32e2a67a190489996cc9c4bb5e570083a9f38156c3441afbc6d5bbe9b3fa1"
+      }
+    ],
+    "pdf_sha256": "3ae6791d23b86f2b7fdfd9392980c3e8c21fb6cc9962f0225975e97c2bad3501",
+    "render_dpi": 110,
+    "rendering_is_not_visual_approval": true
+  }
+]

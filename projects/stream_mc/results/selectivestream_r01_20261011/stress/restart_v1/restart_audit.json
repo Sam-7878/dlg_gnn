@@ -1,0 +1,42 @@
+{
+  "N_compared": 109,
+  "N_reference_relational_executions": 60,
+  "checkpoint_contains_rng_state": true,
+  "diff_sha256": "4477c5611cd0932fd0d536cdf75bc46dbeb30c59b770804c88655c374f73b717",
+  "failure_model": "abrupt os._exit before write, after half write+fsync, after atomic replace+directory fsync; not power failure or multi-consumer exactly-once",
+  "failures": [
+    {
+      "exit_code": 91,
+      "expected_exit": 91,
+      "phase": "before"
+    },
+    {
+      "exit_code": 92,
+      "expected_exit": 92,
+      "phase": "during"
+    },
+    {
+      "exit_code": 93,
+      "expected_exit": 93,
+      "phase": "after"
+    }
+  ],
+  "fixture_sequence": "last60 real chronological events, sequence renumbered only for restart fixture",
+  "identity_negative_fixture": true,
+  "label_disagreements": 0,
+  "model_policy_reference_identity": {
+    "experiment_id": "pooled_snapshot",
+    "model_hash": "9dbdf3baf5bc5a5aee4a4e9911c19a0e45630e282786fb1a2b9b90eefaf2db78",
+    "policy_hash": "full",
+    "reference_hash": "e408a96f11eaa6cb1609b9c31ef7354f9bfb39bc2158817d4e3559c850a55066",
+    "run_id": "selectivestream_r01_20261011"
+  },
+  "policy_scope": "full path, with actual eligible relational execution; not every policy/failure workload",
+  "replayed_input_loss_count": 0,
+  "score_bit_identical_count": 80,
+  "score_max_abs_diff": 4.6539906678466636e-08,
+  "score_tolerance": 1e-06,
+  "source_schema": "real provider-derived retained event records; labels are inherited contract labels",
+  "source_sha256": "317798d945baa95ad23622418a39d0ceb0a3a840b787440e1b7226ff500f1dc9",
+  "state_version_mismatches": 0
+}

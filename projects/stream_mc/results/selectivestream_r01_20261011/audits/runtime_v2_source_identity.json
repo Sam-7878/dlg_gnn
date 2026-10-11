@@ -1,0 +1,15 @@
+{
+  "executed_source_hashes": {
+    "projects/stream_mc/configs/r01.json": "d9b40dcdbfb82b92f3277ea167560bfe3a60ed2223f40dfba40f4a0ee3f34b41",
+    "projects/stream_mc/scripts/r01_offline_v2.py": "77ed72a6f8d76918d269e8d1ad24077b1a8c8f880065cb67798abfcc5b9c340c",
+    "projects/stream_mc/scripts/r01_replay.py": "a25ebb25f00c8e51dbbd7b78f7e8152cc9fb0bffa3033c673c9891f733a54239",
+    "src/gog_fraud/data/level2/relation_builder.py": "653393b1ed5404717713d3913ace74f35b4fd2ba6440d78f164abe0500b351f0",
+    "src/gog_fraud/streaming/selective.py": "d7b5c1bd4cd003c5b2d1d030cfbc658310ecebe86da2497f47cbe8eb07fd14d7",
+    "src/gog_fraud/streaming/selective_engine.py": "681aa4bbf22de72ade8a2f36c816d8ab3bec304b8d675db32483e508490541a7",
+    "src/gog_fraud/streaming/selective_state.py": "3e6ad84c2ca0ded3818a5e3168fdbe756553158e40cac282006dfd0b05d19d51"
+  },
+  "measurement_run_id": "selectivestream_r01_20261011_offline_v2",
+  "model_run_id": "selectivestream_r01_20261011",
+  "scope": "540 new actual measurements with one CPU thread and requested deterministic algorithms; old v1 batch outputs retained separately, not overwritten; models/calibrators/routers unchanged",
+  "source_archive_sha256": "6adcdd26857ed281ccb69b287af24b459b4af4992deb8f1f2190e4852cc00dd0"
+}

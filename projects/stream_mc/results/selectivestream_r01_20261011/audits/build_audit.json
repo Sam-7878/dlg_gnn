@@ -1,0 +1,104 @@
+[
+  {
+    "actual_clean_build": true,
+    "commands": [
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "preprint.tex"
+      ],
+      [
+        "bibtex",
+        "preprint"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "preprint.tex"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "preprint.tex"
+      ]
+    ],
+    "entry": "preprint.tex",
+    "overflow_count": 0,
+    "pdf_sha256": "d79c60cefcf9c5dc577c10496147d1c50ea9d23b8f8954b28deb32ad09f87d63",
+    "unresolved_count": 0
+  },
+  {
+    "actual_clean_build": true,
+    "commands": [
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "journal.tex"
+      ],
+      [
+        "bibtex",
+        "journal"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "journal.tex"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "journal.tex"
+      ]
+    ],
+    "entry": "journal.tex",
+    "overflow_count": 0,
+    "pdf_sha256": "161355d21ba3510c5d2547494392c62707a8dc3f593641492d111a0a5d9f026a",
+    "unresolved_count": 0
+  },
+  {
+    "actual_clean_build": true,
+    "commands": [
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "supplement.tex"
+      ],
+      [
+        "bibtex",
+        "supplement"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "supplement.tex"
+      ],
+      [
+        "pdflatex",
+        "-halt-on-error",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "supplement.tex"
+      ]
+    ],
+    "entry": "supplement.tex",
+    "overflow_count": 0,
+    "pdf_sha256": "3ae6791d23b86f2b7fdfd9392980c3e8c21fb6cc9962f0225975e97c2bad3501",
+    "unresolved_count": 0
+  }
+]

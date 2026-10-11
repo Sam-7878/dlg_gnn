@@ -1,0 +1,8 @@
+{
+  "correction": "Holm step-down, m=5 within each family",
+  "historical_family": "five R4 seed tests recomputed separately",
+  "new_family": "five pooled GIN primary local/selective paired-correctness tests",
+  "not_a_test_of_F1": true,
+  "not_preregistered": true,
+  "test": "exact two-sided binomial McNemar"
+}

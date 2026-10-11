@@ -1,0 +1,14 @@
+{
+  "edge_time": "unknown",
+  "label_available_time": "unknown",
+  "local_feature_event_time_not_after_target_cutoff": "unknown",
+  "model_weight_future_target_count": 9930,
+  "no_duplicate_contract_leakage_outside_declared_protocol": true,
+  "no_target_label_access_during_source_only_selection": "verified chain exclusion in fit artifacts; no target adaptation",
+  "policy_future_target_count": 31230,
+  "reference_cutoff_violations": 0,
+  "scope": "retrospective snapshots only",
+  "strict_online_validity": "claim removed",
+  "training_features_available_before_model_fit": "unknown (cached edge-time lineage absent)",
+  "training_labels_available_before_model_fit": "unknown"
+}

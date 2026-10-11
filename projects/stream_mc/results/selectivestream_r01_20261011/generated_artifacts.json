@@ -1,0 +1,6 @@
+{
+  "macro_source": "565b6461437e581586996cefa1255301da9db2303f6da19671e720899e14fbe0",
+  "private_tex_tables_generated": true,
+  "result_summary": "Across five seeds, primary selective minus local mean AP is +0.0132; mean F1 difference is +0.0225; mean recall difference is +0.0621. These are descriptive differences, not equivalence or prospective superiority claims.",
+  "run_id": "selectivestream_r01_20261011"
+}

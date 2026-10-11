@@ -1,0 +1,3 @@
+sequence_id,resident_contracts,state_payload_budget_bytes,cache_entries,cache_payload_bytes,rss_mib,gpu_allocated_mib,gpu_reserved_mib,capacity_evictions,ttl_evictions,edge_truncations,node_truncations,duplicates,late,accepted
+0,1,744,0,0,1758.07421875,32.056640625,34.0,0,0,0,0,0,0,1
+524,11,128664,13,3380,1980.96875,32.056640625,34.0,0,9,0,0,0,0,525

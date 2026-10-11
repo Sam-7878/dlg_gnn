@@ -1,0 +1,36 @@
+[
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_offline_v2.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/repair_00.log",
+    "log_sha256": "f7764330383e3901c8d7e0d61ad672d8e453cf9d12687e894d066f747497df6f",
+    "seconds": 664.2925369739532
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_final_audits.py"
+    ],
+    "exit_code": 0,
+    "log": "execution_logs/repair_01.log",
+    "log_sha256": "b0ceac9c1f81157279e40c3b3d9a7b0d281b4027aa74b25671d441504211c439",
+    "seconds": 38.224671363830566
+  },
+  {
+    "command": [
+      "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+      "-u",
+      "projects/stream_mc/scripts/r01_generate.py",
+      "--paper"
+    ],
+    "exit_code": 1,
+    "log": "execution_logs/repair_02.log",
+    "log_sha256": "7a0fe030685f2b179a8bf9b9b397f8c1990ffdfb32a0600de5156b51e8805494",
+    "seconds": 8.711649417877197
+  }
+]
