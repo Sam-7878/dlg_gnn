@@ -1,0 +1,37 @@
+PUBLIC RAW POLICY VERIFIED models/loco_bsc_GIN_seed11
+PUBLIC RAW POLICY VERIFIED models/loco_bsc_GIN_seed22
+PUBLIC RAW POLICY VERIFIED models/loco_bsc_GIN_seed33
+PUBLIC RAW POLICY VERIFIED models/loco_bsc_GIN_seed44
+PUBLIC RAW POLICY VERIFIED models/loco_bsc_GIN_seed55
+PUBLIC RAW POLICY VERIFIED models/loco_ethereum_GIN_seed11
+PUBLIC RAW POLICY VERIFIED models/loco_ethereum_GIN_seed22
+PUBLIC RAW POLICY VERIFIED models/loco_ethereum_GIN_seed33
+PUBLIC RAW POLICY VERIFIED models/loco_ethereum_GIN_seed44
+PUBLIC RAW POLICY VERIFIED models/loco_ethereum_GIN_seed55
+PUBLIC RAW POLICY VERIFIED models/loco_polygon_GIN_seed11
+PUBLIC RAW POLICY VERIFIED models/loco_polygon_GIN_seed22
+PUBLIC RAW POLICY VERIFIED models/loco_polygon_GIN_seed33
+PUBLIC RAW POLICY VERIFIED models/loco_polygon_GIN_seed44
+PUBLIC RAW POLICY VERIFIED models/loco_polygon_GIN_seed55
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GATv2_seed11
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GATv2_seed22
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GATv2_seed33
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GATv2_seed44
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GATv2_seed55
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GIN_seed11
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GIN_seed22
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GIN_seed33
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GIN_seed44
+PUBLIC RAW POLICY VERIFIED models/pooled_snapshot_GIN_seed55
+{
+  "status": "PASS",
+  "model_identities": 25,
+  "primary_raw_rows": 280,
+  "full_policy_rows": 6065,
+  "MC_rows": 40,
+  "exact_seed_tests": 5,
+  "separate_historical_seed_tests": 5,
+  "scope": "public pseudonymous raw arithmetic and curated source identity; no original address mapping, retraining, new timing or independent scientific approval"
+}
+/mnt/d/_Work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
