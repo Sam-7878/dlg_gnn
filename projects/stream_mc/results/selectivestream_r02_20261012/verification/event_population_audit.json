@@ -1,0 +1,12 @@
+{
+  "N_long_runs": 3,
+  "N_prefix_runs": 15,
+  "event_order_and_provider_derived_labels_match": true,
+  "labels": "inherited contract labels, not transaction fraud truth",
+  "long_repeats_per_policy": 1,
+  "per_long_events": 100000,
+  "populations_separate": true,
+  "raw_input_sha256": "317798d945baa95ad23622418a39d0ceb0a3a840b787440e1b7226ff500f1dc9",
+  "throughput_limitation": "N/recorded wall duration; raw per-event trace alone cannot independently recover logging/checkpoint/loop wall overhead",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

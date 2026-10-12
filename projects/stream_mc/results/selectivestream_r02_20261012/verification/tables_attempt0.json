@@ -1,0 +1,7 @@
+{
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "actual_exit_code": 1,
+  "failure": "New R02 shadow generation adapter did not initially provide split_support.csv; FileNotFoundError. Original R01 files were not changed.",
+  "repair": "Supply verified original split support and read-only audited source sidecars in the R02 shadow; rerun numeric-only generation under the recorded subprocess wrapper.",
+  "scope": "Failed generation attempt, not an unexplained scientific mismatch or successful final paper build"
+}

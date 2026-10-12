@@ -1,0 +1,30 @@
+{
+  "N_raw_pairs_checked": 109,
+  "checkpoints": [
+    {
+      "N_replayed_suffix": 40,
+      "actual_recorded_exit": 91,
+      "cursor": 19,
+      "phase": "before",
+      "serialized_checkpoint_sha256": "c5639ab99210e350246b3c0d3445a460b3d1a0e95dbd3b51672aa5ef74fd9877"
+    },
+    {
+      "N_replayed_suffix": 40,
+      "actual_recorded_exit": 92,
+      "cursor": 19,
+      "phase": "during",
+      "serialized_checkpoint_sha256": "c5639ab99210e350246b3c0d3445a460b3d1a0e95dbd3b51672aa5ef74fd9877"
+    },
+    {
+      "N_replayed_suffix": 29,
+      "actual_recorded_exit": 93,
+      "cursor": 30,
+      "phase": "after",
+      "serialized_checkpoint_sha256": "bd11fe61179bea130fc9c715666f12220c51622b95f02ff192800bb1ea6d351c"
+    }
+  ],
+  "original_diff_sha256": "bfed5141f53485ce383d1e066659889ee7a2b5fd8637b146a625cb0031f37f71",
+  "original_restart_report_sha256": "3b0aebd185fc4cdabf134fa4a8da7239daae51bb08c2cdb4b2944cf36781bd27",
+  "scope": "original recorded local os._exit results, exact suffix/state/identity/RNG presence and score guard; no new crash invocation, no distributed/disk-loss certification",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

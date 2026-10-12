@@ -1,0 +1,6 @@
+{
+  "actual_exit_code": 0,
+  "log_sha256": "bf11f3e29f5c070252b0523176d4d98f8fbe1011f2d0c641c590bc57646d6995",
+  "scope": "exact local source bundle and isolated input path, existing scientific dependencies, before upload; no external access asserted",
+  "source_bundle_sha256": "45ecc0b07519e06106e7b1b6b9f6ed09e595df9bd96fd10473c77e167ae3d2cc"
+}

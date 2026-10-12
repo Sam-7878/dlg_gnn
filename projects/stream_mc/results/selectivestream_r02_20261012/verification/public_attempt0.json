@@ -1,0 +1,7 @@
+{
+  "status": "FAILED",
+  "actual_exit_code": 1,
+  "error": "ValueError: public raw metric mismatch: tp",
+  "scope": "First implementation attempt of the added R02 public CSV adapter, not the R01 original Parquet experiment",
+  "resolution": "Restore original float32 from shortest round-tripping CSV text for neural and degree-logistic outputs (actual original Parquet dtype checked); kNN raw scores are float64. The intermediate light-control dtype failure is retained in its actual execution receipt. No original score, policy, threshold or evidence byte changed."
+}

@@ -1,0 +1,13 @@
+{
+  "address_regex_hits": 0,
+  "manuscript_source_hits": 0,
+  "original_R01_unmodified": true,
+  "payload_members": 73,
+  "private_original_handoff_excluded": true,
+  "public_archive": {
+    "bytes": 1602499,
+    "path": "projects/stream_mc/evidence/r02_verification_evidence.zip",
+    "sha256": "8bc53b9b7312978be804653e9084fb69b473caa9e145545cb393c4ab135dc365"
+  },
+  "scope": "explicit curated selection/content checks; pseudonyms still linkable, not proof of anonymization"
+}

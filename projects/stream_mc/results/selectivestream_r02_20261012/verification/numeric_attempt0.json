@@ -1,0 +1,10 @@
+{
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "actual_exit_code": 1,
+  "N_models_completed_before_failure": 20,
+  "failure": "KeyError: calibration in new verifier's MC-fit schema adapter; original mc_T*_fit.json uses mapping, unlike light-control *_fit.json calibration.",
+  "science_mismatch_observed": false,
+  "original_R01_modified": false,
+  "repair": "Use the actual persisted mapping key for MC fit records; keep all score/label comparison tolerances unchanged; rerun all25 models.",
+  "scope": "Failed implementation-side verification attempt, not a successful all-model audit or a new scientific run"
+}

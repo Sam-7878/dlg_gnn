@@ -1,6 +1,8 @@
 # DLG-SelectiveStream / StreamMC
 
-Active revision: `DLG-SelectiveStream-R01`, run `selectivestream_r01_20261011`.
+Active editorial/verification revision: `DLG-SelectiveStream-R02`.
+Original scientific run: `selectivestream_r01_20261011`, not relabeled replica.
+See [R02 reproduction](REPRODUCE_R02.md) and [R02 handoff](docs/r02/HANDOFF_R02.md).
 StreamMC is the project name; deterministic GIN → margin routing → eligible
 GATv2 target-star inference is primary. MC dropout is a separately calibrated
 ablation. The scientific scope is **retrospective contract snapshots and
@@ -22,8 +24,10 @@ Read [REPRODUCE.md](REPRODUCE.md), [CHANGELOG_R01.md](CHANGELOG_R01.md),
 Git distributes the release candidate as `evidence/r01_numeric_evidence.zip.part001`
 and subsequent ordered parts of at most90MiB each. The verifier assembles the
 ignored local `evidence/r01_numeric_evidence.zip`; its companion JSON records
-exact part/full bytes and hashes. This is a **local** release candidate, not
-an already uploaded or publicly hosted release.
+exact part/full bytes and hashes. Actual R02 hosted assets and access checks
+are documented separately in `evidence/release_manifest_r02.json` and
+`evidence/access_verification_r02.json` after publication; local bytes alone
+are not an external-access check.
 
 ```bash
 source /mnt/d/_Work/goat_bank/.venv_cuda/bin/activate
@@ -45,4 +49,6 @@ selects the old smoke-check facade, not current paper evidence.
 Unsubmitted TeX/Bib/PDFs and private submission ZIPs are excluded from Git.
 Scientific code and a curated raw/numeric/input/model archive are reviewable;
 address mappings, duplicate large working files and local dependencies are not
-duplicated into Git. Nothing here authorizes pushing or submitting externally.
+duplicated into Git. The user authorized R02 scientific-code/evidence publication
+to the designated repository; paper publication/submission and exact-version
+all-author approval remain separate OPEN gates.

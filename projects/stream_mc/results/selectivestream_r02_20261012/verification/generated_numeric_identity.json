@@ -1,0 +1,31 @@
+{
+  "aggregation_id": "r02_verified_reaggregation_20261012",
+  "all_seeds_not_replica": true,
+  "new_measurements_used_for_primary_numbers": false,
+  "numeric_macros_sha256": "a8adfe1b9ffd57fb9341e428014e249262c26a80e7c5d15060fc023df65dcaba",
+  "source_aggregate_sha256": "0dfbb0cac49cbe0f41f21310f0e0fed3901117d201930a22c0a1a75549d0a0f4",
+  "source_batch_measurement": "selectivestream_r01_20261011_offline_v2",
+  "source_training_run": "selectivestream_r01_20261011",
+  "table_sha256": {
+    "numbers.tex": "a8adfe1b9ffd57fb9341e428014e249262c26a80e7c5d15060fc023df65dcaba",
+    "table_benefit.tex": "4db7f2634e4f32802f416d28726bf45059cc92a9ad6c6ec3044a37deeaa2675f",
+    "table_budget.tex": "04a118378a96ee175a363a00129663d55b89ad6ae45cab1445f220a576835273",
+    "table_budget_all.tex": "486776f5c5c74e0f3af77e97859c0b0dea22fe6d7c492ff7f9299c397ac15ade",
+    "table_chains.tex": "eab21ce0fd21864132e3183baf1219d20721db6fd66535fd2d008b5693c6726c",
+    "table_control_cost.tex": "406f5def247d9d1970952e563c64e7cb7b907832c1c6ad349e98c2998a34bb64",
+    "table_event_diagnostics.tex": "6675f45002880291ddb741b079a6294b5842bf375b57190e9570fcd34af742b2",
+    "table_historical_statistics.tex": "4a810007b331143dbb223f176fc3479028e7ca70376273170111a92d0751f9e4",
+    "table_loco.tex": "f53328aa5664f8ce10547e4c1e235144373885a7420773bc58a95c513ed6197c",
+    "table_matched.tex": "385b8b44f21ccb426f18cae95d50896e06b8c191998ff45ae1c8348aca39fe90",
+    "table_mc.tex": "457453b6a47f8f6d8ddf3cee4999ceca473474569fd6f780dbb8539aeb53ea05",
+    "table_primary.tex": "493a42e01aa9404a9e8c8276fcdb18ec3e465870f756dc975c483d14464e87ec",
+    "table_restart.tex": "37f0519083ab74e2b20cb25a81a888b25e1027a94672255b07736b0141add580",
+    "table_risk_counts.tex": "12dfec1e611de42d14be4f7c4452d9afe74973871331fb4dd4df155b4c7e46fa",
+    "table_runtime.tex": "54dd68b7cfaa26bf018ebc4eb6419d2d6179d0bd7ea16b7aa8239c817c99ecdb",
+    "table_seed_statistics.tex": "9fb042d22df76d61d5c8e76259e3178261c9a20b80662c3e6e24cc9326af627b",
+    "table_stress.tex": "417fc3354b31d4b6910e680cc2770ab3b5fb9ffadf986d1a7444a005a251acb2",
+    "table_support.tex": "90dbdbe8410e89f094c0856f98c4c820a73c07e435ff3aefd51f2d499eabe536",
+    "table_temporal.tex": "6caaf2d9e7d7a6b08dca4f3b15a9f35f3a29b2cc459d458879a04a598cff2548"
+  },
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "model_identities": 25,
+  "primary_raw_rows": 280,
+  "full_policy_rows": 6065,
+  "MC_rows": 40,
+  "exact_seed_tests": 5,
+  "separate_historical_seed_tests": 5,
+  "scope": "public pseudonymous raw arithmetic and curated source identity; no original address mapping, retraining, new timing or independent scientific approval"
+}

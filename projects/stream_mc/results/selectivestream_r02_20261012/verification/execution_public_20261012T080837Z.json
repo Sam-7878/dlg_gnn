@@ -1,0 +1,28 @@
+{
+  "actual_exit_code": 0,
+  "command": [
+    "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+    "/mnt/d/_work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r02_public.py",
+    "--full-policy",
+    "--output",
+    "/mnt/d/_work/goat_bank/dlg_gnn/projects/stream_mc/results/selectivestream_r02_20261012/verification/public_local_numeric"
+  ],
+  "log_path": "projects/stream_mc/results/selectivestream_r02_20261012/verification/public_20261012T080837Z.log",
+  "log_sha256": "f8f35a262092b92abceef9f8fe129921304cc962c3dad6bc6dca8c3c0fb156ea",
+  "scope": "actual same-host subprocess verification; not new training or external reviewer approval",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r02_common.py": "0a2e31c1f9f62d7430f71d8d4bfc227e0b6a50d8becb1ae7050aa651f409b6b5",
+    "projects/stream_mc/scripts/r02_github.py": "9a6318e3fd511b1a76aa8daf80409b4b45de11f216a82f5df62bfdc3586bcc46",
+    "projects/stream_mc/scripts/r02_handoff.py": "b8053f342aa2f29504f9660f273dcd173cd25afa4599629013823719522144b4",
+    "projects/stream_mc/scripts/r02_numeric.py": "9d60dfe94e050743156bad6101e4ed6c88df022f273be15edac9f4d8c80838e5",
+    "projects/stream_mc/scripts/r02_paper.py": "61908219b1dcc15d7066a5091886a8dfb5d033e5850afa35a9d6c3b7825b2d59",
+    "projects/stream_mc/scripts/r02_public.py": "547c5c88ffdbc42679348d526679f8aff065eeac169c840f470a027a1d5f1de3",
+    "projects/stream_mc/scripts/r02_run.py": "bda74a7abf6da8f5a177b779dd19fa7731604d0e111e2c9896de91a4752f4cd0",
+    "projects/stream_mc/scripts/r02_systems.py": "f9e545c6fd79b3d9cd9f81ac3a449233d47da6df6dddf620fd0a343aba4df917",
+    "projects/stream_mc/scripts/r02_tables.py": "0aac2b627597b2c016337bf921a19fe18563c8b102053c9727a6f0d7b9d1daad"
+  },
+  "stage": "public",
+  "utc_execution_stamp": "20261012T080837Z",
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "wall_seconds": 73.90713487799997
+}

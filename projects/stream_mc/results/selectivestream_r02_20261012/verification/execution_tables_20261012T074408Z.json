@@ -1,0 +1,23 @@
+{
+  "actual_exit_code": 0,
+  "command": [
+    "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+    "/mnt/d/_work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r02_tables.py"
+  ],
+  "log_path": "projects/stream_mc/results/selectivestream_r02_20261012/verification/tables_20261012T074408Z.log",
+  "log_sha256": "c5bf3c7012c321963bccc1cc03848f5704e959e0ad02b05cf479d721eb8bd9f4",
+  "scope": "actual same-host subprocess verification; not new training or external reviewer approval",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r02_common.py": "0a2e31c1f9f62d7430f71d8d4bfc227e0b6a50d8becb1ae7050aa651f409b6b5",
+    "projects/stream_mc/scripts/r02_github.py": "9a6318e3fd511b1a76aa8daf80409b4b45de11f216a82f5df62bfdc3586bcc46",
+    "projects/stream_mc/scripts/r02_handoff.py": "b9692bc295300ff415fd2077f8aba8103593f1b298007a13cb6819db2da0d376",
+    "projects/stream_mc/scripts/r02_numeric.py": "9d60dfe94e050743156bad6101e4ed6c88df022f273be15edac9f4d8c80838e5",
+    "projects/stream_mc/scripts/r02_run.py": "689bf476bdc9b226b3d1d70403a473eb8517cbf10c28480bd92e6a77e508d261",
+    "projects/stream_mc/scripts/r02_systems.py": "f9e545c6fd79b3d9cd9f81ac3a449233d47da6df6dddf620fd0a343aba4df917",
+    "projects/stream_mc/scripts/r02_tables.py": "0aac2b627597b2c016337bf921a19fe18563c8b102053c9727a6f0d7b9d1daad"
+  },
+  "stage": "tables",
+  "utc_execution_stamp": "20261012T074408Z",
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "wall_seconds": 16.641593288999957
+}

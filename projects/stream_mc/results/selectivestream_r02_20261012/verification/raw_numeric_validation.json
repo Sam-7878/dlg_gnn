@@ -1,0 +1,12 @@
+{
+  "N_MC_rows_recomputed": 40,
+  "N_original_models": 25,
+  "N_raw_metric_rows_recomputed": 6065,
+  "all_five_seeds_checked": true,
+  "raw_to_policy_composition_checked": true,
+  "recomputed_analysis_dir": "projects/stream_mc/results/selectivestream_r02_20261012/working/analysis",
+  "recorded_bootstrap_reexecuted": true,
+  "scope": "same-host implementation-side arithmetic/source validation; no new training, no external independent approval",
+  "source_run_id": "selectivestream_r01_20261011",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

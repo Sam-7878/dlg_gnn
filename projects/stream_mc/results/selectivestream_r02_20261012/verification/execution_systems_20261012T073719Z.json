@@ -1,0 +1,21 @@
+{
+  "actual_exit_code": 1,
+  "command": [
+    "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+    "/mnt/d/_work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r02_systems.py"
+  ],
+  "log_path": "projects/stream_mc/results/selectivestream_r02_20261012/verification/systems_20261012T073719Z.log",
+  "log_sha256": "9386566d7566d5d322c0cac2391de488600b576cfa99b7c0240a3d975e416462",
+  "scope": "actual same-host subprocess verification; not new training or external reviewer approval",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r02_common.py": "0a2e31c1f9f62d7430f71d8d4bfc227e0b6a50d8becb1ae7050aa651f409b6b5",
+    "projects/stream_mc/scripts/r02_handoff.py": "b9692bc295300ff415fd2077f8aba8103593f1b298007a13cb6819db2da0d376",
+    "projects/stream_mc/scripts/r02_numeric.py": "9d60dfe94e050743156bad6101e4ed6c88df022f273be15edac9f4d8c80838e5",
+    "projects/stream_mc/scripts/r02_run.py": "2ee7e820de572b2b36ee8923556f72ec824b119cc137568e4648d653435a2ef5",
+    "projects/stream_mc/scripts/r02_systems.py": "cbe02c9859c42c626e5631c986e88d0546331ca9f628b24cc72d867da1a29377"
+  },
+  "stage": "systems",
+  "utc_execution_stamp": "20261012T073719Z",
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "wall_seconds": 41.35903176800002
+}

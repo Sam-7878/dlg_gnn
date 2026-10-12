@@ -1,0 +1,28 @@
+{
+  "churn_scope": "25000 initial distinct then50000 additional distinct contracts causing sustained eviction; not50000 repeated accesses to the first25000 keys",
+  "memory_scope": "logical containers/payload, serialized state, immutable index/cache and RSS/GPU/source reader are distinct; not a lifetime whole-process bound",
+  "new_probe_invariants_equal_original": [
+    "N_unique",
+    "N_additional_churn",
+    "resident_peak",
+    "capacity_evictions",
+    "edge_cap",
+    "node_cap",
+    "ttl_expiry_count",
+    "cache_entries",
+    "cache_evictions",
+    "queue_high_water",
+    "queue_retries",
+    "queue_processed_events",
+    "duplicate_window_detected",
+    "late_quarantine"
+  ],
+  "new_probe_measurement_id": "selectivestream_r02_20261012_state_probe",
+  "new_probe_reason": "original sampled pressure trace does not record every TTL/cache/queue action; reexecute cheap original state fixture, not expensive100k predictive replay",
+  "new_probe_report_sha256": "4eef43b22a18b5214d3179512ea93ef9e32f55923b8c06235b77bf3efbffbe9c",
+  "new_times_rss_not_old_measurements": true,
+  "original_pressure_trace_sha256": "cecc33bbcaedcb8eb63a9db541cb53ba6635805efdb1e411f90bbd09c32846c9",
+  "original_report_sha256": "ad09d985794b95f36c5d2bb0cae594a54dd3bf308ee5d9e6d359d41896782e29",
+  "original_trace_recomputed": "resident peak5000,75000-event sequence,70000 capacity evictions",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

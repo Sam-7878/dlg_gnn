@@ -1,0 +1,18 @@
+{
+  "git_commit": "35785050eb8e9ffe2a9603197a8e5447489900fa",
+  "os_release": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "scope": "same operator/host implementation-side verification, not external reviewer approval",
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.0",
+    "pygod": "1.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1"
+  }
+}

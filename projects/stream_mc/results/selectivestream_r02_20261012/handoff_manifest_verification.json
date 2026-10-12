@@ -1,0 +1,46 @@
+{
+  "N_hash_mismatch": 0,
+  "N_missing": 0,
+  "N_original_manifest_targets": 939,
+  "N_present_and_hash_matching": 939,
+  "distinct_manifests": "original 939 targets and public derivative ZIP are different identities, not substituted",
+  "external_delivery_or_hosting_performed": false,
+  "incomplete_transfer_cause": "review documents establish that the canonical ZIP/parts were not attached and only35/939 original targets were supplied; the exact earlier compression/selection action is not locally evidenced and is not inferred",
+  "original_manifest": {
+    "bytes": 120882,
+    "path": "projects/stream_mc/results/selectivestream_r01_20261011/release_manifest.json",
+    "sha256": "58f8d0ec210cea5b05b1dfe1d41aefcf8f03854a7decdc4fae2814e26f17c890"
+  },
+  "original_private_handoff": {
+    "bytes": 266113671,
+    "path": "projects/stream_mc/handoff/r02/original_r01_full_private.zip",
+    "sha256": "a86e15113e208454c4dad38f54025657f576fc79d49265510ba2a1fc73ec623f"
+  },
+  "original_private_member_count": 941,
+  "public_derivative": {
+    "bytes": 258850451,
+    "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip",
+    "sha256": "97bbdf52f19673a1d0406f4bc1593129d79d70e0b2b1b7dee3cbcbf3dc814d2f"
+  },
+  "public_derivative_member_count": 1001,
+  "public_parts": [
+    {
+      "bytes": 94371840,
+      "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part001",
+      "sha256": "4449c3e89aeedec25aa60f051c77005bf37c8251a01ce49d648a0e730abfeda7"
+    },
+    {
+      "bytes": 94371840,
+      "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part002",
+      "sha256": "c625b66c0653f0f62339e3895edec9dddd06b7ec50afd1c1efcda74d837211f6"
+    },
+    {
+      "bytes": 70106771,
+      "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part003",
+      "sha256": "abe805bb991ac94763eff357c157f2fab0a60621cc58c5372057d25e5be643b4"
+    }
+  ],
+  "review_input_zips_available_here": false,
+  "reviewer_audit_zip_available_here": false,
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

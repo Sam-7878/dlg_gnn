@@ -1,0 +1,15 @@
+{
+  "revision_id": "DLG-SelectiveStream-R02",
+  "author_information_basis": "User-supplied Benchmark manuscript, verified during R01; no changes supplied for R02",
+  "funding_statement_verbatim": "This work was supported by the IITP(Institute of Information & Coummunications Technology Planning & Evaluation)-ITRC(Information Technology Research Center) grant funded by the Korea government(Ministry of Science and ICT)(IITP-2026-RS-2021-II211835)",
+  "funding_confirmed_by_user": true,
+  "funding_confirmation_date": "2026-10-12",
+  "funding_editorial_note": "The user explicitly requested this wording. Coummunications spelling is retained verbatim, not silently changed.",
+  "conflicts_of_interest": "No conflicts of interest, confirmed by user 2026-10-12",
+  "simultaneous_duplicate_submission": "None, confirmed by user 2026-10-12",
+  "ai_assistance_declaration": "OPEN: user will provide after further consideration; tool versions are not inferred",
+  "credit_roles": "Existing R01 companion-based draft; exact R02 all-author role confirmation pending",
+  "exact_final_source_pdf_evidence_version_approved_by_all_authors": false,
+  "public_destination_preference": "User authorizes StreamMC scientific source and public evidence on https://github.com/Sam-7878/dlg_gnn and its Releases; paper and private original handoff excluded",
+  "publication_execution_status": "Actual source/evidence publication and access are tracked separately in evidence/release_manifest_r02.json and access_verification_r02.json; never implies author approval of paper"
+}

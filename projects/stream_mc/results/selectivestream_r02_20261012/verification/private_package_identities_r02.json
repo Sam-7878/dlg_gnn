@@ -1,0 +1,18 @@
+{
+  "journal_candidate_total_bytes": 1801106,
+  "large_public_evidence_separate": true,
+  "limit_plan_bytes": 120000000,
+  "packages": [
+    {
+      "bytes": 1058956,
+      "path": "projects/stream_mc/paper/current/r02/packages_r02/preprint_r02_package.zip",
+      "sha256": "b16aaf79b7921cafd231a60c33e90c551565fb1dafeac9bd3e30f0696e7e444f"
+    },
+    {
+      "bytes": 1059891,
+      "path": "projects/stream_mc/paper/current/r02/packages_r02/journal_r02_package.zip",
+      "sha256": "849300b5ff72d33ea146cfb889003b9d949801c6ceb57e9d250a4c2c3f3ef567"
+    }
+  ],
+  "scope": "local candidate size; portal-specific rules and exact final author approval still require confirmation"
+}

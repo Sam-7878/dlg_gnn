@@ -1,0 +1,499 @@
+{
+  "baseline_commit": "35785050eb8e9ffe2a9603197a8e5447489900fa",
+  "frozen_executions": [
+    {
+      "bytes": 16764,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/training_sources.zip",
+      "sha256": "42afdc50a75705e920cb71b00fb7a4654f0c75c97e7ad624698e398c8c29fd6e"
+    },
+    {
+      "bytes": 71680,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/runtime_sources_v1.tar",
+      "sha256": "e6430e545abe62dd04bf6e82c60d46a372c4ed9363468242e9f958632035e397"
+    },
+    {
+      "bytes": 81920,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/runtime_sources_v2.tar",
+      "sha256": "6adcdd26857ed281ccb69b287af24b459b4af4992deb8f1f2190e4852cc00dd0"
+    }
+  ],
+  "scientific_source_bundle": {
+    "bytes": 266435,
+    "path": "projects/stream_mc/handoff/r02/r02_scientific_source.zip",
+    "sha256": "45ecc0b07519e06106e7b1b6b9f6ed09e595df9bd96fd10473c77e167ae3d2cc"
+  },
+  "source_files": [
+    {
+      "bytes": 3159,
+      "path": "projects/stream_mc/README.md",
+      "sha256": "d7678b1b692fde876a83cc16588fe819cd60148ab8405a123d59245b558d7e49"
+    },
+    {
+      "bytes": 9843,
+      "path": "projects/stream_mc/REPRODUCE.md",
+      "sha256": "7823f575225f414264c2a6b545a797a7b5f997a4e109b9290579f9f55669ea61"
+    },
+    {
+      "bytes": 3856,
+      "path": "projects/stream_mc/REPRODUCE_R02.md",
+      "sha256": "8b51b5c203d67c14f11bd86e7cec36a3eae327da76f4814a92af905e7f29c9e4"
+    },
+    {
+      "bytes": 1335,
+      "path": "projects/stream_mc/configs/author_declarations_r01.json",
+      "sha256": "89b9e6081c3d2f2798e5088900aa2de96daec56d67a0d13f558497112b4dea08"
+    },
+    {
+      "bytes": 1557,
+      "path": "projects/stream_mc/configs/author_declarations_r02.json",
+      "sha256": "40af29c9051541eba9e1e2853f82414a25dd016eceae7c838c03f674dedf93b4"
+    },
+    {
+      "bytes": 2100,
+      "path": "projects/stream_mc/configs/model_config.yaml",
+      "sha256": "bcb91f855ea476075174720a1a992fe164d47bde9b933417ad2da04805799e90"
+    },
+    {
+      "bytes": 2134,
+      "path": "projects/stream_mc/configs/policy_config.yaml",
+      "sha256": "8ed9be8fca8c11094bd3be636dc4882364876e3879180a83052c650283dd26ad"
+    },
+    {
+      "bytes": 3081,
+      "path": "projects/stream_mc/configs/r01.json",
+      "sha256": "d9b40dcdbfb82b92f3277ea167560bfe3a60ed2223f40dfba40f4a0ee3f34b41"
+    },
+    {
+      "bytes": 1894,
+      "path": "projects/stream_mc/docs/r02/DATA_AND_CODE_ACCESS_R02.md",
+      "sha256": "b7e65e29dcdd046787ebadd3cf0c8d6c8247c09287429f44990a1a196ae08925"
+    },
+    {
+      "bytes": 2280,
+      "path": "projects/stream_mc/docs/r02/HANDOFF_R02.md",
+      "sha256": "94f4bbf24680d504e16582dc6e2c5d03b2bb1cd3d1bac748fc90af896a977ffc"
+    },
+    {
+      "bytes": 640,
+      "path": "projects/stream_mc/docs/r02/control_training_time_resolution.md",
+      "sha256": "ce8e586ea498e10410a8baec62c0cb95fc4710b2051119a5f07af97835500b47"
+    },
+    {
+      "bytes": 794,
+      "path": "projects/stream_mc/docs/r02/matched_comparison_scope.md",
+      "sha256": "ee1501b246fdc1cdf21639a8a9e35f6ab4b2d5dec7f94c5fb28583f5bad07ae1"
+    },
+    {
+      "bytes": 1775,
+      "path": "projects/stream_mc/docs/r02/paper_claim_revision_map.md",
+      "sha256": "720a3ba415be9130160377ad667cb817011c9e590ed68dce34848e525dee06a5"
+    },
+    {
+      "bytes": 3989,
+      "path": "projects/stream_mc/docs/r02/reference_verification.md",
+      "sha256": "f2d4b0c99f0b4a1de2f9891f4ec69fc71276e7c41b193b7e62ac24eaaf7b2ae2"
+    },
+    {
+      "bytes": 1016,
+      "path": "projects/stream_mc/evidence/archive_boundary_r01.json",
+      "sha256": "52198e45ae7437c2cf8765da91a7a6882648afa1676f5ac161be5f478940bff9"
+    },
+    {
+      "bytes": 5771,
+      "path": "projects/stream_mc/evidence/claim_ledger_r01.csv",
+      "sha256": "d248ac0746659f33fc576ccef66b4e663be051bb7ee5506093473330e0c1b7da"
+    },
+    {
+      "bytes": 5214,
+      "path": "projects/stream_mc/evidence/cleanroom_r01.json",
+      "sha256": "417eba17c307eacaca46deba7f4e9edab529d9620ac61d3f671807c4835121ca"
+    },
+    {
+      "bytes": 39733,
+      "path": "projects/stream_mc/evidence/closure_r01.json",
+      "sha256": "4b5435bcd62522ff77a44e7f14a810a6b733b0a5a49f18399d6a095388ede7a3"
+    },
+    {
+      "bytes": 7319,
+      "path": "projects/stream_mc/evidence/r01_release.json",
+      "sha256": "90a3fa6b30f8a7c5d73c133ff7d47f06008b229578860959f2508d3f482d73e8"
+    },
+    {
+      "bytes": 221,
+      "path": "projects/stream_mc/reproduce.sh",
+      "sha256": "b0fff7fb3ca1bde070fdcaaad4a7ecf31484a411e54306e4e4144fe3483fbf66"
+    },
+    {
+      "bytes": 16,
+      "path": "projects/stream_mc/requirements-parquet.txt",
+      "sha256": "c62c677e9e1498bf07c495540db8461e55e2f4e72577b3252bebd1a6d8ec76f7"
+    },
+    {
+      "bytes": 1067,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/environment.json",
+      "sha256": "f50a0ac6500ce0275f8e3fd2004b44ce855b7de0de336675640b9ce4e7366bf4"
+    },
+    {
+      "bytes": 1412,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/environment.lock",
+      "sha256": "7e8ab65308d82833b43ff0d4ae11cf4c64ce476df88ca46573fe4a6b36eb9127"
+    },
+    {
+      "bytes": 1449,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/execution_plan.json",
+      "sha256": "25c0eb22ac401236bafd019373a601c98e209d8e8308dfe7ab3b4ee36cb5d860"
+    },
+    {
+      "bytes": 71680,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/runtime_sources_v1.tar",
+      "sha256": "e6430e545abe62dd04bf6e82c60d46a372c4ed9363468242e9f958632035e397"
+    },
+    {
+      "bytes": 81920,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/runtime_sources_v2.tar",
+      "sha256": "6adcdd26857ed281ccb69b287af24b459b4af4992deb8f1f2190e4852cc00dd0"
+    },
+    {
+      "bytes": 977,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/training_source_manifest.json",
+      "sha256": "2873219258a1dae2b23ad31bb44b3714a440fbdcc4ba87123d329239d43e82b6"
+    },
+    {
+      "bytes": 16764,
+      "path": "projects/stream_mc/results/selectivestream_r01_20261011/training_sources.zip",
+      "sha256": "42afdc50a75705e920cb71b00fb7a4654f0c75c97e7ad624698e398c8c29fd6e"
+    },
+    {
+      "bytes": 15100,
+      "path": "projects/stream_mc/scripts/r01_analysis.py",
+      "sha256": "af3f96f187c4357db9139d84a53fc8c5f39058890b9f3f24eb79db6b0fb71b50"
+    },
+    {
+      "bytes": 3304,
+      "path": "projects/stream_mc/scripts/r01_archive_audit.py",
+      "sha256": "4c1b5520de784734540bc38887401b05da5bdd93a664586237eefaf74a5d4ab1"
+    },
+    {
+      "bytes": 3695,
+      "path": "projects/stream_mc/scripts/r01_campaign.py",
+      "sha256": "c37139c45e1964ead2a454e4e4bca91152fac001006d46a5faa08dffc52ed263"
+    },
+    {
+      "bytes": 3848,
+      "path": "projects/stream_mc/scripts/r01_cleanroom.py",
+      "sha256": "84f322abe59d4d26897de55b41208ddf25b3dff994167dc441f2f22ba22f0c27"
+    },
+    {
+      "bytes": 22172,
+      "path": "projects/stream_mc/scripts/r01_closure.py",
+      "sha256": "ca5074cdc08bf5cf1342794e896fc423f25e76492c7692edd162fb36e5737ee8"
+    },
+    {
+      "bytes": 1698,
+      "path": "projects/stream_mc/scripts/r01_common.py",
+      "sha256": "1aff6c506e48ec145e7350280e6b4325ed802cff1424200a044ed4217a0f1f9b"
+    },
+    {
+      "bytes": 7667,
+      "path": "projects/stream_mc/scripts/r01_controls_timing.py",
+      "sha256": "4f95b7c5389f446a634a02917ad9ddc255a4cdd317b1db9289cbf3c5affb3f7a"
+    },
+    {
+      "bytes": 3371,
+      "path": "projects/stream_mc/scripts/r01_data_audit.py",
+      "sha256": "3d285c58ccf9386aebabaad3d67a0d04084a8921ccf7398a4b50482b3481f9b3"
+    },
+    {
+      "bytes": 14416,
+      "path": "projects/stream_mc/scripts/r01_final_audits.py",
+      "sha256": "ca422dc0378f447e097bc1beebf48a8ac2725bda05ad2afc15235fd3eed47532"
+    },
+    {
+      "bytes": 6137,
+      "path": "projects/stream_mc/scripts/r01_float_audit.py",
+      "sha256": "5a8c78c670665253e48ea99daff1109599dc5dbe509ea4e833d728b22a84ab55"
+    },
+    {
+      "bytes": 4273,
+      "path": "projects/stream_mc/scripts/r01_full_reproduce.py",
+      "sha256": "e284ecf4a9d301644f679129502f59665e7802695f9fb6655a0b27875ba28dc7"
+    },
+    {
+      "bytes": 22667,
+      "path": "projects/stream_mc/scripts/r01_generate.py",
+      "sha256": "d2a9e5512e8f27edbd613843f859ae08f33aeb1f2c6fb5d43f43bcd80a6a20af"
+    },
+    {
+      "bytes": 4354,
+      "path": "projects/stream_mc/scripts/r01_identity_audit.py",
+      "sha256": "3ad0cefda85c47033edb38cf091b9883b3280dcf25c8db42e3f6139fe119a5f3"
+    },
+    {
+      "bytes": 4423,
+      "path": "projects/stream_mc/scripts/r01_inventory.py",
+      "sha256": "7e6ae4615f47e3aca2b98427d1e2f9729f45e3ae0cd668a753608d20de208837"
+    },
+    {
+      "bytes": 1429,
+      "path": "projects/stream_mc/scripts/r01_offline_v2.py",
+      "sha256": "77ed72a6f8d76918d269e8d1ad24077b1a8c8f880065cb67798abfcc5b9c340c"
+    },
+    {
+      "bytes": 11051,
+      "path": "projects/stream_mc/scripts/r01_public.py",
+      "sha256": "8811a81d12ea51461f6a005f597dfa7eea0e90b76a75c9144473f6e0c93eaf9a"
+    },
+    {
+      "bytes": 2548,
+      "path": "projects/stream_mc/scripts/r01_public_replay.py",
+      "sha256": "09dcfea3b023637deb142fff16e775558eb75422da7f717d5614eb8961cab2dc"
+    },
+    {
+      "bytes": 14961,
+      "path": "projects/stream_mc/scripts/r01_release.py",
+      "sha256": "f285816d00c3d3d192ee506c1620b167995e37bb4c5d7c1b4d928d316cb8940e"
+    },
+    {
+      "bytes": 1467,
+      "path": "projects/stream_mc/scripts/r01_render.py",
+      "sha256": "21011715914315e3b486bc43d1df47300e69fcdcf438fc0fb26a01f57aa42cef"
+    },
+    {
+      "bytes": 15112,
+      "path": "projects/stream_mc/scripts/r01_replay.py",
+      "sha256": "a25ebb25f00c8e51dbbd7b78f7e8152cc9fb0bffa3033c673c9891f733a54239"
+    },
+    {
+      "bytes": 5535,
+      "path": "projects/stream_mc/scripts/r01_replication_audit.py",
+      "sha256": "293443f49fb40fc64a197b27ae1f5e77bf9a69360f85ec7e9353450856bbfbf1"
+    },
+    {
+      "bytes": 1671,
+      "path": "projects/stream_mc/scripts/r01_source_freeze.py",
+      "sha256": "9042cd089c6d6c216e52bff6b7f61cdc4d8c8374ef750028b55ba8c70f380466"
+    },
+    {
+      "bytes": 10350,
+      "path": "projects/stream_mc/scripts/r01_stress.py",
+      "sha256": "488f6cbee090ec194247bde68360da65d6708ce454e38e96b9c0a67966d08e5d"
+    },
+    {
+      "bytes": 21390,
+      "path": "projects/stream_mc/scripts/r01_train.py",
+      "sha256": "438df9ac7fe26953df3ddf27298d246d0fb328d2de7b4fea16a3d7d992f31a63"
+    },
+    {
+      "bytes": 6601,
+      "path": "projects/stream_mc/scripts/r01_validate.py",
+      "sha256": "2aa91a25ab3008ed27ca6ceb6e514c93bd55ff8215a60eafbcd26551bb32a773"
+    },
+    {
+      "bytes": 2041,
+      "path": "projects/stream_mc/scripts/r02_common.py",
+      "sha256": "0a2e31c1f9f62d7430f71d8d4bfc227e0b6a50d8becb1ae7050aa651f409b6b5"
+    },
+    {
+      "bytes": 10823,
+      "path": "projects/stream_mc/scripts/r02_finalize.py",
+      "sha256": "caacab8cba70fe5b6f5cc80fddcd0272fb3ad5f35a1d17e436088cbe916777cd"
+    },
+    {
+      "bytes": 13492,
+      "path": "projects/stream_mc/scripts/r02_github.py",
+      "sha256": "594bea830fc8c5a8166f03f560329f4c9c1c295432198ce3e4815c96dfae96bd"
+    },
+    {
+      "bytes": 5873,
+      "path": "projects/stream_mc/scripts/r02_handoff.py",
+      "sha256": "b8053f342aa2f29504f9660f273dcd173cd25afa4599629013823719522144b4"
+    },
+    {
+      "bytes": 10519,
+      "path": "projects/stream_mc/scripts/r02_numeric.py",
+      "sha256": "9d60dfe94e050743156bad6101e4ed6c88df022f273be15edac9f4d8c80838e5"
+    },
+    {
+      "bytes": 4062,
+      "path": "projects/stream_mc/scripts/r02_pack.py",
+      "sha256": "30e29a017bc0f9693d7296ddb36ff33ae44e32baf55130c17ef93a862f7e2c25"
+    },
+    {
+      "bytes": 4294,
+      "path": "projects/stream_mc/scripts/r02_paper.py",
+      "sha256": "61908219b1dcc15d7066a5091886a8dfb5d033e5850afa35a9d6c3b7825b2d59"
+    },
+    {
+      "bytes": 7961,
+      "path": "projects/stream_mc/scripts/r02_public.py",
+      "sha256": "34333ecb7aefc17111d2cb9092150bc571572a80a595c4a2fa71749272065c2f"
+    },
+    {
+      "bytes": 2017,
+      "path": "projects/stream_mc/scripts/r02_run.py",
+      "sha256": "bda74a7abf6da8f5a177b779dd19fa7731604d0e111e2c9896de91a4752f4cd0"
+    },
+    {
+      "bytes": 12166,
+      "path": "projects/stream_mc/scripts/r02_systems.py",
+      "sha256": "f9e545c6fd79b3d9cd9f81ac3a449233d47da6df6dddf620fd0a343aba4df917"
+    },
+    {
+      "bytes": 8776,
+      "path": "projects/stream_mc/scripts/r02_tables.py",
+      "sha256": "0aac2b627597b2c016337bf921a19fe18563c8b102053c9727a6f0d7b9d1daad"
+    },
+    {
+      "bytes": 19709,
+      "path": "scripts/reproduce_project.py",
+      "sha256": "d3d5949bb371d4f7ec990fa1eace44e9602372b80c0ad9be26bf730438e65be1"
+    },
+    {
+      "bytes": 0,
+      "path": "src/gog_fraud/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "src/gog_fraud/data/io/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9660,
+      "path": "src/gog_fraud/data/io/cache_store.py",
+      "sha256": "762b5324a2d4852b3486d2d253ae44e8f123942073ec94d48eab0730e82edecf"
+    },
+    {
+      "bytes": 17067,
+      "path": "src/gog_fraud/data/io/dataset.py",
+      "sha256": "1678f7bb0bf05c4b2610ba895d138b24ea988afac674d43d2ffb94f5382ebe2a"
+    },
+    {
+      "bytes": 15584,
+      "path": "src/gog_fraud/data/io/dataset_manifest.py",
+      "sha256": "3dae9c86266c4e1779a3c2d91a64de7635b34b0dc6e993c9e9b192a8d10356cc"
+    },
+    {
+      "bytes": 10272,
+      "path": "src/gog_fraud/data/io/global_graph_loader.py",
+      "sha256": "452042f89fb29e0def144957de3a0f60d2c2d6c0b2855466f0de0413bd7c6a8f"
+    },
+    {
+      "bytes": 4574,
+      "path": "src/gog_fraud/data/io/label_loader.py",
+      "sha256": "9902d9a05f44e3eb0610534d1311f905417100f99a22a6ff408c444b0e88ebdc"
+    },
+    {
+      "bytes": 9186,
+      "path": "src/gog_fraud/data/io/streaming_dataset.py",
+      "sha256": "3c34cc1b77ffec852988ea7d7df40636b5780941cd0296fdb8d093f52152c2d5"
+    },
+    {
+      "bytes": 4232,
+      "path": "src/gog_fraud/data/io/transaction_loader.py",
+      "sha256": "1885d236827af79f2004cc6731c08b915013acf6b97c8e0d3420a78c1a5daaf0"
+    },
+    {
+      "bytes": 0,
+      "path": "src/gog_fraud/data/level2/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5483,
+      "path": "src/gog_fraud/data/level2/dataset.py",
+      "sha256": "8d8a0baf14ffcd891ebd1b2819bcc6d824e5125c9f7c5ef5fe60996b43095057"
+    },
+    {
+      "bytes": 17439,
+      "path": "src/gog_fraud/data/level2/relation_builder.py",
+      "sha256": "653393b1ed5404717713d3913ace74f35b4fd2ba6440d78f164abe0500b351f0"
+    },
+    {
+      "bytes": 379,
+      "path": "src/gog_fraud/streaming/__init__.py",
+      "sha256": "bd3c0b2be78ad8604847bf525932d3273fbab6927723ed7d81582599b18ac22b"
+    },
+    {
+      "bytes": 1046,
+      "path": "src/gog_fraud/streaming/checkpoint.py",
+      "sha256": "09ba95a80b2ca74bd5ef43f869b79b1bb68ac4d2d6d4725e9c8aafb5ed7a77a8"
+    },
+    {
+      "bytes": 2768,
+      "path": "src/gog_fraud/streaming/embedding_cache.py",
+      "sha256": "fc069426a5f828ca9c02b8805ede04bbd453fb851ded8478611c62da8d087d43"
+    },
+    {
+      "bytes": 3050,
+      "path": "src/gog_fraud/streaming/engine.py",
+      "sha256": "849303ef829cbb959ed8e4ae043c2f314eb46f9b644a145e913bd7c29b79ead3"
+    },
+    {
+      "bytes": 3602,
+      "path": "src/gog_fraud/streaming/queue_manager.py",
+      "sha256": "20ca82ee6482375bc090c0d21a399c39e8c13aeec2febdb0c52eeeded4f2b800"
+    },
+    {
+      "bytes": 2031,
+      "path": "src/gog_fraud/streaming/relation_state.py",
+      "sha256": "b5c22d6d275ec48e5f0385baa60a03f704e421e57160c227deded65d39d43397"
+    },
+    {
+      "bytes": 6693,
+      "path": "src/gog_fraud/streaming/selective.py",
+      "sha256": "d7b5c1bd4cd003c5b2d1d030cfbc658310ecebe86da2497f47cbe8eb07fd14d7"
+    },
+    {
+      "bytes": 10724,
+      "path": "src/gog_fraud/streaming/selective_engine.py",
+      "sha256": "681aa4bbf22de72ade8a2f36c816d8ab3bec304b8d675db32483e508490541a7"
+    },
+    {
+      "bytes": 8026,
+      "path": "src/gog_fraud/streaming/selective_state.py",
+      "sha256": "3e6ad84c2ca0ded3818a5e3168fdbe756553158e40cac282006dfd0b05d19d51"
+    },
+    {
+      "bytes": 4221,
+      "path": "src/gog_fraud/streaming/subgraph_store.py",
+      "sha256": "786ba770c4cfd5722a7be74a253c41ec1644bbca33f980c693223f293fa0135d"
+    },
+    {
+      "bytes": 1637,
+      "path": "tests/stream_mc/selection/test_router.py",
+      "sha256": "85903676d0b7b1114d08c27694fe2f4a8ed20ce5e60da7289d9a4e1b2254efcf"
+    },
+    {
+      "bytes": 2524,
+      "path": "tests/stream_mc/streaming/test_bounded_state.py",
+      "sha256": "0bd1576da24f9c3a6ba95d263c294135810098e93e635c774e28dca650bc39ca"
+    },
+    {
+      "bytes": 1048,
+      "path": "tests/stream_mc/streaming/test_engine.py",
+      "sha256": "cff8000eb5b858880f1912af60e306e19dff38dc7d97053d42a2faec6b31c85e"
+    },
+    {
+      "bytes": 1230,
+      "path": "tests/stream_mc/streaming/test_stateful_stream.py",
+      "sha256": "9f0eccda7f49f74dcddb65f80941504a86979bc9ae34d996f25ab54ebbe39808"
+    },
+    {
+      "bytes": 3323,
+      "path": "tests/stream_mc/test_public_numeric_r01.py",
+      "sha256": "2871638aded1499babdaf7892c5e899004939053962393641a7aa0d07c46e8cf"
+    },
+    {
+      "bytes": 3083,
+      "path": "tests/stream_mc/test_selectivestream_fallbacks.py",
+      "sha256": "9898121edaea141d86b8e320f2c00b23e340cce69d48eda9ea5f4cfa82c40a35"
+    },
+    {
+      "bytes": 4409,
+      "path": "tests/stream_mc/test_selectivestream_r01.py",
+      "sha256": "eeac56b0c2554f2767513393ab1a9e422313434f3c5e8691efc2e3c5370e30cd"
+    }
+  ],
+  "source_status": "exact checkout bytes; R02 verifier is an added sidecar, not relabeled R01 executed training/timing source",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

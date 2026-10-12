@@ -1,0 +1,21 @@
+{
+  "credential_available": true,
+  "existing_releases": [
+    {
+      "draft": false,
+      "html_url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10",
+      "prerelease": false,
+      "tag_name": "benchmark-a09-2026-10-10"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/v1.0.0-preprint",
+      "prerelease": true,
+      "tag_name": "v1.0.0-preprint"
+    }
+  ],
+  "push_permission": true,
+  "repository": "Sam-7878/dlg_gnn",
+  "repository_url": "https://github.com/Sam-7878/dlg_gnn",
+  "scope": "read-only credential/permission/release inspection; no token retained or external write"
+}
