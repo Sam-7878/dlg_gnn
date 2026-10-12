@@ -1,0 +1,331 @@
+{
+  "N_rows_checked": 40,
+  "rows": [
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "0fab3f1e1b0a36327017873a25e27891ce8ae3b5997441665deea7031bee67b9",
+      "seed": 11,
+      "split": "validation"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "5cf1f937fcb909add93e31923e513bca386130f39af1a76a6e5d5d1b2230d34f",
+      "seed": 11,
+      "split": "test"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "6858e901a95bd0bc143ef39888840a0a2194709449b2e119d6187cb66b3933ca",
+      "seed": 11,
+      "split": "validation"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "d21df372317562e90851a365568d665b7e3fe4e2cc7d0e8c9092b5f8e6a31e34",
+      "seed": 11,
+      "split": "test"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "c252f9b826f558ee0a62368a941a65b9d05e8d22e5e629f1b21b99e59de3467d",
+      "seed": 11,
+      "split": "validation"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "682e769b82ca1d8cd7c63e56d305aef5721b0bde80ad95948e463cec3a9265ca",
+      "seed": 11,
+      "split": "test"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "e296e2cae4fd7ecb4d81a35667467bb50336a19d40346da38da23e758b267ea8",
+      "seed": 11,
+      "split": "validation"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "da24333e4d28ea44d80e01bc8411f36efcf5a28f426ef69564940cc3c01dd7ae",
+      "seed": 11,
+      "split": "test"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "283c9599d2ace554cfe5e7149379aae3ed12ad6a6ed5e7c9cb666eeb1b0fbb2f",
+      "seed": 22,
+      "split": "validation"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "431d1f3d3409e4e9d26423a9acf93d11c675e6df0dd4a5bed01be3275c778168",
+      "seed": 22,
+      "split": "test"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "896d3e51d8cee218b4ab5227f40451071a507170a1c6a520716faa38acc8e9f8",
+      "seed": 22,
+      "split": "validation"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "d87c4f54472bb981faed46d953f4cdc6330951cd326698df66d9af6b2bcaa2e0",
+      "seed": 22,
+      "split": "test"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "aad3ea49e440c65d6876ad877a02de20135d2cbc16dffc9b5b54638c188c0805",
+      "seed": 22,
+      "split": "validation"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "eb353c79811c7038effdb7298a4f5516fd19829ab2287244afd0601017ef3919",
+      "seed": 22,
+      "split": "test"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "7da2d8323beabe90d585b424795f3814419640407b7ed7eadd50962cc127edd2",
+      "seed": 22,
+      "split": "validation"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "3b22ef668260bd1cf2525a68c8d44e6527bb2ad22ec23ba7d4dd32b3a17c2015",
+      "seed": 22,
+      "split": "test"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "4b5ecd858729fa42b462efb1cd1f2760ab8db98fe2ef19586bfc85f538c7f9e0",
+      "seed": 33,
+      "split": "validation"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "d57668afe527e354eff6c6a127582e210cf027d4646b43b116ee199a7842ba2f",
+      "seed": 33,
+      "split": "test"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "17cd7f752f681022a565e88897ab5a8cc29eed8443826df3aacc76981b0ee8c7",
+      "seed": 33,
+      "split": "validation"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "2fe4621e785b4e26ff03d857692624236dce25fb47b27127b413dbfed960dcdc",
+      "seed": 33,
+      "split": "test"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "8ff78b359abe2d208790d48f53a7b933d98bfcee35a7e744def5bedad9bbe430",
+      "seed": 33,
+      "split": "validation"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "4075f857fdd19e2528bcc79d9cb1e73dd824b7b6b4cce8b6efbff94488fbd2fd",
+      "seed": 33,
+      "split": "test"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "e252d3c1d176e478fad338e8976e7154c8fcbc28999a05f46563ae14367fb5e5",
+      "seed": 33,
+      "split": "validation"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "1bc088331be4a8bd9e430af7b66cc0996ee6c63cca052f670230c2f5acad7056",
+      "seed": 33,
+      "split": "test"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "24540c922d076b7dd2792fc2d82c7e2ebdd365fcd993d83e37685f5071b82efc",
+      "seed": 44,
+      "split": "validation"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "ecbeaed94f2ed20c2525ba36c262b640ccba70547ee2728704561dadb3d80342",
+      "seed": 44,
+      "split": "test"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "b50c8bad5dc93a3531e0adc72640e2b4543c787571ef0157633f0ca6847cc978",
+      "seed": 44,
+      "split": "validation"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "06f9a68033d69a9ecc5fab5950785e75baa89bc23fe95470f342f7016e30cad0",
+      "seed": 44,
+      "split": "test"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "eb29bff647b59821959754ac49b9c30b532e4c8ae158ebb1c4db26658d447099",
+      "seed": 44,
+      "split": "validation"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "8a6ec72c5754aa302bc18485b3c11eff6ad42c936577b011a0fef8be7086dedb",
+      "seed": 44,
+      "split": "test"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "081a327778df9c9f1073be24143ba1ad173722e4b5fcd1ff619b2682db478fb8",
+      "seed": 44,
+      "split": "validation"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "5d9e15f4c629078b04400fa08810ad07737f46c53079f12d3514fca52d8526c4",
+      "seed": 44,
+      "split": "test"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "2302c626ec9162141480a3834845939f4f0028654e3e6a9c0d444181e3ca45f3",
+      "seed": 55,
+      "split": "validation"
+    },
+    {
+      "T": 1,
+      "max_error": 0.0,
+      "ranking_definition": "entropy of calibrated probability",
+      "raw_sha256": "e5e389fe54a551fa7417afe41913a96ac7ee52507fb17b0e0065472df8e1e207",
+      "seed": 55,
+      "split": "test"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "5d316fd89eb800bc5e41aaa5a3c0a92225ae13c75f8fb7120c10d2d11fa7c66f",
+      "seed": 55,
+      "split": "validation"
+    },
+    {
+      "T": 3,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "427306dd4b9ff0e41580ba1209fc1ab9eafb21cd135dde23f5a76b6b4c3989cc",
+      "seed": 55,
+      "split": "test"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "fb2c02ff39aa4c7ac6c0c8e7b50ccd174d6f5ded50879ffd4f282b6da82a2e35",
+      "seed": 55,
+      "split": "validation"
+    },
+    {
+      "T": 5,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "44ff484b1caefb344a83a9eecc36bdea8ad9558a1b83e48ba5c873d5a7eec339",
+      "seed": 55,
+      "split": "test"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "92c4a142a2f7916cfc2dc6ae57a5ff99193467f13f3ef15d1b57fe607f8cb751",
+      "seed": 55,
+      "split": "validation"
+    },
+    {
+      "T": 8,
+      "max_error": 0.0,
+      "ranking_definition": "population variance",
+      "raw_sha256": "6fca59a4b29eeebe53d3111fd5c7945e3aad3e6a8e52c90a79c8cbbf3be81e8e",
+      "seed": 55,
+      "split": "test"
+    }
+  ],
+  "scope": "original40 MC outputs and declared error ranking, source/dropout mode also inspected; not fresh stochastic inference",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r01_train.py": "438df9ac7fe26953df3ddf27298d246d0fb328d2de7b4fea16a3d7d992f31a63",
+    "src/gog_fraud/streaming/selective.py": "d7b5c1bd4cd003c5b2d1d030cfbc658310ecebe86da2497f47cbe8eb07fd14d7"
+  },
+  "status": "VERIFIED"
+}

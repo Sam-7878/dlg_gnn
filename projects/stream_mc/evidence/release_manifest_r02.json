@@ -2,48 +2,73 @@
   "all_author_paper_approval": false,
   "assets": [
     {
+      "api_digest": "sha256:45ecc0b07519e06106e7b1b6b9f6ed09e595df9bd96fd10473c77e167ae3d2cc",
+      "asset_id": 633157628,
       "bytes": 266435,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_scientific_source.zip",
       "path": "projects/stream_mc/handoff/r02/r02_scientific_source.zip",
       "sha256": "45ecc0b07519e06106e7b1b6b9f6ed09e595df9bd96fd10473c77e167ae3d2cc"
     },
     {
+      "api_digest": "sha256:8bc53b9b7312978be804653e9084fb69b473caa9e145545cb393c4ab135dc365",
+      "asset_id": 633157657,
       "bytes": 1602499,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_verification_evidence.zip",
       "path": "projects/stream_mc/evidence/r02_verification_evidence.zip",
       "sha256": "8bc53b9b7312978be804653e9084fb69b473caa9e145545cb393c4ab135dc365"
     },
     {
+      "api_digest": "sha256:90a3fa6b30f8a7c5d73c133ff7d47f06008b229578860959f2508d3f482d73e8",
+      "asset_id": 633157685,
       "bytes": 7319,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_release.json",
       "path": "projects/stream_mc/evidence/r01_release.json",
       "sha256": "90a3fa6b30f8a7c5d73c133ff7d47f06008b229578860959f2508d3f482d73e8"
     },
     {
+      "api_digest": "sha256:4449c3e89aeedec25aa60f051c77005bf37c8251a01ce49d648a0e730abfeda7",
+      "asset_id": 633157720,
       "bytes": 94371840,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part001",
       "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part001",
       "sha256": "4449c3e89aeedec25aa60f051c77005bf37c8251a01ce49d648a0e730abfeda7"
     },
     {
+      "api_digest": "sha256:c625b66c0653f0f62339e3895edec9dddd06b7ec50afd1c1efcda74d837211f6",
+      "asset_id": 633159441,
       "bytes": 94371840,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part002",
       "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part002",
       "sha256": "c625b66c0653f0f62339e3895edec9dddd06b7ec50afd1c1efcda74d837211f6"
     },
     {
+      "api_digest": "sha256:abe805bb991ac94763eff357c157f2fab0a60621cc58c5372057d25e5be643b4",
+      "asset_id": 633161528,
       "bytes": 70106771,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part003",
       "path": "projects/stream_mc/evidence/r01_numeric_evidence.zip.part003",
       "sha256": "abe805bb991ac94763eff357c157f2fab0a60621cc58c5372057d25e5be643b4"
     },
     {
+      "api_digest": "sha256:bcb66f1fc7eb514fb9651dc08c4851be2594e0ddcff92531575b5eeb955c4475",
+      "asset_id": 633163191,
       "bytes": 568,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_release_checksums.sha256",
       "path": "projects/stream_mc/evidence/r02_release_checksums.sha256",
       "sha256": "bcb66f1fc7eb514fb9651dc08c4851be2594e0ddcff92531575b5eeb955c4475"
     },
     {
+      "api_digest": "sha256:b316ea292c07d4f1257d0fa8dcfd7d1314d38960f562734ed396399cef04b7b7",
+      "asset_id": 633163213,
       "bytes": 2382,
+      "download_url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/RELEASE_R02_README.md",
       "path": "projects/stream_mc/evidence/RELEASE_R02_README.md",
       "sha256": "b316ea292c07d4f1257d0fa8dcfd7d1314d38960f562734ed396399cef04b7b7"
     }
   ],
   "original_run_id": "selectivestream_r01_20261011",
   "paper_publication_or_submission": false,
+  "prerelease": true,
   "public_boundary": {
     "address_regex_hits": 0,
     "manuscript_source_hits": 0,
@@ -57,7 +82,9 @@
     },
     "scope": "explicit curated selection/content checks; pseudonyms still linkable, not proof of anonymization"
   },
-  "release_status": "local exact assets; hosting not yet verified",
+  "release_id": 410370220,
+  "release_status": "published; all assets publicly downloaded and verified",
+  "release_url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/stream-mc-r02-20261012",
   "repository": "Sam-7878/dlg_gnn",
   "revision": "DLG-SelectiveStream-R02",
   "source_hashes": {
@@ -73,5 +100,6 @@
     "projects/stream_mc/scripts/r02_systems.py": "f9e545c6fd79b3d9cd9f81ac3a449233d47da6df6dddf620fd0a343aba4df917",
     "projects/stream_mc/scripts/r02_tables.py": "0aac2b627597b2c016337bf921a19fe18563c8b102053c9727a6f0d7b9d1daad"
   },
-  "tag": "stream-mc-r02-20261012"
+  "tag": "stream-mc-r02-20261012",
+  "target_source_commit": "07c8578571481b4b0836d38a7929a3530d27063e"
 }

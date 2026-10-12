@@ -5,6 +5,8 @@
   "N_present_and_hash_matching": 939,
   "distinct_manifests": "original 939 targets and public derivative ZIP are different identities, not substituted",
   "external_delivery_or_hosting_performed": false,
+  "report_stage": "original local handoff verification before external publication; the false hosting flag describes that stage, not the later release",
+  "post_hosting_access_receipt": "projects/stream_mc/evidence/access_verification_r02.json",
   "incomplete_transfer_cause": "review documents establish that the canonical ZIP/parts were not attached and only35/939 original targets were supplied; the exact earlier compression/selection action is not locally evidenced and is not inferred",
   "original_manifest": {
     "bytes": 120882,

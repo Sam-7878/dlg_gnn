@@ -1,0 +1,19 @@
+{
+  "status": "VERIFIED",
+  "verification_date": "2026-10-12",
+  "verifier": "Codex implementation-side visual inspection of actual rendered pixels",
+  "pdf_sha256": {
+    "preprint": "0ad596d4f8e2557bb3a3829e6a1de2463e09363bcd91339f464a2c971b8827b5",
+    "journal": "9d3e71df074f1d1931b7669c34d06b9d9a5616e0725b0e86f2875908a635a064",
+    "supplement": "59a4a74176ab88590b509571698e63ac0ba20e45cd8de540125e8468805f0cb7"
+  },
+  "pages_inspected": {"preprint": 16, "journal": 16, "supplement": 7},
+  "method": "All39 final pages viewed on five actual contact sheets; journal reference page16 and supplement dense budget/count page3 additionally viewed individually",
+  "observations": [
+    "No clipping or overlaps observed in final tables, figures, captions, headings, declarations or bibliography",
+    "Human-readable UTC table, adverse replay event diagnostics and achieved-budget unmatched cells visible",
+    "References20 cited/printed, source method URLs and exact DLG-GNN v1 DOI visible; bibliography no longer has one entry alone on page17",
+    "NA is displayed without NA plus/minus NA; final paper/code/evidence boundaries and pending author AI/role/version approval remain explicit"
+  ],
+  "scope": "Visual/layout verification of these exact PDF bytes, not scientific peer review or all-author approval; rendering alone was not recorded as inspection"
+}

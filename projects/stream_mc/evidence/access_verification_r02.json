@@ -1,0 +1,123 @@
+{
+  "verification_date": "2026-10-12",
+  "receipt_recorded_at_utc": "2026-10-12 08:35:17 UTC",
+  "verifier": "Codex implementation operator; actual public downloads/isolated paths on same host, not an external human reviewer",
+  "commands": [
+    {
+      "actual_exit_code": 0,
+      "command": [
+        "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+        "-m",
+        "venv",
+        "/tmp/stream_mc_r02_public_download_u1tkqai2/stdlib_venv"
+      ],
+      "label": "fresh_venv",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "new temporary source/data path from real public downloads; same operator/host, not peer review"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": [
+        "/tmp/stream_mc_r02_public_download_u1tkqai2/stdlib_venv/bin/python",
+        "projects/stream_mc/scripts/r02_public.py"
+      ],
+      "label": "stdlib_public",
+      "log_sha256": "8102cf5f25809902705231a6df3b9fca7e4a66e7fd100727f1af19cef211fe3c",
+      "scope": "new temporary source/data path from real public downloads; same operator/host, not peer review"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": [
+        "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+        "projects/stream_mc/scripts/r02_public.py",
+        "--full-policy"
+      ],
+      "label": "full_policy",
+      "log_sha256": "bf11f3e29f5c070252b0523176d4d98f8fbe1011f2d0c641c590bc57646d6995",
+      "scope": "new temporary source/data path from real public downloads; same operator/host, not peer review"
+    }
+  ],
+  "dependencies_reinstalled_in_fresh_scientific_venv": false,
+  "downloads": [
+    {
+      "authentication_sent": false,
+      "bytes": 266435,
+      "http_status": 200,
+      "name": "r02_scientific_source.zip",
+      "sha256": "45ecc0b07519e06106e7b1b6b9f6ed09e595df9bd96fd10473c77e167ae3d2cc",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_scientific_source.zip"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 1602499,
+      "http_status": 200,
+      "name": "r02_verification_evidence.zip",
+      "sha256": "8bc53b9b7312978be804653e9084fb69b473caa9e145545cb393c4ab135dc365",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_verification_evidence.zip"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 7319,
+      "http_status": 200,
+      "name": "r01_release.json",
+      "sha256": "90a3fa6b30f8a7c5d73c133ff7d47f06008b229578860959f2508d3f482d73e8",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_release.json"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 94371840,
+      "http_status": 200,
+      "name": "r01_numeric_evidence.zip.part001",
+      "sha256": "4449c3e89aeedec25aa60f051c77005bf37c8251a01ce49d648a0e730abfeda7",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part001"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 94371840,
+      "http_status": 200,
+      "name": "r01_numeric_evidence.zip.part002",
+      "sha256": "c625b66c0653f0f62339e3895edec9dddd06b7ec50afd1c1efcda74d837211f6",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part002"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 70106771,
+      "http_status": 200,
+      "name": "r01_numeric_evidence.zip.part003",
+      "sha256": "abe805bb991ac94763eff357c157f2fab0a60621cc58c5372057d25e5be643b4",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part003"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 568,
+      "http_status": 200,
+      "name": "r02_release_checksums.sha256",
+      "sha256": "bcb66f1fc7eb514fb9651dc08c4851be2594e0ddcff92531575b5eeb955c4475",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_release_checksums.sha256"
+    },
+    {
+      "authentication_sent": false,
+      "bytes": 2382,
+      "http_status": 200,
+      "name": "RELEASE_R02_README.md",
+      "sha256": "b316ea292c07d4f1257d0fa8dcfd7d1314d38960f562734ed396399cef04b7b7",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/RELEASE_R02_README.md"
+    }
+  ],
+  "no_author_absolute_input_paths": true,
+  "paper_publication_or_submission": false,
+  "public_numeric": {
+    "MC_rows": 40,
+    "exact_seed_tests": 5,
+    "full_policy_rows": 6065,
+    "model_identities": 25,
+    "primary_raw_rows": 280,
+    "scope": "public pseudonymous raw arithmetic and curated source identity; no original address mapping, retraining, new timing or independent scientific approval",
+    "separate_historical_seed_tests": 5,
+    "status": "PASS"
+  },
+  "release_url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/stream-mc-r02-20261012",
+  "scope": "actual unauthenticated hosted-byte downloads, fresh stdlib venv and isolated source/input full-policy execution using explicitly reused installed scientific dependencies; same implementer/host, not an external human scientific audit",
+  "status": "VERIFIED",
+  "target_source_commit": "07c8578571481b4b0836d38a7929a3530d27063e"
+}

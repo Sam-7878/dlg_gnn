@@ -1,0 +1,8 @@
+{
+  "N_raw_model_inputs": 110,
+  "binding_source_sha256": "f034f3eb34b2cf370ff7bdf32231c67062bc5344b01230d5a1d597a3033edde3",
+  "original_raw_manifest": "58f8d0ec210cea5b05b1dfe1d41aefcf8f03854a7decdc4fae2814e26f17c890",
+  "output_sha256": "38ae65080be74ed2270f19d2059ffbc4c8abf53efdc1e0df10cfe2c54a4b111c",
+  "scope": "post-hosting metadata extension; original/published code and numeric assets unchanged, no new training/timing",
+  "verification_id": "selectivestream_r02_20261012_verification"
+}

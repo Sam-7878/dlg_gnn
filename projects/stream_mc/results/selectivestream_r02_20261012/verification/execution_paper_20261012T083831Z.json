@@ -1,0 +1,27 @@
+{
+  "actual_exit_code": 0,
+  "command": [
+    "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+    "/mnt/d/_work/goat_bank/dlg_gnn/projects/stream_mc/scripts/r02_paper.py"
+  ],
+  "log_path": "projects/stream_mc/results/selectivestream_r02_20261012/verification/paper_20261012T083831Z.log",
+  "log_sha256": "f5813c9866f4ea731731c3ef7fffebe2f0b979844933a0def024d409c6f98e0b",
+  "scope": "actual same-host subprocess verification; not new training or external reviewer approval",
+  "source_hashes": {
+    "projects/stream_mc/scripts/r02_common.py": "0a2e31c1f9f62d7430f71d8d4bfc227e0b6a50d8becb1ae7050aa651f409b6b5",
+    "projects/stream_mc/scripts/r02_finalize.py": "caacab8cba70fe5b6f5cc80fddcd0272fb3ad5f35a1d17e436088cbe916777cd",
+    "projects/stream_mc/scripts/r02_github.py": "594bea830fc8c5a8166f03f560329f4c9c1c295432198ce3e4815c96dfae96bd",
+    "projects/stream_mc/scripts/r02_handoff.py": "b8053f342aa2f29504f9660f273dcd173cd25afa4599629013823719522144b4",
+    "projects/stream_mc/scripts/r02_numeric.py": "9d60dfe94e050743156bad6101e4ed6c88df022f273be15edac9f4d8c80838e5",
+    "projects/stream_mc/scripts/r02_pack.py": "30e29a017bc0f9693d7296ddb36ff33ae44e32baf55130c17ef93a862f7e2c25",
+    "projects/stream_mc/scripts/r02_paper.py": "61908219b1dcc15d7066a5091886a8dfb5d033e5850afa35a9d6c3b7825b2d59",
+    "projects/stream_mc/scripts/r02_public.py": "34333ecb7aefc17111d2cb9092150bc571572a80a595c4a2fa71749272065c2f",
+    "projects/stream_mc/scripts/r02_run.py": "bda74a7abf6da8f5a177b779dd19fa7731604d0e111e2c9896de91a4752f4cd0",
+    "projects/stream_mc/scripts/r02_systems.py": "f9e545c6fd79b3d9cd9f81ac3a449233d47da6df6dddf620fd0a343aba4df917",
+    "projects/stream_mc/scripts/r02_tables.py": "0aac2b627597b2c016337bf921a19fe18563c8b102053c9727a6f0d7b9d1daad"
+  },
+  "stage": "paper",
+  "utc_execution_stamp": "20261012T083831Z",
+  "verification_id": "selectivestream_r02_20261012_verification",
+  "wall_seconds": 26.76686956100002
+}

@@ -1,4 +1,7 @@
 {
+  "source_snapshot_stage": "pre-hosting source ZIP; immutable published snapshot, not a promise that post-hosting metadata documents have the same checkout bytes",
+  "published_source_commit": "07c8578571481b4b0836d38a7929a3530d27063e",
+  "post_hosting_additions": "Actual access/final paper/closure/raw-lineage receipts are separate Git records; r02_bindings.py is a metadata-only helper not contained in the immutable source ZIP",
   "baseline_commit": "35785050eb8e9ffe2a9603197a8e5447489900fa",
   "frozen_executions": [
     {
