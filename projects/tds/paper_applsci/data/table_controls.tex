@@ -1,0 +1,19 @@
+\begin{table}[H]
+\caption{Supplemental controls in one matched runtime, validation-selected with a 60-epoch ceiling and patience five. LR is deterministic; five repeated fits do not represent five independent solutions.}\label{tab:controls}
+\centering\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & AP & ROC-AUC & Brier & ECE & NLL \\
+\midrule
+Local GIN + weighted BCE & 0.4524 $\pm$ 0.0566 & 0.9064 $\pm$ 0.0215 & 0.0432 $\pm$ 0.0108 & 0.1374 $\pm$ 0.0443 & 0.2027 $\pm$ 0.0469 \\
+Local GIN + weighted focal & 0.4885 $\pm$ 0.0527 & 0.9079 $\pm$ 0.0118 & 0.1224 $\pm$ 0.0158 & 0.3179 $\pm$ 0.0251 & 0.4279 $\pm$ 0.0357 \\
+Local GIN without chain & 0.3273 $\pm$ 0.0541 & 0.8809 $\pm$ 0.0127 & 0.0583 $\pm$ 0.0182 & 0.1696 $\pm$ 0.0501 & 0.2498 $\pm$ 0.0581 \\
+GraphSAGE + weighted BCE & 0.3114 $\pm$ 0.0627 & 0.8973 $\pm$ 0.0207 & 0.0409 $\pm$ 0.0123 & 0.0964 $\pm$ 0.0293 & 0.1669 $\pm$ 0.0392 \\
+GraphSAGE + weighted focal & 0.2992 $\pm$ 0.0277 & 0.8888 $\pm$ 0.0087 & 0.0935 $\pm$ 0.0092 & 0.2553 $\pm$ 0.0191 & 0.3497 $\pm$ 0.0245 \\
+Degree-summary LR & 0.3634 $\pm$ 0.0000 & 0.9281 $\pm$ 0.0000 & 0.0277 $\pm$ 0.0000 & 0.0353 $\pm$ 0.0000 & 0.1040 $\pm$ 0.0000 \\
+Degree-summary MLP & 0.4751 $\pm$ 0.0351 & 0.9293 $\pm$ 0.0037 & 0.0250 $\pm$ 0.0005 & 0.0424 $\pm$ 0.0050 & 0.1016 $\pm$ 0.0019 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

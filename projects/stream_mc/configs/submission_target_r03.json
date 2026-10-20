@@ -1,0 +1,22 @@
+{
+  "revision_id": "DLG-SelectiveStream-R03-Submission-Closeout",
+  "target_changed_by_user_on": "2026-10-20",
+  "journal": "Applied Sciences",
+  "publisher": "MDPI",
+  "special_issue": "Graph Neural Networks: Theory, Methods and Applications",
+  "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/C80IXAF9V4",
+  "guest_editor_as_listed": "Ruonan Liu",
+  "announced_deadline": "2026-11-20",
+  "announced_apc": {"final_invoice_or_discount_verified": false},
+  "instructions_url": "https://www.mdpi.com/journal/applsci/instructions",
+  "policy_check_on": "2026-10-20",
+  "policy_access": "Official Applied Sciences special-issue listing retrieved through search index. Direct requests returned429. Exact-journal live author/portal rules remain OPEN; do not substitute Electronics or Applied Biosciences rules.",
+  "planning_only_upload_budget_bytes": 120000000,
+  "final_portal_policy_check": "OPEN",
+  "preprints_org_first_by_user_choice": true,
+  "preprint_posting_is_intrinsic_journal_gate_requirement": false,
+  "scope_assessment": "Good topical match for empirical GNN methods/applications: selective local-to-relational inference and workload-transfer limitations. Scientific adequacy is distinct from author/portal readiness; no acceptance prediction or new GNN theory is claimed.",
+  "temporary_Electronics_WFBEQFE47X_choice": "Explicitly reversed by user before any external mutation or submission",
+  "historical_R01_R02_artifacts_unchanged": true,
+  "paper_submission_or_editor_contact_authorized_by_this_config": false
+}

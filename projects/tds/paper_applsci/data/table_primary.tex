@@ -1,0 +1,21 @@
+\begin{table}[H]
+\caption{Frozen primary results: mean and sample standard deviation over five seeds; ensembles are one fixed aggregate.}\label{tab:primary}
+\centering\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & AP & ROC-AUC & Brier & ECE & NLL \\
+\midrule
+CausalLocalGIN deterministic & 0.4648 $\pm$ 0.0687 & 0.9009 $\pm$ 0.0056 & 0.0533 $\pm$ 0.0199 & 0.1672 $\pm$ 0.0524 & 0.2365 $\pm$ 0.0610 \\
+CausalLocalGIN MC Dropout T=10 & 0.4416 $\pm$ 0.0855 & 0.8997 $\pm$ 0.0175 & 0.0410 $\pm$ 0.0139 & 0.1285 $\pm$ 0.0436 & 0.1935 $\pm$ 0.0473 \\
+Temperature-Scaled CausalLocalGIN & 0.4648 $\pm$ 0.0687 & 0.9009 $\pm$ 0.0056 & 0.0241 $\pm$ 0.0029 & 0.0357 $\pm$ 0.0093 & 0.1070 $\pm$ 0.0113 \\
+TGAT-style temporal attention & 0.3412 $\pm$ 0.0474 & 0.8946 $\pm$ 0.0173 & 0.0350 $\pm$ 0.0017 & 0.1013 $\pm$ 0.0161 & 0.1688 $\pm$ 0.0127 \\
+TGN-style event memory & 0.2324 $\pm$ 0.0093 & 0.8983 $\pm$ 0.0039 & 0.0318 $\pm$ 0.0021 & 0.0380 $\pm$ 0.0074 & 0.1244 $\pm$ 0.0133 \\
+fraud-oriented GraphSAGE & 0.3084 $\pm$ 0.0334 & 0.8914 $\pm$ 0.0096 & 0.0953 $\pm$ 0.0100 & 0.2595 $\pm$ 0.0182 & 0.3548 $\pm$ 0.0247 \\
+Deep Ensemble & 0.4902 & 0.9145 & 0.0489 & 0.1676 & 0.2316 \\
+MC Dropout Ensemble T=10 & 0.4721 & 0.9129 & 0.0375 & 0.1285 & 0.1892 \\
+Temperature-Scaled Deep Ensemble & 0.4941 & 0.9134 & 0.0218 & 0.0355 & 0.0986 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

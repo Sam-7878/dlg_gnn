@@ -1,8 +1,11 @@
 # DLG-SelectiveStream / StreamMC
 
-Active editorial/verification revision: `DLG-SelectiveStream-R02`.
+Active author-local closeout: `DLG-SelectiveStream-R03` (candidate, not approved).
+The public scientific/evidence revision remains `DLG-SelectiveStream-R02`.
 Original scientific run: `selectivestream_r01_20261011`, not relabeled replica.
 See [R02 reproduction](REPRODUCE_R02.md) and [R02 handoff](docs/r02/HANDOFF_R02.md).
+See [R03 closeout](REPRODUCE_R03.md) for new CPU/access diagnostics and the
+preprint-first Applied Sciences target; no new fits or GPU replays are required.
 StreamMC is the project name; deterministic GIN → margin routing → eligible
 GATv2 target-star inference is primary. MC dropout is a separately calibrated
 ablation. The scientific scope is **retrospective contract snapshots and

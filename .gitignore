@@ -143,4 +143,5 @@ _res/
 # R02 shadow links are private working inputs, not a second published campaign.
 /projects/stream_mc/results/selectivestream_r02_20261012/working/
 /projects/stream_mc/handoff/r02/
+/projects/stream_mc/handoff/r03/
 !/projects/stream_mc/evidence/r02_verification_evidence.zip

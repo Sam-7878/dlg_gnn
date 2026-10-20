@@ -1,0 +1,19 @@
+\begin{table}[H]
+\caption{Tie-aware average-precision paired statistics, 10,000 replicates per protocol. Raw and Holm-adjusted Monte Carlo p-values include the finite-resampling correction.}\label{tab:stats}
+\centering\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrr}
+\toprule
+Comparison & $\Delta$AP & Ordinary 95\% CI & Stratified 95\% CI & Raw $p$ & Holm $p$ \\
+\midrule
+Local GIN vs TGN & +0.2323 & [+0.1611, +0.2953] & [+0.1627, +0.2959] & 0.0001 & 0.0007 \\
+Local GIN vs TGAT & +0.1236 & [+0.0599, +0.1835] & [+0.0602, +0.1824] & 0.0001 & 0.0007 \\
+Local GIN vs FraudSAGE & +0.1564 & [+0.0978, +0.2211] & [+0.0972, +0.2192] & 0.0001 & 0.0007 \\
+MC Dropout vs Deterministic & -0.0232 & [-0.0384, -0.0080] & [-0.0392, -0.0080] & 0.0001 & 0.0007 \\
+MC Dropout vs Temperature Scaling & -0.0232 & [-0.0389, -0.0081] & [-0.0394, -0.0085] & 0.0460 & 0.0920 \\
+MC Dropout vs Deep Ensemble & -0.0486 & [-0.0702, -0.0291] & [-0.0703, -0.0298] & 0.0001 & 0.0007 \\
+MC Dropout Ensemble vs Deep Ensemble & -0.0181 & [-0.0346, -0.0017] & [-0.0351, -0.0025] & 0.1279 & 0.1279 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

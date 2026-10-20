@@ -1,0 +1,221 @@
+\documentclass[applsci,article,submit,pdftex,moreauthors]{Definitions/mdpi}
+\usepackage{adjustbox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{siunitx}
+\firstpage{1}
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{}
+\daterevised{}
+\dateaccepted{}
+\datepublished{}
+\hreflink{}
+\doinum{}
+\reftitle{References}
+\renewcommand{\papercitation}{Park, S.; Kim, K.-H. Manuscript prepared for consideration in \textit{Applied Sciences}. Not published; DOI not assigned.}
+\AtBeginDocument{%
+\fancyhead[L]{\footnotesize TDS revision prepared for \textit{Applied Sciences}}%
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\footrulewidth}{0.4pt}%
+\fancyfoot[L]{\fontsize{8}{8}\selectfont Prepared for \textit{Applied Sciences}; author confirmation pending}%
+\fancyfoot[R]{\fontsize{8}{8}\selectfont DOI not assigned}}}
+\Title{A Validity-First Evaluation of Graph Neural Networks under Temporal Distribution Shift}
+\TitleCitation{Auditing Temporal Graph Evaluation}
+\Author{SeongSu Park $^{1}$ and Ki-Hyung Kim $^{1}$}
+\AuthorNames{SeongSu Park and Ki-Hyung Kim}
+\AuthorCitation{Park, S.; Kim, K.-H.}
+\address{$^{1}$\quad Ajou University, Suwon, Republic of Korea; parky@ajou.ac.kr (S.P.); kkim86@ajou.ac.kr (K.-H.K.)}
+\corres{Corresponding-author designation pending confirmation by the authors.}
+\abstract{Evaluations of graph neural networks can confound prediction-time information, model architecture, class imbalance, and probability calibration. We present an auditable evaluation methodology for multi-chain financial graph classification under temporal distribution shift. The frozen benchmark contains 24,316 token/contract graph samples ordered by their last recorded transaction timestamps. Hash-based source recovery, graph construction audits, and a chronological 70/15/15 split define the information contract; no future-edge violations were recorded. The terminal held-out window spans approximately 19 hours and contains 107 fraud-category contracts, giving 2.93\% prevalence. Across five frozen seeds, a local GIN achieves average precision 0.4648, compared with 0.3412 for controlled TGAT-style attention and 0.2324 for controlled TGN-style memory. MC predictive averaging improves calibration over deterministic inference while reducing ranking performance. Validation-only temperature scaling preserves each model's ranking and reduces mean expected calibration error to 0.0357. Additional controls compare loss objectives, degree-summary classifiers, chain covariates, and strict earlier-timestamp inputs. Statistical auditing also identifies and corrects tied-score handling in bootstrap average precision. The resulting evidence supports a benchmark-specific ranking--calibration analysis and emphasizes the importance of simple controls, explicit sample semantics, and recoverable artifacts when evaluating dynamic financial graphs.}
+\keyword{graph neural networks; temporal admissibility; financial graph classification; distribution shift; probability calibration; evaluation methodology; blockchain}
+
+\begin{document}
+\setlength{\headheight}{26pt}
+
+\section{Introduction}
+Financial graph learning must distinguish the time at which information becomes available from the time at which a label is retrospectively attached. A high ranking score does not establish prospective detection if a model sees a completed history or if fraud-label discovery times are unavailable. The issue also extends to model comparisons: different class-weighted objectives and preprocessing choices can change ranking and calibration independently of message passing. These distinctions motivate an evaluation contract that records the sample unit, input cutoff, model-selection information, and immutable prediction identities.
+
+We study the GoG-SCIMain-v1 benchmark derived from the public multi-chain Graphs-of-Graphs data~\cite{luo2024multichain}. An observation is a token/contract-local graph at its last valid recorded transaction time. The 24,316 observations are therefore graph samples, each containing many transfers. We retain this frozen benchmark and its historical five-seed results, then conduct explicit source, temporal, loss, feature, and statistical audits. The empirical setting contains a large prevalence change: 39.85\% in training, 8.45\% in validation, and 2.93\% in a terminal test window of approximately 19 hours.
+
+Our contribution has three parts. First, an \emph{auditable temporal-admissibility contract} binds graph construction, timestamp and sample ordering, chronological boundaries, and artifact hashes. Second, a \emph{ranking--calibration protocol} evaluates average precision alongside Brier score, ECE, adaptive ECE, and NLL using deterministic inference, MC averaging, validation-only temperature scaling, and ensembles. Third, an \emph{empirical control study} compares a local GIN with the evaluated temporal and GraphSAGE implementations, a matched loss matrix, simple graph-summary models, and a chain ablation. The GIN is a reference encoder rather than a new architecture. Our conclusions concern the evaluated implementations and information set.
+
+This study contributes a reproducible evaluation methodology for dynamic graph neural networks in financial modeling by enforcing prediction-time temporal admissibility and jointly assessing rare-event ranking and probability calibration under distribution shift. The manuscript's scope is retrospective-label graph classification in a temporally held-out window. The auxiliary campaign and GraphRAG experiments from the broader project are excluded from the primary comparison because their independent validation gates remain closed.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/fig1_framework.pdf}
+\caption{Auditable evaluation workflow. The information contract includes full-history degree features through the cutoff and the retained recent-edge topology. Calibration and selection use validation data.}
+\label{fig:framework}
+\end{figure}
+
+\section{Related Work}
+\subsection{Graph Classification and Financial Applications}
+GIN studies graph representation expressiveness~\cite{xu2019gin}, while GraphSAGE learns neighborhood aggregation~\cite{hamilton2017graphsage}. CARE-GNN addresses camouflage in fraud graphs~\cite{dou2020caregnn}; our homogeneous contract graphs do not provide the relation types needed for an exact CARE-GNN reproduction. The GoG dataset introduces token-level labels with local transaction graphs and cross-token relations~\cite{luo2024multichain}. We use only the local information admitted by our contract. Elliptic2 further motivates explicit subgraph-level units in blockchain analytics~\cite{bellei2024elliptic2}; its Bitcoin subgraphs and labels are distinct from the multi-chain contracts evaluated here.
+
+\subsection{Temporal Graph Evaluation}
+TGAT and TGN represent temporal attention and memory-based graph learning~\cite{xu2020tgat,rossi2020tgn}. Evaluation protocols and implementation choices can materially alter conclusions. Temporal Graph Benchmark~\cite{huang2023tgb} and TGB 2.0~\cite{gastinger2024tgb2} standardize temporal evaluation across several tasks and emphasize competitive simple baselines. DyGFormer and DyGLib connect architecture comparisons with unified reproducible training pipelines~\cite{yu2023dygformer}. GraphMixer demonstrates that simplified temporal encoders can be competitive~\cite{cong2023graphmixer}. These studies motivate our controls; they do not establish that temporal architectures are generally inferior. Our task is graph classification at contract observation cutoffs, rather than future-link prediction.
+
+\subsection{Calibration and Shift}
+Temperature scaling estimates a calibration transformation using held-out development data~\cite{guo2017calibration}. MC dropout and deep ensembles provide different predictive averaging mechanisms~\cite{gal2016dropout,lakshminarayanan2017deepensemble}. Recent graph-specific studies examine calibration across model, input, and structural variation, including GETS~\cite{zhuang2025gets} and empirical node-classification calibration~\cite{vos2024calibration}. Their node-level settings differ from ours; they motivate measuring calibration rather than inferring it from model complexity. Work on conditional ROC bands also illustrates why uncertainty statements under graph distribution shift require explicit dependence assumptions~\cite{wu2025cproc}. We report event-index resampling conditional on frozen checkpoints, with its limitations stated explicitly.
+
+\section{Materials and Methods}
+\subsection{Dataset, Labels, and Artifact Identity}
+The upstream release is associated with repository commit \texttt{\seqsplit{7264f1bf510f7ba4f5041ac7a29b606abc12f262}}. The historical reacquisition audit matched 14,464 Ethereum, 7,499 BSC, and 2,353 Polygon source files and reproduced four frozen packed-artifact hashes. The retained graph hash begins \texttt{067cbdd7d7c055da}; full SHA-256 identities are supplied in the supplement. Current source ZIPs remain available even though the original Ubuntu derivative symlinks no longer resolve in the updated environment.
+
+The upstream \texttt{labels.csv} uses fields \texttt{Chain}, \texttt{Contract}, and \texttt{Category}. Following the upstream README, Category 0 is mapped to the positive fraud class, and other categories to the negative class. A one-to-one join independently verifies this mapping for all 24,316 packed samples. These are inherited contract labels, not manually established labels for every individual transaction. The source does not establish when each fraud label became publicly knowable. Consequently, temporal input admissibility is distinguishable from prospective availability of the supervision.
+
+Each sample is identified by chain, contract address, and cutoff timestamp. The cutoff is the last valid transfer timestamp in that contract's archived history. Samples are sorted by cutoff and sample identifier before applying the fixed 70/15/15 split. Table~\ref{tab:split} provides UTC boundaries and elapsed durations. The terminal window lasts 68,230 seconds, or 18 h 57 min 10 s. Fractions refer to counts of contract observations, not equal-duration periods.
+\input{data/table_split.tex}
+
+\subsection{Prediction-Time Information Admissibility}
+For contract sample $i$ with cutoff $t_i$, the inclusive information set is
+\begin{equation}
+\mathcal{H}_i=\{e\text{ in contract }i:t_e\leq t_i\}.
+\end{equation}
+Node inputs are $\log(1+d_{\mathrm{in}})$, $\log(1+d_{\mathrm{out}})$, and $\log(1+d_{\mathrm{in}}+d_{\mathrm{out}})$, computed from $\mathcal{H}_i$. The topology retains the most recent 128 edges and their endpoint nodes. Thus, the selected nodes retain degree information from history older than the displayed topology. There is no separately specified $k$-hop extraction parameter in the actual builder. Two message-passing layers should not be confused with a $k$-hop sampling rule.
+
+The historical derivative audit checked 24,316 records with zero future-edge violations and no incomplete checks. The current packed payload independently verifies that every maximum input timestamp is at or before its sample cutoff, but it does not retain all per-edge timestamps. The supplement therefore distinguishes the historical exhaustive audit from current source-level reconstruction of the held-out inputs.
+
+Timestamp ties occur in 3,910 samples (16.08\%): there are 22,026 distinct cutoffs, 1,620 tied cutoffs, and at most 13 samples per cutoff. The original CSVs contain block number and transaction hash, but no transaction index. Stable ordering by timestamp, block number, hash, and original row makes preprocessing reproducible; it is not evidence of physical order within a block. The primary information set is a completed inclusive snapshot. A strict sensitivity reconstructs both topology and degree features with $t_e<t_i$, after verifying that inclusive reconstruction matches the frozen tensors. This is a fixed-checkpoint information-set stress test, without retuning the primary split.
+
+The model name CausalLocalGIN is retained as an artifact identifier. Here, ``causal'' denotes prediction-time temporal admissibility and does not imply causal-effect identification.
+
+\subsection{Reference Encoders and State Updates}
+The local GIN uses two GIN layers of hidden width 48, ReLU, dropout 0.3, and concatenated mean--max pooling. A chain one-hot vector is concatenated before an MLP head. The historical source contains no batch-normalization layer. The TGAT-style comparator uses two GATv2 layers with two heads, graph pooling, a 16-dimensional harmonic encoding of normalized absolute sample cutoff, and chain covariates. This implementation does not encode pairwise relative edge times and is not an exact reproduction of the original TGAT architecture.
+
+The TGN-style model encodes the local graph and maintains one 48-dimensional GRU state per chain. Let $h_i$ be the graph summary and $m_{c,i-1}$ the prior state. Its logit depends on $(h_i,m_{c,i-1})$; the next state uses $h_i$, normalized sample time, and $m_{c,i-1}$. State is reset to zero at each training epoch and each validation/test pass. During held-out inference, weights are frozen, labels are unused, and allowed graph/time information updates memory for subsequent samples within the same partition. This is predict-then-update inference, without gradient adaptation or cross-partition warm-start.
+
+The fraud-oriented GraphSAGE comparator uses two SAGE layers and mean--max pooling. It is not described as an exact CARE-GNN or specialized fraud-model reproduction. Table~\ref{tab:primary} retains the original controlled comparison; the supplemental objective matrix addresses a difference in its training loss.
+
+\begin{algorithm}[H]
+\caption{Validation-selected graph evaluation with explicit state timing}
+\begin{algorithmic}[1]
+\Require Frozen graph identity, chronological partitions, seed list
+\For{each model and seed}
+\State Initialize weights and optimizer; fit any scaling on training data only
+\For{each training epoch}
+\State Reset memory if the model is stateful; train on admitted training inputs
+\State Reset validation memory; predict validation samples without gradients
+\State Select weights by validation average precision and apply the stopping rule
+\EndFor
+\State Load selected weights; reset held-out memory
+\For{each held-out sample in frozen order}
+\State Predict using its admitted graph and previous state
+\State Update state from permitted non-label information, if applicable
+\EndFor
+\State Save checkpoint identity and aligned held-out predictions
+\EndFor
+\State Fit calibration on saved validation probabilities only
+\State Apply frozen calibration to saved held-out probabilities
+\State Compute ranking, calibration, operating-budget and paired statistics
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Loss Fairness and Simple Controls}
+Source inspection shows that the historical GIN, TGAT-style and TGN-style models use \emph{positive-weighted} BCE, with $w_+=N_{-,tr}/N_{+,tr}$. The GraphSAGE comparator uses that same weighted BCE modulated by $(1-p_t)^2$, i.e., inverse-frequency-weighted focal loss~\cite{lin2017focal}. It does not implement effective-number class balancing. These objectives and the optimizer must be named accurately: the original implementation uses AdamW, learning rate $10^{-3}$ and weight decay $10^{-4}$.
+
+We freeze a supplemental 2$\times$2 matrix crossing GIN/GraphSAGE with weighted BCE/focal. Both original cells are rerun alongside the two new cells in the current runtime to avoid confounding the objective comparison with a software-version change. Additional controls are degree-summary logistic regression, a small degree-summary MLP, and GIN without the chain covariate. Each uses seeds $\{7,17,27,37,47\}$. Summary inputs contain node and edge counts, density, mean/median/max in-, out-, and total-degree from retained topology, the corresponding summaries of the full-history node inputs, and chain one-hot. Standardization is fitted only on training data. Logistic regression uses $C=1$, balanced class weights and a 2,000-iteration ceiling. Its repeated seed fits need not be distinct solutions.
+
+Supplemental neural runs use width 48, dropout 0.3, batch size 64, AdamW with the original learning rate and weight decay, patience five, and a predeclared ceiling of 60 epochs. All epoch losses and validation AP values are retained. The higher ceiling prevents an arbitrary 20-epoch cap from truncating these controls. Historical primary results remain a separate panel. The original selected epochs are available, but complete historical trajectories are not. When stopping epochs are derived from selected epochs and the audited stopping code, they are explicitly marked as inferred.
+
+\subsection{Predictive Averaging and Calibration}
+Deterministic inference returns $p_{i,s}=\sigma(z_{i,s})$. MC predictive averaging retains dropout during $T$ passes:
+\begin{equation}
+\bar p_{i,s}=T^{-1}\sum_{j=1}^{T}\sigma(z^{(j)}_{i,s}).
+\end{equation}
+The main MC analysis uses the frozen $T=10$ panels; $T\in\{1,5,10,20,30\}$ is reported descriptively. We do not infer an operational uncertainty-monitoring capability from an unused variance statistic.
+
+For each seed, a positive temperature $\tau_s$ minimizes validation NLL, and the frozen transform is applied to held-out probabilities through their logits. All fitted temperatures lie between 0.2969 and 0.5354. These temperatures sharpen logits: probabilities below 0.5 decrease and those above 0.5 increase. This can reduce excess positive probabilities among the many negatives while increasing probabilities for high-scoring positives; it does not imply that every score was initially overconfident or underconfident. Within a seed the transformation is monotone and preserves ranking. Averaging separately transformed models can change ensemble ordering, so ensemble AP and ROC-AUC need not both increase.
+
+\subsection{Metrics and Statistical Protocol}
+Our primary metric is threshold-grouped average precision (AP), often reported as AUC-PR in the historical files; it is not trapezoidal PR area. AP is useful at low prevalence~\cite{saito2015precision}. ROC-AUC and F1 at 0.5 are secondary. Brier score, binary NLL, 15-bin equal-width positive-probability ECE, and equal-count adaptive ECE assess calibration. Operating metrics use the top $\lceil0.01N\rceil$ and $\lceil0.05N\rceil$ scores, plus fixed 50- and 100-alert budgets. Score ties use the frozen sample order without label-based selection.
+
+Seven pre-specified comparisons use 10,000 ordinary paired bootstrap draws, 10,000 positive-count-preserving stratified draws, and 10,000 paired score-swap randomizations. Seed-matched comparisons report mean seed AP difference; the ensemble comparison is one fixed aggregate. Resampling is at sample-index level, conditional on the trained checkpoints, and does not resample seeds. Monte Carlo two-sided $p$ is $(1+n_{\mathrm{extreme}})/(R+1)$, whose minimum for $R=10{,}000$ is $1/10001\simeq0.0001$. These are simulated randomization $p$-values, not exact exhaustive permutation probabilities. Holm adjustment covers the seven-comparison family.
+
+The revision found that the historical fast AP helper processed equal scores individually. Bootstrap duplication creates score ties even when original scores are distinct. We correct the helper to group equal-score thresholds, verify it against scikit-learn, and recompute all seven protocols while preserving the original artifacts. A separate audit confirms the same frozen MC vectors and identifiers in both MC comparisons. Equal observed AP differences after monotone calibration do not require identical score-swap null distributions, because mixed swapped vectors depend on score magnitudes.
+
+\section{Results}
+\subsection{Frozen Ranking and Calibration Results}
+The local GIN's frozen mean AP is $0.4648\pm0.0687$, compared with $0.3412\pm0.0474$ for TGAT-style, $0.2324\pm0.0093$ for TGN-style, and $0.3084\pm0.0334$ for the focal-trained GraphSAGE comparator. ROC-AUC values are much closer, from 0.8914 to 0.9009 for these single-model methods. The evidence concerns these controlled implementations under the specified information set.
+\input{data/table_primary.tex}
+
+MC averaging reduces mean AP to $0.4416\pm0.0855$, while reducing ECE from 0.1672 to 0.1285 and NLL from 0.2365 to 0.1935. Validation-only temperature scaling preserves each seed's ranking, reduces ECE to $0.0357\pm0.0093$, and reduces NLL to $0.1070\pm0.0113$. The temperature-scaled deep ensemble has AP 0.4941, ECE 0.0355 and NLL 0.0986; it is one aggregate of five components, not five independent ensemble experiments. Its ROC-AUC is 0.9134 versus 0.9145 for the unscaled deep ensemble, illustrating that ensemble calibration can move different ranking summaries in different directions.
+
+\subsection{Corrected Paired Inference}
+Table~\ref{tab:stats} replaces the bootstrap intervals with tied-score-corrected estimates. The original single-panel point estimates are unchanged. All three primary GIN-versus-comparator AP intervals exclude zero. Inference remains conditional on this frozen held-out panel and the modeled resampling assumptions. Holm adjustment removes nominal significance from the MC-versus-temperature score-swap comparison, while the MC-versus-deterministic result remains supported. The fixed MC ensemble versus deep ensemble comparison does not support a randomization-significant ordering, even though its bootstrap interval excludes zero.
+\input{data/table_statistics.tex}
+
+\subsection{Loss, Summary-Feature, and Chain Controls}
+\input{data/table_controls.tex}
+\input{data/control_interpretation.tex}
+The supplemental runs compare the same information contract and validation policy in one current runtime. Differences from the original primary GIN result are not attributed solely to one feature or objective across runtime changes. Neither a higher AP nor lower ECE by itself establishes deployment robustness. Additional paired-control comparisons and complete per-seed outputs are supplied separately from the original seven-comparison family.
+
+\subsection{Temporal Composition and Input Sensitivity}
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/fig2_temporal_shift.pdf}
+\caption{Prevalence by partition and consecutive held-out bin. Contract counts define the split fractions; the three partitions span very different elapsed times.}
+\label{fig:shift}
+\end{figure}
+The held-out Ethereum/BSC/Polygon counts are 1,469/1,491/688, with 68/38/1 positives. Ethereum's within-chain prevalence falls from 51.12\% to 4.63\%, BSC's from 20.91\% to 2.55\%, and Polygon's from 4.70\% to 0.15\%. The change therefore includes within-chain label-composition shifts as well as mixture changes. It should not be interpreted as evidence of a single isolated fraud-regime mechanism.
+
+All chain-qualified contract identifiers in the held-out partition are new relative to training and validation, as are the positive held-out contracts. This is contract-level disjointness. Sender/receiver identities were not preserved in the packed payload, so wallet-level independence is not established. Six 608-sample test bins contain 19, 39, 17, 9, 7, and 16 positives. These bins provide a within-window diagnostic and do not replace independent temporal backtests.
+\input{data/strict_interpretation.tex}
+
+\subsection{Calibration and Runtime Sensitivity}
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/fig3_mc_sensitivity.pdf}
+\caption{Frozen MC sensitivity. AP and ECE show five-seed means with sample SD. Runtime is the median retained full-panel elapsed time across seeds, with batch size 128. It lacks explicit warm-up and GPU synchronization records and is descriptive runtime context. $T=1$ denotes deterministic inference.}
+\label{fig:mc}
+\end{figure}
+MC ECE improves rapidly by five passes and changes little thereafter. The mean AP series is non-monotonic, and the figure does not imply significance at every sampled pass count. Median full-panel elapsed times are 167.11, 291.56, 443.87, 739.39 and 1,015.43 ms for 1, 5, 10, 20 and 30 passes. A historical 100-event pipeline study uses synthetic ordering and an untrained controlled encoder; it is excluded from claims about this benchmark's per-sample latency.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/fig4_reliability.pdf}
+\caption{Positive-probability reliability and bin support. Single-model curves use validation-selected GIN seed 37; aggregates use all five frozen components. The input probabilities show mixed bin-level miscalibration. Temperature scaling sharpens logits; a uniform overconfidence explanation is not assumed. Support counts are plotted and supplied for every method/seed.}
+\label{fig:reliability}
+\end{figure}
+\input{data/operational_interpretation.tex}
+
+\section{Discussion}
+The results support a methodological rather than architectural contribution. A temporally admissible information set makes a controlled comparison interpretable, but it does not guarantee that one message-passing architecture is uniquely responsible for a strong score. The degree-summary controls test this distinction directly. Compact graph construction and full-history structural summaries can carry much of the signal, and this must be acknowledged even when a GIN outperforms the particular temporal baselines evaluated here. The focal-trained supplemental GIN raises mean AP to 0.4885 but has ECE 0.3179, compared with 0.1374 for its matched weighted-BCE control. Furthermore, summary LR obtains ECE 0.0353 and NLL 0.1040, and summary MLP obtains NLL 0.1016. Thus, the primary temperature-scaled GIN is not claimed to dominate all simple classifiers on every calibration metric.
+
+The ranking--calibration distinction remains clear. MC averaging is a calibration improvement relative to the frozen deterministic model, not the strongest evaluated calibration control. Validation temperature scaling improves the measured probability losses with little inference overhead while preserving within-seed AP. Such improvement on a temporally shifted test window does not guarantee calibration under a new future shift; no ongoing calibration or monitoring guarantee has been established.
+
+The statistical audit illustrates why artifact identity and metric implementation are complementary. Frozen score vectors enabled a local correction to AP tie handling without retraining or replacing the benchmark. Reporting simulated randomization, bootstrap intervals and multiplicity together also prevents choosing only the favorable inferential summary. Retrospective graph construction can admit future information into historical predictions; the present contract prevents edges later than the defined observation cutoff by construction. We have not measured a performance-inflation effect from a deliberately leaked comparator.
+
+\section{Limitations}
+The held-out observations span less than one day, contain 107 positive contracts, and have only one Polygon positive. No claim of long-term or cross-domain deployment robustness follows. A secondary multi-origin backtest is not included; preserving the primary split and explicitly restricting the temporal claim is preferable to selecting new windows from test performance.
+
+Labels are inherited retrospective contract categories, without label discovery times. Completed contract histories may contain activity after the real-world onset of fraud. A contract's final recorded time may also reflect archival right censoring rather than its actual lifetime or a prospective arrival time. These facts limit early-warning interpretation independently of the zero-future-edge check. Full-history degree features remain available at the observation cutoff even though only recent edges are retained for message passing. No amount/value feature is used in the evaluated encoders. Contract-disjoint partitions do not establish wallet-disjoint partitions or independent financial actors.
+
+TGAT-style and TGN-style are controlled approximations with a small shared hidden width; their results are not performance bounds for the original model families. TGN memory is chain-level and reset at partition boundaries. Complete historical training trajectories are unavailable; selected epochs and source-inferred stopping information are supplemented by fully recorded new controls. The supplemental runtime differs from the historical one, so original and rerun results are tabulated separately.
+
+Sample-index bootstrap and score randomization do not model all temporal, graph or shared-actor dependence. Their intervals and $p$-values are conditional sensitivity summaries, not guarantees over independent future deployments. Ensemble outputs are fixed aggregates. ECE depends on binning and class balance; NLL and Brier complement it. Historical runtime lacks microbenchmark controls. Finally, ``causal'' denotes temporal information admissibility, without causal-effect identification, counterfactual identification, or formal privacy guarantees.
+
+\section{Conclusions}
+This study makes prediction-time graph inputs, sample semantics, training objectives, calibration, and statistical implementation explicit in a multi-chain graph-classification benchmark. The frozen local GIN has stronger AP than the evaluated TGAT-style, TGN-style and focal GraphSAGE baselines, while MC averaging trades ranking for calibration. Validation-only temperature scaling preserves single-model ranking and reduces mean ECE to 0.0357. The additional controls delimit what can be attributed to message passing versus structural summaries and chain covariates. Source reconstruction, tied-score corrections, explicit temporal horizons, and immutable outputs support a more accountable evaluation of dynamic financial graphs.
+
+\supplementary{Supplementary source, per-seed predictions, checkpoints, calibration-bin support, UTC/chain/entity audits, corrected statistical comparisons and editable figure data are organized under the accompanying revision directory. The scientific readiness report distinguishes completed analyses from author/public-release requirements.}
+\authorcontributions{TDS-specific CRediT allocation is pending confirmation by both authors. No contribution allocation or final coauthor approval has been inferred from another project.}
+\funding{The existing manuscript records support from the Institute of Information \& Communications Technology Planning \& Evaluation (IITP), funded by the Korea government (MSIT), under the ITRC program, grant IITP-2026-RS-2021-II211835. The grant identifier is retained pending verification against the authors' award agreement.}
+\institutionalreview{Not applicable. This study analyzes public blockchain records and inherited dataset labels without recruiting human participants or animals.}
+\informedconsent{Not applicable.}
+\dataavailability{The configured code repository is \url{https://github.com/Sam-7878/dlg_gnn}. The original dataset and reconstruction context are available from \url{https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs} and the upstream distribution linked there, under CC BY-NC-SA 4.0. The current TDS revision, its reconstruction scripts, prediction outputs and manifests are local supplementary artifacts and do not yet have a published immutable release identifier. Public deposition and a verified release URL remain submission requirements; no new public release is claimed here.}
+\acknowledgments{AI assistance was used for software maintenance, evidence auditing and manuscript drafting. Scientific interpretation, declarations and final approval remain the responsibility of the human authors.}
+\conflictsofinterest{TDS-specific conflict-of-interest declaration is pending author confirmation.}
+\abbreviations{Abbreviations}{
+\noindent\begin{tabular}{ll}
+AP & Average precision\\
+BCE & Binary cross-entropy\\
+ECE & Expected calibration error\\
+GIN & Graph isomorphism network\\
+GNN & Graph neural network\\
+LR & Logistic regression\\
+MC & Monte Carlo\\
+NLL & Negative log-likelihood\\
+UTC & Coordinated Universal Time
+\end{tabular}}
+\bibliography{references}
+\end{document}

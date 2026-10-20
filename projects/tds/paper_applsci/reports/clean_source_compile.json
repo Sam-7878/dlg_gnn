@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "clean_compile": true,
+      "clean_pdf_sha256": "4e48978b17e65d9b1dfd0cdcbd7a603367114e26db7f6c84accd0a6e3c5af090",
+      "extracted_text_identical": true,
+      "source": "applsci_article.tex"
+    },
+    {
+      "clean_compile": true,
+      "clean_pdf_sha256": "1a6120747e32b7875f2240e1498615082ba06edfbebb50ac9cd827e3b9767583",
+      "extracted_text_identical": true,
+      "source": "supplement/supplementary.tex"
+    }
+  ],
+  "pdf_binary_identity_claimed": false,
+  "reason": "PDF dates and trailer IDs may differ; document text and layout-affecting warnings checked",
+  "scratch_directory": "/tmp/tds-r314-source-build-y0m4iyp0",
+  "source_zip": {
+    "bytes": 7332582,
+    "path": "packages/TDS_R314_LaTeX_sources.zip",
+    "sha256": "6e8ba2fcf332ad9680a7fe1d13ecf02203066afb95dd5edce80e44526082b6db"
+  }
+}

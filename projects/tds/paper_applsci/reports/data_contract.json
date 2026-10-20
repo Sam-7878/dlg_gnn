@@ -1,0 +1,19 @@
+{
+  "binary_mapping": "Category == 0 -> 1; Category != 0 -> 0",
+  "contract_entities_unique": true,
+  "cutoff_semantics": "last valid transaction timestamp, not label discovery time",
+  "feature_semantics": "log1p degree on full contract history up to cutoff, sampled at nodes retained after the 128-edge cap",
+  "graph_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "label_field": "Category",
+  "label_file": "/mnt/d/_Work/_data/gog_round7_upstream/Token Data/labels.csv",
+  "label_file_sha256": "1356d063d675369984ef76277c4601e9f4fc780a06435c2e36a821e00ab1ea4a",
+  "label_join_verified": 24316,
+  "label_unit": "token/contract",
+  "limitation": "Packed graph omits per-edge times and endpoint address mapping; strict-time sensitivity needs source ZIP reconstruction. Historical upstream symlinks are currently dangling.",
+  "n": 24316,
+  "neighborhood_semantics": "all contract endpoints then most recent 128 edges; no k-hop expansion parameter exists",
+  "retained_graph_future_violation_count": 0,
+  "same_timestamp_cutoff_count": 24316,
+  "sample_unit": "one token/contract-local graph observed at its final recorded transaction timestamp",
+  "split_order": "timestamp then sample_id; deterministic ordering is not a claim about physical intra-block ordering"
+}
