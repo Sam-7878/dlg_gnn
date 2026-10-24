@@ -4,7 +4,7 @@
 **Date:** 2026-10-24  
 **Target Milestone:** Benchmark Preprint (Preprints.org) $\to$ MDPI *Applied Sciences* Special Issue (`C67H3U9QGT`)  
 **Git Release Tag:** `benchmark-a14-submission-2026-10-24`  
-**Git Commit Hash:** `bd06fd453f6fed3c113dd891a26d8f069c1544ee`  
+**Git Commit Hash:** `f22b3aea7591fe17e66650e7b49d2c8046755c52`  
 **Status:** **ALL GATES (A14-G1 through A14-G8) FULLY PASSED AND VERIFIED**
 
 ---
