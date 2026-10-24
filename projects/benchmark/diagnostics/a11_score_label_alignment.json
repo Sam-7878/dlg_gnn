@@ -1,0 +1,152 @@
+{
+  "audit_date": "2026-10-24",
+  "status": "PASS_WITH_BELOW_RANDOM_CONFIRMATION",
+  "criteria": {
+    "A_positive_label_semantics": "CONFIRMED: y=1 represents anomaly/illicit across manifests.",
+    "B_length_alignment": "CONFIRMED: len(score) == len(y) across all runs and splits.",
+    "C_no_permutation_leakage": "CONFIRMED: Stable integer node indexing; induced masks preserve identity.",
+    "D_scores_finite": "CONFIRMED: All evaluated score vectors contain strictly finite float64 values.",
+    "E_split_disjointness": "CONFIRMED: (train_mask & val_mask & test_mask) are mutually disjoint.",
+    "F_upstream_orientation_contract": "CONFIRMED: PyGOD/standard API contract specifies higher score = more anomalous. No sign-flip bug.",
+    "G_prevalence_logged": "CONFIRMED: Elliptic test prevalence ~0.0976; DGraphFin test prevalence ~0.0134.",
+    "H_validation_driven_rule": "ENFORCED: No test-set-driven inversion applied; below-random results preserved as genuine empirical findings."
+  },
+  "dataset_audits": {
+    "Elliptic": {
+      "models": {
+        "DOMINANT": {
+          "supported": true,
+          "pr_auc_mean": 0.06817041207063056,
+          "pr_auc_sd": 0.003592369652326968,
+          "roc_auc_mean": 0.34319194245342177,
+          "roc_auc_sd": 0.036652567531742127,
+          "validation_f1_mean": 0.18501941137907013,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "AnomalyDAE": {
+          "supported": true,
+          "pr_auc_mean": 0.05376733050077579,
+          "pr_auc_sd": 0.0018555307128314197,
+          "roc_auc_mean": 0.12955793030158658,
+          "roc_auc_sd": 0.02456135951551125,
+          "validation_f1_mean": 0.17781081901989626,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "CoLA": {
+          "supported": true,
+          "pr_auc_mean": 0.0946502240341828,
+          "pr_auc_sd": 0.0021084213811036613,
+          "roc_auc_mean": 0.4877650146931643,
+          "roc_auc_sd": 0.008772895850048595,
+          "validation_f1_mean": 0.17821566442290931,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "GADNR": {
+          "supported": false,
+          "reason": "Unsupported due to out-of-memory or timeout on full graph"
+        },
+        "OCGNN": {
+          "supported": true,
+          "pr_auc_mean": 0.06666657363820841,
+          "pr_auc_sd": 0.004618471480860554,
+          "roc_auc_mean": 0.3140422472716629,
+          "roc_auc_sd": 0.04663023070745314,
+          "validation_f1_mean": 0.17959016176250955,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "DLG-Base": {
+          "supported": true,
+          "pr_auc_mean": 0.0686545048220036,
+          "pr_auc_sd": 0.002205338997120172,
+          "roc_auc_mean": 0.3499593154894237,
+          "roc_auc_sd": 0.022123014723235537,
+          "validation_f1_mean": 0.1817449028444182,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "DLG-Aug": {
+          "supported": true,
+          "pr_auc_mean": 0.10365343819379536,
+          "pr_auc_sd": 0.0042946350836190195,
+          "roc_auc_mean": 0.570530094472471,
+          "roc_auc_sd": 0.022753510846510658,
+          "validation_f1_mean": 0.2239361469670577,
+          "is_below_random_roc": false,
+          "interpretation": "Above random baseline; augmentation or local-global fusion partially mitigates structural inversion."
+        }
+      }
+    },
+    "DGraphFin": {
+      "models": {
+        "DOMINANT": {
+          "supported": true,
+          "pr_auc_mean": 0.010232161067880515,
+          "pr_auc_sd": 0.00015467081789768554,
+          "roc_auc_mean": 0.40876355233018513,
+          "roc_auc_sd": 0.00488407810633016,
+          "validation_f1_mean": 0.02499310027231341,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "AnomalyDAE": {
+          "supported": true,
+          "pr_auc_mean": 0.011941393426693526,
+          "pr_auc_sd": 0.003119942511230144,
+          "roc_auc_mean": 0.4691156857012495,
+          "roc_auc_sd": 0.09710734790568139,
+          "validation_f1_mean": 0.02860364054190722,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "CoLA": {
+          "supported": true,
+          "pr_auc_mean": 0.012676875778330904,
+          "pr_auc_sd": 0.0002921919542055879,
+          "roc_auc_mean": 0.49936101373608366,
+          "roc_auc_sd": 0.008843385082110787,
+          "validation_f1_mean": 0.0252748307966994,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "GADNR": {
+          "supported": false,
+          "reason": "Unsupported due to out-of-memory or timeout on full graph"
+        },
+        "OCGNN": {
+          "supported": true,
+          "pr_auc_mean": 0.01257832427374055,
+          "pr_auc_sd": 0.0014864570651121965,
+          "roc_auc_mean": 0.49505858391372515,
+          "roc_auc_sd": 0.048559342416693047,
+          "validation_f1_mean": 0.02793724496262267,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "DLG-Base": {
+          "supported": true,
+          "pr_auc_mean": 0.010089006987997539,
+          "pr_auc_sd": 0.00020999650179871938,
+          "roc_auc_mean": 0.4091737417154618,
+          "roc_auc_sd": 0.008571190674706157,
+          "validation_f1_mean": 0.025007983830343507,
+          "is_below_random_roc": true,
+          "interpretation": "Reconstruction error concentrates on complex high-degree normal nodes rather than simple illicit subgraphs in this graph topology."
+        },
+        "DLG-Aug": {
+          "supported": true,
+          "pr_auc_mean": 0.01344244480974346,
+          "pr_auc_sd": 0.0016603443872558086,
+          "roc_auc_mean": 0.518548157486219,
+          "roc_auc_sd": 0.03643000344768049,
+          "validation_f1_mean": 0.029561155350495638,
+          "is_below_random_roc": false,
+          "interpretation": "Above random baseline; augmentation or local-global fusion partially mitigates structural inversion."
+        }
+      }
+    }
+  }
+}

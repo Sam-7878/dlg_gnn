@@ -1,0 +1,5 @@
+view,n_datasets,k_models,friedman_Q,asymptotic_chi2_p,frozen_200k_mc_p,independent_1M_mc_p,extreme_exceedances_in_1M,mc_resolution_floor_1M
+S1_SevenModel_CompleteCase,8,7,29.0357,5.989741e-05,4.999975e-06,1.999998e-06,1,1.00e-06
+S2_ContinuityFive,13,5,23.7538,8.948082e-05,1.999990e-05,1.499999e-05,14,1.00e-06
+S3_FinancialBlockchainSix_MixedLabels,6,5,6.1333,1.894097e-01,1.935840e-01,1.922788e-01,192278,1.00e-06
+S4_SyntheticSeven,7,5,21.8286,2.167973e-04,4.999975e-06,4.999995e-06,4,1.00e-06

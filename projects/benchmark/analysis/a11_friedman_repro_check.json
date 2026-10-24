@@ -1,0 +1,122 @@
+{
+  "unit_tests": [
+    {
+      "test_name": "test_identical_ranks_theoretical_maximum",
+      "computed_Q": 9.0,
+      "expected_Q": 9.0,
+      "passed": true
+    },
+    {
+      "test_name": "test_within_block_permutation_validity",
+      "q_original": 5.8799999999999955,
+      "q_permuted": 6.840000000000003,
+      "passed": true
+    },
+    {
+      "test_name": "test_zero_exceedance_formula",
+      "computed_p": 4.9999750001249995e-06,
+      "expected_p": 4.9999750001249995e-06,
+      "passed": true
+    }
+  ],
+  "views": [
+    {
+      "view": "S1_SevenModel_CompleteCase",
+      "N_datasets": 8,
+      "K_models": 7,
+      "included_datasets": [
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Amazon-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "frozen_Q": 29.035714285714278,
+      "reproduced_Q": 29.035714285714278,
+      "Q_match": true,
+      "asymptotic_chi2_p": 5.9897409765493976e-05,
+      "frozen_200k_mc_p": 4.9999750001249995e-06,
+      "frozen_200k_extreme": 0,
+      "independent_1M_mc_p": 1.999998000002e-06,
+      "independent_1M_extreme": 1,
+      "interpretation": "Strong significance confirmed across both asymptotic chi2 and exact permutation reference."
+    },
+    {
+      "view": "S2_ContinuityFive",
+      "N_datasets": 13,
+      "K_models": 5,
+      "included_datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "frozen_Q": 23.753846153846155,
+      "reproduced_Q": 23.753846153846155,
+      "Q_match": true,
+      "asymptotic_chi2_p": 8.948081829951442e-05,
+      "frozen_200k_mc_p": 1.9999900000499998e-05,
+      "frozen_200k_extreme": 3,
+      "independent_1M_mc_p": 1.4999985000015e-05,
+      "independent_1M_extreme": 14,
+      "interpretation": "Strong significance confirmed across both asymptotic chi2 and exact permutation reference."
+    },
+    {
+      "view": "S3_FinancialBlockchainSix_MixedLabels",
+      "N_datasets": 6,
+      "K_models": 5,
+      "included_datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon"
+      ],
+      "frozen_Q": 6.133333333333326,
+      "reproduced_Q": 6.133333333333326,
+      "Q_match": true,
+      "asymptotic_chi2_p": 0.18940967757102642,
+      "frozen_200k_mc_p": 0.1935840320798396,
+      "frozen_200k_extreme": 38716,
+      "independent_1M_mc_p": 0.19227880772119227,
+      "independent_1M_extreme": 192278,
+      "interpretation": "Inconclusive / non-significant under small N."
+    },
+    {
+      "view": "S4_SyntheticSeven",
+      "N_datasets": 7,
+      "K_models": 5,
+      "included_datasets": [
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "frozen_Q": 21.828571428571422,
+      "reproduced_Q": 21.828571428571422,
+      "Q_match": true,
+      "asymptotic_chi2_p": 0.0002167973408390973,
+      "frozen_200k_mc_p": 4.9999750001249995e-06,
+      "frozen_200k_extreme": 0,
+      "independent_1M_mc_p": 4.999995000005e-06,
+      "independent_1M_extreme": 4,
+      "interpretation": "Strong significance confirmed across both asymptotic chi2 and exact permutation reference."
+    }
+  ]
+}
