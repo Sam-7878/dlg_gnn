@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "role": "A07 candidate paper; not a public release",
+  "files": [
+    {
+      "path": "projects/benchmark/paper/current/DLG-Benchmark_A07.pdf",
+      "bytes": 337202,
+      "sha256": "d4cd3ef4d978b31b88d73d1ae914817120f888fc78290d2a0fad96ad3eafead7"
+    },
+    {
+      "path": "projects/benchmark/paper/current/DLG-Benchmark_A07.tex",
+      "bytes": 67523,
+      "sha256": "2a6ce7f9af4a5ab304702c4ba94c07bda602494f4ebd888d1c967637f2faaec1"
+    },
+    {
+      "path": "projects/benchmark/paper/current/Supplementary_F1_A07.pdf",
+      "bytes": 61601,
+      "sha256": "773f43a402ed62938d7c6ab8f35eda27a5ade68233653a96d378792961f85b92"
+    },
+    {
+      "path": "projects/benchmark/paper/current/Supplementary_F1_A07.tex",
+      "bytes": 3424,
+      "sha256": "ded60ed535902033a3c8dcc196a1f311022ab9460b0359c6dfc01a1efee7dbf0"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_baseline_sensitivity.csv",
+      "bytes": 520,
+      "sha256": "9c94891889ee6523517d5fe7971b5d2b2e89899a6c6d6a8d3e06be42c9af1e8d"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_campaign_settings.csv",
+      "bytes": 1077,
+      "sha256": "139fad3bead3850b8426f1dbba454fb6a1ca704db63a31c0b611da6b9c6c39be"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_cell_provenance.csv",
+      "bytes": 10167,
+      "sha256": "e8fd6617a19bb384c771605dff851dbc885103be8ab42f6c4f312e882657ed13"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_elliptic_controls.csv",
+      "bytes": 307,
+      "sha256": "cfabcc47f5b30e2db7705df67cb3ef0d866348853dabc28a7c24ba7706d5fb53"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_ethereum_threshold_audit.csv",
+      "bytes": 2482,
+      "sha256": "91498ba3aaa836da9ece36a74bba977d43147e0c403c6e3713889ab3dd67b406"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_exact_qualification.csv",
+      "bytes": 4251,
+      "sha256": "d2e6fd16b5dbfbf07744f7a5fbe05495ddd0255dd15dda1c29efed6d887d0157"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_friedman_permutation.csv",
+      "bytes": 619,
+      "sha256": "bf348ea2c0d4dd2b6394c37d375bfaac728e7e082fe936552c8aba6b56af377d"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_label_provenance_sensitivity.csv",
+      "bytes": 1530,
+      "sha256": "48e2ab0ec36327370da32c307b12578311f2c1529ab51c6643929ccb844edb52"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_matched_memory.csv",
+      "bytes": 3565,
+      "sha256": "05a38cd45b6c503c30c049e36f25d6cc8f76878e04c7180c10fcad49d77c7dc6"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_mean_ranks.csv",
+      "bytes": 555,
+      "sha256": "c3e335a72ba3dab06f564494b0297be126cefddc554d5ce7b019192df9df3476"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_model_defaults.csv",
+      "bytes": 2358,
+      "sha256": "b099800658ae4bb49c47b21a5583c20742ad35bd90fbd3417ff245cd04a8122e"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_revision_appendix.tex",
+      "bytes": 15291,
+      "sha256": "0722cf8b12f93b39ad319cf16ff8e79d61fbf329a4bb0305c631b0659a08fa02"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_run_auditability.csv",
+      "bytes": 115412,
+      "sha256": "e37ea23fe10679d80c3da2ade34af72577e99f3869f130f49a8fa81e82d340fd"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_test_prevalence.csv",
+      "bytes": 1310,
+      "sha256": "d0b9a11cb923820cc1ef2eaaa51c0c42861668791fcdf55d73274f393e2f2ed8"
+    },
+    {
+      "path": "projects/benchmark/paper/current/astra_unsupported_cells.csv",
+      "bytes": 675,
+      "sha256": "484f3aac432534cf03d25aa7bfca46c9d7689c670157b28defcd5ece3938d00a"
+    },
+    {
+      "path": "projects/benchmark/paper/current/claims_to_evidence_a07.csv",
+      "bytes": 2669,
+      "sha256": "dd5615313677588fc00b1694e66eaf0d81154bbe16bbe934ff25f8069c357db5"
+    },
+    {
+      "path": "projects/benchmark/paper/current/figure_memory_measured_a05.pdf",
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548"
+    },
+    {
+      "path": "projects/benchmark/paper/current/generated/figure_memory_measured_a05.pdf",
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/DLG-Benchmark_A07_MDPI.pdf",
+      "bytes": 255597,
+      "sha256": "404d75c4645c206a15121bcf9f575c5e6cf89ba17e24c57e99fd325dadde6514"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/DLG-Benchmark_A07_MDPI.tex",
+      "bytes": 64150,
+      "sha256": "fef3ed7f103bb365309f018de54bf0376560250c762d1b20b83777b6ed409493"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/chicago2.bst",
+      "bytes": 37885,
+      "sha256": "c16818f2b37b6edc1510adea9755d9ef0f9ff47c09c838904c7cc8335b2b3251"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/journalnames.tex",
+      "bytes": 106500,
+      "sha256": "2ca0e43270b988a415fa56d91d1c3c24f5bbac3b51ace07c3af63c636ce103e8"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-ccby-eps-converted-to.pdf",
+      "bytes": 10351,
+      "sha256": "48fa829c1f2c46d74ccad03100172d11fa8427cc13bb4ea381a30ce85f55de9b"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-ccby-eps-converted-to.tex",
+      "bytes": 332,
+      "sha256": "a8f138f92e048ae85e215c3cf4142212ea8dd8d9eed8f92349ee46d243f34872"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-ccby.eps",
+      "bytes": 484140,
+      "sha256": "916c3193af3c50e09c1365e59687b7add08fe1bf9b6ce6f139e00e2518f4acac"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-mdpi-eps-converted-to.pdf",
+      "bytes": 9760,
+      "sha256": "98c6ee5f670cb4e116a2d457579a9b2140838c0a89812f3bb6945d6eb6fe59b5"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-mdpi-eps-converted-to.tex",
+      "bytes": 355,
+      "sha256": "270a6f0c592e886a27ce7cbc34611596f6f04f7e98154d5e8b861d7ed5f9e501"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-mdpi.eps",
+      "bytes": 563678,
+      "sha256": "f02d31469c6b2666c9de2da8d8731773bce3751d2fa99a27ff4bcf61a106cdcf"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-orcid.pdf",
+      "bytes": 12671,
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-updates-eps-converted-to.pdf",
+      "bytes": 10389,
+      "sha256": "12f831dc841f0f054f2af559f58fed9111aa8c0ac587cc9759a46a096b95e290"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-updates-eps-converted-to.tex",
+      "bytes": 386,
+      "sha256": "012f1372f0d278682e8ed8a22ec708d6aaea324d0bfc4817a43a8875bda0e95f"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/logo-updates.eps",
+      "bytes": 851415,
+      "sha256": "b84b986524ff2e47afb07ecd5ef6d33cd85bc4b88d2053fdfb3e83210d695831"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/mdpi.bst",
+      "bytes": 23653,
+      "sha256": "be33433988799be08206057ceb7434cdfe425f45345f34a7c5a87ecb7176d872"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/Definitions/soul.sty",
+      "bytes": 268,
+      "sha256": "61a346cf659cc7803dd6344c2f9ff2f14e363196c8c6967ffde9efef6f7623a1"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/generated/figure_memory_measured_a05.pdf",
+      "bytes": 21066,
+      "sha256": "b41636c732327390561c969a080877db6f220b75a882b6d8dae854ffcfbd7548"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/references.bib",
+      "bytes": 16859,
+      "sha256": "250beb9b815fcc06dfb182989792a0f9b4898dc140ef11c7fe33d879fa73964f"
+    },
+    {
+      "path": "projects/benchmark/paper/current/mdpi/soul.sty",
+      "bytes": 268,
+      "sha256": "61a346cf659cc7803dd6344c2f9ff2f14e363196c8c6967ffde9efef6f7623a1"
+    },
+    {
+      "path": "projects/benchmark/paper/current/references.bib",
+      "bytes": 16859,
+      "sha256": "250beb9b815fcc06dfb182989792a0f9b4898dc140ef11c7fe33d879fa73964f"
+    },
+    {
+      "path": "projects/benchmark/paper/current/statistics_pairwise_s1_s2.csv",
+      "bytes": 502,
+      "sha256": "51daa126c05861518b169b5553ad203b0eeed9052e90884456df206e49aa046b"
+    },
+    {
+      "path": "projects/benchmark/paper/current/statistics_s1_s5.csv",
+      "bytes": 1518,
+      "sha256": "25af182a8b1c1790a5ddcf0c1ea4454431115b991b60f6cdc59fde4b3d65984a"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_alert_budget_a07.csv",
+      "bytes": 3830,
+      "sha256": "7d64d0733fd1090890aafffa5934fde09b483e546762d0a780cf86cf3c0cd131"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_main_13_f1.csv",
+      "bytes": 1895,
+      "sha256": "280fa026313cfdff1bfbf47162e77bbd14624d994c06ae837f8af29074772b1e"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_main_13_pr_auc.csv",
+      "bytes": 1895,
+      "sha256": "d0fe4b5cec434128a3bbec74de7ea80ef9fe2bca7b852dcfaad0c494bca6b5cf"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_main_13_roc_auc.csv",
+      "bytes": 1895,
+      "sha256": "0f9969784017e253e0d5cdc56bb6039bee7f90cdd47cff7d4f6f1cfaed6cd766"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_support_lanl_24g.csv",
+      "bytes": 569,
+      "sha256": "ddadf1888a41e3894d307b0cdb7c84894cd1c5767b326a92d2f4a7749cc70049"
+    },
+    {
+      "path": "projects/benchmark/paper/current/table_support_primary13_24g.csv",
+      "bytes": 6265,
+      "sha256": "87982a72463a97d2b4b0a568a3fd00c092cfae211490cdf5d687c05b1239014f"
+    }
+  ]
+}

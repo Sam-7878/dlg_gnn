@@ -1,0 +1,16 @@
+group,n_graphs,model,mean_rank,datasets,inference
+provider-native two,2,DOMINANT,4.0,Elliptic;DGraphFin,descriptive only
+provider-native two,2,CoLA,2.0,Elliptic;DGraphFin,descriptive only
+provider-native two,2,OCGNN,4.0,Elliptic;DGraphFin,descriptive only
+provider-native two,2,DLG-Base,4.0,Elliptic;DGraphFin,descriptive only
+provider-native two,2,DLG-Aug,1.0,Elliptic;DGraphFin,descriptive only
+contract artifact three,3,DOMINANT,1.6666666666666667,Ethereum;BSC;Polygon,descriptive only
+contract artifact three,3,CoLA,3.6666666666666665,Ethereum;BSC;Polygon,descriptive only
+contract artifact three,3,OCGNN,4.666666666666667,Ethereum;BSC;Polygon,descriptive only
+contract artifact three,3,DLG-Base,2.3333333333333335,Ethereum;BSC;Polygon,descriptive only
+contract artifact three,3,DLG-Aug,2.6666666666666665,Ethereum;BSC;Polygon,descriptive only
+injected eight,8,DOMINANT,1.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive only
+injected eight,8,CoLA,4.125,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive only
+injected eight,8,OCGNN,4.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive only
+injected eight,8,DLG-Base,1.875,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive only
+injected eight,8,DLG-Aug,2.25,BitcoinOTC;Yelp-Syn;Amazon-Syn;Reddit-Syn;Flickr-Syn;Cora-Syn;CiteSeer-Syn;PubMed-Syn,descriptive only

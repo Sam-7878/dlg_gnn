@@ -1,0 +1,6 @@
+campaign,datasets,epochs,local_epochs,batch_policy,threshold,provenance
+Round5,ten original graphs (BitcoinOTC superseded),50,20,full graph; CoLA/OCGNN/GADNR num_neigh=-1,validation-max F1; shared threshold protocol,original run config/source hashes; incomplete per-run locks
+A03 crypto comparators,Ethereum; BSC; Polygon,30;40;40,constructor default,CoLA/OCGNN/GADNR: 64 if N>5000 else32; reconstruction: full graph,validation prevalence percentile,script reconstruction; not run-bound
+A03 repaired crypto Aug,Ethereum; BSC; Polygon,30;40;40,20,full graph; fresh clone per run,restricted validation-max F1; percentiles80..99.5;40 candidates,script reconstruction; raw scores/thresholds missing
+A05 BitcoinOTC,canonical reconstructed tensor; seven detectors,50,20,see archived per-run model_config; exact paths,shared validation-max F1 protocol,new run-bound source/score/config evidence
+A05 AnomalyDAE,Ethereum; DGraphFin; failed preflights on large graphs,50,NA,full graph; row block256,shared validation protocol,new run-bound source versions; restarted timing caveat

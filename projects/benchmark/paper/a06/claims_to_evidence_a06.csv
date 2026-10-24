@@ -1,0 +1,13 @@
+claim_id,manuscript_location,claim,paper_table_or_figure,a05_source_csv_json,approved_registry,statistics_view,verification
+C1,Abstract; Results,13 primary graphs plus external LANL,Table 1,publication_evidence_a05/dataset_manifest_canonical.json,approved_run_registry.csv,,PASS
+C2,Abstract; Results; Table 4,80/91 five-seed primary support pairs,Table 4,table_support_24g.csv,approved_run_registry.csv,,PASS
+C3,Methods; Results,435 successful primary/external records,Table 2,publication_manifest_a05.json,approved_run_registry.csv,,PASS
+C4,Results; Table 3,"S3 mixed-label p=0.082284, not significant",Table 3,statistics_s1_s5.csv,approved_run_registry.csv,S3,PASS
+C5,Results; Table 2,DLG-Aug advantage is dataset-dependent,Table 2,table_main_13_pr_auc.csv,approved_run_registry.csv,S2; S3,PASS
+C6,Methods,Gram structural reconstruction preserves exact full residual,Equation 1,publication_evidence_a05/environment/clean_exact_reconstruction_verification.json,approved_run_registry.csv,,PASS: qualification and algebra
+C7,Methods; Scalability; Table 5,"AnomalyDAE row blocks lower memory, retain O(N^2) arithmetic",Table 5,table_anomalydae_targeted_a05.csv; publication_evidence_a05/anomalydae_exact_equivalence.json,approved_run_registry.csv,,PASS
+C8,Scalability; Figure 1,"selected measured full/capped CUDA memory, OOM annotated",Figure 1,publication_evidence_a05/table_memory_selected_a04.csv,approved_run_registry.csv,,PASS: selected cases only
+C9,Scalability; Table 5,DGraphFin 50-epoch five-seed completed; 5.054 h is projection,Table 5,table_anomalydae_targeted_a05.csv; publication_evidence_a05/dgraphfin_hardware_runtime_note.json,approved_run_registry.csv,,PASS
+C10,Results; Table 6,"1% and 5% alert metrics on three contract graphs, four models",Table 6,table_alert_budget_a06.csv; A03 approved source JSON,approved_run_registry.csv,,PASS: 60 source hashes checked
+C11,Methods; Limitations,CONAD reference path degeneracy is implementation-specific,Methods text,publication_evidence_a05/conad_eq1_integration_a04.json,approved_run_registry.csv,,PASS
+C12,Results; Limitations,Elliptic permutation does not prove node-wise alignment,Results text,table_dlg_ablation_elliptic_summary.csv,approved_run_registry.csv,,PASS: scoped interpretation
