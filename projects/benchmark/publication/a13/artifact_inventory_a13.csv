@@ -1,0 +1,9 @@
+phase,artifact,path,status,description
+A13_FREEZE,a12_input_sha256_manifest.csv,projects/benchmark/publication/a13/a12_input_sha256_manifest.csv,VERIFIED_ON_DISK,SHA-256 manifest of all A12 inputs recomputed from actual bytes.
+A13_DIAGNOSTICS,score_availability_by_campaign.csv,projects/benchmark/publication/a13/score_availability_by_campaign.csv,TO_BE_GENERATED,Truthful breakdown of which campaigns have per-node score arrays vs not stored.
+A13_VALIDATION,manuscript_numeric_contract.json,projects/benchmark/publication/a13/manuscript_numeric_contract.json,TO_BE_GENERATED,Literal parsing contract for both Preprints and MDPI .tex files.
+A13_VALIDATION,manuscript_numeric_validation.json,projects/benchmark/publication/a13/manuscript_numeric_validation.json,TO_BE_GENERATED,Literal validation outcome parsing actual .tex files and asserting against registry.
+A13_MANUSCRIPTS,DLG-Benchmark_A13_Preprints.tex,projects/benchmark/paper/a13/DLG-Benchmark_A13_Preprints.tex,TO_BE_GENERATED,"Publisher-neutral A13 preprint manuscript with corrected causal claims, memory, and hardware."
+A13_MANUSCRIPTS,DLG-Benchmark_A13_AppliedSciences.tex,projects/benchmark/paper/a13/mdpi/DLG-Benchmark_A13_AppliedSciences.tex,TO_BE_GENERATED,"MDPI Applied Sciences A13 manuscript with corrected causal claims, memory, and hardware."
+A13_FIGURES,fig3_paired_delta_data.csv,projects/benchmark/publication/a13/fig3_paired_delta_data.csv,TO_BE_GENERATED,Explicitly seed-paired DLG-Aug vs DLG-Base delta values and paired SE.
+A13_RELEASE,release_candidate_manifest.json,projects/benchmark/publication/a13/release_candidate_manifest.json,TO_BE_GENERATED,Full A13 release candidate manifest with all file hashes and git commit binding.

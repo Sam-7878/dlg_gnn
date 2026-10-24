@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Benchmark graph dataset properties, evaluated model-input populations, and target label provenance. Model-input counts ($N, E, d$) reflect the exact tensors evaluated by all models; upstream raw source graph totals are reported separately.}
+\label{tab:dataset_properties}
+\begin{tabularx}{\textwidth}{lrrrrX}\toprule
+\textbf{Dataset} & \textbf{Nodes ($N$)} & \textbf{Edges ($E$)} & \textbf{Features ($d$)} & \textbf{Test Preval.} & \textbf{Target Provenance and Evaluated Population} \\\midrule
+\multicolumn{6}{l}{\textit{Native Financial / Blockchain Datasets ($N=5$)}} \\
+Elliptic & $46,564$ & $83,188$ & $165$ & $0.0976$ & Bitcoin transaction graph; illicit entities (Weber et al., 2019). Evaluated induced graph: 46,564 nodes (raw source: 203,769 nodes). \\
+DGraphFin & $1,225,601$ & $746,271$ & $17$ & $0.0127$ & FinTech loan user graph; fraudulent defaulters (Huang et al., 2022). Evaluated induced graph: 1,225,601 nodes (raw source: 3,700,550 nodes). \\
+Ethereum & $14,385$ & $115,065$ & $8$ & $0.4184$ & Token-transfer feature-similarity graph; verified phishing/scam contracts (Luo et al., 2024). \\
+BSC & $7,481$ & $59,832$ & $8$ & $0.1476$ & Binance Smart Chain token transfer graph; fraud contracts (Luo et al., 2024). \\
+Polygon & $2,303$ & $18,411$ & $8$ & $0.0261$ & Polygon token transfer graph; verified fraud contracts (Luo et al., 2024). \\
+\midrule
+\multicolumn{6}{l}{\textit{Injected Synthetic Benchmarks ($N=8$, including Real Trust Graph with Injected Targets)}} \\
+BitcoinOTC & $6,005$ & $7,409$ & $67$ & $0.0300$ & SNAP OTC signed trust network (Kumar et al., 2016); controlled injected anomaly targets on real graph. \\
+Yelp-Syn & $716,847$ & $14,004,995$ & $300$ & $0.0100$ & Social review network; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 716,847 nodes). \\
+Amazon-Syn & $13,752$ & $507,378$ & $767$ & $0.0300$ & Co-purchasing graph; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 13,752 nodes). \\
+Reddit-Syn & $232,965$ & $114,869,737$ & $602$ & $0.0200$ & Reddit post interaction graph; injected structural anomalies. (PyG/PyGOD evaluated tensor: 232,965 nodes, 114.9M directed edges). \\
+Flickr-Syn & $89,250$ & $1,001,494$ & $500$ & $0.0200$ & Image sharing network; injected structural anomalies. (PyG/PyGOD evaluated tensor: 89,250 nodes). \\
+Cora-Syn & $2,708$ & $11,276$ & $1433$ & $0.0299$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 2,708 nodes). \\
+CiteSeer-Syn & $3,327$ & $9,914$ & $3703$ & $0.0298$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 3,327 nodes). \\
+PubMed-Syn & $19,717$ & $93,958$ & $500$ & $0.0300$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 19,717 nodes). \\
+\midrule
+\multicolumn{6}{l}{\textit{External Enterprise Cybersecurity Network ($N=1$)}} \\
+LANL-RedTeam & $16,694$ & $323,897$ & $13$ & $0.0180$ & Enterprise authentication graph; red-team compromised computers (Kent, 2015). Evaluated destination computers: 16,694 nodes (raw auth stream: 156,117 entities). \\
+\bottomrule
+\end{tabularx}
+\end{table}

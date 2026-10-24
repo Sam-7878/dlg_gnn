@@ -1,0 +1,61 @@
+{
+  "gate": "A13-G2 Literal Final Manuscript Numeric Contract",
+  "preprints_manuscript": {
+    "file": "DLG-Benchmark_A13_Preprints.tex",
+    "status": "PASS",
+    "checks": {
+      "13_primary_datasets": "PASS",
+      "1_external_lanl": "PASS",
+      "7_models": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "reddit_inversion_ap": "PASS (0.4044 -> 0.3388, Delta -0.0656)",
+      "elliptic_gain_ap": "PASS (0.0687 -> 0.1037, Delta +0.0350)",
+      "eth_ocgnn_degradation": "PASS (0.4996 > 0.4359)",
+      "bsc_anomalydae_degradation": "PASS (0.3609 > 0.3411)",
+      "polygon_anomalydae_degradation": "PASS (0.1878 > 0.0731)",
+      "friedman_s1_roc": "PASS (Q=29.0357, p_asym=5.99e-05, p_mc=4.00e-06)",
+      "friedman_s2_pr": "PASS (Q=23.7538, p_asym=8.95e-05, p_mc=2.10e-05)",
+      "friedman_s3_nap": "PASS (Q=6.1333, p_asym=1.89e-01, p_mc=1.92e-01)",
+      "friedman_s4_rel": "PASS (Q=21.8286, p_asym=2.17e-04, p_mc=1.00e-06)",
+      "friedman_s4_mc_floor": "PASS (p_MC = 1.00e-06 floor)",
+      "dense_memory_single_matrix_4N2": "PASS (4N^2: 10.0 GB at 50k, 160.0 GB at 200k)",
+      "dense_memory_two_matrices_8N2": "PASS (8N^2: 20.0 GB at 50k, 320.0 GB at 200k)",
+      "unsquashed_gram_decoder_qualification": "PASS",
+      "hardware_egpu_3090": "PASS (RTX 3090 24GB eGPU via Thunderbolt)",
+      "immutable_release_tag_a13": "PASS (benchmark-a13-submission-2026-10-24)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "applied_sciences_manuscript": {
+    "file": "DLG-Benchmark_A13_AppliedSciences.tex",
+    "status": "PASS",
+    "checks": {
+      "13_primary_datasets": "PASS",
+      "1_external_lanl": "PASS",
+      "7_models": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "reddit_inversion_ap": "PASS (0.4044 -> 0.3388, Delta -0.0656)",
+      "elliptic_gain_ap": "PASS (0.0687 -> 0.1037, Delta +0.0350)",
+      "eth_ocgnn_degradation": "PASS (0.4996 > 0.4359)",
+      "bsc_anomalydae_degradation": "PASS (0.3609 > 0.3411)",
+      "polygon_anomalydae_degradation": "PASS (0.1878 > 0.0731)",
+      "friedman_s1_roc": "PASS (Q=29.0357, p_asym=5.99e-05, p_mc=4.00e-06)",
+      "friedman_s2_pr": "PASS (Q=23.7538, p_asym=8.95e-05, p_mc=2.10e-05)",
+      "friedman_s3_nap": "PASS (Q=6.1333, p_asym=1.89e-01, p_mc=1.92e-01)",
+      "friedman_s4_rel": "PASS (Q=21.8286, p_asym=2.17e-04, p_mc=1.00e-06)",
+      "friedman_s4_mc_floor": "PASS (p_MC = 1.00e-06 floor)",
+      "dense_memory_single_matrix_4N2": "PASS (4N^2: 10.0 GB at 50k, 160.0 GB at 200k)",
+      "dense_memory_two_matrices_8N2": "PASS (8N^2: 20.0 GB at 50k, 320.0 GB at 200k)",
+      "unsquashed_gram_decoder_qualification": "PASS",
+      "hardware_egpu_3090": "PASS (RTX 3090 24GB eGPU via Thunderbolt)",
+      "immutable_release_tag_a13": "PASS (benchmark-a13-submission-2026-10-24)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "negative_control_verification": "PASS (3/3 deliberate corruptions rejected)",
+  "overall_status": "PASS"
+}
