@@ -5,10 +5,10 @@
   "repository": {
     "remote_url": "https://github.com/Sam-7878/dlg_gnn.git",
     "branch": "main",
-    "commit_hash": "f22b3aea7591fe17e66650e7b49d2c8046755c52",
+    "commit_hash": "b9e417718c03631f7750ceb84629187577abaf0f",
     "tag_name": "benchmark-a14-submission-2026-10-24",
-    "tag_object_hash": "f8c3c4052a1565680c55ba1151c027eeba16a238",
-    "tag_target_commit": "f22b3aea7591fe17e66650e7b49d2c8046755c52",
+    "tag_object_hash": "67dea3840fcd6c78a10c9f9d2abef950b89412b2",
+    "tag_target_commit": "b9e417718c03631f7750ceb84629187577abaf0f",
     "remote_verification": "refs/tags/benchmark-a14-submission-2026-10-24 confirmed on remote origin"
   },
   "verified_artifacts": {
