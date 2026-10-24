@@ -1,0 +1,73 @@
+{
+  "gate": "A12-G2 Numeric Claims Gate",
+  "date": "2026-10-24",
+  "status": "PASS",
+  "total_checks": 9,
+  "passed_checks": 9,
+  "checks": [
+    {
+      "claim_id": "CLM-01-SUPPORT",
+      "claim_text": "84 of 91 primary model-dataset pairs are fully supported across 5 seeds (420 primary successes, 35 external LANL runs, 455 total runs).",
+      "source": "number_registry.json",
+      "approved_value": "primary_supported_pairs=84, primary_successes=420, external_successes=35, total=455",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-02-ELLIPTIC-DELTA",
+      "claim_text": "Elliptic AP: DLG-Aug (0.1037) vs DLG-Base (0.0687), delta = +0.0350.",
+      "source": "table_pr_auc.csv / number_registry.json",
+      "approved_value": "Base=0.0687, Aug=0.1037, Delta=+0.0350",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-03-REDDIT-DELTA",
+      "claim_text": "Reddit-Syn AP: DLG-Aug (0.3388) vs DLG-Base (0.4044), delta = -0.0656 (A11 err 0.0573/0.1229 corrected).",
+      "source": "table_pr_auc.csv / number_registry.json",
+      "approved_value": "Base=0.4044, Aug=0.3388, Delta=-0.0656",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-04-BLOCKCHAIN-LEADERS",
+      "claim_text": "Blockchain comparator leaders: Ethereum OCGNN (0.4996) > Aug (0.4359); BSC AnomalyDAE (0.3609) > Aug (0.3411); Polygon AnomalyDAE (0.1878) > Aug (0.0731).",
+      "source": "table_pr_auc.csv / number_registry.json",
+      "approved_value": "Eth: OCGNN=0.4996 > Aug=0.4359 (DOM=0.3971); BSC: AnomDAE=0.3609 > Aug=0.3411 (DOM=0.2299); Poly: AnomDAE=0.1878 > Aug=0.0731 (OCGNN=0.0700)",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-05-FRIEDMAN-S1",
+      "claim_text": "Friedman S1 (N=8, K=7): Q=29.0357, Asymptotic p=5.99e-05, 1M MC p=4.00e-06 (b=3).",
+      "source": "statistics_a12.json",
+      "approved_value": "Q=29.0357, asym_p=5.989741e-05, mc_p=3.999996e-06, b=3",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-06-FRIEDMAN-S2",
+      "claim_text": "Friedman S2 (N=13, K=5): Q=23.7538, Asymptotic p=8.95e-05, 1M MC p=2.10e-05 (b=20).",
+      "source": "statistics_a12.json",
+      "approved_value": "Q=23.7538, asym_p=8.948082e-05, mc_p=2.099998e-05, b=20",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-07-FRIEDMAN-S3",
+      "claim_text": "Friedman S3 (N=6, K=5): Q=6.1333, Asymptotic p=0.1894, 1M MC p=0.1921 (b=192107). Non-significant (p >= 0.05).",
+      "source": "statistics_a12.json",
+      "approved_value": "Q=6.1333, asym_p=0.1894, mc_p=0.1921, b=192107",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-08-FRIEDMAN-S4",
+      "claim_text": "Friedman S4 (N=7, K=5): Q=21.8286, Asymptotic p=2.17e-04, 1M MC p=1.00e-06 (b=0).",
+      "source": "statistics_a12.json",
+      "approved_value": "Q=21.8286, asym_p=2.167973e-04, mc_p=9.999990e-07, b=0",
+      "status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "CLM-09-LOW-ROC-AUC",
+      "claim_text": "Elliptic ROC-AUC values for reconstruction models fall below random baseline: DOMINANT 0.3432, AnomalyDAE 0.1296, OCGNN 0.3140, DLG-Base 0.3500; DLG-Aug is 0.5705. Label semantics and non-inversion confirmed; causal hub mechanism retained as unverified hypothesis.",
+      "source": "diagnostics/a12_score_alignment_empirical.json / table_roc_auc.csv",
+      "approved_value": "DOM=0.3432, Anom=0.1296, OCGNN=0.3140, Base=0.3500, Aug=0.5705",
+      "status": "VERIFIED_EXACT"
+    }
+  ],
+  "abstract_snippet_approved": "While Decoupled Local-to-Global augmentation (DLG-Aug) improves average precision (AP) over the DLG-Base reference on the Elliptic transaction network by +0.0350 (0.1037 vs.\\ 0.0687), it suffers an AP degradation of -0.0656 on the large Reddit-Syn graph (0.3388 vs.\\ 0.4044) and exhibits negative delta on LANL-RedTeam. On blockchain token-transfer networks, at least one established comparator exceeds DLG-Aug in mean AP on each of the three blockchain datasets (Ethereum: OCGNN 0.4996 vs.\\ Aug 0.4359; BSC: AnomalyDAE 0.3609 vs.\\ Aug 0.3411; Polygon: AnomalyDAE 0.1878 vs.\\ Aug 0.0731). Furthermore, we audit the below-random ROC-AUC values (<0.50) observed on Elliptic across reconstruction baselines, confirming score and label alignment while leaving topological hub bias as an informed hypothesis rather than an uncontroverted proof."
+}

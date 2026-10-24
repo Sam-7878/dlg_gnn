@@ -1,0 +1,174 @@
+{
+  "audit_metadata": {
+    "date": "2026-10-24",
+    "generator": "projects/benchmark/scripts/a12_audit_friedman_statistics.py",
+    "rng_algorithm": "numpy.random.default_rng (PCG64)",
+    "pinned_seed": 20261024,
+    "mc_permutations": 1000000,
+    "formula": "p = (b + 1) / (B + 1)",
+    "null_hypothesis": "Within each dataset block, model anomaly score ranks are exchangeable."
+  },
+  "unit_tests": [
+    {
+      "test_name": "test_identical_ranks_theoretical_maximum",
+      "computed_Q": 9.0,
+      "expected_Q": 9.0,
+      "passed": true
+    },
+    {
+      "test_name": "test_within_block_permutation_invariants",
+      "all_rows_preserved": true,
+      "grand_sum_preserved": true,
+      "q_within_theoretical_bounds": true,
+      "passed": true
+    },
+    {
+      "test_name": "test_zero_exceedance_formula",
+      "computed_p": 9.99999000001e-07,
+      "expected_p": 9.99999000001e-07,
+      "passed": true
+    }
+  ],
+  "views": [
+    {
+      "view": "S1_SevenModel_CompleteCase",
+      "N_datasets": 8,
+      "K_models": 7,
+      "included_datasets": [
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Amazon-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "AnomalyDAE",
+        "CoLA",
+        "GADNR",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "friedman_stat_Q": 29.035714285714278,
+      "degrees_of_freedom": 6,
+      "tie_correction_factor": 1.0,
+      "asymptotic_chi2_p": 5.989740976553026e-05,
+      "monte_carlo_permutations": 1000000,
+      "rng_seed": 20261024,
+      "exceedances_b": 3,
+      "monte_carlo_p": 3.999996000004e-06,
+      "monte_carlo_se": 1.9999950000027503e-06,
+      "ci_95_lower": 8.000579999860996e-08,
+      "ci_95_upper": 7.91998620000939e-06,
+      "interpretation": "Statistically significant (p < 0.05); rejected null of equal detector ranking."
+    },
+    {
+      "view": "S2_ContinuityFive",
+      "N_datasets": 13,
+      "K_models": 5,
+      "included_datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "friedman_stat_Q": 23.753846153846155,
+      "degrees_of_freedom": 4,
+      "tie_correction_factor": 1.0,
+      "asymptotic_chi2_p": 8.948081829951438e-05,
+      "monte_carlo_permutations": 1000000,
+      "rng_seed": 20261024,
+      "exceedances_b": 20,
+      "monte_carlo_p": 2.0999979000021e-05,
+      "monte_carlo_se": 4.582525286444473e-06,
+      "ci_95_lower": 1.2018229438589834e-05,
+      "ci_95_upper": 2.998172856145217e-05,
+      "interpretation": "Statistically significant (p < 0.05); rejected null of equal detector ranking."
+    },
+    {
+      "view": "S3_FinancialBlockchainSix_MixedLabels",
+      "N_datasets": 6,
+      "K_models": 5,
+      "included_datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "friedman_stat_Q": 6.133333333333326,
+      "degrees_of_freedom": 4,
+      "tie_correction_factor": 1.0,
+      "asymptotic_chi2_p": 0.18940967757102645,
+      "monte_carlo_permutations": 1000000,
+      "rng_seed": 20261024,
+      "exceedances_b": 192107,
+      "monte_carlo_p": 0.19210780789219212,
+      "monte_carlo_se": 0.00039395735560977753,
+      "ci_95_lower": 0.19133565147519696,
+      "ci_95_upper": 0.19287996430918727,
+      "interpretation": "Inconclusive / non-significant under small N (p >= 0.05); null of equal detector ranking cannot be rejected."
+    },
+    {
+      "view": "S4_SyntheticSeven",
+      "N_datasets": 7,
+      "K_models": 5,
+      "included_datasets": [
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "friedman_stat_Q": 21.828571428571422,
+      "degrees_of_freedom": 4,
+      "tie_correction_factor": 1.0,
+      "asymptotic_chi2_p": 0.0002167973408391255,
+      "monte_carlo_permutations": 1000000,
+      "rng_seed": 20261024,
+      "exceedances_b": 0,
+      "monte_carlo_p": 9.99999000001e-07,
+      "monte_carlo_se": 9.99999000001e-07,
+      "ci_95_lower": 0.0,
+      "ci_95_upper": 2.9599970400029603e-06,
+      "interpretation": "Statistically significant (p < 0.05); rejected null of equal detector ranking."
+    }
+  ]
+}

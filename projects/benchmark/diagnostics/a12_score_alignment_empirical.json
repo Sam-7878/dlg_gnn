@@ -1,0 +1,166 @@
+{
+  "audit_date": "2026-10-24",
+  "audit_scope": "P0-03 Low ROC-AUC & Scientific Evidence Verification",
+  "status": "VERIFIED_SCORE_ALIGNMENT_WITH_HYPOTHESIS_CORRECTION",
+  "score_array_availability": {
+    "total_registered_runs": 456,
+    "score_status_breakdown": {
+      "MISSING_NOT_STORED_BY_SOURCE_RUN": 416,
+      "ARCHIVED_A05_SCORE": 40
+    },
+    "per_node_raw_scores_accessible_for_all": false,
+    "determination": "NOT_TESTABLE_FROM_AVAILABLE_ARTIFACTS: Full node-level score/degree arrays for Elliptic and DGraphFin are not stored in historical run archives; causal hub residual mechanisms cannot be claimed as empirically proven."
+  },
+  "audited_contracts": {
+    "positive_label_semantics": {
+      "status": "VERIFIED_SCORE_ALIGNMENT",
+      "detail": "y=1 represents fraud/illicit across canonical manifests and loaders (Elliptic illicit transactions, DGraphFin fraud defaulters). No label inversion bug."
+    },
+    "upstream_score_orientation": {
+      "status": "VERIFIED_SCORE_ALIGNMENT",
+      "detail": "PyGOD 1.1.0 and native model contract specifies higher score s_i indicates greater anomaly. Code inspect confirms no internal score sign flip."
+    },
+    "test_label_non_inversion": {
+      "status": "VERIFIED_SCORE_ALIGNMENT",
+      "detail": "Post-hoc test-label-driven sign inversion is strictly prohibited by non-negotiable benchmark rules. Below-random ROC-AUC values (<0.50) are retained as authentic empirical observations."
+    },
+    "causal_hub_mechanism": {
+      "status": "HUB_ASSOCIATION_HYPOTHESIS_UNPROVEN",
+      "detail": "While licit transaction hubs commonly incur large reconstruction errors in autoencoders conceptually, without per-node degree-stratified residual arrays this mechanism cannot be claimed as mathematically or empirically proven. Manuscript prose must downgrade causal claims to an informed topological hypothesis."
+    }
+  },
+  "empirical_metrics": {
+    "Elliptic": {
+      "DOMINANT": {
+        "supported": true,
+        "pr_auc_mean": 0.06817041207063056,
+        "pr_auc_sd": 0.003592369652326968,
+        "roc_auc_mean": 0.34319194245342177,
+        "roc_auc_sd": 0.036652567531742127,
+        "validation_f1_mean": 0.18501941137907013,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "AnomalyDAE": {
+        "supported": true,
+        "pr_auc_mean": 0.05376733050077579,
+        "pr_auc_sd": 0.0018555307128314197,
+        "roc_auc_mean": 0.12955793030158658,
+        "roc_auc_sd": 0.02456135951551125,
+        "validation_f1_mean": 0.17781081901989626,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "CoLA": {
+        "supported": true,
+        "pr_auc_mean": 0.0946502240341828,
+        "pr_auc_sd": 0.0021084213811036613,
+        "roc_auc_mean": 0.4877650146931643,
+        "roc_auc_sd": 0.008772895850048595,
+        "validation_f1_mean": 0.17821566442290931,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "GADNR": {
+        "supported": false,
+        "reason": "Unsupported / OOM on full graph"
+      },
+      "OCGNN": {
+        "supported": true,
+        "pr_auc_mean": 0.06666657363820841,
+        "pr_auc_sd": 0.004618471480860554,
+        "roc_auc_mean": 0.3140422472716629,
+        "roc_auc_sd": 0.04663023070745314,
+        "validation_f1_mean": 0.17959016176250955,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "DLG-Base": {
+        "supported": true,
+        "pr_auc_mean": 0.0686545048220036,
+        "pr_auc_sd": 0.002205338997120172,
+        "roc_auc_mean": 0.3499593154894237,
+        "roc_auc_sd": 0.022123014723235537,
+        "validation_f1_mean": 0.1817449028444182,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "DLG-Aug": {
+        "supported": true,
+        "pr_auc_mean": 0.10365343819379536,
+        "pr_auc_sd": 0.0042946350836190195,
+        "roc_auc_mean": 0.570530094472471,
+        "roc_auc_sd": 0.022753510846510658,
+        "validation_f1_mean": 0.2239361469670577,
+        "below_random_roc": false,
+        "evidence_classification": "ABOVE_RANDOM_OBSERVED"
+      }
+    },
+    "DGraphFin": {
+      "DOMINANT": {
+        "supported": true,
+        "pr_auc_mean": 0.010232161067880515,
+        "pr_auc_sd": 0.00015467081789768554,
+        "roc_auc_mean": 0.40876355233018513,
+        "roc_auc_sd": 0.00488407810633016,
+        "validation_f1_mean": 0.02499310027231341,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "AnomalyDAE": {
+        "supported": true,
+        "pr_auc_mean": 0.011941393426693526,
+        "pr_auc_sd": 0.003119942511230144,
+        "roc_auc_mean": 0.4691156857012495,
+        "roc_auc_sd": 0.09710734790568139,
+        "validation_f1_mean": 0.02860364054190722,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "CoLA": {
+        "supported": true,
+        "pr_auc_mean": 0.012676875778330904,
+        "pr_auc_sd": 0.0002921919542055879,
+        "roc_auc_mean": 0.49936101373608366,
+        "roc_auc_sd": 0.008843385082110787,
+        "validation_f1_mean": 0.0252748307966994,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "GADNR": {
+        "supported": false,
+        "reason": "Unsupported / OOM on full graph"
+      },
+      "OCGNN": {
+        "supported": true,
+        "pr_auc_mean": 0.01257832427374055,
+        "pr_auc_sd": 0.0014864570651121965,
+        "roc_auc_mean": 0.49505858391372515,
+        "roc_auc_sd": 0.048559342416693047,
+        "validation_f1_mean": 0.02793724496262267,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "DLG-Base": {
+        "supported": true,
+        "pr_auc_mean": 0.010089006987997539,
+        "pr_auc_sd": 0.00020999650179871938,
+        "roc_auc_mean": 0.4091737417154618,
+        "roc_auc_sd": 0.008571190674706157,
+        "validation_f1_mean": 0.025007983830343507,
+        "below_random_roc": true,
+        "evidence_classification": "EMPIRICAL_BELOW_RANDOM_OBSERVED"
+      },
+      "DLG-Aug": {
+        "supported": true,
+        "pr_auc_mean": 0.01344244480974346,
+        "pr_auc_sd": 0.0016603443872558086,
+        "roc_auc_mean": 0.518548157486219,
+        "roc_auc_sd": 0.03643000344768049,
+        "validation_f1_mean": 0.029561155350495638,
+        "below_random_roc": false,
+        "evidence_classification": "ABOVE_RANDOM_OBSERVED"
+      }
+    }
+  }
+}
