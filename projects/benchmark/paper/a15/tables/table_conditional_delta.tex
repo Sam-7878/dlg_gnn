@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
+\caption{Conditional Average Precision performance of DLG-Base versus DLG-Aug across all 14 evaluated datasets (13 primary graphs plus external LANL-RedTeam). Results report mean AP and seed-paired delta ($\Delta\mathrm{AP} = \mathrm{AP}_{\mathrm{Aug}} - \mathrm{AP}_{\mathrm{Base}}$) alongside paired standard errors ($n=5$ random seeds). Localized structural augmentation provides clear utility in sparse transaction graphs but exhibits performance trade-offs on dense social networks and bipartite cyber graphs.}
+\label{tab:conditional_delta}
+\begin{tabularx}{\textwidth}{lrrrr>{\raggedright\arraybackslash}X}\toprule
+\textbf{Dataset} & \textbf{DLG-Base (AP)} & \textbf{DLG-Aug (AP)} & $\mathbf{\Delta\mathrm{AP}}$ & \textbf{Paired SE} & \textbf{Operational Characterization} \\\midrule
+Elliptic & $0.0687$ & $0.1037$ & $\mathbf{+0.0350}$ & $\pm 0.0022$ & \textbf{Large Gain} ($+50.97\%$ rel.); positive $\Delta\mathrm{AP}$ observed; mechanism not isolated by this comparison. \\
+DGraphFin & $0.0101$ & $0.0134$ & $+0.0034$ & $\pm 0.0008$ & \textbf{Gain} ($+33.23\%$ rel.); exact full-graph execution supported under the reported envelope. \\
+BitcoinOTC & $0.8274$ & $0.8211$ & $-0.0063$ & $\pm 0.0033$ & \textbf{Slight Loss} ($-0.77\%$ rel.); high baseline precision ($0.827$) retains competitive performance. \\
+Ethereum & $0.4106$ & $0.4359$ & $\mathbf{+0.0253}$ & $\pm 0.0144$ & \textbf{Gain} ($+6.15\%$ rel.); DLG-Aug has higher mean AP in this constructed similarity-graph evaluation. \\
+BSC & $0.3390$ & $0.3411$ & $+0.0021$ & $\pm 0.0103$ & \textbf{Marginal Gain} ($+0.61\%$ rel.); slight positive mean difference on BSC token transfers. \\
+Polygon & $0.0854$ & $0.0731$ & $-0.0124$ & $\pm 0.0054$ & \textbf{Loss} ($-14.48\%$ rel.); negative $\Delta\mathrm{AP}$ observed in this similarity-graph evaluation. \\
+Yelp-Syn & $0.0826$ & $0.0832$ & $+0.0007$ & $\pm 0.0015$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
+Amazon-Syn & $0.1245$ & $0.1302$ & $+0.0057$ & $\pm 0.0016$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
+Reddit-Syn & $0.4044$ & $0.3388$ & $\mathbf{-0.0656}$ & $\pm 0.0031$ & \textbf{Substantial Loss} ($-16.22\%$ rel.); dense community structure exhibits negative delta. \\
+Flickr-Syn & $0.4569$ & $0.4599$ & $+0.0030$ & $\pm 0.0076$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
+Cora-Syn & $0.4758$ & $0.4720$ & $-0.0038$ & $\pm 0.0031$ & Stable citation network performance; local features preserve structural fidelity. \\
+CiteSeer-Syn & $0.6004$ & $0.5992$ & $-0.0013$ & $\pm 0.0014$ & Stable citation network performance; local features preserve structural fidelity. \\
+PubMed-Syn & $0.1623$ & $0.1605$ & $-0.0018$ & $\pm 0.0003$ & Stable citation network performance; local features preserve structural fidelity. \\
+LANL-RedTeam$^{\dagger}$ & $0.1367$ & $0.1114$ & $-0.0252$ & $\pm 0.0126$ & \textbf{External Loss} ($-18.47\%$ rel.); negative $\Delta\mathrm{AP}$ observed on bipartite cyber authentication graph. \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}\footnotesize
+\item $^{\dagger}$ LANL-RedTeam is an external enterprise cybersecurity network evaluated under identical protocol but reported as single-graph descriptive evidence.
+\end{tablenotes}
+\end{table}

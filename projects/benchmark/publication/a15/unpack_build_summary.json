@@ -1,0 +1,14 @@
+{
+  "preprints_clean_unpack": {
+    "success": true,
+    "pages": 19,
+    "undef_refs": [],
+    "undef_cits": []
+  },
+  "applied_sciences_clean_unpack": {
+    "success": true,
+    "pages": 16,
+    "undef_refs": [],
+    "undef_cits": []
+  }
+}

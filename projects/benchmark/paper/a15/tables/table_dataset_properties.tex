@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Benchmark graph dataset properties, evaluated model-input populations, target label provenance, and evaluation test prevalence. Model-input counts ($N, E, d$) reflect the exact tensors evaluated by all models; upstream raw source graph totals are reported separately. Graph Target Prevalence ($\pi_{\mathrm{graph}} = y_{\mathrm{pos}} / N$) reflects whole-graph label proportions; Evaluated Test Prevalence ($\pi_{\mathrm{test}}$) defines the empirical no-skill AP baseline on the evaluated test split (mean across seeds 42--46).}
+\label{tab:dataset_properties}
+\begin{tabularx}{\textwidth}{lrrrrrX}\toprule
+\textbf{Dataset} & \textbf{Nodes ($N$)} & \textbf{Edges ($E$)} & \textbf{Features ($d$)} & \textbf{Graph Prev.} & \textbf{Test $\pi_{\mathrm{test}}$} & \textbf{Target Provenance and Evaluated Population} \\\midrule
+\multicolumn{7}{l}{\textit{Native Financial / Blockchain Datasets ($N=5$)}} \\
+Elliptic & $46,564$ & $83,188$ & $165$ & $0.0976$ & $0.0976$ & Bitcoin transaction graph; illicit entities (Weber et al., 2019). Evaluated induced graph: 46,564 nodes (raw source: 203,769 nodes). \\
+DGraphFin & $1,225,601$ & $746,271$ & $17$ & $0.0127$ & $0.0127$ & FinTech loan user graph; fraudulent defaulters (Huang et al., 2022). Evaluated induced graph: 1,225,601 nodes (raw source: 3,700,550 nodes). \\
+Ethereum & $14,385$ & $115,065$ & $8$ & $0.4184$ & $0.4089^*$ & Token-transfer feature-similarity graph; verified phishing/scam contracts (Luo et al., 2024). Test split: 2,893 nodes ($40.89\%$ fraud). \\
+BSC & $7,481$ & $59,832$ & $8$ & $0.1476$ & $0.1473^*$ & Binance Smart Chain token transfer graph; fraud contracts (Luo et al., 2024). Test split: 1,500 nodes ($14.73\%$ fraud). \\
+Polygon & $2,303$ & $18,411$ & $8$ & $0.0261$ & $0.0259^*$ & Polygon token transfer graph; verified fraud contracts (Luo et al., 2024). Test split: 471 nodes ($2.59\%$ fraud). \\
+\midrule
+\multicolumn{7}{l}{\textit{Injected Synthetic Benchmarks ($N=8$, including Real Trust Graph with Injected Targets)}} \\
+BitcoinOTC & $6,005$ & $7,409$ & $67$ & $0.0300$ & $0.0300$ & SNAP OTC signed trust network (Kumar et al., 2016); controlled injected anomaly targets on real graph. Test split: 3,003 nodes. \\
+Yelp-Syn & $716,847$ & $14,004,995$ & $300$ & $0.0100$ & $0.0100$ & Social review network; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 716,847 nodes). Test split: 358,424 nodes. \\
+Amazon-Syn & $13,752$ & $507,378$ & $767$ & $0.0300$ & $0.0300$ & Co-purchasing graph; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 13,752 nodes). Test split: 6,876 nodes. \\
+Reddit-Syn & $232,965$ & $114,869,737$ & $602$ & $0.0200$ & $0.0200$ & Reddit post interaction graph; injected structural anomalies. (PyG/PyGOD evaluated tensor: 232,965 nodes). Test split: 116,483 nodes. \\
+Flickr-Syn & $89,250$ & $1,001,494$ & $500$ & $0.0200$ & $0.0200$ & Image sharing network; injected structural anomalies. (PyG/PyGOD evaluated tensor: 89,250 nodes). Test split: 44,625 nodes. \\
+Cora-Syn & $2,708$ & $11,276$ & $1433$ & $0.0299$ & $0.0298^*$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 2,708 nodes). Test split: 1,354 nodes. \\
+CiteSeer-Syn & $3,327$ & $9,914$ & $3703$ & $0.0298$ & $0.0300$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 3,327 nodes). Test split: 1,664 nodes. \\
+PubMed-Syn & $19,717$ & $93,958$ & $500$ & $0.0300$ & $0.0300$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 19,717 nodes). Test split: 9,859 nodes. \\
+\midrule
+\multicolumn{7}{l}{\textit{External Enterprise Cybersecurity Network ($N=1$)}} \\
+LANL-RedTeam & $16,694$ & $323,897$ & $13$ & $0.0180$ & $0.0180$ & Enterprise authentication graph; red-team compromised computers (Kent, 2015). Evaluated destination computers: 16,694 nodes. Test split: 3,338 nodes. \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}\footnotesize
+\item $^*$ For datasets with random stratified cross-seed splits, $\pi_{\mathrm{test}}$ denotes the empirical mean test-set positive rate across seeds 42--46 (Ethereum: $0.3951$--$0.4307$, mean $0.4089$; BSC: $0.1353$--$0.1600$, mean $0.1473$; Polygon: $0.0149$--$0.0382$, mean $0.0259$; Cora: $0.0295$--$0.0303$, mean $0.0298$).
+\end{tablenotes}
+\end{table}

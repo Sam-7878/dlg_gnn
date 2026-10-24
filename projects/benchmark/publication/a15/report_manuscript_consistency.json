@@ -1,0 +1,58 @@
+{
+  "gate": "A15-G6 Extended Whole-Document Numerical Relationship Validator",
+  "status": "PASS",
+  "preprints_manuscript": {
+    "file": "DLG-Benchmark_A15_Preprints.tex",
+    "status": "PASS",
+    "checks": {
+      "forbidden_datasets_absent": "PASS",
+      "table1_prevalences_parsed": "PASS",
+      "crypto_test_prevalences_table1": "PASS",
+      "table4_all_14_rows_parsed": "PASS",
+      "table4_cross_check_canonical_csv": "PASS (All 14 datasets exact)",
+      "table2_crypto_prevalences_present": "PASS",
+      "text_ethereum_gain": "PASS (+0.0253)",
+      "text_bsc_marginal_gain": "PASS (+0.0021)",
+      "text_polygon_degradation": "PASS (-0.0124)",
+      "13_primary_datasets": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "gadnr_5_failures_stated": "PASS (5 GADNR)",
+      "immutable_tag_a15": "PASS (benchmark-a15-submission-2026-10-25)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "applied_sciences_manuscript": {
+    "file": "DLG-Benchmark_A15_AppliedSciences.tex",
+    "status": "PASS",
+    "checks": {
+      "forbidden_datasets_absent": "PASS",
+      "table1_prevalences_parsed": "PASS",
+      "crypto_test_prevalences_table1": "PASS",
+      "table4_all_14_rows_parsed": "PASS",
+      "table4_cross_check_canonical_csv": "PASS (All 14 datasets exact)",
+      "table2_crypto_prevalences_present": "PASS",
+      "text_ethereum_gain": "PASS (+0.0253)",
+      "text_bsc_marginal_gain": "PASS (+0.0021)",
+      "text_polygon_degradation": "PASS (-0.0124)",
+      "13_primary_datasets": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "gadnr_5_failures_stated": "PASS (5 GADNR)",
+      "immutable_tag_a15": "PASS (benchmark-a15-submission-2026-10-25)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "negative_controls": {
+    "neg_ctrl_eth_obsolete_prevalence": "PASS (Caught)",
+    "neg_ctrl_bsc_sign_inversion": "PASS (Caught)",
+    "neg_ctrl_reddit_val_mutation": "PASS (Caught)",
+    "neg_ctrl_non_contract_dataset": "PASS (Caught)",
+    "neg_ctrl_gadnr_count_typo": "PASS (Caught)",
+    "neg_ctrl_stale_tag_mutation": "PASS (Caught)",
+    "neg_ctrl_causal_phrase_injection": "PASS (Caught)",
+    "neg_ctrl_csv_corruption": "PASS (Caught)"
+  }
+}

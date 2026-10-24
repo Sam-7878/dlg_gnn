@@ -1,6 +1,6 @@
-# Cover Letter for MDPI Applied Sciences (A14)
+# Cover Letter for MDPI Applied Sciences (A15)
 
-**Date:** 2026-10-24  
+**Date:** 2026-10-25  
 **To:**  
 Guest Editors, Special Issue **"Machine Learning and Its Application for Anomaly Detection"**  
 Dr. Naeem Ayoub and Dr. Amira Mouakher  
@@ -10,16 +10,17 @@ Editorial Office, *Applied Sciences*, MDPI
 
 Dear Guest Editors and Editorial Board,
 
-We are pleased to submit our original research manuscript titled **"Scalability-Aware Benchmarking of Graph Anomaly Detection on Financial and Cyber Networks: Evaluated Population, Alert Budgets, and the Exact Limits of Decoupled GNNs"** for consideration as a Research Article in the Special Issue **"Machine Learning and Its Application for Anomaly Detection"** of *Applied Sciences* (Special Issue ID: `C67H3U9QGT`).
+We are pleased to submit our original research manuscript titled **"Scalability-Aware Benchmarking of Graph Anomaly Detection on Financial and Cyber Networks: Evaluated Population, Alert Budgets, and the Exact Limits of Decoupled GNNs"** for consideration as a Research Article in the Special Issue **"Machine Learning and Its Application for Anomaly Detection"** of *Applied Sciences* (Special Issue ID: `C67H3U9QGT`, deadline 2026-12-31).
 
-### Special Issue Fit
+### Special Issue Fit & Scientific Contributions
 Your Special Issue invites rigorous, application-oriented research on unsupervised anomaly detection, financial fraud investigation, cybersecurity defense, and scalable machine learning implementations. Our manuscript directly addresses these core priorities:
 1. **Multi-Domain Support-Aware Benchmark:** Evaluates seven functioning unsupervised graph anomaly detectors across 13 primary graph benchmarks (five native financial, eight synthetic injected) and one external enterprise cybersecurity network (LANL-RedTeam) over five random seeds (455 total runs), documenting hardware execution boundaries (84 of 91 primary pairs supported) without heuristic score imputation.
-2. **Evaluated Population & Dataset Reconciliation:** Explicitly reconciles evaluated model-input graph tensors ($N, E, d$) against raw source graphs, resolving historical ambiguities across financial and synthetic benchmarks.
-3. **Operational Alert-Budget Analysis:** Evaluates precision and recall under strict forensic triage budgets ($P@1\%$, $R@1\%$, $P@5\%$, $R@5\%$) and pairs Average Precision with evaluation prevalence baselines.
-4. **Empirical Low-AUC Audit:** Empirically documents below-random ($<0.50$) ROC-AUC values under standard detector orientation on financial transaction graphs, presenting informed topological hypotheses while preserving authentic empirical measurements without test-driven sign inversion.
-5. **Exact Closed-Form Decoupling:** Mathematically derives closed-form Gram-matrix reconstructions that eliminate dense $O(N^2)$ memory allocation for unsquashed dot-product decoders, enabling exact full-graph training without sampling approximations.
-6. **Actionable Decision Matrix:** Synthesizes topological density, feature availability, and alert budgets into practical guidelines for deploying graph anomaly detection systems.
+2. **Evaluated Population & Prevalence Ledger:** Formulates an explicit audit ledger separating full-graph target prevalence from evaluated test set positive rates (Ethereum 0.4089, BSC 0.1473, Polygon 0.0259), resolving prior draft ambiguities and anchoring Average Precision comparisons strictly to empirical test prevalence baselines.
+3. **Hardware Execution Envelope:** Explicitly audits execution failures, categorizing exactly 7 unsupportable pairs (5 GADNR neighbor-matching out-of-memory errors on large graphs and 2 AnomalyDAE dense matrix limits) rather than vague aggregate claims.
+4. **Operational Alert-Budget Analysis:** Evaluates precision and recall under strict forensic triage budgets ($P@1\%$, $R@1\%$, $P@5\%$, $R@5\%$) and pairs Average Precision with evaluation prevalence baselines.
+5. **Empirical Low-AUC Audit:** Empirically documents below-random ($<0.50$) ROC-AUC values under standard detector orientation on financial transaction graphs, presenting informed topological hypotheses while preserving authentic empirical measurements without test-driven sign inversion.
+6. **Exact Closed-Form Decoupling:** Mathematically derives closed-form Gram-matrix reconstructions that eliminate dense $O(N^2)$ memory allocation for unsquashed dot-product decoders, enabling exact full-graph training without sampling approximations.
+7. **Actionable Decision Matrix:** Synthesizes topological density, feature availability, and alert budgets into practical guidelines for deploying graph anomaly detection systems.
 
 ### Disclosure of Closely Related Preceding Work & Preprint Policy
 To ensure transparency and ethical compliance:
@@ -28,7 +29,7 @@ To ensure transparency and ethical compliance:
 - Prior to journal submission, a publisher-neutral version of this benchmark study has been prepared for deposit on Preprints.org to secure a distinct benchmark preprint DOI. There is no concurrent submission to any other journal.
 
 ### Data Availability & Reviewer Access
-All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable GitHub release tag `benchmark-a14-submission-2026-10-24` at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
+All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable GitHub release tag `benchmark-a15-submission-2026-10-25` at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
 
 ### Declarations
 - **Conflict of Interest:** The authors declare no conflicts of interest.

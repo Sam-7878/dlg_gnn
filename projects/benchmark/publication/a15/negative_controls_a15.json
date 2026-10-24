@@ -1,0 +1,10 @@
+{
+  "neg_ctrl_eth_obsolete_prevalence": "PASS (Caught)",
+  "neg_ctrl_bsc_sign_inversion": "PASS (Caught)",
+  "neg_ctrl_reddit_val_mutation": "PASS (Caught)",
+  "neg_ctrl_non_contract_dataset": "PASS (Caught)",
+  "neg_ctrl_gadnr_count_typo": "PASS (Caught)",
+  "neg_ctrl_stale_tag_mutation": "PASS (Caught)",
+  "neg_ctrl_causal_phrase_injection": "PASS (Caught)",
+  "neg_ctrl_csv_corruption": "PASS (Caught)"
+}
