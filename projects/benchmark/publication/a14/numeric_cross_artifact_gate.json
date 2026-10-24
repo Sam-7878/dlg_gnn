@@ -1,0 +1,50 @@
+{
+  "gate": "A14-G4 Whole-Document Numerical Relationship Validator",
+  "status": "PASS",
+  "preprints_manuscript": {
+    "file": "DLG-Benchmark_A14_Preprints.tex",
+    "status": "PASS",
+    "checks": {
+      "table4_all_14_rows_parsed": "PASS",
+      "table4_cross_check_canonical_csv": "PASS (All 14 datasets exact)",
+      "text_ethereum_gain": "PASS (+0.0253)",
+      "text_bsc_marginal_gain": "PASS (+0.0021)",
+      "text_polygon_degradation": "PASS (-0.0124)",
+      "text_reddit_degradation": "PASS (-0.0656)",
+      "text_elliptic_gain": "PASS (+0.0350)",
+      "13_primary_datasets": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "immutable_tag_a14": "PASS (benchmark-a14-submission-2026-10-24)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "applied_sciences_manuscript": {
+    "file": "DLG-Benchmark_A14_AppliedSciences.tex",
+    "status": "PASS",
+    "checks": {
+      "table4_all_14_rows_parsed": "PASS",
+      "table4_cross_check_canonical_csv": "PASS (All 14 datasets exact)",
+      "text_ethereum_gain": "PASS (+0.0253)",
+      "text_bsc_marginal_gain": "PASS (+0.0021)",
+      "text_polygon_degradation": "PASS (-0.0124)",
+      "text_reddit_degradation": "PASS (-0.0656)",
+      "text_elliptic_gain": "PASS (+0.0350)",
+      "13_primary_datasets": "PASS",
+      "84_of_91_supported": "PASS",
+      "455_total_runs": "PASS",
+      "immutable_tag_a14": "PASS (benchmark-a14-submission-2026-10-24)",
+      "no_unverified_causal_hub_claims": "PASS"
+    },
+    "errors": []
+  },
+  "negative_controls": {
+    "neg_ctrl_bsc_sign_inversion": "PASS (Caught)",
+    "neg_ctrl_eth_sign_inversion": "PASS (Caught)",
+    "neg_ctrl_reddit_val_mutation": "PASS (Caught)",
+    "neg_ctrl_tag_mutation": "PASS (Caught)",
+    "neg_ctrl_causal_phrase_injection": "PASS (Caught)",
+    "neg_ctrl_figure_csv_corruption": "PASS (Caught)"
+  }
+}

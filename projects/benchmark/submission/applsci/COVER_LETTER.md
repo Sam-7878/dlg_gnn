@@ -1,4 +1,4 @@
-# Cover Letter for MDPI Applied Sciences (A13)
+# Cover Letter for MDPI Applied Sciences (A14)
 
 **Date:** 2026-10-24  
 **To:**  
@@ -28,7 +28,7 @@ To ensure transparency and ethical compliance:
 - Prior to journal submission, a publisher-neutral version of this benchmark study has been prepared for deposit on Preprints.org to secure a distinct benchmark preprint DOI. There is no concurrent submission to any other journal.
 
 ### Data Availability & Reviewer Access
-All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable GitHub release tag `benchmark-a13-submission-2026-10-24` at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
+All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable GitHub release tag `benchmark-a14-submission-2026-10-24` at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
 
 ### Declarations
 - **Conflict of Interest:** The authors declare no conflicts of interest.
