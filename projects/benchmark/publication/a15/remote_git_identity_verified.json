@@ -1,0 +1,40 @@
+{
+  "gate": "A15-G4",
+  "status": "PASSED_VERIFIED",
+  "timestamp": "2026-10-25T01:12:35+09:00",
+  "repository": {
+    "remote_url": "https://github.com/Sam-7878/dlg_gnn.git",
+    "branch": "main",
+    "commit_hash": "a037531c790a91833887e7aad27bf60aeb87fa0e",
+    "tag_name": "benchmark-a15-submission-2026-10-25",
+    "tag_object_hash": "d97188e06e6349164b8556c9244581db3efa8d3c",
+    "tag_target_commit": "a037531c790a91833887e7aad27bf60aeb87fa0e",
+    "remote_verification": "refs/tags/benchmark-a15-submission-2026-10-25 confirmed on remote origin"
+  },
+  "verified_artifacts": {
+    "evaluation_population_ledger": {
+      "path": "projects/benchmark/publication/a15/evaluation_population_by_seed.csv",
+      "sha256": "bd37bb61944232ac5bc5dd142e63a5d722ff3d0004e2f65384226c9306e2e18b"
+    },
+    "canonical_registry": {
+      "path": "projects/benchmark/publication/a15/canonical_selected_run_registry.csv",
+      "sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907"
+    },
+    "preprints_source_bundle": {
+      "path": "projects/benchmark/submission/preprints/source_bundle.zip",
+      "sha256": "bae44d3967e34278a0feca83b429449a55a3b1b1945166b700ab4bcdb72710f3"
+    },
+    "preprints_pdf": {
+      "path": "projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.pdf",
+      "sha256": "7330dee7b87af443b1d5ebec422f52319f735393d2d56ccca30a24d790d38a8e"
+    },
+    "applsci_source_bundle": {
+      "path": "projects/benchmark/submission/applsci/source_bundle.zip",
+      "sha256": "6fb4753d05057e1a23c520cf2358a4fc131a0c836336d73139c74ceaa585437d"
+    },
+    "applsci_pdf": {
+      "path": "projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.pdf",
+      "sha256": "a6bfabead9c962c5403ab787467c94db8a988f37a1593126deb1199b653956d8"
+    }
+  }
+}

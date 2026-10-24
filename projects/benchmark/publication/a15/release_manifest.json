@@ -1,0 +1,57 @@
+{
+  "project": "dlg_gnn_benchmark",
+  "phase": "A15",
+  "document_id": "DLG-BENCH-RELEASE-A15",
+  "timestamp": "2026-10-25T01:12:45+09:00",
+  "release_tag": "benchmark-a15-submission-2026-10-25",
+  "tag_object": "d97188e06e6349164b8556c9244581db3efa8d3c",
+  "target_commit": "a037531c790a91833887e7aad27bf60aeb87fa0e",
+  "repository": "https://github.com/Sam-7878/dlg_gnn",
+  "primary_runs": 420,
+  "external_runs": 35,
+  "total_runs": 455,
+  "supported_pairs": 84,
+  "unsupported_pairs": 7,
+  "unsupported_details": {
+    "gadnr_oom": ["Elliptic", "DGraphFin", "Yelp-Syn", "Flickr-Syn", "Reddit-Syn"],
+    "anomalydae_dense_attention_oom": ["Yelp-Syn", "Reddit-Syn"]
+  },
+  "evaluated_crypto_prevalences": {
+    "ethereum": {
+      "graph_nodes": 14385,
+      "test_nodes": 2893,
+      "mean_test_positives": 1183.0,
+      "mean_test_prevalence": 0.408918
+    },
+    "bsc": {
+      "graph_nodes": 7481,
+      "test_nodes": 1500,
+      "mean_test_positives": 221.0,
+      "mean_test_prevalence": 0.147333
+    },
+    "polygon": {
+      "graph_nodes": 2303,
+      "test_nodes": 471,
+      "mean_test_positives": 12.2,
+      "mean_test_prevalence": 0.025902
+    }
+  },
+  "submission_packages": {
+    "preprints": {
+      "manuscript_tex": "projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.tex",
+      "manuscript_pdf": "projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.pdf",
+      "source_bundle": "projects/benchmark/submission/preprints/source_bundle.zip",
+      "pages": 19,
+      "undefined_citations": 0,
+      "undefined_references": 0
+    },
+    "applied_sciences": {
+      "manuscript_tex": "projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.tex",
+      "manuscript_pdf": "projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.pdf",
+      "source_bundle": "projects/benchmark/submission/applsci/source_bundle.zip",
+      "pages": 16,
+      "undefined_citations": 0,
+      "undefined_references": 0
+    }
+  }
+}
