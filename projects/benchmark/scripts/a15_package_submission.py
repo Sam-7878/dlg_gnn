@@ -134,7 +134,7 @@ In accordance with our submission integrity audit:
 | **A15-G2** | Complete Support & Main AP Claims Reconciled | **PASS** | Verified 84/91 primary support; corrected model support description to 5 GADNR OOM + 2 AnomalyDAE Err = 7 unsupported pairs; zero contradictions. |
 | **A15-G3** | Operational Claims & Report Harmonization | **PASS** | Replaced causal interpretations in Table 4 and text with observational wording; removed non-contract datasets from execution report. |
 | **A15-G4** | Verified Remote Git Identity | **PASS** | Tag `{TAG_A15}` prepared and verified against remote origin. |
-| **A15-G5** | SHA-256 Disk Verification & Clean Unpack | **PASS** | Hashes calculated directly from final disk bytes; clean directory build succeeds (19 pages, 0 undefined references, 0 undefined citations). |
+| **A15-G5** | SHA-256 Disk Verification & Clean Unpack | **PASS** | Hashes calculated directly from final disk bytes; clean directory build succeeds (18 pages, 0 undefined references, 0 undefined citations). |
 | **A15-G6** | Extended Validator & Mutation Testing | **PASS** | Multi-table verification and negative control injection suite passed. |
 | **A15-G7** | Final Sign-Off & Submission Package Ready | **PASS** | **A15 PREPRINT READY** confirmed. |
 
@@ -144,7 +144,7 @@ In accordance with our submission integrity audit:
 
 - **Neutral LaTeX Manuscript:** `DLG-Benchmark_A15_Preprints.tex`  
   - SHA-256: `{tex_sha}`
-- **Rendered PDF (19 pages):** `DLG-Benchmark_A15_Preprints.pdf`  
+- **Rendered PDF (18 pages):** `DLG-Benchmark_A15_Preprints.pdf`  
   - SHA-256: `{pdf_sha}`  
   - Size: `{(SUB_PRE / 'DLG-Benchmark_A15_Preprints.pdf').stat().st_size:,}` bytes
 - **Source Bundle Archive:** `source_bundle.zip`  
@@ -401,11 +401,11 @@ def test_clean_unpack():
     print("SUCCESS: A15-G5 Clean Unpack & Build Verification PASSED!")
 
 def write_visual_review_report():
-    report = """# PDF Visual Review & Layout Verification Report (A15)
+    report = r"""# PDF Visual Review & Layout Verification Report (A15)
 
 **Document ID:** DLG-BENCH-VISUAL-A15  
 **Date:** 2026-10-25  
-**Audit Target:** Preprints.org PDF (19 pages) & MDPI Applied Sciences PDF (16 pages)  
+**Audit Target:** Preprints.org PDF (18 pages) & MDPI Applied Sciences PDF (16 pages)  
 
 ---
 

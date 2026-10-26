@@ -19,7 +19,7 @@ All eight mandatory quality gates stipulated in the A15 Submission Evidence Clos
 | **A15-G2** | **Support Matrix & Model Counts** | Pinned `support_14x7.csv` and `main_ap_mean_sd.csv`. Verified exactly 84 primary supported pairs ($84 \times 5 = 420$ runs) + 7 external LANL pairs ($7 \times 5 = 35$ runs) = 455 total runs. Documented exact failure etiologies: 5 GADNR OOM + 2 AnomalyDAE Err = 7 unsupported pairs. Typos corrected in text. | **APPROVED** |
 | **A15-G3** | **Operational Claims & Report Harmonization** | Replaced unproven causal hub assertions with observational descriptions. Completely purged non-contract datasets (Tolokers, Questions, T-Finance, T-Social, YelpChi) from the execution report, replacing Table 2.4 with the true canonical 13+1 table. | **APPROVED** |
 | **A15-G4** | **Verified Public Remote Git Identity** | Project tagged under immutable release tag `benchmark-a15-submission-2026-10-25` and pushed to remote GitHub origin; verified via `git ls-remote`. | **APPROVED** |
-| **A15-G5** | **Disk SHA-256 Hashes & Clean Unpack** | Checksums computed from final disk bytes. Source bundles unpacked into `/tmp/a15_clean_unpack_test` and compiled cleanly via TeX Live (19 pages Preprints, 16 pages MDPI, 0 undefined citations/references). | **APPROVED** |
+| **A15-G5** | **Disk SHA-256 Hashes & Clean Unpack** | Checksums computed from final disk bytes. Source bundles unpacked into `/tmp/a15_clean_unpack_test` and compiled cleanly via TeX Live (18 pages Preprints, 16 pages MDPI, 0 undefined citations/references). | **APPROVED** |
 | **A15-G6** | **Extended Validator & Negative Controls** | Full-document AST/regex parser evaluated all tables, citations, and metadata. 8/8 negative control injection tests trapped and rejected fail-closed. | **APPROVED** |
 | **A15-G7** | **Preprints.org Dual Sign-Off** | Full neutral bundle assembled, verified, and signed off as **A15 PREPRINT READY**. | **APPROVED** |
 | **A15-G8** | **Applied Sciences Dual Sign-Off** | Complete MDPI journal submission package assembled, verified, and signed off as **A15 APPLIED SCIENCES PACKAGE READY**. | **APPROVED** |
@@ -55,12 +55,12 @@ In the preceding A14 execution report (`DLG_Benchmark_A14_Execution_Report_2026-
 
 | Artifact Description | Local File Path | Size (Bytes) | SHA-256 Checksum |
 | :--- | :--- | :---: | :--- |
-| **Preprints LaTeX Source** | `projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.tex` | $55,915$ | `ddb051606aaa3bad27f9489238d19d46420b8b67002f9b2899a84297220e53c2` |
-| **Preprints Compiled PDF** | `projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.pdf` | $534,386$ | `7330dee7b87af443b1d5ebec422f52319f735393d2d56ccca30a24d790d38a8e` |
-| **Preprints Source Bundle**| `projects/benchmark/submission/preprints/source_bundle.zip` | $106,478$ | `bae44d3967e34278a0feca83b429449a55a3b1b1945166b700ab4bcdb72710f3` |
-| **Applied Sciences LaTeX** | `projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.tex` | $55,538$ | `b72d2bbc6550875da17cf2e3174cb7156b2e1859fe723f88efc45fe8a25248b3` |
-| **Applied Sciences PDF** | `projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.pdf` | $346,552$ | `a6bfabead9c962c5403ab787467c94db8a988f37a1593126deb1199b653956d8` |
-| **Applied Sciences Bundle**| `projects/benchmark/submission/applsci/source_bundle.zip` | $1,142,459$ | `6fb4753d05057e1a23c520cf2358a4fc131a0c836336d73139c74ceaa585437d` |
+| **Preprints LaTeX Source** | `projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.tex` | $56,257$ | `db69f640e759d414bddbcc242cc0c666a4a020895405506c0a251ba78d3da7d7` |
+| **Preprints Compiled PDF** | `projects/benchmark/submission/preprints/DLG-Benchmark_A15_Preprints.pdf` | $564,060$ | `243af5be49cfc219141b57ce0b51b8b41573ffc76968e4192805acc17fa415ec` |
+| **Preprints Source Bundle**| `projects/benchmark/submission/preprints/source_bundle.zip` | $106,590$ | `85b47f0c51534980979322540252147b381940ddad8f709922a6be975a9167ce` |
+| **Applied Sciences LaTeX** | `projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.tex` | $55,880$ | `6b4570c25c59edb8ba5c1bec23a032d4e2e7633b7f1fe93557685b74d32f5bc8` |
+| **Applied Sciences PDF** | `projects/benchmark/submission/applsci/DLG-Benchmark_A15_AppliedSciences.pdf` | $344,720$ | `41327e131711e9e905b5fea525b460694a3c0de25cc81c30d05f75fbecc5e1b0` |
+| **Applied Sciences Bundle**| `projects/benchmark/submission/applsci/source_bundle.zip` | $1,142,571$ | `e78f6141013aad1976f7ae827c7b99eb6aaefb9cf175f5ade7c577c08f15decb` |
 | **Evaluation Pop. Ledger** | `projects/benchmark/publication/a15/evaluation_population_by_seed.csv` | $28,314$ | `bd37bb61944232ac5bc5dd142e63a5d722ff3d0004e2f65384226c9306e2e18b` |
 | **Main AP Mean/SD CSV** | `projects/benchmark/publication/a15/main_ap_mean_sd.csv` | $5,560$ | `dde635d7eff2504cc0e0ddf2807ac7ca3df8a844f1f89f2830139a3b43102fa0` |
 | **Support Matrix 14x7** | `projects/benchmark/publication/a15/support_14x7.csv` | $6,061$ | `bbd89bf88f05047d2f8f29c2065c73791d480bdfcadb78293f7d03a543b8ecd8` |
@@ -72,8 +72,8 @@ In the preceding A14 execution report (`DLG_Benchmark_A14_Execution_Report_2026-
 ## 4. Final Dual Sign-Off
 
 ### Stage 1: PREPRINT DEPOSIT READY
-- [x] Neutral LaTeX manuscript `DLG-Benchmark_A15_Preprints.tex` compiled cleanly to 19-page publication PDF (`DLG-Benchmark_A15_Preprints.pdf`).
-- [x] Self-contained archive `source_bundle.zip` (106,478 bytes) independently verified via clean directory build.
+- [x] Neutral LaTeX manuscript `DLG-Benchmark_A15_Preprints.tex` compiled cleanly to 18-page publication PDF (`DLG-Benchmark_A15_Preprints.pdf`).
+- [x] Self-contained archive `source_bundle.zip` (106,590 bytes) independently verified via clean directory build.
 - [x] Clear data availability and preprint disclosure included.
 
 **Official Sign-Off:** **`A15 PREPRINT READY`**
@@ -82,7 +82,7 @@ In the preceding A14 execution report (`DLG_Benchmark_A14_Execution_Report_2026-
 
 ### Stage 2: APPLIED SCIENCES SUBMISSION PACKAGE READY
 - [x] Official MDPI LaTeX manuscript `DLG-Benchmark_A15_AppliedSciences.tex` compiled cleanly to 16-page publication PDF (`DLG-Benchmark_A15_AppliedSciences.pdf`).
-- [x] Full source bundle `source_bundle.zip` (1,142,459 bytes) independently verified with all definitions, logos, and style files.
+- [x] Full source bundle `source_bundle.zip` (1,142,571 bytes) independently verified with all definitions, logos, and style files.
 - [x] Cover Letter addressed to Guest Editors Dr. Naeem Ayoub and Dr. Amira Mouakher for Special Issue "Machine Learning and Its Application for Anomaly Detection" (Special Issue ID: `C67H3U9QGT`).
 - [x] Seven dedicated Applied Sciences references cited and verified.
 

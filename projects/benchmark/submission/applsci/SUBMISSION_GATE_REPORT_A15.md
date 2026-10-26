@@ -26,13 +26,13 @@
 ## 2. Submission Package Deliverables & Cryptographic Signatures
 
 - **Official LaTeX Source:** `DLG-Benchmark_A15_AppliedSciences.tex`  
-  - SHA-256: `b72d2bbc6550875da17cf2e3174cb7156b2e1859fe723f88efc45fe8a25248b3`
+  - SHA-256: `6b4570c25c59edb8ba5c1bec23a032d4e2e7633b7f1fe93557685b74d32f5bc8`
 - **Rendered PDF (16 pages):** `DLG-Benchmark_A15_AppliedSciences.pdf`  
-  - SHA-256: `a6bfabead9c962c5403ab787467c94db8a988f37a1593126deb1199b653956d8`  
-  - Size: `346,552` bytes
+  - SHA-256: `41327e131711e9e905b5fea525b460694a3c0de25cc81c30d05f75fbecc5e1b0`  
+  - Size: `344,720` bytes
 - **Source Bundle Archive:** `source_bundle.zip`  
-  - SHA-256: `6fb4753d05057e1a23c520cf2358a4fc131a0c836336d73139c74ceaa585437d`  
-  - Size: `1,142,459` bytes
+  - SHA-256: `e78f6141013aad1976f7ae827c7b99eb6aaefb9cf175f5ade7c577c08f15decb`  
+  - Size: `1,142,571` bytes
   - Contents: `DLG-Benchmark_A15_AppliedSciences.tex`, `references.bib`, `soul.sty`, `soul-ori.sty`, `Definitions/`, `figures/*.pdf`
 - **Submission Documents:**
   - `COVER_LETTER.md` (Addressed to Guest Editors Dr. Ayoub and Dr. Mouakher)

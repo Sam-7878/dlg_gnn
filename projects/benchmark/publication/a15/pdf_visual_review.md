@@ -2,7 +2,7 @@
 
 **Document ID:** DLG-BENCH-VISUAL-A15  
 **Date:** 2026-10-25  
-**Audit Target:** Preprints.org PDF (19 pages) & MDPI Applied Sciences PDF (16 pages)  
+**Audit Target:** Preprints.org PDF (18 pages) & MDPI Applied Sciences PDF (16 pages)  
 
 ---
 
@@ -13,7 +13,7 @@
    - Text boxes, mathematical formulas, and bounds are razor sharp and fully aligned.
 
 2. **Figure 2 (Hardware Support Matrix):**
-   - Complete 14-dataset $	imes$ 7-model grid strictly reflects canonical registry.
+   - Complete 14-dataset $\times$ 7-model grid strictly reflects canonical registry.
    - 84 primary supported cells (5/5 seeds) colored soft green (`#d4edda`); 7 external LANL cells colored soft blue (`#cce5ff`); exactly 7 unsupportable cells distinctly labeled as OOM (5 cells for GADNR) or Err (2 cells for AnomalyDAE).
    - Zero fail-open default shading.
 
@@ -26,11 +26,11 @@
    - Descriptive SE note at the bottom is fully visible.
 
 4. **Table 1 (Evaluated Dataset Properties):**
-   - Explicitly separates Graph Target Prevalence ($y_{pos}/N$) from Evaluated Test Set Positive Rate $\pi_{	ext{test}}$.
+   - Explicitly separates Graph Target Prevalence ($y_{pos}/N$) from Evaluated Test Set Positive Rate $\pi_{\text{test}}$.
    - Denominators clearly footnoted.
 
 5. **Table 2 (Main AP Benchmark Performance):**
-   - Features verified test positive rate $\pi_{	ext{test}}$ baselines for each dataset (Ethereum 0.4089, BSC 0.1473, Polygon 0.0259, etc.).
+   - Features verified test positive rate $\pi_{\text{test}}$ baselines for each dataset (Ethereum 0.4089, BSC 0.1473, Polygon 0.0259, etc.).
    - Model support counts and footnoted failure etiologies match the canonical support matrix.
 
 6. **Table 4 (Conditional Representation Performance Delta):**

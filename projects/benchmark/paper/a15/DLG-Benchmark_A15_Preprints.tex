@@ -159,11 +159,11 @@ We emphasize that this exact algebraic reduction strictly requires an unsquashed
 We evaluate 13 primary graph datasets spanning native financial ecosystems and standard benchmark graphs, plus one external enterprise cybersecurity network, as summarized in Table~\ref{tab:dataset_properties}.
 
 \begin{table}[htbp]
-\centering\small
+\centering\fontsize{7.5pt}{8.8pt}\selectfont\setlength{\tabcolsep}{2.5pt}
 \caption{Benchmark graph dataset properties, evaluated model-input populations, target label provenance, and evaluation test prevalence. Model-input counts ($N, E, d$) reflect the exact tensors evaluated by all models; upstream raw source graph totals are reported separately. Graph Target Prevalence ($\pi_{\mathrm{graph}} = y_{\mathrm{pos}} / N$) reflects whole-graph label proportions; Evaluated Test Prevalence ($\pi_{\mathrm{test}}$) defines the empirical no-skill AP baseline on the evaluated test split (mean across seeds 42--46).}
 \label{tab:dataset_properties}
-\begin{tabularx}{\textwidth}{lrrrrrX}\toprule
-\textbf{Dataset} & \textbf{Nodes ($N$)} & \textbf{Edges ($E$)} & \textbf{Features ($d$)} & \textbf{Graph Prev.} & \textbf{Test $\pi_{\mathrm{test}}$} & \textbf{Target Provenance and Evaluated Population} \\\midrule
+\begin{tabularx}{\textwidth}{lrrrrr>{\raggedright\arraybackslash}X}\toprule
+\textbf{Dataset} & \textbf{Nodes ($N$)} & \textbf{Edges ($E$)} & \textbf{Dim ($d$)} & $\pi_{\mathrm{graph}}$ & $\pi_{\mathrm{test}}$ & \textbf{Target Provenance and Evaluated Population} \\\midrule
 \multicolumn{7}{l}{\textit{Native Financial / Blockchain Datasets ($N=5$)}} \\
 Elliptic & $46,564$ & $83,188$ & $165$ & $0.0976$ & $0.0976$ & Bitcoin transaction graph; illicit entities (Weber et al., 2019). Evaluated induced graph: 46,564 nodes (raw source: 203,769 nodes). \\
 DGraphFin & $1,225,601$ & $746,271$ & $17$ & $0.0127$ & $0.0127$ & FinTech loan user graph; fraudulent defaulters (Huang et al., 2022). Evaluated induced graph: 1,225,601 nodes (raw source: 3,700,550 nodes). \\
@@ -228,26 +228,26 @@ Of the 91 primary model--dataset pairs ($13 \times 7$), exactly 84 pairs are sup
 Table~\ref{tab:pr_auc_main} reports the Average Precision (PR-AUC) performance of all seven detectors alongside the evaluation prevalence baseline.
 
 \begin{table}[htbp]
-\centering\small\setlength{\tabcolsep}{3.5pt}
+\centering\footnotesize\setlength{\tabcolsep}{1.8pt}
 \caption{Average Precision (PR-AUC; mean across five seeds). Evaluated test prevalence ($\pi_{\mathrm{test}}$) defines the empirical no-skill random-ranking baseline on the evaluated test split. Unsupported cells are denoted as N/A.}
 \label{tab:pr_auc_main}
-\begin{tabularx}{\textwidth}{lrrrrrrrr}\toprule
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr}\toprule
 \textbf{Dataset} & $\pi_{\mathrm{test}}$ & \textbf{DOMINANT} & \textbf{AnomalyDAE} & \textbf{CoLA} & \textbf{GADNR} & \textbf{OCGNN} & \textbf{DLG-Base} & \textbf{DLG-Aug} \\\midrule
-Elliptic & $0.0976$ & 0.0682 & 0.0538 & 0.0947 & N/A & 0.0667 & 0.0687 & \mathbf{0.1037} \\
-DGraphFin & $0.0127$ & 0.0102 & 0.0119 & 0.0127 & N/A & 0.0126 & 0.0101 & \mathbf{0.0134} \\
-BitcoinOTC & $0.0300$ & \mathbf{0.8810} & 0.7948 & 0.4936 & 0.8125 & 0.0290 & 0.8274 & 0.8211 \\
-Ethereum & $0.4089$ & 0.3971 & 0.3986 & 0.3648 & 0.3976 & \mathbf{0.4996} & 0.4106 & 0.4359 \\
-BSC & $0.1473$ & 0.2299 & \mathbf{0.3609} & 0.1252 & 0.1561 & 0.1615 & 0.3390 & 0.3411 \\
-Polygon & $0.0259$ & 0.1071 & \mathbf{0.1878} & 0.0232 & 0.0260 & 0.0700 & 0.0854 & 0.0731 \\
-Yelp-Syn & $0.0100$ & 0.0749 & N/A & 0.0174 & N/A & 0.0069 & 0.0826 & \mathbf{0.0832} \\
-Amazon-Syn & $0.0300$ & 0.1301 & \mathbf{0.2734} & 0.0989 & 0.0338 & 0.0249 & 0.1245 & 0.1302 \\
-Reddit-Syn & $0.0200$ & \mathbf{0.4069} & N/A & 0.1606 & N/A & 0.0205 & 0.4044 & 0.3388 \\
-Flickr-Syn & $0.0200$ & 0.4610 & \mathbf{0.4761} & 0.0447 & N/A & 0.0247 & 0.4569 & 0.4599 \\
-Cora-Syn & $0.0298$ & 0.4740 & 0.4494 & 0.0299 & 0.0951 & 0.0302 & \mathbf{0.4758} & 0.4720 \\
-CiteSeer-Syn & $0.0300$ & 0.5989 & 0.5507 & 0.0304 & 0.3662 & 0.0301 & \mathbf{0.6004} & 0.5992 \\
-PubMed-Syn & $0.0300$ & 0.1607 & \mathbf{0.6837} & 0.0705 & 0.1014 & 0.0300 & 0.1623 & 0.1605 \\\midrule
-LANL-RedTeam & $0.0180$ & 0.1348 & 0.0450 & 0.0200 & \mathbf{0.1806} & 0.0454 & 0.1367 & 0.1114 \\\bottomrule
-\end{tabularx}
+Elliptic & $0.0976$ & 0.0682 & 0.0538 & 0.0947 & N/A & 0.0667 & 0.0687 & \textbf{0.1037} \\
+DGraphFin & $0.0127$ & 0.0102 & 0.0119 & 0.0127 & N/A & 0.0126 & 0.0101 & \textbf{0.0134} \\
+BitcoinOTC & $0.0300$ & \textbf{0.8810} & 0.7948 & 0.4936 & 0.8125 & 0.0290 & 0.8274 & 0.8211 \\
+Ethereum & $0.4089$ & 0.3971 & 0.3986 & 0.3648 & 0.3976 & \textbf{0.4996} & 0.4106 & 0.4359 \\
+BSC & $0.1473$ & 0.2299 & \textbf{0.3609} & 0.1252 & 0.1561 & 0.1615 & 0.3390 & 0.3411 \\
+Polygon & $0.0259$ & 0.1071 & \textbf{0.1878} & 0.0232 & 0.0260 & 0.0700 & 0.0854 & 0.0731 \\
+Yelp-Syn & $0.0100$ & 0.0749 & N/A & 0.0174 & N/A & 0.0069 & 0.0826 & \textbf{0.0832} \\
+Amazon-Syn & $0.0300$ & 0.1301 & \textbf{0.2734} & 0.0989 & 0.0338 & 0.0249 & 0.1245 & 0.1302 \\
+Reddit-Syn & $0.0200$ & \textbf{0.4069} & N/A & 0.1606 & N/A & 0.0205 & 0.4044 & 0.3388 \\
+Flickr-Syn & $0.0200$ & 0.4610 & \textbf{0.4761} & 0.0447 & N/A & 0.0247 & 0.4569 & 0.4599 \\
+Cora-Syn & $0.0298$ & 0.4740 & 0.4494 & 0.0299 & 0.0951 & 0.0302 & \textbf{0.4758} & 0.4720 \\
+CiteSeer-Syn & $0.0300$ & 0.5989 & 0.5507 & 0.0304 & 0.3662 & 0.0301 & \textbf{0.6004} & 0.5992 \\
+PubMed-Syn & $0.0300$ & 0.1607 & \textbf{0.6837} & 0.0705 & 0.1014 & 0.0300 & 0.1623 & 0.1605 \\\midrule
+LANL-RedTeam & $0.0180$ & 0.1348 & 0.0450 & 0.0200 & \textbf{0.1806} & 0.0454 & 0.1367 & 0.1114 \\\bottomrule
+\end{tabular*}
 \begin{tablenotes}\footnotesize
 \item Note: For datasets with random stratified cross-seed splits (Ethereum, BSC, Polygon, Cora), $\pi_{\mathrm{test}}$ reports the empirical mean test positive rate across seeds 42--46.
 \end{tablenotes}
@@ -330,11 +330,11 @@ The empirical evidence disproves any universal benefit from local ego-net augmen
 Table~\ref{tab:friedman_stats} summarizes the Friedman omnibus test results across four evaluation views (S1--S4).
 
 \begin{table}[htbp]
-\centering\footnotesize\setlength{\tabcolsep}{3.0pt}
-\caption{Complete-case Friedman non-parametric test statistics and $p$-values across four evaluation views under $1{,}000{,}000$ Monte Carlo within-block permutations (seed 20261024). Exact tail probabilities are computed as $p = (b+1)/(B+1)$ alongside asymptotic $\chi^2$ references.}
+\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\caption{Complete-case Friedman non-parametric test statistics and $p$-values across four evaluation views under $1{,}000{,}000$ Monte Carlo within-block permutations (seed 20261024). $n$ and $k$ denote the number of dataset blocks and comparative models, respectively; $Q$ is the Friedman test statistic; $b$ is the permutation exceedance count. Exact tail probabilities are computed as $p = (b+1)/(B+1)$ alongside asymptotic $\chi^2$ references.}
 \label{tab:friedman_stats}
-\begin{tabularx}{\textwidth}{lrrrrrr>{\raggedright\arraybackslash}X}\toprule
-\textbf{View} & \textbf{Blocks ($n$)} & \textbf{Models ($k$)} & \textbf{Stat ($Q$)} & $\mathbf{\chi^2\ p}$ & \textbf{Exceed. ($b$)} & \textbf{1M MC $p \pm \text{SE}$} & \textbf{Statistical Inference} \\\midrule
+\begin{tabularx}{\textwidth}{lcccccc>{\raggedright\arraybackslash}X}\toprule
+\textbf{View} & \textbf{$n$} & \textbf{$k$} & \textbf{Stat ($Q$)} & $\chi^2\ p$ & \textbf{Exceed. ($b$)} & \textbf{1M MC $p \pm \text{SE}$} & \textbf{Statistical Inference} \\\midrule
 \textbf{S1} (8 DS, 7 M) & 8 & 7 & $29.0357$ & $5.99e-05$ & 3 & $4.00e-06 \pm 2.0e-06$ & \textbf{Significant} ($p < 0.05$); reject null of equal detector ranking. \\
 \textbf{S2} (13 DS, 5 M) & 13 & 5 & $23.7538$ & $8.95e-05$ & 20 & $2.10e-05 \pm 4.6e-06$ & \textbf{Significant} ($p < 0.05$); reject null of equal detector ranking. \\
 \textbf{S3} (6 DS, 5 M) & 6 & 5 & $6.1333$ & $1.89e-01$ & 192,107 & $1.92e-01 \pm 3.9e-04$ & \textit{Non-significant} ($p = 0.1921$); null of equal ranking retained. \\
@@ -412,7 +412,7 @@ We have presented an open, reproducible, support-aware benchmark for graph anoma
 
 \authorcontributions{Conceptualization, S.-S.P. and K.-H.K.; methodology, S.-S.P. and K.-H.K.; software, S.-S.P.; validation, S.-S.P. and K.-H.K.; formal analysis, S.-S.P. and K.-H.K.; investigation, S.-S.P.; data curation, S.-S.P.; writing---original draft preparation, S.-S.P.; writing---review and editing, K.-H.K.; visualization, S.-S.P.; supervision, K.-H.K.; project administration, K.-H.K.; funding acquisition, K.-H.K. All authors have read and agreed to the published version of the manuscript.}
 
-\funding{This research was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT) (No.~RS-2024-00338879).}
+\funding{This work was supported by the IITP(Institute of Information \& Coummunications Technology Planning \& Evaluation)-ITRC(Information Technology Research Center) grant funded by the Korea government(Ministry of Science and ICT)(IITP-2026-RS-2021-II211835)}
 
 \institutionalreview{Not applicable.}
 
