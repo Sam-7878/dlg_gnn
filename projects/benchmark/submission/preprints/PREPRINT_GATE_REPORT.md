@@ -1,40 +1,44 @@
-# Preprints.org Gate Verification Report (A13)
+# Gate A19-G5: Submission Gate Report and Canonical Checksum Ledger
 
-**Document ID:** DLG-BENCH-GATE-PREPRINT-A13  
-**Date:** 2026-10-24  
-**Target Platform:** Preprints.org  
-**Preprint Policy:** Distinct Benchmark Preprint DOI (independent from preceding DLG-GNN architecture preprint)  
-**Status:** **ALL GATES PASSED (GREEN) — A13 PREPRINT READY**
-
----
-
-## 1. A13 Gate Verification Summary
-
-| Gate ID | Area | Status | Verification Summary |
-|---|---|---|---|
-| **A13-G1** | Input Freeze & Inventory | **PASS** | 38 inputs from A12 frozen and inventoried with exact disk SHA-256 in `a12_input_sha256_manifest.csv`. |
-| **A13-G2** | Literal Manuscript Numeric Contract | **PASS** | Literal `.tex` verified directly against registries (0.4044/0.3388, $\Delta -0.0656$; Elliptic 0.0687/0.1037, $\Delta +0.0350$; Ethereum, BSC, Polygon comparators; S1--S4 statistics). Negative control verified. |
-| **A13-G3** | Truthful Score Availability | **PASS** | `score_availability_by_campaign.csv` published disclosing 105 crypto runs available vs 350 historical runs without raw score arrays. |
-| **A13-G4** | Causal Language Elimination | **PASS** | Unproved causal hub claims eliminated across Title, Abstract, Results, and Discussion; authentic empirical $<0.50$ ROC-AUC preserved without sign flipping. |
-| **A13-G5** | Memory & Platform Accuracy | **PASS** | Dense float32 memory arithmetic verified ($4N^2$ single, $8N^2$ two; 10.0 GB/160.0 GB and 20.0 GB/320.0 GB). Closed-form Gram identity strictly qualified to unsquashed dot products. Hardware accurately stated as RTX 3090 24GB eGPU via Thunderbolt 3. |
-| **A13-G6** | Fail-Closed Figures & Seed Pairing | **PASS** | Figure 2 support matrix verified fail-closed (requires 5 unique seeds {42..46}). Figure 3 computed with strict seed-paired difference ($n=5$) and exported to `fig3_paired_delta_data.csv`. |
-| **A13-G7** | Dataset Identity Reconciliation | **PASS** | 14 canonical datasets reconciled with status `ARCHIVED_MANIFEST_REGISTRY_CONSISTENT`. Table 1 synchronized. |
-| **A13-G8** | Self-Contained Source Bundle | **PASS** | Complete `source_bundle.zip` created and verified with clean unpack compilation. |
-| **A13-G9** | Immutable Git Release Tag | **PASS** | Release tag `benchmark-a13-submission-2026-10-24` integrated throughout manuscript and metadata. |
-| **A13-G10** | Clean Unpack Build Verification | **PASS** | Unpacked into clean temporary environment and compiled with pdflatex + bibtex: 0 undefined references, 0 undefined citations. |
-| **A13-G11** | Dual Submission Sign-Off | **PASS** | **A13 PREPRINT READY** sign-off confirmed. |
+**Document ID:** `DLG-BENCH-GATE-A19-RELEASE`  
+**Date:** 2026-10-28 / 2026-10-29  
+**Status:** PASS (Canonical Ledger Synchronized with Disk Bytes)  
+**Predeclared Git Tag:** `benchmark-a19-submission-2026-10-28`  
 
 ---
 
-## 2. Submission Deliverables & Cryptographic Signatures
+## 1. Unified Canonical SHA-256 Digest Ledger
 
-- **Neutral LaTeX Manuscript:** `DLG-Benchmark_A13_Preprints.tex`  
-  - SHA-256: `c6a5b94168188474dbc0ae7ae5f2503231f5f993ddfdcc81af49d60a3a0bfcee`
-- **Rendered PDF (18 pages):** `DLG-Benchmark_A13_Preprints.pdf`  
-  - SHA-256: `4491f4c035b1caa2f63783f59dce3a48a10881cf01ff31f768f2014fbf7d16c6`  
-  - Size: `510,977` bytes
-- **Source Bundle Archive:** `source_bundle.zip`  
-  - SHA-256: `2dcfe3e83b83a1b1e34e595640aec92c85b0f94b29f6b6e7fde75cba3b83fefa`  
-  - Size: `99,960` bytes
-  - Contents: `DLG-Benchmark_A13_Preprints.tex`, `references.bib`, `figures/*.pdf`
-- **Preprint DOI Policy:** To be registered as a distinct, standalone benchmark preprint upon upload.
+All cryptographic hashes below are computed directly from the final disk bytes:
+
+| Publication Target | Artifact File | Size (Bytes) | SHA-256 Digest | Status |
+|---|---|---|---|---|
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.pdf` | 609,252 | `2354ba74577ea629353ff94c920fe867275c56de7bd971510e42e0d342b1e8e9` | Verified |
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.tex` | 62,525 | `7fbeeef46d0a4d702a5b9a0212f9a25d12ee9b7409a64c54393a1da6da0e64a4` | Verified |
+| **Preprints.org** | `source_bundle.zip` | 884,516 | `dd90abd80dd076ba46ad036b7e71c250264ad8589eb0838d29c9bc5f09f2a527` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.pdf` | 368,793 | `0666f4500216e127501d215b2e97c035985164b5d2c760e1a081f736c7ddd942` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.tex` | 62,150 | `bc0bcf0ce1a2a3f44f1800d51db54310f9cdb9a6956283f4673bd3cc3f2ade8b` | Verified |
+| **Applied Sciences** | `source_bundle.zip` | 1,920,500 | `745308b3fbe524b2a9080985821870a94bdd77d5a0408b1a5a5341595f773c80` | Verified |
+
+---
+
+## 2. Compilation and Formatting Checks
+
+- **Preprints.org Manuscript:**
+  - Page Count: 20 pages (exact target)
+  - Undefined References: 0 (`undef refs: []`)
+  - Undefined Citations: 0 (`undef cits: []`)
+  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, figures
+- **Applied Sciences Manuscript:**
+  - Page Count: 17 pages (exact target)
+  - Undefined References: 0 (`undef refs: []`)
+  - Undefined Citations: 0 (`undef cits: []`)
+  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, Definitions, style files, figures
+
+---
+
+## 3. Archival of Obsolete Gate Reports
+
+In accordance with Gate A19-G5 instructions:
+- Stale default reports (`SUBMISSION_GATE_REPORT.md` describing A13, `PREPRINT_GATE_REPORT.md` describing A13) and intermediate reports (`*_A14.md`, `*_A15.md`, `*_A16.md`) have been moved into `history/` subdirectories.
+- This report (`SUBMISSION_GATE_REPORT.md` / `A19_SUBMISSION_GATE_REPORT.md`) represents the sole authoritative gate report for release.

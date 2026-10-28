@@ -18,7 +18,7 @@ import pandas as pd
 
 WORKSPACE_ROOT = Path("/mnt/d/_Work/goat_bank/dlg_gnn")
 if not WORKSPACE_ROOT.exists():
-    WORKSPACE_ROOT = Path("D:/_Work/goat_bank/dlg_gnn")
+    WORKSPACE_ROOT = Path(os.environ.get("WORKSPACE_ROOT", Path(__file__).resolve().parent.parent.parent.parent))
 
 A18_PUB_DIR = WORKSPACE_ROOT / "projects/benchmark/publication/a18"
 A16_PUB_DIR = WORKSPACE_ROOT / "projects/benchmark/publication/a16"

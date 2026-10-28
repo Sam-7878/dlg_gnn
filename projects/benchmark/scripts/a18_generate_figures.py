@@ -15,7 +15,7 @@ import matplotlib.patches as patches
 
 WORKSPACE_ROOT = Path("/mnt/d/_Work/goat_bank/dlg_gnn")
 if not WORKSPACE_ROOT.exists():
-    WORKSPACE_ROOT = Path("D:/_Work/goat_bank/dlg_gnn")
+    WORKSPACE_ROOT = Path(os.environ.get("WORKSPACE_ROOT", Path(__file__).resolve().parent.parent.parent.parent))
 
 TARGET_DIRS = [
     WORKSPACE_ROOT / "projects/benchmark/paper/a16/figures",

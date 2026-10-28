@@ -18,7 +18,7 @@ import pandas as pd
 
 WORKSPACE_ROOT = Path("/mnt/d/_Work/goat_bank/dlg_gnn")
 if not WORKSPACE_ROOT.exists():
-    WORKSPACE_ROOT = Path("D:/_Work/goat_bank/dlg_gnn")
+    WORKSPACE_ROOT = Path(os.environ.get("WORKSPACE_ROOT", Path(__file__).resolve().parent.parent.parent.parent))
 
 PAPER_A16 = WORKSPACE_ROOT / "projects/benchmark/paper/a16"
 MDPI_A16 = PAPER_A16 / "mdpi"

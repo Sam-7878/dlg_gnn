@@ -1,16 +1,16 @@
-# Data and Reproduction Availability Statement (A16 Applied Sciences)
+# Data and Reproduction Availability Statement (A19 Applied Sciences)
 
-**Document ID:** DLG-BENCH-DATA-APPLSCI-A16  
-**Date:** 2026-10-28  
+**Document ID:** DLG-BENCH-DATA-APPLSCI-A19  
+**Date:** 2026-10-28 / 2026-10-29  
 **Target:** *Applied Sciences* (MDPI), Special Issue "Machine Learning and Its Application for Anomaly Detection"  
-**Benchmark Git Tag:** `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`)  
+**Benchmark Git Tag:** `benchmark-a19-submission-2026-10-28` (superseding `benchmark-a16-submission-2026-10-28`)  
 **Repository URL:** https://github.com/Sam-7878/dlg_gnn  
 
 ---
 
 ## 1. Summary of Publicly Available Artifacts
 
-Public numeric benchmark results, aggregation scripts, evaluation population ledger, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag `benchmark-a16-submission-2026-10-28` at https://github.com/Sam-7878/dlg_gnn.
+Public numeric benchmark results, aggregation scripts, evaluation population ledger, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag `benchmark-a19-submission-2026-10-28` at https://github.com/Sam-7878/dlg_gnn.
 
 ## 2. Truthful Node-Level Score Availability Disclosure
 

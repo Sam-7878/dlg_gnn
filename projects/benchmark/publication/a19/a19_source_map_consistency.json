@@ -1,0 +1,144 @@
+{
+  "benchmark_contract": {
+    "predeclared_release_tag": "benchmark-a19-submission-2026-10-28",
+    "datasets_count": 14,
+    "primary_datasets_count": 13,
+    "external_datasets_count": 1,
+    "models_count": 7,
+    "models": [
+      "DOMINANT",
+      "AnomalyDAE",
+      "CoLA",
+      "GADNR",
+      "OCGNN",
+      "DLG-Base",
+      "DLG-Aug"
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "total_matrix_cells": 98,
+    "supported_cells": 91,
+    "unsupported_cells": 7,
+    "approved_runs_count": 455
+  },
+  "unsupported_pairs": [
+    {
+      "dataset": "DGraphFin",
+      "model": "GADNR",
+      "reason": "NO_APPROVED_RAW_RUN (Historical execution failure / numerical covariance determinant limitation; unapproved)"
+    },
+    {
+      "dataset": "Elliptic",
+      "model": "GADNR",
+      "reason": "NO_APPROVED_RAW_RUN (Historical execution failure / numerical covariance determinant limitation; unapproved)"
+    },
+    {
+      "dataset": "Flickr-Syn",
+      "model": "GADNR",
+      "reason": "OBSERVED_HISTORICAL_CUDA_OOM (Historical CUDA OOM on 8GB legacy environment)"
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "AnomalyDAE",
+      "reason": "OBSERVED_CUDA_OOM (Preflight CUDA OutOfMemoryError in full encoder forward on 24GB RTX 3090)"
+    },
+    {
+      "dataset": "Reddit-Syn",
+      "model": "GADNR",
+      "reason": "NO_APPROVED_RAW_RUN (Historical execution failure / numerical covariance determinant limitation; unapproved)"
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "AnomalyDAE",
+      "reason": "OBSERVED_CUDA_OOM (Preflight CUDA OutOfMemoryError in full encoder forward on 24GB RTX 3090)"
+    },
+    {
+      "dataset": "Yelp-Syn",
+      "model": "GADNR",
+      "reason": "NO_APPROVED_RAW_RUN (Historical execution failure / numerical covariance determinant limitation; unapproved)"
+    }
+  ],
+  "evidence_tiers": {
+    "tier_1_raw_score_recomputed": {
+      "count": 105,
+      "datasets": [
+        "Ethereum",
+        "BSC",
+        "Polygon"
+      ],
+      "raw_score_path": "local_storage/benchmark/a08_data_repair/runs/*/scores.npz",
+      "verification_status": "PASS (Source-Level Raw Array Reconstruction 210/210 exact)"
+    },
+    "tier_2_historical_preserved": {
+      "count": 350,
+      "datasets": [
+        "Amazon-Syn",
+        "CiteSeer-Syn",
+        "Cora-Syn",
+        "PubMed-Syn",
+        "DGraphFin",
+        "Elliptic",
+        "Flickr-Syn",
+        "Reddit-Syn",
+        "Yelp-Syn",
+        "BitcoinOTC",
+        "LANL-RedTeam"
+      ],
+      "metric_source_path": "publication_evidence JSONs",
+      "raw_score_status": "NOT_ARCHIVED (Metric JSON verified; raw scores not archived by source run)",
+      "verification_status": "PASS (Frozen JSON Checksums Verified)"
+    }
+  },
+  "cryptocurrency_test_populations": {
+    "Ethereum": {
+      "n_test": 2893,
+      "m_test_per_seed": [
+        1143,
+        1246,
+        1153,
+        1184,
+        1189
+      ],
+      "m_test_mean": 1183.0,
+      "prevalence_mean": 0.408918
+    },
+    "BSC": {
+      "n_test": 1500,
+      "m_test_per_seed": [
+        215,
+        240,
+        232,
+        215,
+        203
+      ],
+      "m_test_mean": 221.0,
+      "prevalence_mean": 0.147333
+    },
+    "Polygon": {
+      "n_test": 471,
+      "m_test_per_seed": [
+        16,
+        11,
+        7,
+        18,
+        9
+      ],
+      "m_test_mean": 12.2,
+      "prevalence_mean": 0.025902
+    }
+  },
+  "mandatory_checks_status": {
+    "ethereum_population_exact": true,
+    "bsc_population_exact": true,
+    "polygon_population_exact": true,
+    "support_table_exact": true,
+    "bhp_absent": true,
+    "conad_excluded_from_primary": true,
+    "historical_raw_scores_distinguished": true
+  }
+}

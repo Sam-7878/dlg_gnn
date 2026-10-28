@@ -1,16 +1,16 @@
-# Data and Reproduction Availability Statement (A16 Preprints.org)
+# Data and Reproduction Availability Statement (A19 Preprints.org)
 
-**Document ID:** DLG-BENCH-DATA-PREPRINT-A16  
-**Date:** 2026-10-28  
+**Document ID:** DLG-BENCH-DATA-PREPRINT-A19  
+**Date:** 2026-10-28 / 2026-10-29  
 **Target Platform:** Preprints.org  
-**Benchmark Git Tag:** `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`)  
+**Benchmark Git Tag:** `benchmark-a19-submission-2026-10-28` (superseding `benchmark-a16-submission-2026-10-28`)  
 **Repository URL:** https://github.com/Sam-7878/dlg_gnn  
 
 ---
 
 ## 1. Summary of Publicly Available Artifacts
 
-All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a16-submission-2026-10-28` at https://github.com/Sam-7878/dlg_gnn.
+All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a19-submission-2026-10-28` at https://github.com/Sam-7878/dlg_gnn.
 
 The public repository tag contains:
 1. **Source Code & Pipelines:** Clean, modular Python scripts to reproduce all Friedman tests, Monte Carlo permutations, denominator audits, and figures.

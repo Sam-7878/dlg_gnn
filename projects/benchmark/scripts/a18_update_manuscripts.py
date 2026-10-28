@@ -11,7 +11,7 @@ import re
 
 WORKSPACE_ROOT = Path("/mnt/d/_Work/goat_bank/dlg_gnn")
 if not WORKSPACE_ROOT.exists():
-    WORKSPACE_ROOT = Path("D:/_Work/goat_bank/dlg_gnn")
+    WORKSPACE_ROOT = Path(os.environ.get("WORKSPACE_ROOT", Path(__file__).resolve().parent.parent.parent.parent))
 
 PREPRINTS_TEX_FILES = [
     WORKSPACE_ROOT / "projects/benchmark/paper/a16/DLG-Benchmark_A16_Preprints.tex",
