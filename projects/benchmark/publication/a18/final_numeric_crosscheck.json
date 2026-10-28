@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-28T22:15:00+09:00",
+  "gate_status": "ALL_GATES_PASSED",
+  "gate_summary": {
+    "G0_inventory": "PASS",
+    "G1_alert_budget": "PASS",
+    "G2_appendix_f1": "PASS",
+    "G3_dlg_code_faithful": "PASS",
+    "G4_scientific_claims": "PASS",
+    "G5_literature_citations": "PASS",
+    "G6_packaging_unpack": "PASS",
+    "G7_author_stop": "PREPRINT_READY"
+  },
+  "critical_metrics": {
+    "elliptic_dlg_aug_ap": 0.1037,
+    "elliptic_dlg_base_ap": 0.0687,
+    "elliptic_delta_ap": 0.035,
+    "elliptic_test_prevalence": 0.0976,
+    "ethereum_dominant_p1": 0.4897,
+    "bsc_anomalydae_p1": 0.3867,
+    "polygon_anomalydae_p1": 0.36,
+    "total_supported_runs": 455,
+    "total_supported_primary_pairs": 84,
+    "total_unsupported_primary_pairs": 7
+  },
+  "artifacts": {
+    "preprints_pdf_pages": 21,
+    "preprints_pdf_sha256": "b865b3f413156f662a597822ba3cc795a08a538a3d52bbfbd7481ac853e9cd43",
+    "preprints_zip_sha256": "fcb017697437b782a3a0e5f8cb75b39394d70526aa8dbdd578ccb41ac2229fd8",
+    "applsci_pdf_pages": 18,
+    "applsci_pdf_sha256": "615de37923bd3c862916da9ee136b121daa1268dbfbd5bbc44b9161439b48445",
+    "applsci_zip_sha256": "b100fbdf08a23bd89d0150618f6d93b05240df9575ced72f7ff1878c5f7fde61"
+  }
+}

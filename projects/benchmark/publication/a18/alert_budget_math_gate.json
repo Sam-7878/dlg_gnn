@@ -1,0 +1,7 @@
+{
+  "total_evaluations": 210,
+  "invariant_violations": 0,
+  "negative_controls_rejected": 168,
+  "negative_controls_passed": 0,
+  "status": "PASS"
+}

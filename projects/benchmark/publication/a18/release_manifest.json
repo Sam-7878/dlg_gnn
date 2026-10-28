@@ -1,0 +1,37 @@
+{
+  "benchmark_release": "a18_critical_evidence_repair",
+  "release_date": "2026-10-28",
+  "immutable_git_tag": "benchmark-a16-submission-2026-10-28",
+  "git_commit": "91fb2a76369c09a0d9131fd03e70965082190871",
+  "submission_packages": {
+    "preprints_org": {
+      "tex_path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
+      "pdf_path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.pdf",
+      "zip_path": "projects/benchmark/submission/preprints/source_bundle.zip",
+      "pages": 21,
+      "tex_sha256": "63c4736bd48d04eedefaef7c8f1036764621cf0830e9e5641d9d4baaf78d4175",
+      "pdf_sha256": "b865b3f413156f662a597822ba3cc795a08a538a3d52bbfbd7481ac853e9cd43",
+      "zip_sha256": "fcb017697437b782a3a0e5f8cb75b39394d70526aa8dbdd578ccb41ac2229fd8"
+    },
+    "mdpi_applied_sciences": {
+      "tex_path": "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.tex",
+      "pdf_path": "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.pdf",
+      "zip_path": "projects/benchmark/submission/applsci/source_bundle.zip",
+      "pages": 18,
+      "tex_sha256": "c7bba9fe5393f7168fad9568b62029c2c654cbebf7209f6a24d9e10e74576d75",
+      "pdf_sha256": "615de37923bd3c862916da9ee136b121daa1268dbfbd5bbc44b9161439b48445",
+      "zip_sha256": "b100fbdf08a23bd89d0150618f6d93b05240df9575ced72f7ff1878c5f7fde61"
+    }
+  },
+  "gates": {
+    "G0_inventory": "PASS",
+    "G1_alert_budget": "PASS",
+    "G2_appendix_f1": "PASS",
+    "G3_dlg_code_faithful": "PASS",
+    "G4_scientific_claims": "PASS",
+    "G5_literature_citations": "PASS",
+    "G6_packaging_unpack": "PASS",
+    "G7_author_stop": "PREPRINT_READY"
+  },
+  "status": "PREPRINT_READY"
+}

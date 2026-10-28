@@ -89,9 +89,9 @@ To address these gaps, this study presents a rigorous, support-aware benchmark f
 \label{sec:related}
 
 \subsection{Unsupervised Graph Anomaly Detection}
-Unsupervised GAD algorithms identify structural and contextual outliers without requiring ground-truth anomaly labels during training. DOMINANT \cite{ding2019deep} pioneered graph autoencoders by jointly minimizing attribute reconstruction error and dense adjacency reconstruction loss. AnomalyDAE \cite{fan2020anomalydae} employs dual autoencoders with cross-modal attention between structure and features. Contrastive methods such as CoLA \cite{liu2022cola} and CONAD \cite{xu2022conad} train local-to-subgraph mutual information estimators, scoring nodes by contrastive disagreement. One-class models such as OCGNN \cite{wang2021ocgnn} optimize a hypersphere enclosing normal representations, while GADNR \cite{roy2024gadnr} reconstructs neighborhood feature distributions via Gaussian mixture modeling. 
+Unsupervised GAD algorithms identify structural and contextual outliers without requiring ground-truth anomaly labels during training. DOMINANT \cite{ding2019deep} pioneered graph autoencoders by jointly minimizing attribute reconstruction error and dense adjacency reconstruction loss. AnomalyDAE \cite{fan2020anomalydae} employs dual autoencoders with cross-modal attention between structure and features. Contrastive methods such as CoLA \cite{liu2022cola} and CONAD \cite{xu2022conad} train local-to-subgraph mutual information estimators, scoring nodes by contrastive disagreement. However, due to PyGOD's CONAD implementation requiring full perturbed graph generation whose reproducibility was archived only as a preliminary diagnostic baseline without approved multi-seed canonical runs, CONAD is evaluated strictly as a diagnostic comparator rather than a primary benchmark model. However, due to PyGOD's CONAD implementation requiring full perturbed graph generation whose reproducibility was archived only as a preliminary diagnostic baseline without approved multi-seed canonical runs, CONAD is evaluated strictly as a diagnostic comparator rather than a primary benchmark model. One-class models such as OCGNN \cite{wang2021ocgnn} optimize a hypersphere enclosing normal representations, while GADNR \cite{roy2024gadnr} reconstructs neighborhood feature distributions via Gaussian mixture modeling. 
 
-Benchmark libraries such as PyGOD \cite{liu2024pygod} and BOND \cite{liu2022bond} have standardized implementations on small and medium benchmarks. Recent investigations, such as GAD-in-the-Wild \cite{zhou2026wild}, have highlighted performance drops under realistic attribute corruption and low class prevalence. In cybersecurity, Dilini \etal\ \cite{dilini2026comprehensive} comprehensively reviewed graph-based anomaly detection methods for network intrusion detection, demonstrating that real-world authentication and flow graphs require specialized topological modeling. Our work builds upon this foundation by establishing hardware-aware execution boundaries and providing closed-form exact loss formulations for full-graph training.
+Comprehensive surveys \cite{ma2023survey,qiao2025survey} and benchmark initiatives such as PyGOD \cite{liu2024pygod}, BOND \cite{liu2022bond}, and GADBench \cite{tang2023gadbench} have standardized implementations across small and medium graphs. Recent specialized architectures, including PREM \cite{pan2023prem}, TAM \cite{qiao2023tam}, GADAM \cite{chen2024gadam}, and ADAG \cite{he2024adag}, explore graph prompt learning, truncation, and adaptive augmentation. Recent investigations, such as GAD-in-the-Wild \cite{zhou2026wild}, have highlighted performance drops under realistic attribute corruption and low class prevalence. In cybersecurity, Dilini \etal\ \cite{dilini2026comprehensive} comprehensively reviewed graph-based anomaly detection methods for network intrusion detection, demonstrating that real-world authentication and flow graphs require specialized topological modeling. Our work builds upon this foundation by establishing hardware-aware execution boundaries and providing closed-form exact loss formulations for full-graph training.
 
 \subsection{Imbalance-Aware Fraud Learning and Signed Networks}
 Financial transaction graphs are characterized by extreme class skew and heterophily. Semi-supervised and supervised approaches such as PC-GNN \cite{liu2021pcgnn}, GraphSMOTE \cite{zhao2021graphsmote}, and Dual-Augment GNN \cite{li2022dualaugment} resample fraud distributions or penalize minority-class misclassification. In signed transaction networks, edge weights denote trust or distrust, as formalized by Kumar \etal\ \cite{kumar2016edge} in Bitcoin trust networks. For smart contract platforms, Jiang and Tsai \cite{jiang2025mvcg} proposed MVCG-SPS, a multi-view contrastive graph neural network for smart Ponzi scheme detection on Ethereum, demonstrating the effectiveness of decoupled relational perspectives. Because supervised fraud detectors require verified labels that are rarely available in early-stage forensics, this benchmark focuses primarily on unsupervised detectors, but incorporates alert-budget precision and recall to reflect practical operational requirements.
@@ -114,16 +114,24 @@ We evaluate seven functioning anomaly detector configurations spanning autoencod
     \item \textbf{GADNR} \cite{roy2024gadnr}: Neighborhood distribution reconstruction with Gaussian mixture modeling.
     \item \textbf{OCGNN} \cite{wang2021ocgnn}: One-class classification optimizing a hypersphere enclosing normal representations.
     \item \textbf{DLG-Base} \cite{park2026dlg}: Standard GCN autoencoder employing exact sparse Gram loss evaluation.
-    \item \textbf{DLG-Aug} \cite{park2026dlg}: Decoupled Local-to-Global model combining local ego-net pretraining with global propagation.
+    \item \textbf{DLG-Aug} \cite{park2026dlg}: Decoupled Local-to-Global model combining finite-receptive local GCN pre-training with augmented global relational propagation.
 \end{enumerate}
 
 \subsection{Decoupled Local-to-Global Architecture}
-The overall workflow of the Decoupled Local-to-Global (DLG) architecture is illustrated in Figure~\ref{fig:dlg_architecture}.
+The overall workflow of the Decoupled Local-to-Global (DLG) architecture is illustrated in Figure~\ref{fig:dlg_architecture}. The framework encompasses two distinct variants: \textit{DLG-Base} and \textit{DLG-Aug} (DLG-Full).
+
+\textbf{DLG-Base Module:} DLGBase couples a Level 1 local encoder and a Level 2 global encoder sequentially. Given node attributes $X \in \mathbb{R}^{N \times D}$ and edge index $\mathcal{E}$, the local encoder generates neighborhood-aware representation $Z_{\mathrm{local}} = \mathrm{GCN}_1(X, \mathcal{E})$, which directly feeds the global encoder $Z_{\mathrm{global}} = \mathrm{GCN}_2(Z_{\mathrm{local}}, \mathcal{E})$. A learnable scalar parameter $\alpha$ fuses both representations: $Z_{\mathrm{fused}} = \sigma(\alpha) Z_{\mathrm{local}} + (1 - \sigma(\alpha)) Z_{\mathrm{global}}$. The attribute decoder reconstructs $\hat{X} = \mathrm{GCN}_{\mathrm{dec}}(Z_{\mathrm{fused}}, \mathcal{E})$, and the structure decoder reconstructs adjacency via dot product $\hat{S} = Z_{\mathrm{fused}} Z_{\mathrm{fused}}^\top$.
+
+\textbf{DLG-Aug (DLG-Full Pipeline):} In contrast to DLG-Base, DLG-Aug decouples the local and global stages into a two-phase training protocol. In Stage 1 (Local Pre-training), a separate 2-layer GCN autoencoder ($k=2$ message-passing receptive field) is trained on input attributes $X$ by minimizing mean squared feature reconstruction error $\|X - \hat{X}_{\mathrm{L1}}\|_F^2$. Crucially, this pre-training operates in full-graph forward passes without explicit ego-net subgraph extraction. Once trained, its parameters are discarded, and the extracted per-node embeddings $Z_{\mathrm{local}} \in \mathbb{R}^{N \times d}$ are detached and frozen. In Stage 2 (Global Encoding), the input feature matrix is augmented via concatenation $\tilde{X} = [X \parallel Z_{\mathrm{local}}] \in \mathbb{R}^{N \times (D + d)}$. The global GCN encoder processes $\tilde{X}$ over $\mathcal{E}$ to produce latent embedding $Z \in \mathbb{R}^{N \times d}$. The attribute decoder then reconstructs the \textit{original} attributes $\hat{X} \in \mathbb{R}^{N \times D}$ (not the augmented $\tilde{X}$), while the structure decoder computes $\hat{S} = Z Z^\top$. The framework encompasses two distinct variants: \textit{DLG-Base} and \textit{DLG-Aug} (DLG-Full).
+
+\textbf{DLG-Base Module:} DLGBase couples a Level 1 local encoder and a Level 2 global encoder sequentially. Given node attributes $X \in \mathbb{R}^{N \times D}$ and edge index $\mathcal{E}$, the local encoder generates neighborhood-aware representation $Z_{\mathrm{local}} = \mathrm{GCN}_1(X, \mathcal{E})$, which directly feeds the global encoder $Z_{\mathrm{global}} = \mathrm{GCN}_2(Z_{\mathrm{local}}, \mathcal{E})$. A learnable scalar parameter $\alpha$ fuses both representations: $Z_{\mathrm{fused}} = \sigma(\alpha) Z_{\mathrm{local}} + (1 - \sigma(\alpha)) Z_{\mathrm{global}}$. The attribute decoder reconstructs $\hat{X} = \mathrm{GCN}_{\mathrm{dec}}(Z_{\mathrm{fused}}, \mathcal{E})$, and the structure decoder reconstructs adjacency via dot product $\hat{S} = Z_{\mathrm{fused}} Z_{\mathrm{fused}}^\top$.
+
+\textbf{DLG-Aug (DLG-Full Pipeline):} In contrast to DLG-Base, DLG-Aug decouples the local and global stages into a two-phase training protocol. In Stage 1 (Local Pre-training), a separate 2-layer GCN autoencoder ($k=2$ message-passing receptive field) is trained on input attributes $X$ by minimizing mean squared feature reconstruction error $\|X - \hat{X}_{\mathrm{L1}}\|_F^2$. Crucially, this pre-training operates in full-graph forward passes without explicit ego-net subgraph extraction. Once trained, its parameters are discarded, and the extracted per-node embeddings $Z_{\mathrm{local}} \in \mathbb{R}^{N \times d}$ are detached and frozen. In Stage 2 (Global Encoding), the input feature matrix is augmented via concatenation $\tilde{X} = [X \parallel Z_{\mathrm{local}}] \in \mathbb{R}^{N \times (D + d)}$. The global GCN encoder processes $\tilde{X}$ over $\mathcal{E}$ to produce latent embedding $Z \in \mathbb{R}^{N \times d}$. The attribute decoder then reconstructs the \textit{original} attributes $\hat{X} \in \mathbb{R}^{N \times D}$ (not the augmented $\tilde{X}$), while the structure decoder computes $\hat{S} = Z Z^\top$.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/fig_dlg_architecture.pdf}
-\caption{Decoupled Local-to-Global (DLG) anomaly detection architecture. In Level 1, a local ego-net encoder pretrains on localized neighborhoods and freezes representation $\mathbf{Z}_{\mathrm{local}}$. In Level 2, the global relational encoder propagates over the full graph using concatenated features $[\mathbf{X} \parallel \mathbf{Z}_{\mathrm{local}}]$. The final anomaly score is evaluated using the exact sparse Gram decoder without materializing dense $N \times N$ matrices.}
+\caption{Decoupled Local-to-Global (DLG) anomaly detection architecture. In Level 1, a local GCN feature autoencoder pretrains on full-graph attributes using a finite 2-hop message-passing receptive field (without explicit ego-subgraph induction) and extracts frozen local representation $\mathbf{Z}_{\mathrm{local}}$. In Level 2, the global relational encoder processes the augmented representation $[\mathbf{X} \parallel \mathbf{Z}_{\mathrm{local}}]$ across graph topology $\mathcal{E}$. The attribute decoder reconstructs original attributes $\mathbf{X}$, while the structure decoder computes the unsquashed Gram matrix $\hat{S} = \mathbf{Z} \mathbf{Z}^\top$. Per-node anomaly scores combine Euclidean attribute and structural reconstruction residuals.}
 \label{fig:dlg_architecture}
 \end{figure}
 
@@ -143,7 +151,7 @@ For unsquashed dot-product decoders (the default setting in PyGOD DOMINANT with 
 &= \mathrm{deg}(i) - 2 \mathbf{z}_i^\top \left(A \mathbf{Z}\right)_i + \mathbf{z}_i^\top \left(\mathbf{Z}^\top \mathbf{Z}\right) \mathbf{z}_i,
 \label{eq:gram_identity}
 \end{align}
-where $\mathrm{deg}(i) = \sum_j A_{ij}^2 = \sum_j A_{ij}$ for unweighted binary graphs. Summing over all $N$ nodes yields:
+where $\mathrm{deg}(i) = \sum_j A_{ij}^2 = \sum_j A_{ij}$ for unweighted binary graphs. At inference, following standard PyGOD semantics, the per-node structural anomaly score $\mathcal{A}_{\mathrm{struct}, i}$ is the Euclidean $L_2$ norm of the reconstruction residual vector: $\mathcal{A}_{\mathrm{struct}, i} = \|A_{i,:} - \hat{S}_{i,:}\|_2 = \sqrt{\mathrm{deg}(i) - 2 \mathbf{z}_i^\top (A \mathbf{Z})_i + \mathbf{z}_i^\top (\mathbf{Z}^\top \mathbf{Z}) \mathbf{z}_i}$. The composite node anomaly score combines attribute and structural residuals: $\mathcal{A}_i = w \|X_i - \hat{X}_i\|_2 + (1 - w) \mathcal{A}_{\mathrm{struct}, i}$ ($w=0.5$). During model training, summing squared errors over all $N$ nodes yields the global objective:
 \begin{equation}
 \mathcal{L}_{\mathrm{struct}} = \frac{1}{N^2} \left[ \|A\|_F^2 - 2 \mathrm{Tr}\left(\mathbf{Z}^\top A \mathbf{Z}\right) + \|\mathbf{Z}^\top \mathbf{Z}\|_F^2 \right].
 \label{eq:exact_gram_loss}
@@ -166,14 +174,14 @@ We evaluate 13 primary graph datasets spanning native financial ecosystems and s
 \begin{tabularx}{\textwidth}{lrrrrr>{\raggedright\arraybackslash}X}\toprule
 \textbf{Dataset} & \textbf{Nodes ($N$)} & \textbf{Edges ($E$)} & \textbf{Dim ($d$)} & $\pi_{\mathrm{graph}}$ & $\pi_{\mathrm{test}}$ & \textbf{Target Provenance and Evaluated Population} \\\midrule
 \multicolumn{7}{l}{\textit{Native Financial / Blockchain Datasets ($N=5$)}} \\
-Elliptic & $46,564$ & $83,188$ & $165$ & $0.0976$ & $0.0976$ & Bitcoin transaction graph; illicit entities (Weber et al., 2019). Evaluated induced graph: 46,564 nodes (raw source: 203,769 nodes). \\
-DGraphFin & $1,225,601$ & $746,271$ & $17$ & $0.0127$ & $0.0127$ & FinTech loan user graph; fraudulent defaulters (Huang et al., 2022). Evaluated induced graph: 1,225,601 nodes (raw source: 3,700,550 nodes). \\
-Ethereum & $14,385$ & $115,065$ & $8$ & $0.4184$ & $0.4089^*$ & Token-transfer feature-similarity graph; verified phishing/scam contracts (Luo et al., 2024). Test split: 2,893 nodes ($40.89\%$ fraud). \\
-BSC & $7,481$ & $59,832$ & $8$ & $0.1476$ & $0.1473^*$ & Binance Smart Chain token transfer graph; fraud contracts (Luo et al., 2024). Test split: 1,500 nodes ($14.73\%$ fraud). \\
-Polygon & $2,303$ & $18,411$ & $8$ & $0.0261$ & $0.0259^*$ & Polygon token transfer graph; verified fraud contracts (Luo et al., 2024). Test split: 471 nodes ($2.59\%$ fraud). \\
+Elliptic & $46,564$ & $83,188$ & $165$ & $0.0976$ & $0.0976$ & Bitcoin transaction graph; illicit entities \cite{weber2019elliptic}. Evaluated induced graph: 46,564 nodes (raw source: 203,769 nodes). \\
+DGraphFin & $1,225,601$ & $746,271$ & $17$ & $0.0127$ & $0.0127$ & FinTech loan user graph; fraudulent defaulters \cite{huang2022dgraph}. Evaluated induced graph: 1,225,601 nodes (raw source: 3,700,550 nodes). \\
+Ethereum & $14,385$ & $115,065$ & $8$ & $0.4184$ & $0.4089^*$ & Token-transfer feature-similarity graph; verified phishing/scam contracts \cite{luo2024multichain}. Test split: 2,893 nodes ($40.89\%$ fraud). \\
+BSC & $7,481$ & $59,832$ & $8$ & $0.1476$ & $0.1473^*$ & Binance Smart Chain token transfer graph; fraud contracts \cite{luo2024multichain}. Test split: 1,500 nodes ($14.73\%$ fraud). \\
+Polygon & $2,303$ & $18,411$ & $8$ & $0.0261$ & $0.0259^*$ & Polygon token transfer graph; verified fraud contracts \cite{luo2024multichain}. Test split: 471 nodes ($2.59\%$ fraud). \\
 \midrule
 \multicolumn{7}{l}{\textit{Injected Synthetic Benchmarks ($N=8$, including Real Trust Graph with Injected Targets)}} \\
-BitcoinOTC & $6,005$ & $7,409$ & $67$ & $0.0300$ & $0.0300$ & SNAP OTC signed trust network (Kumar et al., 2016); controlled injected anomaly targets on real graph. Test split: 3,003 nodes. \\
+BitcoinOTC & $6,005$ & $7,409$ & $67$ & $0.0300$ & $0.0300$ & SNAP OTC signed trust network \cite{kumar2016edge,snapbitcoinotc}; controlled injected anomaly targets on real graph. Test split: 3,003 nodes. \\
 Yelp-Syn & $716,847$ & $14,004,995$ & $300$ & $0.0100$ & $0.0100$ & Social review network; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 716,847 nodes). Test split: 358,424 nodes. \\
 Amazon-Syn & $13,752$ & $507,378$ & $767$ & $0.0300$ & $0.0300$ & Co-purchasing graph; injected structural and contextual anomalies. (PyG/PyGOD evaluated tensor: 13,752 nodes). Test split: 6,876 nodes. \\
 Reddit-Syn & $232,965$ & $114,869,737$ & $602$ & $0.0200$ & $0.0200$ & Reddit post interaction graph; injected structural anomalies. (PyG/PyGOD evaluated tensor: 232,965 nodes). Test split: 116,483 nodes. \\
@@ -183,7 +191,7 @@ CiteSeer-Syn & $3,327$ & $9,914$ & $3703$ & $0.0298$ & $0.0300$ & Citation netwo
 PubMed-Syn & $19,717$ & $93,958$ & $500$ & $0.0300$ & $0.0300$ & Citation network; injected structural anomalies (PyGOD generator). (PyG/PyGOD evaluated tensor: 19,717 nodes). Test split: 9,859 nodes. \\
 \midrule
 \multicolumn{7}{l}{\textit{External Enterprise Cybersecurity Network ($N=1$)}} \\
-LANL-RedTeam & $16,694$ & $323,897$ & $13$ & $0.0180$ & $0.0180$ & Enterprise authentication graph; red-team compromised computers (Kent, 2015). Evaluated destination computers: 16,694 nodes. Test split: 3,338 nodes. \\
+LANL-RedTeam & $16,694$ & $323,897$ & $13$ & $0.0180$ & $0.0180$ & Enterprise authentication graph; red-team compromised computers \cite{kent2015cyberdata}. Evaluated destination computers: 16,694 nodes. Test split: 3,338 nodes. \\
 \bottomrule
 \end{tabularx}
 \begin{tablenotes}\footnotesize
@@ -209,7 +217,7 @@ Q = \frac{\frac{12}{n k (k+1)} \sum_{j=1}^k R_j^2 - 3 n (k+1)}{1 - \frac{\sum T_
 \end{equation}
 where $R_j = \sum_{i=1}^n r_i^j$ is the sum of ranks for model $j$. 
 
-While $Q$ converges asymptotically to $\chi^2_{k-1}$ as $n \to \infty$, benchmark suites typically have small sample sizes ($n \in \{6, 8, 13\}$). Under small $n$, the continuous $\chi^2$ approximation tends to be conservative. We therefore compute exact Monte Carlo within-block permutation $p$-values: within each dataset row, the model ranks are permuted randomly across $B=1,000,000$ replications (pinned seed 20261024), computing the empirical tail probability $p = (b + 1) / (B + 1)$ where $b$ is the number of permutations yielding a statistic greater than or equal to $Q_{\mathrm{obs}}$. For pairwise comparisons against DLG-Aug, we report two-sided Wilcoxon signed-rank tests adjusted via the Holm step-down procedure \cite{holm1979}.
+While $Q$ converges asymptotically to $\chi^2_{k-1}$ as $n \to \infty$, benchmark suites typically have small sample sizes ($n \in \{6, 8, 13\}$). Under small $n$, the continuous $\chi^2$ approximation tends to be conservative. We therefore compute exact Monte Carlo within-block permutation $p$-values: within each dataset row, the model ranks are permuted randomly across $B=1,000,000$ replications (pinned seed 20261024), computing the empirical tail probability $p = (b + 1) / (B + 1)$ where $b$ is the number of permutations yielding a statistic greater than or equal to $Q_{\mathrm{obs}}$. For pairwise comparisons against DLG-Aug, we report two-sided Wilcoxon signed-rank tests adjusted via the Holm step-down procedure \cite{holm1979}. We note that for within-dataset comparisons across $N_{\mathrm{seeds}} = 5$, the minimum achievable two-sided Wilcoxon signed-rank $p$-value is $2^{-(5-1)} = 0.0625$ when all five differences share the same nonzero sign. Consequently, no single dataset comparison can attain conventional $\alpha = 0.05$ significance under five seeds alone; statistical hypothesis testing is therefore evaluated across the benchmark suite via the Friedman permutation framework. We note that for within-dataset comparisons across $N_{\mathrm{seeds}} = 5$, the minimum achievable two-sided Wilcoxon signed-rank $p$-value is $2^{-(5-1)} = 0.0625$ when all five differences share the same nonzero sign. Consequently, no single dataset comparison can attain conventional $\alpha = 0.05$ significance under five seeds alone; statistical hypothesis testing is therefore evaluated across the benchmark suite via the Friedman permutation framework.
 
 \section{Results and Empirical Analysis}
 \label{sec:results}
@@ -270,21 +278,21 @@ Table~\ref{tab:alert_budget} evaluates operational alert budgets on the three cr
 \label{tab:alert_budget}
 \begin{tabularx}{\textwidth}{llrrrrrrr}\toprule
 \textbf{Dataset} & \textbf{Metric} & \textbf{DOMINANT} & \textbf{AnomalyDAE} & \textbf{CoLA} & \textbf{GADNR} & \textbf{OCGNN} & \textbf{DLG-Base} & \textbf{DLG-Aug} \\\midrule
-\multirow{4}{*}{Ethereum} 
-& $P@1\%$ & $0.3400$ & $0.3800$ & $0.2100$ & $0.2900$ & $\mathbf{0.4400}$ & $0.3600$ & $0.4000$ \\
-& $R@1\%$ & $0.1744$ & $0.1949$ & $0.1077$ & $0.1487$ & $\mathbf{0.2256}$ & $0.1846$ & $0.2051$ \\
-& $P@5\%$ & $0.2120$ & $0.2240$ & $0.1680$ & $0.1960$ & $\mathbf{0.2520}$ & $0.2200$ & $0.2360$ \\
-& $R@5\%$ & $0.5436$ & $0.5744$ & $0.4308$ & $0.5026$ & $\mathbf{0.6462}$ & $0.5641$ & $0.6051$ \\\midrule
-\multirow{4}{*}{BSC} 
-& $P@1\%$ & $0.2400$ & $\mathbf{0.4100}$ & $0.1300$ & $0.1600$ & $0.1700$ & $0.3200$ & $0.3500$ \\
-& $R@1\%$ & $0.1143$ & $\mathbf{0.1952}$ & $0.0619$ & $0.0762$ & $0.0810$ & $0.1524$ & $0.1667$ \\
-& $P@5\%$ & $0.1520$ & $\mathbf{0.2160}$ & $0.0880$ & $0.1040$ & $0.1120$ & $0.1960$ & $0.2040$ \\
-& $R@5\%$ & $0.3619$ & $\mathbf{0.5143}$ & $0.2095$ & $0.2476$ & $0.2667$ & $0.4667$ & $0.4857$ \\\midrule
-\multirow{4}{*}{Polygon} 
-& $P@1\%$ & $0.0800$ & $\mathbf{0.1900}$ & $0.0200$ & $0.0200$ & $0.0500$ & $0.0700$ & $0.0600$ \\
-& $R@1\%$ & $0.1538$ & $\mathbf{0.3654}$ & $0.0385$ & $0.0385$ & $0.0962$ & $0.1346$ & $0.1154$ \\
-& $P@5\%$ & $0.0480$ & $\mathbf{0.0920}$ & $0.0120$ & $0.0160$ & $0.0320$ & $0.0440$ & $0.0400$ \\
-& $R@5\%$ & $0.4615$ & $\mathbf{0.8846}$ & $0.1154$ & $0.1538$ & $0.3077$ & $0.4231$ & $0.3846$ \\\bottomrule
+\multirow{4}{*}{Ethereum} & $P@1\%$ & $\mathbf{0.4897}$ & $0.2621$ & $0.3034$ & $0.4621$ & $0.3931$ & $0.4690$ & $0.4621$ \\
+ & $R@1\%$ & $\mathbf{0.0121}$ & $0.0064$ & $0.0074$ & $0.0113$ & $0.0098$ & $0.0115$ & $0.0114$ \\
+ & $P@5\%$ & $\mathbf{0.5145}$ & $0.3117$ & $0.3779$ & $0.4110$ & $0.5090$ & $0.4800$ & $0.5007$ \\
+ & $R@5\%$ & $0.0631$ & $0.0381$ & $0.0463$ & $0.0503$ & $\mathbf{0.0632}$ & $0.0591$ & $0.0620$ \\
+\midrule
+\multirow{4}{*}{BSC} & $P@1\%$ & $0.1867$ & $\mathbf{0.3867}$ & $0.0533$ & $0.1733$ & $0.2133$ & $0.2800$ & $0.3067$ \\
+ & $R@1\%$ & $0.0126$ & $\mathbf{0.0261}$ & $0.0036$ & $0.0116$ & $0.0145$ & $0.0187$ & $0.0207$ \\
+ & $P@5\%$ & $0.2827$ & $\mathbf{0.4507}$ & $0.0720$ & $0.1653$ & $0.1600$ & $0.4133$ & $0.4133$ \\
+ & $R@5\%$ & $0.0959$ & $\mathbf{0.1527}$ & $0.0242$ & $0.0556$ & $0.0545$ & $0.1397$ & $0.1402$ \\
+\midrule
+\multirow{4}{*}{Polygon} & $P@1\%$ & $0.2400$ & $\mathbf{0.3600}$ & $0.0000$ & $0.0000$ & $0.0400$ & $0.0400$ & $0.0800$ \\
+ & $R@1\%$ & $0.1114$ & $\mathbf{0.1566}$ & $0.0000$ & $0.0000$ & $0.0286$ & $0.0111$ & $0.0236$ \\
+ & $P@5\%$ & $0.1083$ & $\mathbf{0.1500}$ & $0.0000$ & $0.0000$ & $0.0583$ & $0.1000$ & $0.0833$ \\
+ & $R@5\%$ & $0.2102$ & $\mathbf{0.2964}$ & $0.0000$ & $0.0000$ & $0.1323$ & $0.1984$ & $0.1651$ \\
+\bottomrule
 \end{tabularx}
 \end{table}
 
@@ -301,7 +309,7 @@ Figure~\ref{fig:conditional_delta} and Table~\ref{tab:conditional_delta} illustr
 \begin{table}[htbp]
 \centering\fontsize{7.6pt}{8.9pt}\selectfont\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{0.92}
 \renewcommand{\arraystretch}{0.92}
-\caption{Conditional Average Precision performance of DLG-Base versus DLG-Aug across all 14 evaluated datasets (13 primary graphs plus external LANL-RedTeam). Results report mean AP and seed-paired delta ($\Delta\mathrm{AP} = \mathrm{AP}_{\mathrm{Aug}} - \mathrm{AP}_{\mathrm{Base}}$) alongside paired standard errors ($n=5$ random seeds). Localized structural augmentation provides clear utility in sparse transaction graphs but exhibits performance trade-offs on dense social networks and bipartite cyber graphs.}
+\caption{Conditional Average Precision performance of DLG-Base versus DLG-Aug across all 14 evaluated datasets (13 primary graphs plus external LANL-RedTeam). Results report mean AP and seed-paired delta ($\Delta\mathrm{AP} = \mathrm{AP}_{\mathrm{Aug}} - \mathrm{AP}_{\mathrm{Base}}$) alongside paired standard errors ($n=5$ random seeds). Localized structural augmentation provides clear utility in sparse transaction graphs but exhibits performance trade-offs on dense social networks and cyber authentication graphs.}
 \label{tab:conditional_delta}
 \begin{tabularx}{\textwidth}{lrrrr>{\raggedright\arraybackslash}X}\toprule
 \textbf{Dataset} & \textbf{DLG-Base (AP)} & \textbf{DLG-Aug (AP)} & $\mathbf{\Delta\mathrm{AP}}$ & \textbf{Paired SE} & \textbf{Operational Characterization} \\\midrule
@@ -313,12 +321,12 @@ BSC & $0.3390$ & $0.3411$ & $+0.0021$ & $\pm 0.0103$ & \textbf{Marginal Gain} ($
 Polygon & $0.0854$ & $0.0731$ & $-0.0124$ & $\pm 0.0054$ & \textbf{Loss} ($-14.48\%$ rel.); negative $\Delta\mathrm{AP}$ observed in this similarity-graph evaluation. \\
 Yelp-Syn & $0.0826$ & $0.0832$ & $+0.0007$ & $\pm 0.0015$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
 Amazon-Syn & $0.1245$ & $0.1302$ & $+0.0057$ & $\pm 0.0016$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
-Reddit-Syn & $0.4044$ & $0.3388$ & $\mathbf{-0.0656}$ & $\pm 0.0031$ & \textbf{Substantial Loss} ($-16.22\%$ rel.); dense community structure exhibits negative delta. \\
+Reddit-Syn & $0.4044$ & $0.3388$ & $\mathbf{-0.0656}$ & $\pm 0.0031$ & \textbf{Substantial Loss} ($-16.22\%$ rel.); negative delta observed on dense social interaction graph. \\
 Flickr-Syn & $0.4569$ & $0.4599$ & $+0.0030$ & $\pm 0.0076$ & Stable / marginal gain on injected contextual/structural anomaly patterns. \\
 Cora-Syn & $0.4758$ & $0.4720$ & $-0.0038$ & $\pm 0.0031$ & Stable citation network performance; local features preserve structural fidelity. \\
 CiteSeer-Syn & $0.6004$ & $0.5992$ & $-0.0013$ & $\pm 0.0014$ & Stable citation network performance; local features preserve structural fidelity. \\
 PubMed-Syn & $0.1623$ & $0.1605$ & $-0.0018$ & $\pm 0.0003$ & Stable citation network performance; local features preserve structural fidelity. \\
-LANL-RedTeam$^{\dagger}$ & $0.1367$ & $0.1114$ & $-0.0252$ & $\pm 0.0126$ & \textbf{External Loss} ($-18.47\%$ rel.); negative $\Delta\mathrm{AP}$ observed on bipartite cyber authentication graph. \\
+LANL-RedTeam$^{\dagger}$ & $0.1367$ & $0.1114$ & $-0.0252$ & $\pm 0.0126$ & \textbf{External Loss} ($-18.47\%$ rel.); negative $\Delta\mathrm{AP}$ observed on cyber authentication event graph. \\
 \bottomrule
 \end{tabularx}
 \begin{tablenotes}\footnotesize
@@ -327,7 +335,7 @@ LANL-RedTeam$^{\dagger}$ & $0.1367$ & $0.1114$ & $-0.0252$ & $\pm 0.0126$ & \tex
 \end{table}
 
 
-The empirical evidence disproves any universal benefit from local ego-net augmentation. While DLG-Aug yields valuable improvements on graphs with pronounced local clustering (Elliptic $+0.0350$, Ethereum $+0.0253$), it causes severe degradation on dense social networks (Reddit-Syn $-0.0656$) and cyber authentication bipartite graphs (LANL-RedTeam $-0.0252$).
+The empirical evidence disproves any universal benefit from local ego-net augmentation. While DLG-Aug yields valuable improvements on transaction graphs like Elliptic ($\Delta\mathrm{AP} = +0.0350$) and Ethereum ($\Delta\mathrm{AP} = +0.0253$), it exhibits lower performance on Reddit-Syn ($\Delta\mathrm{AP} = -0.0656$) and LANL-RedTeam ($\Delta\mathrm{AP} = -0.0252$).
 
 \subsection{Cross-Dataset Omnibus Evaluation and Permutation Statistics}
 Table~\ref{tab:friedman_stats} summarizes the Friedman omnibus test results across four evaluation views (S1--S4).
@@ -391,31 +399,31 @@ Based on our multi-dataset evaluation, Table~\ref{tab:decision_matrix} presents 
 \label{tab:decision_matrix}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.22\textwidth}}\toprule
 \textbf{Operating Condition} & \textbf{Recommended Model} & \textbf{Secondary Alternative} & \textbf{Unsuitable Models} \\\midrule
-Clustered transaction networks with extreme imbalance (e.g., Elliptic) & \textbf{DLG-Aug} (achieves highest AP on clustered transaction topology; $+50.97\%$ relative over DLG-Base) & \textbf{CoLA} (contrastive local consensus) & DOMINANT, AnomalyDAE (exhibit below-random ROC-AUC under standard orientation) \\
+Transaction networks with extreme imbalance (e.g., Elliptic) & \textbf{DLG-Aug} (achieves highest AP, $\Delta\mathrm{AP} = +0.0350$ absolute uplift over DLG-Base, surpassing test prevalence $0.1037 > 0.0976$) & \textbf{CoLA} (contrastive local consensus) & DOMINANT, AnomalyDAE (exhibit below-random ROC-AUC under standard orientation) \\
 Large-scale transaction graphs ($N > 10^6$, low memory budget) & \textbf{DLG-Base / DOMINANT} with Exact Gram decoder & \textbf{OCGNN} (lightweight SVDD objective) & GADNR (covariance/memory limits on large graphs), dense autoencoders \\
-Dense interaction graphs with strong community structure (e.g., Reddit) & \textbf{DOMINANT / DLG-Base} & \textbf{AnomalyDAE} (with row-blocking) & DLG-Aug (exhibits lower AP than DLG-Base on dense community graphs; $\Delta\mathrm{AP} = -0.0656$) \\
-Strict Alert Budgets ($P@1\%$ prioritization in AML triage) & \textbf{AnomalyDAE / DLG-Aug} & \textbf{DOMINANT} & OCGNN, CoLA (insufficient precision at head of alert list) \\
-Bipartite cyber authentication logs (e.g., LANL) & \textbf{GADNR} (Gaussian mixture neighborhood reconstruction) & \textbf{DLG-Base} & DLG-Aug (exhibits negative delta on bipartite authentication graphs; $\Delta\mathrm{AP} = -0.0252$) \\\bottomrule
+Dense interaction graphs (e.g., Reddit-Syn) & \textbf{DOMINANT / DLG-Base} & \textbf{AnomalyDAE} (with row-blocking) & DLG-Aug (exhibits lower AP than DLG-Base on dense community graphs; $\Delta\mathrm{AP} = -0.0656$) \\
+Strict Alert Budgets ($P@1\%$ prioritization in AML triage) & \textbf{AnomalyDAE} (leads Precision@1\% on BSC and Polygon) & \textbf{DOMINANT / DLG-Aug} (DOMINANT leads on Ethereum; DLG-Aug competitive across all three) & CoLA, GADNR (insufficient top-rank precision on low-prevalence chains; descriptive of tested graph settings) \\
+Cyber authentication logs (e.g., LANL-RedTeam) & \textbf{GADNR} (Gaussian mixture neighborhood reconstruction) & \textbf{DLG-Base} & DLG-Aug (exhibits negative delta on authentication event graphs; $\Delta\mathrm{AP} = -0.0252$) \\\bottomrule
 \end{tabularx}
 \end{table}
 
 \subsection{Limitations and Boundary Conditions}
 We explicitly delineate the scientific boundaries of this study:
 \begin{enumerate}
-    \item \textbf{Static vs.\ Dynamic Formulations:} Although cryptocurrency transactions and authentication logs occur continuously over time, our benchmark evaluates frozen static projections to ensure comparability across standard GAD architectures. Dynamic graph models (e.g., TGN, JODIE) remain valuable future benchmarks.
+    \item \textbf{Static vs.\ Dynamic Formulations:} Although cryptocurrency transactions and authentication logs occur continuously over time, our benchmark evaluates frozen static projections to ensure comparability across standard GAD architectures. Dynamic graph models and continuous-time temporal architectures (e.g., TGN \cite{rossi2020tgn}, JODIE \cite{kumar2019jodie}, TGAT \cite{xu2020tgat}, EvolveGCN \cite{pareja2020evolvegcn}, DyRep \cite{trivedi2019dyrep}) remain valuable future benchmarks.
     \item \textbf{Constructed Similarity Adjacency in Crypto Graphs:} Blockchain networks (Ethereum, BSC, Polygon) utilize feature-similarity graphs constructed from observable transfer histories rather than direct payment graphs, reflecting contract-level similarity rather than money flows.
     \item \textbf{Hardware Specificity:} Memory measurements reflect PyTorch 2.14 / CUDA 13.0 execution on an NVIDIA GeForce RTX 3090 24 GB GPU connected via a Thunderbolt 3 eGPU enclosure to host notebook (Intel Core i9-13900H / RTX 4070 laptop GPU); absolute allocations may vary across operating systems or multi-GPU environments.
 \end{enumerate}
 
 \section{Conclusion}
 \label{sec:conclusion}
-We have presented an open, reproducible, support-aware benchmark for graph anomaly detection across 13 primary graph datasets and one external cybersecurity network. By establishing a rigorous evaluation protocol that separates execution feasibility from predictive precision, we demonstrate that unsupervised GAD performance is highly domain-dependent. Decoupled local-to-global augmentation provides distinct advantages on clustered transaction graphs such as Elliptic ($+0.0350$ AP gain), whereas standard autoencoders obtain below-random ROC-AUC under standard scoring, but it incurs performance trade-offs on dense social networks and bipartite cyber graphs. Furthermore, our closed-form Gram decoders establish that exact full-graph reconstruction is achievable without dense $N \times N$ memory allocation for unsquashed dot-product decoders. This benchmark and decision guide provide practitioners with a sound foundation for selecting and deploying graph anomaly detection systems under realistic operational constraints.
+We have presented an open, reproducible, support-aware benchmark for graph anomaly detection across 13 primary graph datasets and one external cybersecurity network. By establishing a rigorous evaluation protocol that separates execution feasibility from predictive precision, we demonstrate that unsupervised GAD performance is highly domain-dependent. Decoupled local-to-global augmentation provides distinct advantages on transaction graphs such as Elliptic ($+0.0350$ AP gain), whereas standard autoencoders obtain below-random ROC-AUC under standard scoring, but it incurs performance trade-offs on dense social networks and cyber authentication graphs. Furthermore, our closed-form Gram decoders establish that exact full-graph reconstruction is achievable without dense $N \times N$ memory allocation for unsquashed dot-product decoders. This benchmark and decision guide provide practitioners with a sound foundation for selecting and deploying graph anomaly detection systems under realistic operational constraints.
 
 \vspace{6pt}
 
 \authorcontributions{Conceptualization, S.-S.P. and K.-H.K.; methodology, S.-S.P. and K.-H.K.; software, S.-S.P.; validation, S.-S.P. and K.-H.K.; formal analysis, S.-S.P.; investigation, S.-S.P.; data curation, S.-S.P.; writing---original draft preparation, S.-S.P.; writing---review and editing, S.-S.P. and K.-H.K.; visualization, S.-S.P.; supervision, K.-H.K.; project administration, S.-S.P. and K.-H.K.; funding acquisition, K.-H.K. All authors have read and agreed to the published version of the manuscript.}
 
-\funding{This work was supported by the IITP(Institute of Information \& Coummunications Technology Planning \& Evaluation)-ITRC(Information Technology Research Center) grant funded by the Korea government(Ministry of Science and ICT)(IITP-2026-RS-2021-II211835)}
+\funding{This work was supported by the IITP(Institute of Information \& Communications Technology Planning \& Evaluation)-ITRC(Information Technology Research Center) grant funded by the Korea government(Ministry of Science and ICT)(IITP-2026-RS-2021-II211835)}
 
 \institutionalreview{Not applicable.}
 
@@ -423,7 +431,7 @@ We have presented an open, reproducible, support-aware benchmark for graph anoma
 
 \dataavailability{Public numeric benchmark results, aggregation scripts, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag \texttt{benchmark-a16-submission-2026-10-28} (superseding \texttt{benchmark-a15-submission-2026-10-25}) at \url{https://github.com/Sam-7878/dlg_gnn}. Per-node score arrays are author-locally preserved for the 105 cryptocurrency evaluations (Ethereum, BSC, Polygon) and are made available upon reasonable request to the corresponding author; historical baseline runs (280 primary, 35 BitcoinOTC, 35 LANL runs) did not archive per-node score arrays and cannot be provided retroactively. Raw third-party datasets remain subject to their original providers' access terms.}
 
-\acknowledgments{During the preparation of this manuscript, the authors utilized Claude Opus, Google Gemini/AntiGravity and OpenAI ChatGPT/Codex tools for initial drafting review, script formatting, Translation of the text, and LaTeX table structuring. All scientific data, mathematical derivations, empirical analyses, and manuscript conclusions were conceived, independently verified, and finalized under the direct oversight of the authors, who take full responsibility for the integrity of the published work.}
+\acknowledgments{During the preparation of this manuscript, the authors utilized Claude Opus, Google Gemini/AntiGravity and OpenAI ChatGPT/Codex tools for initial drafting review, script formatting, translation of the text, and LaTeX table structuring. All scientific data, mathematical derivations, empirical analyses, and manuscript conclusions were conceived, independently verified, and finalized under the direct oversight of the authors, who take full responsibility for the integrity of the published work.}
 
 \conflictsofinterest{The authors declare no conflict of interest.}
 
@@ -469,20 +477,21 @@ LANL-RedTeam & $0.7997 \pm 0.0237$ & $0.5548 \pm 0.0502$ & $0.4663 \pm 0.0687$ &
 \label{tab:app_f1_full}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr}\toprule
 \textbf{Dataset} & \textbf{DOMINANT} & \textbf{AnomalyDAE} & \textbf{CoLA} & \textbf{GADNR} & \textbf{OCGNN} & \textbf{DLG-Base} & \textbf{DLG-Aug} \\\midrule
-Elliptic & $0.1706 \pm 0.0040$ & $0.1691 \pm 0.0036$ & $0.1724 \pm 0.0051$ & N/A & $0.1685 \pm 0.0025$ & $0.1698 \pm 0.0038$ & $\mathbf{0.1812 \pm 0.0049}$ \\
-DGraphFin & $0.0245 \pm 0.0010$ & $0.0238 \pm 0.0009$ & $\mathbf{0.0261 \pm 0.0012}$ & N/A & $0.0230 \pm 0.0008$ & $0.0250 \pm 0.0011$ & $0.0258 \pm 0.0011$ \\
-BitcoinOTC & $\mathbf{0.8412 \pm 0.0185}$ & $0.7650 \pm 0.0210$ & $0.4810 \pm 0.0340$ & $0.7950 \pm 0.1850$ & $0.0550 \pm 0.0080$ & $0.8120 \pm 0.0145$ & $0.8080 \pm 0.0150$ \\
-Ethereum & $0.5810 \pm 0.0240$ & $0.5750 \pm 0.0310$ & $0.5120 \pm 0.0180$ & $0.5840 \pm 0.0210$ & $\mathbf{0.6120 \pm 0.0450}$ & $0.5880 \pm 0.0220$ & $0.5963 \pm 0.0280$ \\
-BSC & $0.3450 \pm 0.0310$ & $\mathbf{0.4850 \pm 0.0220}$ & $0.2150 \pm 0.0180$ & $0.2450 \pm 0.0210$ & $0.2650 \pm 0.0250$ & $0.4420 \pm 0.0280$ & $0.4534 \pm 0.0260$ \\
-Polygon & $0.0810 \pm 0.0220$ & $\mathbf{0.1420 \pm 0.0350}$ & $0.0310 \pm 0.0080$ & $0.0340 \pm 0.0070$ & $0.0580 \pm 0.0190$ & $0.0820 \pm 0.0250$ & $0.0756 \pm 0.0210$ \\
-Yelp-Syn & $0.1550 \pm 0.0050$ & N/A & $0.0320 \pm 0.0060$ & N/A & $0.0140 \pm 0.0010$ & $0.1620 \pm 0.0040$ & $\mathbf{0.1635 \pm 0.0040}$ \\
-Amazon-Syn & $0.2150 \pm 0.0140$ & $\mathbf{0.3450 \pm 0.1250}$ & $0.1680 \pm 0.0190$ & $0.0650 \pm 0.0010$ & $0.0480 \pm 0.0030$ & $0.2080 \pm 0.0120$ & $0.2140 \pm 0.0110$ \\
-Reddit-Syn & $\mathbf{0.5250 \pm 0.0090}$ & N/A & $0.2650 \pm 0.0450$ & N/A & $0.0410 \pm 0.0010$ & $0.5180 \pm 0.0110$ & $0.4450 \pm 0.0100$ \\
-Flickr-Syn & $0.5650 \pm 0.0090$ & $\mathbf{0.5820 \pm 0.0180}$ & $0.0820 \pm 0.0280$ & N/A & $0.0480 \pm 0.0070$ & $0.5610 \pm 0.0120$ & $0.5640 \pm 0.0110$ \\
-Cora-Syn & $0.5820 \pm 0.0320$ & $0.5510 \pm 0.0380$ & $0.0580 \pm 0.0010$ & $0.1650 \pm 0.1120$ & $0.0590 \pm 0.0010$ & $\mathbf{0.5850 \pm 0.0310}$ & $0.5810 \pm 0.0330$ \\
-CiteSeer-Syn & $0.6850 \pm 0.0310$ & $0.6420 \pm 0.0650$ & $0.0590 \pm 0.0040$ & $0.4850 \pm 0.1450$ & $0.0580 \pm 0.0000$ & $\mathbf{0.6880 \pm 0.0320}$ & $0.6860 \pm 0.0310$ \\
-PubMed-Syn & $0.2650 \pm 0.0080$ & $\mathbf{0.7450 \pm 0.0140}$ & $0.1280 \pm 0.0250$ & $0.1780 \pm 0.0420$ & $0.0580 \pm 0.0000$ & $0.2680 \pm 0.0090$ & $0.2650 \pm 0.0080$ \\\midrule
-LANL-RedTeam & $0.2150 \pm 0.0450$ & $0.0850 \pm 0.0320$ & $0.0380 \pm 0.0060$ & $\mathbf{0.2750 \pm 0.0410}$ & $0.0820 \pm 0.0280$ & $0.2180 \pm 0.0250$ & $0.1850 \pm 0.0480$ \\\bottomrule
+Elliptic & $0.1850 \pm 0.0060$ & $0.1778 \pm 0.0001$ & $0.1782 \pm 0.0003$ & N/A & $0.1796 \pm 0.0026$ & $0.1817 \pm 0.0017$ & $\mathbf{0.2239 \pm 0.0164}$ \\
+DGraphFin & $0.0250 \pm 0.0000$ & $0.0286 \pm 0.0053$ & $0.0253 \pm 0.0006$ & N/A & $0.0279 \pm 0.0038$ & $0.0250 \pm 0.0000$ & $\mathbf{0.0296 \pm 0.0059}$ \\
+BitcoinOTC & $\mathbf{0.9329 \pm 0.0060}$ & $0.8385 \pm 0.0397$ & $0.5400 \pm 0.0240$ & $0.8675 \pm 0.2276$ & $0.0788 \pm 0.0119$ & $0.9256 \pm 0.0027$ & $0.9260 \pm 0.0081$ \\
+Ethereum & $0.5829 \pm 0.0179$ & $0.5837 \pm 0.0177$ & $0.5802 \pm 0.0142$ & $0.5797 \pm 0.0169$ & $\mathbf{0.6437 \pm 0.0560}$ & $0.5908 \pm 0.0099$ & $0.5963 \pm 0.0137$ \\
+BSC & $0.3150 \pm 0.0371$ & $0.4592 \pm 0.0351$ & $0.2582 \pm 0.0174$ & $0.2529 \pm 0.0157$ & $0.2776 \pm 0.0241$ & $\mathbf{0.4660 \pm 0.0234}$ & $0.4534 \pm 0.0290$ \\
+Polygon & $\mathbf{0.2216 \pm 0.0802}$ & $0.2105 \pm 0.0645$ & $0.0277 \pm 0.0267$ & $0.0188 \pm 0.0184$ & $0.0397 \pm 0.0418$ & $0.1292 \pm 0.0403$ & $0.0756 \pm 0.0489$ \\
+Yelp-Syn & $0.1505 \pm 0.0030$ & N/A & $0.0573 \pm 0.0093$ & N/A & $0.0200 \pm 0.0003$ & $0.1630 \pm 0.0025$ & $\mathbf{0.1669 \pm 0.0047}$ \\
+Amazon-Syn & $0.2636 \pm 0.0141$ & $\mathbf{0.3332 \pm 0.1841}$ & $0.1630 \pm 0.0360$ & $0.0650 \pm 0.0026$ & $0.0575 \pm 0.0009$ & $0.2513 \pm 0.0153$ & $0.2633 \pm 0.0194$ \\
+Reddit-Syn & $\mathbf{0.4685 \pm 0.0083}$ & N/A & $0.2806 \pm 0.0596$ & N/A & $0.0406 \pm 0.0006$ & $0.4642 \pm 0.0055$ & $0.4289 \pm 0.0069$ \\
+Flickr-Syn & $0.5162 \pm 0.0050$ & $\mathbf{0.5303 \pm 0.0195}$ & $0.1141 \pm 0.0454$ & N/A & $0.0605 \pm 0.0137$ & $0.5138 \pm 0.0070$ & $0.5110 \pm 0.0053$ \\
+Cora-Syn & $0.6852 \pm 0.0262$ & $0.4399 \pm 0.0594$ & $0.0450 \pm 0.0180$ & $0.1597 \pm 0.2127$ & $0.0585 \pm 0.0008$ & $\mathbf{0.6892 \pm 0.0268}$ & $0.6865 \pm 0.0279$ \\
+CiteSeer-Syn & $0.7489 \pm 0.0109$ & $0.5618 \pm 0.0465$ & $0.0412 \pm 0.0178$ & $0.5422 \pm 0.1778$ & $0.0584 \pm 0.0001$ & $\mathbf{0.7502 \pm 0.0098}$ & $0.7489 \pm 0.0109$ \\
+PubMed-Syn & $0.3543 \pm 0.0045$ & $\mathbf{0.6779 \pm 0.0064}$ & $0.1111 \pm 0.0172$ & $0.2455 \pm 0.1119$ & $0.0583 \pm 0.0000$ & $0.3561 \pm 0.0056$ & $0.3543 \pm 0.0045$ \\
+\midrule
+LANL-RedTeam & $0.1740 \pm 0.0637$ & $0.0688 \pm 0.0417$ & $0.0295 \pm 0.0149$ & $\mathbf{0.2475 \pm 0.0519}$ & $0.0568 \pm 0.0125$ & $0.2112 \pm 0.0254$ & $0.1683 \pm 0.0458$ \\\bottomrule
 \end{tabular*}
 \end{table}
 
