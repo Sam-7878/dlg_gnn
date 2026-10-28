@@ -68,3 +68,4 @@ In accordance with Work Order A19:
    - Obtain distinct Benchmark Preprint DOI.
    - Cross-disclose preprint DOI in *Applied Sciences* submission.
    - **No further experimental cycles or A20 retraining.** Benchmark engineering is definitively stopped and closed.
+

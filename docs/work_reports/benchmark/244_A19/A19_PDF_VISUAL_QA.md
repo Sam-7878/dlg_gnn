@@ -34,3 +34,4 @@ Rendered visual assets stored in `docs/work_reports/benchmark/244_A19/visual_qa/
 2. **Methodological Truthfulness:** The accurate clarification *"Crucially, this pre-training operates in full-graph forward passes without explicit ego-net subgraph extraction"* is retained intact in Section 2.
 3. **Duplication Eradication:** A duplicated introductory paragraph for the DLG architecture was removed from both manuscripts.
 4. **Tag Consistency:** Both manuscripts cite the predeclared release tag `benchmark-a19-submission-2026-10-28` in their Data Availability sections.
+
