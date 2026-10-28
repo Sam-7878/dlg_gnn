@@ -1,7 +1,7 @@
 {
   "gate": "A16-G5",
   "status": "PASSED_VERIFIED",
-  "timestamp": "2026-10-28T19:33:28+09:00",
+  "timestamp": "2026-10-28T20:26:03+09:00",
   "repository": {
     "remote_url": "https://github.com/Sam-7878/dlg_gnn.git",
     "branch": "main",
@@ -35,33 +35,33 @@
     },
     "preprints_tex": {
       "path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
-      "sha256": "ad9b1a9a30091f460f0915dab18ab321d32a94443217e7deb025ed4f0030e567"
+      "sha256": "a226b2dca3bf874f81f9c95d4e8790ced85020f9abd201d7d121653eeeba0422"
     },
     "preprints_pdf": {
       "path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.pdf",
       "pages": 18,
       "clean_unpack_pages": 18,
-      "sha256": "e1c2e3f622a8a772b01de34bdeba7364c4844b362e71907c31d776c0d7d21de5"
+      "sha256": "35343549afcda1d75768eca24ef8b146d6cdb6a765e7cfc12d4fbb8a41212a39"
     },
     "preprints_source_bundle": {
       "path": "projects/benchmark/submission/preprints/source_bundle.zip",
       "standalone_tex_equals_zip_tex": true,
-      "sha256": "1c5b6e5624586684b2edd467258c599368527ee9b69d1a98a961e9d14769102f"
+      "sha256": "ab13612ffeaf4188dd97b3e827b1cd526c8f117a1a8e23b9bddbb04e1276d042"
     },
     "applsci_tex": {
       "path": "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.tex",
-      "sha256": "ea3e3af5ca23345da4f35432d596270d36f8d2efdfeb7877389ba6d425427f0e"
+      "sha256": "61a93c4ee5f1b9d7448befb495b9908857d3e04499f1901568feb000ebd37947"
     },
     "applsci_pdf": {
       "path": "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.pdf",
       "pages": 16,
       "clean_unpack_pages": 16,
-      "sha256": "cc0187331ea7ad0a6dda3b2b07d15f2a7b133beea2bd45e766cc6d90239c0cb3"
+      "sha256": "36c0f66a7a50e8b2eb32d5a626ae92b891dea4d30172f2f1972073822604eef2"
     },
     "applsci_source_bundle": {
       "path": "projects/benchmark/submission/applsci/source_bundle.zip",
       "standalone_tex_equals_zip_tex": true,
-      "sha256": "e5484e7e68dccf3be02f83b3d2541c7d0aa76c091bb790c1e261246540656cb8"
+      "sha256": "344f5d30e6f53d7da2242d194825444e172c36952f12c4aa30d97c66bd3fae6b"
     }
   }
 }

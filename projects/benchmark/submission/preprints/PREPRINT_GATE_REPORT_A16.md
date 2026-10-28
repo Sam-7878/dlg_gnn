@@ -1,35 +1,35 @@
-# Preprints.org Gate Verification Report (A16 Closure)
+# Preprints.org Gate Verification Report (A16 Closure & A17 Gate Check)
 
 **Document ID:** DLG-BENCH-GATE-PREPRINT-A16  
 **Date:** 2026-10-28  
 **Target Platform:** Preprints.org  
 **Preprint Policy:** Distinct Benchmark Preprint DOI (independent from preceding DLG-GNN architecture preprint)  
 **Benchmark Git Tag:** `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`)  
-**Status:** **ALL GATES PASSED (GREEN) — A16 PREPRINT READY**
+**Status:** **ALL GATES PASSED (GREEN) — PREPRINT READY**
 
 ---
 
-## 1. A16 Gate Verification Summary
+## 1. A16 / A17 Gate Verification Summary
 
 | Gate ID | Area | Status | Verification Summary |
 |---|---|---|---|
-| **A16-G1** | Programmatic Denominator Audit | **PASS** | Auto-generated `evidence_denominator_audit.md` and `denominator_crosscheck_a16.csv` from `evaluation_population_by_seed.csv` and `dataset_identity_reconciliation.csv`; 14/14 dataset rows match Table 1 & Table 2 identically. |
-| **A16-G2** | Resource Failure Provenance | **PASS** | Verified 84/91 primary support; 7 unsupported pairs classified into 3 exact categories from `support_14x7.csv` (4 GADNR `NO_APPROVED_RAW_RUN`, 1 GADNR `OBSERVED_HISTORICAL_CUDA_OOM` on 8GB legacy GPU, 2 AnomalyDAE `OBSERVED_CUDA_OOM` in full encoder forward on 24GB RTX 3090). |
-| **A16-G3** | DGraphFin Split Hash Identity | **PASS** | Cryptographically verified `SAME_MASK_DIFFERENT_METADATA`: all 6 supported models on DGraphFin evaluate the identical 183,840 test nodes and 2,326 positives. |
-| **A16-G4** | Concise 172-Word Abstract | **PASS** | Updated Abstract to single-paragraph 172-word text matching all frozen tables (`+0.0350` Elliptic, `-0.0656` Reddit-Syn, 84/91 primary pairs, 420 primary + 35 external runs). |
-| **A16-G5** | Checksums, Page Counts & Git Tag | **PASS** | Hashes computed from final disk bytes; clean unpack build succeeds (18 pages, 0 undefined references, 0 undefined citations). |
-| **A16-G6** | Final Submission Gate & Negative Controls | **PASS** | 12/12 negative control injection tests caught; zero cross-artifact discrepancies. |
+| **Gate R1** | Remote Git Tag Independent Verification | **PASS** | Annotated tag `benchmark-a16-submission-2026-10-28` verified live on GitHub remote via `git ls-remote` and GitHub API HTTP 200, dereferencing to immutable target commit `b5aaed2a7e7fc72ca5568b0f30d8fcc6afd05b9f`. |
+| **Gate R2** | Private Review Language Removal | **PASS** | Removed private review reference; replaced with neutral mathematical text explaining permutation vs asymptotic $\chi^2$ differences. |
+| **Gate R3** | Internal Source ZIP Filename Normalization | **PASS** | Rebuilt `source_bundle.zip` with internal main file `DLG-Benchmark_A16_Preprints.tex`. Clean unpack build verifies 18 pages, 0 undefined references/citations. |
+| **Gate R4** | Memory Claim Verification & Reframing | **PASS** | Table 6 reframed from measured VRAM to illustrative peak memory materialization profiles on RTX 3090, accurately noting AnomalyDAE preflight OOM on Reddit-Syn. |
+| **Gate R5** | Decision Matrix Bounded to Observations | **PASS** | Table 7 replaces unverified causal assertions with concrete empirical AP observations (+50.97% on Elliptic, -0.0656 on Reddit-Syn, -0.0252 on LANL). |
+| **Gate R6** | Final Submission Gate & Negative Controls | **PASS** | 15/15 negative control mutation tests passed; true disk SHA-256 hashes verified; zero cross-artifact discrepancies. |
 
 ---
 
 ## 2. Submission Deliverables & Cryptographic Signatures
 
-- **Neutral LaTeX Manuscript:** `DLG-Benchmark_A15_Preprints.tex` / `DLG-Benchmark_A16_Preprints.tex`  
-  - SHA-256: `ad9b1a9a30091f460f0915dab18ab321d32a94443217e7deb025ed4f0030e567`
-- **Rendered PDF (18 pages):** `DLG-Benchmark_A15_Preprints.pdf` / `DLG-Benchmark_A16_Preprints.pdf`  
-  - SHA-256: `e1c2e3f622a8a772b01de34bdeba7364c4844b362e71907c31d776c0d7d21de5`  
-  - Size: `589,769` bytes
+- **Neutral LaTeX Manuscript:** `DLG-Benchmark_A16_Preprints.tex`  
+  - SHA-256: `a226b2dca3bf874f81f9c95d4e8790ced85020f9abd201d7d121653eeeba0422`
+- **Rendered PDF (18 pages):** `DLG-Benchmark_A16_Preprints.pdf`  
+  - SHA-256: `35343549afcda1d75768eca24ef8b146d6cdb6a765e7cfc12d4fbb8a41212a39`  
+  - Size: `590,838` bytes
 - **Source Bundle Archive:** `source_bundle.zip`  
-  - SHA-256: `1c5b6e5624586684b2edd467258c599368527ee9b69d1a98a961e9d14769102f`  
-  - Size: `106,914` bytes
-  - Contents: `DLG-Benchmark_A15_Preprints.tex`, `references.bib`, `figures/*.pdf`
+  - SHA-256: `ab13612ffeaf4188dd97b3e827b1cd526c8f117a1a8e23b9bddbb04e1276d042`  
+  - Size: `107,005` bytes
+  - Contents: `DLG-Benchmark_A16_Preprints.tex`, `references.bib`, `figures/*.pdf`

@@ -347,7 +347,7 @@ Table~\ref{tab:friedman_stats} summarizes the Friedman omnibus test results acro
 \end{table}
 
 \textbf{Statistical Explanation of Asymptotic vs.\ Permutation Discrepancies:}
-Claude's review noted that asymptotic $\chi^2$ $p$-values differ from Monte Carlo permutation $p$-values in views S1, S2, and S4. Our independent $1{,}000{,}000$ simulation (seed 20261024) confirms that this difference is mathematically valid:
+The asymptotic $\chi^2$ approximation and the within-block Monte Carlo permutation test yielded different tail probabilities for the smaller complete-case views (S1, S2, and S4). We therefore report the permutation design, random seed (seed 20261024), replicate count ($B=1{,}000{,}000$), exceedance counts, and Monte Carlo uncertainty alongside the asymptotic reference values:
 \begin{itemize}
     \item When $n$ is small ($n \le 8$), the discrete permutation space $\prod_{i=1}^n (k!)$ has substantially lighter tails than the continuous $\chi^2_{k-1}$ distribution. An extreme ranking configuration therefore has a much smaller probability under the exact discrete within-block permutation null than under the asymptotic $\chi^2$ limit.
     \item At $B=1{,}000{,}000$, we observe exactly 3 exceedances for S1 ($p = 4.0 \times 10^{-6}$), 20 for S2 ($p = 2.1 \times 10^{-5}$), and 0 for S4 ($p = 1.0 \times 10^{-6}$, finite-simulation estimator floor bounded by $-\ln(0.05)/B \approx 3.0 \times 10^{-6}$ at $95\%$ confidence), confirming that the frozen MC results correctly capture the empirical tail probability.
@@ -357,23 +357,23 @@ Pairwise post-hoc comparisons using the Holm step-down procedure on View S2 indi
 
 \section{Execution, Memory, and Computational Complexity}
 \label{sec:execution_complexity}
-To assess the practical computational scalability of the evaluated methods, Table~\ref{tab:complexity_comparison} compares theoretical complexity against empirically measured peak GPU memory allocations on an NVIDIA GeForce RTX 3090 24 GB GPU connected via a Thunderbolt 3 eGPU enclosure to a host notebook (Intel Core i9-13900H / RTX 4070 laptop GPU).
+To illustrate the practical computational scaling of the evaluated methods, Table~\ref{tab:complexity_comparison} compares theoretical asymptotic complexity against illustrative peak GPU memory materialization profiles on an NVIDIA GeForce RTX 3090 24 GB GPU platform.
 
 \begin{table}[htbp]
 \centering\footnotesize\setlength{\tabcolsep}{3pt}
-\caption{Theoretical computational complexity and representative peak memory materialization profiles for graph anomaly detector architectures. Memory entries denote representative peak allocated VRAM measured under PyTorch on an RTX 3090 24GB eGPU setup; values serve as architectural scaling profiles rather than hardware-invariant constants.}
+\caption{Theoretical computational complexity and illustrative peak memory materialization profiles for graph anomaly detector architectures. Memory entries indicate estimated peak allocated GPU memory scaling profiles under PyTorch (batch size $B=2{,}048$ for row-blocked formulations) on an RTX 3090 24GB platform; values serve as illustrative architectural scaling profiles rather than hardware-invariant empirical benchmarks. On Reddit-Syn, full AnomalyDAE remains unsupported in the benchmark due to dense structure encoder memory limits.}
 \label{tab:complexity_comparison}
 \begin{tabularx}{\textwidth}{lXXrr}\toprule
-\textbf{Model} & \textbf{Time Complexity} & \textbf{Space Complexity} & \textbf{VRAM (Cora)} & \textbf{VRAM (Reddit)} \\\midrule
-DOMINANT (Dense PyGOD) & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(N^2 + N d)$ & $1,248\,\mathrm{MB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
-DOMINANT (Exact Gram) & $\mathcal{O}(L |E| d + N d^2)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $412\,\mathrm{MB}$ & $4,812\,\mathrm{MB}$ \\
-AnomalyDAE (Dense) & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(N^2 + N d)$ & $1,894\,\mathrm{MB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
-AnomalyDAE (Row-Block) & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(B N + N d)$ & $684\,\mathrm{MB}$ & $7,120\,\mathrm{MB}$ \\
-CoLA & $\mathcal{O}(S K |E_{\mathrm{sub}}| d)$ & $\mathcal{O}(S K N_{\mathrm{sub}} d)$ & $820\,\mathrm{MB}$ & $5,940\,\mathrm{MB}$ \\
-GADNR & $\mathcal{O}(L |E| d + N K d^2)$ & $\mathcal{O}(|E| d + N K d)$ & $1,450\,\mathrm{MB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
-OCGNN & $\mathcal{O}(L |E| d + N d)$ & $\mathcal{O}(|E| d + N d)$ & $310\,\mathrm{MB}$ & $2,450\,\mathrm{MB}$ \\
-DLG-Base (Exact Gram) & $\mathcal{O}(L |E| d + N d^2)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $430\,\mathrm{MB}$ & $4,920\,\mathrm{MB}$ \\
-DLG-Aug (Exact Gram) & $\mathcal{O}((L_{\mathrm{loc}} + L_{\mathrm{glob}}) |E| d)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $512\,\mathrm{MB}$ & $5,460\,\mathrm{MB}$ \\\bottomrule
+\textbf{Model} & \textbf{Time Complexity} & \textbf{Space Complexity} & \textbf{Profile (Cora)} & \textbf{Profile (Reddit)} \\\midrule
+DOMINANT (Dense PyGOD) & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(N^2 + N d)$ & $\approx 1.2\,\mathrm{GB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
+DOMINANT (Exact Gram) & $\mathcal{O}(L |E| d + N d^2)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $\approx 0.4\,\mathrm{GB}$ & $\approx 4.8\,\mathrm{GB}$ \\
+AnomalyDAE (Dense) & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(N^2 + N d)$ & $\approx 1.9\,\mathrm{GB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
+AnomalyDAE (Row-Block)$^\dagger$ & $\mathcal{O}(L |E| d + N^2 d)$ & $\mathcal{O}(B N + N d)$ & $\approx 0.7\,\mathrm{GB}$ & $\approx 7.1\,\mathrm{GB}^\dagger$ \\
+CoLA & $\mathcal{O}(S K |E_{\mathrm{sub}}| d)$ & $\mathcal{O}(S K N_{\mathrm{sub}} d)$ & $\approx 0.8\,\mathrm{GB}$ & $\approx 5.9\,\mathrm{GB}$ \\
+GADNR & $\mathcal{O}(L |E| d + N K d^2)$ & $\mathcal{O}(|E| d + N K d)$ & $\approx 1.5\,\mathrm{GB}$ & $\mathrm{OOM}\ (>24\,\mathrm{GB})$ \\
+OCGNN & $\mathcal{O}(L |E| d + N d)$ & $\mathcal{O}(|E| d + N d)$ & $\approx 0.3\,\mathrm{GB}$ & $\approx 2.5\,\mathrm{GB}$ \\
+DLG-Base (Exact Gram) & $\mathcal{O}(L |E| d + N d^2)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $\approx 0.4\,\mathrm{GB}$ & $\approx 4.9\,\mathrm{GB}$ \\
+DLG-Aug (Exact Gram) & $\mathcal{O}((L_{\mathrm{loc}} + L_{\mathrm{glob}}) |E| d)$ & $\mathcal{O}(|E| d + N d + d^2)$ & $\approx 0.5\,\mathrm{GB}$ & $\approx 5.5\,\mathrm{GB}$ \\\bottomrule
 \end{tabularx}
 \end{table}
 
@@ -391,11 +391,11 @@ Based on our multi-dataset evaluation, Table~\ref{tab:decision_matrix} presents 
 \label{tab:decision_matrix}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.22\textwidth}}\toprule
 \textbf{Operating Condition} & \textbf{Recommended Model} & \textbf{Secondary Alternative} & \textbf{Unsuitable Models} \\\midrule
-Clustered transaction networks with extreme imbalance (e.g., Elliptic) & \textbf{DLG-Aug} (leverages localized ego-net pretraining to improve precision on clustered topologies) & \textbf{CoLA} (contrastive local consensus) & DOMINANT, AnomalyDAE (exhibit below-random ROC-AUC under standard orientation) \\
+Clustered transaction networks with extreme imbalance (e.g., Elliptic) & \textbf{DLG-Aug} (achieves highest AP on clustered transaction topology; $+50.97\%$ relative over DLG-Base) & \textbf{CoLA} (contrastive local consensus) & DOMINANT, AnomalyDAE (exhibit below-random ROC-AUC under standard orientation) \\
 Large-scale transaction graphs ($N > 10^6$, low memory budget) & \textbf{DLG-Base / DOMINANT} with Exact Gram decoder & \textbf{OCGNN} (lightweight SVDD objective) & GADNR (covariance/memory limits on large graphs), dense autoencoders \\
-Dense interaction graphs with strong community structure (e.g., Reddit) & \textbf{DOMINANT / DLG-Base} & \textbf{AnomalyDAE} (with row-blocking) & DLG-Aug (local pretraining induces over-smoothing) \\
+Dense interaction graphs with strong community structure (e.g., Reddit) & \textbf{DOMINANT / DLG-Base} & \textbf{AnomalyDAE} (with row-blocking) & DLG-Aug (exhibits lower AP than DLG-Base on dense community graphs; $\Delta\mathrm{AP} = -0.0656$) \\
 Strict Alert Budgets ($P@1\%$ prioritization in AML triage) & \textbf{AnomalyDAE / DLG-Aug} & \textbf{DOMINANT} & OCGNN, CoLA (insufficient precision at head of alert list) \\
-Bipartite cyber authentication logs (e.g., LANL) & \textbf{GADNR} (Gaussian mixture neighborhood reconstruction) & \textbf{DLG-Base} & DLG-Aug (ego-net assumptions fail on bipartite graphs) \\\bottomrule
+Bipartite cyber authentication logs (e.g., LANL) & \textbf{GADNR} (Gaussian mixture neighborhood reconstruction) & \textbf{DLG-Base} & DLG-Aug (exhibits negative delta on bipartite authentication graphs; $\Delta\mathrm{AP} = -0.0252$) \\\bottomrule
 \end{tabularx}
 \end{table}
 

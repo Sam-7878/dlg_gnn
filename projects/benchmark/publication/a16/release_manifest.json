@@ -75,29 +75,31 @@
   "submission_packages": {
     "preprints_org": {
       "tex_file": "DLG-Benchmark_A16_Preprints.tex",
-      "tex_sha256": "ad9b1a9a30091f460f0915dab18ab321d32a94443217e7deb025ed4f0030e567",
+      "tex_sha256": "a226b2dca3bf874f81f9c95d4e8790ced85020f9abd201d7d121653eeeba0422",
       "pdf_file": "DLG-Benchmark_A16_Preprints.pdf",
-      "pdf_sha256": "e1c2e3f622a8a772b01de34bdeba7364c4844b362e71907c31d776c0d7d21de5",
-      "pdf_bytes": 589769,
+      "pdf_sha256": "35343549afcda1d75768eca24ef8b146d6cdb6a765e7cfc12d4fbb8a41212a39",
+      "pdf_bytes": 590838,
       "pdf_pages": 18,
       "clean_unpack_pages": 18,
       "zip_file": "submission/preprints/source_bundle.zip",
-      "zip_sha256": "1c5b6e5624586684b2edd467258c599368527ee9b69d1a98a961e9d14769102f",
-      "zip_bytes": 106914,
-      "standalone_tex_equals_zip_tex": true
+      "zip_sha256": "ab13612ffeaf4188dd97b3e827b1cd526c8f117a1a8e23b9bddbb04e1276d042",
+      "zip_bytes": 107005,
+      "standalone_tex_equals_zip_tex": true,
+      "zip_main_tex": "DLG-Benchmark_A16_Preprints.tex"
     },
     "mdpi_applied_sciences": {
       "tex_file": "DLG-Benchmark_A16_AppliedSciences.tex",
-      "tex_sha256": "ea3e3af5ca23345da4f35432d596270d36f8d2efdfeb7877389ba6d425427f0e",
+      "tex_sha256": "61a93c4ee5f1b9d7448befb495b9908857d3e04499f1901568feb000ebd37947",
       "pdf_file": "DLG-Benchmark_A16_AppliedSciences.pdf",
-      "pdf_sha256": "cc0187331ea7ad0a6dda3b2b07d15f2a7b133beea2bd45e766cc6d90239c0cb3",
-      "pdf_bytes": 351949,
+      "pdf_sha256": "36c0f66a7a50e8b2eb32d5a626ae92b891dea4d30172f2f1972073822604eef2",
+      "pdf_bytes": 352185,
       "pdf_pages": 16,
       "clean_unpack_pages": 16,
       "zip_file": "submission/applsci/source_bundle.zip",
-      "zip_sha256": "e5484e7e68dccf3be02f83b3d2541c7d0aa76c091bb790c1e261246540656cb8",
-      "zip_bytes": 1142897,
-      "standalone_tex_equals_zip_tex": true
+      "zip_sha256": "344f5d30e6f53d7da2242d194825444e172c36952f12c4aa30d97c66bd3fae6b",
+      "zip_bytes": 1142987,
+      "standalone_tex_equals_zip_tex": true,
+      "zip_main_tex": "DLG-Benchmark_A16_AppliedSciences.tex"
     }
   },
   "canonical_csv_hashes": {
@@ -115,5 +117,10 @@
     "preserved_scope": "Ethereum, BSC, Polygon (7 models x 5 seeds = 105 runs); author-locally preserved and available upon reasonable request",
     "historical_scalar_only_runs": 350,
     "historical_scope": "280 primary + 35 BitcoinOTC + 35 LANL-RedTeam runs; raw per-node score vectors were not stored at runtime"
-  }
+  },
+  "release_tag": "benchmark-a16-submission-2026-10-28",
+  "git_tag_object_sha": "451326fbd8710ccbf8b2d12103e71b1822560fce",
+  "git_target_commit": "b5aaed2a7e7fc72ca5568b0f30d8fcc6afd05b9f",
+  "last_updated": "2026-10-28T20:26:03+09:00",
+  "status": "PREPRINT_READY_VERIFIED"
 }

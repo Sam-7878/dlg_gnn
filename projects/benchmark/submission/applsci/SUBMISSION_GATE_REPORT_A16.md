@@ -1,4 +1,4 @@
-# Applied Sciences Special Issue Submission Gate Report (A16 Closure)
+# Applied Sciences Special Issue Submission Gate Report (A16 Closure & A17 Gate Check)
 
 **Document ID:** DLG-BENCH-GATE-APPLSCI-A16  
 **Date:** 2026-10-28  
@@ -6,34 +6,34 @@
 **Official Deadline:** 2026-12-31  
 **Benchmark Git Tag:** `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`)  
 **Submission Sequence:** `Preprints.org FIRST (Distinct Benchmark DOI) -> Applied Sciences SI`  
-**Overall Status:** **ALL GATES PASSED (GREEN) — A16 APPLIED SCIENCES PACKAGE READY**
+**Overall Status:** **ALL GATES PASSED (GREEN) — APPLIED SCIENCES PACKAGE READY**
 
 ---
 
-## 1. Comprehensive Gate Checklist (A16 Closure Work Order)
+## 1. Comprehensive Gate Checklist
 
 | Gate ID | Area & Required Condition | Audit Outcome | Status |
 |---|---|---|---|
-| **A16-G1** | **Programmatic Denominator Audit:** Auto-generated from canonical CSVs | `evidence_denominator_audit.md` and `denominator_crosscheck_a16.csv` auto-generated from `evaluation_population_by_seed.csv` and `dataset_identity_reconciliation.csv`; 14/14 rows match Table 1 & Table 2 identically. | **PASS** |
-| **A16-G2** | **Resource Failure Provenance:** 3 exact categories from `support_14x7.csv` | 84/91 primary support; 7 unsupported pairs classified into 4 GADNR `NO_APPROVED_RAW_RUN`, 1 GADNR `OBSERVED_HISTORICAL_CUDA_OOM` (8GB), and 2 AnomalyDAE `OBSERVED_CUDA_OOM` (24GB full encoder forward). | **PASS** |
-| **A16-G3** | **DGraphFin Split Hash Identity:** Cryptographic mask verification | Verified `SAME_MASK_DIFFERENT_METADATA`: all 6 supported models on DGraphFin evaluate the identical 183,840 test nodes and 2,326 positives. | **PASS** |
-| **A16-G4** | **Concise 172-Word Abstract:** Single-paragraph approved abstract | Replaced abstract in both manuscripts with approved 172-word single-paragraph text matching all tables. | **PASS** |
-| **A16-G5** | **Submission Package Hashes & Clean Unpack:** Independent build test | Hashes calculated directly from final disk bytes; clean directory build succeeds (16 pages, 0 undefined references, 0 undefined citations). | **PASS** |
-| **A16-G6** | **Extended Validator & Mutation Testing:** Full document validation | 12/12 negative control injection tests caught; zero cross-artifact discrepancies. | **PASS** |
+| **Gate R1** | Remote Git Tag Independent Verification | Tag `benchmark-a16-submission-2026-10-28` dereferencing to commit `b5aaed2a7e7fc72ca5568b0f30d8fcc6afd05b9f` verified on GitHub via `git ls-remote` and GitHub API HTTP 200. | **PASS** |
+| **Gate R2** | Private Review-Process Language Removal | Replaced "Claude's review" with neutral statistical narrative explaining within-block permutation vs asymptotic $\chi^2$ differences. | **PASS** |
+| **Gate R3** | Source ZIP Internal Filename Normalization | Rebuilt `source_bundle.zip` with `DLG-Benchmark_A16_AppliedSciences.tex` as internal main file; clean unpack succeeds (16 pages, 0 undefined references/citations). | **PASS** |
+| **Gate R4** | Memory Claims Reframed as Profiles | Table 6 reframed from "measured VRAM" to illustrative peak memory materialization profiles on RTX 3090, correctly noting AnomalyDAE preflight OOM on Reddit-Syn. | **PASS** |
+| **Gate R5** | Decision Matrix Bounded to Observations | Table 7 replaces unverified causal phrases with concrete empirical AP observations. | **PASS** |
+| **Gate R6** | Extended Validator & Cryptographic Digests | All 15 negative control tests pass; SHA-256 digests verified on actual disk bytes; 0 undefined references/citations. | **PASS** |
 
 ---
 
 ## 2. Submission Package Deliverables & Cryptographic Signatures
 
-- **Official LaTeX Source:** `DLG-Benchmark_A15_AppliedSciences.tex` / `DLG-Benchmark_A16_AppliedSciences.tex`  
-  - SHA-256: `ea3e3af5ca23345da4f35432d596270d36f8d2efdfeb7877389ba6d425427f0e`
-- **Rendered PDF (16 pages):** `DLG-Benchmark_A15_AppliedSciences.pdf` / `DLG-Benchmark_A16_AppliedSciences.pdf`  
-  - SHA-256: `cc0187331ea7ad0a6dda3b2b07d15f2a7b133beea2bd45e766cc6d90239c0cb3`  
-  - Size: `351,949` bytes
+- **Official LaTeX Source:** `DLG-Benchmark_A16_AppliedSciences.tex`  
+  - SHA-256: `61a93c4ee5f1b9d7448befb495b9908857d3e04499f1901568feb000ebd37947`
+- **Rendered PDF (16 pages):** `DLG-Benchmark_A16_AppliedSciences.pdf`  
+  - SHA-256: `36c0f66a7a50e8b2eb32d5a626ae92b891dea4d30172f2f1972073822604eef2`  
+  - Size: `352,185` bytes
 - **Source Bundle Archive:** `source_bundle.zip`  
-  - SHA-256: `e5484e7e68dccf3be02f83b3d2541c7d0aa76c091bb790c1e261246540656cb8`  
-  - Size: `1,142,897` bytes
-  - Contents: `DLG-Benchmark_A15_AppliedSciences.tex`, `references.bib`, `soul.sty`, `soul-ori.sty`, `Definitions/`, `figures/*.pdf`
+  - SHA-256: `344f5d30e6f53d7da2242d194825444e172c36952f12c4aa30d97c66bd3fae6b`  
+  - Size: `1,142,987` bytes
+  - Contents: `DLG-Benchmark_A16_AppliedSciences.tex`, `references.bib`, `soul.sty`, `soul-ori.sty`, `Definitions/`, `figures/*.pdf`
 - **Submission Documents:**
   - `COVER_LETTER.md` (Addressed to Guest Editors Dr. Ayoub and Dr. Mouakher)
   - `DATA_AVAILABILITY.md` (Compliant with MDPI Research Data Policies)

@@ -1,0 +1,23 @@
+{
+  "gate": "A17-Gate-R1",
+  "status": "PASSED_VERIFIED",
+  "timestamp": "2026-10-28T20:25:21+09:00",
+  "tag_name": "benchmark-a16-submission-2026-10-28",
+  "tag_object_sha": "451326fbd8710ccbf8b2d12103e71b1822560fce",
+  "tag_target_commit_sha": "b5aaed2a7e7fc72ca5568b0f30d8fcc6afd05b9f",
+  "repository": {
+    "remote_url": "https://github.com/Sam-7878/dlg_gnn.git",
+    "branch": "main",
+    "historical_preserved_tag": "benchmark-a15-submission-2026-10-25",
+    "historical_preserved_tag_commit": "4c519d8bd46caacdf89e9c02f31aa90f6e51ee77"
+  },
+  "remote_verification": {
+    "git_ls_remote": "PASSED",
+    "github_api_ref_url": "https://api.github.com/repos/Sam-7878/dlg_gnn/git/ref/tags/benchmark-a16-submission-2026-10-28",
+    "github_api_ref_status": 200,
+    "github_api_tag_object_url": "https://api.github.com/repos/Sam-7878/dlg_gnn/git/tags/451326fbd8710ccbf8b2d12103e71b1822560fce",
+    "github_api_tag_object_status": 200,
+    "is_github_release": false,
+    "note": "Public annotated Git tag is verified live on remote GitHub repository. Release assets are not claimed; annotated tag provides unambiguous, permanent provenance."
+  }
+}

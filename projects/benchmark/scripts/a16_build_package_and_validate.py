@@ -48,6 +48,9 @@ FORBIDDEN_DATASETS = [
 ]
 
 FORBIDDEN_CAUSAL_PHRASES = [
+    "claude's review",
+    "induces over-smoothing",
+    "ego-net assumptions fail",
     "overcomes hub reconstruction bias",
     "overcomes hub bias",
     "licit hubs cause inverted",
@@ -123,7 +126,7 @@ def package_submissions(pages_prep: int, pages_appl: int):
     # Build Preprints source_bundle.zip
     zip_pre = SUB_PRE / "source_bundle.zip"
     with zipfile.ZipFile(zip_pre, "w", compression=zipfile.ZIP_DEFLATED) as z:
-        z.write(SUB_PRE / "DLG-Benchmark_A15_Preprints.tex", arcname="DLG-Benchmark_A15_Preprints.tex")
+        z.write(SUB_PRE / "DLG-Benchmark_A16_Preprints.tex", arcname="DLG-Benchmark_A16_Preprints.tex")
         z.write(SUB_PRE / "references.bib", arcname="references.bib")
         for fig in sorted((SUB_PRE / "figures").glob("*.pdf")):
             z.write(fig, arcname=f"figures/{fig.name}")
@@ -145,7 +148,7 @@ def package_submissions(pages_prep: int, pages_appl: int):
     # Build Applied Sciences source_bundle.zip
     zip_app = SUB_APP / "source_bundle.zip"
     with zipfile.ZipFile(zip_app, "w", compression=zipfile.ZIP_DEFLATED) as z:
-        z.write(SUB_APP / "DLG-Benchmark_A15_AppliedSciences.tex", arcname="DLG-Benchmark_A15_AppliedSciences.tex")
+        z.write(SUB_APP / "DLG-Benchmark_A16_AppliedSciences.tex", arcname="DLG-Benchmark_A16_AppliedSciences.tex")
         z.write(SUB_APP / "references.bib", arcname="references.bib")
         z.write(SUB_APP / "soul.sty", arcname="soul.sty")
         z.write(SUB_APP / "soul-ori.sty", arcname="soul-ori.sty")
@@ -157,11 +160,9 @@ def package_submissions(pages_prep: int, pages_appl: int):
 
     # Verify byte-for-byte identity between standalone .tex and .tex inside source_bundle.zip
     with zipfile.ZipFile(zip_pre, "r") as z:
-        assert z.read("DLG-Benchmark_A15_Preprints.tex") == (SUB_PRE / "DLG-Benchmark_A15_Preprints.tex").read_bytes()
-        assert z.read("DLG-Benchmark_A15_Preprints.tex") == (SUB_PRE / "DLG-Benchmark_A16_Preprints.tex").read_bytes()
+        assert z.read("DLG-Benchmark_A16_Preprints.tex") == (SUB_PRE / "DLG-Benchmark_A16_Preprints.tex").read_bytes()
     with zipfile.ZipFile(zip_app, "r") as z:
-        assert z.read("DLG-Benchmark_A15_AppliedSciences.tex") == (SUB_APP / "DLG-Benchmark_A15_AppliedSciences.tex").read_bytes()
-        assert z.read("DLG-Benchmark_A15_AppliedSciences.tex") == (SUB_APP / "DLG-Benchmark_A16_AppliedSciences.tex").read_bytes()
+        assert z.read("DLG-Benchmark_A16_AppliedSciences.tex") == (SUB_APP / "DLG-Benchmark_A16_AppliedSciences.tex").read_bytes()
     print("  Verified byte-for-byte identity between standalone .tex and .tex inside source_bundle.zip.")
 
     # Write Preprints DATA_AVAILABILITY.md and Gate Reports
@@ -380,13 +381,13 @@ def test_clean_unpack(expected_prep_pages: int, expected_appl_pages: int):
     pre_dir.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(SUB_PRE / "source_bundle.zip", "r") as z:
         z.extractall(pre_dir)
-    _, pages1, refs1, cits1 = compile_latex(pre_dir, "DLG-Benchmark_A15_Preprints.tex")
+    _, pages1, refs1, cits1 = compile_latex(pre_dir, "DLG-Benchmark_A16_Preprints.tex")
 
     app_dir = tmp_base / "applsci"
     app_dir.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(SUB_APP / "source_bundle.zip", "r") as z:
         z.extractall(app_dir)
-    _, pages2, refs2, cits2 = compile_latex(app_dir, "DLG-Benchmark_A15_AppliedSciences.tex")
+    _, pages2, refs2, cits2 = compile_latex(app_dir, "DLG-Benchmark_A16_AppliedSciences.tex")
 
     assert pages1 == expected_prep_pages, f"Clean unpack Preprints pages {pages1} != packaged {expected_prep_pages}"
     assert pages2 == expected_appl_pages, f"Clean unpack Applied Sciences pages {pages2} != packaged {expected_appl_pages}"

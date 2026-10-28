@@ -1,5 +1,8 @@
 {
+  "gate": "A17-Gate-R3",
+  "timestamp": "2026-10-28T20:26:03+09:00",
   "preprints_clean_unpack": {
+    "main_tex_file": "DLG-Benchmark_A16_Preprints.tex",
     "success": true,
     "pages": 18,
     "undef_refs": [],
@@ -7,6 +10,7 @@
     "standalone_tex_equals_zip_tex": true
   },
   "applied_sciences_clean_unpack": {
+    "main_tex_file": "DLG-Benchmark_A16_AppliedSciences.tex",
     "success": true,
     "pages": 16,
     "undef_refs": [],
