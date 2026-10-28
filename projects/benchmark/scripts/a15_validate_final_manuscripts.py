@@ -224,8 +224,8 @@ def validate_document(tex_text, df_reg, df_eval, df_main, df_supp, df_cond, doc_
         errors.append("Typo 'GADNR fails on 7' found in text!")
 
     # 7. Check Immutable Tag
-    if TAG_EXPECTED in tex_text:
-        checks["immutable_tag_a15"] = f"PASS ({TAG_EXPECTED})"
+    if TAG_EXPECTED in tex_text or "benchmark-a16-submission-2026-10-28" in tex_text:
+        checks["immutable_tag_a15"] = f"PASS ({TAG_EXPECTED} / A16)"
     else:
         errors.append(f"Missing immutable tag {TAG_EXPECTED}")
 
@@ -277,8 +277,8 @@ def run_negative_controls(clean_text, df_reg, df_eval, df_main, df_supp, df_cond
     print(f"  [PASS] Negative Control 5 (GADNR failure count = 7 typo): Caught -> {errs5[0]}")
     results["neg_ctrl_gadnr_count_typo"] = "PASS (Caught)"
 
-    # 6. Mutate Tag string: a15 -> a14
-    mut_6 = clean_text.replace(TAG_EXPECTED, "benchmark-a14-submission-2026-10-24")
+    # 6.Mutate Tag string: a15 -> a14
+    mut_6 = clean_text.replace(TAG_EXPECTED, "benchmark-a14-submission-2026-10-24").replace("benchmark-a16-submission-2026-10-28", "benchmark-a14-submission-2026-10-24")
     ok6, _, errs6 = validate_document(mut_6, df_reg, df_eval, df_main, df_supp, df_cond, "NegCtrl-Tag")
     assert not ok6, "Negative Control 6 Failed: Injected stale tag was not caught!"
     print(f"  [PASS] Negative Control 6 (Stale A14 tag string): Caught -> {errs6[0]}")
@@ -399,9 +399,9 @@ def main():
     # Run negative controls on prep_text
     neg_results = run_negative_controls(prep_text, df_reg, df_eval, df_main, df_supp, df_cond)
     
-    # Generate audit reports
-    generate_evidence_denominator_audit(df_eval)
-    generate_final_readiness_report()
+    # Generate audit reports via programmatic A16 closure generator (do not overwrite with static draft table)
+    from a16_closures_and_manuscripts import generate_gate_g1_denominator_audit
+    generate_gate_g1_denominator_audit()
     
     summary = {
         "gate": "A15-G6 Extended Whole-Document Numerical Relationship Validator",

@@ -56,9 +56,7 @@
 \maketitle
 
 \begin{abstract}
-Graph anomaly detection (GAD) is increasingly adopted for financial fraud mitigation and cyber intrusion defense. However, real-world deployment faces severe obstacles: out-of-memory (OOM) failures on massive graphs are often obscured by selective reporting, severe class imbalance invalidates plain ROC-AUC rankings, and unsupervised reconstruction objectives can exhibit empirical rankings that invert expected anomaly ordering on complex transaction graphs. To establish a rigorous, application-oriented benchmark, we evaluate seven functioning primary detectors (DOMINANT, AnomalyDAE, CoLA, GADNR, OCGNN, DLG-Base, and DLG-Aug) across 13 primary graph benchmarks (five native financial, eight synthetic injected) and one external enterprise cybersecurity network (LANL-RedTeam) over five random seeds (455 total runs). We enforce a strict support-aware contract: 84 of 91 primary model--dataset pairs are successfully completed, while unsupported cells are reported transparently rather than silently imputed. 
-
-Our empirical results reveal critical domain-dependent behaviors. While Decoupled Local-to-Global augmentation (DLG-Aug) improves average precision (AP) over the DLG-Base reference on the Elliptic transaction network by $+0.0350$ (0.1037 vs.\ 0.0687), it suffers an AP degradation of $-0.0656$ on the large Reddit-Syn graph (0.3388 vs.\ 0.4044) and exhibits negative delta on LANL-RedTeam. On blockchain token-transfer networks, at least one established comparator exceeds DLG-Aug in mean AP on each of the three blockchain datasets (Ethereum: OCGNN $0.4996$ vs.\ Aug $0.4359$; BSC: AnomalyDAE $0.3609$ vs.\ Aug $0.3411$; Polygon: AnomalyDAE $0.1878$ vs.\ Aug $0.0731$). Furthermore, several unsupervised reconstruction models obtain below-random ROC-AUC values ($<0.50$) on Elliptic under standard detector orientation. While topological degree heterogeneity and licit hub reconstruction patterns represent plausible explanatory hypotheses, historical node-level score arrays were not archived by the benchmark runner, precluding causal verification; we report authentic empirical rankings without post-hoc sign inversion. Finally, we provide closed-form exact Gram decoders that eliminate dense $O(N^2)$ memory allocation and present a practical decision matrix connecting alert budgets (top-1\% and top-5\%) to operational detector selection.
+Originally developed for fraud detection on Ethereum, BSC, and Polygon, the Decoupled Local-to-Global Graph Neural Network (DLG-GNN) requires evaluation beyond its source domain. We benchmark five established graph anomaly detectors alongside DLG-Base (without local augmentation) and DLG-Aug (with pretrained local representations) across 13 primary graphs and the external LANL-RedTeam network using a PyGOD-compatible implementation. Across five seeds, 84 of 91 primary model--graph pairs completed successfully (420 primary and 35 external runs); unsupported cases were reported explicitly. DLG-Aug improved average precision (AP) over DLG-Base on Elliptic by 0.0350 but reduced it on Reddit-Syn by 0.0656 and underperformed on LANL-RedTeam. On each of the three original blockchain domains, at least one established comparator achieved higher mean AP than DLG-Aug. We evaluate AP against test-set anomaly prevalence and report precision and recall at 1\% and 5\% alert budgets. Exact sparse reconstruction avoids dense quadratic matrix materialization for compatible decoders, with numerical equivalence tests; row-block AnomalyDAE execution still requires quadratic arithmetic. These results provide conditional usage guidance and documented computational limits for reproducing and reusing DLG-GNN.
 \end{abstract}
 
 \noindent{\small\textbf{Keywords: }graph anomaly detection; graph neural networks; financial fraud detection; alert budget; exact sparse reconstruction; reproducible benchmarking; local-to-global learning}\par
@@ -77,7 +75,7 @@ However, moving GAD from idealized academic benchmarks to operational deployment
 
 To address these gaps, this study presents a rigorous, support-aware benchmark for graph anomaly detection. We freeze seven representative detector configurations across 13 primary graph datasets and one external cybersecurity dataset, executing five random seeds per combination. Rather than claiming universal superiority for any single model, our benchmark contributes:
 \begin{enumerate}
-    \item \textbf{A Support-Aware Evaluation Protocol:} We explicitly distinguish between successful execution (`SUPPORTED\_EXACT') and hardware exhaustion (OOM), evaluating exactly 84 of 91 primary pairs ($420$ successful primary runs plus $35$ external LANL runs) without heuristic score imputation.
+    \item \textbf{A Support-Aware Evaluation Protocol:} We explicitly distinguish between successful execution (\texttt{SUPPORTED\_EXACT}) and unsupported pairs across three verified failure categories (\texttt{NO\_APPROVED\_RAW\_RUN}, \texttt{OBSERVED\_HISTORICAL\_CUDA\_OOM}, and \texttt{OBSERVED\_CUDA\_OOM}), evaluating exactly 84 of 91 primary pairs ($420$ successful primary runs plus $35$ external LANL runs; $455$ total runs) without heuristic score imputation.
     \item \textbf{Audited Predictive Quality vs.\ Evaluation Prevalence and Alert Budgets:} We pair Average Precision (AP) with explicit evaluation prevalence references and evaluate triage precision and recall at fixed 1\% and 5\% alert budgets across financial and cyber graphs.
     \item \textbf{Rigorous Diagnosis of Below-Random Inversion:} We conduct an in-depth score, label, and mask audit of Elliptic and DGraphFin, demonstrating that below-0.50 ROC-AUC values reflect authentic empirical behavior under standard detector orientation rather than software defects, while exploring informed topological hypotheses.
     \item \textbf{Exact Closed-Form Decoupling Without Dense Materialization:} We mathematically derive and qualify closed-form Gram-matrix reconstructions that eliminate $N \times N$ dense adjacency storage, providing exact mathematical equivalence to dense loss evaluations for unsquashed dot-product decoders.
@@ -191,12 +189,13 @@ LANL-RedTeam & $16,694$ & $323,897$ & $13$ & $0.0180$ & $0.0180$ & Enterprise au
 \end{table}
 
 \subsection{Evaluation Protocol and Metrics}
-All models are evaluated transductively under five random seeds ($\text{seed} \in \{42, 43, 44, 45, 46\}$). Labels are strictly withheld during training.
+All models are evaluated transductively under five random seeds (seeds 42--46). Labels are strictly withheld during training.
 \begin{itemize}
     \item \textbf{Average Precision (PR-AUC):} Primary ranking metric, particularly sensitive to low-prevalence imbalances: $\mathrm{AP} = \sum_k (R_k - R_{k-1}) P_k$.
     \item \textbf{ROC-AUC:} Area under the receiver operating characteristic curve, measuring overall discrimination.
     \item \textbf{Alert-Budget Precision and Recall ($\mathbf{P@K}$, $\mathbf{R@K}$):} Evaluated at $K \in \{1\%, 5\%\}$ of total test nodes, measuring practical forensic yield when investigating top-ranked candidates.
     \item \textbf{Evaluation Prevalence Baseline:} The no-skill baseline $\pi_{\mathrm{test}} = |V_{\mathrm{test}}^+| / |V_{\mathrm{test}}|$, against which AP gains must be judged.
+    \item \textbf{Deterministic Split Identity:} All detectors on a given dataset and seed are evaluated on the exact same test node indices and labels. On DGraphFin, all six supported models evaluate the identical official 183,840-node test split ($2{,}326$ positives, $\pi_{\mathrm{test}} = 0.0127$); the canonical run registry records two \texttt{split\_hash} strings (\texttt{4ebf6ded\dots} for boolean-mask serialization vs.\ \texttt{3fd8c88f\dots} for flatnonzero index-array serialization in AnomalyDAE, verified as \texttt{SAME\_MASK\_DIFFERENT\_METADATA}).
 \end{itemize}
 
 \subsection{Friedman Hypothesis Testing and Permutation Design}
@@ -218,11 +217,11 @@ Figure~\ref{fig:support_matrix} details the execution feasibility across all 14 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/fig_support_matrix.pdf}
-\caption{Hardware support feasibility and failure provenance matrix across 14 graph datasets and seven models (84 of 91 primary pairs fully supported across all five seeds). Cell annotations and shading distinguish exact complete support (5/5), external support (LANL), out-of-memory hardware exhaustion (OOM), numerical execution exceptions (Err), and prohibitive dense memory scaling (N/A).}
+\caption{Hardware support feasibility and failure provenance matrix across 14 graph datasets and seven models (84 of 91 primary pairs fully supported across all five seeds). Cell annotations and shading distinguish exact complete primary support (\texttt{5/5}), external benchmark support on LANL-RedTeam (\texttt{Ext}), historical execution or numerical covariance determinant failure without an approved raw run (\texttt{Fail}: four GADNR pairs on Elliptic, DGraphFin, Yelp-Syn, and Reddit-Syn), and out-of-memory hardware exhaustion (\texttt{OOM}: one historical 8-GB legacy CUDA OOM for GADNR on Flickr-Syn, and two preflight 24-GB RTX 3090 full-encoder-forward CUDA OOMs for AnomalyDAE on Yelp-Syn and Reddit-Syn).}
 \label{fig:support_matrix}
 \end{figure}
 
-Of the 91 primary model--dataset pairs ($13 \times 7$), exactly 84 pairs are supported across all five seeds ($84 \times 5 = 420$ successful primary runs). GADNR fails due to OOM or numerical covariance determinant exceptions on five graphs (Elliptic, DGraphFin, Yelp-Syn, Flickr-Syn, and Reddit-Syn), while AnomalyDAE exhausts memory on Yelp-Syn and Reddit-Syn due to its $O(N^2)$ pairwise cross-attention (seven unsupported primary pairs in total). In contrast, the exact Gram formulations developed in Section~\ref{sec:models} allow DOMINANT, DLG-Base, and DLG-Aug to complete all runs successfully without memory overflow, even on the 1.2-million-node DGraphFin graph.
+Of the 91 primary model--dataset pairs ($13 \times 7$), exactly 84 pairs are supported across all five seeds ($84 \times 5 = 420$ successful primary runs). As recorded in \texttt{support\_14x7.csv}, GADNR fails on five graphs across two distinct categories: four \texttt{NO\_APPROVED\_RAW\_RUN} pairs (Elliptic, DGraphFin, Yelp-Syn, and Reddit-Syn; historical execution failure / numerical covariance determinant limitation) and one \texttt{OBSERVED\_HISTORICAL\_CUDA\_OOM} pair (Flickr-Syn; historical CUDA OOM on an 8-GB legacy environment). AnomalyDAE fails on two graphs (Yelp-Syn and Reddit-Syn) with \texttt{OBSERVED\_CUDA\_OOM} from preflight CUDA \texttt{OutOfMemoryError} exceptions in the full encoder forward pass on the 24-GB RTX 3090 (seven unsupported primary pairs in total). In contrast, the exact Gram formulations developed in Section~\ref{sec:models} allow DOMINANT, DLG-Base, and DLG-Aug to complete all runs successfully without memory overflow, even on the 1.2-million-node DGraphFin graph.
 
 \subsection{Predictive Quality vs.\ Evaluation Prevalence and Alert Budgets}
 Table~\ref{tab:pr_auc_main} reports the Average Precision (PR-AUC) performance of all seven detectors alongside the evaluation prevalence baseline.
@@ -297,7 +296,8 @@ Figure~\ref{fig:conditional_delta} and Table~\ref{tab:conditional_delta} illustr
 \end{figure}
 
 \begin{table}[htbp]
-\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
+\centering\fontsize{7.6pt}{8.9pt}\selectfont\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{0.92}
+\renewcommand{\arraystretch}{0.92}
 \caption{Conditional Average Precision performance of DLG-Base versus DLG-Aug across all 14 evaluated datasets (13 primary graphs plus external LANL-RedTeam). Results report mean AP and seed-paired delta ($\Delta\mathrm{AP} = \mathrm{AP}_{\mathrm{Aug}} - \mathrm{AP}_{\mathrm{Base}}$) alongside paired standard errors ($n=5$ random seeds). Localized structural augmentation provides clear utility in sparse transaction graphs but exhibits performance trade-offs on dense social networks and bipartite cyber graphs.}
 \label{tab:conditional_delta}
 \begin{tabularx}{\textwidth}{lrrrr>{\raggedright\arraybackslash}X}\toprule
@@ -324,7 +324,7 @@ LANL-RedTeam$^{\dagger}$ & $0.1367$ & $0.1114$ & $-0.0252$ & $\pm 0.0126$ & \tex
 \end{table}
 
 
-The empirical evidence disproves any universal benefit from local ego-net augmentation. While DLG-Aug yields valuable improvements on graphs with pronounced local clustering (Elliptic $+0.0350$, Ethereum $+0.0253$), it causes severe degradation on dense social networks (Reddit-Syn $-0.0656$) and cyber authentication bipartite graphs (LANL $-0.0253$).
+The empirical evidence disproves any universal benefit from local ego-net augmentation. While DLG-Aug yields valuable improvements on graphs with pronounced local clustering (Elliptic $+0.0350$, Ethereum $+0.0253$), it causes severe degradation on dense social networks (Reddit-Syn $-0.0656$) and cyber authentication bipartite graphs (LANL-RedTeam $-0.0252$).
 
 \subsection{Cross-Dataset Omnibus Evaluation and Permutation Statistics}
 Table~\ref{tab:friedman_stats} summarizes the Friedman omnibus test results across four evaluation views (S1--S4).
@@ -389,7 +389,7 @@ Based on our multi-dataset evaluation, Table~\ref{tab:decision_matrix} presents 
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.22\textwidth}}\toprule
 \textbf{Operating Condition} & \textbf{Recommended Model} & \textbf{Secondary Alternative} & \textbf{Unsuitable Models} \\\midrule
 Clustered transaction networks with extreme imbalance (e.g., Elliptic) & \textbf{DLG-Aug} (leverages localized ego-net pretraining to improve precision on clustered topologies) & \textbf{CoLA} (contrastive local consensus) & DOMINANT, AnomalyDAE (exhibit below-random ROC-AUC under standard orientation) \\
-Large-scale transaction graphs ($N > 10^6$, low memory budget) & \textbf{DLG-Base / DOMINANT} with Exact Gram decoder & \textbf{OCGNN} (lightweight SVDD objective) & GADNR (OOM on large graphs), dense autoencoders \\
+Large-scale transaction graphs ($N > 10^6$, low memory budget) & \textbf{DLG-Base / DOMINANT} with Exact Gram decoder & \textbf{OCGNN} (lightweight SVDD objective) & GADNR (covariance/memory limits on large graphs), dense autoencoders \\
 Dense interaction graphs with strong community structure (e.g., Reddit) & \textbf{DOMINANT / DLG-Base} & \textbf{AnomalyDAE} (with row-blocking) & DLG-Aug (local pretraining induces over-smoothing) \\
 Strict Alert Budgets ($P@1\%$ prioritization in AML triage) & \textbf{AnomalyDAE / DLG-Aug} & \textbf{DOMINANT} & OCGNN, CoLA (insufficient precision at head of alert list) \\
 Bipartite cyber authentication logs (e.g., LANL) & \textbf{GADNR} (Gaussian mixture neighborhood reconstruction) & \textbf{DLG-Base} & DLG-Aug (ego-net assumptions fail on bipartite graphs) \\\bottomrule
@@ -410,7 +410,7 @@ We have presented an open, reproducible, support-aware benchmark for graph anoma
 
 \vspace{6pt}
 
-\authorcontributions{Conceptualization, S.-S.P. and K.-H.K.; methodology, S.-S.P. and K.-H.K.; software, S.-S.P.; validation, S.-S.P. and K.-H.K.; formal analysis, S.-S.P. and K.-H.K.; investigation, S.-S.P.; data curation, S.-S.P.; writing---original draft preparation, S.-S.P.; writing---review and editing, K.-H.K.; visualization, S.-S.P.; supervision, K.-H.K.; project administration, K.-H.K.; funding acquisition, K.-H.K. All authors have read and agreed to the published version of the manuscript.}
+\authorcontributions{Conceptualization, S.-S.P. and K.-H.K.; methodology, S.-S.P. and K.-H.K.; software, S.-S.P.; validation, S.-S.P. and K.-H.K.; formal analysis, S.-S.P.; investigation, S.-S.P.; data curation, S.-S.P.; writing---original draft preparation, S.-S.P.; writing---review and editing, S.-S.P. and K.-H.K.; visualization, S.-S.P.; supervision, K.-H.K.; project administration, S.-S.P. and K.-H.K.; funding acquisition, K.-H.K. All authors have read and agreed to the published version of the manuscript.}
 
 \funding{This work was supported by the IITP(Institute of Information \& Coummunications Technology Planning \& Evaluation)-ITRC(Information Technology Research Center) grant funded by the Korea government(Ministry of Science and ICT)(IITP-2026-RS-2021-II211835)}
 
@@ -418,9 +418,9 @@ We have presented an open, reproducible, support-aware benchmark for graph anoma
 
 \informedconsent{Not applicable.}
 
-\dataavailability{Public numeric benchmark results, aggregation scripts, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable GitHub release tag \texttt{benchmark-a15-submission-2026-10-25} at \url{https://github.com/Sam-7878/dlg_gnn}. Per-node score arrays are author-locally preserved for the 105 cryptocurrency evaluations (Ethereum, BSC, Polygon) and are made available upon reasonable request to the corresponding author; historical baseline runs (280 primary, 35 BitcoinOTC, 35 LANL runs) did not archive per-node score arrays and cannot be provided retroactively. Raw third-party datasets remain subject to their original providers' access terms.}
+\dataavailability{Public numeric benchmark results, aggregation scripts, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag \texttt{benchmark-a16-submission-2026-10-28} (superseding \texttt{benchmark-a15-submission-2026-10-25}) at \url{https://github.com/Sam-7878/dlg_gnn}. Per-node score arrays are author-locally preserved for the 105 cryptocurrency evaluations (Ethereum, BSC, Polygon) and are made available upon reasonable request to the corresponding author; historical baseline runs (280 primary, 35 BitcoinOTC, 35 LANL runs) did not archive per-node score arrays and cannot be provided retroactively. Raw third-party datasets remain subject to their original providers' access terms.}
 
-\par\smallskip\noindent\textbf{Acknowledgments / Use of Generative AI: }During the preparation of this manuscript, the authors utilized Claude Opus 5.5 and OpenAI ChatGPT/Codex tools for initial drafting review, script formatting, and LaTeX table structuring. All scientific data, mathematical derivations, empirical analyses, and manuscript conclusions were conceived, independently verified, and finalized under the direct oversight of the authors, who take full responsibility for the integrity of the published work.
+\par\smallskip\noindent\textbf{Acknowledgments / Use of Generative AI: }During the preparation of this manuscript, the authors utilized Claude Opus, Google Gemini/AntiGravity and OpenAI ChatGPT/Codex tools for initial drafting review, script formatting, Translation of the text, and LaTeX table structuring. All scientific data, mathematical derivations, empirical analyses, and manuscript conclusions were conceived, independently verified, and finalized under the direct oversight of the authors, who take full responsibility for the integrity of the published work.
 
 \conflictsofinterest{The authors declare no conflict of interest.}
 

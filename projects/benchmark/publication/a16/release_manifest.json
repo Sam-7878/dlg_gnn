@@ -1,0 +1,119 @@
+{
+  "release_id": "DLG-BENCH-RELEASE-A16",
+  "release_date": "2026-10-28",
+  "git_tag": "benchmark-a16-submission-2026-10-28",
+  "reference_type": "Git tag (immutable annotated git tag on origin; not claiming a GitHub Release with binary assets)",
+  "historical_preserved_git_tag": "benchmark-a15-submission-2026-10-25",
+  "repository_url": "https://github.com/Sam-7878/dlg_gnn",
+  "submission_sequence": "Preprints.org FIRST (Distinct Benchmark DOI) -> MDPI Applied Sciences Special Issue (C67H3U9QGT)",
+  "primary_datasets": 13,
+  "external_datasets": [
+    "LANL-RedTeam"
+  ],
+  "models_evaluated": [
+    "DOMINANT",
+    "AnomalyDAE",
+    "CoLA",
+    "GADNR",
+    "OCGNN",
+    "DLG-Base",
+    "DLG-Aug"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "total_runs_verified": 455,
+  "primary_runs_verified": 420,
+  "external_runs_verified": 35,
+  "primary_supported_pairs": "84/91",
+  "external_supported_pairs": "7/7",
+  "unsupported_primary_pairs": 7,
+  "unsupported_details": {
+    "NO_APPROVED_RAW_RUN": {
+      "model": "GADNR",
+      "datasets": [
+        "DGraphFin",
+        "Elliptic",
+        "Reddit-Syn",
+        "Yelp-Syn"
+      ],
+      "pair_count": 4,
+      "failure_reason": "NO_APPROVED_RAW_RUN (Historical execution failure / numerical covariance determinant limitation; unapproved)"
+    },
+    "OBSERVED_HISTORICAL_CUDA_OOM_8GB": {
+      "model": "GADNR",
+      "datasets": [
+        "Flickr-Syn"
+      ],
+      "pair_count": 1,
+      "failure_reason": "OBSERVED_HISTORICAL_CUDA_OOM (Historical CUDA OOM on 8GB legacy environment)"
+    },
+    "OBSERVED_CUDA_OOM_24GB_FULL_ENCODER_FORWARD": {
+      "model": "AnomalyDAE",
+      "datasets": [
+        "Reddit-Syn",
+        "Yelp-Syn"
+      ],
+      "pair_count": 2,
+      "failure_reason": "OBSERVED_CUDA_OOM (Preflight CUDA OutOfMemoryError in full encoder forward on 24GB RTX 3090)"
+    }
+  },
+  "dgraphfin_split_identity_audit": {
+    "classification": "SAME_MASK_DIFFERENT_METADATA",
+    "test_nodes": 183840,
+    "test_positives": 2326,
+    "test_prevalence": 0.01265230635335074,
+    "boolean_mask_hash": "4ebf6ded53b8054653f40e6157617b71c8230e0e2ed0cf32c3d5d83b1e76b50c",
+    "flatnonzero_index_hash": "3fd8c88fa4b5e4919c78bc9ad5bcce33d2e76b78c7e0462b512e79ee441e63b6",
+    "exact_same_test_indices": true,
+    "exact_same_test_labels": true
+  },
+  "submission_packages": {
+    "preprints_org": {
+      "tex_file": "DLG-Benchmark_A16_Preprints.tex",
+      "tex_sha256": "ad9b1a9a30091f460f0915dab18ab321d32a94443217e7deb025ed4f0030e567",
+      "pdf_file": "DLG-Benchmark_A16_Preprints.pdf",
+      "pdf_sha256": "e1c2e3f622a8a772b01de34bdeba7364c4844b362e71907c31d776c0d7d21de5",
+      "pdf_bytes": 589769,
+      "pdf_pages": 18,
+      "clean_unpack_pages": 18,
+      "zip_file": "submission/preprints/source_bundle.zip",
+      "zip_sha256": "1c5b6e5624586684b2edd467258c599368527ee9b69d1a98a961e9d14769102f",
+      "zip_bytes": 106914,
+      "standalone_tex_equals_zip_tex": true
+    },
+    "mdpi_applied_sciences": {
+      "tex_file": "DLG-Benchmark_A16_AppliedSciences.tex",
+      "tex_sha256": "ea3e3af5ca23345da4f35432d596270d36f8d2efdfeb7877389ba6d425427f0e",
+      "pdf_file": "DLG-Benchmark_A16_AppliedSciences.pdf",
+      "pdf_sha256": "cc0187331ea7ad0a6dda3b2b07d15f2a7b133beea2bd45e766cc6d90239c0cb3",
+      "pdf_bytes": 351949,
+      "pdf_pages": 16,
+      "clean_unpack_pages": 16,
+      "zip_file": "submission/applsci/source_bundle.zip",
+      "zip_sha256": "e5484e7e68dccf3be02f83b3d2541c7d0aa76c091bb790c1e261246540656cb8",
+      "zip_bytes": 1142897,
+      "standalone_tex_equals_zip_tex": true
+    }
+  },
+  "canonical_csv_hashes": {
+    "canonical_selected_run_registry.csv": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+    "evaluation_population_by_seed.csv": "bd37bb61944232ac5bc5dd142e63a5d722ff3d0004e2f65384226c9306e2e18b",
+    "dataset_identity_reconciliation.csv": "211bfe08f9745ab8ccfb1c946c24e01f26e177985017368ada4136a54b9c46ee",
+    "main_ap_mean_sd.csv": "dde635d7eff2504cc0e0ddf2807ac7ca3df8a844f1f89f2830139a3b43102fa0",
+    "support_14x7.csv": "bbd89bf88f05047d2f8f29c2065c73791d480bdfcadb78293f7d03a543b8ecd8",
+    "conditional_ap_14.csv": "183a4634899d16248884e4f4254538e2ee586ee09e40be86e6c8f349979362e6",
+    "paired_ap_by_seed.csv": "bbbb5d3b8c29c58f369baf658382c1166ad466f31ae8260726856dec8f719537",
+    "denominator_crosscheck_a16.csv": "ab70c2be965cd7b91e68384bbb723511dbbf7a4a9501d644ae1f36a6a742ada6"
+  },
+  "score_array_availability": {
+    "preserved_npz_runs": 105,
+    "preserved_scope": "Ethereum, BSC, Polygon (7 models x 5 seeds = 105 runs); author-locally preserved and available upon reasonable request",
+    "historical_scalar_only_runs": 350,
+    "historical_scope": "280 primary + 35 BitcoinOTC + 35 LANL-RedTeam runs; raw per-node score vectors were not stored at runtime"
+  }
+}

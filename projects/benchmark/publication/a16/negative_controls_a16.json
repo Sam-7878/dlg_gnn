@@ -1,0 +1,14 @@
+{
+  "neg_01_eth_obsolete_prev": "PASS (Caught: Table 1 prevalence mismatch on Ethereum: {'nodes': 14385, 'edges': 115065, 'dim': 8, 'graph_prev': 0.4184, 'test_prev': 0.0195, 'prov': 'Token-transfer feature-similarity graph; verified phishing/scam contracts (Luo et al., 2024). Test split: 2,893 nodes ($40.89'} vs (0.4184, 0.4089))",
+  "neg_02_bsc_sign_inversion": "PASS (Caught: BSC Delta mismatch: TeX=-0.0021, Canon=0.0021)",
+  "neg_03_reddit_table4_typo": "PASS (Caught: Reddit-Syn Base AP mismatch: TeX=0.4045, Canon=0.4044)",
+  "neg_04_forbidden_dataset_tolokers": "PASS (Caught: Forbidden dataset 'Tolokers' found in neg_04_forbidden_dataset_tolokers)",
+  "neg_05_gadnr_7_typo": "PASS (Caught: Gate G2: Typo 'GADNR fails on 7' found in text)",
+  "neg_06_stale_tag_only": "PASS (Caught: Backmatter: Missing immutable Git tag benchmark-a16-submission-2026-10-28)",
+  "neg_07_causal_hub_phrase": "PASS (Caught: Forbidden causal/inaccurate phrase 'overcomes hub reconstruction bias' found in neg_07_causal_hub_phrase)",
+  "neg_08_anomalydae_cross_attention_claim": "PASS (Caught: Forbidden causal/inaccurate phrase 'due to its $o(n^2)$ pairwise cross-attention' found in neg_08_anomalydae_cross_attention_claim)",
+  "neg_09_audit_md_elliptic_node_mismatch": "PASS (Caught: Audit MD input mismatch on Elliptic: {'raw_nodes': 203769, 'raw_edges': 234355, 'input_nodes': 203769, 'input_edges': 83188, 'dim': 165, 'input_pos': 4545, 'graph_prev': 0.0976, 'split_protocol': 'stratified_node_transductive', 'n_test': 23282, 'p_test_mean': 2272.4, 'pi_test': 0.0976} vs (46564, 83188, 165, 4545))",
+  "neg_10_audit_md_obsolete_crypto_ap": "PASS (Caught: Obsolete pre-A08 crypto AP claim found in evidence_denominator_audit.md!)",
+  "neg_11_multi_paragraph_abstract": "PASS (Caught: Gate G4: Abstract must be a single paragraph, found 2 paragraphs)",
+  "neg_12_old_author_contributions": "PASS (Caught: Backmatter: Missing updated Author Contributions text)"
+}

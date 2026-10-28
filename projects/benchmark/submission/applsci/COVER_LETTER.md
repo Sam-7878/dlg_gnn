@@ -1,6 +1,6 @@
-# Cover Letter for MDPI Applied Sciences (A15)
+# Cover Letter for MDPI Applied Sciences (A16 Final Submission)
 
-**Date:** 2026-10-25  
+**Date:** 2026-10-28  
 **To:**  
 Guest Editors, Special Issue **"Machine Learning and Its Application for Anomaly Detection"**  
 Dr. Naeem Ayoub and Dr. Amira Mouakher  
@@ -14,9 +14,9 @@ We are pleased to submit our original research manuscript titled **"Scalability-
 
 ### Special Issue Fit & Scientific Contributions
 Your Special Issue invites rigorous, application-oriented research on unsupervised anomaly detection, financial fraud investigation, cybersecurity defense, and scalable machine learning implementations. Our manuscript directly addresses these core priorities:
-1. **Multi-Domain Support-Aware Benchmark:** Evaluates seven functioning unsupervised graph anomaly detectors across 13 primary graph benchmarks (five native financial, eight synthetic injected) and one external enterprise cybersecurity network (LANL-RedTeam) over five random seeds (455 total runs), documenting hardware execution boundaries (84 of 91 primary pairs supported) without heuristic score imputation.
-2. **Evaluated Population & Prevalence Ledger:** Formulates an explicit audit ledger separating full-graph target prevalence from evaluated test set positive rates (Ethereum 0.4089, BSC 0.1473, Polygon 0.0259), resolving prior draft ambiguities and anchoring Average Precision comparisons strictly to empirical test prevalence baselines.
-3. **Hardware Execution Envelope:** Explicitly audits execution failures, categorizing exactly 7 unsupportable pairs (5 GADNR neighbor-matching out-of-memory errors on large graphs and 2 AnomalyDAE dense matrix limits) rather than vague aggregate claims.
+1. **Multi-Domain Support-Aware Benchmark:** Evaluates seven functioning unsupervised graph anomaly detectors across 13 primary graph benchmarks (five native financial, eight synthetic injected) and one external enterprise cybersecurity network (LANL-RedTeam) over five random seeds (455 total runs: 420 primary and 35 external runs), documenting hardware execution boundaries (84 of 91 primary pairs supported) without heuristic score imputation.
+2. **Evaluated Population & Prevalence Ledger:** Formulates a programmatic audit ledger separating raw upstream graph totals and full-graph target prevalence from evaluated test-set positive rates (Ethereum 0.4089, BSC 0.1473, Polygon 0.0259), anchoring Average Precision comparisons strictly to empirical test prevalence baselines.
+3. **Hardware Execution Envelope:** Explicitly audits execution failures from `support_14x7.csv`, categorizing the 7 unsupported primary pairs into three exact provenance classes: 4 `NO_APPROVED_RAW_RUN` pairs for GADNR (Elliptic, DGraphFin, Yelp-Syn, Reddit-Syn; historical execution failure / numerical covariance determinant limitation), 1 `OBSERVED_HISTORICAL_CUDA_OOM` pair for GADNR (Flickr-Syn on an 8-GB legacy environment), and 2 `OBSERVED_CUDA_OOM` pairs for AnomalyDAE (Yelp-Syn, Reddit-Syn; preflight CUDA OutOfMemoryError in the full encoder forward pass on the 24-GB RTX 3090).
 4. **Operational Alert-Budget Analysis:** Evaluates precision and recall under strict forensic triage budgets ($P@1\%$, $R@1\%$, $P@5\%$, $R@5\%$) and pairs Average Precision with evaluation prevalence baselines.
 5. **Empirical Low-AUC Audit:** Empirically documents below-random ($<0.50$) ROC-AUC values under standard detector orientation on financial transaction graphs, presenting informed topological hypotheses while preserving authentic empirical measurements without test-driven sign inversion.
 6. **Exact Closed-Form Decoupling:** Mathematically derives closed-form Gram-matrix reconstructions that eliminate dense $O(N^2)$ memory allocation for unsquashed dot-product decoders, enabling exact full-graph training without sampling approximations.
@@ -29,11 +29,12 @@ To ensure transparency and ethical compliance:
 - Prior to journal submission, a publisher-neutral version of this benchmark study has been prepared for deposit on Preprints.org to secure a distinct benchmark preprint DOI. There is no concurrent submission to any other journal.
 
 ### Data Availability & Reviewer Access
-All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable GitHub release tag `benchmark-a15-submission-2026-10-25` at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
+All aggregate numerical evidence, scripts, and reproduction materials are openly archived under immutable Git tag `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`) at https://github.com/Sam-7878/dlg_gnn. High-resolution node-level score arrays for the 105 cryptocurrency evaluations are author-locally preserved and will be promptly provided to peer reviewers upon request. Historical baseline runs that did not record node score arrays are truthfully disclosed.
 
 ### Declarations
+- **Author Contributions:** Conceptualization, S.-S.P. and K.-H.K.; methodology, S.-S.P. and K.-H.K.; software, S.-S.P.; validation, S.-S.P. and K.-H.K.; formal analysis, S.-S.P.; investigation, S.-S.P.; data curation, S.-S.P.; writing—original draft preparation, S.-S.P.; writing—review and editing, S.-S.P. and K.-H.K.; visualization, S.-S.P.; supervision, K.-H.K.; project administration, S.-S.P. and K.-H.K.; funding acquisition, K.-H.K. All authors have read and agreed to the published version of the manuscript.
 - **Conflict of Interest:** The authors declare no conflicts of interest.
-- **Use of Generative AI:** During manuscript preparation, Claude Opus 5.5 and OpenAI ChatGPT/Codex were utilized for editorial formatting, grammar refinement, and LaTeX table structuring. All scientific calculations, derivations, empirical results, and scientific interpretations were conceived, verified, and finalized by the authors.
+- **Acknowledgments / Use of Generative AI:** During the preparation of this manuscript, the authors utilized Claude Opus, Google Gemini/AntiGravity and OpenAI ChatGPT/Codex tools for initial drafting review, script formatting, Translation of the text, and LaTeX table structuring. All scientific data, mathematical derivations, empirical analyses, and manuscript conclusions were conceived, independently verified, and finalized under the direct oversight of the authors, who take full responsibility for the integrity of the published work.
 
 Sincerely,
 

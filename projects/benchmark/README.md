@@ -32,3 +32,12 @@ The previous GitHub commit already contained the original evidence ZIP and A07 w
 ## A09 final closure
 
 See [current closure manifest](reports/submission_closure_a09/submission_closure_manifest.json), [actual public retrieval](reports/submission_closure_a09/public_retrieval_verification.json) and [final 52-page review](reports/submission_closure_a09/Final_PDF_Review_A09.md). The immutable release contains the earlier reviewed companion snapshot. These later outer records do not alter its ZIP bytes or A08 science. Current reports on main may postdate the pinned scientific release.
+
+
+## 6. A16 Final Submission Closure Artifacts
+
+Following the A08--A16 publication audit chain (where AnomalyDAE full-graph row-block execution completed 4 additional primary pairs on `Elliptic`, `DGraphFin`, `Flickr-Syn`, and `PubMed-Syn`), the final frozen benchmark release under Git tag `benchmark-a16-submission-2026-10-28` (superseding `benchmark-a15-submission-2026-10-25`) archives **84/91 primary supported pairs (420 primary runs) plus 7/7 external LANL-RedTeam pairs (35 external runs) = 455 total verified runs** in `projects/benchmark/publication/a16/`:
+- `canonical_selected_run_registry.csv`: 455 canonical run records across seeds 42--46.
+- `evaluation_population_by_seed.csv`: 70 seed-level test partition records verifying $N_{\text{test}}, P_{\text{test}}$, and $\pi_{\text{test}}$.
+- `support_14x7.csv`: 98 model--dataset support records (84 primary supported, 7 external LANL supported, 7 unsupported: 4 `NO_APPROVED_RAW_RUN` for GADNR, 1 `OBSERVED_HISTORICAL_CUDA_OOM` on 8-GB legacy environment for GADNR, and 2 `OBSERVED_CUDA_OOM` in full encoder forward on 24-GB RTX 3090 for AnomalyDAE).
+- `evidence_denominator_audit.md` and `dgraphfin_split_identity_audit.md`: Programmatically verified denominator and split-hash identity audits.

@@ -1,0 +1,36 @@
+{
+  "gate": "A16-G3",
+  "dataset": "DGraphFin",
+  "classification": "SAME_MASK_DIFFERENT_METADATA",
+  "status": "PASS",
+  "induced_graph_nodes": 1225601,
+  "train_nodes": 857899,
+  "val_nodes": 183862,
+  "val_positives": 2326,
+  "test_nodes": 183840,
+  "test_positives": 2326,
+  "test_prevalence": 0.01265230635335074,
+  "hash_1_boolean_mask_serialization": {
+    "split_hash": "4ebf6ded53b8054653f40e6157617b71c8230e0e2ed0cf32c3d5d83b1e76b50c",
+    "models": [
+      "DOMINANT",
+      "CoLA",
+      "OCGNN",
+      "DLG-Base",
+      "DLG-Aug"
+    ],
+    "formula": "sha256(json.dumps({'test_mask_hash': sha256(bool_test_mask), 'train_mask_hash': sha256(bool_train_mask), 'val_mask_hash': sha256(bool_val_mask)}, sort_keys=True))",
+    "source_script": "evaluation/benchmark/v2/scripts/a04_export_evidence.py"
+  },
+  "hash_2_flatnonzero_index_serialization": {
+    "split_hash": "3fd8c88fa4b5e4919c78bc9ad5bcce33d2e76b78c7e0462b512e79ee441e63b6",
+    "models": [
+      "AnomalyDAE"
+    ],
+    "formula": "sha256(json.dumps({'test': sha256(flatnonzero(test_mask)), 'test_y': sha256(y[test_idx]), 'val': sha256(flatnonzero(val_mask)), 'val_y': sha256(y[val_idx])}, sort_keys=True))",
+    "source_script": "evaluation/benchmark/v2/scripts/a05_run_anomalydae_large.py"
+  },
+  "mathematical_equivalence_verified": true,
+  "exact_same_test_indices": true,
+  "exact_same_test_labels": true
+}

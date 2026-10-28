@@ -185,3 +185,25 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 The frozen manifest’s `real_external_label` describes supplied labels, not a verified label-independent graph builder. Non-executing ZIP/opcode inspection confirmed raw artifact hashes and every node label against the upstream processed CSV. Hybrid tensors contain all sibling kNN edges, plus 43,140 / 22,427 / 6,896 additional edges (Ethereum / BSC / Polygon), all joining same-label nodes. Seven of eight feature columns are constant zero. The original hybrid generator and the meaning of the remaining feature are still required; these observations alone do not establish how edges were generated. See [construction audit](DATASET_CONSTRUCTION_AUDIT.md) and [machine-readable evidence](evidence/astra_revision/hybrid_tensor_audit.json).
 
 `src/run_evaluation_pipeline.py` reads an existing Polygon tensor and copies it into a streaming benchmark (or creates a simulated fallback). It does not establish provenance of the three original frozen hybrid tensors.
+
+
+## 6. A16 Canonical Model-Input & Test-Split Denominator Ledger
+
+While Sections 1--4 above document the upstream benchmark origins and raw source characteristics, the exact model-input tensors ($N_{\text{input}}, E_{\text{input}}, d$) and seed-level test-split denominators ($N_{\text{test}}, P_{\text{test}}, \pi_{\text{test}}$) evaluated across seeds 42--46 are governed by `projects/benchmark/publication/a16/dataset_identity_reconciliation.csv` and `projects/benchmark/publication/a16/evaluation_population_by_seed.csv`:
+
+| Dataset | Model Input Nodes ($N_{\text{input}}$) | Model Input Edges ($E_{\text{input}}$) | Feature Dim ($d$) | Test Split ($N_{\text{test}}$) | Mean Test Positives ($P_{\text{test}}$) | Evaluated Test Prevalence ($\pi_{\text{test}}$) |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **Elliptic** | 46,564 | 83,188 | 165 | 23,282 | 2,272.4 | 0.0976 |
+| **DGraphFin** | 1,225,601 | 746,271 | 17 | 183,840 | 2,326.0 | 0.0127 |
+| **BitcoinOTC** | 6,005 | 7,409 | 67 | 3,003 | 90.0 | 0.0300 |
+| **Ethereum** | 14,385 | 115,065 | 8 | 2,893 | 1,183.0 | 0.4089 |
+| **BSC** | 7,481 | 59,832 | 8 | 1,500 | 221.0 | 0.1473 |
+| **Polygon** | 2,303 | 18,411 | 8 | 471 | 12.2 | 0.0259 |
+| **Yelp-Syn** | 716,847 | 14,004,995 | 300 | 358,424 | 3,584.0 | 0.0100 |
+| **Amazon-Syn** | 13,752 | 507,378 | 767 | 6,876 | 206.0 | 0.0300 |
+| **Reddit-Syn** | 232,965 | 114,869,737 | 602 | 116,483 | 2,330.0 | 0.0200 |
+| **Flickr-Syn** | 89,250 | 1,001,494 | 500 | 44,625 | 892.4 | 0.0200 |
+| **Cora-Syn** | 2,708 | 11,276 | 1433 | 1,354 | 40.4 | 0.0298 |
+| **CiteSeer-Syn** | 3,327 | 9,914 | 3703 | 1,664 | 50.0 | 0.0300 |
+| **PubMed-Syn** | 19,717 | 93,958 | 500 | 9,859 | 296.0 | 0.0300 |
+| **LANL-RedTeam** | 16,694 | 323,897 | 13 | 3,338 | 60.0 | 0.0180 |
