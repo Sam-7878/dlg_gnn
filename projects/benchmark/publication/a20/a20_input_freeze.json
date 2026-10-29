@@ -28,8 +28,10 @@
     "a19_source_map_consistency.json": "43cb0de4217a8c25a85ec17e8c6ba221bbc734ebf097f74560afcd1871007f49",
     "f1_per_seed_verified.csv": "0fd1fb7caa418723ee24205521e8c3563684a051150f6261a6add7d0842c683f"
   },
-  "canonical_run_registry_hash": "projects/benchmark/publication/a16/canonical_selected_run_registry.csv",
-  "support_matrix_hash": "projects/benchmark/publication/a16/support_14x7.csv",
+  "canonical_run_registry_path": "projects/benchmark/publication/a16/canonical_selected_run_registry.csv",
+  "canonical_run_registry_sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+  "support_matrix_path": "projects/benchmark/publication/a16/support_14x7.csv",
+  "support_matrix_sha256": "bbd89bf88f05047d2f8f29c2065c73791d480bdfcadb78293f7d03a543b8ecd8",
   "frozen_crypto_test_populations": {
     "Ethereum": {
       "n_test": 2893,

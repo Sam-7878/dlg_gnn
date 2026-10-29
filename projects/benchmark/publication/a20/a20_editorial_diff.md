@@ -46,10 +46,11 @@ The A20 revision strictly adheres to the work order `DLG-BENCH-WO-A20-EDITORIAL-
   - Caveated AnomalyDAE on Reddit as unsupported in 24GB matrix.
 
 ### Gate G4 — Claude R3: Effect-Size Interpretation and Uncertainty (P0 / HARD)
-- **Problem in A19/A16:** Manuscript emphasized relative percentage gain ($+50.97\%$) without giving equal weight to absolute $\Delta\mathrm{AP}$ ($+0.0094$), and overclaimed that BSC disproved universal benefit.
+- **Problem in A19/A16:** Manuscript emphasized relative percentage gain ($+50.95\%$, Elliptic) without giving equal weight to absolute $\Delta\mathrm{AP}$ ($+0.0350$, from 0.0687 to 0.1037), and overclaimed that BSC disproved universal benefit.
 - **A20 Resolution:**
-  - Primary presentation led with absolute metric difference $\Delta\mathrm{AP} = +0.0094$, placing relative percentage gain as secondary context.
-  - Contextualized $\Delta\mathrm{AP}$ against test prevalence baseline ($\pi_\mathrm{test} = 0.0259$).
+  - Primary presentation led with absolute metric difference $\Delta\mathrm{AP} = +0.0350$ (on Elliptic), placing relative percentage gain ($+50.95\%$) as secondary context.
+  - Contextualized $\Delta\mathrm{AP}$ against test prevalence baseline (Elliptic $\pi_\mathrm{test} = 0.0976$, test positives $M_\mathrm{test} = 926$ of $N_\mathrm{test} = 9,487$).
+  - Separately documented Polygon where $\pi_\mathrm{test} = 0.0259$ ($M_\mathrm{test} \approx 13$ of $N_\mathrm{test} = 494$) with DLG-Base AP = 0.0854, DLG-Aug AP = 0.0731, and $\Delta\mathrm{AP} \approx -0.0124$.
   - Softened text to state that BSC results "do not support a universal benefit under the studied conditions," rather than claiming "universal disproof."
   - Replaced unmeasured causal claims (e.g., "local features preserve structural fidelity") with observational descriptions of performance on citation networks.
   - Re-rendered Figure 3 (`fig_conditional_delta`) with descriptive title `Observed Mean Paired Difference (Delta AP) with Paired SE` instead of `Verified Canonical Ground Truth`.

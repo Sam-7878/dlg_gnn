@@ -1,0 +1,56 @@
+{
+  "protocol": "A21_EVIDENCE_FREEZE_METADATA_PATCH",
+  "document_id": "DLG-BENCH-A21-FREEZE-PATCH-20261029",
+  "patch_timestamp_utc": "2026-10-29T10:32:00Z",
+  "status": "PASS",
+  "objective": "Resolve semantic mislabeling where path strings were assigned to keys ending in _hash",
+  "patched_evidence_registry": {
+    "canonical_run_registry": {
+      "path": "projects/benchmark/publication/a16/canonical_selected_run_registry.csv",
+      "sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+      "size_bytes": 671520,
+      "verified_runs": 455,
+      "verification_status": "VERIFIED_DISK_BYTES"
+    },
+    "support_matrix": {
+      "path": "projects/benchmark/publication/a16/support_14x7.csv",
+      "sha256": "bbd89bf88f05047d2f8f29c2065c73791d480bdfcadb78293f7d03a543b8ecd8",
+      "size_bytes": 6061,
+      "matrix_dimensions": "14x7",
+      "supported_pairs": 84,
+      "unsupported_pairs": 7,
+      "external_pairs": 7,
+      "verification_status": "VERIFIED_DISK_BYTES"
+    }
+  },
+  "score_provenance_tier_disclosure": {
+    "tier_1_cryptocurrency_evaluations": {
+      "count": 105,
+      "datasets": ["Ethereum", "BSC", "Polygon"],
+      "models": 7,
+      "seeds": [42, 43, 44, 45, 46],
+      "per_node_scores_npz_archived": true,
+      "storage_location": "author_local_archive",
+      "request_availability": "Available upon reasonable academic request to corresponding author"
+    },
+    "tier_2_historical_baseline_evaluations": {
+      "count": 350,
+      "primary_synthetic_and_financial": 280,
+      "bitcoin_otc": 35,
+      "lanl_redteam": 35,
+      "per_node_scores_npz_archived": false,
+      "evidence_type": "summary_metric_scalars_and_evaluation_logs_only",
+      "status": "truthfully_disclosed_unarchived_at_runtime"
+    }
+  },
+  "verified_a19_evidence_hashes": {
+    "projects/benchmark/publication/a19/a19_alert_budget_raw_recheck.csv": "3536f4d41bdbf321687544f605a3c14fb3d6f7c12821603ad028ae0797f699b9",
+    "projects/benchmark/publication/a19/a19_alert_budget_raw_recheck.md": "7c54f315c54ae274eccc9f2bf482633c40423e536f1aad04eaeeade9f82873f1",
+    "projects/benchmark/publication/a19/a19_authoritative_source_map.md": "63c9b8ff59e6fa321e594f9d34158c9103989b5e5644ffb5f810d3a0989f512b",
+    "projects/benchmark/publication/a19/a19_crypto_scores_manifest.csv": "a32583fb95e48e37582f0b3b879d8d2d08b16c6237ac578d79318d36563d4d82",
+    "projects/benchmark/publication/a19/a19_f1_provenance_gate.md": "b4db14ddc03b9e677c73a4f8a7ebcd8883cf36d2e682f14d6cd2d40f82078621",
+    "projects/benchmark/publication/a19/a19_f1_semantics_by_campaign.csv": "17e1de6589d8b85e43f32f95fbbe6f7d96fe729400744ed8ec003fc63ccdc248",
+    "projects/benchmark/publication/a19/a19_source_map_consistency.json": "43cb0de4217a8c25a85ec17e8c6ba221bbc734ebf097f74560afcd1871007f49",
+    "projects/benchmark/publication/a19/f1_per_seed_verified.csv": "0fd1fb7caa418723ee24205521e8c3563684a051150f6261a6add7d0842c683f"
+  }
+}
