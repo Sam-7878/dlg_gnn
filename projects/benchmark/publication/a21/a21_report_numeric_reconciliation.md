@@ -59,3 +59,4 @@ The table below cross-checks the relevant datasets across Table 2 (Overall Perfo
 - [x] Polygon correctly anchored to $\Delta\mathrm{AP} \approx -0.0124$ and $\pi_\mathrm{test} = 0.0259$.
 - [x] Primary scientific tables (Table 2, Table 4) and raw run registries remain strictly frozen and unedited.
 - **GATE L1 STATUS: PASS**
+

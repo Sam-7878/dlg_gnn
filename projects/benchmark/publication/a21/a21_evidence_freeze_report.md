@@ -41,3 +41,4 @@ In full alignment with the submission disclosures in Section 4.2 and `DATA_AVAIL
 - [x] File paths preserved in corresponding `_path` fields.
 - [x] Disk bytes match 100% across all 8 evidence files and 2 registry tables.
 - **GATE L3 STATUS: PASS**
+
