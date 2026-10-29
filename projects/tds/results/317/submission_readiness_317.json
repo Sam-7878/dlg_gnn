@@ -1,0 +1,68 @@
+{
+  "AUTHOR_APPROVAL_COMPLETE": false,
+  "COLLECTION_EXACT_CUTOFF_VERIFIED": false,
+  "FUNDING_VERIFIED": false,
+  "GATE_S": "PASS",
+  "LABEL_DISCOVERY_TIME_AVAILABLE": false,
+  "POSTED_PREPRINT": false,
+  "PREPRINT_DOI": null,
+  "PUBLIC_RELEASE_VERIFIED": false,
+  "READY_MDPI": false,
+  "READY_PREPRINT": false,
+  "SCIENCE_CHECKS": {
+    "S0": true,
+    "S1": true,
+    "S2": true,
+    "S3": true,
+    "S4": true,
+    "S5": true,
+    "S6": true
+  },
+  "SCIENTIFIC_SCOPE": "sampling-associated composition; retrospective archive evaluation; no identified censoring mechanism",
+  "SUBMITTED_MDPI": false,
+  "SUBMITTED_PREPRINT": false,
+  "date": "2026-10-30",
+  "decision": "HOLD_AUTHOR_ACTION_AND_PUBLIC_RELEASE",
+  "identity": {
+    "mdpi_applsci_anomaly": {
+      "article_pages": 13,
+      "article_sha256": "4c6be613d4f5ad5422a175d9ed1d37a13b8daff6e60976196bd32944093f6991",
+      "source_zip_sha256": "22b9f72d8e532462998ce185cb4a7f72a5004779265159e07b75671acc13e12c",
+      "supplement_pages": 4,
+      "supplement_sha256": "9cf506ef6bc1b4bf876cb0019bf78c56ec0baff0be5c0383e7ee2ce2fc56351b"
+    },
+    "preprints": {
+      "article_pages": 13,
+      "article_sha256": "8bdbeb61a2ae2a35d92525244bb4ef585ca5e3aa88e2c148e6ff4e962a5a58fd",
+      "source_zip_sha256": "42705c07f762bd09d3a94cf8097a14d2e3d72fab3554c15f41fcd26f79260a0d",
+      "supplement_pages": 4,
+      "supplement_sha256": "2b85d5bf64eb232562b41d6c50ab80653d9528ee30ebd49145f5a6349f7af2fd"
+    }
+  },
+  "n_new_fits": 45,
+  "n_original_artifacts_verified": 496,
+  "n_original_checkpoints_verified": 55,
+  "n_original_vectors": 65,
+  "n_registered_vectors": 110,
+  "n_validation_only_calibrators": 95,
+  "numeric_candidate_sha256": "a4f05674eef4d05913d897d3caa8e085026e7939e0d1d2c82c171d95a672e218",
+  "pending": [
+    "both authors approve names/departments/correspondence/ORCID and exact PDF+supplement hashes",
+    "official IITP-ITRC award evidence and TDS funder role",
+    "TDS COI/originality/rights declarations and preprint permanence/license consent",
+    "numerical derivative redistribution approval plus immutable TDS release and anonymous replay, or publisher-accepted restriction",
+    "actual preprint posting receipt and DOI before journal submission",
+    "live correct SI portal selection and exact journal-file approval"
+  ],
+  "proofs_verified": {},
+  "source_provenance_limit": "month-level source coverage verified; exact cutoff policy unknown; claim restricted accordingly",
+  "technical_checks": {
+    "mdpi_clean_build": true,
+    "numeric_cold_replay": true,
+    "official_template_hash_matched": true,
+    "original_artifacts_unchanged": true,
+    "preprint_clean_build": true,
+    "shared_scientific_source": true
+  },
+  "work_order": "TDS-WO-317-VALIDITY-A16-SUBMISSION"
+}

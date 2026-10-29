@@ -1,6 +1,19 @@
-# TDS submission evidence layout (2026-10-29)
+# TDS submission evidence layout (2026-10-30)
 
-## Current publication revision 316
+## Current publication revision 317
+
+The active private paper is `projects/tds/paper/submission_317/`: shared
+`manuscript_body.tex`, bibliography, declarations and venue-specific wrappers.
+Only rendered table/figure assets accompany the manuscript; CSVs, score arrays,
+cutoff audits and run registry live under `projects/tds/results/317/`. Code is in
+`projects/tds/scripts/revision317/`, public reports in `projects/tds/reports/317/`,
+and the local numeric candidate in `projects/tds/publication/317/`. Raw address
+mappings/cache and source snapshots remain in private/317; source ZIPs/platform
+files and author records remain in ignored submission/317 areas. No author or
+publication permission follows from scientific/build success. Prior layouts,
+sources, splits,65 original arrays and55 checkpoints remain immutable.
+
+## Historical publication revision 316
 
 The active private paper is `projects/tds/paper/submission_316/`: one shared source,
 neutral preprint and MDPI anomaly-SI wrappers. Source ZIPs/platform metadata are

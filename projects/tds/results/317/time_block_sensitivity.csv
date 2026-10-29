@@ -1,0 +1,2 @@
+comparison,block_seconds,n_blocks,observed,ci95_low,ci95_high,draws_requested,draws_valid,resampled_unit
+matched GIN+BCE minus summary MLP,3600,19,-0.02276671272285403,-0.07361948087113687,0.04706322663931244,2000,2000,whole UTC-hour blocks; fixed checkpoints; not future-deployment inference

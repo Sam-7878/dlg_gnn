@@ -1,0 +1,13 @@
+audit_requirement,evidence_source,finding,tested_consequence,reuse_recommendation
+Sample and label time,"Source labels; 24,316 one-to-one joins",Contract unit; discovery time unavailable,No prospective metric measured,State retrospective supervision explicitly
+Archive boundary and lifetime,"268,282,924 rows; first/last times",Month documented; exact stopping rule unknown,Last-order test 2.93\%; first-order 56.99\%,Diagnose sorting before attributing drift
+Cutoff and ties,Builder; strict-time tensor reconstruction,"3,910 observations have tied cutoffs",Strict checkpoint AP deltas supplied separately,Declare inclusive cutoff and deterministic tie rule
+Feature admissibility,Full-history degrees and tail128 audit,All new horizon features through cutoff,0 maximum-input cutoff violations,Recompute features as well as edges
+Chain/entity dependence,Partition keys and cross-chain strings,0 chain:contract intersections; wallets unknown,Block interval supplied; actor effect unmeasured,Report unresolved actor dependence
+Simple controls,Identical 24 summary inputs,MLP remains competitive,MLP AP 0.4751; GIN+BCE 0.4524,Give tabular models the same admitted information
+Loss comparability,Matched BCE/focal matrix,Objective changes ranking and losses,GIN focal AP 0.4885; ECE 0.3179,Name actual weighting and match objectives
+Time extrapolation,Train-only extrema; 5-seed retraining,All original test normalized times exceed1,With/without-time AP in Results,Test implementation-specific time branches
+Calibration,Preserved validation outputs,Scalar temperature fitted without test labels,"Raw/TS ECE, NLL and Brier provided",Compare like calibration stages
+AP ties,Threshold-grouped AP; sklearn parity,Bootstrap duplicates require tie grouping,Original and corrected audit retained,Test ties and duplicated draws
+Multiplicity and dependence,Fixed7 and fixed6 families; hour blocks,Conditional inference; no cross-cohort pairing,Exploratory GIN--MLP Holm p=0.1184,Freeze family and resampling unit
+Prediction lineage,55 old checkpoints; 65 original arrays,Old hashes sealed; new cohorts separated,Numeric replay of archived and new scores,Bind predictions to input/split/checkpoint hashes

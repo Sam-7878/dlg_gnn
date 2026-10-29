@@ -1,0 +1,18 @@
+{
+  "anonymous_public_download_verified": false,
+  "archive_bytes": 12732360,
+  "archive_sha256": "a4f05674eef4d05913d897d3caa8e085026e7939e0d1d2c82c171d95a672e218",
+  "cold_regression18_passed": true,
+  "cold_regression_output": "..................                                                       [100%]\n=============================== warnings summary ===============================\n../../../mnt/d/_Work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485\n  /mnt/d/_Work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.\n    warnings.warn(\n\nprojects/tds/tests/test_revision314.py: 31 warnings\n  /mnt/d/_Work/goat_bank/.venv_cuda/lib/python3.14/site-packages/torch_geometric/inspector.py:433: DeprecationWarning: Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.\n    return typing._eval_type(value, _globals, None)  # type: ignore\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n18 passed, 32 warnings in 34.27s",
+  "extracted_to_fresh_directory": true,
+  "files_verified": 309,
+  "manuscript_sources_required": false,
+  "maximum_calibrated_metric_error": 1.1102230246251565e-16,
+  "maximum_point_metric_error": 1.1102230246251565e-16,
+  "n_test_arrays": 110,
+  "n_validation_only_calibrators": 95,
+  "raw_data_required": false,
+  "scope": "local CPU numerical replay, not full retraining or anonymous release verification",
+  "status": "PASS",
+  "weights_required": false
+}

@@ -1,0 +1,15 @@
+{
+  "display_name": "chain-level recurrent-state comparator",
+  "heldout": "state updates from unlabeled features only; weights frozen; no carry from train",
+  "implementation": "revision314/historical_models.py:TemporalMemoryBaseline",
+  "label_consumed": false,
+  "memory_key": "chain_index",
+  "original_TGN_node_memory": false,
+  "prediction": "current graph + previous chain state; then update GRU from current summary and time",
+  "reset": "zero at each training epoch and every validation/test partition",
+  "shape": [
+    3,
+    48
+  ],
+  "verification": "source inspection and executable label-independence regression test"
+}

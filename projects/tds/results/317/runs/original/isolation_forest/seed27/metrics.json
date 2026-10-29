@@ -1,0 +1,19 @@
+{
+  "arm": "isolation_forest",
+  "auc_pr": 0.017206279352556465,
+  "auc_roc": 0.217608416229641,
+  "best_epoch": 0,
+  "best_validation_ap": 0.07255090371399066,
+  "checkpoint_sha256": "1d5e031167529456cf245b19669571fcf3db35e8604557e1bd94b50d3bcc79fb",
+  "cohort": "original",
+  "device": "cuda:1",
+  "elapsed_seconds": 0.4785184760003176,
+  "protocol_sha256": "cecc70bd9be4af3495211728068e05a263f8bf4b8ab9398ac4bea5d2c8cd7b37",
+  "score_kind": "outlier_score",
+  "seed": 27,
+  "stopped_epoch": 0,
+  "test_access_count": 1,
+  "test_predictions_sha256": "ece3fa3824c481e928cded2ac296cfaf9117a0e4e0978419b052d8423acf0531",
+  "time_min": 1497961441,
+  "time_scale": 210446518
+}

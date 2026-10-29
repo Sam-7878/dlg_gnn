@@ -1,0 +1,19 @@
+{
+  "files": [
+    {
+      "bytes": 556094,
+      "path": "projects/tds/submission/preprints/316/preprint_source.zip",
+      "sha256": "a6b09cab8aa3b5b6a73b7402b9383e6a41f6fff222c62186f7167dd2e482db02"
+    },
+    {
+      "bytes": 1526920,
+      "path": "projects/tds/submission/applsci/316/mdpi_source.zip",
+      "sha256": "e2a0b9c10ea468991ab28562ff44560332d73d51600763fae97f31f8a29d7d57"
+    },
+    {
+      "bytes": 2753214,
+      "path": "projects/tds/publication/316/TDS_316_numeric_release_candidate.zip",
+      "sha256": "de45fe8c269792343f4125670a4fdc9ccecf93437b7d5633c75a92f9e486fb99"
+    }
+  ]
+}

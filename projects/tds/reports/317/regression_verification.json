@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "test_count": 28,
+  "cold_regression_count": 18,
+  "warnings": 32,
+  "warning_scope": "pinned PyTorch/PyG Python3.14 deprecations; no shared-environment upgrade",
+  "date": "2026-10-30"
+}

@@ -1,0 +1,73 @@
+{
+  "archival_time_ablation": [
+    "gat_time",
+    "gat_no_time"
+  ],
+  "calibration": "temperature per model/seed via validation NLL; logT bounded[-4,4]; test once",
+  "device": "cuda:1 (RTX3090; independent of laptop GPU)",
+  "families": "old7 confirmatory and old6 exploratory unchanged; new317 descriptive, no new significance claims",
+  "finite_horizon_arms": [
+    "summary_lr",
+    "summary_mlp",
+    "gin_bce",
+    "gat_time"
+  ],
+  "finite_horizon_boundary": "empirical support endpoint, exact collector stopping rule unknown",
+  "finite_horizon_condition": "SELECTION_EFFECT_SUPPORTED",
+  "finite_horizon_days": 7,
+  "finite_horizon_eligibility": "first+7d <= observed archive maximum; NOT last>=first+7d",
+  "finite_horizon_graph": "all degree features recomputed from valid transfers <=cutoff; stable last128 topology",
+  "finite_horizon_split": "stable sort(first+7d, original event key), floor(70%n), floor(85%n), remainder",
+  "id": "TDS317-P1",
+  "isolation_forest": {
+    "contamination": "auto",
+    "labels_used": false,
+    "max_samples": "auto",
+    "n_estimators": 200,
+    "score": "negative score_samples; higher=more anomalous; not label-selected"
+  },
+  "label_policy": "same retrospective Category0 label; discovery time unknown; not early warning",
+  "lightgbm": {
+    "class_weight": "balanced",
+    "learning_rate": 0.05,
+    "max_depth": -1,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "num_leaves": 31,
+    "validation_early_stop": 30
+  },
+  "lr": {
+    "C": 1,
+    "class_weight": "balanced",
+    "max_iter": 2000
+  },
+  "neural": {
+    "batch_size": 64,
+    "dropout": 0.3,
+    "hidden": 48,
+    "loss": "BCE weighted negatives/positives from train",
+    "lr": 0.001,
+    "max_epochs": 60,
+    "optimizer": "AdamW",
+    "patience": 5,
+    "selection": "validation AP increase>1e-6",
+    "weight_decay": 0.0001
+  },
+  "scaler": "same24 summary features; StandardScaler fit train only",
+  "seeds": [
+    7,
+    17,
+    27,
+    37,
+    47
+  ],
+  "selection_decision_sha256": "b175acbf63cca8bd3ed91ebf34121d75b1ac53a83d2669c523f6a04cc3b6cebc",
+  "stopping": "fixed arm grid only; no test-based choice or retries for higher AP",
+  "time_ablation": "same GATv2 encoder; no-time head omits harmonic16; both trained from scratch",
+  "uncertainty": {
+    "per_chain_bootstrap": 2000,
+    "seed": 317,
+    "time_block_bootstrap": 2000,
+    "time_block_seconds": 3600
+  }
+}

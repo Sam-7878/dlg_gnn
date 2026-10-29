@@ -1,5 +1,16 @@
 # TDS paper workspace
 
+Current revision: `submission_317/`, with one canonical scientific source
+`shared/manuscript_body.tex`, `shared/references.bib`, and `shared/declarations.tex`.
+Edit those shared sources and run `shared/prepare.py`; then use
+`python projects/tds/scripts/revision317/build.py` from the repository root.
+Preprints article: `submission_317/preprints/preprint_article.pdf`.
+MDPI article: `submission_317/mdpi_applsci_anomaly/applsci_article.pdf`.
+Each has its own four-page Supplement and source ZIP. CSVs, arrays and experiments
+are in `../results/317/`, not paper/. Author records/source deliveries are in the
+ignored `../submission/*/317/` paths. Public work report: `../reports/317/README.md`.
+The older source trees below are preserved history, not the active manuscript.
+
 The preserved R314 input is in `applsci/`. The active 315 submission candidate is
 `applsci/submission_315/applsci_article.tex`, with its compiled PDF beside it.
 The current public report is `../reports/315/venue_split/README.md`.

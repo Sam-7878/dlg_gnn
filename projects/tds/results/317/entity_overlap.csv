@@ -1,0 +1,7 @@
+entity,left,right,intersection
+chain:contract,train,validation,0
+chain:contract,train,test,0
+chain:contract,validation,test,0
+contract_hex_cross_chain,train,validation,24
+contract_hex_cross_chain,train,test,30
+contract_hex_cross_chain,validation,test,36

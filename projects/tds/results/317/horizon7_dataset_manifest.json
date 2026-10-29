@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "GoG-317-first7d-v1",
+  "endpoint_policy": "observed maximum support; documented exact archive stopping policy unavailable",
+  "feature_audit_sha256": "eb5c6077fdf45dfd50d5d924e86ab680aa43fed834a03e968f9f5e4ed514277d",
+  "graph_sha256": "64d930965fd880d57bd2388dffcea6f6ed5029620e12aa9f97c9c4dee7e3b2f5",
+  "label_time_known": false,
+  "n": 24179,
+  "paired_cross_cohort_inference": false,
+  "population_sha256": "f8627384d158d58161f765f91b994a7dc5dd7dfcaa7fb67022f8ff3ac2832733",
+  "removed": 137,
+  "removed_positive": 112,
+  "split_boundaries": [
+    16925,
+    20552,
+    24179
+  ],
+  "test_comparable_to_original": false
+}

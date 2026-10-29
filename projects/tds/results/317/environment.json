@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-30",
+  "executable": "/mnt/d/_Work/goat_bank/.venv_cuda/bin/python",
+  "extra_dependency": "project-local LightGBM4.6.0; shared venv not upgraded",
+  "gpu": "cuda:1 RTX3090 24GB; batch and optimizer held fixed for comparability",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "observed_os": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "torch": "2.14.1",
+  "torch_geometric": "2.8.0.post1"
+}

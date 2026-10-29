@@ -26,3 +26,15 @@
 /publication/316/candidate/
 /publication/316/*.zip
 !/publication/316/TDS_316_numeric_release_candidate.zip
+# 317 numerical outputs are public; identifiers, weights and venue metadata are private.
+/.deps/
+/results/317/runs/**/checkpoint.pt
+/results/317/runs/**/validation.csv
+/results/317/runs/**/test.csv
+/submission/applsci/317/*
+!/submission/applsci/317/README.md
+/submission/preprints/317/*
+!/submission/preprints/317/README.md
+/publication/317/candidate/
+/publication/317/*.zip
+!/publication/317/TDS_317_numeric_release_candidate.zip

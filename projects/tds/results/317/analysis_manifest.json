@@ -1,0 +1,19 @@
+{
+  "ap": "threshold grouped, unmodified scores",
+  "isolation_forest_probability_losses": "NOT_APPLICABLE: scores are not probabilities",
+  "n_registered_test_vectors": 110,
+  "new_family_significance_claimed": false,
+  "no_cross_cohort_paired_test": true,
+  "old_vectors_preserved": 65,
+  "optional": {
+    "GBDT": "EXECUTED",
+    "IsolationForest": "EXECUTED",
+    "chain_AP": "EXECUTED",
+    "chain_prior": "EXECUTED",
+    "modelwise_TS": "EXECUTED",
+    "time_block_bootstrap": "EXECUTED",
+    "topk": "EXECUTED"
+  },
+  "seed_sd": "descriptive spread; deterministic LR/repeated GBDT fits are not independent sampling replicates",
+  "ts_fit": "validation only; positive scalar temperature, logT[-4,4]"
+}

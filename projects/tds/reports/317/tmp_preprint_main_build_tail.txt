@@ -1,0 +1,71 @@
+/cmr/m/n/9 (+20) Threshold-grouped
+
+Underfull \hbox (badness 1824) in paragraph at lines 15--15
+[]|\OT1/cmr/m/n/9 (+20) Test ties and du-pli-
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\OT1/cmr/m/n/9 (+20) Multiplicity
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\OT1/cmr/m/n/9 (+20) and de-pen-
+
+Underfull \hbox (badness 2096) in paragraph at lines 16--16
+[]|\OT1/cmr/m/n/9 (+20) Fixed7 and fixed6
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\OT1/cmr/m/n/9 (+20) Exploratory GIN--
+
+Underfull \hbox (badness 6268) in paragraph at lines 17--17
+[]|\OT1/cmr/m/n/9 (+20) Old hashes sealed;
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\OT1/cmr/m/n/9 (+20) Numeric re-play of
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\OT1/cmr/m/n/9 (+20) archived and new
+
+Underfull \hbox (badness 5245) in paragraph at lines 17--17
+[]|\OT1/cmr/m/n/9 (+20) Bind pre-dic-tions to
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\OT1/cmr/m/n/9 in-put/split/checkpoint
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 \bottomrule\end{longtable}
+                               \endgroup
+ignored error: Infinite glue shrinkage found in box being split [8]) [9 <./figu
+res/validity_decision_tree.pdf>] (./declarations.tex [10]))
+(./preprint_main.bbl [11] [12]) [13] (./preprint_main.aux) )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on preprint_main.pdf (13 pages, 292539 bytes).
+Transcript written on preprint_main.log.
+Latexmk: Getting log file 'preprint_main.log'
+Latexmk: Examining 'preprint_main.fls'
+Latexmk: Examining 'preprint_main.log'
+Latexmk: Found input bbl file 'preprint_main.bbl'
+Latexmk: Log file says output to 'preprint_main.pdf'
+  ===Source file 'preprint_main.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (preprint_main.pdf) are up-to-date
+
+Latexmk: Missing bbl file 'preprint_main.bbl' in following:
+ No file preprint_main.bbl.
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).

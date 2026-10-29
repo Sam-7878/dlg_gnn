@@ -1,0 +1,18 @@
+{
+  "fit": "train labels only",
+  "metrics": {
+    "adaptive_ece": 0.2708344043643295,
+    "auc_pr": 0.04240992045104445,
+    "auc_roc": 0.6524649829632582,
+    "brier": 0.1294084981957443,
+    "ece": 0.2708344043643295,
+    "f1": 0.08629441624365482,
+    "nll": 0.4070351459275629
+  },
+  "priors": {
+    "bsc": 0.20907900480139677,
+    "ethereum": 0.5112055983700948,
+    "polygon": 0.04695652173913043
+  },
+  "tie_policy": "threshold-grouped AP; stable frozen order for top-k with tie bounds"
+}

@@ -1,0 +1,337 @@
+[
+  {
+    "doi": "10.1145/3439950",
+    "title": [
+      "Deep Learning for Anomaly Detection"
+    ],
+    "author": [
+      {
+        "given": "Guansong",
+        "family": "Pang",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of Adelaide, Adelaide, South Australia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chunhua",
+        "family": "Shen",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Adelaide, Adelaide, South Australia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Longbing",
+        "family": "Cao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Technology Sydney, Sydney, New South Wales"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Anton Van Den",
+        "family": "Hengel",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Adelaide, Adelaide, South Australia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "ACM Computing Surveys"
+    ],
+    "volume": "54",
+    "issue": "2",
+    "page": "1-38",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          3,
+          5
+        ]
+      ]
+    },
+    "URL": "https://doi.org/10.1145/3439950"
+  },
+  {
+    "doi": "10.1109/JPROC.2021.3052449",
+    "title": [
+      "A Unifying Review of Deep and Shallow Anomaly Detection"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9707-297X",
+        "authenticated-orcid": false,
+        "given": "Lukas",
+        "family": "Ruff",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2667-513X",
+        "authenticated-orcid": false,
+        "given": "Jacob R.",
+        "family": "Kauffmann",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6863-7006",
+        "authenticated-orcid": false,
+        "given": "Robert A.",
+        "family": "Vandermeulen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7243-6186",
+        "authenticated-orcid": false,
+        "given": "Gregoire",
+        "family": "Montavon",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6283-3265",
+        "authenticated-orcid": false,
+        "given": "Wojciech",
+        "family": "Samek",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6829-3725",
+        "authenticated-orcid": false,
+        "given": "Marius",
+        "family": "Kloft",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8223-8586",
+        "authenticated-orcid": false,
+        "given": "Thomas G.",
+        "family": "Dietterich",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3861-7685",
+        "authenticated-orcid": false,
+        "given": "Klaus-Robert",
+        "family": "Muller",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Proceedings of the IEEE"
+    ],
+    "volume": "109",
+    "issue": "5",
+    "page": "756-795",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          5
+        ]
+      ]
+    },
+    "URL": "https://doi.org/10.1109/jproc.2021.3052449"
+  },
+  {
+    "doi": "10.1016/j.patter.2023.100804",
+    "title": [
+      "Leakage and the reproducibility crisis in machine-learning-based science"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-5695-280X",
+        "authenticated-orcid": false,
+        "given": "Sayash",
+        "family": "Kapoor",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Arvind",
+        "family": "Narayanan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Patterns"
+    ],
+    "volume": "4",
+    "issue": "9",
+    "page": "100804",
+    "article_number": "100804",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          9
+        ]
+      ]
+    },
+    "URL": "https://doi.org/10.1016/j.patter.2023.100804"
+  },
+  {
+    "doi": "10.1109/ICDM.2008.17",
+    "title": [
+      "Isolation Forest"
+    ],
+    "author": [
+      {
+        "given": "Fei Tony",
+        "family": "Liu",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kai Ming",
+        "family": "Ting",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhi-Hua",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "2008 Eighth IEEE International Conference on Data Mining"
+    ],
+    "volume": null,
+    "issue": null,
+    "page": "413-422",
+    "article_number": null,
+    "published": {
+      "date-parts": [
+        [
+          2008,
+          12
+        ]
+      ]
+    },
+    "URL": "https://doi.org/10.1109/icdm.2008.17"
+  }
+]

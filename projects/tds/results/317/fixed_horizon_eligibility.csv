@@ -1,0 +1,13 @@
+horizon_days,chain,label,n,eligible,censored_at_reference_boundary,observed_activity_reaches_horizon,interpretation
+7,bsc,0,6394,6384,10,6338,"eligibility by observed archive endpoint, not verified prospective label availability"
+7,bsc,1,1105,1079,26,599,"eligibility by observed archive endpoint, not verified prospective label availability"
+7,ethereum,0,8433,8418,15,8348,"eligibility by observed archive endpoint, not verified prospective label availability"
+7,ethereum,1,6031,5947,84,1324,"eligibility by observed archive endpoint, not verified prospective label availability"
+7,polygon,0,2291,2291,0,2275,"eligibility by observed archive endpoint, not verified prospective label availability"
+7,polygon,1,62,60,2,37,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,bsc,0,6394,6327,67,6191,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,bsc,1,1105,972,133,499,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,ethereum,0,8433,8358,75,8144,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,ethereum,1,6031,5744,287,776,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,polygon,0,2291,2278,13,2217,"eligibility by observed archive endpoint, not verified prospective label availability"
+30,polygon,1,62,60,2,29,"eligibility by observed archive endpoint, not verified prospective label availability"

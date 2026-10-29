@@ -1,11 +1,18 @@
 # TDS facade
 
-Current publication revision: [R316 reports](reports/316/README.md). Private common
-manuscripts are under `paper/submission_316/`, with independent preprint and MDPI
-wrappers. R316 preserves prior scientific results, adds supervised financial-screening
-framing and two verified references, and records separate platform gates. Numeric
-outputs are under `results/316_dual_submission/`; source ZIPs stay in private
-submission/316 areas. R315 links below are historical, not the active paper.
+Current publication revision: [R317 reports](reports/317/README.md). Private common
+manuscripts are under `paper/submission_317/`, with independent preprint and MDPI
+wrappers. R317 audits first/last transfer selection, runs five-seed time ablations
+and a distinct seven-day observation cohort, and preserves all R314–316 evidence.
+Numeric outputs are under `results/317/`; source ZIPs and author records stay in
+private submission/317 areas. Science, local replay, author approval, public rights
+and actual platform events are separate gates. [R316](reports/316/README.md) and
+R315 links below are historical, not the active paper.
+
+Run `python projects/tds/scripts/revision317/replay.py` for CPU replay of 110 test
+arrays and 95 validation-only calibrators. Full source reconstruction and bounded
+training require the upstream GoG archives and the environment recorded in
+`results/317/environment.json`; see `scripts/revision317/README.md`.
 
 For Applied Sciences work order 315, see [reports/315](reports/315/) and
 [publication/315](publication/315/). Reproduce the prediction audit with

@@ -1,0 +1,41 @@
+{
+  "snapshots": [
+    {
+      "name": "A16_public_main.tex",
+      "git_blob_sha": "f285b88dd63d0dcc9f931f72e884a9cddb7517cf",
+      "url": "https://github.com/Sam-7878/dlg_gnn/blob/main/projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
+      "provider": "connected GitHub fetch_file",
+      "checked_local_date": "2026-10-29"
+    },
+    {
+      "name": "upstream_collector.py",
+      "git_blob_sha": "9b7c1ed296dd643082a0f44437b2871ee38c38d9",
+      "url": "https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs/blob/7264f1bf510f7ba4f5041ac7a29b606abc12f262/dataset/data_collection_script.py",
+      "provider": "connected GitHub fetch_file",
+      "checked_local_date": "2026-10-29"
+    },
+    {
+      "name": "upstream_README.md",
+      "url": "https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs/blob/7264f1bf510f7ba4f5041ac7a29b606abc12f262/README.md",
+      "provider": "connected GitHub fetch_file",
+      "checked_local_date": "2026-10-29"
+    }
+  ],
+  "si": {
+    "url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt",
+    "verification": "official MDPI search-index text; direct page returns429",
+    "deadline": "2026-12-31",
+    "guest_editors": [
+      "Naeem Ayoub",
+      "Amira Mouakher"
+    ],
+    "portal_selection_verified": false
+  },
+  "policy": {
+    "preprints": "https://www.preprints.org/instructions-for-authors",
+    "preprints_full_page_read": true,
+    "mdpi": "https://www.mdpi.com/ethics",
+    "mdpi_verification": "official indexed excerpt; direct429; recheck before submission"
+  },
+  "date": "2026-10-29"
+}

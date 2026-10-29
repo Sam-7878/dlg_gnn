@@ -1,0 +1,63 @@
+{
+  "base_commit": "a853ffb4d03f2b58fc800c8414bbb815e25cffd4",
+  "files": [
+    {
+      "path": "projects/tds/scripts/revision317/analyze.py",
+      "sha256": "b803f28797b0dc6fc282e6b6beedeb4769cfbfec7a5917c2dc69005e589bbd39"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/build.py",
+      "sha256": "f79d76b291e0e09829956d0b5015aa36539b5d5f92ac331ed1e41e20a1a6bdef"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/common.py",
+      "sha256": "c73adb2fa519a4355f29e675de59192262f71fd11408b0333dbbc8bcc249043a"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/finalize.py",
+      "sha256": "2d06b1c144061846f0fde09755aac143c423ac1a44bc27e0474bf291f17f3785"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/freeze.py",
+      "sha256": "ee5406ab32fdaae6727b39169062e9e2b0a060bc9eae57cb2bf47516b7f77cb5"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/gates.py",
+      "sha256": "c4774a9d05b367ab9ead712ad08c36c972a7ecf7fa420276d3f54751c43a9f83"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/horizon.py",
+      "sha256": "3c0f9ff1def853518d693b46a4d50e0c60c72a6691722b922063eda3870aa6d6"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/lineage.py",
+      "sha256": "937eb6a70011861e8cae66e64833453f553053292e7fa75c989d7d9cd5f22e32"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/package.py",
+      "sha256": "b11d7d078d3e363e96b2735825da41eb279b4c3230ea0656e42d22ef287d3624"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/protocol.py",
+      "sha256": "8f1ff05f3861a66a424d58272cdc68f75cda5f168d64cc574ed72f592eab89b6"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/replay.py",
+      "sha256": "273f5b032f249be4a3f00ce38041d4ea6b9eef24b877b88d464c1f31a8d4cbbe"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/reports.py",
+      "sha256": "2d253e5695bae635ca58c9c53f2dde84654852b93fe77d575f39a6e74c287b36"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/tables.py",
+      "sha256": "25134e6f6103eac9754e5503131dd6c2d4f2471f733e4a662020d795cebe2c2f"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/train.py",
+      "sha256": "e68829d66d9f521a8814e6c9ba545fd71e862468701fecbf93b40d352ad420ac"
+    }
+  ],
+  "new_code_committed": false,
+  "scope": "317 working-tree source identity, not a fabricated release commit"
+}
