@@ -1,16 +1,16 @@
-# Data and Reproduction Availability Statement (A19 Preprints.org)
+# Data and Reproduction Availability Statement (A20 Preprints.org)
 
-**Document ID:** DLG-BENCH-DATA-PREPRINT-A19  
-**Date:** 2026-10-28 / 2026-10-29  
+**Document ID:** DLG-BENCH-DATA-PREPRINT-A20  
+**Date:** 2026-10-29  
 **Target Platform:** Preprints.org  
-**Benchmark Git Tag:** `benchmark-a19-submission-2026-10-28` (superseding `benchmark-a16-submission-2026-10-28`)  
+**Benchmark Git Tag:** `benchmark-a20-preprint-2026-10-29` (superseding `benchmark-a19-submission-2026-10-28`)  
 **Repository URL:** https://github.com/Sam-7878/dlg_gnn  
 
 ---
 
 ## 1. Summary of Publicly Available Artifacts
 
-All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a19-submission-2026-10-28` at https://github.com/Sam-7878/dlg_gnn.
+All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a20-preprint-2026-10-29` at https://github.com/Sam-7878/dlg_gnn.
 
 The public repository tag contains:
 1. **Source Code & Pipelines:** Clean, modular Python scripts to reproduce all Friedman tests, Monte Carlo permutations, denominator audits, and figures.
@@ -24,3 +24,4 @@ The public repository tag contains:
 In accordance with our submission integrity audit:
 - **Available Upon Reasonable Request:** High-resolution per-node anomaly score vectors ($y_{\text{score}}$) and binary label arrays ($y_{\text{true}}$) are author-locally preserved in compressed NumPy `.npz` format for all 105 cryptocurrency evaluations (Ethereum, BSC, and Polygon across 7 models and 5 seeds). Qualified academic researchers and peer reviewers may obtain these arrays by contacting the corresponding author (`kkim86@ajou.ac.kr`).
 - **Historical Runs Score Limitation:** 350 historical baseline runs (280 primary, 35 BitcoinOTC, 35 LANL runs) originally stored summary metric scalars rather than raw node-level score arrays. These arrays were not preserved at runtime and cannot be retroactively manufactured without invalidating the frozen benchmark protocol.
+

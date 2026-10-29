@@ -1,9 +1,9 @@
-# Gate A19-G5: Submission Gate Report and Canonical Checksum Ledger
+# Gate A20: Submission Gate Report and Canonical Checksum Ledger
 
-**Document ID:** `DLG-BENCH-GATE-A19-RELEASE`  
-**Date:** 2026-10-28 / 2026-10-29  
+**Document ID:** `DLG-BENCH-GATE-A20-RELEASE`  
+**Date:** 2026-10-29  
 **Status:** PASS (Canonical Ledger Synchronized with Disk Bytes)  
-**Predeclared Git Tag:** `benchmark-a19-submission-2026-10-28`  
+**Target Git Tag:** `benchmark-a20-preprint-2026-10-29` (superseding `benchmark-a19-submission-2026-10-28`)  
 
 ---
 
@@ -13,32 +13,35 @@ All cryptographic hashes below are computed directly from the final disk bytes:
 
 | Publication Target | Artifact File | Size (Bytes) | SHA-256 Digest | Status |
 |---|---|---|---|---|
-| **Preprints.org** | `DLG-Benchmark_A16_Preprints.pdf` | 609,252 | `2354ba74577ea629353ff94c920fe867275c56de7bd971510e42e0d342b1e8e9` | Verified |
-| **Preprints.org** | `DLG-Benchmark_A16_Preprints.tex` | 62,525 | `7fbeeef46d0a4d702a5b9a0212f9a25d12ee9b7409a64c54393a1da6da0e64a4` | Verified |
-| **Preprints.org** | `source_bundle.zip` | 884,516 | `dd90abd80dd076ba46ad036b7e71c250264ad8589eb0838d29c9bc5f09f2a527` | Verified |
-| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.pdf` | 368,793 | `0666f4500216e127501d215b2e97c035985164b5d2c760e1a081f736c7ddd942` | Verified |
-| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.tex` | 62,150 | `bc0bcf0ce1a2a3f44f1800d51db54310f9cdb9a6956283f4673bd3cc3f2ade8b` | Verified |
-| **Applied Sciences** | `source_bundle.zip` | 1,920,500 | `745308b3fbe524b2a9080985821870a94bdd77d5a0408b1a5a5341595f773c80` | Verified |
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.pdf` | 602,671 | `a4bc3dd65dba431dd23f7d0cbd74bfd744506c192e79e7d64cbd0bcb1805c96f` | Verified |
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.tex` | 66,043 | `f202bdf160fea13e9abfddf769890aaa3e0d6fc7e65afe17533b0c53809ba6d3` | Verified |
+| **Preprints.org** | `source_bundle.zip` | 816,138 | `1b685586ec2e34fad47615db952cc7977cb0280b07874bce6666418c8293ffc7` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.pdf` | 352,898 | `c44aa4c6cda155346b7e7eb5cfd13154952b198a634ae3afe841c77b80957af9` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.tex` | 65,671 | `257bc901b097709e891880a7d3cbde6bc77426fc7436125c48a7bff0f6d8a03a` | Verified |
+| **Applied Sciences** | `source_bundle.zip` | 1,852,125 | `2cf89c7e4376cded7daab1d3290542bcb78b2350cf931badeb5f5a28a56955fb` | Verified |
 
 ---
 
 ## 2. Compilation and Formatting Checks
 
 - **Preprints.org Manuscript:**
-  - Page Count: 20 pages (exact target)
+  - Page Count: 20 pages (target satisfied)
   - Undefined References: 0 (`undef refs: []`)
   - Undefined Citations: 0 (`undef cits: []`)
-  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, figures
+  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, figures matching disk bytes 1:1
 - **Applied Sciences Manuscript:**
-  - Page Count: 17 pages (exact target)
+  - Page Count: 19 pages (target satisfied)
   - Undefined References: 0 (`undef refs: []`)
   - Undefined Citations: 0 (`undef cits: []`)
-  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, Definitions, style files, figures
+  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, Definitions, style files, figures matching disk bytes 1:1
 
 ---
 
-## 3. Archival of Obsolete Gate Reports
+## 3. Evidence and Editorial Integrity Verification
 
-In accordance with Gate A19-G5 instructions:
-- Stale default reports (`SUBMISSION_GATE_REPORT.md` describing A13, `PREPRINT_GATE_REPORT.md` describing A13) and intermediate reports (`*_A14.md`, `*_A15.md`, `*_A16.md`) have been moved into `history/` subdirectories.
-- This report (`SUBMISSION_GATE_REPORT.md` / `A19_SUBMISSION_GATE_REPORT.md`) represents the sole authoritative gate report for release.
+- **BSC Source Map Alignment:** Verified test positive count vector $[215, 240, 232, 215, 203]$ across CSV, JSON, and prose (exact mean $221.0$).
+- **Score-Level Audit Disclosure:** High-resolution per-node anomaly score vectors preserved locally for 105 cryptocurrency evaluations; historical baseline 350 runs preserved as summary metrics without raw score arrays.
+- **Practitioner Decision Matrix (Table 7):** Feasibility strictly decoupled from detection accuracy; non-extrapolated coverage and prevalence thresholds calibrated to empirical evidence.
+- **Split Protocol Semantics:** Cryptocurrency splits audited as seeded random permutation (non-stratified 60/20/20); synthetic benchmark splits audited as stratified.
+- **Hardware Memory Semantics:** Reddit $4N^2 \approx 217$ GB dense lower bound and DGraphFin 6.0 TB clearly differentiated from measured VRAM and illustrative profiles.
+- **Figures:** All figures re-rendered from authentic empirical facts; zero unsupported architectural claims.
