@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from common import FROZEN, OUT, PROJECT, ROOT, SEEDS, load, sha, write_json
+from common import FROZEN, OUT, PAPER, PROJECT, ROOT, SEEDS, load, sha, write_json
 from historical_metrics import reliability_bins
 
 DISPLAY={'gin_bce':'Local GIN + weighted BCE','gin_focal':'Local GIN + weighted focal',
@@ -35,6 +35,7 @@ def tex_escape(v):
 
 
 def tex_table(path,caption,headers,rows,label):
+    path = PAPER / path.relative_to(OUT)
     content='\\begin{table}[H]\n\\caption{'+caption+'}\\label{'+label+'}\n\\centering\\small\n'
     content+='\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{l'+'r'*(len(headers)-1)+'}\n\\toprule\n'
     content+=' & '.join(headers)+r' \\'+'\n\\midrule\n'
@@ -44,6 +45,7 @@ def tex_table(path,caption,headers,rows,label):
 
 
 def save(fig,name):
+    (OUT/'figures').mkdir(parents=True, exist_ok=True)
     for ext in ['pdf','svg']:
         fig.savefig(OUT/'figures'/f'{name}.{ext}',bbox_inches='tight')
     plt.close(fig)

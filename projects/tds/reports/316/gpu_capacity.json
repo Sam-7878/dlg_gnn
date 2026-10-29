@@ -1,0 +1,12 @@
+{
+  "devices": [
+    "0, NVIDIA GeForce RTX 4070 Laptop GPU, 8188 MiB, 7465 MiB, 8.9",
+    "1, NVIDIA GeForce RTX 3090, 24576 MiB, 24322 MiB, 8.6"
+  ],
+  "memory_is_per_device_not_a_single_pooled_32GB_heap": true,
+  "observed_on": "2026-10-29",
+  "returncode": 0,
+  "scope": "316 explicitly prohibits new training; RTX3090 capacity reserved for a later approved scientific amendment",
+  "timezone": "Asia/Seoul",
+  "training_performed": false
+}

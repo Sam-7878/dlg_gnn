@@ -5,12 +5,15 @@
 TDS-common tools live in `projects/tds/scripts/`, public task documentation in
 `projects/tds/reports/315/`, publication metadata in `projects/tds/publication/315/`,
 and the submission index in `projects/tds/submission/applsci/315/`. New numeric
-task outputs use `projects/results/tds/315_applsci/`, following the author's
-explicit shared-results layout. Existing frozen `projects/tds/results/` is
-preserved. Private work orders remain in `docs/work_reports/tds/315_applsci/`.
+task outputs now use `projects/tds/results/315_applsci/`, following the author's
+latest instruction. The earlier `projects/results/tds/315_applsci/` content was
+moved without changing numeric payloads. R314 numeric experiments were separated
+into `projects/tds/results/314_applsci/`. Existing primary results stay unchanged.
+Private work orders remain in `docs/work_reports/tds/315_applsci/`.
 The canonical R314 manuscript input is `projects/tds/paper/applsci/`; its 315
-derivative is `paper/applsci/submission_315/`. Both remain Git-ignored, including
-writers and manuscript ZIPs. Historical old-path tracked deletions were already
+derivatives are `paper/applsci/submission_315/` and `paper/preprints/submission_315/`,
+generated from private `paper/common/315/`. Source ZIPs and author records are in
+private submission areas; QA/rollback are under `projects/tds/private/`. Historical old-path tracked deletions were already
 present before 315 and are not reset. Public numeric candidate contents are
 separately audited; this layout does not authorize a Git push or release.
 

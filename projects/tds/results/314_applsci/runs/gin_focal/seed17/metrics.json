@@ -1,0 +1,22 @@
+{
+  "adaptive_ece": 0.30091677175981824,
+  "arm": "gin_focal",
+  "auc_pr": 0.5102565758883173,
+  "auc_roc": 0.9185403563595478,
+  "best_epoch": 14,
+  "best_validation_ap": 0.726307745966144,
+  "brier": 0.11158673235261238,
+  "checkpoint_sha256": "90dd914ef205e79eef9ad959ad64c8d4b3348b92c9d8b1f1a0ee2150bb0e388b",
+  "convergence_plateau_or_solver_converged": true,
+  "dataset_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "device": "cuda:1",
+  "ece": 0.3014675182527291,
+  "elapsed_seconds": 32.447514535000664,
+  "f1": 0.5025125628140703,
+  "max_epoch_hit": false,
+  "nll": 0.40382477364679265,
+  "seed": 17,
+  "stopped_epoch": 19,
+  "test_access_count": 1,
+  "test_predictions_sha256": "50c33fc9a93f246ab2f7e16efe92832a29dfdec7c20fa30086f15297d6046a06"
+}

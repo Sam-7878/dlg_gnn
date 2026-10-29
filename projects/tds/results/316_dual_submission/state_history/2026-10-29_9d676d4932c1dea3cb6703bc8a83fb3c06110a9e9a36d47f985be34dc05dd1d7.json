@@ -1,0 +1,25 @@
+{
+  "abstract_sha256": "aecdf2d5f6cfa434dbe2058540bbe758727fcb487ecc62ae6a6aa91fae600836",
+  "date": "2026-10-29",
+  "platform": {
+    "POSTED_PREPRINT": false,
+    "PREPRINT_DOI": null,
+    "PREPRINT_URL": null,
+    "PREPRINT_VERSION": null,
+    "SUBMITTED_MDPI": false,
+    "SUBMITTED_PREPRINT": false
+  },
+  "source_hashes": {
+    "mdpi": {
+      "article": "4c0bed2ffff6edb79866e050b1f3650972166829081b4695719d7bc716b849ed",
+      "source_zip": "2d811f6dd4743bad4545430675da03507da9972f5165af0332a1aa1283514790",
+      "supplement": "7051c9bbb4286d9fc598934c4c06bff741df8f3069b9f09fde7f8d98c3dd2926"
+    },
+    "preprints": {
+      "article": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b",
+      "source_zip": "ab273dd46aeb3643731223c1b92f3f255238d4947a67f8d4091de68a560e5ec7",
+      "supplement": "273dcb97f01fc0331558ecde7627c903db0ce6ff17a7360a13d9bb8c02cf2046"
+    }
+  },
+  "title": "A Validity-First Evaluation of Graph Neural Networks under Temporal Distribution Shift"
+}

@@ -1,0 +1,17 @@
+{
+  "anonymous_release_download_verified": false,
+  "archive_sha256": "de45fe8c269792343f4125670a4fdc9ccecf93437b7d5633c75a92f9e486fb99",
+  "replay": {
+    "anonymous_access_tested": false,
+    "files_hashed": 123,
+    "full_representative_statistics_replayed": true,
+    "positives_per_file": 107,
+    "prediction_files": 65,
+    "samples_per_file": 3648,
+    "status": "PASS",
+    "supplemental_arms": 7
+  },
+  "status": "PASS_LOCAL_ONLY",
+  "tests": "..................                                                       [100%]\n=============================== warnings summary ===============================\n../..<workspace>/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485\n  <workspace>/.venv_cuda/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.\n    warnings.warn(\n\ntests/test_revision314.py: 31 warnings\n  <workspace>/.venv_cuda/lib/python3.14/site-packages/torch_geometric/inspector.py:433: DeprecationWarning: Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.\n    return typing._eval_type(value, _globals, None)  # type: ignore\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n18 passed, 32 warnings in 28.83s\n",
+  "training_performed": false
+}

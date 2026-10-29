@@ -1,0 +1,15 @@
+id,bounded_claim,location,evidence,preprint,mdpi
+task,"Supervised retrospective contract-category risk classification, not unsupervised novelty discovery",Abstract/Introduction/Related Work,dataset contract and frozen panel,PASS,PASS
+unit,24316 contract graphs; chronological count split17021/3647/3648,Methods,data/split_composition.csv,PASS,PASS
+label,Inherited Category0 positive; label knowledge time unavailable,Methods/Limitations,frozen GoG mapping,PASS,PASS
+horizon,18h57m10s;3648 test;107 positives;one Polygon positive,Methods/Results/Limitations,data/split_composition.csv,PASS,PASS
+controls,MLP AP0.4751±0.0351; matched BCE GIN0.4524±0.0566; historical GIN0.4648±0.0687 separate,Abstract/Results/Discussion,data/supplemental_summary.csv,PASS,PASS
+loss,GIN focal AP0.4885 with ECE0.3179,Results/Discussion,data/loss_fairness_results.csv,PASS,PASS
+statistics,Original7 and exploratory6 Holm families remain separate;0.0920 and0.1279 not familywise significant,Methods/Results/supplement,statistics/statistical_comparisons_corrected.csv,PASS,PASS
+calibration,Temperature scaling monotone within seed; ECE0.0357; ensemble NLL0.0986,Methods/Results,preserved numerical TeX and prediction vectors,PASS,PASS
+operating,37/183 alerts;top50/100 captures from frozen scores; no test-tuned intervention claim,Applied Anomaly-Screening Operating Points,data/operational_metrics.csv,PASS,PASS
+strict,"Fixed-checkpoint input-set stress test, no prospective retraining",Methods/Results,data/strict_time_sensitivity.csv,PASS,PASS
+features,Full-history degree before128-edge topology cap; deterministic ties not physical order,Methods,data/timestamp_tie_audit.csv,PASS,PASS
+state,Per-chain TGN predict-then-update and phase reset; absolute-time TGAT approximation,Methods,frozen scientific sources,PASS,PASS
+limits,"No unsupervised discovery, deployed monitoring, XAI, privacy guarantee or unique architecture contribution",Abstract/Discussion/Limitations,bounded text review,PASS,PASS
+declarations,Same A16-authorized roles/funding/ethics/AI text; final316 signoffs and COI pending,Back matter,private author records,PASS,PASS

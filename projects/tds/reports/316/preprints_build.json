@@ -1,0 +1,272 @@
+{
+  "all_text_and_pixels_identical": true,
+  "builds": [
+    {
+      "log_sha256": "afb2b82e6cd9acb9195db9ee99a736b9d955a92ad0da15c5ad025df724382d3d",
+      "pages": 14,
+      "pdf_sha256": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b",
+      "source": "preprint_main.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "66a245d5104ef7f668dbf6edd7ad96dfafdd885f15f46274933b891f437aab9f",
+      "pages": 4,
+      "pdf_sha256": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "clean_builds": [
+    {
+      "log_sha256": "af3d86673152bec189aeca31ba10a376d28d11236945c7f8900c8e0d1b395af6",
+      "pages": 14,
+      "pdf_sha256": "f1065d92fce0911a64b0b8b4e54a1af5c73686872d410d4c305a56a536f69df6",
+      "source": "preprint_main.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "66a245d5104ef7f668dbf6edd7ad96dfafdd885f15f46274933b891f437aab9f",
+      "pages": 4,
+      "pdf_sha256": "bd4147e10a0ac451c34f25b0bec120046ba395282129544aae02c5109292f5f1",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "corresponding_author_confirmation": false,
+  "first_page_metadata_displayed": true,
+  "neutral_template_verified": true,
+  "publisher_assets_in_preprint": false,
+  "rendered_pages": [
+    {
+      "document": "article",
+      "page": 1,
+      "path": "projects/tds/private/316/qa/preprints/article/page-01.png",
+      "pixel_sha256": "e9a8b73ef680081cbed8050a0367c213e15288bd0107503963bc74d3cfe4d684",
+      "sha256": "a15031cf7fea9771938348d49adbfcafe71dd25eecd5eba6124383528f0d4cbd"
+    },
+    {
+      "document": "article",
+      "page": 2,
+      "path": "projects/tds/private/316/qa/preprints/article/page-02.png",
+      "pixel_sha256": "d4dcb8336fbc8b0d7d75fe3ef9e6925f1c0ceefb6a2d14d1e24d2aadf24ad311",
+      "sha256": "ee6498ea8985998819f0bff5f65b7a14f6537c93152b0e6db38a65fe8841ef05"
+    },
+    {
+      "document": "article",
+      "page": 3,
+      "path": "projects/tds/private/316/qa/preprints/article/page-03.png",
+      "pixel_sha256": "aeb9987ccd8c863c0a14b21d2a479fea107db48f108e5f03e5555394f716dc08",
+      "sha256": "e8b7742354cd24b379f2de604279bc6e4d589b166ca07f1b23e5dfdaf84ef22a"
+    },
+    {
+      "document": "article",
+      "page": 4,
+      "path": "projects/tds/private/316/qa/preprints/article/page-04.png",
+      "pixel_sha256": "c0144a5bd26574552bffcd20e93adee1048554817522c55a655004b421ab3486",
+      "sha256": "bfcc6db679c090ab99aa9aee25870cade4cf8f8bcb2aa8e0e20ad7d901fe4fc4"
+    },
+    {
+      "document": "article",
+      "page": 5,
+      "path": "projects/tds/private/316/qa/preprints/article/page-05.png",
+      "pixel_sha256": "756c17c5e35922e7dd30fce9cfd8478bb95bf39e1edbac12b5a45e3e05e3310d",
+      "sha256": "a07d1069496a6e0d2dc2a52d3a29594b119de6a71baa9377e06448c0a641b1d4"
+    },
+    {
+      "document": "article",
+      "page": 6,
+      "path": "projects/tds/private/316/qa/preprints/article/page-06.png",
+      "pixel_sha256": "a015d47ca5888e11335b931110e758a61d5498685d28f962924747c732b20bd6",
+      "sha256": "6f6ae35a27989af66b719d20c03c190680012639b5e25bce8ba84cbe760378dd"
+    },
+    {
+      "document": "article",
+      "page": 7,
+      "path": "projects/tds/private/316/qa/preprints/article/page-07.png",
+      "pixel_sha256": "df1e2666570a8a5890dd82a5250c6bef154c53a949c70cd5afa1c746dd90f2e4",
+      "sha256": "7561bb6733908c55181e61a1426b0a9303aee50ae8e1f4794133c037e379f823"
+    },
+    {
+      "document": "article",
+      "page": 8,
+      "path": "projects/tds/private/316/qa/preprints/article/page-08.png",
+      "pixel_sha256": "b422a2ccefd60e0ca8adc60dd69c5d0d867e68bcf2bf8d751e1731fef9d29598",
+      "sha256": "682b621b75a7c92bda31bacee01854dad2ba543670fd16c7b4598e3b0d66ddd1"
+    },
+    {
+      "document": "article",
+      "page": 9,
+      "path": "projects/tds/private/316/qa/preprints/article/page-09.png",
+      "pixel_sha256": "7235acdb68e9900907371276ca27aaf17ce31e454002431a176d28c99cdf5a64",
+      "sha256": "e9ede3d6de71e00d94de41f5cac1fc3571f82e43001e87c2f6f9a33696bdfc83"
+    },
+    {
+      "document": "article",
+      "page": 10,
+      "path": "projects/tds/private/316/qa/preprints/article/page-10.png",
+      "pixel_sha256": "69c0c0a53fd7335bfca3bd2d703ca34c75ef38bf22cbdfa6d8358b954c89f841",
+      "sha256": "fd468750072332900a9fa3de26266fb4b93cb42532b1f0fab583f0214e4bc94c"
+    },
+    {
+      "document": "article",
+      "page": 11,
+      "path": "projects/tds/private/316/qa/preprints/article/page-11.png",
+      "pixel_sha256": "ec483f8c039d980ced4c62c46553ab1d807eaf0d4d80b4e180a6b98bc0ebab25",
+      "sha256": "f1d115456022d43194d8e4540b0d90f869b856afd16d3d393e078894e38b9e69"
+    },
+    {
+      "document": "article",
+      "page": 12,
+      "path": "projects/tds/private/316/qa/preprints/article/page-12.png",
+      "pixel_sha256": "8241cd7e83cb4521a34d71774323569889cd145148dcd3f29c37ed208f750275",
+      "sha256": "c22da078e71f7d7e2a7653e42841f5bd5d23fe78604fea9426f691250834e323"
+    },
+    {
+      "document": "article",
+      "page": 13,
+      "path": "projects/tds/private/316/qa/preprints/article/page-13.png",
+      "pixel_sha256": "8ccc9355bec8746f74c2bd1dde1dd3753d4239e54dc1ecfec47b6544a57f8caa",
+      "sha256": "afe6aa1bec678d62dd6060d1d81a49cef0b9c2d4f4cdb050815f98662af518af"
+    },
+    {
+      "document": "article",
+      "page": 14,
+      "path": "projects/tds/private/316/qa/preprints/article/page-14.png",
+      "pixel_sha256": "8dca24a58834fbbbe79dceb2b09b05634779d8c61b06a932fc266edf174e7cad",
+      "sha256": "fe29fef06c1013c5d57bfb88b318a8a6c25a3af071baadd07ecbb7605be5ed56"
+    },
+    {
+      "document": "supplement",
+      "page": 1,
+      "path": "projects/tds/private/316/qa/preprints/supplement/page-1.png",
+      "pixel_sha256": "e4f84f8577128c9b507d1a8c7207a77b6de008eb0d295b7c686be3f1165492d6",
+      "sha256": "f3c138287a2b5fedb0ebc0ecc53125e74a819830648a44114a9d922592a303ac"
+    },
+    {
+      "document": "supplement",
+      "page": 2,
+      "path": "projects/tds/private/316/qa/preprints/supplement/page-2.png",
+      "pixel_sha256": "a6f9094017c321ee07d092794e61f911f935ce56c6112d06abac23c021a23caf",
+      "sha256": "1b37ed3b604b692c48f4820a36964db8596438950ec278dd78fc3e224a4d276a"
+    },
+    {
+      "document": "supplement",
+      "page": 3,
+      "path": "projects/tds/private/316/qa/preprints/supplement/page-3.png",
+      "pixel_sha256": "07d3d20c1a99af3b58be2457f14bfd7a4725c46e52009358134b4fbbd1848da2",
+      "sha256": "3d862b242ecad821bbe46b5fc6e3e72934046a9c85e2d38cd4b081fc242c9065"
+    },
+    {
+      "document": "supplement",
+      "page": 4,
+      "path": "projects/tds/private/316/qa/preprints/supplement/page-4.png",
+      "pixel_sha256": "8ba6b5fa108112c4f5a27a6d7a3213c6ae3fbd6b21991e4de5de38c221693be7",
+      "sha256": "a7076de6923d2cb27f0e114847cc2bd3a0d032360b78d3a39dc2f0bcdeb78880"
+    }
+  ],
+  "source_entries": [
+    {
+      "path": "data/control_interpretation.tex",
+      "sha256": "940bf2d5a166ba0d0cf597b5f50652f44d1fa90e5ec0a984320d2093a3b6568e"
+    },
+    {
+      "path": "data/operational_interpretation.tex",
+      "sha256": "22e023d3309ec468cc5c094c3d52421599fd9753b85aae80a392658c8668313b"
+    },
+    {
+      "path": "data/strict_interpretation.tex",
+      "sha256": "3b85be877cd9ef3215825e25e8e85aad89f618535982d7309425be2272ee9ddb"
+    },
+    {
+      "path": "data/table_controls.tex",
+      "sha256": "ad94b7ec0afbf11593e225aab730407187a983714c57433b08f8b84c0f4e363c"
+    },
+    {
+      "path": "data/table_primary.tex",
+      "sha256": "669bfa0becabdc19bac0db9d46422d33aae8265fc6e49d1cd91fb4cb01bd9848"
+    },
+    {
+      "path": "data/table_split.tex",
+      "sha256": "7ceba0c04743c5b6c22fde845116e4b74a4b44878f2177666178bb41e1bc4e0b"
+    },
+    {
+      "path": "data/table_statistics.tex",
+      "sha256": "85ec687287d040db86e6056d2f8ee8ef004f21b3468951b754dbefd8eae1853a"
+    },
+    {
+      "path": "figures/fig1_framework.pdf",
+      "sha256": "69a1d0cfa887714fae5179704dcaa53fccb3c4baebd013a07fd95f3571bf406b"
+    },
+    {
+      "path": "figures/fig1_framework.svg",
+      "sha256": "5f0f8b5b09659d72f3ceaad61c3acd85c643bbd3c03f72caaca2e70c2483854e"
+    },
+    {
+      "path": "figures/fig2_temporal_shift.pdf",
+      "sha256": "ee7f4bf009b55d534d430e09d35573a90b6ad931233d3910cbf86cd3b77a8d72"
+    },
+    {
+      "path": "figures/fig2_temporal_shift.svg",
+      "sha256": "f604557f8b533bb9789b0fefad22dc3c4df632eafc6906f9c24a36b5082d7044"
+    },
+    {
+      "path": "figures/fig3_mc_sensitivity.pdf",
+      "sha256": "2e216003ff4e5a6e0858f145c78d8c2379acd7528ecd2a3c893fd0effa2d9a24"
+    },
+    {
+      "path": "figures/fig3_mc_sensitivity.svg",
+      "sha256": "85e95378a979f9ef56d80ab360c9636f458a30a9b2193af518c6256b8ab4f04a"
+    },
+    {
+      "path": "figures/fig4_reliability.pdf",
+      "sha256": "b9ac5f0d1d9245ba68f7bfc90b5686d7b66c3d28ce366430708fad813cf14d09"
+    },
+    {
+      "path": "figures/fig4_reliability.svg",
+      "sha256": "2f71852804c5e324cfd484640b7e2c6a201d220d1807632c80aa6a396a23de05"
+    },
+    {
+      "path": "figures/optional_fig5_convergence.pdf",
+      "sha256": "3ac6ba1a8ce254ac6e5cb3afc44061e000b4bc1629a5e4f77f9e1333bfa71716"
+    },
+    {
+      "path": "figures/optional_fig5_convergence.svg",
+      "sha256": "2e4da6bc507a191bdcb3b907c73dff181ce85cd7d54aca6fbe91be6022b6ce8b"
+    },
+    {
+      "path": "manuscript_body.tex",
+      "sha256": "2e34690e1bb948aaaf54bde3fe741ff9580981277b795a2d01fbea66ed7eda4f"
+    },
+    {
+      "path": "preprint_main.pdf",
+      "sha256": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b"
+    },
+    {
+      "path": "preprint_main.tex",
+      "sha256": "6f9c14950d5d72d2a6155b2a63381de56646f1048239bea576c29c231d34ca51"
+    },
+    {
+      "path": "references.bib",
+      "sha256": "22f4c9054e5d0942ec9c650049be9e9df03f83d9c6ef66953f5354ac4e744e2a"
+    },
+    {
+      "path": "supplement/supplementary.pdf",
+      "sha256": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed"
+    },
+    {
+      "path": "supplement/supplementary.tex",
+      "sha256": "161d4b86b07b8336d77243cd8141ac88c0b57d77efe48be2daae121741b18752"
+    },
+    {
+      "path": "supplement/table_control_statistics.tex",
+      "sha256": "1314a35ab8264a513f7cbef9561c98f172a0a992431ccc7578371748af2cef57"
+    }
+  ],
+  "source_zip": {
+    "crc": "PASS",
+    "path": "projects/tds/submission/preprints/316/preprint_source.zip",
+    "sha256": "a6b09cab8aa3b5b6a73b7402b9383e6a41f6fff222c62186f7167dd2e482db02"
+  },
+  "status": "PASS",
+  "venue": "preprints"
+}

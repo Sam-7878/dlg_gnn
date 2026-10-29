@@ -1,0 +1,34 @@
+{
+  "SUBMISSION_READY": false,
+  "SUBMITTED": false,
+  "date": "2026-10-29",
+  "decision": "HOLD_AUTHOR_ACTION",
+  "journal": {
+    "submitted": false
+  },
+  "numeric_release_published": false,
+  "pending": [
+    "Final venue-specific author approval and corresponding-author identity",
+    "Official award evidence and remaining declarations",
+    "Immutable numeric TDS release and anonymous verification",
+    "Live platform checks; current official MDPI template equivalence"
+  ],
+  "preprint": {
+    "doi": null,
+    "posted": false,
+    "url": null
+  },
+  "prior_315_approval_hashes_superseded": true,
+  "results_root": "projects/tds/results",
+  "scientific_evidence_complete": true,
+  "shared_body_sha256": "a19f96269c609fbbc3b033a6f53899c7835acaee1f9f2a5bbb317ecb6891e700",
+  "target": {
+    "authority": "User-specified target; direct official page returned HTTP429",
+    "deadline": null,
+    "direct_page_verified": false,
+    "journal": "Applied Sciences",
+    "special_issue": "Machine Learning and Its Application for Anomaly Detection",
+    "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt"
+  },
+  "venue_builds_pass": true
+}

@@ -1,0 +1,11 @@
+{
+  "aligned_test_arrays": 65,
+  "graph_sha256": "067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd",
+  "n": 3648,
+  "new_training": false,
+  "positive": 107,
+  "primary_artifacts": 88,
+  "primary_checkpoints": 20,
+  "status": "PASS",
+  "supplemental_checkpoints": 35
+}

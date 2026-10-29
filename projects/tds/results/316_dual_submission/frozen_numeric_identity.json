@@ -1,0 +1,80 @@
+{
+  "entries": [
+    {
+      "path": "projects/tds/results/316_dual_submission/data/calibration_direction_audit.csv",
+      "sha256": "820b7361e25437e6031aedbf4189c5a5bd31479a7ed07c007c2fe27f8b90a565",
+      "source": "projects/tds/results/314_applsci/data/calibration_direction_audit.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/chain_ablation.csv",
+      "sha256": "a86fe90faf6c51ab4f0ebed9e84ac78333c7629335f470fb9865afc51824ef69",
+      "source": "projects/tds/results/314_applsci/data/chain_ablation.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/entity_overlap.csv",
+      "sha256": "749d07180befe7289590c5cf82f3e0abfa0282801bab53f64aa70e7ca8c6c853",
+      "source": "projects/tds/results/314_applsci/data/entity_overlap.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/loss_fairness_results.csv",
+      "sha256": "251999c1e3073653813288874ff7ef793b3c2b8ee095c2fd79c00870894eebc7",
+      "source": "projects/tds/results/314_applsci/data/loss_fairness_results.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/mc_sensitivity_per_seed.csv",
+      "sha256": "c0300eeaf2154dc379a7be430f48b8c937cafd3a49888782765458b504aa35e4",
+      "source": "projects/tds/results/314_applsci/data/mc_sensitivity_per_seed.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/mc_sensitivity_summary.csv",
+      "sha256": "60cd3b1b24125d1504e92e80a2c592a921c3c8f8571122a68f416bb96b1c515a",
+      "source": "projects/tds/results/314_applsci/data/mc_sensitivity_summary.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/operational_metrics.csv",
+      "sha256": "1828f3a4f51a4a65ce7a50a14e721093af04e37d8ddc659e19df60a3b960394e",
+      "source": "projects/tds/results/314_applsci/data/operational_metrics.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/simple_baselines.csv",
+      "sha256": "460df1679e1439613ac9f8dee8cb71b95c00a4aa274bc27dd16132f4819772e6",
+      "source": "projects/tds/results/314_applsci/data/simple_baselines.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/split_composition.csv",
+      "sha256": "d4185aba57b1a1e66737358dd81c3dfcff6cb9107e42ff3d7f390abadb7fd1be",
+      "source": "projects/tds/results/314_applsci/data/split_composition.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/strict_time_sensitivity.csv",
+      "sha256": "d4a26f588be545a8a573f5d60c9f33cadf79566f6a631cc349f13b92e4be7d32",
+      "source": "projects/tds/results/314_applsci/data/strict_time_sensitivity.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/supplemental_summary.csv",
+      "sha256": "31885bc83c902b514d54eb6863d30a257ff7f10e5fd0e0f49853c88e37262c80",
+      "source": "projects/tds/results/314_applsci/data/supplemental_summary.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/data/timestamp_tie_audit.csv",
+      "sha256": "79c229c3794b06951b273502c2bd86914cafb32a9c22ab52725b76be2961c371",
+      "source": "projects/tds/results/314_applsci/data/timestamp_tie_audit.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/statistics/statistical_comparisons_corrected.csv",
+      "sha256": "36bb5b580c5a6b1e0b88cbfe62893e4b9194b5e6fbf9a846bc4dfbaf090c577c",
+      "source": "projects/tds/results/314_applsci/supplement/statistical_comparisons_corrected.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/statistics/control_statistical_comparisons.csv",
+      "sha256": "c6a88f500ec42c56d361ddd4665dfc6c6435ce724c936343bf2c6e7e7d5c465e",
+      "source": "projects/tds/results/314_applsci/supplement/control_statistical_comparisons.csv"
+    },
+    {
+      "path": "projects/tds/results/316_dual_submission/statistics/reliability_bin_support.csv",
+      "sha256": "f1d790ca6137b35db2cc4c141e1edde8cfd05ed912be28b876155b6d57c4b723",
+      "source": "projects/tds/results/314_applsci/supplement/reliability_bin_support.csv"
+    }
+  ],
+  "scientific_primary_and_supplemental_results_changed": false
+}

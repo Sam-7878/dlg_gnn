@@ -1,0 +1,77 @@
+{
+  "url": "https://api.github.com/repos/Sam-7878/dlg_gnn/releases?per_page=100",
+  "status": 200,
+  "authenticated": false,
+  "releases": [
+    {
+      "tag": "stream-mc-r02-20261012",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/stream-mc-r02-20261012",
+      "draft": false,
+      "assets": [
+        {
+          "name": "r01_numeric_evidence.zip.part001",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part001"
+        },
+        {
+          "name": "r01_numeric_evidence.zip.part002",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part002"
+        },
+        {
+          "name": "r01_numeric_evidence.zip.part003",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_numeric_evidence.zip.part003"
+        },
+        {
+          "name": "r01_release.json",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r01_release.json"
+        },
+        {
+          "name": "r02_release_checksums.sha256",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_release_checksums.sha256"
+        },
+        {
+          "name": "r02_scientific_source.zip",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_scientific_source.zip"
+        },
+        {
+          "name": "r02_verification_evidence.zip",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/r02_verification_evidence.zip"
+        },
+        {
+          "name": "RELEASE_R02_README.md",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/stream-mc-r02-20261012/RELEASE_R02_README.md"
+        }
+      ]
+    },
+    {
+      "tag": "benchmark-a09-2026-10-10",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a09-2026-10-10",
+      "draft": false,
+      "assets": [
+        {
+          "name": "a08_public_numeric_evidence.zip",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/benchmark-a09-2026-10-10/a08_public_numeric_evidence.zip"
+        },
+        {
+          "name": "a09_submission_closure_companion.zip",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/benchmark-a09-2026-10-10/a09_submission_closure_companion.zip"
+        },
+        {
+          "name": "SHA256SUMS_A09.txt",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/benchmark-a09-2026-10-10/SHA256SUMS_A09.txt"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0-preprint",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/v1.0.0-preprint",
+      "draft": false,
+      "assets": [
+        {
+          "name": "DLG_GNN_Benchmark_v1.0.0_preprint.zip",
+          "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/v1.0.0-preprint/DLG_GNN_Benchmark_v1.0.0_preprint.zip"
+        }
+      ]
+    }
+  ],
+  "release_verified": false
+}

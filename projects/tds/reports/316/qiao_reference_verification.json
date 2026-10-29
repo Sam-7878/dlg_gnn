@@ -1,0 +1,134 @@
+{
+  "bytes": 21155,
+  "publisher_registered_metadata": {
+    "DOI": "10.1109/tkde.2025.3581578",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3511-0528",
+        "affiliation": [
+          {
+            "name": "School of Computing and Information Systems, Singapore Management University, Singapore"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Qiao",
+        "given": "Hezhe",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Computer Science, University of Illinois at Urbana-Champaign, Champaign, IL, USA"
+          }
+        ],
+        "family": "Tong",
+        "given": "Hanghang",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7064-7438",
+        "affiliation": [
+          {
+            "name": "College of Computing and Data Science, Nanyang Technological University, Singapore"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "An",
+        "given": "Bo",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8106-6447",
+        "affiliation": [
+          {
+            "name": "Department of Computer Science &#x0026; Engineering, Chinese University of Hong Kong, Hong Kong"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "King",
+        "given": "Irwin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2579-7581",
+        "affiliation": [
+          {
+            "name": "IBM T. J. Watson Research Center, Yorktown Heights, NY, USA"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Aggarwal",
+        "given": "Charu",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9877-2716",
+        "affiliation": [
+          {
+            "name": "School of Computing and Information Systems, Singapore Management University, Singapore"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Pang",
+        "given": "Guansong",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "IEEE Transactions on Knowledge and Data Engineering"
+    ],
+    "issue": "9",
+    "page": "5106-5126",
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          9
+        ]
+      ]
+    },
+    "title": [
+      "Deep Graph Anomaly Detection: A Survey and New Perspectives"
+    ],
+    "volume": "37"
+  },
+  "sha256": "61ffb5cf3c07c1005c2107d2d67637de5d8029236449315af3d868dd95bc516c",
+  "status": 200,
+  "url": "https://api.crossref.org/works/10.1109%2FTKDE.2025.3581578"
+}

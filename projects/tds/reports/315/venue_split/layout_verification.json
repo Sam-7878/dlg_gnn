@@ -1,0 +1,46 @@
+{
+  "frozen_inputs_verified": 405,
+  "manuscript_sources_private": true,
+  "moved_file_count": 391,
+  "old_results_location_removed": true,
+  "posted": false,
+  "private_paths_ignored": [
+    "projects/tds/paper/applsci/submission_315/applsci_article.tex",
+    "projects/tds/paper/preprints/submission_315/TDS_315_Preprints.tex",
+    "projects/tds/paper/common/315/prepare.py",
+    "projects/tds/submission/author_records/315/credit_confirmed.json",
+    "projects/tds/submission/applsci/315/TDS_315_applsci_sources.zip",
+    "projects/tds/submission/preprints/315/TDS_315_preprints_sources.zip"
+  ],
+  "public_numeric_paths_git_eligible": [
+    "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed7.csv",
+    "projects/tds/results/314_applsci/data/supplemental_summary.csv",
+    "projects/tds/results/historical_reviewed_draft/data/data_fig3_reliability.csv",
+    "projects/tds/publication/315/TDS_315_numeric_candidate.zip",
+    "projects/tds/reports/315/venue_split/README.md"
+  ],
+  "pushed": false,
+  "result_files_in_paper": [],
+  "shared_body_and_bibliography_identical": true,
+  "source_changes_recorded": [
+    {
+      "after": "f3a64e29a5e59e54ce278cc157361520cef3df1af4684abe7e5da5829ae85c5d",
+      "before": "459db94dff5cce100f2b15a4924dd3a5a3ca1c2027308438e67c3579bda3637e",
+      "path": "projects/tds/scripts/revision314/common.py",
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
+    },
+    {
+      "after": "012b8846e108cd6179dbda56b8b9270c3b9f6092ace757390a20911f2f3be492",
+      "before": "22862002f46b6e023dbbcd7a1a2918f0da696861aea9ec4415f693fd894605db",
+      "path": "projects/tds/scripts/revision314/outputs.py",
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
+    },
+    {
+      "after": "b22b36c0f3f7a2bf869b68d4ab93d9c30e0a5768b01e51c95e2545cf1bc9f9fa",
+      "before": "d31321a1814e567a1e99fdf34078f19a9cea1e73ee45330522bbb12383200041",
+      "path": "projects/tds/scripts/revision314/seal_packages.py",
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,8 @@
+left,right,entity,n_left,n_right,intersection,new_entity_fraction_right
+train,validation,chain:contract,17021,3647,0,1.0
+train,validation,contract_hex_cross_chain,16958,3635,24,0.9933975240715268
+train,test,chain:contract,17021,3648,0,1.0
+train,test,contract_hex_cross_chain,16958,3607,30,0.9916828389243139
+validation,test,chain:contract,3647,3648,0,1.0
+validation,test,contract_hex_cross_chain,3635,3607,36,0.9900194067091767
+train+validation,test_positive,chain:contract,20668,107,0,1.0

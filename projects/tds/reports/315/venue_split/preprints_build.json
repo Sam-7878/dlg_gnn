@@ -1,0 +1,174 @@
+{
+  "all_clean_text_and_pixels_identical": true,
+  "builds": [
+    {
+      "log_sha256": "aca9d746a993192aa23b5861832811bdea6dc2be26ae137cca72d98cd467e152",
+      "pages": 14,
+      "pdf_sha256": "9e6d325e3648731eee3bc51d0058354fd5a709bb1b535a7aa1d3b67c3f9389d4",
+      "source": "TDS_315_Preprints.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "04a3767e1b3b93609500f468668670bfee7901ece34eacaf0fccda9ebd5e8982",
+      "pages": 4,
+      "pdf_sha256": "3b32f21fd53c66518089da5d8af1b4def259c37bb241ba60ea644222cd8e79c5",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "clean_builds": [
+    {
+      "log_sha256": "aca9d746a993192aa23b5861832811bdea6dc2be26ae137cca72d98cd467e152",
+      "pages": 14,
+      "pdf_sha256": "847524597fa65dde56fe84f7c0cdf4b0e04286cdfc2c0d4dd197d2fb25d0e471",
+      "source": "TDS_315_Preprints.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "5d4c05c281958283314c9cd98a16a6050526db6b19805999c5b24c3fbe5c745d",
+      "pages": 4,
+      "pdf_sha256": "a68e1e2291be2fcc036a0fc9c17624ca73073a9fed41132510cd3166936f41df",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "manuscript_body_sha256": "a19f96269c609fbbc3b033a6f53899c7835acaee1f9f2a5bbb317ecb6891e700",
+  "numeric_results_in_manuscript_folder": false,
+  "rendered_pages": [
+    {
+      "document": "article",
+      "page": 1,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-01.png",
+      "pixel_sha256": "b55785daaa4a5be0379f50a25049f6dce7bf87577923a4e13a91399e336b44f4",
+      "sha256": "a6747e9a1a331d69de6ab95c1d12a472c61b7378201fcad2f56f8eb4ce811115"
+    },
+    {
+      "document": "article",
+      "page": 2,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-02.png",
+      "pixel_sha256": "f7e3e8bc95dbfef93daffcf333d204639febbeb63534fce503b84b0c2ddaafec",
+      "sha256": "97359cece25477a04bb60d542450136bc4f205cee6cd1f67401cd4ed4a942615"
+    },
+    {
+      "document": "article",
+      "page": 3,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-03.png",
+      "pixel_sha256": "e34b0ece7a65ff3898434255090e5dc94e63cb568075aca367baf3740330eada",
+      "sha256": "2699d0089f31129a95f8eac3df344185c85017c4187dd455d9770f8ad30e0a63"
+    },
+    {
+      "document": "article",
+      "page": 4,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-04.png",
+      "pixel_sha256": "0635eed5a2bf71cab85646a74c7d571256389e4aac43a64ebcdb0b0517e8fe2d",
+      "sha256": "853864d32e5907d0a501ce4e325dbc6d168e94ebd7908ff8377699e8e08eebac"
+    },
+    {
+      "document": "article",
+      "page": 5,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-05.png",
+      "pixel_sha256": "f8f2dadfae0dc3dcf68709ade88da0703f02281dbea9b7f91e9fbf519d94764f",
+      "sha256": "d8ea3c5322097e910c1532a0160cc430336dbea2e85a84b9e4c83fa1c27ee7d0"
+    },
+    {
+      "document": "article",
+      "page": 6,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-06.png",
+      "pixel_sha256": "3daaf26af19beab1eeb39efd39355279b5b87354f208511cfaebfc18e8627dec",
+      "sha256": "64a5101ebf0eedf8a85a3e320915c944064a965f4bbf1e9fd6e9a296546fbd1c"
+    },
+    {
+      "document": "article",
+      "page": 7,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-07.png",
+      "pixel_sha256": "df1e2666570a8a5890dd82a5250c6bef154c53a949c70cd5afa1c746dd90f2e4",
+      "sha256": "7561bb6733908c55181e61a1426b0a9303aee50ae8e1f4794133c037e379f823"
+    },
+    {
+      "document": "article",
+      "page": 8,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-08.png",
+      "pixel_sha256": "25af383326a33081da280b48af5280ac2dad68effb14c007c4dae8befd05d0f2",
+      "sha256": "a6877ffaba2d1fa1365fc268a0752126992952f9cf006e3cfedc18da05f5cb31"
+    },
+    {
+      "document": "article",
+      "page": 9,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-09.png",
+      "pixel_sha256": "ad67c7a783fd8f09cf24d8dede96fb8e88858f22888aedd10851965bf308b3f9",
+      "sha256": "b0750b47f45e3d2d15e0d880cd742421e635049797366ed31572bb6ad123dfc9"
+    },
+    {
+      "document": "article",
+      "page": 10,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-10.png",
+      "pixel_sha256": "10c0ad868f18e32c0774fb0dce3512e2c9c5881bf098fc494de5feb30da07a26",
+      "sha256": "3e82af8e49188fb991355b4cfce45497e6231da2a4c562e1f3045d66cb318352"
+    },
+    {
+      "document": "article",
+      "page": 11,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-11.png",
+      "pixel_sha256": "bc3fd0566d85f0faf8234f3a0fa1acc9802ff120e0d4229d5b73f91fce14f8bd",
+      "sha256": "6965d16503f68f79c42f539c42e1397d2f6873d74c644a8b4729af1a90ce8ef4"
+    },
+    {
+      "document": "article",
+      "page": 12,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-12.png",
+      "pixel_sha256": "303953df08f1dde7aab64473a6b6884508e16e078150a61646f9b857a4f7cd4b",
+      "sha256": "5fc5df18bc16e80ca1b91ffd611e92f80e4003f4333dea31ffb80d9b36f0ada6"
+    },
+    {
+      "document": "article",
+      "page": 13,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-13.png",
+      "pixel_sha256": "4d81626b9d46ca930f0a42e9d795a1ad0fb9fd081dc53d18ee1ce9bc6b3eee99",
+      "sha256": "6523a0db4208896e803cd3ea22fd17bd2f23b7a6bffd08802249bc3bb4170865"
+    },
+    {
+      "document": "article",
+      "page": 14,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/article/page-14.png",
+      "pixel_sha256": "576b596f0eba27eb092116aa9422f7698eca3e47b709fd1dcd715f978c13314c",
+      "sha256": "216a72b1152ed8f5a3c9dc55d45d83b6da033115a833df49fec41ee6e7a29f51"
+    },
+    {
+      "document": "supplement",
+      "page": 1,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/supplement/page-1.png",
+      "pixel_sha256": "c66ddcfcb2077ac6cefc4b34fdab43ca447a5f2ce6d53dc31b1954a8aae4a5d9",
+      "sha256": "6e6d541d194ed9d544468529eebd9f37ddcaaf9da235df8dd15a6e5438f7c5ca"
+    },
+    {
+      "document": "supplement",
+      "page": 2,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/supplement/page-2.png",
+      "pixel_sha256": "a6f9094017c321ee07d092794e61f911f935ce56c6112d06abac23c021a23caf",
+      "sha256": "1b37ed3b604b692c48f4820a36964db8596438950ec278dd78fc3e224a4d276a"
+    },
+    {
+      "document": "supplement",
+      "page": 3,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/supplement/page-3.png",
+      "pixel_sha256": "07d3d20c1a99af3b58be2457f14bfd7a4725c46e52009358134b4fbbd1848da2",
+      "sha256": "3d862b242ecad821bbe46b5fc6e3e72934046a9c85e2d38cd4b081fc242c9065"
+    },
+    {
+      "document": "supplement",
+      "page": 4,
+      "path": "projects/tds/private/315_venue_split/qa/preprints/supplement/page-4.png",
+      "pixel_sha256": "296a7dfd4d1d21d43451b7b1bbb7b678fc642110ce6e4203dab7f98e00f3a8ae",
+      "sha256": "c5c5ee4e5b17068bfecfa7e1b4bf06af1f71332538f050d4b202de21fcfd3e46"
+    }
+  ],
+  "source_zip": {
+    "bytes": 551605,
+    "crc": "PASS",
+    "path": "projects/tds/submission/preprints/315/TDS_315_preprints_sources.zip",
+    "sha256": "4fa29b9ff828f56a7c4b6bb798c56e4e6e71a27927d041402385c58233cd2e30"
+  },
+  "status": "PASS",
+  "submitted": false,
+  "venue": "preprints"
+}

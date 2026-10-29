@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-29",
+  "journal": {
+    "preprint_disclosure_required_after_actual_posting": true,
+    "submitted": false
+  },
+  "manuscript_sources_private": true,
+  "preprint": {
+    "doi": null,
+    "platform": "Preprints.org",
+    "posted": false,
+    "url": null
+  },
+  "results_root": "projects/tds/results",
+  "target": {
+    "authority": "User-specified target; direct official page returned HTTP429",
+    "deadline": null,
+    "direct_page_verified": false,
+    "journal": "Applied Sciences",
+    "special_issue": "Machine Learning and Its Application for Anomaly Detection",
+    "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt"
+  }
+}

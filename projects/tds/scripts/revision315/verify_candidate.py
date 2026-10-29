@@ -18,13 +18,13 @@ def main():
         assert z.testzip() is None
         assert all((scratch/n).resolve().is_relative_to(scratch) for n in z.namelist())
         z.extractall(scratch)
-    replay=subprocess.run([sys.executable,'replay.py','.'],cwd=scratch,text=True,capture_output=True)
+    replay=subprocess.run([sys.executable,'replay.py','.', '--statistics'],cwd=scratch,text=True,capture_output=True)
     assert replay.returncode==0,(replay.stdout,replay.stderr)
     tests=subprocess.run([sys.executable,'-m','pytest','tests/test_revision314.py','-q'],
                          cwd=scratch,text=True,capture_output=True)
     assert tests.returncode==0,(tests.stdout,tests.stderr)
     assert '8 passed' in tests.stdout
-    full=json.loads(Path('/tmp/tds315_candidate_replay.log').read_text())
+    full=json.loads(replay.stdout)
     assert full['status']=='PASS' and full['full_representative_statistics_replayed'] is True
     write(REPORTS/'candidate_local_verification.json',dict(
         status='PASS_LOCAL_ONLY',archive_sha256=sha(archive),crc='PASS',

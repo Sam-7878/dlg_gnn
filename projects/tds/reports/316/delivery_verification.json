@@ -1,0 +1,27 @@
+{
+  "frozen_scores_preserved": 65,
+  "manuscript_folder_result_files": [],
+  "no_platform_action_performed": true,
+  "private_files_ignored": [
+    "projects/tds/paper/submission_316/shared/prepare.py",
+    "projects/tds/paper/submission_316/shared/sections/manuscript_body.tex",
+    "projects/tds/paper/submission_316/preprints/preprint_main.tex",
+    "projects/tds/paper/submission_316/mdpi_applsci_anomaly/applsci_article.tex",
+    "projects/tds/submission/author_records/316/author_facts.json",
+    "projects/tds/submission/preprints/316/preprint_source.zip",
+    "projects/tds/submission/applsci/316/mdpi_source.zip",
+    "projects/tds/submission/preprints/316/metadata_preprints.json",
+    "projects/tds/submission/applsci/316/metadata_applsci_anomaly.json"
+  ],
+  "public_files_git_eligible": [
+    "projects/tds/publication/316/TDS_316_numeric_release_candidate.zip",
+    "projects/tds/results/316_dual_submission/input_manifest.json",
+    "projects/tds/reports/316/submission_readiness_316.json",
+    "projects/tds/scripts/revision316/build.py",
+    "projects/tds/tests/test_submission316.py"
+  ],
+  "source_zip_crc_and_pdf_hashes": true,
+  "status": "PASS",
+  "syntax_checked_files": 11,
+  "verified_public_release": false
+}

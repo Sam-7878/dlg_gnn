@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "path": "projects/tds/paper/submission_316/preprints/figures/fig1_framework.pdf",
+      "sha256": "69a1d0cfa887714fae5179704dcaa53fccb3c4baebd013a07fd95f3571bf406b"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/figures/fig2_temporal_shift.pdf",
+      "sha256": "ee7f4bf009b55d534d430e09d35573a90b6ad931233d3910cbf86cd3b77a8d72"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/figures/fig3_mc_sensitivity.pdf",
+      "sha256": "2e216003ff4e5a6e0858f145c78d8c2379acd7528ecd2a3c893fd0effa2d9a24"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/figures/fig4_reliability.pdf",
+      "sha256": "b9ac5f0d1d9245ba68f7bfc90b5686d7b66c3d28ce366430708fad813cf14d09"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/figures/optional_fig5_convergence.pdf",
+      "sha256": "3ac6ba1a8ce254ac6e5cb3afc44061e000b4bc1629a5e4f77f9e1333bfa71716"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/preprint_article.pdf",
+      "sha256": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/preprint_main.pdf",
+      "sha256": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/preprint_supplement.pdf",
+      "sha256": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/preprints/supplement/supplementary.pdf",
+      "sha256": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/Definitions/logo-mdpi-eps-converted-to.pdf",
+      "sha256": "a484622feb8c88b75adfd00d73145417b77d1a8dcade3d3474e69601493a3a10"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/Definitions/logo-orcid.pdf",
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/Definitions/logo-updates-eps-converted-to.pdf",
+      "sha256": "671d5fb53bb5c930440bad6959ab00a6d73d0435d1d928bdeea4e36eb53d12fb"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/applsci_article.pdf",
+      "sha256": "4c0bed2ffff6edb79866e050b1f3650972166829081b4695719d7bc716b849ed"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/figures/fig1_framework.pdf",
+      "sha256": "69a1d0cfa887714fae5179704dcaa53fccb3c4baebd013a07fd95f3571bf406b"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/figures/fig2_temporal_shift.pdf",
+      "sha256": "ee7f4bf009b55d534d430e09d35573a90b6ad931233d3910cbf86cd3b77a8d72"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/figures/fig3_mc_sensitivity.pdf",
+      "sha256": "2e216003ff4e5a6e0858f145c78d8c2379acd7528ecd2a3c893fd0effa2d9a24"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/figures/fig4_reliability.pdf",
+      "sha256": "b9ac5f0d1d9245ba68f7bfc90b5686d7b66c3d28ce366430708fad813cf14d09"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/figures/optional_fig5_convergence.pdf",
+      "sha256": "3ac6ba1a8ce254ac6e5cb3afc44061e000b4bc1629a5e4f77f9e1333bfa71716"
+    },
+    {
+      "path": "projects/tds/paper/submission_316/mdpi_applsci_anomaly/supplement/supplementary.pdf",
+      "sha256": "81ca32ccac8ee5b7d9eeeed04af8ff76eec84a416a9e0212842b4440fda0b888"
+    },
+    {
+      "path": "projects/tds/submission/preprints/316/preprint_main.pdf",
+      "sha256": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b"
+    },
+    {
+      "path": "projects/tds/submission/preprints/316/supplement/supplementary.pdf",
+      "sha256": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed"
+    },
+    {
+      "path": "projects/tds/submission/applsci/316/applsci_article.pdf",
+      "sha256": "4c0bed2ffff6edb79866e050b1f3650972166829081b4695719d7bc716b849ed"
+    },
+    {
+      "path": "projects/tds/submission/applsci/316/supplement/supplementary.pdf",
+      "sha256": "81ca32ccac8ee5b7d9eeeed04af8ff76eec84a416a9e0212842b4440fda0b888"
+    },
+    {
+      "path": "projects/tds/submission/preprints/316/preprint_source.zip",
+      "sha256": "a6b09cab8aa3b5b6a73b7402b9383e6a41f6fff222c62186f7167dd2e482db02"
+    },
+    {
+      "path": "projects/tds/submission/applsci/316/mdpi_source.zip",
+      "sha256": "e2a0b9c10ea468991ab28562ff44560332d73d51600763fae97f31f8a29d7d57"
+    }
+  ]
+}

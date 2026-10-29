@@ -13,8 +13,9 @@ from torch_geometric.data import Data
 
 ROOT = Path(__file__).resolve().parents[4]
 PROJECT = ROOT / 'projects/tds'
-# User relocation: preserved R314 inputs, separate from 315 outputs.
-OUT = PROJECT / 'paper/applsci'
+# Scientific outputs and private manuscript assets have separate owners.
+OUT = PROJECT / 'results/314_applsci'
+PAPER = PROJECT / 'paper/applsci'
 FROZEN = PROJECT / 'results/main_final_v2'
 GRAPH = ROOT / 'archive/tds/data/gog_scimain_v1/graph.pt'
 GRAPH_HASH = '067cbdd7d7c055da91dbed9c492ad5a099c35e178f718e53f9dfdabab908b1cd'

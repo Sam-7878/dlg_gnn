@@ -4,7 +4,7 @@ import json
 import subprocess
 import zipfile
 from pathlib import Path
-from paths import ROOT, INPUT, PRIMARY, REPORTS, RESULTS
+from paths import ROOT, INPUT, PRIMARY, REPORTS, RESULTS, resolve_frozen
 
 
 def sha(path):
@@ -27,7 +27,7 @@ def main():
         for entry in old['files']:
             # The only mutable input is the explicitly audited path repair.
             if entry['group'] != 'source_before_path_repair':
-                assert sha(ROOT / entry['path']) == entry['sha256'], entry['path']
+                assert sha(resolve_frozen(entry['path'])) == entry['sha256'], entry['path']
         print('Existing input seal verified; no input manifest overwritten')
         return
     expected = {'applsci_article.pdf': '1e0d06a5f34ff0fbfd2414e0f565bdce56549cc8ce8f17173cf2d154bb88bdfa',

@@ -6,14 +6,14 @@ import subprocess
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from paths import ROOT, INPUT, PAPER, RESULTS, REPORTS
+from paths import ROOT, INPUT, PAPER, RESULTS, REPORTS, ORIGINAL_PAPER, SUBMISSION, manuscript_source
 from freeze import sha, write
 
 
 def main():
-    tex = (PAPER/'applsci_article.tex').read_text()
+    tex = manuscript_source()
     extra = (PAPER/'supplement/supplementary.tex').read_text()
-    cover = (PAPER/'final_cover_letter.md').read_text()
+    cover = (SUBMISSION/'final_cover_letter.md').read_text()
     abstract = tex.split('\\abstract{',1)[1].split('}\n\\keyword',1)[0]
     assert '0.4751' in abstract and 'unique message-passing superiority' in abstract
     assert '0.4751' in cover and 'does not claim a novel GNN architecture' in cover
@@ -28,11 +28,11 @@ def main():
     assert '0.4751' in tex.split('\\section{Conclusions}',1)[1]
     # All numeric TeX tables and original scientific interpretations are identical to R314.
     original_numeric = []
-    for p in sorted((INPUT/'data').glob('*.tex')):
+    for p in sorted((ORIGINAL_PAPER/'data').glob('*.tex')):
         q = PAPER/'data'/p.name
         assert sha(p) == sha(q), p
         original_numeric.append(dict(path='data/'+p.name, sha256=sha(q)))
-    assert sha(INPUT/'supplement/table_control_statistics.tex') == sha(PAPER/'supplement/table_control_statistics.tex')
+    assert sha(ORIGINAL_PAPER/'supplement/table_control_statistics.tex') == sha(PAPER/'supplement/table_control_statistics.tex')
     stats = pd.read_csv(INPUT/'supplement/statistical_comparisons_corrected.csv')
     assert f'{stats.iloc[4].holm_adjusted_p:.4f}' == '0.0920'
     assert f'{stats.iloc[6].randomization_p_value_two_sided:.4f}' == '0.1279'
@@ -44,7 +44,7 @@ def main():
         for value in [row.randomization_p_value_two_sided, row.holm_adjusted_p]:
             assert f'{value:.4f}' in tables, value
     # Bibliography edit is restricted to removing the redundant leading word in booktitle.
-    before=(INPUT/'references.bib').read_text(); after=(PAPER/'references.bib').read_text()
+    before=(ORIGINAL_PAPER/'references.bib').read_text(); after=(PAPER/'references.bib').read_text()
     normalized=re.sub(r'(booktitle\s*=\s*\{)Proceedings of the ',r'\1',before)
     assert normalized == after
     bbl=(PAPER/'applsci_article.bbl').read_text()

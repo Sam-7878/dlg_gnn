@@ -1,7 +1,28 @@
 # Author policy: unpublished manuscripts and manuscript writers stay local.
 /paper/
 /paper_applsci/
+/private/
+/submission/author_records/
+/submission/applsci/315/*
+!/submission/applsci/315/README.md
+/submission/preprints/315/*
+!/submission/preprints/315/README.md
+# Identifier-bearing originals and checkpoints stay local; reduced numeric
+# predictions under results/315_applsci/predictions are tracking eligible.
+/results/314_applsci/runs/**/test.csv
+/results/314_applsci/runs/**/validation.csv
+/results/314_applsci/reports/
+**/strict_time_source_audit.csv
+/results/314_applsci/supplement/strict_*_seed*.csv
 /publication/315/candidate/
 /publication/315/*.zip
 !/publication/315/TDS_315_numeric_candidate.zip
 **/__pycache__/
+# 316 source ZIPs, platform metadata and author records remain private.
+/submission/applsci/316/*
+!/submission/applsci/316/README.md
+/submission/preprints/316/*
+!/submission/preprints/316/README.md
+/publication/316/candidate/
+/publication/316/*.zip
+!/publication/316/TDS_316_numeric_release_candidate.zip

@@ -71,7 +71,7 @@ def main():
     p = candidate / 'scientific/common.py'
     before = sha(p)
     code = p.read_text().replace("ROOT = Path(__file__).resolve().parents[4]", "ROOT = Path(os.environ.get('TDS_REPO_ROOT', '.')).resolve()")
-    code = code.replace("OUT = PROJECT / 'paper/applsci'", "OUT = Path(os.environ.get('TDS_OUTPUT_ROOT', 'tds_generated')).resolve()")
+    code = code.replace("OUT = PROJECT / 'results/314_applsci'", "OUT = Path(os.environ.get('TDS_OUTPUT_ROOT', 'tds_generated')).resolve()")
     p.write_text(code)
     transformations.append(dict(path='scientific/common.py', source_sha256=before, staged_sha256=sha(p),
                                 change='Explicit TDS_REPO_ROOT and separate output directory; never write frozen manuscript inputs'))
@@ -97,7 +97,7 @@ def main():
     transformations.append(dict(path='tests/test_revision314.py', source_sha256=sha(ROOT/'projects/tds/tests/test_revision314.py'),
                                 staged_sha256=sha(p), change='Import path only; all eight invariant test bodies unchanged'))
     copy(Path(__file__).with_name('replay.py'), 'replay.py')
-    copy(INPUT / 'vendor/GoG_LICENSE.txt', 'licenses/GoG_CC_BY_NC_SA_4.txt')
+    copy(INPUT / 'licenses/GoG_LICENSE.txt', 'licenses/GoG_CC_BY_NC_SA_4.txt')
     copy(ROOT / 'LICENSE', 'licenses/repository_LICENSE.txt')
     for name in ['README.md', 'dataset_protocol.md', 'reproduction_levels.md', 'license_and_redistribution_review.md', 'figure_data_map.csv']:
         copy(PUBLICATION / name, name)

@@ -1,0 +1,1964 @@
+{
+  "date": "2026-10-29",
+  "authority": "Explicit user request: venue split and TDS-local results",
+  "file_moves": [
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed17/checkpoint.pt",
+      "sha256": "7d799ee97e5cc80f0099a34ba8893cb61e0a1042cf8483fb8c3916fd8f02f7ba"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed17/history.csv",
+      "sha256": "10ac615ad2d6579da9a2057eb95f61b63f28e0a8d98add39e1a0f951ec9c2511"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed17/metrics.json",
+      "sha256": "08f42c2f33523d795c8185e95c931062c34001f74459014e437f668c54eaa1cb"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed17/test.csv",
+      "sha256": "970877d164fa740ef467cd700505882a0695c625dd38ce8524ac4f150ee34643"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed17/validation.csv",
+      "sha256": "c16c21c78e2edf25b8ec1420a761267044ceeaa314db67ff35d829ba45424d3c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed27/checkpoint.pt",
+      "sha256": "8eabba20119a31e012587702ed1ba5b449fec6f7c8589a988e74ff5c2a9ae7e5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed27/history.csv",
+      "sha256": "a219c298e96348737f934545daec0b751bc186938cf5ee24b92279bf9af3d9ad"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed27/metrics.json",
+      "sha256": "5a76c24faf76ce1fa0a20c7b3b4afb9d524afd59ec4cb6ce77dae4aaaf998976"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed27/test.csv",
+      "sha256": "c7bd76d29d65d2a50ef1b4b566aa9b5787145fdf2a2e98a93f05293644bab204"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed27/validation.csv",
+      "sha256": "4c8d9b217927167b753680fd588e15d76d86bf55fce333e9c5399bf4f12e515b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed37/checkpoint.pt",
+      "sha256": "104895289a44b9949c7af15758d00ea608a0c3d947c429399eab92e167589d5e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed37/history.csv",
+      "sha256": "078d374b605aa09b5cbac39167e643d255dbc953d51b822e6f21c4f842b15af7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed37/metrics.json",
+      "sha256": "8c7468f2a2a2fcf9d947b64a34ea96b3bc5c726c9c278947f658a16e482e62e0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed37/test.csv",
+      "sha256": "da1a48cf49c8649adf6bf40a9c19b261ef0d22c52c9e856739431a94f07b2df9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed37/validation.csv",
+      "sha256": "88239cf73aee9a15db21290ebc08522029a9346bf05d3125c0f8257f8b159348"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed47/checkpoint.pt",
+      "sha256": "8fd13f928a9f9371eb7f9cb23fc5073814dc074c8c5ea6a109b257be12da8369"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed47/history.csv",
+      "sha256": "db83852d09aeed4383d0423cb908b8a0bf722f3bab83e22f5147b6b339ae2e7f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed47/metrics.json",
+      "sha256": "be0d885dc70e72188de82c03b06ddd9f474a28337a24ce5b278c2faa85a953c8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed47/test.csv",
+      "sha256": "551990bdb07c6da454781b85d821609223dd047caf70beb44973a44aff169434"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed47/validation.csv",
+      "sha256": "67558d5ba163012e48c7f0f0c51d73061f993a603229f9a0b2fd48dfa6d1a6bc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed7/checkpoint.pt",
+      "sha256": "293e12083d6ce4277f3772742a919ce0070c317674f66defc2f3d5b813be7036"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed7/history.csv",
+      "sha256": "ee1a92a93fbf7e47a524fdf6649dd1c15fdbb664823ee99b76754b22398fe5f0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed7/metrics.json",
+      "sha256": "e75a5a6fc987a4d0001b63b798e098a2e3b33077a440bf04c8d2ab05a4a7ce52"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed7/test.csv",
+      "sha256": "6c9497857efd239e47dcf700579682a537f9104e5ba7a116b80dd48b6cc66662"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_bce/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_bce/seed7/validation.csv",
+      "sha256": "2ee56ec192874d142b54cdceaa6254743781760e49aa6481290066556401523a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed17/checkpoint.pt",
+      "sha256": "90dd914ef205e79eef9ad959ad64c8d4b3348b92c9d8b1f1a0ee2150bb0e388b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed17/history.csv",
+      "sha256": "4b61e4ceb67152033535db0a8053d4ea8dd6c1492490e91cd6771e97d26525fb"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed17/metrics.json",
+      "sha256": "4ef971e0a1438bed0913aa55fafb9127f2d0c70fef708c06eb8d14615ab5250c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed17/test.csv",
+      "sha256": "50c33fc9a93f246ab2f7e16efe92832a29dfdec7c20fa30086f15297d6046a06"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed17/validation.csv",
+      "sha256": "dacaa766e4ab38e9c0229b0f93ee87bdaff8c1e2cc4ce4b0e50fdab724445cb4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed27/checkpoint.pt",
+      "sha256": "1609e8852b955fae3bdc2d7bef669a2b1406a9b8b9cd4c6ec3f121e25bf06129"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed27/history.csv",
+      "sha256": "f7b0c43ae373b7f50e14c323c637891c9f9b40c062c1e4ff52544488dacb1c49"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed27/metrics.json",
+      "sha256": "ea2089fe5b78b01102e568df7b5addf55d5d1cdbc0649675b34f3f3d7bc59f07"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed27/test.csv",
+      "sha256": "b6c5b324d0ab180c589de03f5cb1a29255a5938ebf92a3dba457a98a9b337f70"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed27/validation.csv",
+      "sha256": "a54903140005414f3afb85ab02bf7663762ac46abf2bf8bee5b737c9099b3583"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed37/checkpoint.pt",
+      "sha256": "2444d79a4641d790dbb23b1e7be260034df6731cea57179d20dd24164184b7f2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed37/history.csv",
+      "sha256": "e978e79f2d99a90dccdf06c858958eb253408775e94260eb8e3695ee81307c1f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed37/metrics.json",
+      "sha256": "670fd8d8dc6acf6d657c9ff784cd751e356dd87c6f20bd2e9c2986210c70ece1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed37/test.csv",
+      "sha256": "a1eedca9d4ea6952954181dbcf0ed3e4c7f8d63da348490c10cc71d1b9600f7f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed37/validation.csv",
+      "sha256": "39374e607253166f51b321cffd1f3d43222abb4dd4aa398feb351670520087b0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed47/checkpoint.pt",
+      "sha256": "bbe2fe84268a8b0625a6ee54da5dcb2b4d5492332e29496194b6aaaa6277f4e6"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed47/history.csv",
+      "sha256": "df52ff561ed3327cda1c3bcdf3dab6712473b6428b0ae9d4e22398b063bf8fe0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed47/metrics.json",
+      "sha256": "c4ba815ea7bd15ef0dd767690cc87c43c14c48f175012173ac26c55813b37b8c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed47/test.csv",
+      "sha256": "aaeac209be34c166307449f20200babbc1094938d773ba63e55665fa069c748e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed47/validation.csv",
+      "sha256": "86b78e710cce4efc4dd777f70b4570760a438b92ccf58441c7862411c56e8477"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed7/checkpoint.pt",
+      "sha256": "cdc173b2f0d9065bcb292ff76a441fdc6b2294270fd03bf377779a3e56a374f2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed7/history.csv",
+      "sha256": "b31461dfbba447458f2593bcff5578f97f41627cdda30d86a6a3c58fe003526e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed7/metrics.json",
+      "sha256": "6ddf39db215055be4ab9f0a0961d1a2b25c9c84c5afe9b859ea57f177f84743b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed7/test.csv",
+      "sha256": "efe9a2e79eb38f1857edd63b2cc1993620fc7f5d23142b06313d613f5a5e82b2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_focal/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_focal/seed7/validation.csv",
+      "sha256": "38ea14c4cb3e9446bc5083fc2c895166e02f7b5e7786cc6eb9a2216268ed8506"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed17/checkpoint.pt",
+      "sha256": "586b3df5fc374d5857a002a1f1e7a9106a7aed446718341d64cb20b4c232db99"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed17/history.csv",
+      "sha256": "f4b5a1819e40e36b5471147e78c5b20ff66d0404f01cf435c3b4c45dad3223d7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed17/metrics.json",
+      "sha256": "37daf5282d10c6c83a37dedf239060e856390319472f47d856debc5cb99c3f78"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed17/test.csv",
+      "sha256": "7831df4508320ce77180335f17ea9163af93d1ade1e38b529737f32948f93ff2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed17/validation.csv",
+      "sha256": "1cf004ae4a0357682ad9512c3ad222b9f4805e5f82e05dfe1c96b5207334c4cb"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed27/checkpoint.pt",
+      "sha256": "3795d23008d66081d075dbe3249e456e217402acaaca90d7d6c08c03726bff11"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed27/history.csv",
+      "sha256": "4f50f8e3540ab24d1fcbd6d49f8b3e1cd08155fd2fa8fef158ff50ce7bfb7a7a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed27/metrics.json",
+      "sha256": "eef40a4634e9b56e0d3d2d9d77b9cfac7c4b516999112e2bb79bc44b71378ee5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed27/test.csv",
+      "sha256": "48d034bdcd98d5d991865062209450e6ba1e6c7672e8cb9eed94f741217d3fe8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed27/validation.csv",
+      "sha256": "90a2763111f6602cbe524ee5d958869c862e57b092449be8c6a6dcb46c8f7df5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed37/checkpoint.pt",
+      "sha256": "258f6c3c380508048cda46d6a1a9e77c832ed15b9e8f7c9e74dd3b36cd961b45"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed37/history.csv",
+      "sha256": "3dadccf04c9b88b275636cc6282c5a6e962b1bdeee1a76ed44891b9fa55ee1ff"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed37/metrics.json",
+      "sha256": "3070c80e6082b193b4d000659db9d7ed7d1f331f4871b05dfaab2a5e55294864"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed37/test.csv",
+      "sha256": "7c43fa49ceae5485cd4ad3e866468542dd27f8411f44ba38095f7d745538c1dd"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed37/validation.csv",
+      "sha256": "1989afcb6d3d05f51af275dbeea80fab853111b1c9fb66430c72aed7dfc17e3e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed47/checkpoint.pt",
+      "sha256": "7aaeee414d95161356ac369e6e230e19e68e3d93d1d42fa08fb710318b19c58b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed47/history.csv",
+      "sha256": "4037214c19587870ac3e8473282cc34c62b58ac11fb873b16efaf1ac5c909d1b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed47/metrics.json",
+      "sha256": "334ee8f90251ff9e97b62c70ce60c751f154da0760c805640e8142942573e535"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed47/test.csv",
+      "sha256": "c57629c1b75072fe19b789b918317b1acedb4d9c8e7087b973aef63f73e2fbef"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed47/validation.csv",
+      "sha256": "288e1f9402ce144457622772b3dccc49e14801487f21775590d60604464b628e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed7/checkpoint.pt",
+      "sha256": "acb5eb83fbcbda2eb3c4a8dcce21be3f59324f533bc0d28d8c51b7de86e7d55f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed7/history.csv",
+      "sha256": "3fe71a47bdbdd412a616346ded8d8f633b0173ed382c3b63f0f0fff6b06e2f36"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed7/metrics.json",
+      "sha256": "62c4249c5eb74398a3185705741421cbfd50f8b22100b1c5aedf9322dc226785"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed7/test.csv",
+      "sha256": "b0f5fecf8ebbc0cc35099ee79d76018636e6d9cf6700809892f6a2a194528af0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/gin_no_chain/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/gin_no_chain/seed7/validation.csv",
+      "sha256": "39a6143c80b4a2f98e7e5f5568a6ab685a5059f785113fe26ab275a21f060ec9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed17/checkpoint.pt",
+      "sha256": "49d098e76cefe1926acc7537ed1f880972834a9ad0a4247b53e34c7ca5282747"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed17/history.csv",
+      "sha256": "6d842f8b1148cc8fd6f973ff05548afb10139c6f3f29063c55f7ddf2e8c37aa9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed17/metrics.json",
+      "sha256": "8fc4fb59c791b830e93cbcd81d64d9d070f734f22a588f15063c281e64775236"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed17/test.csv",
+      "sha256": "8dde65caafbb6fc9dd8626c72956f642d7f43dd1351fae2fa8f14b9124d64a15"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed17/validation.csv",
+      "sha256": "8df01ff91eb3d9f115ae12c116705e83b0ce921250f1acee0e3967d546164842"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed27/checkpoint.pt",
+      "sha256": "b4bc8c68c8d3eafcbe8450bb36a64430aeeb74d84f8929219522de71f9714984"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed27/history.csv",
+      "sha256": "8e7b30c5021b082c4e701d82e9b31b8199c72852db40212978dd7e35364b7467"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed27/metrics.json",
+      "sha256": "b1a82e9ce2fd6c6833456791ee2bdfc95e82cc8d431df1ccc4fa1d29af21c363"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed27/test.csv",
+      "sha256": "ddac77b9b02ed0a0d0ca36158c78794e7036d73c5d2a833689487d6fba0eac31"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed27/validation.csv",
+      "sha256": "9cf8433d545728442218003db2e1eb11a23d32d1b14bfa9e4148530d7eabe1f0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed37/checkpoint.pt",
+      "sha256": "2aecc21a800b6b6c4c5c28a3889599df33690edbcee2499444c4245951f43191"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed37/history.csv",
+      "sha256": "75b27e3b8cbc3df2461a4dea12d9ca44ecaaacd69458d2763d958bf30e102022"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed37/metrics.json",
+      "sha256": "bfe4755f01bf8471963f2f99625462d47bbe1e3b43908e167beda8aeb23160cc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed37/test.csv",
+      "sha256": "ff1b1f4d68ef9f3499931b659973772b3189f8f01b57b10979f0f73355e4e013"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed37/validation.csv",
+      "sha256": "c2adb398c1c37e31f16c8a341ffd11ec353cce90f35b81f566d9398dea8bc3ae"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed47/checkpoint.pt",
+      "sha256": "4f314472c1f93ba498bcd2a03d76daf14c1db5385ab72aec36a65e68b1e8496e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed47/history.csv",
+      "sha256": "dd0efe8a5e876e265c89ad8d61f2ebd14fec125b95f51ebacd5a824acb9d41fa"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed47/metrics.json",
+      "sha256": "c31f313a77c4c9bceaac0bcd31f7339ff6224f2e001824087f797f0de461e91f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed47/test.csv",
+      "sha256": "08b1b9b3c58d80835d60d604b2ea13f505ff6e48743b56a025aaf6468f36e5cc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed47/validation.csv",
+      "sha256": "82748dc9942687ba884fb544ea86c905c6c8b02aa8dda58307547ccab92789ca"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed7/checkpoint.pt",
+      "sha256": "9215929e4ccec3539356fa0bad7cdc13922d447c8ff38e60a1d94d33cc930747"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed7/history.csv",
+      "sha256": "cee60ce6c1004520df88d71f2f159fdc14a99744520436a744144dafb72a554b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed7/metrics.json",
+      "sha256": "70d6b1903f8aa1d75ae3f595ddd323996a0fae894ecf973a906e444cf4ec742f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed7/test.csv",
+      "sha256": "605b5398d3b1fb990adc450bf6de17ceb78ce5c382b5d4f091ed770fcae17896"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_bce/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_bce/seed7/validation.csv",
+      "sha256": "85ea86d5d16d129fc72722de13b39813e278cbaa2f6dc2facf4a695a119d0be4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed17/checkpoint.pt",
+      "sha256": "d53f8d4b56f9cda13f47eff2082c4cea7e244e1631a496b82b5acb5c1bb7c345"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed17/history.csv",
+      "sha256": "6dd8b9f4c06469063f2b96a85a2c423bc14df092e1b19ed8773fd818074b9e61"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed17/metrics.json",
+      "sha256": "c858a7221053a5a657df6ec28cf02000d6dbc7056b340cce712b8cf13f1fd8d1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed17/test.csv",
+      "sha256": "bca8c4e5dc64d36fc88dd43c3c7948e0375818b32d938648c36cdef7ce028592"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed17/validation.csv",
+      "sha256": "995daeaf5a1c4a27ec16f021cb9c3bea6b22438103efa07de6c4bfdf5479b4ef"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed27/checkpoint.pt",
+      "sha256": "0164cb21a149a297c5023293a35f76352ef9d7fb8ba98d573aa10065f6c0548a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed27/history.csv",
+      "sha256": "6d4b952ff1069c50f5be4233cf19c6536794cf8688335d551955534a511a44d8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed27/metrics.json",
+      "sha256": "9d642154bf96f149a9a9fc5031d6d413c6aeff647616d2fe4008a7f476a27db5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed27/test.csv",
+      "sha256": "17d37a7d644f1b025befa7aceb45e7c140bb82de26ccfade52134a8720ddd4d5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed27/validation.csv",
+      "sha256": "8117871b33e204939d2714c4545ab4308df549050e30c02f074a44f04345b420"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed37/checkpoint.pt",
+      "sha256": "95135b5a4ddb9064df1db7e476d6b3bd7fb10e5eddc3226ab600f23fa63f896a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed37/history.csv",
+      "sha256": "d5af73951fd4c3e2fe317016fc65f0bd6df905a8ed19e4350238e8bc8031aa95"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed37/metrics.json",
+      "sha256": "c9653a639eb489b144d082c0eb143938c54b8f072890bdd06fbe93c6eb74272c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed37/test.csv",
+      "sha256": "f5ed2a7c06dd91010c96d8f4022600ba74f163da818d0b96985423d3b832d40b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed37/validation.csv",
+      "sha256": "61eccfc3a1da1a93852f760a31ddfd765832007fa241d34bc1a67eabb2cba18e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed47/checkpoint.pt",
+      "sha256": "44ddf50a70c1bd5ed11b233d562f71b4819df48e5c0ff8935c9859ac06122d6c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed47/history.csv",
+      "sha256": "9c4085857a9cef9d4e2328ad373c546625fc6a0f1f86aac5828c2d6387c067d8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed47/metrics.json",
+      "sha256": "48383582b8354e71af4ffc7ec8d6594bed97ba839440635a90230de94488d8a9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed47/test.csv",
+      "sha256": "4b402d38e8db369949ba34c2ceb70bc416e842f456df117bd20aa888e25ad545"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed47/validation.csv",
+      "sha256": "ded89e50f93547a62d26483ce6cdcb7b3d08323492abd308e76e95c1b89789b2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed7/checkpoint.pt",
+      "sha256": "5541e03d28bf87ef36538398fce7ad97bd2e3810e7c5dfcff1b3dc8672878f8f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed7/history.csv",
+      "sha256": "0526dd93c515119d8dd8880bc4aad9eeafe8fd441f9a267fcd07b4564c949df7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed7/metrics.json",
+      "sha256": "358454884267fcb4083e9a5ba2d843a10918ef55e1d81bc3386041530a3b9f8a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed7/test.csv",
+      "sha256": "403da1ad66cabd8ca63552a9bcd57591c0c13395f700e96d67ecdd35fb6a929f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/sage_focal/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/sage_focal/seed7/validation.csv",
+      "sha256": "28da0529d561a5741296eeb2ffb2737db4f6b68412ac2861ca1d6de2b13a533a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed17/checkpoint.pt",
+      "sha256": "d792ffbcce567961b8bdadf4f8eaac6244db004776215739e023536951c40549"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed17/history.csv",
+      "sha256": "5e62fc07417ee65120566e304fc6a36f4679f025653325edd053d0a9f6563923"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed17/metrics.json",
+      "sha256": "bf459e0e1998e12039d51a5e330e0cb0709e45364f3c835fb3fb4d217f5b76ae"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed17/test.csv",
+      "sha256": "7e7fe9427db7219f079e521b038fe109e9c41014ffd85a5992f5d8a5965f8ca3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed17/validation.csv",
+      "sha256": "725939ef9061d51a3ca8ab10ddd5ff797b3c9f29cbb5f2eddc06b589046c1495"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed27/checkpoint.pt",
+      "sha256": "2f91a05d0f2d23ac8ad6fc164acf06aac5dc425422f71da091ecafab2aec0dd7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed27/history.csv",
+      "sha256": "5e62fc07417ee65120566e304fc6a36f4679f025653325edd053d0a9f6563923"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed27/metrics.json",
+      "sha256": "b9cf777f8ef2b7aca570f5d4c434c565be13d7582f2d6350a84ff7c504af1723"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed27/test.csv",
+      "sha256": "8bc8474a5f7873aadf4fb7163d13c461bd25b107e3cf87cd2fae6d9cc83272a1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed27/validation.csv",
+      "sha256": "47fa7300a7b4082128bf9337bb1599137f1876696adc1f1f0904de820172144e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed37/checkpoint.pt",
+      "sha256": "fad8237dc2a7dd1a9a44526c9ba2b43b111c0674da061ed4c43c0659d58bebbd"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed37/history.csv",
+      "sha256": "5e62fc07417ee65120566e304fc6a36f4679f025653325edd053d0a9f6563923"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed37/metrics.json",
+      "sha256": "b3e30e1bdf90d2e89709489bc778cea03ed7f35743e21796c69f8a41b79c4c55"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed37/test.csv",
+      "sha256": "6dd235da9cdb0ddaba6c05dc11fe0d399ac9f6be97a928356677ed4089f7f20b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed37/validation.csv",
+      "sha256": "c8063ec0cb51b32c54f3095f2419d000d0035ce63e208ed5a374257fa4801c80"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed47/checkpoint.pt",
+      "sha256": "f870b7e963610d028b37ef59d51f2c9415ccc50a310e34c2dc4b8b8fd84d8f37"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed47/history.csv",
+      "sha256": "5e62fc07417ee65120566e304fc6a36f4679f025653325edd053d0a9f6563923"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed47/metrics.json",
+      "sha256": "49e52ec023a53096ebda3d1046f15b765fa22d7f29e3eeb2d9a2bc9f59d3b308"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed47/test.csv",
+      "sha256": "36cb99ea3a18a6d285e8c8a300e5b9f57a0a745beaca9551c7d352b76c2e6232"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed47/validation.csv",
+      "sha256": "3dfccf915b05a413126f838e191fc2d8505a3f73a1fce634dca543cffe1b269c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed7/checkpoint.pt",
+      "sha256": "e5ea0ec1104f7d3172c63ff78e183afcc14f3a9066f811bb4ee499fab295fa97"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed7/history.csv",
+      "sha256": "5e62fc07417ee65120566e304fc6a36f4679f025653325edd053d0a9f6563923"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed7/metrics.json",
+      "sha256": "fefd8073c530c6a42a151b15e1e0758285089eda078073f66ac63ee250ba4982"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed7/test.csv",
+      "sha256": "31defdb45f587214cb709a93128a4557641884bdf7a5ff8e81efadb368a71350"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_lr/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_lr/seed7/validation.csv",
+      "sha256": "c276f33fc76ff270cbee1f31454f63031ea2b873aaeb87f21896a0364cff9d7a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed17/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed17/checkpoint.pt",
+      "sha256": "5782ea7764156aad3c93bbc8886a9f834784b59057f8af79d620e61587cafd62"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed17/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed17/history.csv",
+      "sha256": "2c3ff696a9e57fa5ccd80ef16ffc4387a7d7f202461a73a184857184100742b7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed17/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed17/metrics.json",
+      "sha256": "a27dfdada795e4c0c847da2cd36cd920a6a1e1318766aab6f9d43268c2683155"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed17/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed17/test.csv",
+      "sha256": "7ad15e8e882890ead40db61844dc183b2388eb6b9c3867e3705446924ecf7b79"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed17/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed17/validation.csv",
+      "sha256": "ec2118ddc3336edb55f1e4c7a5dbb4611d69eae5f9a18b3c9dd92e70e4931a6a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed27/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed27/checkpoint.pt",
+      "sha256": "13d5ef8e0219aa58b60610541c410d5355cff7254215af46790c50e748b9d48b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed27/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed27/history.csv",
+      "sha256": "76d670cf2bbabb522dc848a1af32cd46c5c0ca2265e8643f90a264c502dd18f4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed27/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed27/metrics.json",
+      "sha256": "381af00f3ae057fd882efc07ba0174ed5109fbdddeded2c2d16e29b7d297e2e5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed27/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed27/test.csv",
+      "sha256": "2c71af0f2206ad692db998436a43403fe4a9ae51df9bcb8e093b90f541e6fb61"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed27/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed27/validation.csv",
+      "sha256": "73a2a0fa8c3bba3ca8ba69cf7e98ec8760c27f68b149363c2df579c89441c3fc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed37/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed37/checkpoint.pt",
+      "sha256": "1e44bb3356e918554d564f38cad83c5cdaebc4aeac37bf3ef917317f446b813d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed37/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed37/history.csv",
+      "sha256": "df671526b444463369ad63816bf21d22f5eeba480c8ff6be9289f3649a94734d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed37/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed37/metrics.json",
+      "sha256": "cc320e00d6209c3d6d2ad082f4d92ea501f7506e8998366f187e16b77b86587f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed37/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed37/test.csv",
+      "sha256": "6a0df2c1fecb0ccbdb611149cd9dca64921d56a80359a7a103a434698fad0b49"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed37/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed37/validation.csv",
+      "sha256": "ecc6598c0097626eee2124c61f707053dac2dd5687cc7beeeddf6ec5c778da49"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed47/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed47/checkpoint.pt",
+      "sha256": "0732a80291c2d3cc0d688a4d550d18779768b0f580f1af327809f17d87a5a6a5"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed47/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed47/history.csv",
+      "sha256": "94628a217af67ddb45d992270f7b55c07bee48a660f81cc251d1be8c032a39da"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed47/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed47/metrics.json",
+      "sha256": "1c959788a7c9a7c57123dab80c46045c5171b545099ad653afc764bf2c193b8b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed47/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed47/test.csv",
+      "sha256": "932caa6e770bc58623b4702e293e29b0acaea0460eb717b7860515260051a1b3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed47/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed47/validation.csv",
+      "sha256": "3761bdf1a0db09fe82b35c0b3b36f2d8519b7fbc216b1bc1f22f438df0e75733"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed7/checkpoint.pt",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed7/checkpoint.pt",
+      "sha256": "e9b933c52211f0921b9e6e09ba06a567e3d65330316056ad2dcaf78dda4127b0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed7/history.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed7/history.csv",
+      "sha256": "f0d8f327698933f4903591679f9a3bcfbd22384e858a5220a5ab8b61e420b52a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed7/metrics.json",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed7/metrics.json",
+      "sha256": "3a63f53d3e7c06d3aefe945c6b8676649d721114ef61b70f2d8e6ca2293f68e9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed7/test.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed7/test.csv",
+      "sha256": "929b3a28c53c5fc6092780f0ea92ac935b9be4fe88b34d3917d8198e777c7861"
+    },
+    {
+      "old": "projects/tds/paper/applsci/runs/summary_mlp/seed7/validation.csv",
+      "new": "projects/tds/results/314_applsci/runs/summary_mlp/seed7/validation.csv",
+      "sha256": "2d9c4023e50d45b705291118bfe7a3628772cb782c324c071e33aaa2d6e539e3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/artifact_manifest.json",
+      "new": "projects/tds/results/314_applsci/reports/artifact_manifest.json",
+      "sha256": "cfb2e5c7229d05aa97bea0a169c508e1215a71416d4b6dae3a85d846c1702dcf"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/clean_source_compile.json",
+      "new": "projects/tds/results/314_applsci/reports/clean_source_compile.json",
+      "sha256": "7bdff31a360beb132279098761a6b788aeb67df01c7ffb9801de5264ba363102"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/data_contract.json",
+      "new": "projects/tds/results/314_applsci/reports/data_contract.json",
+      "sha256": "c80531d0b94f2e38eb6d43d9770dc8ceb09666b7eaca4949e6e026e261699bff"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/data_contract_audit.md",
+      "new": "projects/tds/results/314_applsci/reports/data_contract_audit.md",
+      "sha256": "f6dd80bdedd0f29ed2f7e70dbf36ed0fe9a123d1d5831867c1302ba1f0b76be0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/final_submission_readiness.md",
+      "new": "projects/tds/results/314_applsci/reports/final_submission_readiness.md",
+      "sha256": "1bbb06370e456e0771a47b1619c9190ed82c10bb447042fd09d4ea317b84f6f3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/grok_claim_audit.md",
+      "new": "projects/tds/results/314_applsci/reports/grok_claim_audit.md",
+      "sha256": "fe9830e49ca4266ef138d297bd1ec1bebc4f975ab499b6f142873d4e8cb751fc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/mdpi_template_audit.md",
+      "new": "projects/tds/results/314_applsci/reports/mdpi_template_audit.md",
+      "sha256": "25247a33c68c482c134224d636dc584971c0122917f4ddce76aa2fe54916b4ad"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/pdf_review/page1.png",
+      "new": "projects/tds/results/314_applsci/reports/pdf_review/page1.png",
+      "sha256": "34ef388cd9f9b655a85e754ac026145dd6337932703f90fb2f1849ed10cb3d7a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/pdf_review/page7.png",
+      "new": "projects/tds/results/314_applsci/reports/pdf_review/page7.png",
+      "sha256": "0db07ac75fe68d7dc515f01b688ad808b6c76feae8ac10c18549a26a077b8649"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/pdf_review/page9.png",
+      "new": "projects/tds/results/314_applsci/reports/pdf_review/page9.png",
+      "sha256": "95646bb8b8042c36040cfe3970e88b28672c42d62ce2cbedff2d3f0b8e680b4e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/pdf_review.json",
+      "new": "projects/tds/results/314_applsci/reports/pdf_review.json",
+      "sha256": "1b5dc3ea22076a4f350223079fd5c278b4ef081afd97aeabb6030f62949e1ca4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/reference_metadata_audit.md",
+      "new": "projects/tds/results/314_applsci/reports/reference_metadata_audit.md",
+      "sha256": "02c1822a5244efe6843c9718233b2c98b8267c0a0db5f58c96ec39847d3d4f6c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/runtime.json",
+      "new": "projects/tds/results/314_applsci/reports/runtime.json",
+      "sha256": "147b1112dfb68e123d078bbbb5303f5474a4158bf2094aa07fa47777ee88f2f2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/source_build_gog_chronological_dataset.py.json",
+      "new": "projects/tds/results/314_applsci/reports/source_build_gog_chronological_dataset.py.json",
+      "sha256": "34f6c62572a7083b09069133a1462704b2290c7ede7ad5c9556b6f7e6567bad8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/source_models.py.json",
+      "new": "projects/tds/results/314_applsci/reports/source_models.py.json",
+      "sha256": "e3abf4119bb26a403c2fa3bb5bf89c91b52fa7005ddf83249238b4f8a01923d3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/source_statistics.py.json",
+      "new": "projects/tds/results/314_applsci/reports/source_statistics.py.json",
+      "sha256": "b8a12d4c7d982767b61603d6641e155ab19f40d34d394c0637bdbc1314f653aa"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/source_train_comparable_models.py.json",
+      "new": "projects/tds/results/314_applsci/reports/source_train_comparable_models.py.json",
+      "sha256": "6d203ec9fe40fb00c15373864248bbdd88d6ab070122b7623f925a25cfd98f1b"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/source_train_sci_main.py.json",
+      "new": "projects/tds/results/314_applsci/reports/source_train_sci_main.py.json",
+      "sha256": "8c6c9b94a1d120b14de9e84ba8d896011c6b06c46c2d4ff1b8f4bcbc21694f2c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/statistical_audit.md",
+      "new": "projects/tds/results/314_applsci/reports/statistical_audit.md",
+      "sha256": "217d382e29da2f5cd234ec24cb290e80b233c7a0d433e08e725f99e374445a95"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/statistical_implementation_audit.json",
+      "new": "projects/tds/results/314_applsci/reports/statistical_implementation_audit.json",
+      "sha256": "48ce308d553f4704b1044f0e2ad61ba65df3ada7375a2bd6c502d76b81a4b8e7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/strict_time_manifest.json",
+      "new": "projects/tds/results/314_applsci/reports/strict_time_manifest.json",
+      "sha256": "93dfbfdca39a5dacb24d6222139ff2ca68597c970b8dd7466a0a0c50adb5ef27"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/submission_gate.json",
+      "new": "projects/tds/results/314_applsci/reports/submission_gate.json",
+      "sha256": "7568fec79a7b1bde1729136db5c43cd56d4f0259be98d4f6d32d6af159a8ba0c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/validation.json",
+      "new": "projects/tds/results/314_applsci/reports/validation.json",
+      "sha256": "85bd35bf04529af1c176d721e9cec6f08852d6ebe2773fcc9ea5afdf2d966c4d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/reports/verification.md",
+      "new": "projects/tds/results/314_applsci/reports/verification.md",
+      "sha256": "abe93fcc6753d94d327976ba3b12ab7b4b68d295f4c669f8833686daab5915b8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/calibration_direction_audit.csv",
+      "new": "projects/tds/results/314_applsci/data/calibration_direction_audit.csv",
+      "sha256": "820b7361e25437e6031aedbf4189c5a5bd31479a7ed07c007c2fe27f8b90a565"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/chain_ablation.csv",
+      "new": "projects/tds/results/314_applsci/data/chain_ablation.csv",
+      "sha256": "a86fe90faf6c51ab4f0ebed9e84ac78333c7629335f470fb9865afc51824ef69"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/entity_overlap.csv",
+      "new": "projects/tds/results/314_applsci/data/entity_overlap.csv",
+      "sha256": "749d07180befe7289590c5cf82f3e0abfa0282801bab53f64aa70e7ca8c6c853"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/loss_fairness_results.csv",
+      "new": "projects/tds/results/314_applsci/data/loss_fairness_results.csv",
+      "sha256": "251999c1e3073653813288874ff7ef793b3c2b8ee095c2fd79c00870894eebc7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/mc_sensitivity_per_seed.csv",
+      "new": "projects/tds/results/314_applsci/data/mc_sensitivity_per_seed.csv",
+      "sha256": "c0300eeaf2154dc379a7be430f48b8c937cafd3a49888782765458b504aa35e4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/mc_sensitivity_summary.csv",
+      "new": "projects/tds/results/314_applsci/data/mc_sensitivity_summary.csv",
+      "sha256": "60cd3b1b24125d1504e92e80a2c592a921c3c8f8571122a68f416bb96b1c515a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/operational_metrics.csv",
+      "new": "projects/tds/results/314_applsci/data/operational_metrics.csv",
+      "sha256": "1828f3a4f51a4a65ce7a50a14e721093af04e37d8ddc659e19df60a3b960394e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/simple_baselines.csv",
+      "new": "projects/tds/results/314_applsci/data/simple_baselines.csv",
+      "sha256": "460df1679e1439613ac9f8dee8cb71b95c00a4aa274bc27dd16132f4819772e6"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/split_composition.csv",
+      "new": "projects/tds/results/314_applsci/data/split_composition.csv",
+      "sha256": "d4185aba57b1a1e66737358dd81c3dfcff6cb9107e42ff3d7f390abadb7fd1be"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/strict_time_sensitivity.csv",
+      "new": "projects/tds/results/314_applsci/data/strict_time_sensitivity.csv",
+      "sha256": "d4a26f588be545a8a573f5d60c9f33cadf79566f6a631cc349f13b92e4be7d32"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/strict_time_source_audit.csv",
+      "new": "projects/tds/results/314_applsci/data/strict_time_source_audit.csv",
+      "sha256": "6eb40061f4a63d2920fbbefa737cae75df9ffa65630a47aa92a0ed727ae87021"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/supplemental_summary.csv",
+      "new": "projects/tds/results/314_applsci/data/supplemental_summary.csv",
+      "sha256": "31885bc83c902b514d54eb6863d30a257ff7f10e5fd0e0f49853c88e37262c80"
+    },
+    {
+      "old": "projects/tds/paper/applsci/data/timestamp_tie_audit.csv",
+      "new": "projects/tds/results/314_applsci/data/timestamp_tie_audit.csv",
+      "sha256": "79c229c3794b06951b273502c2bd86914cafb32a9c22ab52725b76be2961c371"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/ap_tie_audit.csv",
+      "new": "projects/tds/results/314_applsci/supplement/ap_tie_audit.csv",
+      "sha256": "a26558fcd90ec4cc114ea2e10941eb36b119d6c156e46f3ae108c16166ac17d4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/control_statistical_comparisons.csv",
+      "new": "projects/tds/results/314_applsci/supplement/control_statistical_comparisons.csv",
+      "sha256": "c6a88f500ec42c56d361ddd4665dfc6c6435ce724c936343bf2c6e7e7d5c465e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/convergence_audit.csv",
+      "new": "projects/tds/results/314_applsci/supplement/convergence_audit.csv",
+      "sha256": "d5b89e929bfa92aa894b86b598e176f9a9725dc9444fbb0781880f2d1902218d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/holm_adjusted_statistics.csv",
+      "new": "projects/tds/results/314_applsci/supplement/holm_adjusted_statistics.csv",
+      "sha256": "36bb5b580c5a6b1e0b88cbfe62893e4b9194b5e6fbf9a846bc4dfbaf090c577c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/per_seed_results.csv",
+      "new": "projects/tds/results/314_applsci/supplement/per_seed_results.csv",
+      "sha256": "a5970df697d829bdcf145a4f81227521fcfa4ea3742e82e3db169e19dbf124f1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/protocol_freeze.json",
+      "new": "projects/tds/results/314_applsci/supplement/protocol_freeze.json",
+      "sha256": "360efb39bade64df90f4797c92d897160206f7591ca388fc9db4159f8a8f9b92"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/reliability_bin_support.csv",
+      "new": "projects/tds/results/314_applsci/supplement/reliability_bin_support.csv",
+      "sha256": "f1d790ca6137b35db2cc4c141e1edde8cfd05ed912be28b876155b6d57c4b723"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/runtime_lock.json",
+      "new": "projects/tds/results/314_applsci/supplement/runtime_lock.json",
+      "sha256": "feea588217bc5ac7261985fbd49063d2eab28f170f150cb7494b0a80fff9f047"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/statistical_comparisons_corrected.csv",
+      "new": "projects/tds/results/314_applsci/supplement/statistical_comparisons_corrected.csv",
+      "sha256": "36bb5b580c5a6b1e0b88cbfe62893e4b9194b5e6fbf9a846bc4dfbaf090c577c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_fraudsage_seed17.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_fraudsage_seed17.csv",
+      "sha256": "4db31007eb985d67c79d223840fe750e7438f92df5bf65200ae37fe25f66992a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_fraudsage_seed27.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_fraudsage_seed27.csv",
+      "sha256": "625654cf77fd797453cdd253dc15909daa8ea36095e1969bcd5d8af9e4d1f69c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_fraudsage_seed37.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_fraudsage_seed37.csv",
+      "sha256": "6bc1a5866d8695076e5ef1fb562522d710c67c3c5a691433dadc134a44df0dba"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_fraudsage_seed47.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_fraudsage_seed47.csv",
+      "sha256": "41033ffde01e1e1fbd8c290143aede12d46b18b69819139d984169e24cb3bbf7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_fraudsage_seed7.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_fraudsage_seed7.csv",
+      "sha256": "8410363d0141828275a5c344b0b267b0004779e3139feef0a0fa95a52a494ceb"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_gin_seed17.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_gin_seed17.csv",
+      "sha256": "fb5ba1e9d0f9429f865d1674d32275d30ddd1ac8a06b2c8a3b8750435255e2b2"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_gin_seed27.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_gin_seed27.csv",
+      "sha256": "83788d752cdb189f3811b08768dc48a58adf4a2003f3e93f01f80dcbbbbd0c01"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_gin_seed37.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_gin_seed37.csv",
+      "sha256": "c1b78a27b8802da1792d55b2a3994bf025316b80737d4e4e0d235b2662bbeaa8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_gin_seed47.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_gin_seed47.csv",
+      "sha256": "a728ef146350dd01794b2b726b8dd00115b82c128b96b3b731e81a297d7db24c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_gin_seed7.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_gin_seed7.csv",
+      "sha256": "c19e865407cce7ba941a0c28cf50708a8094f867b197a102e5954e1d1aa1ab07"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_test_graphs.pt",
+      "new": "projects/tds/results/314_applsci/supplement/strict_test_graphs.pt",
+      "sha256": "26d61f40f8f6dc350aeb0248909c70fcd36af629012a13d00201b401213ad250"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgat_seed17.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgat_seed17.csv",
+      "sha256": "b1ffe1a9bc66e4f0e0ef45478f3b99005d253df67e44689675f5ad16d340db77"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgat_seed27.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgat_seed27.csv",
+      "sha256": "029d28a62bc5819ba6bb9175f87037072e1319d1dd72e7315fba23b3922afee8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgat_seed37.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgat_seed37.csv",
+      "sha256": "a427c037fab02a622f43ea7aa53d24c5e19b1d7fd864af7bb8e56d73efd5398c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgat_seed47.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgat_seed47.csv",
+      "sha256": "d1528ced8b254ee6a8c69db19049e0e91ecd9ea74de0e18df9a34d88808d893d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgat_seed7.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgat_seed7.csv",
+      "sha256": "f0b30ff67f52f458418cc4ecb04412499e1910634b243238e522c8f79d1aaa53"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgn_seed17.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgn_seed17.csv",
+      "sha256": "2809a9a9e0b0be8901964b81088366e7a53a8c8c0c05495907dec834e49a6e80"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgn_seed27.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgn_seed27.csv",
+      "sha256": "1d7ae46e146f695e42bf62624ff9092ca7cede383155ebc21aed0dda243400f9"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgn_seed37.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgn_seed37.csv",
+      "sha256": "0aa2ee5076d31112a4255454d4ab6736a3d60ae54474f7d3592aa3025593c0ac"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgn_seed47.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgn_seed47.csv",
+      "sha256": "237d574940ed940c8eafab23a80f9b141e5302b44c27aa1dbaff6c8545ebedc4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/strict_tgn_seed7.csv",
+      "new": "projects/tds/results/314_applsci/supplement/strict_tgn_seed7.csv",
+      "sha256": "55b51ed9ef460abc5ee2ec33857d4481bb9870f71999329c51fb4fc3fde304bc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/supplement/summary_scaler.json",
+      "new": "projects/tds/results/314_applsci/supplement/summary_scaler.json",
+      "sha256": "29f6703480fa474bf68ba50bc2c1794d005dd03d4ef17c7fa5b9ada3ee3f1ffd"
+    },
+    {
+      "old": "projects/tds/paper/applsci/vendor/GoG_LICENSE.txt",
+      "new": "projects/tds/results/314_applsci/licenses/GoG_LICENSE.txt",
+      "sha256": "229cce37370557577c8c9d16d636ce6f71ac41aa9aafd196ff8cfe253ed95a71"
+    },
+    {
+      "old": "projects/tds/paper/applsci/packages/TDS_R314_LaTeX_sources.zip",
+      "new": "projects/tds/private/315_before_venue_split/r314_packages/TDS_R314_LaTeX_sources.zip",
+      "sha256": "6e8ba2fcf332ad9680a7fe1d13ecf02203066afb95dd5edce80e44526082b6db"
+    },
+    {
+      "old": "projects/tds/paper/applsci/packages/TDS_R314_local_evidence.zip",
+      "new": "projects/tds/private/315_before_venue_split/r314_packages/TDS_R314_local_evidence.zip",
+      "sha256": "9fa5d2bb271194c6426baa25a9d042cc7c2b667077567fbad8d656ba1d9d46d3"
+    },
+    {
+      "old": "projects/tds/paper/applsci/packages/package_manifest.json",
+      "new": "projects/tds/private/315_before_venue_split/r314_packages/package_manifest.json",
+      "sha256": "4a645c0cd6117cc09684e692c73dd92c7c0ae0cae734df04d504d41c2721411c"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/README.md",
+      "new": "projects/tds/results/315_applsci/README.md",
+      "sha256": "79e50bbef4aebed577157a1be79c4d794a80f38688be6971de8b1c40e9289301"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/input_hash_manifest.json",
+      "new": "projects/tds/results/315_applsci/input_hash_manifest.json",
+      "sha256": "c46c060758caf6e2c6cf91b3fc5cf5977d3e533477ea37b2ea7fbc1dd2416ef7"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/prediction_sources.json",
+      "new": "projects/tds/results/315_applsci/prediction_sources.json",
+      "sha256": "9ef2ffbda649c216963b8f601c295ae89d9791d4798b828c1876c436d7cd5f62"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/fraudsage/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/fraudsage/seed17.csv",
+      "sha256": "b36527bf8c013aff7bd8844a5a32f0dc9f8f34249bfe3aff1042128b7b91fc9d"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/fraudsage/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/fraudsage/seed27.csv",
+      "sha256": "81c28d117aa3ce183ceb8e84ea8403f8a7b30bdfcfdf6ff1e6da71ff273832bd"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/fraudsage/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/fraudsage/seed37.csv",
+      "sha256": "592e3b65fcd0f08385ed94caaa7a8c171c40044e1809f2651ff3766608072bd4"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/fraudsage/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/fraudsage/seed47.csv",
+      "sha256": "b6530e1ffc70d95a60bbb9b25486d054426b0c01cb0fbc4ba813c72ab3bf0358"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/fraudsage/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/fraudsage/seed7.csv",
+      "sha256": "460ca16ba197c7f2f59144df2f6b783a57497fe63aa9edae3650c6a5dd83c93a"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/mc_dropout/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/mc_dropout/seed17.csv",
+      "sha256": "af246169e698b20eb330f36060183dfdf04afdbabc1929b65e9c01e88db63ed2"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/mc_dropout/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/mc_dropout/seed27.csv",
+      "sha256": "d083fc6267552e7708e38c698f9731ca09e466cb732d5348d1598aaaced87afe"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/mc_dropout/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/mc_dropout/seed37.csv",
+      "sha256": "d29d4c94eb450f190354006f0445da318eb4984387b71f336275ea68b1e0db19"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/mc_dropout/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/mc_dropout/seed47.csv",
+      "sha256": "ab85e8213c3a3f667994e2842ff105691b96dba8ff2baf353a62ecff8d9aba06"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/mc_dropout/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/mc_dropout/seed7.csv",
+      "sha256": "cd7e6c416f1f88f81ac11296d4a21beca86b241c1ef9b43f36d63dccf7d44670"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/proposed/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/proposed/seed17.csv",
+      "sha256": "14c985dd94305cca06dd96904a87fd9d113f489cfd7ab874e6c5a69e8810edea"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/proposed/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/proposed/seed27.csv",
+      "sha256": "f53b4acd3e8d9c646dfe8c9b71b7131d344e732fd643faaf96acd72f844d7b80"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/proposed/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/proposed/seed37.csv",
+      "sha256": "93f0c6a2239848f6c12b2a435beb2e5e06837b12658db0cd698e974cb8eb4b3c"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/proposed/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/proposed/seed47.csv",
+      "sha256": "a7a9579be9f6a86c3766d9666be0b57d58698baedb38934765b2c48b581cd977"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/proposed/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/proposed/seed7.csv",
+      "sha256": "fdb3f6b4f9017326e2f78f86fb025762ddb1bfaf11a8190d514caaaf346afadc"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/temperature_scaled/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/temperature_scaled/seed17.csv",
+      "sha256": "4a00bd71f2854def7b520cce3b708924f42626fd4ac1517df75b766299d53c83"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/temperature_scaled/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/temperature_scaled/seed27.csv",
+      "sha256": "197feb296c5ce2ab60a908a72e3be90b528ff1ce563aa90a35eb3e5f280d5015"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/temperature_scaled/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/temperature_scaled/seed37.csv",
+      "sha256": "ae1a6c98d2291ba49eecc2741fbba19febc6615b0551754c85bf8252230854b2"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/temperature_scaled/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/temperature_scaled/seed47.csv",
+      "sha256": "7213e7045d24235d3f77d49ea13062116548f520679eac4ba5d7dda8d2de3429"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/temperature_scaled/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/temperature_scaled/seed7.csv",
+      "sha256": "0ba49a5a0fbd43660898a898e9fd02d02a58575e2048914aa829e4cdeb5c945a"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgat/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgat/seed17.csv",
+      "sha256": "65513ef5724f9b4a1743ab335cc7fae891c378350f010deef46051a23791a37a"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgat/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgat/seed27.csv",
+      "sha256": "ad8d10163c75b46caff26476cce2d7136f2bb1ac17d739e9f4076887a7101308"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgat/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgat/seed37.csv",
+      "sha256": "dabe2c1e57cd42b9546b98751c6371f74c0b149c4056534ce03c4af1a07ca600"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgat/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgat/seed47.csv",
+      "sha256": "1672949b5b0075485c89b077d0d3ac7c68381618a5b4d8412166197a89334071"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgat/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgat/seed7.csv",
+      "sha256": "337609644c17f0c336902845dd8ca7e52ec4bdd7963451bb60cb6d065f66feb8"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgn/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgn/seed17.csv",
+      "sha256": "08aa1ea8088cfa2f1f5be727096f8c2f1ca59bd3f65bd593282fb166c7409baa"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgn/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgn/seed27.csv",
+      "sha256": "1840d9cb29ab0495ae80415f99e2a4649f6c21c38d0bcc1fe301cf0be190a8df"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgn/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgn/seed37.csv",
+      "sha256": "3477be26daf80e9bc885049228d11a9a5487ae6c28f06d893d2e9a678577352a"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgn/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgn/seed47.csv",
+      "sha256": "cc6856129edf005249cea95c770e51e423fa2b7594df93888f1b2588316b619c"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/primary/tgn/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/primary/tgn/seed7.csv",
+      "sha256": "b746c292e6cd56c988d77a77a73ee90552e4029ad5f6e8a0746afb02cbcf07c4"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_bce/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_bce/seed17.csv",
+      "sha256": "1a9b250aef15e58cf4c710de540fea98843cf3e3080e0d787b1d4a1173a078f1"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_bce/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_bce/seed27.csv",
+      "sha256": "c67b173e1c91693e73a7a618d2ba54678588af688e67418ece3eb85dfeaa574c"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_bce/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_bce/seed37.csv",
+      "sha256": "46f7c115fbefd008f73b38fe97b7579093d0d927335b6112d167c3ad529dc5ed"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_bce/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_bce/seed47.csv",
+      "sha256": "0eea53e6f555db7299beab1338b8f7f3ec1f822b916197a5dabc3acbb7113cc6"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_bce/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_bce/seed7.csv",
+      "sha256": "7c66c9eee20c9cee041158eda92f6df6d338bf9d6445cda9082f995df2bddfe6"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_focal/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_focal/seed17.csv",
+      "sha256": "2adf7981532ae1ac5ee0cd54f976ce666695ea1b8dc7d4bea045f4022747d3b3"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_focal/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_focal/seed27.csv",
+      "sha256": "5af3961942cbcc6bce16df3efc8cbda2a41d3b2b0c9d5449974510fbe656a5f2"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_focal/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_focal/seed37.csv",
+      "sha256": "a66624f6326aeef5cafa967784a3102ea36bf35b9f0f13de79da192655e31289"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_focal/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_focal/seed47.csv",
+      "sha256": "adc957d8d591877953955b4d2bb2f13c81d82fed6787828b8b4d6e72622db12b"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_focal/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_focal/seed7.csv",
+      "sha256": "539e8927c584d8a98a80f83c12b0766b4fa48e59093cd97e87877fb0b7a254a5"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_no_chain/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_no_chain/seed17.csv",
+      "sha256": "a226e5399df8600ef4144d76920273d73091f1e7f6fe54f1877e1c3a8ea978cf"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_no_chain/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_no_chain/seed27.csv",
+      "sha256": "a7f3ec3e9f6bede4ca0838fc932315d8d63abce6c27606a6b6e485aa9fa8cbc0"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_no_chain/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_no_chain/seed37.csv",
+      "sha256": "b12ae9996a048c0c92f78e0197ad43ac0a52f2f459aa99417c38f198355afff6"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_no_chain/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_no_chain/seed47.csv",
+      "sha256": "2cc73e13557ccb995bf80de68ea54c8a3574455440c01dc2595713c27b8f459a"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/gin_no_chain/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/gin_no_chain/seed7.csv",
+      "sha256": "e11ed0c54f0d4a28ccb44f10a084749a5cbc2d62f19a673cbd8c46a39bedbb17"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_bce/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_bce/seed17.csv",
+      "sha256": "267cd5d5138ca674ad633520cebd21ca9aa11aee2781e679e8b9c128fb022039"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_bce/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_bce/seed27.csv",
+      "sha256": "a57fede2e4c8cbfe9b419d20553c1d04379adae7195eb6c05503fd4415a2a3da"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_bce/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_bce/seed37.csv",
+      "sha256": "d8de578340a7e3190b16c62a9c5d06eb78c243422414c3fa2f3bacca8d3b8723"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_bce/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_bce/seed47.csv",
+      "sha256": "b87ac10aea6e74a6fb3c1a9c7ab7a7385694f20b2f1989f27c71e7ae422f5613"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_bce/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_bce/seed7.csv",
+      "sha256": "a16754cf29a6e70ef2296cb41cb6e181f1e14cb17497a2bbee96518c7dc62440"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_focal/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_focal/seed17.csv",
+      "sha256": "17fb09de705aaa800aae2c99dae02d86ea6d9a6a2fbb58e750934536a705f6b5"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_focal/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_focal/seed27.csv",
+      "sha256": "25ce9a1f65aa9a8e849f6ae966bda28738bdb6a74063625a5729f3b69894f139"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_focal/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_focal/seed37.csv",
+      "sha256": "193d24f89c3862ec5e155dd7c253d65c0eb9597a6c65a42bb89a7da3853e3164"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_focal/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_focal/seed47.csv",
+      "sha256": "5b3fe422ef0a155a4aa62c20dacf2e5b0cfedbbcb5ff7355c88cf7d44f51d627"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/sage_focal/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/sage_focal/seed7.csv",
+      "sha256": "183b86aecf8cadd1bf473c4c48b5ae20f700685ad0502594561bc0a195963fdf"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_lr/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_lr/seed17.csv",
+      "sha256": "c14db74b0d52dad9c48479fe74eb4286fde2bdebd3cfaf8f0c075575851cb97f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_lr/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_lr/seed27.csv",
+      "sha256": "c14db74b0d52dad9c48479fe74eb4286fde2bdebd3cfaf8f0c075575851cb97f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_lr/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_lr/seed37.csv",
+      "sha256": "c14db74b0d52dad9c48479fe74eb4286fde2bdebd3cfaf8f0c075575851cb97f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_lr/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_lr/seed47.csv",
+      "sha256": "c14db74b0d52dad9c48479fe74eb4286fde2bdebd3cfaf8f0c075575851cb97f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_lr/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_lr/seed7.csv",
+      "sha256": "c14db74b0d52dad9c48479fe74eb4286fde2bdebd3cfaf8f0c075575851cb97f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_mlp/seed17.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed17.csv",
+      "sha256": "6898f8a144f6105b329df2fcb638186b2526e661c3d84563179cf30484258ad2"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_mlp/seed27.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed27.csv",
+      "sha256": "8139c88273ad69966e6f97ebc70fffd3e93e44581a1edacaf95b57ad778dc3e0"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_mlp/seed37.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed37.csv",
+      "sha256": "ca4e741d2a981ce39b7d3c35f4e80b2c26898f526a2f215f55c17e89696d08db"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_mlp/seed47.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed47.csv",
+      "sha256": "da414a7119290ce495e2dd23a092609a38f22bc5321a41dadcbec3f8e38504f1"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/predictions/supplemental/summary_mlp/seed7.csv",
+      "new": "projects/tds/results/315_applsci/predictions/supplemental/summary_mlp/seed7.csv",
+      "sha256": "1a164870185f5de6c4a24d1ae6a539725237874dc153754c12218e8db07f122e"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/primary_ap_per_seed.csv",
+      "new": "projects/tds/results/315_applsci/primary_ap_per_seed.csv",
+      "sha256": "3d3460ca1aedc7a8cc59e9564a546390bfcc01be95b4733a6331f89e21b92996"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/public_prediction_lineage.json",
+      "new": "projects/tds/results/315_applsci/public_prediction_lineage.json",
+      "sha256": "bd232c9f21eb9e16fa3a4c4b11d3a54be8e3bdd9fd6c5a14c93ee422a9a2bb3e"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/representative_statistics_replay.json",
+      "new": "projects/tds/results/315_applsci/representative_statistics_replay.json",
+      "sha256": "56f4d11a046b371dab826363c659cef365633b936b97f00ec1c12857f3a1b48f"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/supplemental_ap_per_seed.csv",
+      "new": "projects/tds/results/315_applsci/supplemental_ap_per_seed.csv",
+      "sha256": "02684dcd5bd6972fa6f3a31f0e9c5915fab5956968ed7f805a8fe7f1d58acd23"
+    },
+    {
+      "old": "projects/results/tds/315_applsci/supplemental_ap_summary.csv",
+      "new": "projects/tds/results/315_applsci/supplemental_ap_summary.csv",
+      "sha256": "bd9171cc184820560b927ff73f9d1c47a5032c9984d90866c07c32d61a6c0e0e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/calibration_direction_audit.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/calibration_direction_audit.csv",
+      "sha256": "820b7361e25437e6031aedbf4189c5a5bd31479a7ed07c007c2fe27f8b90a565"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/chain_ablation.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/chain_ablation.csv",
+      "sha256": "a86fe90faf6c51ab4f0ebed9e84ac78333c7629335f470fb9865afc51824ef69"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/entity_overlap.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/entity_overlap.csv",
+      "sha256": "749d07180befe7289590c5cf82f3e0abfa0282801bab53f64aa70e7ca8c6c853"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/loss_fairness_results.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/loss_fairness_results.csv",
+      "sha256": "251999c1e3073653813288874ff7ef793b3c2b8ee095c2fd79c00870894eebc7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/mc_sensitivity_per_seed.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/mc_sensitivity_per_seed.csv",
+      "sha256": "c0300eeaf2154dc379a7be430f48b8c937cafd3a49888782765458b504aa35e4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/mc_sensitivity_summary.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/mc_sensitivity_summary.csv",
+      "sha256": "60cd3b1b24125d1504e92e80a2c592a921c3c8f8571122a68f416bb96b1c515a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/operational_metrics.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/operational_metrics.csv",
+      "sha256": "1828f3a4f51a4a65ce7a50a14e721093af04e37d8ddc659e19df60a3b960394e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/simple_baselines.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/simple_baselines.csv",
+      "sha256": "460df1679e1439613ac9f8dee8cb71b95c00a4aa274bc27dd16132f4819772e6"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/split_composition.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/split_composition.csv",
+      "sha256": "d4185aba57b1a1e66737358dd81c3dfcff6cb9107e42ff3d7f390abadb7fd1be"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/strict_time_sensitivity.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/strict_time_sensitivity.csv",
+      "sha256": "d4a26f588be545a8a573f5d60c9f33cadf79566f6a631cc349f13b92e4be7d32"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/strict_time_source_audit.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/strict_time_source_audit.csv",
+      "sha256": "6eb40061f4a63d2920fbbefa737cae75df9ffa65630a47aa92a0ed727ae87021"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/supplemental_summary.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/supplemental_summary.csv",
+      "sha256": "31885bc83c902b514d54eb6863d30a257ff7f10e5fd0e0f49853c88e37262c80"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data/timestamp_tie_audit.csv",
+      "new": "projects/tds/results/315_applsci/paper_inputs/data/timestamp_tie_audit.csv",
+      "sha256": "79c229c3794b06951b273502c2bd86914cafb32a9c22ab52725b76be2961c371"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-01.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-01.png",
+      "sha256": "2960dbd424661ad0196b47b60e4ee1bce5eed8cac56f11382467e3b3c6b2809d"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-02.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-02.png",
+      "sha256": "9a6217e0c53fed4797369d36f8194a81473d8d233fc2052160ea3dad253d29e7"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-03.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-03.png",
+      "sha256": "eb747403abb7a2dde5ead6b45183767d322a460861d2f5b0f76b85c97e9b37e1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-04.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-04.png",
+      "sha256": "26b8918422dd4440b4dbdcaf745a9bb1652773d0d391793ca69bb1094724bda1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-05.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-05.png",
+      "sha256": "43a0ed2a285ae0c7dd66bab23b11c83bb158c3b0ae2424b3398cde4c2df6a626"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-06.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-06.png",
+      "sha256": "fc55ac0f1d0ceed7272b717ca3f9f095e2a99c14add2401a3a5d76fe0acad704"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-07.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-07.png",
+      "sha256": "8b4edbbba06f45ff7550a5fee0b95277157ce6534273551867d33788e48180ef"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-08.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-08.png",
+      "sha256": "db614aab56d62abe73f6d0ab77dca28005a124c61b2bc5ed9d0496e9ffc4772e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-09.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-09.png",
+      "sha256": "13faaccae54ff27570f0866c987450605735064b0afb561983bc34167048b415"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-10.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-10.png",
+      "sha256": "638485f37768bddc5b13bbf67fda76748ea69754370898340261ed0703d1d493"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-11.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-11.png",
+      "sha256": "7a39a48ae56693a595e0f8aa398afb9aa1bc049a7030072237dd493e30c6882f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-12.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-12.png",
+      "sha256": "f44511c840cc11e21da22fb4aa8e516dd0ba784ca36278432ce3126ed5f38714"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article/page-13.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article/page-13.png",
+      "sha256": "fb8fe62acd67fae1a2de9b642013d453cceafb76751a880bd392d87319bf5bed"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article_contact.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article_contact.png",
+      "sha256": "e00030b44fceda34bc34478dd5106999fe30095685af626208612ef9349cdeae"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article_pages10_13.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article_pages10_13.png",
+      "sha256": "12a374b53498cd7bde00d865f92782ead0cfcfbb5eed93d7ba26d59665640525"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article_pages1_5.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article_pages1_5.png",
+      "sha256": "8d8403772d7074786f5d8be0e5f0c6eb6ffca2bf690f072019492b04bbba6918"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/article_pages6_9.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/article_pages6_9.png",
+      "sha256": "f895927b832e2d6d271276207d3bef100d7e1a18e80b3645595e0f42c305dd67"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/supplement/page-1.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/supplement/page-1.png",
+      "sha256": "b18a465f9418bf42e7e0a7dc2a0046fc664aa29b098d134a1a9c6916fda61004"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/supplement/page-2.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/supplement/page-2.png",
+      "sha256": "1b37ed3b604b692c48f4820a36964db8596438950ec278dd78fc3e224a4d276a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/supplement/page-3.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/supplement/page-3.png",
+      "sha256": "3d862b242ecad821bbe46b5fc6e3e72934046a9c85e2d38cd4b081fc242c9065"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/supplement/page-4.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/supplement/page-4.png",
+      "sha256": "dc00fd8f6584d3903321258fd598199f5d8be51ce14e0f39a32664023ebf4fea"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/qa/supplement_contact.png",
+      "new": "projects/tds/private/315_before_venue_split/latest_qa/supplement_contact.png",
+      "sha256": "263ab29b5ad302df5aa39e21c9ecc562ccc09bc6674fb7bd5720314e9ff89716"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/evidence/TDS_315_numeric_candidate.zip",
+      "new": "projects/tds/private/315_before_venue_split/legacy_evidence/TDS_315_numeric_candidate.zip",
+      "sha256": "5ac20f2c0aafe3725faa428073b45065816c7549047f158699b20bef76b116db"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/TDS_315_submission_candidate.zip",
+      "new": "projects/tds/private/315_before_venue_split/legacy_packages/TDS_315_submission_candidate.zip",
+      "sha256": "f38b0e445b00790a5dd9530c2c167db560a2f1dd918a69a2306be809c3696868"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/author_approval_record.md",
+      "new": "projects/tds/submission/author_records/315/author_approval_record.md",
+      "sha256": "e7aa7f06147f9d5a317a76832205f0f89ae08f3215b208d456673072bc088ba1"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/author_closure_status.json",
+      "new": "projects/tds/submission/author_records/315/author_closure_status.json",
+      "sha256": "2c13cd036c028497695e7858860bb33c74af6e6f0475fdfbcbd4232492931bc4"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/author_section_provenance.json",
+      "new": "projects/tds/submission/author_records/315/author_section_provenance.json",
+      "sha256": "8118a86018a08ffb308816794fbdf85487099e79afc132b5aeda51b3e6dbc037"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/build_verification.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/build_verification.json",
+      "sha256": "1b5cec02290f3293532809c44671e7b7f4bf15fa94b23a041aee3ec324d9eaef"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/candidate_archive.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/candidate_archive.json",
+      "sha256": "acb822abcd057b1b45dd4c6b95349269f9c02f4713b0596771e9a3e15ade1c0c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/candidate_local_verification.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/candidate_local_verification.json",
+      "sha256": "b8dce905c386e5466a5a7af1a732245fdf6c467f6ff2c9492b166d1b4d21bd86"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/candidate_manifest.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/candidate_manifest.json",
+      "sha256": "7a9bdcd281aadc177eb3a2738e7db162846906ca25c774b83398136b301e54ee"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/canonical_source_tree.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/canonical_source_tree.json",
+      "sha256": "bdb1da6ebe0e3676c2265ab8df8e6f5115dd49e5ebd81c69c71af0c8689a694f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/claim_consistency.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/claim_consistency.json",
+      "sha256": "bbfb66bb32f710b1b598b1fd0346c62285490147355e2d8fba2cc8f67b5b3aae"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/claim_to_evidence_matrix.csv",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/claim_to_evidence_matrix.csv",
+      "sha256": "6f0fda5eb313ddeab414b94323c4325f720540b49dc8bc34dd40feb21b22c1ac"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/credit_confirmed.json",
+      "new": "projects/tds/submission/author_records/315/credit_confirmed.json",
+      "sha256": "23895046b36fc0fbe157ec344c4de384533119aabf64e0b6815ea6835a597ff0"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/data_code_availability.md",
+      "new": "projects/tds/submission/applsci/315/data_code_availability.md",
+      "sha256": "03741bbf5e7e8072ef310e8b1dfd2d5b605714b8a075bc74a29d9659748a660e"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/declarations_confirmed.md",
+      "new": "projects/tds/submission/author_records/315/declarations_confirmed.md",
+      "sha256": "3fec53189fed40b6e101ec43d067231f9b7092f7010352ada091661c99f70736"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/evidence_audit.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/evidence_audit.json",
+      "sha256": "6231c03fd7dc9bc60ca283ace943a2f3b17bb4c928374ece18201ef56d8ab90c"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/final_artifact_manifest.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/final_artifact_manifest.json",
+      "sha256": "ee421259331ec51a21b75ac6ceb4074bbdee9a0101d57328ef2e01238c3b4dfc"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/final_build_log.md",
+      "new": "projects/tds/submission/applsci/315/final_build_log.md",
+      "sha256": "be8c80e2e07e9b91d556b621cc0853540ea4474e451aa8bce52ce051098bb534"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/final_cover_letter.md",
+      "new": "projects/tds/submission/applsci/315/final_cover_letter.md",
+      "sha256": "866f22ebc0c05da5a37de586d0691dfd7c7b476d5f99463f4a300570dcb4e397"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/funding_evidence_register.md",
+      "new": "projects/tds/submission/author_records/315/funding_evidence_register.md",
+      "sha256": "9354d645c5981d1fcc8869ac0cfd905219fbcb8e1cf362473acb342ac5763c7f"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/license_and_redistribution_review.md",
+      "new": "projects/tds/submission/applsci/315/license_and_redistribution_review.md",
+      "sha256": "38e9e90394e24c3dbead89994b308f9fdaea2b750061c0374bacbbf90fcae69a"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/mdpi_submission_metadata.md",
+      "new": "projects/tds/submission/applsci/315/mdpi_submission_metadata.md",
+      "sha256": "d913e334cea2e02f07afe678ea953c9ed4c200658888b16eec43b98c8a3da604"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/pdf_visual_review.md",
+      "new": "projects/tds/submission/applsci/315/pdf_visual_review.md",
+      "sha256": "469de1b44f87789c62c4fd5e3f6b35866d8c03d5083250429f03353b33876b96"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/publisher_preflight.md",
+      "new": "projects/tds/submission/applsci/315/publisher_preflight.md",
+      "sha256": "3f40b73de709418584a778c5c28c0ea15f86cc58ce7ed4682ad163ee4fbfcd31"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/release_verification.md",
+      "new": "projects/tds/submission/applsci/315/release_verification.md",
+      "sha256": "bb52258044a07807a37a14d65a9181074dc806a8abbffe38343fd3256718b025"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/repository_tracking_audit.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/repository_tracking_audit.json",
+      "sha256": "3c3e4c387b52f72779b0c8adfc7e810b5172c642914f91736ff514647f59feb8"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/reproduction_levels.md",
+      "new": "projects/tds/submission/applsci/315/reproduction_levels.md",
+      "sha256": "10d0bbeff447d42f01a88f8d834cd21da3359df35462c4ae2aed51053eaf9bce"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/submission_readiness_315.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/submission_readiness_315.json",
+      "sha256": "d74868e122832aed0a9ae60c6eecb4539ee100dc08d1d8239fe154959e270d13"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/submission_readiness_315.md",
+      "new": "projects/tds/submission/applsci/315/submission_readiness_315.md",
+      "sha256": "b89246055f089d35bf879abc7429aafd94b0490c7e36947c74bd6a2ecee69001"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/submission_source.zip",
+      "new": "projects/tds/private/315_before_venue_split/legacy_packages/submission_source.zip",
+      "sha256": "c45120b4b44b5a6370450ac92e62ea342793d5b963b3de00cf84f4d0c4bce713"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/test_results.json",
+      "new": "projects/tds/private/315_before_venue_split/legacy_reports/test_results.json",
+      "sha256": "28f990c5f0c23adccc2d72766e5c33f0a0d527f312a556585f8e4fa0ba8f70ca"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/text_value_consistency.md",
+      "new": "projects/tds/submission/applsci/315/text_value_consistency.md",
+      "sha256": "ef0a58f580031b491f81ff29fb0db5c63ec31fa7b7f7e30e774c5fb0a8eef291"
+    },
+    {
+      "old": "projects/tds/paper/applsci/submission_315/worktree_scope.md",
+      "new": "projects/tds/submission/applsci/315/worktree_scope.md",
+      "sha256": "bcf4c00ae7ac6450e0ea3cf20a2d184b79b1661dde0651a8a0a75cba48aafed9"
+    },
+    {
+      "old": "projects/tds/paper/current/data/data_fig2_prevalence_shift.csv",
+      "new": "projects/tds/results/historical_reviewed_draft/data/data_fig2_prevalence_shift.csv",
+      "sha256": "d85dbc361b2fa1d8617b4f56f278b82a9dc40848e96ec739ec46de4a69bedf30"
+    },
+    {
+      "old": "projects/tds/paper/current/data/data_fig3_reliability.csv",
+      "new": "projects/tds/results/historical_reviewed_draft/data/data_fig3_reliability.csv",
+      "sha256": "eaa40d65d2d194d572462a15e9b42e922844cae4df4627d6d4462a6b8bff2525"
+    },
+    {
+      "old": "projects/tds/paper/current/data/data_fig4_mc_tradeoff.csv",
+      "new": "projects/tds/results/historical_reviewed_draft/data/data_fig4_mc_tradeoff.csv",
+      "sha256": "f29ad04291db7fd4a7f8d6e8f7dc4a4a1ec4853a20b083304a867d4b06f4cd6b"
+    }
+  ],
+  "all_moved_payload_bytes_preserved": true,
+  "private_backup": "projects/tds/private/315_before_venue_split",
+  "policy": "Historical manifests retain original bytes and logical paths; resolve paths through this registry"
+}

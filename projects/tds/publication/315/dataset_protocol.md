@@ -1,5 +1,10 @@
 # Dataset and upstream reconstruction contract
 
+Canonical TDS numeric storage is `projects/tds/results/<task>/`. Current R314
+experiments are in `314_applsci/`, closure derivatives in `315_applsci/`. Historical
+paths inside sealed manifests are resolved through the public migration registry;
+the underlying scientific payloads and original seals are not rewritten.
+
 Upstream: https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs
 at source version `7264f1bf510f7ba4f5041ac7a29b606abc12f262`, with Token Data
 linked by that README. Required inputs are `labels.csv`, `ethereum.zip`,

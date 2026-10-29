@@ -1,0 +1,167 @@
+{
+  "all_clean_text_and_pixels_identical": true,
+  "builds": [
+    {
+      "log_sha256": "210d558f7215e415182f7b31a297aec9949bd76464344f6d1a880b725458fbdd",
+      "pages": 13,
+      "pdf_sha256": "dc1ccbb4224110835f462760a463bd336268692c569e3cef18aaed76fcf6b6ad",
+      "source": "applsci_article.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "1f2c14c1c984525d7bbeb2ff3fdfb9a1a01635983731aa1acfe2a7d3e82b4507",
+      "pages": 4,
+      "pdf_sha256": "99a6505f1b99a9e04478aa891e6406be3c4b699330c6640f669609e421eebd6e",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "clean_builds": [
+    {
+      "log_sha256": "c08a6d88e442cd5b22f26934edee25c4cb2296510814744d498b5780c8bfe684",
+      "pages": 13,
+      "pdf_sha256": "a5504f3a342341fcf7ea967a3d4f715db83ae6d81e1f2f514c3b8a8dddd2c574",
+      "source": "applsci_article.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "5d4c05c281958283314c9cd98a16a6050526db6b19805999c5b24c3fbe5c745d",
+      "pages": 4,
+      "pdf_sha256": "5b53c6d6e22cb893a0b335a402b0bfe2932eda8a085b2f355197028f781fbf60",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "manuscript_body_sha256": "a19f96269c609fbbc3b033a6f53899c7835acaee1f9f2a5bbb317ecb6891e700",
+  "numeric_results_in_manuscript_folder": false,
+  "rendered_pages": [
+    {
+      "document": "article",
+      "page": 1,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-01.png",
+      "pixel_sha256": "7dd076fe9deb885f3f2fa76991dae730cdaa9deb23c6f86f474d0031ff267230",
+      "sha256": "2960dbd424661ad0196b47b60e4ee1bce5eed8cac56f11382467e3b3c6b2809d"
+    },
+    {
+      "document": "article",
+      "page": 2,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-02.png",
+      "pixel_sha256": "85165e0983e1a32840c181cc9676dc1feedb2d778af51ce60914f7e99c6af3f9",
+      "sha256": "9a6217e0c53fed4797369d36f8194a81473d8d233fc2052160ea3dad253d29e7"
+    },
+    {
+      "document": "article",
+      "page": 3,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-03.png",
+      "pixel_sha256": "baa862f059b44f846957c1eae99b126875ff3cf4788b40d48cc5000570d092bc",
+      "sha256": "1ea62e37ae4f2114366abc34290f55e64d73246d97291fe49d99f91b5b12d417"
+    },
+    {
+      "document": "article",
+      "page": 4,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-04.png",
+      "pixel_sha256": "1d2c4da904a499dc5effc9a40b4b8445ce44adc5f9639f47ea9e28361cce71e1",
+      "sha256": "3dbf7dd559890fe646d67bfe28211afb216c2afa1645ce5159b0c591af712530"
+    },
+    {
+      "document": "article",
+      "page": 5,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-05.png",
+      "pixel_sha256": "766b076faf9207f9d19c1d41a1ec3a989cbb142b7ed571e59ad43d47cf0b4279",
+      "sha256": "395299287a368ec42ac4a933c8b4b08834c13b32058060b1557a113e3976542e"
+    },
+    {
+      "document": "article",
+      "page": 6,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-06.png",
+      "pixel_sha256": "39963e277e643f41bcc79a26fdc674a208234626fe510efb0cf53579559da1c3",
+      "sha256": "9d3cd4a31b908b9b3aea6cb0332cdb5212152e3308c9eb2e9c0a830b3a8f845b"
+    },
+    {
+      "document": "article",
+      "page": 7,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-07.png",
+      "pixel_sha256": "3e8cb41d691245bfe35ba6279e7045a3180d81448cf052e30e70c16bbf15ecce",
+      "sha256": "8724467e7f050d291020f45b1672ad61db6d20a4bab8ea0ad295fc8d40469827"
+    },
+    {
+      "document": "article",
+      "page": 8,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-08.png",
+      "pixel_sha256": "b353baba5d17f2526d78a3c0a95ad6d31684c0e23b865e2047332fabe8b85cde",
+      "sha256": "f1ca706d391d7e83c2856a66f5f842e556d2e7eea1cc866a810632c29eedbc79"
+    },
+    {
+      "document": "article",
+      "page": 9,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-09.png",
+      "pixel_sha256": "e6f05aa165716ee6ec956ad69df55e0f70a2c768346649f9d6f557c6ff828d3f",
+      "sha256": "14d11968c80dc1764b037aedc4ffba5cd86e083e1f91ef819f28e67a7b2d8479"
+    },
+    {
+      "document": "article",
+      "page": 10,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-10.png",
+      "pixel_sha256": "ce8996d41772c9550594cfe554e25ebd06eedab1a3cc98a2b0eb3082af341a36",
+      "sha256": "7397875c5a86092a7931dacd5ae7365417fc822aae834baaabecbf87774359f0"
+    },
+    {
+      "document": "article",
+      "page": 11,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-11.png",
+      "pixel_sha256": "8bc7dafc86f154ca363ce34de9c2f30afedf9732282eac8542477bd8707bc500",
+      "sha256": "cd543db331f27055e19199d0187f0cf1baf40cfd6bb46a93377f025f803e40fc"
+    },
+    {
+      "document": "article",
+      "page": 12,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-12.png",
+      "pixel_sha256": "0ac8762c841d5abe32a4bd79187f45914661b512754f2bd49c03d321e051a1e8",
+      "sha256": "f047591dc9398e8ccd8bb2fdd38373754f9875ac386453207d116d36443961d7"
+    },
+    {
+      "document": "article",
+      "page": 13,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/article/page-13.png",
+      "pixel_sha256": "3e19acac4a264c396f8061cceec4964dea7cd6ce7fbe9e6f09c568c1c7ea3bda",
+      "sha256": "2831e04da2cdd5fd7c2a68b8490d5cca7aad2c488ec9bc8c2ee21009b6d16a92"
+    },
+    {
+      "document": "supplement",
+      "page": 1,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/supplement/page-1.png",
+      "pixel_sha256": "c66ddcfcb2077ac6cefc4b34fdab43ca447a5f2ce6d53dc31b1954a8aae4a5d9",
+      "sha256": "6e6d541d194ed9d544468529eebd9f37ddcaaf9da235df8dd15a6e5438f7c5ca"
+    },
+    {
+      "document": "supplement",
+      "page": 2,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/supplement/page-2.png",
+      "pixel_sha256": "a6f9094017c321ee07d092794e61f911f935ce56c6112d06abac23c021a23caf",
+      "sha256": "1b37ed3b604b692c48f4820a36964db8596438950ec278dd78fc3e224a4d276a"
+    },
+    {
+      "document": "supplement",
+      "page": 3,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/supplement/page-3.png",
+      "pixel_sha256": "07d3d20c1a99af3b58be2457f14bfd7a4725c46e52009358134b4fbbd1848da2",
+      "sha256": "3d862b242ecad821bbe46b5fc6e3e72934046a9c85e2d38cd4b081fc242c9065"
+    },
+    {
+      "document": "supplement",
+      "page": 4,
+      "path": "projects/tds/private/315_venue_split/qa/applsci/supplement/page-4.png",
+      "pixel_sha256": "296a7dfd4d1d21d43451b7b1bbb7b678fc642110ce6e4203dab7f98e00f3a8ae",
+      "sha256": "c5c5ee4e5b17068bfecfa7e1b4bf06af1f71332538f050d4b202de21fcfd3e46"
+    }
+  ],
+  "source_zip": {
+    "bytes": 1523203,
+    "crc": "PASS",
+    "path": "projects/tds/submission/applsci/315/TDS_315_applsci_sources.zip",
+    "sha256": "0513d218efa5a14d75936a8ec00563c5316ae0bd968ebfdc6bd56d6a0491e2f8"
+  },
+  "status": "PASS",
+  "submitted": false,
+  "venue": "applsci"
+}

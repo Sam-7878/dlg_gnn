@@ -1,0 +1,30 @@
+{
+  "deadline_source": "316 work order/background reports official check on 2026-10-29",
+  "direct_deadline_verification": false,
+  "guest_editor": null,
+  "observed_on": "2026-10-29",
+  "portal_special_issue_selection_verified": false,
+  "reported_deadline": "2026-12-31",
+  "requests": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "url": "https://www.mdpi.com/journal/applsci/instructions"
+    },
+    {
+      "bytes": 1130428,
+      "class_hashes": {
+        "Definitions/mdpi.cls": "62979fe0fe0f72a57adc1ad683add9b0138f1dae635d1da4ae48a4d811159e40"
+      },
+      "sha256": "8746ade43f6ba8e78250ff1b95f28025ef53aa6a270f66633677d346a2699fbd",
+      "status": 200,
+      "url": "https://mdpi-res.com/data/MDPI_template.zip"
+    }
+  ],
+  "screenshot_available": false
+}

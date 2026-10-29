@@ -4,6 +4,11 @@ Status: **local staging, unpublished**. Proposed tag: `tds-315-submission-2026-1
 The shared repository is https://github.com/Sam-7878/dlg_gnn. A repository URL and
 the Benchmark releases do not establish a public TDS release.
 
+Current storage: scientific inputs in `projects/tds/results/314_applsci/` and task
+315 outputs in `projects/tds/results/315_applsci/`. Manuscripts are separately
+generated for Preprints.org and Applied Sciences. The latest venue target and
+layout supersede earlier 315 metadata; see `projects/tds/reports/315/venue_split/`.
+
 The generated candidate contains 65 identifier-reduced, aligned test prediction
 CSVs (30 primary, 35 supplemental), scalar tables, corrected statistics, source
 hash lineage, scientific implementations and the eight scientific invariant

@@ -10,16 +10,22 @@
   "representative_full_resampling_replay": true,
   "source_path_repairs": [
     {
-      "after": "1d8aa2c4a5d4b4b8f452e96737c96acb171ab83a76d32a09e9b6d2598646d211",
+      "after": "f3a64e29a5e59e54ce278cc157361520cef3df1af4684abe7e5da5829ae85c5d",
       "before": "459db94dff5cce100f2b15a4924dd3a5a3ca1c2027308438e67c3579bda3637e",
       "path": "projects/tds/scripts/revision314/common.py",
-      "reason": "canonical path repair only"
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
+    },
+    {
+      "after": "012b8846e108cd6179dbda56b8b9270c3b9f6092ace757390a20911f2f3be492",
+      "before": "22862002f46b6e023dbbcd7a1a2918f0da696861aea9ec4415f693fd894605db",
+      "path": "projects/tds/scripts/revision314/outputs.py",
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
     },
     {
       "after": "b22b36c0f3f7a2bf869b68d4ab93d9c30e0a5768b01e51c95e2545cf1bc9f9fa",
       "before": "d31321a1814e567a1e99fdf34078f19a9cea1e73ee45330522bbb12383200041",
       "path": "projects/tds/scripts/revision314/seal_packages.py",
-      "reason": "canonical path repair only"
+      "reason": "explicitly authorized manuscript/results path separation; scientific functions unchanged"
     }
   ],
   "status": "PASS",

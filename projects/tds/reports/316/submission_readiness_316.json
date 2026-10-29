@@ -1,0 +1,85 @@
+{
+  "AUTHORS_APPROVED_PUBLIC_POSTING": false,
+  "AUTHOR_APPROVAL_COMPLETE": false,
+  "COI_AND_FUNDING_TEXT_VERIFIED": false,
+  "CURRENT_OFFICIAL_TEMPLATE_MATCH": true,
+  "DUAL_VERSION_PARITY_PASS": true,
+  "FIRST_PAGE_METADATA_COMPLETE": false,
+  "FUNDING_AND_COI_VERIFIED": false,
+  "J": {
+    "J0": false,
+    "J1": true,
+    "J2": true,
+    "J3": false,
+    "J4": true,
+    "J5": false,
+    "J6": true,
+    "J7": false
+  },
+  "LICENSE_AND_DATA_AVAILABILITY_APPROVED": false,
+  "MDPI_SOURCE_BUILD_PASS": true,
+  "NO_MDPI_LOGOS_NAMES_FOOTERS_PASS": true,
+  "P": {
+    "P0": true,
+    "P1": false,
+    "P2": false,
+    "P3": false,
+    "P4": true,
+    "P5": true,
+    "P6": false,
+    "P7": true
+  },
+  "POSTED_PREPRINT": false,
+  "PREPRINT_DOI": null,
+  "PREPRINT_NEUTRAL_TEMPLATE_PASS": true,
+  "PREPRINT_SOURCE_BUILD_PASS": true,
+  "PREPRINT_SOURCE_FRESH_COMPILE_PASS": true,
+  "PREPRINT_URL": null,
+  "PREPRINT_VERSION": null,
+  "PUBLIC_EVIDENCE_RELEASE_VERIFIED": false,
+  "READY_MDPI": false,
+  "READY_PREPRINT": false,
+  "SCIENCE_NUMERIC_PARITY_PASS": true,
+  "SCIENTIFIC_EVIDENCE_FROZEN": true,
+  "SUBMITTED_MDPI": false,
+  "SUBMITTED_PREPRINT": false,
+  "date": "2026-10-29",
+  "deadline_independently_verified": false,
+  "guest_editor": null,
+  "guest_editor_verified": false,
+  "journal_decision": "HOLD_AUTHOR_ACTION_AND_VENUE_PREFLIGHT",
+  "missing_mdpi": [
+    "J0",
+    "J3",
+    "J5",
+    "J7",
+    "PREPRINT_FIRST_WORKFLOW"
+  ],
+  "missing_preprint": [
+    "P1",
+    "P2",
+    "P3",
+    "P6"
+  ],
+  "new_training_performed": false,
+  "preprint_decision": "HOLD_AUTHOR_ACTION",
+  "public_push_performed": false,
+  "reported_deadline": "2026-12-31",
+  "source_hashes": {
+    "mdpi": {
+      "article": "4c0bed2ffff6edb79866e050b1f3650972166829081b4695719d7bc716b849ed",
+      "source_zip": "e2a0b9c10ea468991ab28562ff44560332d73d51600763fae97f31f8a29d7d57",
+      "supplement": "81ca32ccac8ee5b7d9eeeed04af8ff76eec84a416a9e0212842b4440fda0b888"
+    },
+    "preprints": {
+      "article": "289fa5e0cdb6784b97747508364674cf254b8705595c1b49e3613fa9dac1273b",
+      "source_zip": "a6b09cab8aa3b5b6a73b7402b9383e6a41f6fff222c62186f7167dd2e482db02",
+      "supplement": "a46d31bab1caaaf2c6f02e398e267c2851200ac452953bb0b44ae020ee1196ed"
+    }
+  },
+  "special_issue": "Machine Learning and Its Application for Anomaly Detection",
+  "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt",
+  "title": "A Validity-First Evaluation of Graph Neural Networks under Temporal Distribution Shift",
+  "title_final_author_approval": false,
+  "work_order": "TDS-WO-316-PREPRINT-MDPI-ANOMALY-DUAL-TRACK"
+}
