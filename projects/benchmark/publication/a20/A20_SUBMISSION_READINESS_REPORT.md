@@ -76,3 +76,4 @@ All 6 primary publication deliverables have been compiled, verified for byte-for
    - Commit all editorial changes.
    - Create annotated tag `benchmark-a20-preprint-2026-10-29` pointing to the release commit.
    - Push commit and tag to remote GitHub repository.
+

@@ -95,3 +95,4 @@ The A20 revision strictly adheres to the work order `DLG-BENCH-WO-A20-EDITORIAL-
 - Source bundles built and verified 100% byte-for-byte identical to standalone source files.
 - Manifests generated: `SHA256SUMS.txt` in both submission packages and `a20_final_sha256.txt`.
 - Git release tag target: `benchmark-a20-preprint-2026-10-29`.
+
