@@ -1,0 +1,42 @@
+{
+  "bibliography_changes": "Five booktitle prefix removals only; citation keys and other metadata unchanged",
+  "claim_matrix_rows": 18,
+  "ensemble_randomization_p": 0.1278872112788721,
+  "exploratory_family": 6,
+  "final_approval_not_inferred": true,
+  "mc_temp_holm": 0.091990800919908,
+  "numeric_tex_inputs_identical": [
+    {
+      "path": "data/control_interpretation.tex",
+      "sha256": "940bf2d5a166ba0d0cf597b5f50652f44d1fa90e5ec0a984320d2093a3b6568e"
+    },
+    {
+      "path": "data/operational_interpretation.tex",
+      "sha256": "22e023d3309ec468cc5c094c3d52421599fd9753b85aae80a392658c8668313b"
+    },
+    {
+      "path": "data/strict_interpretation.tex",
+      "sha256": "3b85be877cd9ef3215825e25e8e85aad89f618535982d7309425be2272ee9ddb"
+    },
+    {
+      "path": "data/table_controls.tex",
+      "sha256": "ad94b7ec0afbf11593e225aab730407187a983714c57433b08f8b84c0f4e363c"
+    },
+    {
+      "path": "data/table_primary.tex",
+      "sha256": "669bfa0becabdc19bac0db9d46422d33aae8265fc6e49d1cd91fb4cb01bd9848"
+    },
+    {
+      "path": "data/table_split.tex",
+      "sha256": "7ceba0c04743c5b6c22fde845116e4b74a4b44878f2177666178bb41e1bc4e0b"
+    },
+    {
+      "path": "data/table_statistics.tex",
+      "sha256": "85ec687287d040db86e6056d2f8ee8ef004f21b3468951b754dbefd8eae1853a"
+    }
+  ],
+  "original_family": 7,
+  "scope": "Targeted source/value checks plus manual claim review; not a formal automated proof of all prose",
+  "status": "PASS",
+  "unsupported_broad_claims": 0
+}

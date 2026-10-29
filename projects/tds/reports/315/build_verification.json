@@ -1,0 +1,191 @@
+{
+  "abstract_words": 180,
+  "all_clean_pdf_text_and_rendered_pixels_identical": true,
+  "article_and_supplement_builds": [
+    {
+      "log_sha256": "b1b156dc223087f22e97939b197d10c69a325a57f082fe27f79aea7976c9eae4",
+      "pages": 13,
+      "pdf_sha256": "ef507b23b2b8d10703a204e9622ec5edb3b245b2ea5df249ebc6526fe210a835",
+      "source": "applsci_article.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "d060b8d7e37ed4ce8bb267c5e9866f20efbd213bf5fad7c03a053b6698fdcda1",
+      "pages": 4,
+      "pdf_sha256": "f7b7275f7926856146e585e37cd0e018e3d5045f2542977d11f26ea6994d77de",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "article_pages": 13,
+  "cited_references": 19,
+  "clean_builds": [
+    {
+      "log_sha256": "b1425e668dfa292bb6ef97a0dbad6a1792fb755c6ddd721e96f2875aca5bfbcb",
+      "pages": 13,
+      "pdf_sha256": "7b3d76c4506204567363120bbcb425827e0719c0076e2b348a72bac6b1ee6da3",
+      "source": "applsci_article.tex",
+      "warnings": []
+    },
+    {
+      "log_sha256": "57d64a9c031420e872ba202a33ff0f339f4ed500ad8abb0a5c71e0d4174d2cd6",
+      "pages": 4,
+      "pdf_sha256": "0b201f55647d5485effb46659a24c3910bc87eedfffef9238aa11ce6c3901daf",
+      "source": "supplement/supplementary.tex",
+      "warnings": []
+    }
+  ],
+  "current_template_download_verified": false,
+  "current_template_note": "Official page advertises September 2026 update; fresh ZIP request returned HTTP 403; retained official R314 class compiled successfully. Latest publisher template equivalence not verified.",
+  "delivered_pdf_copies_inside_zip_byte_identical": true,
+  "full_rendered_page_count": 17,
+  "official_template_class_sha256": "62979fe0fe0f72a57adc1ad683add9b0138f1dae635d1da4ae48a4d811159e40",
+  "render_manifest": [
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 1,
+      "path": "qa/article/page-01.png",
+      "pixel_sha256": "7dd076fe9deb885f3f2fa76991dae730cdaa9deb23c6f86f474d0031ff267230",
+      "png_sha256": "2960dbd424661ad0196b47b60e4ee1bce5eed8cac56f11382467e3b3c6b2809d"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 2,
+      "path": "qa/article/page-02.png",
+      "pixel_sha256": "85165e0983e1a32840c181cc9676dc1feedb2d778af51ce60914f7e99c6af3f9",
+      "png_sha256": "9a6217e0c53fed4797369d36f8194a81473d8d233fc2052160ea3dad253d29e7"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 3,
+      "path": "qa/article/page-03.png",
+      "pixel_sha256": "3a8b7344b7c150aec908a27621e54ae3bcd25de6e0ac12f52223c005dd86ba53",
+      "png_sha256": "eb747403abb7a2dde5ead6b45183767d322a460861d2f5b0f76b85c97e9b37e1"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 4,
+      "path": "qa/article/page-04.png",
+      "pixel_sha256": "68c8687769f018fd2a21d635159fbebfbf75185aa56ba4a058c338d6691a6c6c",
+      "png_sha256": "26b8918422dd4440b4dbdcaf745a9bb1652773d0d391793ca69bb1094724bda1"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 5,
+      "path": "qa/article/page-05.png",
+      "pixel_sha256": "e2ee05fc71032f0cbb124415394b1776f701d82b1aa470cb1798e94e901999ec",
+      "png_sha256": "43a0ed2a285ae0c7dd66bab23b11c83bb158c3b0ae2424b3398cde4c2df6a626"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 6,
+      "path": "qa/article/page-06.png",
+      "pixel_sha256": "16a0ad07dc9780e0f83227dd3434cbd4f2f28bffa9d87661e232f99f655a24e7",
+      "png_sha256": "fc55ac0f1d0ceed7272b717ca3f9f095e2a99c14add2401a3a5d76fe0acad704"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 7,
+      "path": "qa/article/page-07.png",
+      "pixel_sha256": "3c5538ad9567d1a992aa22021dd19fb953f6ac407ec29197f0531d8eb64d583f",
+      "png_sha256": "8b4edbbba06f45ff7550a5fee0b95277157ce6534273551867d33788e48180ef"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 8,
+      "path": "qa/article/page-08.png",
+      "pixel_sha256": "5e5f2e066d09bc811008f97712213345c5bf322ffbf5161f6cb7647c4c0e2348",
+      "png_sha256": "db614aab56d62abe73f6d0ab77dca28005a124c61b2bc5ed9d0496e9ffc4772e"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 9,
+      "path": "qa/article/page-09.png",
+      "pixel_sha256": "a23ec953ce97c6b03b369814b11a34e43874824d3e4f9d8e95847c1b0d3df9c8",
+      "png_sha256": "13faaccae54ff27570f0866c987450605735064b0afb561983bc34167048b415"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 10,
+      "path": "qa/article/page-10.png",
+      "pixel_sha256": "e3e2cdbb3c4528bc7fcc3afe788636502a8d9c297ab6e0e83d739976373346fe",
+      "png_sha256": "638485f37768bddc5b13bbf67fda76748ea69754370898340261ed0703d1d493"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 11,
+      "path": "qa/article/page-11.png",
+      "pixel_sha256": "0c66661b45ae3f0660538424e1e17e7106519c26599b61f3113d08ca1244b373",
+      "png_sha256": "7a39a48ae56693a595e0f8aa398afb9aa1bc049a7030072237dd493e30c6882f"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 12,
+      "path": "qa/article/page-12.png",
+      "pixel_sha256": "39388cd46e28563d19054a0937424ec85e949a0aa828dd6739ba9c92f660b942",
+      "png_sha256": "f44511c840cc11e21da22fb4aa8e516dd0ba784ca36278432ce3126ed5f38714"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "article",
+      "page": 13,
+      "path": "qa/article/page-13.png",
+      "pixel_sha256": "9281e223e1879d135ac56fe9c10506bc8bb577bf2ae26ccdf48cac9aba0d1590",
+      "png_sha256": "fb8fe62acd67fae1a2de9b642013d453cceafb76751a880bd392d87319bf5bed"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "supplement",
+      "page": 1,
+      "path": "qa/supplement/page-1.png",
+      "pixel_sha256": "10b3e05669069a705e14d3857db772f86430ae0bcc832573b4f3e8d1db61ffa0",
+      "png_sha256": "b18a465f9418bf42e7e0a7dc2a0046fc664aa29b098d134a1a9c6916fda61004"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "supplement",
+      "page": 2,
+      "path": "qa/supplement/page-2.png",
+      "pixel_sha256": "a6f9094017c321ee07d092794e61f911f935ce56c6112d06abac23c021a23caf",
+      "png_sha256": "1b37ed3b604b692c48f4820a36964db8596438950ec278dd78fc3e224a4d276a"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "supplement",
+      "page": 3,
+      "path": "qa/supplement/page-3.png",
+      "pixel_sha256": "07d3d20c1a99af3b58be2457f14bfd7a4725c46e52009358134b4fbbd1848da2",
+      "png_sha256": "3d862b242ecad821bbe46b5fc6e3e72934046a9c85e2d38cd4b081fc242c9065"
+    },
+    {
+      "clean_build_pixels_identical": true,
+      "document": "supplement",
+      "page": 4,
+      "path": "qa/supplement/page-4.png",
+      "pixel_sha256": "9f000df678152790657dc03f8092e67c4a28084421fdf54cd9c5b13f5d2ccaeb",
+      "png_sha256": "dc00fd8f6584d3903321258fd598199f5d8be51ce14e0f39a32664023ebf4fea"
+    }
+  ],
+  "scientific_tests": "8 passed, 32 upstream Python 3.14/PyTorch/PyG warnings; 42.59 seconds",
+  "source_zip": {
+    "bytes": 1689009,
+    "crc": "PASS",
+    "path": "submission_source.zip",
+    "sha256": "c45120b4b44b5a6370450ac92e62ea342793d5b963b3de00cf84f4d0c4bce713"
+  },
+  "source_zip_contains_cached_aux_or_bbl": false,
+  "status": "PASS",
+  "supplement_pages": 4
+}

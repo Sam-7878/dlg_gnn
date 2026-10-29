@@ -16,6 +16,7 @@ This directory provides the authoritative reference for the system architecture,
 | [**04. Benchmark & Evaluation Engine**](benchmark/04_benchmark_and_evaluation_engine.md) | Scientific reproducibility harness, 13 primary datasets plus external LANL, seven inferential models and diagnostic CONAD, public verify/tables and local paper modes, Friedman/Wilcoxon statistical testing | Empirical researchers and benchmark authors |
 | [**05. Streaming Monte Carlo Engine**](stream_mc/05_streaming_mc_engine.md) | Real-time streaming AML system, bounded-state sliding windows, dynamic relation tracking, subgraph caching, and priority transaction routing | Streaming data engineers and AML systems teams |
 | [**06. Transaction Decomposition System**](tds/06_tds_transaction_decomposition.md) | Multi-hop transaction graph decomposition, bipartite graph conversion, LLM-assisted knowledge extraction, and uncertainty-aware micro-RAG | Graph intelligence and LLM-GNN engineers |
+| [**TDS submission evidence layout**](tds/07_submission_evidence_layout.md) | Temporal-distribution-shift paper: private manuscript, public code/evidence, task-specific results and independent submission gates | TDS paper authors and reproduction reviewers |
 | [**07. Cross-Project Reuse Guide**](07_cross_project_integration_guide.md) | **Step-by-step recipes and plug-and-play code snippets** for importing and reusing DLG-GNN components in external projects | External project developers integrating DLG modules |
 
 ---

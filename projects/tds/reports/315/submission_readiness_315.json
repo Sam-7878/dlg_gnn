@@ -1,0 +1,43 @@
+{
+  "SUBMISSION_READY": false,
+  "SUBMITTED": false,
+  "article_sha256": "ef507b23b2b8d10703a204e9622ec5edb3b245b2ea5df249ebc6526fe210a835",
+  "date": "2026-10-29",
+  "decision": "HOLD_AUTHOR_ACTION",
+  "flags": {
+    "ARTIFACT_INTEGRITY_PASS": true,
+    "AUTHOR_APPROVAL_COMPLETE": false,
+    "CLAIM_CONSISTENCY_PASS": true,
+    "DECLARATIONS_COMPLETE": false,
+    "DELIVERY_COMPLETE": true,
+    "FUNDING_VERIFIED": false,
+    "MDPI_SOURCE_COMPILE_PASS": true,
+    "PUBLIC_RELEASE_VERIFIED": false,
+    "PUBLISHER_PREFLIGHT_COMPLETE": false,
+    "SCIENTIFIC_EVIDENCE_COMPLETE": true
+  },
+  "gates": {
+    "G0": "PASS",
+    "G1": "PARTIAL_AUTHOR_FACTS; FINAL_APPROVAL_PENDING",
+    "G2": "LOCAL_CANDIDATE_PASS; PUBLIC_RELEASE_PENDING",
+    "G3": "PASS",
+    "G4": "SOURCE_BUILD_PASS; CURRENT_TEMPLATE_AND_PORTAL_PENDING",
+    "G5": "LOCAL_DELIVERY_PASS",
+    "G6": "HOLD_AUTHOR_ACTION"
+  },
+  "new_training_performed": false,
+  "numeric_candidate_sha256": "5ac20f2c0aafe3725faa428073b45065816c7549047f158699b20bef76b116db",
+  "pending_requirements": [
+    "AUTHOR_APPROVAL_COMPLETE",
+    "FUNDING_VERIFIED",
+    "DECLARATIONS_COMPLETE",
+    "PUBLIC_RELEASE_VERIFIED",
+    "PUBLISHER_PREFLIGHT_COMPLETE"
+  ],
+  "release_commit": null,
+  "release_url": null,
+  "source_zip_sha256": "c45120b4b44b5a6370450ac92e62ea342793d5b963b3de00cf84f4d0c4bce713",
+  "supplement_sha256": "f7b7275f7926856146e585e37cd0e018e3d5045f2542977d11f26ea6994d77de",
+  "user_authorized_a16_sections_applied": true,
+  "work_order": "TDS-WO-315-SUBMISSION-CLOSURE"
+}

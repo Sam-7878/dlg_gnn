@@ -1,0 +1,8 @@
+{
+  "repository_scientific_invariants": {"command": "python -m pytest projects/tds/tests/test_revision314.py -q", "passed": 8, "failed": 0, "warnings": 32, "seconds": 42.59},
+  "staged_candidate_scientific_invariants": {"passed": 8, "failed": 0, "warnings": 32, "seconds": 70.56},
+  "fresh_archive_scientific_invariants": {"passed": 8, "failed": 0, "evidence": "candidate_local_verification.json"},
+  "submission_gate_invariants": {"command": "python -m pytest projects/tds/tests/test_submission315.py -q", "passed": 3, "failed": 0, "seconds": 0.16},
+  "warning_scope": "Existing upstream Python 3.14 PyTorch JIT FutureWarning and PyG typing deprecation warnings, not LaTeX warnings or scientific test failures",
+  "training_performed": false
+}

@@ -1,0 +1,7 @@
+item,scalar_inputs,source_location,distribution
+Figure 1,workflow and dataset contract,scientific/common.py,diagram remains in private manuscript
+Figure 2,data/split_composition.csv,scientific/audit.py,numeric input included
+Figure 3,data/mc_sensitivity_per_seed.csv;data/mc_sensitivity_summary.csv,preserved R314 outputs.py,writer private; mean sample SD and median runtime inputs included
+Figure 4,statistics/reliability_bin_support.csv,preserved R314 outputs.py,writer private; bin supports included
+Supplement convergence,statistics/convergence_audit.csv,preserved R314 per-run history.csv,epoch summary included; complete histories author-local
+Tables 2-4,data/supplemental_summary.csv;statistics/statistical_comparisons_corrected.csv,preserved private TeX tables,numeric inputs included; TeX private

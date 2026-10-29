@@ -1,0 +1,18 @@
+{
+  "input_pdf_sha256": {
+    "applsci_article.pdf": "1e0d06a5f34ff0fbfd2414e0f565bdce56549cc8ce8f17173cf2d154bb88bdfa",
+    "supplement/supplementary.pdf": "0970ada7fbd946817ccf225dd015d60e6de6c282c34dbc800945f71f75d8f641"
+  },
+  "input_tree": "projects/tds/paper/applsci",
+  "input_tree_exists": true,
+  "input_tree_mtime_ns": 1793273677674262000,
+  "legacy_alias": "registry mapping only; no second manuscript tree created",
+  "legacy_exists": false,
+  "legacy_last_commit": "8ba4b6ffb7b19c09774d8696f9f9479d21e7e1bf 2026-10-21T00:14:46+09:00",
+  "legacy_role": "historical Git/ZIP prefix; user moved local files before 315",
+  "legacy_tracked_files": 92,
+  "legacy_tree": "projects/tds/paper_applsci",
+  "preserve_user_move": true,
+  "task_results": "projects/results/tds/315_applsci",
+  "working_manuscript": "projects/tds/paper/applsci/submission_315"
+}

@@ -1,0 +1,21 @@
+{
+  "comparison": "MC Dropout Ensemble vs Deep Ensemble",
+  "exact_corrected_csv_match": true,
+  "mean_auc_pr_difference": -0.01809424415609434,
+  "n_bootstrap": 10000,
+  "n_bootstrap_valid": 10000,
+  "n_class_stratified_bootstrap": 10000,
+  "n_events": 3648,
+  "n_positive": 107,
+  "n_randomization": 10000,
+  "ordinary_ci95_high": -0.0016503432289810152,
+  "ordinary_ci95_low": -0.03463579251508962,
+  "ordinary_probability_gt_zero": 0.0156,
+  "paired_runs": 1,
+  "randomization_p_value_two_sided": 0.12788721127887212,
+  "scope": "one original comparison; all three 10000-resample protocols",
+  "seed": 20260916,
+  "stratified_ci95_high": -0.002456000091346871,
+  "stratified_ci95_low": -0.03505699308844935,
+  "stratified_probability_gt_zero": 0.0115
+}

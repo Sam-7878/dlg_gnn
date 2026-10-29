@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "private_paths_ignored": [
+    "projects/tds/paper/applsci/submission_315/applsci_article.tex",
+    "projects/tds/paper/applsci/submission_315/author_approval_record.md",
+    "projects/tds/paper/applsci/submission_315/submission_source.zip",
+    "docs/work_reports/tds/315_applsci/implementation_plan.md"
+  ],
+  "public_paths_tracking_eligible": [
+    "projects/tds/scripts/revision315/audit.py",
+    "projects/tds/reports/315/submission_readiness_315.json",
+    "projects/results/tds/315_applsci/supplemental_ap_summary.csv",
+    "projects/tds/publication/315/TDS_315_numeric_candidate.zip",
+    "projects/tds/tests/test_submission315.py"
+  ],
+  "public_push_performed": false,
+  "commit_performed": false,
+  "old_path_user_deletions_preserved": true
+}

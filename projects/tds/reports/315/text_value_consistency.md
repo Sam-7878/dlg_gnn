@@ -1,0 +1,5 @@
+# Text/value consistency
+
+PASS for the targeted 315 audit. The Abstract and Conclusions expose degree-summary MLP AP0.4751 and distinguish supplemental BCE GIN0.4524 from historical GIN0.4648. Cover letter agrees. All retained data/interpretation TeX inputs are byte-identical to sealed R314 inputs. The seven original table rows match corrected intervals and p-values; Holm0.0920 and raw0.1279 remain non-significant. The six exploratory contrasts remain a separate family. AP means threshold-grouped average precision. The ensemble NLL is0.0986 throughout. Figure3 SD/median definitions and Figure4 support/sharpening semantics remain intact.
+
+Only five redundant booktitle prefixes were removed; keys and all other bibliography metadata are unchanged. Nineteen references are cited, with no count padding. No broad architecture/prospective/long-horizon claim was found in the reviewed article, supplement or cover letter. Source-based assertions and manual review scope are recorded in claim_consistency.json and claim_to_evidence_matrix.csv. Author and public-release pending text remains explicit.

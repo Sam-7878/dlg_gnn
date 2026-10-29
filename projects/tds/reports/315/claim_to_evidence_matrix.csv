@@ -1,0 +1,19 @@
+claim_id,bounded_claim,manuscript_location,evidence_path,status
+sample_unit,One token/contract graph at last valid recorded transfer time; not transaction-level labels,article Materials and Methods; supplement data semantics,dataset_contract.json,PASS
+retrospective_label,Upstream Category 0 positive; discovery time unavailable,article Dataset and Limitations,dataset_contract.json,PASS
+test_horizon,"3648 contracts / 107 positives, 68230 seconds; no long-term guarantee",article split table and Limitations,data/split_composition.csv,PASS
+polygon_support,688 Polygon test contracts with one positive; no cross-chain robustness claim,article temporal composition and Limitations,data/split_composition.csv,PASS
+full_history,Degree inputs precede the 128-edge topology cap; no k-hop sampling parameter,article information admissibility,scientific/common.py;original_source/build_gog_chronological_dataset.py,PASS
+time_ties,3910/24316 tied observations; deterministic ordering is not execution order,article admissibility,data/timestamp_tie_audit.csv,PASS
+state,Per-chain TGN phase-reset predict-then-update without labels; TGAT absolute cutoff encoding,article reference encoders and Limitations,scientific/historical_models.py,PASS
+strict_time,Fixed-checkpoint input stress test; not a fully retrained strict benchmark,article strict interpretation and supplement,data/strict_time_sensitivity.csv,PASS
+causal,"Temporal input admissibility, without causal-effect identification",article admissibility and Limitations,dataset_protocol.md,PASS
+mlp_negative_finding,MLP AP0.4751 vs supplemental BCE GIN0.4524; historical GIN0.4648 separate,Abstract; controls; Conclusions; cover letter,data/supplemental_summary.csv;prediction_lineage.json,PASS
+ap_definition,Threshold-grouped AP; not trapezoidal PR area,article metric protocol; supplement,scientific/statistical_audit.py;replay.py,PASS
+original_holm,"Seven original comparisons; MC vs Temp Holm0.0920, ensemble raw0.1279; no familywise significance claim",article table 3 and corrected inference,statistics/statistical_comparisons_corrected.csv,PASS
+exploratory_holm,Six separate exploratory comparisons; MLP contrast not significant,article controls; supplement table3,statistics/control_statistical_comparisons.csv,PASS
+finite_p,(extreme+1)/10001 for10000 draws; seeds not resampled,article metric protocol; supplement,scientific/historical_statistics.py,PASS
+ensemble_nll,Temperature-scaled deep ensemble NLL0.0986; fixed aggregate,article Results and table2,data/table_primary.tex (private);primary numeric predictions,PASS
+mc_runtime,Figure3 mean/sample SD and median full-panel runtime; descriptive scope,article Figure3 and caption,data/mc_sensitivity_per_seed.csv;data/mc_sensitivity_summary.csv,PASS
+calibration,Figure4 support counts and tau<1 sharpening; no uniform overconfidence claim,article Figure4 and calibration methods,statistics/reliability_bin_support.csv;data/calibration_direction_audit.csv,PASS
+no_broad_claim,"No novel architecture, prospective fraud detection, universal temporal inferiority or independent future sampling claim",Abstract; Discussion; Limitations; Conclusions; cover letter,audited text and frozen panel scope,PASS

@@ -1,0 +1,31 @@
+{
+  "exploratory_family_size": 6,
+  "holm_recomputed": true,
+  "input_files_verified": 405,
+  "new_training_performed": false,
+  "original_family_size": 7,
+  "primary_artifacts_verified": 88,
+  "primary_checkpoints_verified": 20,
+  "primary_predictions_verified": 30,
+  "representative_full_resampling_replay": true,
+  "source_path_repairs": [
+    {
+      "after": "1d8aa2c4a5d4b4b8f452e96737c96acb171ab83a76d32a09e9b6d2598646d211",
+      "before": "459db94dff5cce100f2b15a4924dd3a5a3ca1c2027308438e67c3579bda3637e",
+      "path": "projects/tds/scripts/revision314/common.py",
+      "reason": "canonical path repair only"
+    },
+    {
+      "after": "b22b36c0f3f7a2bf869b68d4ab93d9c30e0a5768b01e51c95e2545cf1bc9f9fa",
+      "before": "d31321a1814e567a1e99fdf34078f19a9cea1e73ee45330522bbb12383200041",
+      "path": "projects/tds/scripts/revision314/seal_packages.py",
+      "reason": "canonical path repair only"
+    }
+  ],
+  "status": "PASS",
+  "supplemental_ap_mean_sample_sd_match": true,
+  "supplemental_checkpoints_verified": 35,
+  "supplemental_predictions_verified": 35,
+  "test_positives": 107,
+  "test_samples": 3648
+}

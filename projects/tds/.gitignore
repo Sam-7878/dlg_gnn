@@ -1,19 +1,7 @@
-# Keep revision source files visible despite repository-wide output patterns.
-!paper_applsci/*.tex
-!paper_applsci/*.bib
-!paper_applsci/data/*.tex
-!paper_applsci/supplement/*.tex
-!paper_applsci/Definitions/*.cls
-!paper_applsci/Definitions/*.bst
-!paper_applsci/Definitions/*.sty
-!paper_applsci/Definitions/*.tex
-!paper_applsci/soul*.sty
-
-# Numerical evidence and render/build products are distributed in the local
-# hash-checked revision archive; no public deposition is implied.
-paper_applsci/runs/
-paper_applsci/reports/pdf_review/
-paper_applsci/vendor/
-paper_applsci/packages/
-paper_applsci/**/*.pt
+# Author policy: unpublished manuscripts and manuscript writers stay local.
+/paper/
+/paper_applsci/
+/publication/315/candidate/
+/publication/315/*.zip
+!/publication/315/TDS_315_numeric_candidate.zip
 **/__pycache__/
