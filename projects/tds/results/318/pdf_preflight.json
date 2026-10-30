@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "venues": [
+    {
+      "venue": "preprints",
+      "article_sha256": "def3218ca77a84dcb3ab2ae49f18eb8f2681458111d0b5d399e73cf61177cee6",
+      "orcid_links_verified": true,
+      "visually_checked_pages": [
+        1,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "venue": "applsci",
+      "article_sha256": "79f8cb0b9010009022bce639013a4aa3a671ee2f28c252081b8698b308df3300",
+      "orcid_links_verified": true,
+      "visually_checked_pages": [
+        1,
+        6,
+        8,
+        9
+      ]
+    }
+  ],
+  "first_page_metadata_visually_checked": true,
+  "checklist_and_figure_captions_visually_checked": true,
+  "visual_check_scope": "selected pages and actual hyperlinks; not author consent"
+}

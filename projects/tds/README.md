@@ -1,13 +1,16 @@
 # TDS facade
 
-Current publication revision: [R317 reports](reports/317/README.md). Private common
-manuscripts are under `paper/submission_317/`, with independent preprint and MDPI
-wrappers. R317 audits first/last transfer selection, runs five-seed time ablations
-and a distinct seven-day observation cohort, and preserves all R314–316 evidence.
-Numeric outputs are under `results/317/`; source ZIPs and author records stay in
-private submission/317 areas. Science, local replay, author approval, public rights
-and actual platform events are separate gates. [R316](reports/316/README.md) and
-R315 links below are historical, not the active paper.
+Current publication closure: [R318 reports](reports/318/README.md). The private
+canonical manuscript is `paper/submission_318/`; venue candidates/signoffs live in
+`submission/{preprints,applsci,author_records}/318/`. R318 reconciles earlier and
+post-declaration R317 identities, cold-builds both generations, and preserves all
+R317 scientific results. It reflows the checklist and clarifies pseudonymous IDs
+and reproduction scope, with no new training. Current ledgers are in `results/318/`;
+the approved-in-wording author authority remains the user-designated R317 JSON.
+Science/candidate integrity PASS is distinct from pending publication rights,
+exact-file signoff, an actual public release, and platform submission/posting.
+The [R317 scientific campaign](reports/317/README.md), [R316](reports/316/README.md)
+and R315 links below remain preserved histories.
 
 Run `python projects/tds/scripts/revision317/replay.py` for CPU replay of 110 test
 arrays and 95 validation-only calibrators. Full source reconstruction and bounded

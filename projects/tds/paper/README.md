@@ -1,14 +1,19 @@
 # TDS paper workspace
 
-Current revision: `submission_317/`, with one canonical scientific source
-`shared/manuscript_body.tex`, `shared/references.bib`, and `shared/declarations.tex`.
-Edit those shared sources and run `shared/prepare.py`; then use
-`python projects/tds/scripts/revision317/build.py` from the repository root.
-Preprints article: `submission_317/preprints/preprint_article.pdf`.
-MDPI article: `submission_317/mdpi_applsci_anomaly/applsci_article.pdf`.
-Each has its own four-page Supplement and source ZIP. CSVs, arrays and experiments
-are in `../results/317/`, not paper/. Author records/source deliveries are in the
-ignored `../submission/*/317/` paths. Public work report: `../reports/317/README.md`.
+Current final candidate: `submission_318/`, identity
+`FINAL_CANDIDATE_318_RECONCILED`. Common source is in its `shared/` directory;
+the venue source trees have byte-identical scientific body, Bib, declarations,
+tables and figures. Frozen R317 science is preserved; R318 improves checklist
+layout and clarifies pseudonymous identifiers/reproduction scope.
+Delivered articles/source ZIPs/Supplements and metadata are in private
+`../submission/{preprints,applsci}/318/`. Each article is 13 pages; each Supplement
+is 4 pages. Current hashes: `../reports/318/final_candidate_ledger.md` and
+`../publication/318/SHA256SUMS_FINAL.txt`. Author authority is the user-designated
+R317 `author_confirmation_from_a16.json`; exact-file unsigned forms are in
+`../submission/author_records/318/`. Public report: `../reports/318/README.md`.
+CSV arrays/experiments stay in `../results/317/`; R318 audits stay in `../results/318/`.
+Use `../scripts/revision318/` for this bounded closure. R317 generation scripts
+target the preserved older candidate; they are not the current submission writer.
 The older source trees below are preserved history, not the active manuscript.
 
 The preserved R314 input is in `applsci/`. The active 315 submission candidate is

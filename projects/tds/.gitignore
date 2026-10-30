@@ -38,3 +38,10 @@
 /publication/317/candidate/
 /publication/317/*.zip
 !/publication/317/TDS_317_numeric_release_candidate.zip
+# R318 final venue candidates and signoffs remain author-local.
+/submission/applsci/318/*
+!/submission/applsci/318/README.md
+/submission/preprints/318/*
+!/submission/preprints/318/README.md
+# The reviewed release copy remains local until explicit rights/release approval.
+/publication/318/release/*.zip

@@ -1,0 +1,11 @@
+{
+  "checked_date": "2026-10-30",
+  "provider": "connected GitHub fetch_file",
+  "repository": "Sam-7878/dlg_gnn",
+  "commit": "93e4c82790b9ac1a6b12f4eddf037858c83921c3",
+  "path": "projects/tds/scripts/revision317/replay.py",
+  "git_blob_sha": "18761e0e2dbcc1fb04002db35964576b43f9ff27",
+  "url": "https://github.com/Sam-7878/dlg_gnn/blob/93e4c82790b9ac1a6b12f4eddf037858c83921c3/projects/tds/scripts/revision317/replay.py",
+  "publicly_readable_at_commit": true,
+  "tds_immutable_release_verified": false
+}

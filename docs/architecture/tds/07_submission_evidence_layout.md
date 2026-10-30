@@ -1,6 +1,22 @@
 # TDS submission evidence layout (2026-10-30)
 
-## Current publication revision 317
+## Current publication closure 318
+
+The private canonical paper is `projects/tds/paper/submission_318/`; the two venue
+deliveries and exact-file unsigned author records are in `submission/*/318/`.
+The original R317 scientific body, bibliography, scores and numeric ZIP remain
+unchanged. R318 reflows the checklist and clarifies pseudonymous identifier/replay
+scope in Data Availability. `reports/318/` and `results/318/` contain the sole current
+candidate ledger, source-ZIP cold builds and numerical/publication gate records.
+Code is `scripts/revision318/`; staged numerical release copy and attribution are
+`publication/318/release/` (ZIP remains ignored pending explicit approval).
+QA and historical report snapshots are `private/318/`. Source ZIPs, PDFs, author
+records and paper sources remain private; public evidence does not imply consent
+or actual submission. Current supplied author facts come from the user-designated
+`submission/author_records/317/author_confirmation_from_a16.json`; no final-file
+publication permission is inferred. Earlier histories are preserved below.
+
+## Preserved scientific publication revision 317
 
 The active private paper is `projects/tds/paper/submission_317/`: shared
 `manuscript_body.tex`, bibliography, declarations and venue-specific wrappers.

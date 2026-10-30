@@ -1,0 +1,31 @@
+{
+  "files": [
+    {
+      "path": "projects/tds/scripts/revision318/README.md",
+      "sha256": "fec6551cfd06f8fc90446cd9a602be741ced7720d8d7c5bcde27e6b9ffa589d3"
+    },
+    {
+      "path": "projects/tds/scripts/revision318/candidates.py",
+      "sha256": "57cde829523626b3cce855dda66c1c1e710ae99b3e13ebbccf47fb64c5588cf1"
+    },
+    {
+      "path": "projects/tds/scripts/revision318/closure.py",
+      "sha256": "c114fde48083917f0015ab83ffb15998e5d7f2642edc1c76a4b4e502294253ce"
+    },
+    {
+      "path": "projects/tds/scripts/revision318/gates.py",
+      "sha256": "42a096f0e5f5a0396cfc69116b8b269a116604fff864e14fef59819ecc1a27cc"
+    },
+    {
+      "path": "projects/tds/scripts/revision318/numeric_audit.py",
+      "sha256": "edaf12aa855cdfbaf4027729a6e312777c069a5f75f69e1e2d0730e6be381273"
+    },
+    {
+      "path": "projects/tds/tests/test_closure318.py",
+      "sha256": "66c104dc7c5423e74c2eaba7abf8c92744d079610e75bdafb7afb4ddd15f136d"
+    }
+  ],
+  "note": "Working-tree closure identity; not a release or fabricated publication commit",
+  "r318_code_committed": false,
+  "scientific_source_commit": "93e4c82790b9ac1a6b12f4eddf037858c83921c3"
+}

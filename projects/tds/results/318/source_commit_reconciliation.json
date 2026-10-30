@@ -1,0 +1,345 @@
+{
+  "all_current_r314_r317_code_at_local_head": true,
+  "files": [
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/audit.py",
+      "sha256": "fb036d0f0c0254e391e6fceac01d35f6ed13519e73d9422b34a95890bde4350b"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/common.py",
+      "sha256": "f3a64e29a5e59e54ce278cc157361520cef3df1af4684abe7e5da5829ae85c5d"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/control_statistics.py",
+      "sha256": "a452c53d91b794263db48751dbdacb6056d5d1bed13186f70a6ac28c7333d4ea"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/historical_gin.py",
+      "sha256": "d8698f9c15f77c17b0b5101484e99b9041d60a82f3a979a198ad5d4c4bdaa5cc"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/historical_metrics.py",
+      "sha256": "86ea35e9f7372cb21d1dbedf9edfada8e67959a6dec89fc9fce90f129b520f22"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/historical_models.py",
+      "sha256": "dbf84cedd7bdf364420ea8e747389ab28b27e1bf82340dd2e988b6f47e9a2fd2"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/historical_statistics.py",
+      "sha256": "fcb3154047bd196a1d3dbc46f051b73170fd1ba5370de6c57526965b278c41af"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/outputs.py",
+      "sha256": "012b8846e108cd6179dbda56b8b9270c3b9f6092ace757390a20911f2f3be492"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/package.py",
+      "sha256": "d1e18d53c3ce47e19498aaff76684aba67df9ac256a77559d62683e10dc4600b"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/seal_packages.py",
+      "sha256": "b22b36c0f3f7a2bf869b68d4ab93d9c30e0a5768b01e51c95e2545cf1bc9f9fa"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/statistical_audit.py",
+      "sha256": "1dffcba4deb518539f12ec97d7e2d04e2cd21ceeca1df878671aa8c3d35566df"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/strict_time.py",
+      "sha256": "0e817a89a24752e81108df04192624f500225a36c46ab7d2abcb27843e025b1b"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/train.py",
+      "sha256": "bc4c49de8d7c200e4312887083eec82e4920c67e96518c7bb2380b02fb9f3764"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision314/validate.py",
+      "sha256": "c0327b948c0138d303051c593cd66f6c3e8adbfc75a3291344ceb8a5ecf98503"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/audit.py",
+      "sha256": "eee94b77acfd50ed3d6f3d678934b452ae78d9ef1051b67d5e723db6f0e07c91"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/build.py",
+      "sha256": "e57eff9ac56cdcacaeac7605affdcb97bcad7da924c26995b7550efb00cf6221"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/claims.py",
+      "sha256": "e47e7d38a54c35add2fd4ad2a2e0200b93f8dbfaa14455eac511f2a95805aad2"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/close.py",
+      "sha256": "57abef3ed75b39aac050f7cf9e5a2c0a31ed4240eeff9b744a1f149513b55c7f"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/freeze.py",
+      "sha256": "063b3468b1a1dafc31f32f29680779ee6fb2e52186ce4119a2f8744f674bc66e"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/gates.py",
+      "sha256": "65b58a4804400dfbde6dda30d2ad738e688b6e19021f09ac476bf40e028cb562"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/latex_tools.py",
+      "sha256": "2b8801058d211103fb4ba20214b2c99facb91c862245e915e3f5452e741f421c"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/paths.py",
+      "sha256": "2b68dd3d9e4b5abfcac62e42b8a2fee138fe5badb9f4754dfa05ad640d43d845"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/reorganize.py",
+      "sha256": "d56146f92c3e132b57a2dfc5e2f2e8c878ba10054c3f21c7b1f90f2b8eea17b2"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/replay.py",
+      "sha256": "38c0120409f3629484d72a1dffc3ad33465b1a9d6a25ca7cbede0fa9e91d4940"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/stage.py",
+      "sha256": "dd73436725d334c689961e6f22d565313726cc1b5e558668158560c3fe597759"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/venues.py",
+      "sha256": "6520e6b01477eab38e9c72897f8f2703ff50968d7ddd977da94783070d56aec9"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/verify_candidate.py",
+      "sha256": "dd50539abfc75edbf45e0911ebecdb6642e4b6467ff8368cb3fa02717e7cb4e4"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision315/verify_layout.py",
+      "sha256": "7cf7fdc9594cba85666e110361080d012718d59be6da1e432a5277f98f7848ae"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/build.py",
+      "sha256": "a056ef7ef69eb2157387342e2a102d30649668e56ce9eae0962abf363629a415"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/common.py",
+      "sha256": "d882b8748005cf1f2e399facf315b8da32a201f267c0f195c709437b114a6663"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/finalize.py",
+      "sha256": "fc791813274762d17dc16328531ed988bf19f43e29b983a8d3763029570c978a"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/freeze.py",
+      "sha256": "c62c5f1b9f88f33f89b3b3419c12e61862582fc77e675d74852d94cc5c0fb41a"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/gates.py",
+      "sha256": "34f4fb41d92ada4892b8268a8cb8b89c9aa1f926afd2901904c5593e83f1ea71"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/inspect_environment.py",
+      "sha256": "d8f6243bd475273ecac79137b5181d9628fabfedb62c71635fa6cd46a17f8d1d"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/latex_tools.py",
+      "sha256": "2b8801058d211103fb4ba20214b2c99facb91c862245e915e3f5452e741f421c"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/numeric_candidate.py",
+      "sha256": "e90b2ca57c2cf4ff800544ad975f890ed92098f2f638c09d9b80525522c98641"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/paths.py",
+      "sha256": "d679f72e57c0bf5dfe35557cee74a8d8838d1c439cd282316b892d853436296c"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/qa.py",
+      "sha256": "678f2dcd32355340d23155694b4a9e509f9235d89e84a5b454a79a4cd33fd6e5"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision316/verify_delivery.py",
+      "sha256": "adff342bc9bb86b398252a9347c103c2705507c6e2d15e4114e7adb124334642"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/analyze.py",
+      "sha256": "b803f28797b0dc6fc282e6b6beedeb4769cfbfec7a5917c2dc69005e589bbd39"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/build.py",
+      "sha256": "f79d76b291e0e09829956d0b5015aa36539b5d5f92ac331ed1e41e20a1a6bdef"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/common.py",
+      "sha256": "c73adb2fa519a4355f29e675de59192262f71fd11408b0333dbbc8bcc249043a"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/confirm_authors.py",
+      "sha256": "c6819e98569e0c3d5b9234fa3c3405cc1dd8421af16949d85754123dbefcd005"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/finalize.py",
+      "sha256": "f2e7fd487b35e94ce03d5617b113478982bb5df06979a3eb678f9ddf8cdf6713"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/freeze.py",
+      "sha256": "ee5406ab32fdaae6727b39169062e9e2b0a060bc9eae57cb2bf47516b7f77cb5"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/gates.py",
+      "sha256": "c4774a9d05b367ab9ead712ad08c36c972a7ecf7fa420276d3f54751c43a9f83"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/horizon.py",
+      "sha256": "3c0f9ff1def853518d693b46a4d50e0c60c72a6691722b922063eda3870aa6d6"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/lineage.py",
+      "sha256": "937eb6a70011861e8cae66e64833453f553053292e7fa75c989d7d9cd5f22e32"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/package.py",
+      "sha256": "b11d7d078d3e363e96b2735825da41eb279b4c3230ea0656e42d22ef287d3624"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/protocol.py",
+      "sha256": "8f1ff05f3861a66a424d58272cdc68f75cda5f168d64cc574ed72f592eab89b6"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/replay.py",
+      "sha256": "273f5b032f249be4a3f00ce38041d4ea6b9eef24b877b88d464c1f31a8d4cbbe"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/reports.py",
+      "sha256": "2d253e5695bae635ca58c9c53f2dde84654852b93fe77d575f39a6e74c287b36"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/tables.py",
+      "sha256": "25134e6f6103eac9754e5503131dd6c2d4f2471f733e4a662020d795cebe2c2f"
+    },
+    {
+      "at_local_head": true,
+      "matches_local_head": true,
+      "path": "projects/tds/scripts/revision317/train.py",
+      "sha256": "e68829d66d9f521a8814e6c9ba545fd71e862468701fecbf93b40d352ad420ac"
+    }
+  ],
+  "independent_remote_file_check": {
+    "checked_date": "2026-10-30",
+    "commit": "93e4c82790b9ac1a6b12f4eddf037858c83921c3",
+    "git_blob_sha": "18761e0e2dbcc1fb04002db35964576b43f9ff27",
+    "path": "projects/tds/scripts/revision317/replay.py",
+    "provider": "connected GitHub fetch_file",
+    "publicly_readable_at_commit": true,
+    "repository": "Sam-7878/dlg_gnn",
+    "tds_immutable_release_verified": false,
+    "url": "https://github.com/Sam-7878/dlg_gnn/blob/93e4c82790b9ac1a6b12f4eddf037858c83921c3/projects/tds/scripts/revision317/replay.py"
+  },
+  "local_head": "93e4c82790b9ac1a6b12f4eddf037858c83921c3",
+  "r318_new_code_publication_authorized": false,
+  "remote_commit_readable": true,
+  "source_317_false_commit_flag_is_historical": true,
+  "tds_release_verified": false
+}

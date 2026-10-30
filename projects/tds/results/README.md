@@ -10,6 +10,10 @@ folder. They do not write data into `paper/` or the former `projects/results/tds
   input hashes, source lineage and task 315 derivatives.
 - `316_dual_submission/`: R315 input seal, unchanged numeric identities, final
   artifact hashes and immutable platform-state history. No new training.
+- `317/`: frozen first/last selection audit, 110 test arrays, 95 validation-only
+  calibrators and distinct seven-day cohort; original results remain unchanged.
+- `318/`: current version ledger, clean builds, independent numerical checks and
+  publication readiness; author data come from the designated private R317 JSON.
 - `historical_reviewed_draft/data/`: three earlier figure-input CSVs moved from
   paper/current, preserved without changing their values.
 

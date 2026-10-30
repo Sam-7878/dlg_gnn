@@ -1,0 +1,37 @@
+{
+  "citation_groups": [
+    "pang2021review,ruff2021review,qiao2025survey",
+    "luo2024multichain",
+    "xu2019gin,hamilton2017graphsage",
+    "tang2023gadbench",
+    "pang2021review,ruff2021review",
+    "dou2020caregnn",
+    "liu2008isolation",
+    "poursafaei2022towards,huang2023tgb,yu2023dygformer",
+    "brody2022attentive",
+    "xu2020tgat",
+    "rossi2020tgn",
+    "saerens2002adjusting,lipton2018labelshift",
+    "kapoor2023leakage",
+    "guo2017calibration",
+    "saito2015precision",
+    "gal2016dropout,lakshminarayanan2017deepensemble",
+    "lin2017focal",
+    "ke2017lightgbm",
+    "liu2008isolation"
+  ],
+  "citation_order_identical": true,
+  "missing_or_undefined_references": 0,
+  "scientific_bibliography_sha256": "152dbcf958a12b2be8b2c96e0fe10979539d879ded963c9bac2f75033e9f63af",
+  "table_figure_label_order_identical": true,
+  "table_figure_labels": [
+    "tab:sorting",
+    "fig:selection",
+    "tab:lifetime",
+    "tab:primary",
+    "tab:horizon",
+    "tab:calibration",
+    "tab:checklist",
+    "fig:decision"
+  ]
+}

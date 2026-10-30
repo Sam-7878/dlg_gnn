@@ -1,0 +1,11 @@
+{
+  "direct_address_files": [],
+  "forbidden_payloads": [],
+  "formal_privacy_guarantee": false,
+  "mapping_disclosed": false,
+  "private_mapping_join_count": 24316,
+  "redistribution_authorized": false,
+  "sample_id_bearing_csv_count": 215,
+  "sample_ids_pseudonymous_not_anonymous": true,
+  "upstream_reconstruction_linkage_possible": true
+}
