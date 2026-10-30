@@ -1,0 +1,12 @@
+{
+  "gate": "A23-G1",
+  "status": "PASS",
+  "datasets_checked": 14,
+  "has_node_retention_ratio_column": false,
+  "dgraphfin_raw_upstream_nodes": 3700550,
+  "dgraphfin_model_input_N": 1225601,
+  "dgraphfin_labeled_evaluation_population_N": 367702,
+  "dgraphfin_test_population_N_by_seed": "42..46:183840",
+  "dgraphfin_positives_by_seed": "42..46:2326",
+  "table1_exact_match_all_14_datasets": true
+}

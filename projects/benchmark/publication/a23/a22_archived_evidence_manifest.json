@@ -1,0 +1,122 @@
+{
+  "gate": "A23-G0",
+  "generated_at_utc": "2026-10-30T01:45:51.875976+00:00",
+  "historic_a22_tag": "benchmark-a22-submission-2026-10-30",
+  "historic_a22_tag_commit": "7e764da3a55d9d13ab50a2dbebab13670946a6cd",
+  "pre_a23_head_commit": "93e4c82790b9ac1a6b12f4eddf037858c83921c3",
+  "post_report_orcid_commit_explanation": "Commit 7e764da3a55d9d13ab50a2dbebab13670946a6cd was tagged as benchmark-a22-submission-2026-10-30 with Preprints.pdf=334cd3cc6287fd92ff30628d50d998d66b62ccbc761586c43e1601b62a9cfbc5 and AppliedSciences.pdf=54684e5245238eb797a2acde19a01ba7c6c4a46b2f6c9a5e6d74ffca02e207a8. Subsequent commit 93e4c82790b9ac1a6b12f4eddf037858c83921c3 updated author ORCID metadata in the TeX files and rebuilt the PDFs/ZIPs/SHA256SUMS.txt without regenerating A22_SUBMISSION_READINESS_REPORT.md. A23 preserves A22_SUBMISSION_READINESS_REPORT.md untouched as a historical record and issues A23_SUBMISSION_READINESS_REPORT.md and A23_SHA256SUMS.txt from a single frozen post-build pass.",
+  "canonical_selected_run_registry": {
+    "path": "projects/benchmark/publication/a16/canonical_selected_run_registry.csv",
+    "sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+    "total_valid_runs": 455,
+    "primary_13_datasets_runs": 420,
+    "external_lanl_runs": 35
+  },
+  "archived_a22_files": {
+    "projects/benchmark/publication/a22/A22_SUBMISSION_READINESS_REPORT.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/A22_SUBMISSION_READINESS_REPORT.md",
+      "sha256": "1f1f46899588c507454b04e9aa991b38ed4a2f5a13a8ebbac169c8d5da498124",
+      "bytes": 8386
+    },
+    "projects/benchmark/publication/a22/a22_ablation_provenance_audit.csv": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_ablation_provenance_audit.csv",
+      "sha256": "62567a7ecd878317c0d4e4502c99f242f279cba4c3a70ae368b682ad62ceb76c",
+      "bytes": 1820
+    },
+    "projects/benchmark/publication/a22/a22_archived_score_float32_floor_diagnostic.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_archived_score_float32_floor_diagnostic.json",
+      "sha256": "c9c7e90c578c61eef27dd9bca812ab0e80d570354714654b641946ed25414cab",
+      "bytes": 14621
+    },
+    "projects/benchmark/publication/a22/a22_claim_language_audit.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_claim_language_audit.md",
+      "sha256": "6c02fb16f987ce3d2f94be25181eb5c95c6b10ffb7c1f66f27537345c2b9774c",
+      "bytes": 3172
+    },
+    "projects/benchmark/publication/a22/a22_data_and_split_provenance.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_data_and_split_provenance.md",
+      "sha256": "5a76843554cbf7668f6b7b6af4904384f38c3feb9ad8d4fc97f335f43fe9603a",
+      "bytes": 5589
+    },
+    "projects/benchmark/publication/a22/a22_dataset_topology_diagnostics.csv": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_dataset_topology_diagnostics.csv",
+      "sha256": "31438829c8f07f51f0ca53fbe881673dfaac3ff58066b681fd295a61fd34befe",
+      "bytes": 5346
+    },
+    "projects/benchmark/publication/a22/a22_dense_exact_training_equivalence.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_dense_exact_training_equivalence.json",
+      "sha256": "e396f4be6b8918d405913ce47d013c04636a6d3163ede521a282c79d318d3fa9",
+      "bytes": 45060
+    },
+    "projects/benchmark/publication/a22/a22_exact_loss_source_trace.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_exact_loss_source_trace.md",
+      "sha256": "d3799cc2d0634abf88a7e005aef5ffe11e595bc2b17663e3ed6fc7cb279e5239",
+      "bytes": 7314
+    },
+    "projects/benchmark/publication/a22/a22_feature_only_baseline_scope.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_feature_only_baseline_scope.md",
+      "sha256": "80fc8760632cbdb1010cdff85597e582496aaa06219091c6a7091e87145c5dfd",
+      "bytes": 2547
+    },
+    "projects/benchmark/publication/a22/a22_gadnr_numerical_diagnostic.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_gadnr_numerical_diagnostic.json",
+      "sha256": "ec4159a386a1f2a8778eb47c6d02befb5eb63bc90ac04c366a4bfd561aa50d6a",
+      "bytes": 1740
+    },
+    "projects/benchmark/publication/a22/a22_installed_pygod_dump.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_installed_pygod_dump.json",
+      "sha256": "dbeb4dfba7bdbeb981648805bd5c05aded943004c1aef6f9fc97f7e518183c7b",
+      "bytes": 951
+    },
+    "projects/benchmark/publication/a22/a22_installed_pygod_dump.src.txt": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_installed_pygod_dump.src.txt",
+      "sha256": "b9fa76f7aaeaf84793ca019ba36a511e4db7258ac7b966bcf70aea940f5f7da3",
+      "bytes": 8991
+    },
+    "projects/benchmark/publication/a22/a22_objective_branch_decision.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_objective_branch_decision.md",
+      "sha256": "6f3dab4f4be90e03ea4dcb23c35d66969b61b3a19248e9523cbaf94595e44135",
+      "bytes": 4183
+    },
+    "projects/benchmark/publication/a22/a22_rank_effect_size.csv": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_rank_effect_size.csv",
+      "sha256": "bb6678be830cff26ccc58266f5faf49ef50635e1e7a5284f7b35adc95a6428b5",
+      "bytes": 833
+    },
+    "projects/benchmark/publication/a22/a22_release_invariants.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_release_invariants.json",
+      "sha256": "dc392ddfc6ee0d4e79b846f1aba8cfc6068b5590cf658154526b2038efa42c63",
+      "bytes": 2642
+    },
+    "projects/benchmark/publication/a22/a22_stat_view_membership.csv": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_stat_view_membership.csv",
+      "sha256": "33f190c41ab1281dd08e2ec3ac4db0b95020f478dd57e76afcc8e62ced4cccc3",
+      "bytes": 1584
+    },
+    "projects/benchmark/publication/a22/a22_support_failure_ledger.csv": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_support_failure_ledger.csv",
+      "sha256": "e7c78cf5bc256073eb626e33fe4f546e94f9b8b34ed17387a3f03798f25dbb07",
+      "bytes": 62973
+    },
+    "projects/benchmark/publication/a22/a22_support_table_fig_consistency.json": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_support_table_fig_consistency.json",
+      "sha256": "48092f09d9b01f45f8b93320aad945842ad918aef6af6e6583a341f22f51d06f",
+      "bytes": 1005
+    },
+    "projects/benchmark/publication/a22/a22_telemetry_audit.md": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_telemetry_audit.md",
+      "sha256": "e643a887aab673c7b8d95cb2013bd2c9c608e47aaa5500318fd0b85614a0445c",
+      "bytes": 2119
+    },
+    "projects/benchmark/submission/preprints/SHA256SUMS.txt": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_preprints_SHA256SUMS.txt",
+      "sha256": "ed8a29ab010691169bb3c4455db3207f18eb2f25ad4f4faa2d28a3db4b090753",
+      "bytes": 361
+    },
+    "projects/benchmark/submission/applsci/SHA256SUMS.txt": {
+      "archived_to": "projects/benchmark/publication/a23/archive_a22_snapshot/a22_applsci_SHA256SUMS.txt",
+      "sha256": "e442f3dded4cd81c39672a93c11604dca3b276312ccc52d0abbd8fdaf08aebfc",
+      "bytes": 373
+    }
+  }
+}

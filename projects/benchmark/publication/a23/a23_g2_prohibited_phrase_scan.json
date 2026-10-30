@@ -1,0 +1,30 @@
+{
+  "gate": "A23-G2",
+  "status": "PASS",
+  "scanned_files_count": 11,
+  "scanned_files": [
+    "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
+    "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.tex",
+    "projects/benchmark/publication/a23/ablation_provenance_noncausal.csv",
+    "projects/benchmark/publication/a23/ablation_provenance_noncausal.md",
+    "projects/benchmark/publication/a23/dataset_graph_identity_canonical.csv",
+    "projects/benchmark/publication/a23/dataset_graph_identity_canonical.md",
+    "projects/benchmark/publication/a23/s3_label_provenance_gate.csv",
+    "projects/benchmark/publication/a23/gadnr_failure_evidence_note.md",
+    "projects/benchmark/publication/a23/g1_exact_loss_canonical_trace.md",
+    "projects/benchmark/publication/a22/a22_ablation_provenance_audit.csv",
+    "projects/benchmark/publication/a22/a22_mechanistic_ablation_note.md"
+  ],
+  "prohibited_phrases_checked": [
+    "proves capacity",
+    "driven by regularized",
+    "stem from regularized",
+    "stem from high-capacity",
+    "alignment disproven",
+    "proves ap gain is not driven by",
+    "proves training epoch budget alone",
+    "confirms that performance gains on this network stem from"
+  ],
+  "matches_found_count": 0,
+  "matches": []
+}

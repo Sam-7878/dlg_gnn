@@ -1,47 +1,38 @@
-# Gate A20: Submission Gate Report and Canonical Checksum Ledger
+# Gate A23: Submission Gate Report and Canonical Checksum Ledger
 
-**Document ID:** `DLG-BENCH-GATE-A20-RELEASE`  
-**Date:** 2026-10-29  
-**Status:** PASS (Canonical Ledger Synchronized with Disk Bytes)  
-**Target Git Tag:** `benchmark-a22-submission-2026-10-30` (superseding `benchmark-a20-preprint-2026-10-29`)  
+**Document ID:** `DLG-BENCH-GATE-A23-RELEASE`  
+**Date:** 2026-10-30  
+**Status:** PASS (Canonical Ledger Synchronized with Disk Bytes in Single Post-Build Pass)  
+**Target Git Tag:** `benchmark-a23-preprint-2026-10-30` (superseding `benchmark-a22-submission-2026-10-30` and `benchmark-a20-preprint-2026-10-29`)  
 
 ---
 
 ## 1. Unified Canonical SHA-256 Digest Ledger
 
-All cryptographic hashes below are computed directly from the final disk bytes:
+All cryptographic hashes below are computed directly from the final frozen disk bytes after compilation and isolated bundle verification:
 
 | Publication Target | Artifact File | Size (Bytes) | SHA-256 Digest | Status |
-|---|---|---|---|---|
-| **Preprints.org** | `DLG-Benchmark_A16_Preprints.pdf` | 602,671 | `a4bc3dd65dba431dd23f7d0cbd74bfd744506c192e79e7d64cbd0bcb1805c96f` | Verified |
-| **Preprints.org** | `DLG-Benchmark_A16_Preprints.tex` | 66,043 | `f202bdf160fea13e9abfddf769890aaa3e0d6fc7e65afe17533b0c53809ba6d3` | Verified |
-| **Preprints.org** | `source_bundle.zip` | 816,138 | `1b685586ec2e34fad47615db952cc7977cb0280b07874bce6666418c8293ffc7` | Verified |
-| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.pdf` | 352,898 | `c44aa4c6cda155346b7e7eb5cfd13154952b198a634ae3afe841c77b80957af9` | Verified |
-| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.tex` | 65,671 | `257bc901b097709e891880a7d3cbde6bc77426fc7436125c48a7bff0f6d8a03a` | Verified |
-| **Applied Sciences** | `source_bundle.zip` | 1,852,125 | `2cf89c7e4376cded7daab1d3290542bcb78b2350cf931badeb5f5a28a56955fb` | Verified |
+|---|---|---:|---|---|
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.pdf` | 615,068 | `2ba2757a5372ccb05659ea664d4827956479a33acafa525eac397d94e341b719` | Verified |
+| **Preprints.org** | `DLG-Benchmark_A16_Preprints.tex` | 72,260 | `f7d88d32810dbc545068b48310b5ca1f438769e9fd1f8b6775a4105ffe358b86` | Verified |
+| **Preprints.org** | `references.bib` | 19,402 | `b42f92f2f6143b4cf79eaee3ed55f7e01deba2a6fc4d77164529c4ef3b19e42c` | Verified |
+| **Preprints.org** | `source_bundle.zip` | 818,200 | `aec6d84e5f02dbc30710ffc7d019070f6d2de137ec3cbace7933514e8e187f62` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.pdf` | 366,225 | `6cd073eda041b9a9767f994e32cdc4f38efd2a0303939e246c759a69e0ac8026` | Verified |
+| **Applied Sciences** | `DLG-Benchmark_A16_AppliedSciences.tex` | 71,888 | `55c268a3f2f0776f1ff1662e3f66f2331d1d25ff3717bdd814cba216a83b7022` | Verified |
+| **Applied Sciences** | `references.bib` | 19,402 | `b42f92f2f6143b4cf79eaee3ed55f7e01deba2a6fc4d77164529c4ef3b19e42c` | Verified |
+| **Applied Sciences** | `source_bundle.zip` | 1,854,183 | `15a1d5cae582ce8673b5dcbdc07a12650b8d78008bb5b9419c4d41e38393cbbc` | Verified |
 
 ---
 
-## 2. Compilation and Formatting Checks
+## 2. Compilation and Isolated Clean-Unpack Checks
 
 - **Preprints.org Manuscript:**
-  - Page Count: 20 pages (target satisfied)
-  - Undefined References: 0 (`undef refs: []`)
-  - Undefined Citations: 0 (`undef cits: []`)
-  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, figures matching disk bytes 1:1
+  - Page Count: 23 pages
+  - Undefined References: 0 (`undef_refs: []`)
+  - Undefined Citations: 0 (`undef_cits: []`)
+  - Isolated `/tmp` Clean-Unpack Compile Check: PASS (23 pages, 0 LaTeX errors)
 - **Applied Sciences Manuscript:**
-  - Page Count: 19 pages (target satisfied)
-  - Undefined References: 0 (`undef refs: []`)
-  - Undefined Citations: 0 (`undef cits: []`)
-  - Source Bundle Clean-Unpack Verification: Complete TeX, BibTeX, Definitions, style files, figures matching disk bytes 1:1
-
----
-
-## 3. Evidence and Editorial Integrity Verification
-
-- **BSC Source Map Alignment:** Verified test positive count vector $[215, 240, 232, 215, 203]$ across CSV, JSON, and prose (exact mean $221.0$).
-- **Score-Level Audit Disclosure:** High-resolution per-node anomaly score vectors preserved locally for 105 cryptocurrency evaluations; historical baseline 350 runs preserved as summary metrics without raw score arrays.
-- **Practitioner Decision Matrix (Table 7):** Feasibility strictly decoupled from detection accuracy; non-extrapolated coverage and prevalence thresholds calibrated to empirical evidence.
-- **Split Protocol Semantics:** Cryptocurrency splits audited as seeded random permutation (non-stratified 60/20/20); synthetic benchmark splits audited as stratified.
-- **Hardware Memory Semantics:** Reddit $4N^2 \approx 217$ GB dense lower bound and DGraphFin 6.0 TB clearly differentiated from measured VRAM and illustrative profiles.
-- **Figures:** All figures re-rendered from authentic empirical facts; zero unsupported architectural claims.
+  - Page Count: 20 pages
+  - Undefined References: 0 (`undef_refs: []`)
+  - Undefined Citations: 0 (`undef_cits: []`)
+  - Isolated `/tmp` Clean-Unpack Compile Check: PASS (20 pages, 0 LaTeX errors)

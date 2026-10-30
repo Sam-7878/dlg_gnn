@@ -1,117 +1,53 @@
-# Gate A22-G1: Exact Loss and Optimizer Semantics Source Trace Audit
+# Canonical Exact-Loss Source Trace & Mathematical Orientation Audit (`A23-G4`)
 
-- **Date:** 2026-10-30
-- **Auditor:** DLG-GNN Benchmark Integrity Taskforce
-- **Status:** PASS (Case A Confirmed — Exact Match to PyGOD double_recon_loss)
-- **Artifact:** `projects/benchmark/publication/a22/a22_exact_loss_source_trace.md`
+## 1. Authoritative Repository Paths & SHA-256 Digests
 
----
+In the initial A22 audit note (`a22_exact_loss_source_trace.md`), shorthand paths (`dlg_gnn/model/...`) were used in prose. The exact repository paths under `src/gog_fraud/models/pygod/` and their verified SHA-256 digests are listed below:
 
-## 1. Executive Summary
-
-Claude Reviewer M7 identified a potential discrepancy between the loss equation reported in the manuscript (Equations 137 and 152) and standard PyGOD implementation:
-- **Manuscript presentation:** $\frac{1}{N^2} \|A - ZZ^\top\|_F^2 = \frac{1}{N^2} \sum_{i,j} (A_{ij} - z_i^\top z_j)^2$ (Squared Frobenius norm / mean squared error over all pairs).
-- **PyGOD `double_recon_loss`:** $\ell_i = w \|X_i - \hat{X}_i\|_2 + (1-w) \|A_i - \hat{A}_i\|_2$, with training loss $\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \ell_i$ (Euclidean row-norm residual per node, with square-root per node before taking the sample mean).
-
-A comprehensive mathematical and code-level audit was conducted across the PyGOD 1.1.0 codebase, the production model implementation (`SharedDLGBase`, `SharedDLGFull`, `SharedDOMINANT`), and the closed-form Gram reduction routines (`exact_reconstruction.py`).
-
-### Key Findings
-1. **PyGOD Reference Implementation:**
-   - In PyGOD 1.1.0 (`pygod/nn/functional.py`), `double_recon_loss` computes:
-     ```python
-     diff_attribute = torch.pow(x - x_, 2)
-     diff_structure = torch.pow(s - s_, 2)
-     score_attribute = torch.sqrt(torch.sum(diff_attribute, 1))
-     score_structure = torch.sqrt(torch.sum(diff_structure, 1))
-     score = weight * score_attribute + (1.0 - weight) * score_structure
-     loss = torch.mean(score)
-     ```
-   - Both structural and attribute residuals take the per-node Euclidean norm (square-root of row sum) prior to mean reduction.
-
-2. **Benchmark Production Implementation:**
-   - In `dlg_gnn/model/exact_reconstruction.py`, `exact_double_reconstruction_score` computes the exact structural row residual closed-form without materializing $N \times N$:
-     $$Q_i = \|A_{i,:} - z_i Z^\top\|_2^2 = d_i - 2 z_i (Z^\top A_{:, i}) + z_i (Z^\top Z) z_i^\top$$
-     It then applies `_stable_sqrt(Q_i)`:
-     ```python
-     structure_score = _stable_sqrt(exact_dot_product_row_squared_error(...))
-     ```
-   - In `dlg_gnn/model/shared_dominant_full.py`, `_backward_exact` takes this exact score and computes:
-     ```python
-     total_loss = float(self.weight) * attr_loss + float(1.0 - self.weight) * struct_loss
-     ```
-     where both `attr_loss` and `struct_loss` are `.mean()` of the per-node Euclidean residuals.
-
-3. **Conclusion:**
-   - **The benchmark code has ALWAYS executed the exact PyGOD `double_recon_loss` objective identically down to machine precision.**
-   - The manuscript Equations (137) and (152) presented the structural residual energy / algebraic intermediate prior to Euclidean row-norm reduction, leading the external reviewer to question whether squared Frobenius or Euclidean row-norm was optimized.
-   - Rigorous unit tests across seeds, asymmetric graphs, isolated nodes, and self-loops confirm loss relative error $\le 3.12 \times 10^{-16}$ (float64) and parameter gradient cosine $= 1.000000000000$.
-   - **Decision: Case A is confirmed.** No retraining is required or justified. The manuscript equations and accompanying text in Section 3.3 will be clarified to present the per-node Euclidean row norm and mean reduction explicitly.
+| Repository / Environment Path | Role | SHA-256 |
+| :--- | :--- | :--- |
+| `/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/pygod/nn/functional.py` | Upstream PyGOD `double_recon_loss` (`pygod==1.1.0`) | `5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9` |
+| `src/gog_fraud/models/pygod/__init__.py` | Production / verification module | `666e7e6e5878957049d9061e9d29d32740c2acf92ed12805a2cafead8dbb964e` |
+| `src/gog_fraud/models/pygod/data_adapter.py` | Production / verification module | `6cf20817145063b5fbb5fef610d26ac81d576c251b05c252bf8f07ab7d2da294` |
+| `src/gog_fraud/models/pygod/dlg.py` | Production / verification module | `a869ade9da1e8d52bbb2ffaee37bcf847542915b87f8748adc4450f3389b3a78` |
+| `src/gog_fraud/models/pygod/dlg_base.py` | Production / verification module | `fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888` |
+| `src/gog_fraud/models/pygod/dlg_full.py` | Production / verification module | `1d862bf780ab83ba4eb008eecd94cca23258c71d4b87289c268d8beb5482f37b` |
+| `src/gog_fraud/models/pygod/dlg_full_base.py` | Production / verification module | `82c357d49ecff6ea572129957687a969df3f26cb248895164a2d8f59d3698aaf` |
+| `src/gog_fraud/models/pygod/exact_reconstruction.py` | Production / verification module | `c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037` |
+| `src/gog_fraud/models/pygod/gadnr.py` | Production / verification module | `a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9` |
+| `src/gog_fraud/models/pygod/shared_reconstruction.py` | Production / verification module | `1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f` |
+| `src/gog_fraud/models/pygod/sparse_message.py` | Production / verification module | `5d4b00cbcc56ece5057b432a2a7ce64bcac5accde45620a260465a9113b9c012` |
+| `src/gog_fraud/models/pygod/stable_reconstruction.py` | Production / verification module | `713be1fdad8ad77cb30ab2c6ea845ade88bcd9a1d2cea12a7abb792411e9861a` |
+| `projects/benchmark/scripts/a22_g1_dense_exact_training_equivalence.py` | Production / verification module | `1e93238fa524163d2808dafb5d121d2c2b51911758d65f7ff1e2de0f35bad5c9` |
 
 ---
 
-## 2. Source Code SHA-256 Hashes and Locations
+## 2. Directed vs. Undirected Row-Residual Orientation Identity (`A22-F6` Fix)
 
-| Component | Path | SHA-256 |
-|---|---|---|
-| PyGOD Functional Reference | `pygod/nn/functional.py` | `5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9` |
-| PyGOD DOMINANT Base | `pygod/models/dominant.py` | Installed PyGOD 1.1.0 |
-| Production Exact Reconstruction | `dlg_gnn/model/exact_reconstruction.py` | `283ff6e96bbd9f2da05b765ec177b966ddaa1ce3f3ef8a7985aa0a911765ad8d` |
-| Production Stable Reconstruction | `dlg_gnn/model/stable_reconstruction.py` | `d17743ea44da0df1c50e417122a2754942ec4cf41103c80bb01a4e15ba3c6981` |
-| Production Shared DOMINANT Base | `dlg_gnn/model/shared_dominant_base.py` | `0b776a3ff88d2f592205562723c3b0dfb2fef40d42bc19472e35327ec23fbc04` |
-| Production Shared DLG Base | `dlg_gnn/model/shared_dlg_base.py` | `07920dc7c449db77b94ce50f385c4bf49a0d8c0b561df0b87c7aa32c029b35bc` |
-| Production Shared Full Graph Mixin | `dlg_gnn/model/shared_dominant_full.py` | `e985b8eb8ba1ae89a0785196dc4126d4001d234a62243d6dbfbf1386fc7430c7` |
+For any binary adjacency matrix $A \in \{0, 1\}^{N \times N}$ (whether symmetric/undirected or asymmetric/directed) and latent node embedding matrix $\mathbf{Z} \in \mathbb{R}^{N \times d}$ with row vectors $\mathbf{z}_i \in \mathbb{R}^d$, PyGOD's `double_recon_loss` computes the per-node structural residual as the Euclidean $L_2$ norm of row $i$ of $(A - \mathbf{Z}\mathbf{Z}^\top)$:
 
----
+$$
+\mathcal{A}_{\mathrm{struct}, i}^2 = \|A_{i,:} - (\mathbf{Z}\mathbf{Z}^\top)_{i,:}\|_2^2 = \sum_{j=1}^N \left(A_{ij} - \mathbf{z}_i^\top \mathbf{z}_j\right)^2.
+$$
 
-## 3. Mathematical Equivalence Proof
+Expanding the quadratic over outgoing neighbor index $j \in \{1, \dots, N\}$ for fixed source row $i$:
 
-Let $A \in \{0, 1\}^{N \times N}$ be the adjacency matrix and $Z \in \mathbb{R}^{N \times d}$ be the node embeddings.
-The reconstructed adjacency is $\hat{A} = Z Z^\top$.
+$$
+\sum_{j=1}^N \left(A_{ij} - \mathbf{z}_i^\top \mathbf{z}_j\right)^2 = \underbrace{\sum_{j=1}^N A_{ij}^2}_{\mathrm{deg}_{\mathrm{out}}(i)} - 2 \mathbf{z}_i^\top \underbrace{\sum_{j=1}^N A_{ij} \mathbf{z}_j}_{(A\mathbf{Z})_i} + \mathbf{z}_i^\top \left(\mathbf{Z}^\top \mathbf{Z}\right) \mathbf{z}_i.
+$$
 
-The row residual for node $i$ in dense PyGOD is:
-$$R_{i,:} = A_{i,:} - \hat{A}_{i,:} = A_{i,:} - z_i Z^\top$$
-The squared Euclidean norm of this row vector is:
-$$\|R_{i,:}\|_2^2 = \sum_{j=1}^N (A_{ij} - z_i^\top z_j)^2 = \sum_{j=1}^N A_{ij}^2 - 2 \sum_{j=1}^N A_{ij} z_i^\top z_j + \sum_{j=1}^N (z_i^\top z_j)^2$$
-Since $A_{ij} \in \{0, 1\}$, $A_{ij}^2 = A_{ij}$, and $\sum_j A_{ij} = d_i$ (the node degree).
-Furthermore, $\sum_j A_{ij} z_j = (Z^\top A_{:, i}) = (A Z)_i$.
-And $\sum_j (z_i^\top z_j)^2 = z_i \left( \sum_j z_j z_j^\top \right) z_i^\top = z_i (Z^\top Z) z_i^\top$.
-
-Therefore:
-$$Q_i = d_i - 2 z_i (A Z)_i + z_i (Z^\top Z) z_i^\top$$
-This identity holds identically without approximation.
-
-The Euclidean row norm per node is:
-$$\mathcal{A}_{\mathrm{struct}, i} = \sqrt{\max(Q_i, 0)}$$
-And the attribute reconstruction error per node is:
-$$\mathcal{A}_{\mathrm{attr}, i} = \|X_{i,:} - \hat{X}_{i,:}\|_2 = \sqrt{\sum_{k=1}^F (X_{ik} - \hat{X}_{ik})^2}$$
-
-The training loss is:
-$$\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \left[ w \, \mathcal{A}_{\mathrm{attr}, i} + (1-w) \, \mathcal{A}_{\mathrm{struct}, i} \right]$$
-
-This is mathematically identical to PyGOD's `double_recon_loss(x, x_, s, s_, weight)`.
+- **Crucial Orientation Note for Directed Graphs:** The cross-term sum over column index $j$ in row $i$ is $\sum_{j=1}^N A_{ij} \mathbf{z}_j = (A\mathbf{Z})_i$ (row $i$ of the matrix product $A\mathbf{Z}$). In the earlier A22 note (`a22_exact_loss_source_trace.md`), an intermediate expression wrote $(\mathbf{Z}^\top A_{:,i})$, which equals $(A^\top \mathbf{Z})_i = \sum_{j=1}^N A_{ji} \mathbf{z}_j$ (the incoming-edge sum) and coincides with $(A\mathbf{Z})_i$ **only** when $A = A^\top$.
+- **Production Code & Manuscript Verification:** Both the manuscript (Equation 3: $\mathrm{deg}(i) - 2\mathbf{z}_i^\top (A\mathbf{Z})_i + \mathbf{z}_i^\top (\mathbf{Z}^\top \mathbf{Z})\mathbf{z}_i$) and the production sparse implementation (`exact_reconstruction.py`, which aggregates target embeddings $z_j$ for each directed edge $(i, j)$ into source node $i$ via `neighbor_sum.index_add_(0, row, z[col])`) compute $(A\mathbf{Z})_i$ and `deg_out(i)` (`row` degree), matching `torch.norm(A - Z @ Z.T, dim=1)` identically on both directed and undirected graphs.
+- **Asymmetric Directed Graph Unit Test (`a23_g4_asymmetric_orientation_test.json`):** Verified on a strictly asymmetric 12-node directed graph ($A \neq A^\top$):
+  - $\max_i \|\sum_j A_{ij} \mathbf{z}_j - (A\mathbf{Z})_i\|_\infty = 0.00e+00$
+  - $\max_i |\|A_{i,:} - (\mathbf{Z}\mathbf{Z}^\top)_{i,:}\|_2 - \mathcal{A}_{\mathrm{struct}, i}^{(A\mathbf{Z})_i}| = 1.78e-15$
+  - By contrast, substituting $\mathbf{Z}^\top A_{:,i} = (A^\top \mathbf{Z})_i$ produces an orientation error of $4.4777$ on the same asymmetric graph.
 
 ---
 
-## 4. Controlled Unit Test Results
+## 3. Explicit Scope of the 18 CPU Equivalence Unit Tests
 
-The suite in `projects/benchmark/scripts/a22_g1_dense_exact_training_equivalence.py` executed 18 unit tests across:
-- Float64 and Float32 precision
-- Models: DOMINANT, DLG-Base, DLG-Aug
-- Graph configurations: Symmetric, Asymmetric, Isolated nodes, Duplicate edges, Self-loops
-- Optimizer trajectories: Single forward, Single backward, 10-step Adam optimizer trajectory
-
-### Summary Metrics:
-- **Float64 Forward Loss Relative Error:** $\le 3.12 \times 10^{-16}$ (Predeclared tolerance: $1.0 \times 10^{-12}$)
-- **Float64 Backward Gradient Cosine:** $= 1.000000000000$ (Predeclared tolerance: $> 0.999999$)
-- **Float64 Trajectory Parameter Step Diff:** $\le 1.11 \times 10^{-16}$
-- **Float32 Forward Loss Relative Error:** $0.00$
-- **Float32 Backward Gradient Cosine:** $= 1.000000000000$
-- **Float32 Gradient Relative L2 Error:** $\le 1.87 \times 10^{-7}$
-- **Float32 Trajectory Loss Diff:** $\le 2.05 \times 10^{-7}$
-- **Negative Controls (Objective Mismatch Detection):**
-  - Squared Per-Node Mean vs PyGOD: Gradient Relative L2 Error $= 0.7818$ (Tolerance violation $> 100\times$, reliably caught)
-  - Global Squared Frobenius vs PyGOD: Gradient Relative L2 Error $= 5.4140$ (Tolerance violation $> 1000\times$, reliably caught)
-
-Full structured JSON results are deposited in:
-`projects/benchmark/publication/a22/a22_dense_exact_training_equivalence.json`.
-
+The 18 automated unit tests in `projects/benchmark/scripts/a22_g1_dense_exact_training_equivalence.py` (recorded in `projects/benchmark/publication/a22/a22_loss_equivalence_report.json`) verify:
+1. Forward per-node structural residual scores $\mathcal{A}_{\mathrm{struct}, i}$ and composite scalar loss $\mathcal{L}$ between PyGOD's dense `double_recon_loss` and our sparse Gram implementation (`exact_reconstruction.py` / `stable_reconstruction.py`) across undirected, directed, isolated-node, self-loop, and $w \in \{0.0, 0.2, 0.5, 0.8, 1.0\}$ synthetic graph fixtures ($N=40$, float32 and float64).
+2. Backward parameter gradients $\nabla_\theta \mathcal{L}$ and 10-step Adam optimization trajectories under deterministic initialization on CPU synthetic fixtures ($N=40$).
+3. **Boundary of Claim:** These controlled unit tests establish mathematical and algorithmic equivalence of the objective function and gradient step on synthetic test fixtures; they do **not** claim bitwise GPU replay of all 455 historical benchmark runs (which were executed across mixed GPU hardware and cannot be bit-identically replayed due to standard CUDA atomic reduction non-determinism).

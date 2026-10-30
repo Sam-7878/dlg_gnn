@@ -1,0 +1,12 @@
+{
+  "gate": "A23-G4",
+  "status": "PASS",
+  "matrix_is_asymmetric": true,
+  "n_nodes": 12,
+  "n_directed_edges": 12,
+  "max_abs_diff_explicit_sum_vs_AZ_i": 0.0,
+  "max_abs_diff_explicit_sum_vs_ZT_A_col_i": 4.4777214988369645,
+  "max_abs_diff_dense_row_L2_vs_AZ_i_gram": 1.7763568394002505e-15,
+  "max_abs_diff_dense_row_L2_vs_wrong_ZT_A_col_i": 0.7290384335469255,
+  "conclusion": "Verified on strictly asymmetric directed adjacency A: sum_j A_{ij} z_j equals (AZ)_i (max abs diff = 0.00e+00) and matches dense row L2 residual ||A_{i,:} - (ZZ^T)_{i,:}||_2 (max abs diff = 1.78e-15), whereas the column-indexed expression Z^T A_{:,i} = (A^T Z)_i diverges on asymmetric graphs (max abs diff = 4.4777)."
+}

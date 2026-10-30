@@ -1,0 +1,8 @@
+# Non-Causal Mechanistic Ablation Provenance Note (`A23-G2`)
+
+## 1. Purpose and Scope
+Table A3 in the manuscript reports historical diagnostic controls conducted on `Elliptic` during campaign `A03_DIAGNOSTIC` alongside the frozen primary benchmark baselines (`A20_A21_CANONICAL`). In accordance with Gate `A23-G2`, all interpretations of these diagnostic controls are restricted to non-causal empirical observations:
+
+1. **Permutation Control (`DLG-Aug-Permuted`, $\mathrm{AP}=0.1087$ vs. historical `DLG-Aug` $0.1056$):** Randomly permuting the pretrained local representation rows across nodes does not degrade Average Precision on `Elliptic`. Therefore, **permutation results do not support node-wise local-to-global alignment as a necessary explanation in these diagnostic runs**.
+2. **Zero-Vector Control (`DLG-Aug-Zero`, $\mathrm{AP}=0.0857$):** Appending a zero vector of matching dimension yields an intermediate score between unaugmented `DLG-Base` ($0.0687$ canonical / $0.0694$ historical) and `DLG-Aug` ($0.1037$ canonical / $0.1056$ historical). This observation is **consistent with some architectural or input-path contribution**, while the individual causal mechanisms (e.g., input-layer weight scaling, non-zero distribution shifts, or implicit regularization) **remain unresolved** without controlled layer-norm and random-noise matched experiments.
+3. **Epoch-Budget Control (`DLG-Base-70`, $\mathrm{AP}=0.0645$):** Extending unaugmented training from 50 to 70 epochs does not reproduce the `DLG-Aug` score, suggesting that additional training epochs alone do not account for the observed difference in these runs.
