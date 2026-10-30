@@ -2,7 +2,7 @@
 
 Current benchmark paper: **A24 manuscript**; preserved source baseline: A23. The frozen benchmark comprises **13 primary graphs + 1 external graph, 7 primary configurations, 84/91 supported primary pairs, 420 primary + 35 external = 455 successful runs**. CONAD remains diagnostic only. New A24 experiments are separate supplementary campaigns and do not change these counts or primary ranks.
 
-Scientific supporting evidence is identified by annotated tag [`benchmark-a24-supplementary-2026-10-30`](https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a24-supplementary-2026-10-30); the resolved commit, asset hashes and fresh-clone checks are recorded in [A24 reproducibility](projects/benchmark/A24_REPRODUCIBILITY.md). A Git tag is a reference; pin the recorded commit and checksums. No benchmark DOI or platform submission is claimed.
+Scientific supporting evidence is identified by annotated tag [`benchmark-a24-supplementary-2026-10-30-r1`](https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a24-supplementary-2026-10-30-r1); the resolved commit, asset hashes and fresh-clone checks are recorded in [A24 reproducibility](projects/benchmark/A24_REPRODUCIBILITY.md). A Git tag is a reference; pin the recorded commit and checksums. No benchmark DOI or platform submission is claimed.
 
 The shared implementations live in `src/`; project-specific evidence and commands live in `projects/`. Raw datasets, new per-node scores/checkpoints, supplementary wheels and unpublished A24 manuscript sources/PDFs/writer stay in ignored author-local storage.
 
