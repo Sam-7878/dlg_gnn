@@ -1,0 +1,18 @@
+{
+  "coefficients": [
+    [
+      0.76865968844613
+    ]
+  ],
+  "intercept": [
+    -0.07179617954147637
+  ],
+  "mean": [
+    4.022000406241843
+  ],
+  "protocol_sha256": "6b02ad1db70d71a291255ffa34be913dfd7cd4c859643be2f80e53d18d79b35a",
+  "scale": [
+    0.9453026818616596
+  ],
+  "test_sign_selection": false
+}

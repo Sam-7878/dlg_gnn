@@ -1,0 +1,9 @@
+{
+  "by_chain": {
+    "bsc": 0.13062098501070663,
+    "ethereum": 0.18968650613357566,
+    "polygon": 0.021463414634146343
+  },
+  "pooled": 0.14812407680945347,
+  "source": "training labels only"
+}

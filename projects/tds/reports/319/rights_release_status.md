@@ -1,0 +1,7 @@
+# R319 rights, author and submission gate
+
+**Status: HOLD.** An R319 numerical evidence directory and two local venue candidates are not a public release or submission. No TDS-specific immutable tag, public release asset, DOI, anonymous-download replay, Preprints.org receipt, or MDPI Special Issue portal receipt has been verified. The 2026-10-30 date reflects the current work order, not a posted or submitted version.
+
+The upstream GoG archive is governed by its source terms, including CC BY-NC-SA 4.0. Address-named raw data and contract mappings stay local. Pseudonymous sample IDs, timestamps and predictions may still be linkable; numerical evidence being git-eligible does not confer redistribution permission. Restricted-access wording is needed if the exact public scope cannot be cleared. No source-data copyright or license compatibility is inferred from numerical replay.
+
+The two authors' exact-file approval of the final R319 article PDFs, supplements and source ZIPs remains unsigned. Official evidence for `IITP-2026-RS-2021-II211835` and funder role, final author-specific CRediT/Funding/COI approval, and release-scope clearance remain to be verified. The previously supplied A16-derived declarations and user-specified author details inform the draft but do not substitute for these separate gate documents. No push, tag, deposition or portal submission is authorized by the local build.

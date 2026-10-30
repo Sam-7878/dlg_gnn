@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "applsci": {
+      "applsci_article.pdf": {
+        "bytes": 289307,
+        "path": "projects/tds/submission/applsci/319/applsci_article.pdf",
+        "sha256": "d6286c25722a88f494779fb2395919c3d291f4dbf210a41ac9793324de09e615"
+      },
+      "mdpi_source.zip": {
+        "bytes": 1137437,
+        "path": "projects/tds/submission/applsci/319/mdpi_source.zip",
+        "sha256": "e1fc8c710d18dd4e7e58c1d573d4acd9640a182b9f1052910d2bb87c8d245d43"
+      },
+      "supplement.pdf": {
+        "bytes": 169400,
+        "path": "projects/tds/submission/applsci/319/supplement.pdf",
+        "sha256": "fb78b5eb1e5a1ef1ab007ba02530d1172569c97e0e0746df6704d1b08e9a4076"
+      }
+    },
+    "preprints": {
+      "preprint_article.pdf": {
+        "bytes": 347559,
+        "path": "projects/tds/submission/preprints/319/preprint_article.pdf",
+        "sha256": "a390a33f205d40377bf871756925a73abe12765ac537c8d9fd7ca64821e98c4a"
+      },
+      "preprint_source.zip": {
+        "bytes": 101589,
+        "path": "projects/tds/submission/preprints/319/preprint_source.zip",
+        "sha256": "d0c481521fbebc6dd2a73da0fddf0a2a9f04c583ded8de122490d66b097c2a9a"
+      },
+      "supplement.pdf": {
+        "bytes": 169400,
+        "path": "projects/tds/submission/preprints/319/supplement.pdf",
+        "sha256": "c574576168a8c4eab07573c936114ad601a518463104bbc06a24c5dd09ae2153"
+      }
+    }
+  },
+  "author_approval": "PENDING_EXACT_FILE_SIGNOFF",
+  "builder_sha256": "5788d7e2af1b1604653c16e74bd4d6e29c19822def0c607eacfb5da052f414af",
+  "date": "2026-10-30",
+  "id": "FINAL_CANDIDATE_319_SCIENTIFIC_RECONCILED",
+  "journal_status": "NOT_SUBMITTED",
+  "official_funding_evidence": "PENDING",
+  "preprint_doi": null,
+  "preprint_status": "NOT_POSTED",
+  "previous_articles": {
+    "applsci": {
+      "bytes": 252556,
+      "path": "projects/tds/submission/applsci/318/applsci_article.pdf",
+      "sha256": "79f8cb0b9010009022bce639013a4aa3a671ee2f28c252081b8698b308df3300"
+    },
+    "preprints": {
+      "bytes": 310483,
+      "path": "projects/tds/submission/preprints/318/preprint_article.pdf",
+      "sha256": "def3218ca77a84dcb3ab2ae49f18eb8f2681458111d0b5d399e73cf61177cee6"
+    }
+  },
+  "previous_candidate": "FINAL_CANDIDATE_318_RECONCILED",
+  "protocol_sha256": "6b02ad1db70d71a291255ffa34be913dfd7cd4c859643be2f80e53d18d79b35a",
+  "public_release_verified": false,
+  "rights": "HOLD",
+  "science_source_sha256": {
+    "declarations": "7b7b0cd9661f92b69b22d1904a1284fdc5f645ff59551ea9be37846ab9bdb608",
+    "manuscript_body": "88836ff33042a451c628ccd64502508703ce450b6878035e20b543c8abd6ed91",
+    "references": "3b80922be80f59f00adff7230dee589811e438c18328d5534033e03b70edf8b2"
+  },
+  "submission_permission": false
+}

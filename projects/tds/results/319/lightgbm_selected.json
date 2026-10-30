@@ -1,0 +1,8 @@
+{
+  "learning_rate": 0.1,
+  "num_leaves": 63,
+  "protocol_sha256": "6b02ad1db70d71a291255ffa34be913dfd7cd4c859643be2f80e53d18d79b35a",
+  "selection_seed": 7,
+  "test_used_for_selection": false,
+  "validation_ap": 0.9932224720789864
+}

@@ -1,0 +1,10 @@
+cohort,subgroup,n,positive,negative,prevalence,selection
+original,all,3648,107,3541,0.029331140350877194,frozen test population
+original,L<1d,8,7,1,0.875,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+original,1<=L<7d,28,7,21,0.25,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+original,L>=7d,3612,93,3519,0.02574750830564784,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+horizon7,all,3627,2037,1590,0.5616211745244003,frozen test population
+horizon7,L<1d,1162,1147,15,0.9870912220309811,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+horizon7,1<=L<7d,536,511,25,0.9533582089552238,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+horizon7,L>=7d,1929,379,1550,0.1964748574390876,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility
+horizon7,continued_after_7d,1929,379,1550,0.1964748574390876,RETROSPECTIVE/FUTURE-CONDITIONED; not operational eligibility

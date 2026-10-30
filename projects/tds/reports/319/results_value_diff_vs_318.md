@@ -1,0 +1,5 @@
+# R318 to R319 scientific value changes
+
+R318's frozen seven-day summary reported weighted-BCE GIN AP 0.6358, summary MLP AP 0.9582, LR AP 0.9068, and time-input GATv2 AP 0.6126. These files and the R318 article PDF hashes remain unchanged. R319 repeats GIN-0 on the same fixed seven-day cohort and obtains mean AP 0.6418; the small difference is a new run, not a correction to R317 scores. Explicit size raises GIN AP to 0.9445; sum pooling reaches 0.9529; full MLP reaches 0.9582; no-explicit-size MLP reaches 0.9054. Validation-selected seven-day LightGBM reaches 0.9632. The cutoff-admissible single retained-node count AP is 0.8943; the 7-day full-archive-span oracle AP 0.9464 is future dependent and not an operational control.
+
+The new first-transfer quarter/chain composition and future-activity-conditioned subgroup sensitivity change interpretation. The abstract, Methods, Results, Discussion, Supplement and decision figure are refreshed in both candidates. No original versus seven-day AP difference is assigned a paired inferential test. Original R317 7+6 statistical families remain untouched; R319 adds a separate frozen four-comparison exploratory family.

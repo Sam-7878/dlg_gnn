@@ -1,0 +1,74 @@
+{
+  "independent_cold_builds": true,
+  "neutral_preprint": true,
+  "sources_byte_identical": {
+    "declarations": "7b7b0cd9661f92b69b22d1904a1284fdc5f645ff59551ea9be37846ab9bdb608",
+    "manuscript_body": "88836ff33042a451c628ccd64502508703ce450b6878035e20b543c8abd6ed91",
+    "references": "3b80922be80f59f00adff7230dee589811e438c18328d5534033e03b70edf8b2"
+  },
+  "status": "PASS",
+  "venues": [
+    {
+      "article_cold": {
+        "overfull": 0,
+        "pages": 17,
+        "sha256": "eb828ce094a0520c40904e3ca4af7e7ec5254cd77032fe3698e9cf0f3229fc6a"
+      },
+      "article_local": {
+        "overfull": 0,
+        "pages": 17,
+        "sha256": "a390a33f205d40377bf871756925a73abe12765ac537c8d9fd7ca64821e98c4a"
+      },
+      "article_text_equal": true,
+      "files": {
+        "preprint_article.pdf": "a390a33f205d40377bf871756925a73abe12765ac537c8d9fd7ca64821e98c4a",
+        "preprint_source.zip": "d0c481521fbebc6dd2a73da0fddf0a2a9f04c583ded8de122490d66b097c2a9a",
+        "supplement.pdf": "c574576168a8c4eab07573c936114ad601a518463104bbc06a24c5dd09ae2153"
+      },
+      "source_sha256": "d0c481521fbebc6dd2a73da0fddf0a2a9f04c583ded8de122490d66b097c2a9a",
+      "supplement_cold": {
+        "overfull": 0,
+        "pages": 5,
+        "sha256": "740640e952acbbf9dd2db710419e80b987c41e525465eeb00b0d6ce0a52a4a77"
+      },
+      "supplement_local": {
+        "overfull": 0,
+        "pages": 5,
+        "sha256": "c574576168a8c4eab07573c936114ad601a518463104bbc06a24c5dd09ae2153"
+      },
+      "supplement_text_equal": true,
+      "venue": "preprints"
+    },
+    {
+      "article_cold": {
+        "overfull": 0,
+        "pages": 16,
+        "sha256": "d27d14ca087adec79bfb87f83de0d3f5d8ac85422bd0d31213fb69adfdb98f42"
+      },
+      "article_local": {
+        "overfull": 0,
+        "pages": 16,
+        "sha256": "d6286c25722a88f494779fb2395919c3d291f4dbf210a41ac9793324de09e615"
+      },
+      "article_text_equal": true,
+      "files": {
+        "applsci_article.pdf": "d6286c25722a88f494779fb2395919c3d291f4dbf210a41ac9793324de09e615",
+        "mdpi_source.zip": "e1fc8c710d18dd4e7e58c1d573d4acd9640a182b9f1052910d2bb87c8d245d43",
+        "supplement.pdf": "fb78b5eb1e5a1ef1ab007ba02530d1172569c97e0e0746df6704d1b08e9a4076"
+      },
+      "source_sha256": "e1fc8c710d18dd4e7e58c1d573d4acd9640a182b9f1052910d2bb87c8d245d43",
+      "supplement_cold": {
+        "overfull": 0,
+        "pages": 5,
+        "sha256": "e22a3b6064b4ecc3e8614c6559ba680c45d6a81bd115a44faf590837dc5697d2"
+      },
+      "supplement_local": {
+        "overfull": 0,
+        "pages": 5,
+        "sha256": "fb78b5eb1e5a1ef1ab007ba02530d1172569c97e0e0746df6704d1b08e9a4076"
+      },
+      "supplement_text_equal": true,
+      "venue": "applsci"
+    }
+  ]
+}

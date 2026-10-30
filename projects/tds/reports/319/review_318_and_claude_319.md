@@ -1,0 +1,7 @@
+# R319 review disposition and frozen baseline
+
+R318 is retained as an immutable candidate. Its two article PDF hashes were `def3218ca77a84dcb3ab2ae49f18eb8f2681458111d0b5d399e73cf61177cee6` (Preprints) and `79f8cb0b9010009022bce639013a4aa3a671ee2f28c252081b8698b308df3300` (MDPI). The R317 numeric ZIP hash is `a4f05674eef4d05913d897d3caa8e085026e7939e0d1d2c82c171d95a672e218`. `baseline_freeze_319.json` records the complete selected prior hash ledger; `protocol_freeze_319.json` sealed hypotheses, seeds, controls, test-access rule, and new four-comparison family before evaluation.
+
+Claude's interpretation-changing concerns were prioritized: full-archive activity span and cutoff-time size shortcuts; source-to-tensor fidelity and GIN/MLP input mismatch; first-transfer calendar and chain composition. The 7-day LightGBM, prior, calibration, operating and chain-support analyses follow these gates. Suggestions for an operational classifier or prospective early warning are rejected until label-availability and deployment evidence exist. A non-significant comparison is not evidence of model equivalence.
+
+The review's date objection does not apply: the work-order date is 2026-10-30. The MDPI class's pre-submission version line is a template output, not evidence of a journal submission. The source ZIPs and DOI/portal records must be distinguished from actual posting. No prior statistical family, frozen PDF/ZIP, or checkpoint is rewritten.

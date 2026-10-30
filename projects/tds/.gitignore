@@ -45,3 +45,8 @@
 !/submission/preprints/318/README.md
 # The reviewed release copy remains local until explicit rights/release approval.
 /publication/318/release/*.zip
+# R319 private venue packages and exact-file author records stay local.
+/submission/applsci/319/*
+!/submission/applsci/319/README.md
+/submission/preprints/319/*
+!/submission/preprints/319/README.md

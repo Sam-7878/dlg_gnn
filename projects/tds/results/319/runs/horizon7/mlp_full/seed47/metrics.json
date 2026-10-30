@@ -1,0 +1,25 @@
+{
+  "arm": "mlp_full",
+  "best_epoch": 24,
+  "builder_sha256": "5788d7e2af1b1604653c16e74bd4d6e29c19822def0c607eacfb5da052f414af",
+  "checkpoint_sha256": "b28806f8a2ed054f196068ba3578b88b46a1f8a9cb576ff1aa302152e46b6bf7",
+  "elapsed_seconds": 11.335669124004198,
+  "parameter_count": 1249,
+  "positive_weight": 5.75109692859992,
+  "protocol_sha256": "6b02ad1db70d71a291255ffa34be913dfd7cd4c859643be2f80e53d18d79b35a",
+  "seed": 47,
+  "selected_validation": {
+    "ap": 0.9866467507418208,
+    "loss": 0.23383569967197854,
+    "roc_auc": 0.9673976730104747
+  },
+  "stopped_epoch": 29,
+  "test": {
+    "ap": 0.9600550059041364,
+    "loss": 0.32151045929409433,
+    "roc_auc": 0.9422393271644389
+  },
+  "test_sha256": "ea3c687e8ff64393248834183a3bb5964b4a99d572eb95202573d62296065ce5",
+  "train_prevalence": 0.14812407680945347,
+  "validation_ap": 0.9866467507418208
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "gin_size",
+  "best_epoch": 2,
+  "builder_sha256": "5788d7e2af1b1604653c16e74bd4d6e29c19822def0c607eacfb5da052f414af",
+  "checkpoint_sha256": "16c9abfa5c42da12de94cad2f30f0128d56fcc42c7c7e41b0a602858401ced18",
+  "elapsed_seconds": 17.037545539998973,
+  "parameter_count": 12193,
+  "positive_weight": 5.75109692859992,
+  "protocol_sha256": "6b02ad1db70d71a291255ffa34be913dfd7cd4c859643be2f80e53d18d79b35a",
+  "seed": 37,
+  "selected_validation": {
+    "ap": 0.9754709701840363,
+    "loss": 0.36210594671568597,
+    "roc_auc": 0.9404177558945205
+  },
+  "stopped_epoch": 7,
+  "test": {
+    "ap": 0.9289755580956728,
+    "loss": 0.4490033715823678,
+    "roc_auc": 0.8851159214901677
+  },
+  "test_sha256": "575fe49dbeee1ddc7b0cd59007bc8e2d7a00aa1e131f4766b2ebf0a63e2c74c4",
+  "train_prevalence": 0.14812407680945347,
+  "validation_ap": 0.9754710851541963
+}

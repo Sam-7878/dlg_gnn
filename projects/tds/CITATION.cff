@@ -1,7 +1,13 @@
 cff-version: 1.2.0
 message: "No project paper DOI is assigned; cite the shared software repository if needed."
-title: "DLG-GNN tds research code"
+title: "TDS blockchain graph anomaly screening research code"
 authors:
   - family-names: Park
-    given-names: SeongSu
+    given-names: Seong-Su
+    orcid: "https://orcid.org/0009-0008-4056-3875"
+    affiliation: "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea"
+  - family-names: Kim
+    given-names: Ki-Hyung
+    orcid: "https://orcid.org/0000-0001-6624-3003"
+    affiliation: "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea"
 url: "https://github.com/Sam-7878/dlg_gnn"

@@ -1,0 +1,5 @@
+# R319 author, affiliation and AI parity
+
+Both source headers and extracted article PDFs contain `Seong-Su Park` and `Ki-Hyung Kim`. Both authors have the exact requested affiliation: `Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea`. Kim retains corresponding-author status and corrected ORCID `0000-0001-6624-3003`; Park retains ORCID `0009-0008-4056-3875`. Both branches have byte-identical `declarations.tex` (SHA-256 `7b7b0cd9661f92b69b22d1904a1284fdc5f645ff59551ea9be37846ab9bdb608`) and a common Methods AI-use paragraph covering code and analysis. The user-specified Acknowledgments wording, including three model/product strings, occurs in both PDF text extractions. Historical model-version use was not independently verified; the declaration says earlier versions were not retained.
+
+The A16-derived CRediT, Funding, IRB, Consent and COI statements are shared in both branch declarations. Official grant proof, author-specific declarations and exact-file signed approval remain pending. `projects/tds/CITATION.cff` reflects the R319 author names and ORCIDs. Earlier paper files are preserved.
