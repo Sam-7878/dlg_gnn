@@ -1,0 +1,96 @@
+{
+  "notes": "Different venue layouts/page counts are allowed; source ZIP text matches cold build.",
+  "platform_facts_and_numbers_identical": true,
+  "preprint_neutral": true,
+  "shared_bib_sha256": "152dbcf958a12b2be8b2c96e0fe10979539d879ded963c9bac2f75033e9f63af",
+  "shared_body_sha256": "a37995262f2d4ff96ad1da3016cc8bab6eb1b07347d541e418546a2d4b51baac",
+  "shared_declarations_sha256": "4d1d0d7be4f0cecb87dc630e819f5c33901d1c905748f9c65614749b7ca35e52",
+  "source_zip_fresh_directory_build": true,
+  "status": "PASS",
+  "venues": [
+    {
+      "clean_article": {
+        "entry": "preprint_main.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 13,
+        "pdf_sha256": "508466c6702b78ec8bdccc294d5fac05e8241005c5ea519f8a52a19258c34dc1",
+        "undefined_citations": 0
+      },
+      "clean_supplement": {
+        "entry": "supplement317.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 4,
+        "pdf_sha256": "31a5f5be48346eb1f0551f8e79f3c9f8c29462b2ce28b763a898f09b0e36d0f1",
+        "undefined_citations": 0
+      },
+      "clean_text_identical": true,
+      "local": {
+        "entry": "preprint_main.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 13,
+        "pdf_sha256": "222509fcdbd814c3ee3aced12d1220c87954beb337d62083f2769d11084f9f7a",
+        "undefined_citations": 0
+      },
+      "source_zip_path": "submission/preprints/317/preprint_source.zip",
+      "source_zip_sha256": "d9a7493febb040e1468f1da53d34629fff84e1057f6cee5766e17f3c2736d34d",
+      "supplement": {
+        "entry": "supplement317.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 4,
+        "pdf_sha256": "20ed69c1f63fa7f70b40bca0c9833f2976a7414d978ac37e4174a2d010165856",
+        "undefined_citations": 0
+      },
+      "venue": "preprints"
+    },
+    {
+      "clean_article": {
+        "entry": "applsci_article.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 13,
+        "pdf_sha256": "7df27499dc3ec8905236f873701fcc56bcb76907957707579dd8a0205394222f",
+        "undefined_citations": 0
+      },
+      "clean_supplement": {
+        "entry": "supplement317.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 4,
+        "pdf_sha256": "b8b171a1bd6c1c365950116542cd28edc1bd314dc321edb759ea250cdfcccf54",
+        "undefined_citations": 0
+      },
+      "clean_text_identical": true,
+      "local": {
+        "entry": "applsci_article.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 13,
+        "pdf_sha256": "c3b4862e0ad475a576e48ba6d6e75ff0ef0f3e3233a559dfaa98613ee5591eb3",
+        "undefined_citations": 0
+      },
+      "source_zip_path": "submission/applsci/317/mdpi_source.zip",
+      "source_zip_sha256": "22379f45b338cadf1b456f69f2c57091aef57fd8dddcfd82bec1f667c0c19079",
+      "supplement": {
+        "entry": "supplement317.tex",
+        "errors": 0,
+        "missing_figures": 0,
+        "overfull_boxes": 0,
+        "pages": 4,
+        "pdf_sha256": "d170b2eb3d6b01a4e99ce28cc43ba5efe02ddb45c43b9fbc6641933ff61aab41",
+        "undefined_citations": 0
+      },
+      "venue": "mdpi_applsci_anomaly"
+    }
+  ]
+}

@@ -40,3 +40,10 @@ The private shared manuscript materializer is intentionally excluded from public
 verifies original seals and exact current PDFs, and writes private approval identities
 plus a fail-closed public readiness state. It does not create GitHub releases, author
 signatures, DOIs or platform receipts. No publication authorization is implicit.
+
+Author-confirmation follow-up: `python projects/tds/scripts/revision317/confirm_authors.py
+--rebuild` applies the recorded private A16-based user attestation, rebuilds the
+two venue sources and records fresh hashes. Later `finalize.py` runs preserve that
+confirmation instead of recreating the older empty approval record. Confirmed
+author statements and independent grant/signature/release evidence are distinct.
+The original numerical candidate and its source snapshot remain unchanged.

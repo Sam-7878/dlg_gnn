@@ -1,0 +1,51 @@
+figures/fig_dlg_architecture.pdf>] [6]
+[7] [8] [9 <./figures/fig_support_matrix.pdf>]
+Overfull \hbox (28.90318pt too wide) in alignment at lines 298--298
+[][][][][][][][][] 
+[10] [11] [12 <./figures/fig_conditional_delta.pdf>] [13] [14] [15]
+(./DLG-Benchmark_A16_AppliedSciences.bbl [16] [17]) [18]
+Overfull \hbox (25.92209pt too wide) in alignment at lines 463--479
+[] [] [] [] [] [] [] [] 
+
+Overfull \hbox (25.92209pt too wide) in alignment at lines 486--503
+[] [] [] [] [] [] [] [] 
+
+Overfull \hbox (66.82446pt too wide) in paragraph at lines 510--519
+ [][] 
+[19] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(./DLG-Benchmark_A16_AppliedSciences.aux) )
+(see the transcript file for additional information) </home/sam/.texlive2025/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/sam/.texlive2025/tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/sam/.texlive2025/texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecss0800.375pk></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathp
+azo/fplmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on DLG-Benchmark_A16_AppliedSciences.pdf (19 pages, 363192 bytes
+).
+Transcript written on DLG-Benchmark_A16_AppliedSciences.log.
+Latexmk: Getting log file 'DLG-Benchmark_A16_AppliedSciences.log'
+Latexmk: Examining 'DLG-Benchmark_A16_AppliedSciences.fls'
+Latexmk: Examining 'DLG-Benchmark_A16_AppliedSciences.log'
+Latexmk: Found input bbl file 'DLG-Benchmark_A16_AppliedSciences.bbl'
+Latexmk: Log file says output to 'DLG-Benchmark_A16_AppliedSciences.pdf'
+Latexmk: Log file says output to 'DLG-Benchmark_A16_AppliedSciences.pdf'
+  ===Source file 'DLG-Benchmark_A16_AppliedSciences.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (DLG-Benchmark_A16_AppliedSciences.pdf) are up-to-date
+
+Latexmk: Missing bbl file 'DLG-Benchmark_A16_AppliedSciences.bbl' in following:
+ No file DLG-Benchmark_A16_AppliedSciences.bbl.
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).
+Latexmk: Using bibtex to make bibliography file(s).

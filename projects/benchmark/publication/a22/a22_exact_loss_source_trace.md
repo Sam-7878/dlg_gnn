@@ -114,3 +114,4 @@ The suite in `projects/benchmark/scripts/a22_g1_dense_exact_training_equivalence
 
 Full structured JSON results are deposited in:
 `projects/benchmark/publication/a22/a22_dense_exact_training_equivalence.json`.
+

@@ -1,0 +1,36 @@
+{
+  "author_details_and_declarations_confirmed": true,
+  "author_orcid_status": {
+    "Ki-Hyung Kim": "user correction; checksum verified",
+    "Seong-Su Park": "source checksum verified"
+  },
+  "basis": "explicit user instruction to apply A16 author-approval items to TDS",
+  "confirmation_record_sha256": "41ead1c62394ae960ada68e8e0a709f8abda85bc4f23f0c9af08dd97047d05f8",
+  "date": "2026-10-30",
+  "files": {
+    "mdpi_applsci_anomaly": {
+      "article_pages": 13,
+      "article_sha256": "c3b4862e0ad475a576e48ba6d6e75ff0ef0f3e3233a559dfaa98613ee5591eb3",
+      "source_zip_sha256": "22379f45b338cadf1b456f69f2c57091aef57fd8dddcfd82bec1f667c0c19079",
+      "supplement_pages": 4,
+      "supplement_sha256": "d170b2eb3d6b01a4e99ce28cc43ba5efe02ddb45c43b9fbc6641933ff61aab41"
+    },
+    "preprints": {
+      "article_pages": 13,
+      "article_sha256": "222509fcdbd814c3ee3aced12d1220c87954beb337d62083f2769d11084f9f7a",
+      "source_zip_sha256": "d9a7493febb040e1468f1da53d34629fff84e1057f6cee5766e17f3c2736d34d",
+      "supplement_pages": 4,
+      "supplement_sha256": "20ed69c1f63fa7f70b40bca0c9833f2976a7414d978ac37e4174a2d010165856"
+    }
+  },
+  "funding_statement_confirmed": true,
+  "independent_coauthor_signatures_verified": false,
+  "numeric_candidate_sha256": "a4f05674eef4d05913d897d3caa8e085026e7939e0d1d2c82c171d95a672e218",
+  "numerical_archive_unchanged": true,
+  "numerical_csvs_verified": 236,
+  "official_award_document_verified": false,
+  "reference_source_path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
+  "reference_source_sha256": "f95c2ef505ac0b7f10c0fc2a471e847b1a5bddf2fd5c6bc990db9da07458db18",
+  "scientific_body_unchanged": true,
+  "tds_release_verified": false
+}

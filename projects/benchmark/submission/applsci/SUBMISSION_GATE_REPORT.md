@@ -1,3 +1,5 @@
+> 2026-10-30 local ORCID correction: current sources, PDFs, source bundles and SHA256SUMS are synchronized. See [current local metadata verification](../../reports/author_metadata_20261030/orcid_update.json). The digest table below is a pre-correction historical snapshot; no published release asset or submission receipt is changed by this local update.
+
 # Gate A20: Submission Gate Report and Canonical Checksum Ledger
 
 **Document ID:** `DLG-BENCH-GATE-A20-RELEASE`  

@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "path": "projects/tds/scripts/revision317/confirm_authors.py",
+      "sha256": "c6819e98569e0c3d5b9234fa3c3405cc1dd8421af16949d85754123dbefcd005"
+    },
+    {
+      "path": "projects/tds/scripts/revision317/finalize.py",
+      "sha256": "f2e7fd487b35e94ce03d5617b113478982bb5df06979a3eb678f9ddf8cdf6713"
+    }
+  ],
+  "scope": "author-confirmation extension only; original numerical package retains its sealed source snapshot"
+}

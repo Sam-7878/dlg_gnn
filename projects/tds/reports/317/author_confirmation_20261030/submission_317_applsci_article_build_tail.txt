@@ -1,0 +1,69 @@
+) in paragraph at lines 15--15
+[]|\T1/ppl/m/n/8 (+20) Threshold-grouped
+
+Underfull \hbox (badness 3179) in paragraph at lines 15--15
+[]|\T1/ppl/m/n/8 (+20) Test ties and du-pli-
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/ppl/m/n/8 (+20) Multiplicity
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\T1/ppl/m/n/8 (+20) and de-pen-
+
+Underfull \hbox (badness 2418) in paragraph at lines 16--16
+[]|\T1/ppl/m/n/8 (+20) Fixed7 and fixed6
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\T1/ppl/m/n/8 (+20) fam-i-lies; hour
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/ppl/m/n/8 (+20) Conditional in-fer-
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/ppl/m/n/8 (+20) Exploratory GIN--
+
+Underfull \hbox (badness 5245) in paragraph at lines 17--17
+[]|\T1/ppl/m/n/8 (+20) Old hashes sealed;
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\T1/ppl/m/n/8 (+20) new co-horts sep-a-
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/ppl/m/n/8 (+20) Numeric re-play of
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\T1/ppl/m/n/8 (+20) archived and new
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\T1/ppl/m/n/8 (+20) put/split/checkpoint
+ignored error: Infinite glue shrinkage found in box being split [8]) [9 <./figu
+res/validity_decision_tree.pdf>] (./declarations.tex [10]))
+(./applsci_article.bbl [11] [12]) [13]
+
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(./applsci_article.aux) )
+(see the transcript file for additional information) </home/sam/.texlive2025/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/sam/.texlive2025/tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/sam/.texlive2025/texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecss0800.375pk></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
+pazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr
+i.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on applsci_article.pdf (13 pages, 253108 bytes).
+Transcript written on applsci_article.log.
+Latexmk: Getting log file 'applsci_article.log'
+Latexmk: Examining 'applsci_article.fls'
+Latexmk: Examining 'applsci_article.log'
+Latexmk: Found input bbl file 'applsci_article.bbl'
+Latexmk: Log file says output to 'applsci_article.pdf'
+  ===Source file 'applsci_article.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (applsci_article.pdf) are up-to-date
+
+Latexmk: Using bibtex to make bibliography file(s).

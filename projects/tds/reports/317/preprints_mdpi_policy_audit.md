@@ -1,3 +1,5 @@
+> 2026-10-30 author update: author identities and declarations are confirmed by the user and applied. See [current confirmation](author_confirmation_20261030/confirmation_report.md). Earlier pending-author descriptions below are a historical snapshot.
+
 # Venue and policy audit
 
 Checked2026-10-29/30. [Official SI](https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt)

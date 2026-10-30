@@ -26,3 +26,4 @@ In the Claude Review of `DLG-Benchmark_A16_Preprints.pdf` (Section 4.1), the rev
 3. **Disposition for Manuscript Revision (Gate G8):**
    - In Section 6 (Discussion & Limitations), explicitly acknowledge this architectural scope boundary:
      > "Our benchmark specifically evaluates graph-relational anomaly detection architectures. On transaction datasets with rich feature sets (such as Elliptic), classical tabular detectors (e.g., Isolation Forest, ECOD) represent an orthogonal baseline class. While graph models exploit relational connectivity and message passing, future benchmark extensions should formally evaluate whether relational inductive biases offer consistent lift over tabular methods across diverse imbalance regimes."
+

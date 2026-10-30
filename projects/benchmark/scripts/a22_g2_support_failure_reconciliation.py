@@ -189,3 +189,4 @@ def validate_consistency(ledger_df, unsupported_specs):
 if __name__ == "__main__":
     df, specs = build_support_failure_ledger()
     validate_consistency(df, specs)
+

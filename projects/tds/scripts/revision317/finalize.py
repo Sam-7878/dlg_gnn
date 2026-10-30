@@ -8,6 +8,10 @@ def load(path):return json.loads(path.read_text())
 
 
 def main():
+    if (PROJECT/'submission/author_records/317/author_confirmation_from_a16.json').exists():
+        # A later human confirmation supersedes the earlier empty-record snapshot.
+        from confirm_authors import main as confirmed_finalize
+        return confirmed_finalize()
     frozen=load(OUT/'evidence_freeze_manifest.json')
     for e in frozen['files']:assert sha(ROOT/e['path'])==e['sha256'],e['path']
     cp=load(OUT/'checkpoint_freeze_manifest.json')

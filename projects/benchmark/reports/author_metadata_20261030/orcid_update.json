@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-30",
+  "corrected_orcid": "0000-0001-6624-3003",
+  "author": "Ki-Hyung Kim",
+  "basis": "explicit user correction and instruction for both Benchmark sources",
+  "artifacts": [
+    {
+      "venue": "preprints",
+      "path": "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex",
+      "source_sha256": "22743cde2ca7d428f8d841ef401ae3d8b562f148bd6767765b1e1708562688d1",
+      "pdf_sha256": "2c626a743624287490ca3b7f79a418363e84bbefa4ca81b2d7c30c94ff110001",
+      "bundle_sha256": "25bbe188811de09067e368715eaae46bbcf7157cc3cc368fa00a8fb57245f2a0",
+      "pages": 23,
+      "only_orcid_text_changed": true,
+      "clean_build": true,
+      "cold_pdf_text_identical": true,
+      "checksum_ledger_verified": true
+    },
+    {
+      "venue": "applsci",
+      "path": "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.tex",
+      "source_sha256": "f2d49c5fa8bd1932b630364656a58f0dbf5266eddc63b7425bfbd801249c95b1",
+      "pdf_sha256": "a321abe6013d5002d76a05ced5ce78ab6ea29c97bcc38fc47b09d3c60549e6d4",
+      "bundle_sha256": "0ec1adfb2cbb9370649f1fa28c8e0e0f3809081d195e9dcb7071201034a41ea3",
+      "pages": 19,
+      "only_orcid_text_changed": true,
+      "clean_build": true,
+      "cold_pdf_text_identical": true,
+      "checksum_ledger_verified": true
+    }
+  ],
+  "published_release_changed": false,
+  "platform_submission_performed": false
+}

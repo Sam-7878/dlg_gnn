@@ -54,3 +54,4 @@ As rigorously proven in `projects/benchmark/publication/a22/a22_exact_loss_sourc
        $$s_{\mathrm{struct}, i} = \sqrt{\|A_{i,:} - z_i Z^\top\|_2^2} = \sqrt{d_i - 2 z_i (A Z)_i + z_i (Z^\top Z) z_i^\top}$$
        $$\mathcal{L} = \frac{1}{N} \sum_{i=1}^N \left[ w \|X_{i,:} - \hat{X}_{i,:}\|_2 + (1-w) s_{\mathrm{struct}, i} \right]$$
      - Explicitly state that this formulation preserves PyGOD's exact `double_recon_loss` semantics without materializing the dense $O(N^2)$ adjacency matrix.
+
