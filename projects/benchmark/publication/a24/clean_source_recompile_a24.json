@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "documents": [
+    {
+      "variant": "applsci",
+      "source_zip_sha256": "c1eac119a6aea0a7ee4e759d8d6291f8e58222b06917f88974a570a2e8b00c0d",
+      "PDF_sha256": "6d07e6291923bdb7417f870eeb325c0fbe6118ea7b742ef863ed8a124d87a571",
+      "clean_pdf_sha256": "6d07e6291923bdb7417f870eeb325c0fbe6118ea7b742ef863ed8a124d87a571",
+      "clean_compile_exit": 0,
+      "byte_identical": true,
+      "source_inventory": {
+        "DLG-Benchmark_A24_AppliedSciences.tex": "47b1fce73db3f8a7be09f19002d2b5ec5fd22a89f488bff237973774eebe1682",
+        "references.bib": "7705fea78b880e6ff14a52b28ec1bade6f8bd5b93c630f56531c71954a8d00a3",
+        "Definitions/journalnames.tex": "f4944f272ae0bfaccedb926f4da5ce40c0dabead50482afae191989430fb66dc",
+        "Definitions/logo-mdpi-eps-converted-to.pdf": "a484622feb8c88b75adfd00d73145417b77d1a8dcade3d3474e69601493a3a10",
+        "Definitions/logo-mdpi.eps": "f02d31469c6b2666c9de2da8d8731773bce3751d2fa99a27ff4bcf61a106cdcf",
+        "Definitions/logo-orcid.pdf": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759",
+        "Definitions/logo-updates-eps-converted-to.pdf": "671d5fb53bb5c930440bad6959ab00a6d73d0435d1d928bdeea4e36eb53d12fb",
+        "Definitions/logo-updates.eps": "b84b986524ff2e47afb07ecd5ef6d33cd85bc4b88d2053fdfb3e83210d695831",
+        "Definitions/mdpi.bst": "3b747eee144173c46a43562ead905c26322c7cb394e350a925d36dcf63884680",
+        "Definitions/mdpi.cls": "62979fe0fe0f72a57adc1ad683add9b0138f1dae635d1da4ae48a4d811159e40",
+        "Definitions/mdpi_apacite.bst": "c7fffe0231922e5521dc360889fafe941ee26d154c1ce4e167e4ec9f2d13498f",
+        "Definitions/mdpi_apacite.sty": "9e9bb23ded45f7f76236ad304d4bda2c066fb48041b272cebc20f940c17865a7",
+        "Definitions/mdpi_chicago.bst": "4a73faf6e0cf1a225d1b9a41a6955d3cc29a55c5fdce662177d00eee3946ce36",
+        "figures/fig_dlg_architecture.pdf": "36864ea727af0debb0c7c3a3c794e80f4523da4b93ef5b30b1534d02ff70fe7f",
+        "figures/fig_support_matrix.pdf": "3f688ee19c609e936f779f082f7b89522240bc99e2f145918e3764446bb13ffe",
+        "figures/fig_a24_delta_sample_sd.pdf": "28685cb96979d0731ebd3cb670967a4fa2c4ec9a1f7018f568822c7f6dfadd28",
+        "soul.sty": "0bc2aecc16e0a261db88863dfc5e26b0745abf3fc02caa97fcd076f2e56bf940",
+        "soul-ori.sty": "842e46b91b146591ebde3348a684b04fae92d46d4508482bc5036e1805e57f9c"
+      },
+      "rendered_pages": 25,
+      "clean_directory": "/tmp/a24-clean-applsci-2e3v0pfp"
+    },
+    {
+      "variant": "preprints",
+      "source_zip_sha256": "843b71dc4edb01a4df8f65f6b29fe0906581a7ae66932f815d18569a86631e64",
+      "PDF_sha256": "092369953dfb16da91110e21e3fa6529fb532c6923220c0f0b95a1fa512c365c",
+      "clean_pdf_sha256": "092369953dfb16da91110e21e3fa6529fb532c6923220c0f0b95a1fa512c365c",
+      "clean_compile_exit": 0,
+      "byte_identical": true,
+      "source_inventory": {
+        "DLG-Benchmark_A24_Preprints.tex": "6831f3fa3ebcaab4e99c1ef304b5a49d0734bead1c5376ab7873d59bc57e47b0",
+        "references.bib": "7705fea78b880e6ff14a52b28ec1bade6f8bd5b93c630f56531c71954a8d00a3",
+        "figures/fig_dlg_architecture.pdf": "36864ea727af0debb0c7c3a3c794e80f4523da4b93ef5b30b1534d02ff70fe7f",
+        "figures/fig_support_matrix.pdf": "1e784af25e2b404541171bbadeadf8abb5befe5eb78b7a7219d5a07051bb2ff0",
+        "figures/fig_a24_delta_sample_sd.pdf": "28685cb96979d0731ebd3cb670967a4fa2c4ec9a1f7018f568822c7f6dfadd28"
+      },
+      "rendered_pages": 28,
+      "clean_directory": "/tmp/a24-clean-preprints-epcbd8nb"
+    }
+  ]
+}

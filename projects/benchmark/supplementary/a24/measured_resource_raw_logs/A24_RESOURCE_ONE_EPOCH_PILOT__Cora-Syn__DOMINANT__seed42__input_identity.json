@@ -1,0 +1,39 @@
+{
+  "source_path": "archive/benchmark/outputs/a04_constructed_graphs/Cora-Syn.pt",
+  "source_sha256": "064175ba2f9f0530e0e8b9809e69d6e49e75fcf50944ae627688d4f8c1e81e44",
+  "source_kind": "A04_FROZEN_CONSTRUCTED_TENSOR",
+  "dataset": "Cora-Syn",
+  "N": 2708,
+  "E": 11276,
+  "F": 1433,
+  "feature_hash": "669cbcb2db1be38d96a2ea59e9d6dd9b15db9415f7f1cda8f8948252ee0bf108",
+  "edge_hash": "aa038fea0a5e10b11669c7a27c290fd1cb85acf73406ed3dd63673a5b63de317",
+  "label_hash": "1ec183b943b6da543570b6d73948840e57074adf553ac61f8fe33ac46ea2cac1",
+  "split_hashes": {
+    "42": {
+      "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+      "val_mask": "6d72520e425d15b79a60a5098ecc0b6c14f54a36fbd1be528365f4885cc33503",
+      "test_mask": "46fe9f5bcded058860540221474454b325176d869c7f67a39131daa502a2942d"
+    },
+    "43": {
+      "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+      "val_mask": "61592cf93540b7beb6f340a73de1631d7bc7053d534f6dded6d434c2f08bb362",
+      "test_mask": "7eba1fcaec167d7f3b49a52445ae30c448b1661eb28f13cd591e1a4134f16d12"
+    },
+    "44": {
+      "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+      "val_mask": "d0eeb78178e3ba6fe19cf7b0f7dff50680a35dd733b6edd31d8b982f2da8e8ab",
+      "test_mask": "470d6a2b712597758ab53508d2d4bd779630579f2cf260b558e722a80b447449"
+    },
+    "45": {
+      "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+      "val_mask": "eeb8b2d9b6de17349356a3611c851480318e9171ed7f6b275ca58e97f06fc0d0",
+      "test_mask": "e9ade69ced0a98dca723fd104aa15e55ec3b9a3d5089ef5d32b1f6f827cf0611"
+    },
+    "46": {
+      "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+      "val_mask": "44d133845bb69d70bd12cd1fd21b8cd73236104e49fd339c27ce26f6751a552d",
+      "test_mask": "57231f496ce4aba542688510d944f051bb32e0bce9f18227b8e921db85ccd393"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+dataset,model,new_n,new_AP_mean,historical_AP_mean,same_A24_feature_only_GNN_X_and_masks,historical_input_epoch_match,historical_AP_replaced
+Elliptic,DLG-Base,5,0.06865450418682247,0.06865450482200357,True,frozen constructed tensor/masks and50epochs match;historical environment tier retained,False
+Elliptic,DLG-Aug,5,0.10365771967858949,0.10365343819379536,True,frozen constructed tensor/masks and50epochs match;historical environment tier retained,False
+DGraphFin,DLG-Base,5,0.01008895848418319,0.01008900698799748,True,frozen constructed tensor/masks and50epochs match;historical environment tier retained,False
+DGraphFin,DLG-Aug,5,0.01344225513931496,0.01344244480974342,True,frozen constructed tensor/masks and50epochs match;historical environment tier retained,False
+LANL-RedTeam,DLG-Base,5,0.1021605253419929,0.136692,True,REPRODUCTION_NOT_MATCHED_FEATURE_PREPROCESSING,False
+LANL-RedTeam,DLG-Aug,5,0.08523870459791481,0.1114424,True,REPRODUCTION_NOT_MATCHED_FEATURE_PREPROCESSING,False

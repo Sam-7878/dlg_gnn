@@ -1,0 +1,446 @@
+{
+  "status": "PASS_ALL53_PAGES",
+  "reviewer": "Codex agent visual review;not coauthor approval",
+  "documents": [
+    {
+      "variant": "applsci",
+      "pdf_sha256": "6d07e6291923bdb7417f870eeb325c0fbe6118ea7b742ef863ed8a124d87a571",
+      "pages": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "observation": "Title/abstract give benchmark motivation, DLG full name, frozen counts and matched-A24 LANL scope; author lines clear.",
+          "PNG_sha256": "b4012d33156c932fc5e2550a32c9c8d69e91134e36352e3c4cc003af2f6f7c1b",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 2,
+          "status": "PASS",
+          "observation": "Introduction and support-aware contributions readable; adverse and historical-evidence limitations retained.",
+          "PNG_sha256": "cd6ced97688d99648d5b8a6a08529143fb702da8d1d973d5649973edfc49a7f7",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 3,
+          "status": "PASS",
+          "observation": "Related-work descriptions distinguish CoLA/CONAD/PREM/TAM/GADAM/ADA-GAD; citations resolve.",
+          "PNG_sha256": "b0ec4a4c2b1dc043cc6ea4ce91946cb70fde5cae79cb002027e392552da912bb",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "observation": "Detector families and DLG architecture definitions readable; no new-theorem claim.",
+          "PNG_sha256": "e5686bc412ec1e3f69c14f5c07fe903c4e46cd078a3bd6bda6caf844f302ba7b",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "observation": "Architecture figure and dense/Gram equations fit within page; caption legible.",
+          "PNG_sha256": "20f862b26527ffccd7f625e89daebf831ba2157906471cd8d89aa500c1fc2b63",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "observation": "Row residual/loss and AnomalyDAE all-pairs limitation remain readable; protocol begins cleanly.",
+          "PNG_sha256": "88ab5d24f61dc0b84c8d2907f168f02dbc1dfa6b8447bc68a6c952449cddc3f0",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "observation": "Table1 raw/input/test populations and corrected crypto N/E are visible; all rightmost descriptions fit.",
+          "PNG_sha256": "bdc735e77beb8341c870066187dd91a6f6a023ed929706f914a4d88883598eb9",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "observation": "S1 n8/k7/Q29.0357/W0.6049 and all four views agree with source; label-use and zero-residual convention explicit.",
+          "PNG_sha256": "47870cbc0843e5b720fd9f94673305a39d4d78555e947e96c13007b90f1ccca0",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "observation": "Support matrix shows84/91primary plus7external; missing-run and OOM evidence are distinguished.",
+          "PNG_sha256": "aca38e737fc1e470cbde13c4a6e62b0357bfa343b75823232ea615d75162e437",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "observation": "Main AP table complete; uncertainty links to Supplement; below-prevalence and crypto comparator limitations explicit.",
+          "PNG_sha256": "597b1c1b037cd008365864735ab77004c134f8f6a04a1b1236d5d2a013fed80b",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "observation": "Alert tables have readable model panels; paired-delta figure now uses sample SD and retains negative effects.",
+          "PNG_sha256": "533225aace10aee06ff74d903f8d41a6cd9492fb969b944e8d289895cce83de5",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "observation": "Paired-delta table uses sample SD; Friedman table and S4 tail interpretation agree with recomputed values.",
+          "PNG_sha256": "1cdf9412c02e0ed006a8864eae67ce80d3c9c22c80b0a743ee547d3eaf325b73",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "observation": "Theoretical memory profiles are labelled illustrative; separate actual measurements are distinguished.",
+          "PNG_sha256": "a96071c7dfbeb72036928bdaa584fda9daf08334dafea7dd34ee6e9e565f1721",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "observation": "Decision table distinguishes feasibility/quality; LANL historical preprocessing limit and matched-A24 comparison are explicit.",
+          "PNG_sha256": "79865e7f9fb4a0fa0ea4cc0a73a8229c9cff2dd5bfce0c58a30ef9ce929fb06a",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "observation": "Limitations and new supplementary findings visible; conclusion starts below; no lost paragraph at page continuation.",
+          "PNG_sha256": "eaddd85319c84de45fc52cbf3a92adcd7db3006bbe12aca9b99ffde8537ec693",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "observation": "Measured resource table and conclusion continuation readable; actual r1 tag/commit/URL, data scope, AI and funding backmatter visible.",
+          "PNG_sha256": "c23f1826850a881614d07ff6ea81fd06a9917b645021c85645ad485ce4189f78",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "observation": "References1--22 visible; foundation DOI202609.0848 agrees with supplied citation and neutral URL.",
+          "PNG_sha256": "5a5074629553e2dc710b324eafa5e129d50f723ae7c194a55a0f599f0035ee0c",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "observation": "Remaining references including IForest/ECOD fit; DOI/URL line breaks remain within page.",
+          "PNG_sha256": "cb5e7d0c23c6eb98400cda7b37590d091663a4b3cfbfb2568bfa2570b7e3f0a7",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "observation": "ROC panels and historical A5 controls complete; individually zoomed A5 header and all seven final ROC-AUC mean/SD cells readable; no ValF1 column.",
+          "PNG_sha256": "0078e9bb41b5474a291bc791f3959568f25eb95224aa1adc548961e50a768629",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 20,
+          "status": "PASS",
+          "observation": "Primary test-F1 panels complete; source-policy limitation and sample SD stated.",
+          "PNG_sha256": "2fb79062047bba210c05d64cf53ce3c9a17ecd6f2893d79c0b09d82073007421",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 21,
+          "status": "PASS",
+          "observation": "Supplement AP panels retain all primary means and show sample SD; unsupported cells remain N/A.",
+          "PNG_sha256": "75ba86c70283b7d1d1a24bea2d7ebf387fc5ab200b21b86556563d59aafd35f5",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 22,
+          "status": "PASS",
+          "observation": "Feature-only, matched controls and alert tables complete; LANL raw-input qualification and P/R/lift headers visible.",
+          "PNG_sha256": "53ebf5d031210c61f1bb05b476f8aa6ef56b8aa5e87bb45836a0c8b5a4b0aadc",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 23,
+          "status": "PASS",
+          "observation": "Seedwise lift table fits; Polygon K5 and sample-SD uncertainty noted; no ratio-of-means substitution.",
+          "PNG_sha256": "491135489e1010a222a34b5b7054185b59094309af6ac1019e6c630f692499d4",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 24,
+          "status": "PASS",
+          "observation": "All14dataset split/prediction-unit rows visible; full observable fitting and label masks distinguished.",
+          "PNG_sha256": "312de901354ba105f48b5f5d3f89dadc010b75c12170afada5e2cae58e1a875e",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "observation": "Complete-case membership table fits; S5 external-descriptive label scoped; final model names present.",
+          "PNG_sha256": "d591ba27c601d1c4db897822407d50b453e018e858e32a082a9fc9280c087b18",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        }
+      ],
+      "critical_control_table_individually_viewed": 19,
+      "last_column_mean_SD_rows": 7
+    },
+    {
+      "variant": "preprints",
+      "pdf_sha256": "092369953dfb16da91110e21e3fa6529fb532c6923220c0f0b95a1fa512c365c",
+      "pages": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "observation": "Publisher-neutral title/abstract/authors and ORCID footnotes fit; DLG expanded and matched-A24 LANL scope clear.",
+          "PNG_sha256": "a5a20860ea0e73c052c4ab2196b51529140370330c6018446406b0e46e6c4816",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 2,
+          "status": "PASS",
+          "observation": "Introduction/benchmark contributions readable; fixed counts and evidence limits retained.",
+          "PNG_sha256": "4e9a39cd5e66d41d18b57d8cdb1eb00d2080de3bdaa27eda1077845d583a7e61",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 3,
+          "status": "PASS",
+          "observation": "Related-work mechanisms and citation context readable without clipping.",
+          "PNG_sha256": "3fa7ad1d3d3ac648460d11d946def41e97852f3feb5d95485ac03f6009b0ca3a",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "observation": "Scaling/benchmark rigor and detector-family descriptions fit.",
+          "PNG_sha256": "92e3c8ac08ee31ac3328182e7b50152318e1f6fa925336d7af8ab34cd6c7d2e5",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "observation": "DLG formulation, architecture figure/caption and dense loss readable.",
+          "PNG_sha256": "9eead7cb07f75c8177800e3443feb9aa8cb3fb312ff46c85e006eb1679f9bee6",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "observation": "Gram identity, node loss and AnomalyDAE arithmetic boundary fit.",
+          "PNG_sha256": "4d123aefd982c6c3920103f8cbd3734bba6a4ef490574241edc20fa144b24ef1",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "observation": "All Table1 populations, corrected crypto dimensions and final provenance column visible.",
+          "PNG_sha256": "f17fcbee74def8ca239bcba1054bdd1773d2964dfaf7a067ca2e3a25e9673f3b",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "observation": "Protocol/statistics show n8/Q29.0357/W0.6049 and other views; label and numerical conventions readable.",
+          "PNG_sha256": "9bf72c7213bddf45f02d2cf48b4ae48fe9a74bfd299301778fc79b79aab01633",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "observation": "Support figure and execution status distinctions complete.",
+          "PNG_sha256": "be00eb17cca1a9cc585c610f50acafc05a1e12168ce475c0df430fd621755f05",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "observation": "Primary AP table and comparator/prevalence interpretation fit; sample-SD supplement link present.",
+          "PNG_sha256": "90c196ff4138d5c5034e6263cd715f590c4b1edb4c0dfdbfe10643d96246d190",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "observation": "Both alert-model panels and paired-delta table visible, with sample-SD definition.",
+          "PNG_sha256": "717e4bbaa9cbadfca704dbf95bfda9fb236ae8bf006a2c6663cb40ceb6ff1193",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "observation": "Paired-delta SD figure, Friedman table and MC interpretation readable.",
+          "PNG_sha256": "a57db16c321e6ac0a49a6f24541f9cd7ffb46c0455b3d7da95ca1d76999e48c7",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "observation": "MC tails and illustrative resource profiles distinguished from measurements.",
+          "PNG_sha256": "aa50e94d52f05353e8d227ff3d7e3cf6d00b83d1e1920564ccb55047a8c42be5",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "observation": "Decision table includes DGraph below-prevalence warning and qualified LANL comparison.",
+          "PNG_sha256": "4d9f442877ae9728941d73783a1dc53efb24a36dab34533aa47ecc4962eb875a",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "observation": "Historical/new experiment distinctions and LANL preprocessing mismatch explicit; adverse control results retained.",
+          "PNG_sha256": "46da1d3a474d824fff7249f0655c08e959a299dbb4d7636f3570206c88a17019",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "observation": "Four measured resource cases, conclusions and r1 data availability fit; long release URL wraps after xurl fix.",
+          "PNG_sha256": "9f0cce7338d046d453a40e3e5623e92c7a6a1b1fe5802a8ca886c62b7e34dba1",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "observation": "Actual AI-assisted development/orchestration/analysis scope visible; conflicts and first references readable.",
+          "PNG_sha256": "f8816084fe8e0a80ee265a0f1ee62c423a1a44730adc2c90c398d97fa1f9d052",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "observation": "Related-work reference URLs and bibliographic fields fit.",
+          "PNG_sha256": "1a2e0aefceb1050a31dc536e6d02bab9081b0529c7363a9460659f87173cb98a",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "observation": "Remaining methodology/dataset references legible with safe URL wrapping.",
+          "PNG_sha256": "79cfbf7fbc46953e436fb32c7ce853e2b581a97de12858c1239e5bbf7f547f48",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 20,
+          "status": "PASS",
+          "observation": "Last references including IForest/ECOD complete; no unresolved citation markers.",
+          "PNG_sha256": "5ae522625289fa3dce7a88aec7493e85f056f1fe8fa606b4bef2e0d56fe26432",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 21,
+          "status": "PASS",
+          "observation": "Both primary ROC model panels visible with sample SD.",
+          "PNG_sha256": "d5022ae3e77aa48713fc6b24753b33da0471697fc2dff37ee55af6bdfeb5660f",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 22,
+          "status": "PASS",
+          "observation": "Both primary test-F1 panels visible; historical policy limitation retained.",
+          "PNG_sha256": "63988b630d4ccb0fd46c63ad00c3a8b21a8bac51ff459215c461b49a553f4b75",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 23,
+          "status": "PASS",
+          "observation": "Historical A5 control table individually zoomed; all seven ROC-AUC mean/SD last cells and header visible; F1 omitted.",
+          "PNG_sha256": "826f6558c2a12acbcab19ac866ed4d5c90318184d30fb160d0a2b1b291f22d15",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 24,
+          "status": "PASS",
+          "observation": "Primary AP uncertainty panels complete, with unchanged means and sample SD.",
+          "PNG_sha256": "0cc6397bc578f9f97a041d92e43ba8ef0a666be4a8f711ed08fddbc912d5b986",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "observation": "Feature-only/controls/alerts fit; explicit LANL A24-only input match; adverse means retained.",
+          "PNG_sha256": "fa02edebe4393ed858a4d0c6deab20fcaf6bf88cb5020551b0875e35c17b75c5",
+          "method": "Actual page viewed in final changed-page contact sheet",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 26,
+          "status": "PASS",
+          "observation": "Seedwise lift table complete, with discrete Polygon K5 caveat.",
+          "PNG_sha256": "84e77ffdc56adf129a9dacc0468ed1bb8c6c9239ca93acbe504cccb2dd941630",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 27,
+          "status": "PASS",
+          "observation": "All14 split/prediction-unit rows fit, with validation/test roles stated.",
+          "PNG_sha256": "199fc9dd78cfdea1834a2bb38995673e58cc75e9a74c588941b72415a0352a6d",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        },
+        {
+          "page": 28,
+          "status": "PASS",
+          "observation": "Complete-case membership table and final model column fit; no extra inference for external LANL.",
+          "PNG_sha256": "838fc3d6c56dbf36c6c9c5c1bba7db2c2396e4a877b7668e0abd6b69bfb477e3",
+          "method": "Actual page viewed in full contact sheets; final PNG byte-identical to that reviewed page",
+          "native_text_and_bounds_checked": true
+        }
+      ],
+      "critical_control_table_individually_viewed": 23,
+      "last_column_mean_SD_rows": 7
+    }
+  ]
+}

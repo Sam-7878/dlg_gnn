@@ -1,0 +1,37 @@
+{
+  "status": "PASS_PUBLISHED_AND_RETRIEVED",
+  "scientific_commit": "9e7e3a940d7e754b497043cf3959557c82773928",
+  "tag": "benchmark-a24-supplementary-2026-10-30-r1",
+  "annotated_tag_object": "9c8c15acd124d1f6917797aa77f4c987423e4eef",
+  "release_url": "https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a24-supplementary-2026-10-30-r1",
+  "public_release_page_http": 200,
+  "unauthenticated_release_api_http": 200,
+  "release_id": 428648387,
+  "assets": [
+    {
+      "name": "a24_scientific_supporting_evidence.zip",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/benchmark-a24-supplementary-2026-10-30-r1/a24_scientific_supporting_evidence.zip",
+      "api_url": "https://api.github.com/repos/Sam-7878/dlg_gnn/releases/assets/690894993",
+      "sha256": "d4dd144c81f395259c86b2eba6075e611c3c938adb9910ddb22f2dc0189187e9",
+      "bytes": 383320,
+      "retrieved_identical": true,
+      "anonymous_download_http": 200,
+      "anonymous_download_sha256": "d4dd144c81f395259c86b2eba6075e611c3c938adb9910ddb22f2dc0189187e9"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/Sam-7878/dlg_gnn/releases/download/benchmark-a24-supplementary-2026-10-30-r1/SHA256SUMS.txt",
+      "api_url": "https://api.github.com/repos/Sam-7878/dlg_gnn/releases/assets/690895048",
+      "sha256": "c031420e9a1af3bdc8668c0f054aab25380c759a4ca7b7482a464a579ac21aa1",
+      "bytes": 105,
+      "retrieved_identical": true,
+      "anonymous_download_http": 200,
+      "anonymous_download_sha256": "c031420e9a1af3bdc8668c0f054aab25380c759a4ca7b7482a464a579ac21aa1"
+    }
+  ],
+  "immutable_release": true,
+  "initial_empty_release_preserved": "benchmark-a24-supplementary-2026-10-30",
+  "manuscript_publication": false,
+  "platform_submission": "NOT_EXECUTED",
+  "anonymous_assets_retrieved": true
+}

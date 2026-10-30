@@ -1,0 +1,60 @@
+{
+  "status": "PASS_PUBLIC_VERIFY_AND_TABLES_WITH_EXPLICIT_PRIVATE_PAPER_BOUNDARY",
+  "remote": "https://github.com/Sam-7878/dlg_gnn.git",
+  "tag": "benchmark-a24-supplementary-2026-10-30-r1",
+  "commit": "9e7e3a940d7e754b497043cf3959557c82773928",
+  "clone_directory": "/tmp/dlg-a24-fresh-r1",
+  "fresh_clone_completed": true,
+  "steps": [
+    {
+      "mode": "verify",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "verify"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "public integrity and scalar replay",
+      "log_sha256": "fdbe6d9ddb255b2c58c898322b0e9379151ff3f5526c9f5fe1dc78a5867efcc1",
+      "output": "{\n  \"status\": \"PASS_PUBLIC_INTEGRITY_AND_SCALAR_REPLAY\",\n  \"frozen_runs\": 455,\n  \"primary_support\": \"84/91\",\n  \"payload_files\": 121,\n  \"primary_metric_groups\": 273,\n  \"supplementary_metric_groups\": 230,\n  \"ddof\": 1,\n  \"limitation\": \"Raw third-party inputs/new per-node scores and A24 manuscript remain private; no neural retraining is asserted.\"\n}\n"
+    },
+    {
+      "mode": "tables",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "tables"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "public integrity and scalar replay",
+      "log_sha256": "fdbe6d9ddb255b2c58c898322b0e9379151ff3f5526c9f5fe1dc78a5867efcc1",
+      "output": "{\n  \"status\": \"PASS_PUBLIC_INTEGRITY_AND_SCALAR_REPLAY\",\n  \"frozen_runs\": 455,\n  \"primary_support\": \"84/91\",\n  \"payload_files\": 121,\n  \"primary_metric_groups\": 273,\n  \"supplementary_metric_groups\": 230,\n  \"ddof\": 1,\n  \"limitation\": \"Raw third-party inputs/new per-node scores and A24 manuscript remain private; no neural retraining is asserted.\"\n}\n"
+    },
+    {
+      "mode": "paper",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/reproduce_project.py",
+        "--project",
+        "benchmark",
+        "--mode",
+        "paper"
+      ],
+      "exit_code": 1,
+      "status": "EXPECTED_PRIVATE_INPUT_GUARD",
+      "scope": "not public paper reproduction; correct explicit refusal",
+      "log_sha256": "52850c5005a084699a2a6763431158d6595896e3906a0e764fcffe29dfc82a2e",
+      "output": "PUT_REQUIRED: unpublished manuscript writer/snapshot intentionally withheld; public --mode verify and --mode tables are available. No historical PDF fallback.')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/dlg-a24-fresh-r1/projects/benchmark/scripts/a24_verify.py\", line 7, in require\n    if not ok:raise RuntimeError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: A24 PRIVATE_INPUT_REQUIRED: unpublished manuscript writer/snapshot intentionally withheld; public --mode verify and --mode tables are available. No historical PDF fallback.\nTraceback (most recent call last):\n  File \"/tmp/dlg-a24-fresh-r1/scripts/reproduce_project.py\", line 293, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/dlg-a24-fresh-r1/scripts/reproduce_project.py\", line 255, in main\n    subprocess.run([sys.executable, str(ROOT / \"projects/benchmark/scripts/a24_verify.py\"), \"--mode\", args.mode], cwd=ROOT, check=True)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['/usr/bin/python3', '/tmp/dlg-a24-fresh-r1/projects/benchmark/scripts/a24_verify.py', '--mode', 'paper']' returned non-zero exit status 1.\n"
+    }
+  ],
+  "scientific_neural_rerun": false,
+  "public_paper_reproduction": false
+}

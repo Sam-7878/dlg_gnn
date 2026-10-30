@@ -1,0 +1,20 @@
+{
+  "status": "PASS_EXISTING_BIB_IDENTITY_AND_STALE_COVER_LETTER_CLEANUP",
+  "source": "Actual preserved A23 BibTeX and cover-letter files, checked against user-supplied foundation citation",
+  "authoritative_DOI": "10.20944/preprints202609.0848.v1",
+  "finding": "Both original BibTeX entries were already correct. A different DOI202610.1878 appeared only in the inherited A20-labelled cover letter. An earlier provisional commentary incorrectly attributed this to BibTeX;that statement is corrected here.",
+  "disposition": "Retain original foundation BibTeX entry;new A24 cover letter cites the preceding work through the manuscript and does not repeat the stale DOI.",
+  "bibliographies": [
+    {
+      "variant": "applsci",
+      "foundation_BibTeX_entry_unchanged": true,
+      "entry_sha256": "d79a474feab54b1150f349aedc24296ae2b6d0746a2b8781b69d7837208b3cc2"
+    },
+    {
+      "variant": "preprints",
+      "foundation_BibTeX_entry_unchanged": true,
+      "entry_sha256": "d79a474feab54b1150f349aedc24296ae2b6d0746a2b8781b69d7837208b3cc2"
+    }
+  ],
+  "not_a_new_benchmark_preprint_DOI": true
+}

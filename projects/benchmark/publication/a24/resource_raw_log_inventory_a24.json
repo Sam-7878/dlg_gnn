@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Cora-Syn__DOMINANT__seed42__result.json",
+      "sha256": "1b020c1360e809abf7384047ea645b1e785e9cb1308c9ff4783419bf6d5a99dd",
+      "source_sha256": "1b020c1360e809abf7384047ea645b1e785e9cb1308c9ff4783419bf6d5a99dd",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Cora-Syn__DOMINANT__seed42__epoch_times.json",
+      "sha256": "e352b47282aca64e14a333aee51b582543dee34600bd434dbf4bbe6362b578a4",
+      "source_sha256": "e352b47282aca64e14a333aee51b582543dee34600bd434dbf4bbe6362b578a4",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Cora-Syn__DOMINANT__seed42__input_identity.json",
+      "sha256": "9eed7cb4e8357c4d17097fa40656d0a8406e4f7038eb3fcb84f60962c4548e92",
+      "source_sha256": "9eed7cb4e8357c4d17097fa40656d0a8406e4f7038eb3fcb84f60962c4548e92",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__DGraphFin__DOMINANT__seed42__result.json",
+      "sha256": "d9cf86ff9d97ebc7729b21867fbcdb7bd30f0ea420c872fe6998d2d6dad0ed4a",
+      "source_sha256": "d9cf86ff9d97ebc7729b21867fbcdb7bd30f0ea420c872fe6998d2d6dad0ed4a",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__DGraphFin__DOMINANT__seed42__epoch_times.json",
+      "sha256": "00b2c168431859e83d8c0d3c6503a528257c75526d31d8040716953fdba880e0",
+      "source_sha256": "00b2c168431859e83d8c0d3c6503a528257c75526d31d8040716953fdba880e0",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__DGraphFin__DOMINANT__seed42__input_identity.json",
+      "sha256": "6ba1236f41459a4a619432deefa73ff48677b5d9de3c3a7ca14412b88d43a6dc",
+      "source_sha256": "6ba1236f41459a4a619432deefa73ff48677b5d9de3c3a7ca14412b88d43a6dc",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Ethereum__DLG-Aug__seed42__result.json",
+      "sha256": "f8b944fead457f294c71b4cc3ee14e6e10397d07540fabe07b83aff38adf12ca",
+      "source_sha256": "f8b944fead457f294c71b4cc3ee14e6e10397d07540fabe07b83aff38adf12ca",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Ethereum__DLG-Aug__seed42__epoch_times.json",
+      "sha256": "bb6ecff530e41aae55de753363444167746b263895342f3d1ad0bdb1f7ce5c4c",
+      "source_sha256": "bb6ecff530e41aae55de753363444167746b263895342f3d1ad0bdb1f7ce5c4c",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Ethereum__DLG-Aug__seed42__input_identity.json",
+      "sha256": "e4a533736807e8d7ca8e0d40f0254381264fedbae98706f10164fb8d8e869055",
+      "source_sha256": "e4a533736807e8d7ca8e0d40f0254381264fedbae98706f10164fb8d8e869055",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Reddit-Syn__DLG-Base__seed42__result.json",
+      "sha256": "8a750cff2ad482559744161a7a212141c5cc638dea520d60fe06db751da769c3",
+      "source_sha256": "8a750cff2ad482559744161a7a212141c5cc638dea520d60fe06db751da769c3",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Reddit-Syn__DLG-Base__seed42__epoch_times.json",
+      "sha256": "3a0ae79d815cf6214b4c6e3d0e0838d96aad8904dc884a1a76f95740878e9ca3",
+      "source_sha256": "3a0ae79d815cf6214b4c6e3d0e0838d96aad8904dc884a1a76f95740878e9ca3",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_FULL_DECLARED__Reddit-Syn__DLG-Base__seed42__input_identity.json",
+      "sha256": "d2f05f0ef1f657a7b45948770aa0801c83328613fd8654d3ebc46d1f05cc163e",
+      "source_sha256": "d2f05f0ef1f657a7b45948770aa0801c83328613fd8654d3ebc46d1f05cc163e",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Cora-Syn__DOMINANT__seed42__result.json",
+      "sha256": "2f4c72275b5b9e16e7e8d2a708967ca8ad243ac7f4ee5f1d49a9550f6ed3c0ad",
+      "source_sha256": "2f4c72275b5b9e16e7e8d2a708967ca8ad243ac7f4ee5f1d49a9550f6ed3c0ad",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Cora-Syn__DOMINANT__seed42__epoch_times.json",
+      "sha256": "46311bc59c0aae972cf8319bb6578c0ccce3fbbc8a2507415120caba3137008c",
+      "source_sha256": "46311bc59c0aae972cf8319bb6578c0ccce3fbbc8a2507415120caba3137008c",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Cora-Syn__DOMINANT__seed42__input_identity.json",
+      "sha256": "9eed7cb4e8357c4d17097fa40656d0a8406e4f7038eb3fcb84f60962c4548e92",
+      "source_sha256": "9eed7cb4e8357c4d17097fa40656d0a8406e4f7038eb3fcb84f60962c4548e92",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__DGraphFin__DOMINANT__seed42__result.json",
+      "sha256": "b06fb6c7a898a1ec1642afbb16b1f6682cdaecb74f91ee3fb4263c5eed4e0563",
+      "source_sha256": "b06fb6c7a898a1ec1642afbb16b1f6682cdaecb74f91ee3fb4263c5eed4e0563",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__DGraphFin__DOMINANT__seed42__epoch_times.json",
+      "sha256": "bf50f5df4c321f2048acf0b8d8877e282a529a61187d57b3b14738c6d86130b3",
+      "source_sha256": "bf50f5df4c321f2048acf0b8d8877e282a529a61187d57b3b14738c6d86130b3",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__DGraphFin__DOMINANT__seed42__input_identity.json",
+      "sha256": "6ba1236f41459a4a619432deefa73ff48677b5d9de3c3a7ca14412b88d43a6dc",
+      "source_sha256": "6ba1236f41459a4a619432deefa73ff48677b5d9de3c3a7ca14412b88d43a6dc",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Ethereum__DLG-Aug__seed42__result.json",
+      "sha256": "b720db4a8674ed8cee0a475507c302e6cb922e70f5a410362645ae54de433ca8",
+      "source_sha256": "b720db4a8674ed8cee0a475507c302e6cb922e70f5a410362645ae54de433ca8",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Ethereum__DLG-Aug__seed42__epoch_times.json",
+      "sha256": "2ba582c2212e8bd5bd20911339aca86ea9cb3cde2f4be6198a3805e38613386d",
+      "source_sha256": "2ba582c2212e8bd5bd20911339aca86ea9cb3cde2f4be6198a3805e38613386d",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Ethereum__DLG-Aug__seed42__input_identity.json",
+      "sha256": "e4a533736807e8d7ca8e0d40f0254381264fedbae98706f10164fb8d8e869055",
+      "source_sha256": "e4a533736807e8d7ca8e0d40f0254381264fedbae98706f10164fb8d8e869055",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Reddit-Syn__DLG-Base__seed42__result.json",
+      "sha256": "8e701dee36822f7b740b484f4d7dbabe6bfe57162b661a7ac3726abd62aa4a0a",
+      "source_sha256": "8e701dee36822f7b740b484f4d7dbabe6bfe57162b661a7ac3726abd62aa4a0a",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Reddit-Syn__DLG-Base__seed42__epoch_times.json",
+      "sha256": "ccb0896a9bf9ba524e76f08ff06bc041ea30caeb4e2725f4994f7ec5428cd484",
+      "source_sha256": "ccb0896a9bf9ba524e76f08ff06bc041ea30caeb4e2725f4994f7ec5428cd484",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    },
+    {
+      "path": "projects/benchmark/supplementary/a24/measured_resource_raw_logs/A24_RESOURCE_ONE_EPOCH_PILOT__Reddit-Syn__DLG-Base__seed42__input_identity.json",
+      "sha256": "d2f05f0ef1f657a7b45948770aa0801c83328613fd8654d3ebc46d1f05cc163e",
+      "source_sha256": "d2f05f0ef1f657a7b45948770aa0801c83328613fd8654d3ebc46d1f05cc163e",
+      "scope": "scalar resource measurement;no raw node IDs/scores"
+    }
+  ],
+  "timing_context": "Eight labelled pilot/full measurement cases; synchronized training/scoring; RSS is process lifetime high-water mark, not per-run peak. Historical timings are not replaced."
+}

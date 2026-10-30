@@ -1,0 +1,11 @@
+issue_id,gate,issue,status
+A24-1,G1,stale README and crypto graph identity,PASS
+A24-2,G2,S1 n/Q/W conflict and inconsistent SD,PASS
+A24-3,G3,A3 clipped and F1 meaning uncertain,PASS
+A24-4,G4,overstated interpretation and related work,PASS
+A24-5,G5,feature-only comparison,PASS_QUALIFIED_LANL_MATCHED_TO_A24_ONLY
+A24-6,G6,matched Elliptic controls,PASS
+A24-7,G7,measured resources and Cora equivalence,PASS
+A24-8,G8,real-domain alert scores,PASS_SEPARATE_NEW_PROTOCOL_WITH_HISTORICAL_LIMIT
+A24-9,G9,optional GADNR diagnostic,OPTIONAL_NOT_ATTEMPTED
+A24-10,G10,final paper and release verification,PASS

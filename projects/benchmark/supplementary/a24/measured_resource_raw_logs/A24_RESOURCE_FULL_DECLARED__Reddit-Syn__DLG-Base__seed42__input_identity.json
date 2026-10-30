@@ -1,0 +1,39 @@
+{
+  "source_path": "archive/benchmark/outputs/a04_constructed_graphs/Reddit-Syn.pt",
+  "source_sha256": "15aa429034d64a452aa8a1ccad8b9fa1f8040fbe4bf0cbdf267bff078c6ba3fa",
+  "source_kind": "A04_FROZEN_CONSTRUCTED_TENSOR",
+  "dataset": "Reddit-Syn",
+  "N": 232965,
+  "E": 114869737,
+  "F": 602,
+  "feature_hash": "d699bcc7cdbe07b51a92ba74d5a5f4a4f51ce712d96867537ac8a012d7fdbd92",
+  "edge_hash": "a8e0add89a33a52f69a4f5a18e1633613a50771e641baf4ece5c3dfe40307642",
+  "label_hash": "13a3c7494bd59998421e6b3d3b4a561ed05de14d79f39d27b39b1294b3b3aa54",
+  "split_hashes": {
+    "42": {
+      "train_mask": "83e2ebedb703e8257a09048d5e4a0da79dd95a96ef0a5fe5e8fde1f9680e8d15",
+      "val_mask": "709c852c73a3bffac546f6c1799fee7aa614da46d237937b28209d676ce5028f",
+      "test_mask": "d6df61dd652e4532aff10b37b90fadd187133f6e912a34c7c9953a839ae98d7e"
+    },
+    "43": {
+      "train_mask": "83e2ebedb703e8257a09048d5e4a0da79dd95a96ef0a5fe5e8fde1f9680e8d15",
+      "val_mask": "cfeb32b33c6401861fca333c3fd2e63b6edd57d2b62ece3dcadaada680ebd9d3",
+      "test_mask": "b7ebfe493aca7c9e02716c40e4c061334b4406a5948961a4d34bcbc87882bcd1"
+    },
+    "44": {
+      "train_mask": "83e2ebedb703e8257a09048d5e4a0da79dd95a96ef0a5fe5e8fde1f9680e8d15",
+      "val_mask": "b88b4a0db83a1ca351740c67486344ada32e552b3173e25fda0fc8f1afd5bffc",
+      "test_mask": "f95b445df6088648adc3bd875630bd9e178cadeff347f4eefb9f6a30b0e6aa60"
+    },
+    "45": {
+      "train_mask": "83e2ebedb703e8257a09048d5e4a0da79dd95a96ef0a5fe5e8fde1f9680e8d15",
+      "val_mask": "c22ed76a0ff0571e2b947eb213c677babb81418a711cb149275df562af50b69a",
+      "test_mask": "e4254b9eee15f62f0887b0e19b855a5355dbb4886a3cfd53eba4e5ab55be504b"
+    },
+    "46": {
+      "train_mask": "83e2ebedb703e8257a09048d5e4a0da79dd95a96ef0a5fe5e8fde1f9680e8d15",
+      "val_mask": "97911e0dba45d0ed49d268d7c171ca8dc4691870e8f07dcd9d5f780eb41fcc36",
+      "test_mask": "878b90d07bfe649a15614f01acc21b2aefe3851b9599dd5fd60a2255f2262892"
+    }
+  }
+}

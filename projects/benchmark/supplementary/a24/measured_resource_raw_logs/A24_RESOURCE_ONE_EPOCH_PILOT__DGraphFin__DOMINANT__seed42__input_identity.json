@@ -1,0 +1,39 @@
+{
+  "source_path": "archive/benchmark/outputs/a04_constructed_graphs/DGraphFin.pt",
+  "source_sha256": "074c51214dbbc6028ad35b40b5447330bbaccce998f976156533fce4b0c2066e",
+  "source_kind": "A04_FROZEN_CONSTRUCTED_TENSOR",
+  "dataset": "DGraphFin",
+  "N": 1225601,
+  "E": 746271,
+  "F": 17,
+  "feature_hash": "640b74a64de2742c010d81fe035a65f279890c87da0945f91dc866e0c821eadb",
+  "edge_hash": "6e1a93f99018a5ca0cdc08de6a8da3f8c0799230fd1d49e88c874a0a68e6831d",
+  "label_hash": "86e45d6c1b495752c15dbc59d3c07e0ec76d55db4d1fad9336020d61725a5691",
+  "split_hashes": {
+    "42": {
+      "train_mask": "d970bb1b4fc8c592ead3ad22fbccd82936ee2443af4c352b680176e635ffda16",
+      "val_mask": "f0f3be2a4dd3fd2eea41bd77c6968d415108d4dc06d4343b3bf638aafa0bdb72",
+      "test_mask": "32c8bbddac1a198fb989dfb2e713615c76167d51da0bb01286eba35ddc9a7a12"
+    },
+    "43": {
+      "train_mask": "d970bb1b4fc8c592ead3ad22fbccd82936ee2443af4c352b680176e635ffda16",
+      "val_mask": "f0f3be2a4dd3fd2eea41bd77c6968d415108d4dc06d4343b3bf638aafa0bdb72",
+      "test_mask": "32c8bbddac1a198fb989dfb2e713615c76167d51da0bb01286eba35ddc9a7a12"
+    },
+    "44": {
+      "train_mask": "d970bb1b4fc8c592ead3ad22fbccd82936ee2443af4c352b680176e635ffda16",
+      "val_mask": "f0f3be2a4dd3fd2eea41bd77c6968d415108d4dc06d4343b3bf638aafa0bdb72",
+      "test_mask": "32c8bbddac1a198fb989dfb2e713615c76167d51da0bb01286eba35ddc9a7a12"
+    },
+    "45": {
+      "train_mask": "d970bb1b4fc8c592ead3ad22fbccd82936ee2443af4c352b680176e635ffda16",
+      "val_mask": "f0f3be2a4dd3fd2eea41bd77c6968d415108d4dc06d4343b3bf638aafa0bdb72",
+      "test_mask": "32c8bbddac1a198fb989dfb2e713615c76167d51da0bb01286eba35ddc9a7a12"
+    },
+    "46": {
+      "train_mask": "d970bb1b4fc8c592ead3ad22fbccd82936ee2443af4c352b680176e635ffda16",
+      "val_mask": "f0f3be2a4dd3fd2eea41bd77c6968d415108d4dc06d4343b3bf638aafa0bdb72",
+      "test_mask": "32c8bbddac1a198fb989dfb2e713615c76167d51da0bb01286eba35ddc9a7a12"
+    }
+  }
+}

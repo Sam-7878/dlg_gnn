@@ -1,0 +1,14 @@
+{
+  "status": "PASS_SEPARATE_A24_COMPARISONS_WITH_EXPLICIT_HISTORICAL_LIMIT",
+  "LANL_historical_input_match": false,
+  "LANL_qualification": "REPRODUCTION_NOT_MATCHED_FEATURE_PREPROCESSING",
+  "historical_source": "f0d63791da5dc031d34dd4ed0c9f9deba1020d74:scripts/defense_extension_real/run_defense_multiseed_real.py",
+  "historical_transform": "log1p on columns max>10,then train-set mean/std;recorded in a05_config_provenance_crypto_lanl.csv",
+  "A24_transform": "preregistered frozen raw-graph X, no extra transform;shared exactly by ECOD/IForest and A24 Base/Aug",
+  "matched_A24_LANL_AP": {
+    "DLG-Base": 0.1021605253419929,
+    "DLG-Aug": 0.08523870459791481
+  },
+  "consequence": "LANL feature-only comparisons are matched to new A24 DLG repeats,not all seven historical detectors. Historical values stay descriptive. No post-hoc preprocessing change/retraining.",
+  "primary_changes": 0
+}

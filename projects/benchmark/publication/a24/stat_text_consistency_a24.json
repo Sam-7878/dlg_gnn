@@ -1,0 +1,330 @@
+{
+  "status": "PASS",
+  "tables_per_variant": 19,
+  "mutation_tests": [
+    {
+      "variant": "applsci",
+      "mutation": "section Q",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "section n",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "section W",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "tab:friedman_stats cell",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "tab:app_roc_auc_full_part2 cell",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "tab:a24_ap_sd_part2 cell",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "tab:app_ablation_elliptic cell",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "A3 header",
+      "rejected": true
+    },
+    {
+      "variant": "applsci",
+      "mutation": "A3 last value",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "section Q",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "section n",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "section W",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "tab:friedman_stats cell",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "tab:app_roc_auc_full_part2 cell",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "tab:a24_ap_sd_part2 cell",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "tab:app_ablation_elliptic cell",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "A3 header",
+      "rejected": true
+    },
+    {
+      "variant": "preprints",
+      "mutation": "A3 last value",
+      "rejected": true
+    }
+  ],
+  "documents": [
+    {
+      "variant": "applsci",
+      "status": "PASS_POSITIONAL_SOURCE_NATIVE_PDF_AND_BOUNDS",
+      "pdf_sha256": "6d07e6291923bdb7417f870eeb325c0fbe6118ea7b742ef863ed8a124d87a571",
+      "pages": 25,
+      "historical_control_table_page": 19,
+      "glyph_bounds": [
+        {
+          "page": 1,
+          "outside_page_words": []
+        },
+        {
+          "page": 2,
+          "outside_page_words": []
+        },
+        {
+          "page": 3,
+          "outside_page_words": []
+        },
+        {
+          "page": 4,
+          "outside_page_words": []
+        },
+        {
+          "page": 5,
+          "outside_page_words": []
+        },
+        {
+          "page": 6,
+          "outside_page_words": []
+        },
+        {
+          "page": 7,
+          "outside_page_words": []
+        },
+        {
+          "page": 8,
+          "outside_page_words": []
+        },
+        {
+          "page": 9,
+          "outside_page_words": []
+        },
+        {
+          "page": 10,
+          "outside_page_words": []
+        },
+        {
+          "page": 11,
+          "outside_page_words": []
+        },
+        {
+          "page": 12,
+          "outside_page_words": []
+        },
+        {
+          "page": 13,
+          "outside_page_words": []
+        },
+        {
+          "page": 14,
+          "outside_page_words": []
+        },
+        {
+          "page": 15,
+          "outside_page_words": []
+        },
+        {
+          "page": 16,
+          "outside_page_words": []
+        },
+        {
+          "page": 17,
+          "outside_page_words": []
+        },
+        {
+          "page": 18,
+          "outside_page_words": []
+        },
+        {
+          "page": 19,
+          "outside_page_words": []
+        },
+        {
+          "page": 20,
+          "outside_page_words": []
+        },
+        {
+          "page": 21,
+          "outside_page_words": []
+        },
+        {
+          "page": 22,
+          "outside_page_words": []
+        },
+        {
+          "page": 23,
+          "outside_page_words": []
+        },
+        {
+          "page": 24,
+          "outside_page_words": []
+        },
+        {
+          "page": 25,
+          "outside_page_words": []
+        }
+      ],
+      "manual_visual_review": "REQUIRED_SEPARATELY"
+    },
+    {
+      "variant": "preprints",
+      "status": "PASS_POSITIONAL_SOURCE_NATIVE_PDF_AND_BOUNDS",
+      "pdf_sha256": "092369953dfb16da91110e21e3fa6529fb532c6923220c0f0b95a1fa512c365c",
+      "pages": 28,
+      "historical_control_table_page": 23,
+      "glyph_bounds": [
+        {
+          "page": 1,
+          "outside_page_words": []
+        },
+        {
+          "page": 2,
+          "outside_page_words": []
+        },
+        {
+          "page": 3,
+          "outside_page_words": []
+        },
+        {
+          "page": 4,
+          "outside_page_words": []
+        },
+        {
+          "page": 5,
+          "outside_page_words": []
+        },
+        {
+          "page": 6,
+          "outside_page_words": []
+        },
+        {
+          "page": 7,
+          "outside_page_words": []
+        },
+        {
+          "page": 8,
+          "outside_page_words": []
+        },
+        {
+          "page": 9,
+          "outside_page_words": []
+        },
+        {
+          "page": 10,
+          "outside_page_words": []
+        },
+        {
+          "page": 11,
+          "outside_page_words": []
+        },
+        {
+          "page": 12,
+          "outside_page_words": []
+        },
+        {
+          "page": 13,
+          "outside_page_words": []
+        },
+        {
+          "page": 14,
+          "outside_page_words": []
+        },
+        {
+          "page": 15,
+          "outside_page_words": []
+        },
+        {
+          "page": 16,
+          "outside_page_words": []
+        },
+        {
+          "page": 17,
+          "outside_page_words": []
+        },
+        {
+          "page": 18,
+          "outside_page_words": []
+        },
+        {
+          "page": 19,
+          "outside_page_words": []
+        },
+        {
+          "page": 20,
+          "outside_page_words": []
+        },
+        {
+          "page": 21,
+          "outside_page_words": []
+        },
+        {
+          "page": 22,
+          "outside_page_words": []
+        },
+        {
+          "page": 23,
+          "outside_page_words": []
+        },
+        {
+          "page": 24,
+          "outside_page_words": []
+        },
+        {
+          "page": 25,
+          "outside_page_words": []
+        },
+        {
+          "page": 26,
+          "outside_page_words": []
+        },
+        {
+          "page": 27,
+          "outside_page_words": []
+        },
+        {
+          "page": 28,
+          "outside_page_words": []
+        }
+      ],
+      "manual_visual_review": "REQUIRED_SEPARATELY"
+    }
+  ]
+}

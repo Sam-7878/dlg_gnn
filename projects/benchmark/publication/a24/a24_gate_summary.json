@@ -1,0 +1,22 @@
+{
+  "status": "A24-PREPRINT-READY;A24-JOURNAL-REVIEWER-STRENGTHENED",
+  "scientific_tag": "benchmark-a24-supplementary-2026-10-30-r1",
+  "scientific_commit": "9e7e3a940d7e754b497043cf3959557c82773928",
+  "gates": {
+    "G0": "PASS",
+    "G1": "PASS",
+    "G2": "PASS",
+    "G3": "PASS",
+    "G4": "PASS",
+    "G5": "PASS_QUALIFIED_LANL_MATCHED_TO_A24_ONLY",
+    "G6": "PASS",
+    "G7": "PASS",
+    "G8": "PASS_SEPARATE_NEW_PROTOCOL_WITH_HISTORICAL_LIMIT",
+    "G9": "OPTIONAL_NOT_ATTEMPTED",
+    "G10": "PASS"
+  },
+  "primary_metric_changes": 0,
+  "platform_submission": "NOT_EXECUTED",
+  "new_benchmark_DOI": null,
+  "author_platform_check": "Current SI deadline/forms/coauthor approval are author submission steps;not executed or fabricated."
+}

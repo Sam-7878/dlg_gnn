@@ -1,0 +1,42 @@
+{
+  "source_path": "local_storage/benchmark/a08_data_repair/frozen/ethereum/contract_graph.npz",
+  "source_sha256": "9083dfb5d7e297482f2c9f3c1d79290ab71983d24a0c68a0df937e20c8253053",
+  "input_manifest_sha256": "377489ed2d2f03fe6673d4d227ec4e7700b055ec079ba07fd2d1f6e1b1b29ec7",
+  "source_kind": "A08_SCORE_BOUND_FROZEN",
+  "old_A23_graph_metadata_mismatch": true,
+  "relation": "exact standardized feature Euclidean k=5 symmetrized binary union; no transfer-edge union",
+  "dataset": "Ethereum",
+  "N": 14464,
+  "E": 95098,
+  "F": 8,
+  "feature_hash": "ee937195cecd65451d6179a0ce18b0d2323ac6226eca5ea9ed38c9fe23a9c6e0",
+  "edge_hash": "1ee614612e76571630e925c226d756947746abcefe77491f6802f01a2427af3a",
+  "label_hash": "414f80c0ab07c201c917f69497d59d02ac56acd726df8a3b6ea1dd04c7ef1302",
+  "split_hashes": {
+    "42": {
+      "train_mask": "5f2564609004f790670f44e913a51869f33201ba22582da2f66fe288d958f6d0",
+      "val_mask": "d8c4c310f434b7caa0abfe0d4c3d07cbee2aa042e55e58f9714328548a240441",
+      "test_mask": "e8e595cb7299e5b6b502df38c4ccf48d01d08f89273db53343a67d16d9de1044"
+    },
+    "43": {
+      "train_mask": "8f9309d9949179a1987d82c8fbbc51af352d279a5d081536864540b781a0829d",
+      "val_mask": "1ad4ecc6bd912fbb0743074a69e230369d0af94f1393f53a4e74b176a4e315d4",
+      "test_mask": "ca350d9ce914494d6b7ce80ecae2db8d735c7b2a948fcda33b371d6ed35f38a9"
+    },
+    "44": {
+      "train_mask": "a6223efbe489b14454746afa074b5e5546d4d7bbb58b08cf808a828546bcdc92",
+      "val_mask": "78489227df493dc577b4f0593b4e9466afd496a1260266b0b08f6ab0a8c6a8cd",
+      "test_mask": "aef9f9ea06ba6dc2f35e5efb0f871fa99e3a911bc91236bd83b96f800703d0c3"
+    },
+    "45": {
+      "train_mask": "89732afe3c50a664a062a690a3815118c5dedf90a00a221ea1f3636739e71442",
+      "val_mask": "08eb4f0dd0dfec43c3f69586802328e47b1bf22a94ad38e3b486443fcbf93494",
+      "test_mask": "c9398e2ceeb5540eff5cff9077ab96d00c698c494de7edf1c1ba595694e80532"
+    },
+    "46": {
+      "train_mask": "5dcf2705bb6ebe6875c5eb2b9b805dd3a8f9941d4ac439d688bf9e0a5b8b3f73",
+      "val_mask": "6da2cd11927257b438b0b5effae877c2ff68dea8fc0ee465a5c832a9f14baf4f",
+      "test_mask": "b744cb76b1cd796a42c5c20607909e834a0fc8ac0e8d462781816e476b4fbf05"
+    }
+  }
+}

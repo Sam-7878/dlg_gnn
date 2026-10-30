@@ -1,0 +1,17 @@
+claim,finding,evidence,gate
+Frozen support,455=420primary+35external;84/91primary;111A23files unchanged,a24_frozen_input_manifest.json,G0
+Crypto actual model input,Ethereum14464/95098;BSC7499/48462;Polygon2353/15368;8features;no transfer-edge union,a24_repo_manuscript_consistency.json;score_input_binding_105.csv,G1
+S1 statistics,n8;k7;Q29.0357142857;W0.6049107143,stats_master_a24.csv;statistics_recompute.json,G2
+Uncertainty,sampleSDddof1;seed-joined paired differences;mean AP unchanged,metrics_mean_sample_sd.csv;paired_deltas_a24.csv,G2
+Historical diagnostic F1,Unverifiable misleading diagnostic column omitted;actual test-F1 alias audited,ablation_f1_provenance_audit.json;native_last_column_cells_a24.json,G3
+Conditional utility,DGraph feasibility is not quality;PolygonAugP@1%=.08vsAnomalyDAE.36;seedwise lift,table7_lift_and_support_a24.csv,G4
+Feature-only scope,"60evaluations;LANL raw-X compares to matched new A24 Base/Aug,not differently transformed historical inputs",../../supplementary/a24/feature_only_per_seed.csv;supplementary_input_qualification_a24.json,G5
+Matched controls,25runs;permuted meanAP.1081>aligned.1037;no causal alignment/capacity conclusion,../../supplementary/a24/elliptic_ablation_25_runs.csv,G6
+Measured resources,4full cases+4labelledpilots;synchronizedtiming;allocated/reserveddistinct,../../supplementary/a24/measured_full_resource_cases.csv;resource_raw_log_inventory_a24.json,G7
+Exact Cora,N2708float32;3families;loss/score/grad/oneAdam;atol1e-5rtol1e-4,../../supplementary/a24/cora_exact_loss_equivalence.json,G7
+Raw scores,113newvectors independently recomputed;30alert evaluations;LANLhistorical preprocessing mismatch explicit,../../supplementary/a24/raw_metric_recompute_checks.csv;../../supplementary/a24/real_domain_historical_reconciliation_a24.csv,G8
+Optional diagnosis,G9notattempted;no unsupported historical cell upgraded,../../supplementary/a24/gadnr_24gb_jitter_diagnostic.md,G9
+Public reproduction,Remote r1 clone verify/tables exit0;paper correct private-input guard;authorlocalactualpaper/cleanZIPPASS,fresh_clone_verification.json;clean_source_recompile_a24.json,G10
+Final PDF,All pages rendered and reviewed;lastcolumncoordinate/cellchecks;18+2negativecontrols,pdf_page_review_a24.json;stat_text_consistency_a24.json;native_last_column_cells_a24.json,G10
+Public identity,r1published;bothassetsanonymousHTTP200/SHAidentity;A23tagunchanged,release_retrieval.json,G10
+Foundation reference,Existing foundation BibTeX agrees with user-supplied202609.0848 citation;stale cover-letter DOI removed;no new benchmark DOI,foundation_reference_identity_correction.json,G10

@@ -1,0 +1,14 @@
+{
+  "captured_utc": "2026-10-30T04:31:52.462690+00:00",
+  "scope": "post-run environment and idle hardware snapshot;not a training power/temperature trace",
+  "eGPU_bus_context": "User-provided RTX3090 24GB external enclosure;no controlled 4070/3090 speed comparison is claimed",
+  "command": [
+    "nvidia-smi",
+    "--id=GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+    "--query-gpu=name,uuid,memory.total,driver_version,pstate,temperature.gpu,power.draw,clocks.current.sm,clocks.current.memory",
+    "--format=csv,noheader"
+  ],
+  "exit_code": 0,
+  "postrun_snapshot": "NVIDIA GeForce RTX 3090, GPU-ab53069a-3217-ee09-80f8-748b5fdbd156, 24576 MiB, 616.92, P8, 25, 24.62 W, 210 MHz, 405 MHz",
+  "error": ""
+}
