@@ -3,14 +3,14 @@
 **Document ID:** DLG-BENCH-DATA-PREPRINT-A20  
 **Date:** 2026-10-29  
 **Target Platform:** Preprints.org  
-**Benchmark Git Tag:** `benchmark-a20-preprint-2026-10-29` (superseding `benchmark-a19-submission-2026-10-28`)  
+**Benchmark Git Tag:** `benchmark-a22-submission-2026-10-30` (superseding `benchmark-a20-preprint-2026-10-29`)  
 **Repository URL:** https://github.com/Sam-7878/dlg_gnn  
 
 ---
 
 ## 1. Summary of Publicly Available Artifacts
 
-All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a20-preprint-2026-10-29` at https://github.com/Sam-7878/dlg_gnn.
+All benchmark evaluation scripts, aggregation pipelines, mathematical validation routines, and figure generation scripts are openly archived under immutable Git tag `benchmark-a22-submission-2026-10-30` at https://github.com/Sam-7878/dlg_gnn.
 
 The public repository tag contains:
 1. **Source Code & Pipelines:** Clean, modular Python scripts to reproduce all Friedman tests, Monte Carlo permutations, denominator audits, and figures.

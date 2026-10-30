@@ -3,7 +3,7 @@
 **Document ID:** `DLG-BENCH-GATE-A20-RELEASE`  
 **Date:** 2026-10-29  
 **Status:** PASS (Canonical Ledger Synchronized with Disk Bytes)  
-**Target Git Tag:** `benchmark-a20-preprint-2026-10-29` (superseding `benchmark-a19-submission-2026-10-28`)  
+**Target Git Tag:** `benchmark-a22-submission-2026-10-30` (superseding `benchmark-a20-preprint-2026-10-29`)  
 
 ---
 

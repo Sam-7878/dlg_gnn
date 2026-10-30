@@ -3,14 +3,14 @@
 **Document ID:** DLG-BENCH-DATA-APPLSCI-A20  
 **Date:** 2026-10-29  
 **Target:** *Applied Sciences* (MDPI), Special Issue "Machine Learning and Its Application for Anomaly Detection"  
-**Benchmark Git Tag:** `benchmark-a20-preprint-2026-10-29` (superseding `benchmark-a19-submission-2026-10-28`)  
+**Benchmark Git Tag:** `benchmark-a22-submission-2026-10-30` (superseding `benchmark-a20-preprint-2026-10-29`)  
 **Repository URL:** https://github.com/Sam-7878/dlg_gnn  
 
 ---
 
 ## 1. Summary of Publicly Available Artifacts
 
-Public numeric benchmark results, aggregation scripts, evaluation population ledger, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag `benchmark-a20-preprint-2026-10-29` at https://github.com/Sam-7878/dlg_gnn.
+Public numeric benchmark results, aggregation scripts, evaluation population ledger, dataset reconciliation tables, and reproduction artifacts are openly archived under immutable Git tag `benchmark-a22-submission-2026-10-30` at https://github.com/Sam-7878/dlg_gnn.
 
 ## 2. Truthful Node-Level Score Availability Disclosure
 

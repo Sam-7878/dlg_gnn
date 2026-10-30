@@ -1,0 +1,1373 @@
+{
+  "document_id": "DLG-BENCH-A22-G1-TRAINING-EQUIVALENCE",
+  "environment": {
+    "python": "3.14.4",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "torch": "2.14.1+cu130",
+    "torch_geometric": "2.8.0.post1",
+    "pygod": "1.1.0",
+    "cuda_used": false,
+    "device": "cpu",
+    "torch_sparse": "unavailable (ModuleNotFoundError)"
+  },
+  "predeclared_tolerances": {
+    "float64": {
+      "loss_rel": 1e-10,
+      "score_max_abs": 1e-09,
+      "grad_rel_l2": 1e-08,
+      "step_param_max_abs": 1e-09,
+      "trajectory_loss_rel": 1e-07,
+      "trajectory_param_max_abs": 1e-07
+    },
+    "float32": {
+      "loss_rel": 1e-05,
+      "score_max_abs": 0.0005,
+      "grad_rel_l2": 0.0001,
+      "step_param_max_abs": 2e-05,
+      "trajectory_loss_rel": 0.001,
+      "trajectory_param_max_abs": 0.0005
+    }
+  },
+  "negative_control_factor": 100.0,
+  "fixture": {
+    "N": 40,
+    "D": 8,
+    "hid_dim": 8,
+    "num_layers": 4,
+    "lr": 0.004,
+    "weight": 0.5,
+    "l1_dim": 6,
+    "trajectory_epochs": 10,
+    "seeds": [
+      11,
+      23,
+      47
+    ]
+  },
+  "source_sha256": {
+    "src/gog_fraud/models/pygod/exact_reconstruction.py": "c490d2b1fb43d2ec8247cc0ecbb0d92bbc7b3a831de00ed46733ee21a9bc1037",
+    "src/gog_fraud/models/pygod/shared_reconstruction.py": "1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f",
+    "src/gog_fraud/models/pygod/stable_reconstruction.py": "713be1fdad8ad77cb30ab2c6ea845ade88bcd9a1d2cea12a7abb792411e9861a",
+    "src/gog_fraud/models/pygod/dlg_base.py": "fdd964011b67cd1f9180f7e2374417e66da82c13c305acb0644eaac4bca9c888",
+    "src/gog_fraud/models/pygod/dlg_full_base.py": "82c357d49ecff6ea572129957687a969df3f26cb248895164a2d8f59d3698aaf",
+    "src/gog_fraud/models/pygod/dlg.py": "a869ade9da1e8d52bbb2ffaee37bcf847542915b87f8748adc4450f3389b3a78",
+    "src/gog_fraud/models/pygod/dlg_full.py": "1d862bf780ab83ba4eb008eecd94cca23258c71d4b87289c268d8beb5482f37b",
+    "src/gog_fraud/models/pygod/sparse_message.py": "5d4b00cbcc56ece5057b432a2a7ce64bcac5accde45620a260465a9113b9c012",
+    "projects/benchmark/scripts/a22_g1_dense_exact_training_equivalence.py": "2ba1023d75c16a6a7b5afb17541529645e18b4caa2858ecd24e1d5c929a16c89"
+  },
+  "installed_pygod_functional_sha256": "5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9",
+  "results": [
+    {
+      "family": "DOMINANT",
+      "seed": 11,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.0601810348251289e-16,
+      "grad_max_abs": 4.440892098500626e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 9.421892224274167,
+      "grad_norm_prod": 9.421892224274165,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.685795265601439,
+      "loss_prod": 3.685795265601439,
+      "loss_rel": 0.0,
+      "score_max_abs": 8.881784197001252e-16,
+      "step_param_max_abs": 1.3877787807814457e-17,
+      "trajectory_loss_rel": 1.714221543597521e-16,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        3.685795265601439,
+        2.590617365116545
+      ],
+      "loss_first_last_prod": [
+        3.685795265601439,
+        2.5906173651165454
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9323435812534605,
+          "grad_max_abs": 33.79805780577474,
+          "grad_cosine": 0.9569937340133922,
+          "grad_norm_ref": 132.8258712799066,
+          "grad_norm_prod": 9.421892224274165,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 1.886312188014379,
+          "grad_max_abs": 1.9281779289636902,
+          "grad_cosine": 0.9581067291036056,
+          "grad_norm_ref": 3.338080131342462,
+          "grad_norm_prod": 9.421892224274165,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DOMINANT",
+      "seed": 23,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.3820450516182977e-16,
+      "grad_max_abs": 4.440892098500626e-16,
+      "grad_cosine": 0.9999999999999999,
+      "grad_norm_ref": 11.243139740533955,
+      "grad_norm_prod": 11.243139740533955,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.7504676256284677,
+      "loss_prod": 3.7504676256284677,
+      "loss_rel": 0.0,
+      "score_max_abs": 8.881784197001252e-16,
+      "step_param_max_abs": 6.938893903907228e-18,
+      "trajectory_loss_rel": 1.3136043834793377e-16,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        3.7504676256284677,
+        2.392622070743159
+      ],
+      "loss_first_last_prod": [
+        3.7504676256284677,
+        2.392622070743159
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9114422238467842,
+          "grad_max_abs": 30.11207933591223,
+          "grad_cosine": 0.9964012615699398,
+          "grad_norm_ref": 126.4568653629605,
+          "grad_norm_prod": 11.243139740533955,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.44183300412668,
+          "grad_max_abs": 2.23532902257442,
+          "grad_cosine": 0.99461056535165,
+          "grad_norm_ref": 3.273835016082039,
+          "grad_norm_prod": 11.243139740533955,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DOMINANT",
+      "seed": 47,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.5743125274787604e-16,
+      "grad_max_abs": 4.440892098500626e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 9.228680939176579,
+      "grad_norm_prod": 9.228680939176579,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.524463564404112,
+      "loss_prod": 3.524463564404112,
+      "loss_rel": 0.0,
+      "score_max_abs": 1.7763568394002505e-15,
+      "step_param_max_abs": 1.3877787807814457e-17,
+      "trajectory_loss_rel": 1.5703003676379926e-16,
+      "trajectory_param_max_abs": 2.636779683484747e-16,
+      "loss_first_last_ref": [
+        3.524463564404112,
+        2.4578643293603566
+      ],
+      "loss_first_last_prod": [
+        3.524463564404112,
+        2.4578643293603566
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9050142515352082,
+          "grad_max_abs": 27.012112343751557,
+          "grad_cosine": 0.9369966690594386,
+          "grad_norm_ref": 90.36803091522098,
+          "grad_norm_prod": 9.228680939176579,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 3.1190784129084164,
+          "grad_max_abs": 2.5371336369752076,
+          "grad_cosine": 0.9373129617194891,
+          "grad_norm_ref": 2.2861025193456483,
+          "grad_norm_prod": 9.228680939176579,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DOMINANT",
+      "seed": 11,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 9.427800043589818e-08,
+      "grad_max_abs": 1.1920928955078125e-07,
+      "grad_cosine": 0.999999999999997,
+      "grad_norm_ref": 2.4775069274786197,
+      "grad_norm_prod": 2.477507060655156,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.663696765899658,
+      "loss_prod": 2.663696765899658,
+      "loss_rel": 0.0,
+      "score_max_abs": 4.76837158203125e-07,
+      "step_param_max_abs": 2.9802322387695312e-08,
+      "trajectory_loss_rel": 2.0463958875628245e-07,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        2.663696765899658,
+        2.311389446258545
+      ],
+      "loss_first_last_prod": [
+        2.663696765899658,
+        2.311389446258545
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.8925881003779162,
+          "grad_max_abs": 5.489635109901428,
+          "grad_cosine": 0.8979257478214284,
+          "grad_norm_ref": 20.406927526895682,
+          "grad_norm_prod": 2.477507060655156,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 3.8505618727049495,
+          "grad_max_abs": 0.7543967962265015,
+          "grad_cosine": 0.8888029774279769,
+          "grad_norm_ref": 0.5257872822578964,
+          "grad_norm_prod": 2.477507060655156,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DOMINANT",
+      "seed": 23,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 5.931749371210866e-08,
+      "grad_max_abs": 2.384185791015625e-07,
+      "grad_cosine": 0.999999999999999,
+      "grad_norm_ref": 11.72736226777267,
+      "grad_norm_prod": 11.727361941741231,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.6769821643829346,
+      "loss_prod": 3.6769821643829346,
+      "loss_rel": 0.0,
+      "score_max_abs": 9.5367431640625e-07,
+      "step_param_max_abs": 3.725290298461914e-09,
+      "trajectory_loss_rel": 0.0,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        3.6769821643829346,
+        2.4429118633270264
+      ],
+      "loss_first_last_prod": [
+        3.6769821643829346,
+        2.4429118633270264
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9202317981671214,
+          "grad_max_abs": 39.86293840408325,
+          "grad_cosine": 0.990789284912583,
+          "grad_norm_ref": 145.54583859894106,
+          "grad_norm_prod": 11.727361941741231,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.10584361385689,
+          "grad_max_abs": 2.534377336502075,
+          "grad_cosine": 0.9903423837932306,
+          "grad_norm_ref": 3.7932776360802705,
+          "grad_norm_prod": 11.727361941741231,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DOMINANT",
+      "seed": 47,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 6.926038883186316e-08,
+      "grad_max_abs": 2.384185791015625e-07,
+      "grad_cosine": 0.999999999999998,
+      "grad_norm_ref": 9.558752985467077,
+      "grad_norm_prod": 9.558752853038579,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 4.863398551940918,
+      "loss_prod": 4.863398551940918,
+      "loss_rel": 0.0,
+      "score_max_abs": 1.9073486328125e-06,
+      "step_param_max_abs": 3.725290298461914e-09,
+      "trajectory_loss_rel": 1.0614466137464767e-07,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        4.863398551940918,
+        3.0634069442749023
+      ],
+      "loss_first_last_prod": [
+        4.863398551940918,
+        3.0634069442749023
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.973450520616465,
+          "grad_max_abs": 91.68928122520447,
+          "grad_cosine": 0.8430334901367342,
+          "grad_norm_ref": 301.8275082260713,
+          "grad_norm_prod": 9.558752853038579,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 0.679568930831221,
+          "grad_max_abs": 1.3952478170394897,
+          "grad_cosine": 0.8445031826100802,
+          "grad_norm_ref": 7.569294892128639,
+          "grad_norm_prod": 9.558752853038579,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 11,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.5277630147860439e-16,
+      "grad_max_abs": 1.6653345369377348e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 2.2564018066168816,
+      "grad_norm_prod": 2.2564018066168816,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.8486229743105307,
+      "loss_prod": 2.84862297431053,
+      "loss_rel": 3.117921984446174e-16,
+      "score_max_abs": 8.881784197001252e-16,
+      "step_param_max_abs": 1.1102230246251565e-16,
+      "trajectory_loss_rel": 3.570154328249701e-16,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        2.8486229743105307,
+        2.4687840073108873
+      ],
+      "loss_first_last_prod": [
+        2.84862297431053,
+        2.4687840073108873
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.881394367645887,
+          "grad_max_abs": 4.302611380516271,
+          "grad_cosine": 0.9817145003101856,
+          "grad_norm_ref": 18.62916031401588,
+          "grad_norm_prod": 2.2564018066168816,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.883141251960588,
+          "grad_max_abs": 0.5355655003043089,
+          "grad_cosine": 0.935614458265862,
+          "grad_norm_ref": 0.5942495109609792,
+          "grad_norm_prod": 2.2564018066168816,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 23,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.4596162885709074e-16,
+      "grad_max_abs": 2.220446049250313e-16,
+      "grad_cosine": 1.0000000000000002,
+      "grad_norm_ref": 2.594087219596063,
+      "grad_norm_prod": 2.594087219596063,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.694457050785483,
+      "loss_prod": 2.694457050785483,
+      "loss_rel": 0.0,
+      "score_max_abs": 4.440892098500626e-16,
+      "step_param_max_abs": 5.551115123125783e-17,
+      "trajectory_loss_rel": 1.8418958273621995e-16,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        2.694457050785483,
+        2.3260254796394504
+      ],
+      "loss_first_last_prod": [
+        2.694457050785483,
+        2.3260254796394504
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.825478994874757,
+          "grad_max_abs": 4.442743048897085,
+          "grad_cosine": 0.9971691481322863,
+          "grad_norm_ref": 14.813047636154558,
+          "grad_norm_prod": 2.594087219596063,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 4.400375299739788,
+          "grad_max_abs": 0.8600559060559928,
+          "grad_cosine": 0.9351279233826427,
+          "grad_norm_ref": 0.4874989680453696,
+          "grad_norm_prod": 2.594087219596063,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 47,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.1514340491430238e-16,
+      "grad_max_abs": 1.1102230246251565e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 3.032214131118973,
+      "grad_norm_prod": 3.0322141311189728,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.857727025140893,
+      "loss_prod": 2.857727025140893,
+      "loss_rel": 0.0,
+      "score_max_abs": 1.7763568394002505e-15,
+      "step_param_max_abs": 1.1102230246251565e-16,
+      "trajectory_loss_rel": 0.0,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        2.857727025140893,
+        2.383476168245048
+      ],
+      "loss_first_last_prod": [
+        2.857727025140893,
+        2.383476168245048
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.8980809568241289,
+          "grad_max_abs": 7.709884945358904,
+          "grad_cosine": 0.9244843506903307,
+          "grad_norm_ref": 27.236380280208817,
+          "grad_norm_prod": 3.0322141311189728,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 3.265114758378116,
+          "grad_max_abs": 0.9976056193218602,
+          "grad_cosine": 0.9316796532974755,
+          "grad_norm_ref": 0.7260141778961118,
+          "grad_norm_prod": 3.0322141311189728,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 11,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.8651865700063054e-07,
+      "grad_max_abs": 4.470348358154297e-08,
+      "grad_cosine": 0.9999999999999846,
+      "grad_norm_ref": 0.46391317164367957,
+      "grad_norm_prod": 0.4639131986254762,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.3009872436523438,
+      "loss_prod": 2.3009872436523438,
+      "loss_rel": 0.0,
+      "score_max_abs": 2.384185791015625e-07,
+      "step_param_max_abs": 1.4901161193847656e-08,
+      "trajectory_loss_rel": 1.0704242840734782e-07,
+      "trajectory_param_max_abs": 1.1920928955078125e-07,
+      "loss_first_last_ref": [
+        2.3009872436523438,
+        2.206134557723999
+      ],
+      "loss_first_last_prod": [
+        2.3009872436523438,
+        2.206134557723999
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.7782727508547577,
+          "grad_max_abs": 0.5621755868196487,
+          "grad_cosine": 0.9061788550873127,
+          "grad_norm_ref": 1.8349034011943692,
+          "grad_norm_prod": 0.4639131986254762,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 5.4057298262513696,
+          "grad_max_abs": 0.14678621385246515,
+          "grad_cosine": 0.5700595861669802,
+          "grad_norm_ref": 0.0784566461258803,
+          "grad_norm_prod": 0.4639131986254762,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 23,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 7.07918160844494e-08,
+      "grad_max_abs": 5.960464477539063e-08,
+      "grad_cosine": 0.9999999999999978,
+      "grad_norm_ref": 2.1015607233885003,
+      "grad_norm_prod": 2.101560656311535,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.6305527687072754,
+      "loss_prod": 2.6305527687072754,
+      "loss_rel": 0.0,
+      "score_max_abs": 2.384185791015625e-07,
+      "step_param_max_abs": 3.725290298461914e-09,
+      "trajectory_loss_rel": 1.0135464537732612e-07,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        2.6305527687072754,
+        2.343413829803467
+      ],
+      "loss_first_last_prod": [
+        2.6305527687072754,
+        2.343413829803467
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.8256694510578039,
+          "grad_max_abs": 2.547046720981598,
+          "grad_cosine": 0.9975589526765299,
+          "grad_norm_ref": 12.019382557000881,
+          "grad_norm_prod": 2.101560656311535,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 3.2717739012757536,
+          "grad_max_abs": 0.4605078771710396,
+          "grad_cosine": 0.9247220512460671,
+          "grad_norm_ref": 0.5034548591424644,
+          "grad_norm_prod": 2.101560656311535,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "seed": 47,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 6.466784325866604e-08,
+      "grad_max_abs": 5.960464477539063e-08,
+      "grad_cosine": 0.9999999999999979,
+      "grad_norm_ref": 2.030290355824614,
+      "grad_norm_prod": 2.0302903341439538,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.8245444297790527,
+      "loss_prod": 2.8245444297790527,
+      "loss_rel": 0.0,
+      "score_max_abs": 2.384185791015625e-07,
+      "step_param_max_abs": 2.086162567138672e-07,
+      "trajectory_loss_rel": 0.0,
+      "trajectory_param_max_abs": 2.086162567138672e-07,
+      "loss_first_last_ref": [
+        2.8245444297790527,
+        2.4536964893341064
+      ],
+      "loss_first_last_prod": [
+        2.8245444297790527,
+        2.4536964893341064
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9109011729753724,
+          "grad_max_abs": 5.95984011888504,
+          "grad_cosine": 0.9290480577107396,
+          "grad_norm_ref": 21.004629801888388,
+          "grad_norm_prod": 2.0302903341439538,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.6272932374827818,
+          "grad_max_abs": 0.47437354922294617,
+          "grad_cosine": 0.9124520143298965,
+          "grad_norm_ref": 0.5788119137088414,
+          "grad_norm_prod": 2.0302903341439538,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 11,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.7847522317037589e-16,
+      "grad_max_abs": 8.881784197001252e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 10.440324329237606,
+      "grad_norm_prod": 10.440324329237606,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 4.583658281942894,
+      "loss_prod": 4.583658281942894,
+      "loss_rel": 0.0,
+      "score_max_abs": 8.881784197001252e-16,
+      "step_param_max_abs": 1.734723475976807e-18,
+      "trajectory_loss_rel": 1.142017694000136e-16,
+      "trajectory_param_max_abs": 1.5265566588595902e-16,
+      "loss_first_last_ref": [
+        4.583658281942894,
+        2.673431969303176
+      ],
+      "loss_first_last_prod": [
+        4.583658281942894,
+        2.673431969303176
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9304454661281136,
+          "grad_max_abs": 40.25169427161133,
+          "grad_cosine": 0.9973943040892602,
+          "grad_norm_ref": 149.68231024170703,
+          "grad_norm_prod": 10.440324329237606,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 1.748842390912512,
+          "grad_max_abs": 2.0562600992498137,
+          "grad_cosine": 0.9953910143277073,
+          "grad_norm_ref": 3.8081107835526864,
+          "grad_norm_prod": 10.440324329237606,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 23,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.5602269965629084e-16,
+      "grad_max_abs": 8.881784197001252e-16,
+      "grad_cosine": 1.0000000000000002,
+      "grad_norm_ref": 15.127443949877868,
+      "grad_norm_prod": 15.127443949877868,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 6.376805819875439,
+      "loss_prod": 6.376805819875439,
+      "loss_rel": 0.0,
+      "score_max_abs": 3.552713678800501e-15,
+      "step_param_max_abs": 5.551115123125783e-17,
+      "trajectory_loss_rel": 1.5229611354867712e-16,
+      "trajectory_param_max_abs": 1.1102230246251565e-16,
+      "loss_first_last_ref": [
+        6.376805819875439,
+        3.3031704504486696
+      ],
+      "loss_first_last_prod": [
+        6.376805819875439,
+        3.3031704504486696
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9577421312207383,
+          "grad_max_abs": 106.47059125471027,
+          "grad_cosine": 0.9967212888580456,
+          "grad_norm_ref": 356.7537487369109,
+          "grad_norm_prod": 15.127443949877868,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 0.6266961079210522,
+          "grad_max_abs": 1.8306751482699437,
+          "grad_cosine": 0.9971039680502344,
+          "grad_norm_ref": 9.34272347369375,
+          "grad_norm_prod": 15.127443949877868,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 47,
+      "dtype": "float64",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 1.8800763747069495e-16,
+      "grad_max_abs": 3.3306690738754696e-16,
+      "grad_cosine": 1.0,
+      "grad_norm_ref": 3.7919333121503747,
+      "grad_norm_prod": 3.7919333121503747,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.2186660248138366,
+      "loss_prod": 3.2186660248138375,
+      "loss_rel": 2.759461257716219e-16,
+      "score_max_abs": 1.7763568394002505e-15,
+      "step_param_max_abs": 6.938893903907228e-18,
+      "trajectory_loss_rel": 2.759461257716219e-16,
+      "trajectory_param_max_abs": 2.220446049250313e-16,
+      "loss_first_last_ref": [
+        3.2186660248138366,
+        2.544980733625742
+      ],
+      "loss_first_last_prod": [
+        3.2186660248138375,
+        2.544980733625742
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9125966951970105,
+          "grad_max_abs": 10.498039742974564,
+          "grad_cosine": 0.962814835250492,
+          "grad_norm_ref": 41.612951914564775,
+          "grad_norm_prod": 3.7919333121503747,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.415428128248827,
+          "grad_max_abs": 0.8157404969420641,
+          "grad_cosine": 0.9565918119541911,
+          "grad_norm_ref": 1.1304442959428547,
+          "grad_norm_prod": 3.7919333121503747,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 11,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 151,
+        "asymmetric_entries": 240,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 6.149852866342389e-08,
+      "grad_max_abs": 1.1920928955078125e-07,
+      "grad_cosine": 0.9999999999999982,
+      "grad_norm_ref": 4.059580107584052,
+      "grad_norm_prod": 4.059580042504745,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 2.9185261726379395,
+      "loss_prod": 2.9185261726379395,
+      "loss_rel": 0.0,
+      "score_max_abs": 4.76837158203125e-07,
+      "step_param_max_abs": 2.9802322387695312e-08,
+      "trajectory_loss_rel": 0.0,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        2.9185261726379395,
+        2.336862087249756
+      ],
+      "loss_first_last_prod": [
+        2.9185261726379395,
+        2.336862087249756
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.8782823015350208,
+          "grad_max_abs": 11.204887628555298,
+          "grad_cosine": 0.9935986627314066,
+          "grad_norm_ref": 33.10920994651585,
+          "grad_norm_prod": 4.059580042504745,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 3.8368748105069557,
+          "grad_max_abs": 1.2919267117977142,
+          "grad_cosine": 0.9904204703649031,
+          "grad_norm_ref": 0.8413969186175878,
+          "grad_norm_prod": 4.059580042504745,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 23,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 153,
+        "asymmetric_entries": 254,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 7.003421350628505e-08,
+      "grad_max_abs": 2.384185791015625e-07,
+      "grad_cosine": 0.9999999999999979,
+      "grad_norm_ref": 7.813118550846739,
+      "grad_norm_prod": 7.813118457674359,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 4.318804740905762,
+      "loss_prod": 4.318804740905762,
+      "loss_rel": 0.0,
+      "score_max_abs": 9.5367431640625e-07,
+      "step_param_max_abs": 2.9802322387695312e-08,
+      "trajectory_loss_rel": 1.318184145975185e-07,
+      "trajectory_param_max_abs": 8.940696716308594e-08,
+      "loss_first_last_ref": [
+        4.318804740905762,
+        2.869198799133301
+      ],
+      "loss_first_last_prod": [
+        4.318804740905762,
+        2.869198799133301
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9423615582410589,
+          "grad_max_abs": 47.347548484802246,
+          "grad_cosine": 0.9854831873587723,
+          "grad_norm_ref": 133.46477981751607,
+          "grad_norm_prod": 7.813118457674359,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 1.2687336381326244,
+          "grad_max_abs": 1.6962789297103882,
+          "grad_cosine": 0.9855675924206589,
+          "grad_norm_ref": 3.4834006633094194,
+          "grad_norm_prod": 7.813118457674359,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "seed": 47,
+      "dtype": "float32",
+      "graph": {
+        "num_edges_with_dups_and_loops": 152,
+        "asymmetric_entries": 248,
+        "isolated_nodes": 6,
+        "self_loops": 3,
+        "max_multiplicity": 2.0
+      },
+      "grad_rel_l2": 9.507395485822248e-08,
+      "grad_max_abs": 4.76837158203125e-07,
+      "grad_cosine": 0.9999999999999969,
+      "grad_norm_ref": 8.578604751107171,
+      "grad_norm_prod": 8.578605198111179,
+      "all_finite_ref": true,
+      "all_finite_prod": true,
+      "loss_ref": 3.911612033843994,
+      "loss_prod": 3.911612033843994,
+      "loss_rel": 0.0,
+      "score_max_abs": 9.5367431640625e-07,
+      "step_param_max_abs": 2.9802322387695312e-08,
+      "trajectory_loss_rel": 1.3096333354069194e-07,
+      "trajectory_param_max_abs": 5.960464477539063e-08,
+      "loss_first_last_ref": [
+        3.911612033843994,
+        2.5727314949035645
+      ],
+      "loss_first_last_prod": [
+        3.911612033843994,
+        2.5727314949035645
+      ],
+      "negative_controls": {
+        "squared_per_node_mean": {
+          "grad_rel_l2": 0.9221068101840528,
+          "grad_max_abs": 37.137582302093506,
+          "grad_cosine": 0.9942162508343227,
+          "grad_norm_ref": 109.44195644292674,
+          "grad_norm_prod": 8.578605198111179,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        },
+        "global_mean_squared_frobenius": {
+          "grad_rel_l2": 2.0778747623997655,
+          "grad_max_abs": 2.0180612802505493,
+          "grad_cosine": 0.9938460561562469,
+          "grad_norm_ref": 2.79545742518035,
+          "grad_norm_prod": 8.578605198111179,
+          "all_finite_ref": true,
+          "all_finite_prod": true,
+          "detected_as_mismatch": true
+        }
+      },
+      "checks": {
+        "loss_rel": true,
+        "score_max_abs": true,
+        "grad_rel_l2": true,
+        "step_param_max_abs": true,
+        "trajectory_loss_rel": true,
+        "trajectory_param_max_abs": true,
+        "negative_controls_detected": true
+      },
+      "pass": true
+    }
+  ],
+  "function_level": {
+    "F1_positive_weight_overrides": [
+      {
+        "pos_weight_a": 0.5,
+        "pos_weight_s": 0.5,
+        "score_max_abs": 3.552713678800501e-15,
+        "grad_z_max_abs": 5.551115123125783e-17,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "pos_weight_a": 0.3,
+        "pos_weight_s": 0.5,
+        "score_max_abs": 3.552713678800501e-15,
+        "grad_z_max_abs": 5.551115123125783e-17,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "pos_weight_a": 0.5,
+        "pos_weight_s": 0.8,
+        "score_max_abs": 1.7763568394002505e-15,
+        "grad_z_max_abs": 2.7755575615628914e-17,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "pos_weight_a": 0.3,
+        "pos_weight_s": 0.8,
+        "score_max_abs": 1.7763568394002505e-15,
+        "grad_z_max_abs": 2.7755575615628914e-17,
+        "grad_xhat_max_abs": 0.0
+      }
+    ],
+    "F2_sigmoid_chunked_via_production_backward": [
+      {
+        "backend": "exact_sparse",
+        "chunk": 8192,
+        "sigmoid": false,
+        "score_max_abs": 3.552713678800501e-15,
+        "grad_z_max_abs": 5.551115123125783e-17,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "backend": "chunked_exact",
+        "chunk": 7,
+        "sigmoid": false,
+        "score_max_abs": 3.552713678800501e-15,
+        "grad_z_max_abs": 4.163336342344337e-17,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "backend": "chunked_exact",
+        "chunk": 7,
+        "sigmoid": true,
+        "score_max_abs": 8.881784197001252e-16,
+        "grad_z_max_abs": 3.469446951953614e-18,
+        "grad_xhat_max_abs": 0.0
+      },
+      {
+        "backend": "chunked_exact",
+        "chunk": 40,
+        "sigmoid": true,
+        "score_max_abs": 8.881784197001252e-16,
+        "grad_z_max_abs": 1.734723475976807e-18,
+        "grad_xhat_max_abs": 0.0
+      }
+    ],
+    "F3_exact_zero_residual": {
+      "pygod_grad_finite": false,
+      "pygod_grad_has_nan": true,
+      "exact_grad_finite": true,
+      "exact_grad_all_zero": true,
+      "score_pygod_max": 0.0,
+      "score_exact_max": 0.0,
+      "interpretation": "measure-zero event; production defines subgradient 0 where PyGOD's sqrt backward yields NaN. Objective values coincide."
+    },
+    "F4_float32_gram_cancellation": [
+      {
+        "eps": 0.1,
+        "true_score_float64_dense": 0.2100000000000002,
+        "exact_float64": 0.2100000000000006,
+        "exact_float32": 0.21000011265277863,
+        "dense_float32": 0.21000003814697266,
+        "exact_f32_abs_err_vs_f64": 1.1265277843897081e-07,
+        "dense_f32_abs_err_vs_f64": 3.814697246973253e-08
+      },
+      {
+        "eps": 0.01,
+        "true_score_float64_dense": 0.020100000000000007,
+        "exact_float64": 0.020100000000000253,
+        "exact_float32": 0.020099759101867676,
+        "dense_float32": 0.020099997520446777,
+        "exact_f32_abs_err_vs_f64": 2.408981323309689e-07,
+        "dense_f32_abs_err_vs_f64": 2.479553229406406e-09
+      },
+      {
+        "eps": 0.001,
+        "true_score_float64_dense": 0.0020009999999996975,
+        "exact_float64": 0.0020010000000226878,
+        "exact_float32": 0.002013235120102763,
+        "dense_float32": 0.002001047134399414,
+        "exact_f32_abs_err_vs_f64": 1.2235120103065711e-05,
+        "dense_f32_abs_err_vs_f64": 4.7134399716597386e-08
+      },
+      {
+        "eps": 0.0001,
+        "true_score_float64_dense": 0.0002000099999999172,
+        "exact_float64": 0.00020001000003125717,
+        "exact_float32": 0.0,
+        "dense_float32": 0.00020003318786621094,
+        "exact_f32_abs_err_vs_f64": 0.0002000099999999172,
+        "dense_f32_abs_err_vs_f64": 2.3187866293739035e-08
+      },
+      {
+        "eps": 1e-05,
+        "true_score_float64_dense": 2.0000100000139298e-05,
+        "exact_float64": 2.0000095196134245e-05,
+        "exact_float32": 0.0,
+        "dense_float32": 2.002716064453125e-05,
+        "exact_f32_abs_err_vs_f64": 2.0000100000139298e-05,
+        "dense_f32_abs_err_vs_f64": 2.7060644391951882e-08
+      }
+    ]
+  },
+  "errors": [],
+  "overall_pass_all_predeclared_checks": true
+}

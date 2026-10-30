@@ -1,0 +1,70 @@
+{
+  "document_id": "DLG-BENCH-A22-RELEASE-INVARIANTS",
+  "a21_head_commit": "c46d0edc8bd7069c9e53941dc1956b17b0f80503",
+  "a20_tag": "benchmark-a20-preprint-2026-10-29",
+  "a20_tag_commit": "f9f55bd453a844292562728ae5636ad917e4bc06",
+  "submission_artifacts_a21": {
+    "preprints/DLG-Benchmark_A16_Preprints.pdf": {
+      "expected": "a4bc3dd65dba431dd23f7d0cbd74bfd744506c192e79e7d64cbd0bcb1805c96f",
+      "actual": "a4bc3dd65dba431dd23f7d0cbd74bfd744506c192e79e7d64cbd0bcb1805c96f",
+      "match": true
+    },
+    "preprints/DLG-Benchmark_A16_Preprints.tex": {
+      "expected": "f202bdf160fea13e9abfddf769890aaa3e0d6fc7e65afe17533b0c53809ba6d3",
+      "actual": "f202bdf160fea13e9abfddf769890aaa3e0d6fc7e65afe17533b0c53809ba6d3",
+      "match": true
+    },
+    "preprints/source_bundle.zip": {
+      "expected": "1b685586ec2e34fad47615db952cc7977cb0280b07874bce6666418c8293ffc7",
+      "actual": "1b685586ec2e34fad47615db952cc7977cb0280b07874bce6666418c8293ffc7",
+      "match": true
+    },
+    "applsci/DLG-Benchmark_A16_AppliedSciences.pdf": {
+      "expected": "c44aa4c6cda155346b7e7eb5cfd13154952b198a634ae3afe841c77b80957af9",
+      "actual": "c44aa4c6cda155346b7e7eb5cfd13154952b198a634ae3afe841c77b80957af9",
+      "match": true
+    },
+    "applsci/DLG-Benchmark_A16_AppliedSciences.tex": {
+      "expected": "257bc901b097709e891880a7d3cbde6bc77426fc7436125c48a7bff0f6d8a03a",
+      "actual": "257bc901b097709e891880a7d3cbde6bc77426fc7436125c48a7bff0f6d8a03a",
+      "match": true
+    },
+    "applsci/source_bundle.zip": {
+      "expected": "2cf89c7e4376cded7daab1d3290542bcb78b2350cf931badeb5f5a28a56955fb",
+      "actual": "2cf89c7e4376cded7daab1d3290542bcb78b2350cf931badeb5f5a28a56955fb",
+      "match": true
+    }
+  },
+  "frozen_registries": {
+    "canonical_run_registry": {
+      "path": "projects/benchmark/publication/a16/canonical_selected_run_registry.csv",
+      "sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907"
+    },
+    "support_matrix": {
+      "path": "projects/benchmark/publication/a16/support_14x7.csv",
+      "sha256": "bbd89bf88f05047d2f8f29c2065c73791d480bdfcadb78293f7d03a543b8ecd8"
+    }
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "contract": {
+    "primary_datasets": 13,
+    "external": 1,
+    "models": 7,
+    "supported_primary_cells": 84,
+    "primary_cells": 91,
+    "primary_runs": 420,
+    "external_runs": 35,
+    "total_runs": 455
+  },
+  "rules": [
+    "A20 tag immutable",
+    "455-run records immutable",
+    "supplementary results go to supplementary_postfreeze/ only"
+  ]
+}

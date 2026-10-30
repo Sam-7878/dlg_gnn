@@ -1,0 +1,232 @@
+### DOMINANT.forward_model
+    def forward_model(self, data):
+        batch_size = data.batch_size
+        node_idx = data.n_id
+
+        x = data.x.to(self.device)
+        s = data.s.to(self.device)
+        edge_index = data.edge_index.to(self.device)
+
+        x_, s_ = self.model(x, edge_index)
+
+        score = self.model.loss_func(x[:batch_size],
+                                     x_[:batch_size],
+                                     s[:batch_size, node_idx],
+                                     s_[:batch_size],
+                                     self.weight)
+
+        loss = torch.mean(score)
+
+        return loss, score.detach().cpu()
+
+### DOMINANTBase.__init__
+    def __init__(self,
+                 in_dim,
+                 hid_dim=64,
+                 num_layers=4,
+                 dropout=0.,
+                 act=torch.nn.functional.relu,
+                 sigmoid_s=False,
+                 backbone=GCN,
+                 **kwargs):
+        super(DOMINANTBase, self).__init__()
+
+        # split the number of layers for the encoder and decoders
+        assert num_layers >= 2, \
+            "Number of layers must be greater than or equal to 2."
+        encoder_layers = math.floor(num_layers / 2)
+        decoder_layers = math.ceil(num_layers / 2)
+
+        self.shared_encoder = backbone(in_channels=in_dim,
+                                       hidden_channels=hid_dim,
+                                       num_layers=encoder_layers,
+                                       out_channels=hid_dim,
+                                       dropout=dropout,
+                                       act=act,
+                                       **kwargs)
+
+        self.attr_decoder = backbone(in_channels=hid_dim,
+                                     hidden_channels=hid_dim,
+                                     num_layers=decoder_layers,
+                                     out_channels=in_dim,
+                                     dropout=dropout,
+                                     act=act,
+                                     **kwargs)
+
+        self.struct_decoder = DotProductDecoder(in_dim=hid_dim,
+                                                hid_dim=hid_dim,
+                                                num_layers=decoder_layers - 1,
+                                                dropout=dropout,
+                                                act=act,
+                                                sigmoid_s=sigmoid_s,
+                                                backbone=backbone,
+                                                **kwargs)
+
+        self.loss_func = double_recon_loss
+        self.emb = None
+
+### DOMINANTBase.forward
+    def forward(self, x, edge_index):
+        """
+        Forward computation.
+
+        Parameters
+        ----------
+        x : torch.Tensor
+            Input attribute embeddings.
+        edge_index : torch.Tensor
+            Edge index.
+
+        Returns
+        -------
+        x_ : torch.Tensor
+            Reconstructed attribute embeddings.
+        s_ : torch.Tensor
+            Reconstructed adjacency matrix.
+        """
+        # encode feature matrix
+        self.emb = self.shared_encoder(x, edge_index)
+
+        # reconstruct feature matrix
+        x_ = self.attr_decoder(self.emb, edge_index)
+
+        # decode adjacency matrix
+        s_ = self.struct_decoder(self.emb, edge_index)
+
+        return x_, s_
+
+### DeepDetector.fit
+    def fit(self, data, label=None):
+
+        self.process_graph(data)
+        self.num_nodes, self.in_dim = data.x.shape
+        if self.batch_size == 0:
+            self.batch_size = data.x.shape[0]
+        loader = NeighborLoader(data,
+                                self.num_neigh,
+                                batch_size=self.batch_size)
+
+        self.model = self.init_model(**self.kwargs)
+        if self.compile_model:
+            self.model = compile(self.model)
+        if not self.gan:
+            optimizer = torch.optim.Adam(self.model.parameters(),
+                                         lr=self.lr,
+                                         weight_decay=self.weight_decay)
+        else:
+            self.opt_in = torch.optim.Adam(self.model.inner.parameters(),
+                                           lr=self.lr,
+                                           weight_decay=self.weight_decay)
+            optimizer = torch.optim.Adam(self.model.outer.parameters(),
+                                         lr=self.lr,
+                                         weight_decay=self.weight_decay)
+
+        self.model.train()
+        self.decision_score_ = torch.zeros(data.x.shape[0])
+        for epoch in range(self.epoch):
+            start_time = time.time()
+            epoch_loss = 0
+            if self.gan:
+                self.epoch_loss_in = 0
+            for sampled_data in loader:
+                batch_size = sampled_data.batch_size
+                node_idx = sampled_data.n_id
+
+                loss, score = self.forward_model(sampled_data)
+                epoch_loss += loss.item() * batch_size
+                if self.save_emb:
+                    if type(self.emb) is tuple:
+                        self.emb[0][node_idx[:batch_size]] = \
+                            self.model.emb[0][:batch_size].cpu()
+                        self.emb[1][node_idx[:batch_size]] = \
+                            self.model.emb[1][:batch_size].cpu()
+                    else:
+                        self.emb[node_idx[:batch_size]] = \
+                            self.model.emb[:batch_size].cpu()
+                self.decision_score_[node_idx[:batch_size]] = score
+
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+
+            loss_value = epoch_loss / data.x.shape[0]
+            if self.gan:
+                loss_value = (self.epoch_loss_in / data.x.shape[0], loss_value)
+            logger(epoch=epoch,
+                   loss=loss_value,
+                   score=self.decision_score_,
+                   target=label,
+                   time=time.time() - start_time,
+                   verbose=self.verbose,
+                   train=True)
+
+        self._process_decision_score()
+        return self
+
+### DeepDetector.fit_inner
+    def fit(self, data, label=None):
+
+        self.process_graph(data)
+        self.num_nodes, self.in_dim = data.x.shape
+        if self.batch_size == 0:
+            self.batch_size = data.x.shape[0]
+        loader = NeighborLoader(data,
+                                self.num_neigh,
+                                batch_size=self.batch_size)
+
+        self.model = self.init_model(**self.kwargs)
+        if self.compile_model:
+            self.model = compile(self.model)
+        if not self.gan:
+            optimizer = torch.optim.Adam(self.model.parameters(),
+                                         lr=self.lr,
+                                         weight_decay=self.weight_decay)
+        else:
+            self.opt_in = torch.optim.Adam(self.model.inner.parameters(),
+                                           lr=self.lr,
+                                           weight_decay=self.weight_decay)
+            optimizer = torch.optim.Adam(self.model.outer.parameters(),
+                                         lr=self.lr,
+                                         weight_decay=self.weight_decay)
+
+        self.model.train()
+        self.decision_score_ = torch.zeros(data.x.shape[0])
+        for epoch in range(self.epoch):
+            start_time = time.time()
+            epoch_loss = 0
+            if self.gan:
+                self.epoch_loss_in = 0
+            for sampled_data in loader:
+                batch_size = sampled_data.batch_size
+                node_idx = sampled_data.n_id
+
+                loss, score = self.forward_model(sampled_data)
+                epoch_loss += loss.item() * batch_size
+                if self.save_emb:
+                    if type(self.emb) is tuple:
+                        self.emb[0][node_idx[:batch_size]] = \
+                            self.model.emb[0][:batch_size].cpu()
+                        self.emb[1][node_idx[:batch_size]] = \
+                            self.model.emb[1][:batch_size].cpu()
+                    else:
+                        self.emb[node_idx[:batch_size]] = \
+                            self.model.emb[:batch_size].cpu()
+                self.decision_score_[node_idx[:batch_size]] = score
+
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+
+            loss_value = epoch_loss / data.x.shape[0]
+            if self.gan:
+                loss_value = (self.epoch_loss_in / data.x.shape[0], loss_value)
+            logger(epoch=epoch,
+                   loss=loss_value,
+                   score=self.decision_score_,
+                   target=label,
+                   time=time.time() - start_time,
+                   verbose=self.verbose,
+                   train=True)
+
+        self._process_decision_score()
+        return self

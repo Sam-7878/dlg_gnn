@@ -1,0 +1,21 @@
+{
+  "pygod_version": "1.1.0",
+  "files": {
+    "pygod/nn/functional.py": {
+      "path": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/pygod/nn/functional.py",
+      "sha256": "5294db5d415953e2aed7b52c545fd81a2b98868652649f24614e0fc7950fc1b9"
+    },
+    "pygod/nn/dominant.py": {
+      "path": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/pygod/nn/dominant.py",
+      "sha256": "af3f2725243fec409fb2185b004c0387a9d6c06e794f66cd5260a166addd62a8"
+    },
+    "pygod/detector/dominant.py": {
+      "path": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/pygod/detector/dominant.py",
+      "sha256": "a2cad916709f5919ceefcd7820a9c204819ca42540c87157241200d1e188ab40"
+    },
+    "pygod/detector/base.py": {
+      "path": "/mnt/d/_work/goat_bank/.venv_cuda/lib/python3.14/site-packages/pygod/detector/base.py",
+      "sha256": "15f940d67202371b87da71b37e2c0d661f9e53e8ff0e18871d428867104f96b2"
+    }
+  }
+}

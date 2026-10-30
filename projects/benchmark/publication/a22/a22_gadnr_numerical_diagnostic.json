@@ -1,0 +1,50 @@
+{
+  "gate": "A22-G7",
+  "description": "GADNR Gaussian mixture covariance determinant degeneration diagnostic",
+  "simulated_matrix": {
+    "N_samples": 1000,
+    "dimensions": 16,
+    "collinear_rank": 8
+  },
+  "raw_covariance": {
+    "determinant": -0.0,
+    "slogdet_sign": -0.0,
+    "slogdet_val": -Infinity,
+    "cholesky_success": false,
+    "cholesky_error": "linalg.cholesky: The factorization could not be completed because the input is not positive-definite (the leading minor of order 1 is not positive-definite).",
+    "failure_cause": "Singular/rank-deficient covariance yields determinant <= 0 or Cholesky breakdown during Gaussian density calculation"
+  },
+  "regularized_covariance_with_ridge_jitter": [
+    {
+      "epsilon": 1e-06,
+      "det": 2.6860088964178094e-41,
+      "logdet": -93.4179458618164,
+      "cholesky_success": false
+    },
+    {
+      "epsilon": 1e-05,
+      "det": 3.194180717722987e-33,
+      "logdet": -74.823974609375,
+      "cholesky_success": true
+    },
+    {
+      "epsilon": 0.0001,
+      "det": 3.1491253380712927e-25,
+      "logdet": -56.417503356933594,
+      "cholesky_success": true
+    },
+    {
+      "epsilon": 0.001,
+      "det": 3.14523781220264e-17,
+      "logdet": -37.9980583190918,
+      "cholesky_success": true
+    },
+    {
+      "epsilon": 0.01,
+      "det": 3.197163422896665e-09,
+      "logdet": -19.56100082397461,
+      "cholesky_success": true
+    }
+  ],
+  "implication_for_benchmark": "Explains why GADNR historically threw uncaught covariance determinant errors on Elliptic, DGraphFin, Reddit-Syn, and Yelp-Syn (categorized as NO_APPROVED_RAW_RUN). These runs did not exhaust 24GB VRAM; rather, unregularized Gaussian mixture covariance evaluation failed numerically."
+}

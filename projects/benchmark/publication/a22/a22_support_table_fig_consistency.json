@@ -1,0 +1,33 @@
+{
+  "gate": "A22-G2",
+  "total_cells": 98,
+  "supported_cells": 91,
+  "unsupported_cells": 7,
+  "total_runs_evaluated": 455,
+  "checks": [
+    {
+      "target": "GADNR on Reddit-Syn",
+      "expected_failure_type": "NUMERICAL_COVARIANCE_FAILURE",
+      "expected_evidence_class": "NO_APPROVED_RAW_RUN",
+      "must_not_be": "OOM (>24 GB)",
+      "status": "CONSISTENT"
+    },
+    {
+      "target": "GADNR on Flickr-Syn",
+      "expected_failure_type": "HISTORICAL_LEGACY_8GB_OOM",
+      "expected_environment": "ENV_LEGACY_8GB",
+      "must_not_claim": "OBSERVED_24GB_OOM",
+      "status": "PASS"
+    },
+    {
+      "target": "AnomalyDAE on Reddit-Syn",
+      "stage_distinction": "Full encoder forward pass incurs 24GB CUDA OOM; ~7.1 GB is row-block structural reconstruction estimate only",
+      "status": "PASS"
+    },
+    {
+      "target": "Exact full graph definition",
+      "definition": "Entire evaluated induced graph, not unverified raw upstream nodes",
+      "status": "DOCUMENTED"
+    }
+  ]
+}
