@@ -1,0 +1,3 @@
+# Feature-only supplementary comparison
+
+60evaluations:2models/6datasets/5existing splits. Frozen X hashes and split hashes recorded. All methods fit the full observable feature population transductively without targets, matching the GNN observable scope;no extra preprocessing fitted. Test labels are used only after scores. ECOD is deterministic;five split scores are not five independent fits, and DGraphFin masks do not vary across seeds. LANL ECOD mean AP exceeds the historical GNN references;Polygon IForest exceeds DLG-Aug but not AnomalyDAE. These are separate supplementary comparisons,not new primary ranks or proof that graph structure is always helpful/useless.

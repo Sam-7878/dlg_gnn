@@ -228,7 +228,7 @@ def main() -> None:
     ap.add_argument("--project", choices=PROJECTS, required=True)
     ap.add_argument("--mode", choices=("verify", "tables", "paper", "full"), required=True)
     ap.add_argument("--confirm-full", action="store_true")
-    ap.add_argument("--revision", choices=("auto", "legacy-a07", "a08"), default="auto", help="Explicitly select historical or corrected evidence; no old-result fallback")
+    ap.add_argument("--revision", choices=("auto", "legacy-a07", "a08", "a24"), default="auto", help="Explicitly select historical or corrected evidence; no old-result fallback")
     args = ap.parse_args()
     start = time.monotonic()
     if args.project == "stream_mc" and args.revision != "legacy-a07":
@@ -251,6 +251,9 @@ def main() -> None:
             raise SystemExit(2)
         print("Full rerun is manual campaign orchestration; no training was started by this facade.", file=sys.stderr)
         raise SystemExit(2)
+    if args.project == "benchmark" and (args.revision == "a24" or (args.revision == "auto" and (ROOT / "projects/benchmark/publication/a24/public_payload_manifest.json").is_file())):
+        subprocess.run([sys.executable, str(ROOT / "projects/benchmark/scripts/a24_verify.py"), "--mode", args.mode], cwd=ROOT, check=True)
+        return
     if args.project == "benchmark":
         a08_active = args.revision == "a08" or (args.revision == "auto" and (ROOT / "configs/benchmark/a08_crypto_clean_v1.yaml").exists())
         if a08_active and args.mode == "paper":

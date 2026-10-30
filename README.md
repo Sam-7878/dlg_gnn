@@ -1,38 +1,29 @@
 # DLG-GNN Research Repository
 
-Shared research code and four paper-oriented project facades. The model/data/statistics implementations remain in `src/`; `projects/` provides reviewer-facing reproduction commands without duplicating scientific code.
+Current benchmark paper: **A24 manuscript**; preserved source baseline: A23. The frozen benchmark comprises **13 primary graphs + 1 external graph, 7 primary configurations, 84/91 supported primary pairs, 420 primary + 35 external = 455 successful runs**. CONAD remains diagnostic only. New A24 experiments are separate supplementary campaigns and do not change these counts or primary ranks.
 
-Project landing pages, curated evidence and final reports are indexed by project in
-[the artifact layout](projects/ARTIFACT_LAYOUT.md). Large raw runs, checkpoints,
-offline wheels and backups stay in Git-ignored local storage. Historical frozen
-benchmark sources retain their original paths.
+Scientific supporting evidence is identified by annotated tag [`benchmark-a24-supplementary-2026-10-30`](https://github.com/Sam-7878/dlg_gnn/releases/tag/benchmark-a24-supplementary-2026-10-30); the resolved commit, asset hashes and fresh-clone checks are recorded in [A24 reproducibility](projects/benchmark/A24_REPRODUCIBILITY.md). A Git tag is a reference; pin the recorded commit and checksums. No benchmark DOI or platform submission is claimed.
 
-| Project | Purpose | Status | Fast verification |
-|---|---|---|---|
-| [`dlg_gnn`](projects/dlg_gnn/README.md) | DLG model and exact execution | Preceding architecture [preprint](https://doi.org/10.20944/preprints202609.0848.v1) | `python scripts/reproduce_project.py --project dlg_gnn --mode verify` |
-| [`benchmark`](projects/benchmark/README.md) | Support-aware graph anomaly benchmark | A07 manuscript candidate; public release pending | `python scripts/reproduce_project.py --project benchmark --mode verify` |
-| [`stream_mc`](projects/stream_mc/README.md) | Streaming AML | Development; paper validation separate | `python scripts/reproduce_project.py --project stream_mc --mode verify` |
-| [`tds`](projects/tds/README.md) | Transaction decomposition and micro-RAG | Development; paper validation separate | `python scripts/reproduce_project.py --project tds --mode verify` |
+The shared implementations live in `src/`; project-specific evidence and commands live in `projects/`. Raw datasets, new per-node scores/checkpoints, supplementary wheels and unpublished A24 manuscript sources/PDFs/writer stay in ignored author-local storage.
 
-## Current benchmark
+| Project | Purpose | Verification |
+|---|---|---|
+| [DLG-GNN](projects/dlg_gnn/README.md) | Preceding architecture [preprint](https://doi.org/10.20944/preprints202609.0848.v1) | `python scripts/reproduce_project.py --project dlg_gnn --mode verify` |
+| [Benchmark](projects/benchmark/README.md) | Graph anomaly predictive quality and exact execution | `python scripts/reproduce_project.py --project benchmark --mode verify` |
+| [StreamMC](projects/stream_mc/README.md) | Streaming AML, separate paper validation | `python scripts/reproduce_project.py --project stream_mc --mode verify` |
+| [TDS](projects/tds/README.md) | Transaction decomposition and micro-RAG | `python scripts/reproduce_project.py --project tds --mode verify` |
 
-The frozen A05/A06 evidence covers **13 primary graphs plus LANL-RedTeam external validation**, **seven functioning primary inferential models**, **80/91 supported primary pairs**, and **435 approved primary/external successful records**. CONAD is diagnostic only following its loss-path audit. The historical S3 view combines two provider-native graphs and three contract artifacts with unresolved graph-construction provenance; BitcoinOTC has controlled node anomaly injection on a real trust graph. Historical `v1.0.0-preprint` is a ten-dataset release and remains separate.
+## Benchmark reproduction
 
 ```bash
 python scripts/reproduce_project.py --project benchmark --mode verify
 python scripts/reproduce_project.py --project benchmark --mode tables
 ```
 
-`verify` checks the bundled frozen evidence, model-support counts and archived numerical-equivalence reports without third-party raw data or GPU. `tables` regenerates public numeric tables and seeded permutation statistics using NumPy/SciPy. Unsubmitted manuscript TeX/Bib/PDF and their generators remain local; `paper` requires the author’s private inputs. `full` is guarded and requires manual campaign orchestration, source data and GPUs. See [benchmark data acquisition](projects/benchmark/DATASETS.md), [environment provenance](projects/benchmark/ENVIRONMENT.md), and [installation](INSTALL.md).
+`verify` checks public hashes, frozen support and run identities, sample-SD aggregation and supplementary contracts without raw data or GPU. `tables` independently recomputes current scalar tables from public per-seed metrics; it does not rerun training. `paper` requires author-local A24 inputs and explicitly refuses a historical fallback. `full` starts no training automatically. See [data](projects/benchmark/DATASETS.md), [environment](projects/benchmark/ENVIRONMENT.md) and [installation](INSTALL.md).
 
-The [A07 benchmark manuscript](projects/benchmark/paper/README.md),
-[preceding DLG paper](projects/dlg_gnn/paper/README.md),
-[StreamMC manuscript](projects/stream_mc/paper/README.md), and
-[TDS manuscript](projects/tds/paper/README.md) each have a single project
-landing page. The benchmark candidate PDFs are not yet submission artifacts.
+The corrected blockchain inputs were rebuilt from source histories: eight label-independent features and binary symmetrized Euclidean k=5 similarity, with **no transfer-edge union**. A24 corrects A23's stale graph dimensions without replacing its metric values. See [actual input/score binding](projects/benchmark/publication/a24/a24_repo_manuscript_consistency.json).
 
-Code is MIT licensed ([LICENSE](LICENSE)). Third-party data licenses and distribution conditions remain with their providers. No A07 journal submission or preprint DOI is claimed here.
+## Historical releases
 
-## Publication visibility (2026-10-09)
-
-Only supporting evidence is prepared for publication. The 641-file public numeric ZIP preserves every retained frozen payload byte for byte and excludes four manuscript-writing/packaging scripts; the original 645-file ZIP remains local. See [revision audit](projects/benchmark/reports/astra_revision/README.md). The current working-tree revisions have not been committed or pushed, and dataset construction issues remain open; no submission-ready claim is made.
+A05–A07 had 80/91 supported pairs and 435 successful records; those are historical, not current counts. A08 repaired the three blockchain inputs. A13–A16 added exact supported executions; A23 is the preserved 455-run source baseline. Earlier releases and reports remain at their original paths. The previous hybrid tensors are excluded from corrected inference, and their old construction limitations do not describe the A08 score-bound inputs. Code is MIT licensed; third-party datasets retain provider terms.

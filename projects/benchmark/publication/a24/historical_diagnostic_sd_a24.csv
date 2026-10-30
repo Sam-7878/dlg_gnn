@@ -1,0 +1,6 @@
+variant,campaign,n,AP_mean,AP_sample_SD,ROC_mean,ROC_sample_SD,precision_limit
+DLG-Aug,A03_HISTORICAL_DIAGNOSTIC,5,0.10558000000000001,0.005119277292743579,0.57702,0.024586927420887705,source CSV saved per-seed metrics rounded to4decimals;raw scores not stored
+DLG-Aug-Permuted,A03_HISTORICAL_DIAGNOSTIC,5,0.10873999999999999,0.009381524396386766,0.5631999999999999,0.04997864543982761,source CSV saved per-seed metrics rounded to4decimals;raw scores not stored
+DLG-Aug-Zero,A03_HISTORICAL_DIAGNOSTIC,5,0.08566,0.004376414057193399,0.48150000000000004,0.024551578360667577,source CSV saved per-seed metrics rounded to4decimals;raw scores not stored
+DLG-Base,A03_HISTORICAL_DIAGNOSTIC,5,0.06944,0.0021881499034572547,0.35473999999999994,0.025906910275059834,source CSV saved per-seed metrics rounded to4decimals;raw scores not stored
+DLG-Base-70,A03_HISTORICAL_DIAGNOSTIC,5,0.06454,0.001950128200913982,0.30036,0.025001959923174017,source CSV saved per-seed metrics rounded to4decimals;raw scores not stored

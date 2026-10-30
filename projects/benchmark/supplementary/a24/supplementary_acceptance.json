@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "feature_only_evaluations": 60,
+  "canonical_control_runs": 25,
+  "recovery_new_GNN_runs": 20,
+  "existing_Elliptic_control_vectors_reused": 10,
+  "new_GNN_total_excluding_resource_cases": 45,
+  "full_resource_cases": 4,
+  "resource_pilots": 4,
+  "independent_score_audit_runs": 113,
+  "primary_registry_sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+  "G9": "OPTIONAL_NOT_ATTEMPTED"
+}

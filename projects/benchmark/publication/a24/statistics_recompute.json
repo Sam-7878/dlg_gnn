@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "all_four_views_recomputed": true,
+  "B": 1000000,
+  "seed": 20261024,
+  "all_frozen_exceedances_reproduced": true,
+  "sample_SD_ddof": 1,
+  "canonical_registry_unchanged": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907"
+}

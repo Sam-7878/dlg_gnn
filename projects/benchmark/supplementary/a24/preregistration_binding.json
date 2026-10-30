@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_BEFORE_NEW_TEST_METRICS",
+  "plans": {
+    "feature_only_protocol.yaml": "0cef4044d048d04784c1e7006d0c95187ed63f13b199705695da6e7638ea53fd",
+    "elliptic_ablation_plan.yaml": "b278e77229867a521c2522934fb0d3169940a64f2220b6381deeb4ad123e6423",
+    "resource_plan.yaml": "efcec6a0544d717848a578a33806c72b356d819a8585bb154963af49d648539f"
+  },
+  "sources": {
+    "projects/benchmark/scripts/a24_preregister.py": "cb2d5f185d4c145067653d3f0bc84304e4c3330e67df2cfc8b816995e5ccbec7",
+    "projects/benchmark/scripts/a24_inputs.py": "9cc433ee97303a0aadc6b7d3aa5226a0cf610e27698e029f5d19d8ecc4520bc1",
+    "src/gog_fraud/models/pygod/shared_reconstruction.py": "1919079c4e806a79ae817eb170afc3472fc7f0ca0960dbeb12a0383fdbbace8f"
+  },
+  "existing_packages": {
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  }
+}

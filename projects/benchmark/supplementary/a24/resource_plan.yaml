@@ -1,0 +1,43 @@
+campaign: A24_SUPPLEMENTARY
+primary_registry_sha256: 45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907
+seeds:
+- 42
+- 43
+- 44
+- 45
+- 46
+training_targets: labels never passed to fit; labels used only for validation threshold
+  and final test metrics
+test_policy: ceil(1%/5% test size);stable node-ID ties;no score inversion
+retuning: prohibited after inspecting supplementary test metrics
+memory_measurement: CUDA synchronize,allocated/reserved peak,RSS;training and scoring
+  distinct
+epoch_budget: 50 global;20 local for Aug;Base70 uses70;Zero retains20-local computation
+  for matched compute then discards local vectors
+gpu_uuid: GPU-ab53069a-3217-ee09-80f8-748b5fdbd156
+time_guard_seconds_per_cell: 86400
+cases:
+- - Cora-Syn
+  - DOMINANT
+- - DGraphFin
+  - DOMINANT
+- - Ethereum
+  - DLG-Aug
+- - Reddit-Syn
+  - DLG-Base
+required_minimum_cases: 2
+pilot: seed42 one epoch then runtime projection;skip with evidence if unavailable/exceeds
+  guard
+cora_exact:
+  N: 2708
+  dtype: float32
+  atol: 1.0e-05
+  rtol: 0.0001
+  quantities:
+  - loss
+  - per_node_score
+  - parameter_gradients
+  - one_Adam_step
+G8: first reuse validated scores;Elliptic controls already provide10Base/Aug scores;other
+  datasets preflight only before optional expansion
+G9: optional,not required for strengthened status;record if not attempted

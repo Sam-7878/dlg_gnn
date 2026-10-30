@@ -1,0 +1,15 @@
+{
+  "status": "PASS_HISTORICAL_F1_COLUMN_OMITTED",
+  "A03_source": "evaluation/benchmark/v2/scripts/a03_run_elliptic_ablation.py",
+  "source_sha256": "bbdaa52ffb83da5f1747bc048d8f161b14fa3e271e8a1d25f782fd42872d5997",
+  "threshold_candidates": "40percentiles from80to99.5 of validation scores",
+  "operator": ">=",
+  "ties": "first encountered on strict F1 improvement",
+  "all_positive_included": false,
+  "reported_validation_f1_actual_population": "TEST,not validation",
+  "diagnostic_split": "RandomState(seed) permutation60/20/20",
+  "canonical_split": "separate50/50 stratified val/test on full observable training graph",
+  "canonical_F1_copied_from_diagnostic_not_supported": "same numbers cannot establish source; canonical displayed values not supported by selected primary records",
+  "disposition": "Remove Val F1 column entirely from A3;keep AP/ROC separate campaign and sample SD from per-seed sources",
+  "why_test_prevalence_cannot_bound_validation_F1": "different evaluation population and restricted candidate set"
+}

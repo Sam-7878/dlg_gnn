@@ -1,13 +1,16 @@
-# Benchmark data acquisition and construction
+# Benchmark data acquisition and construction — A24
 
-The paths and hashes below come from the frozen A05 canonical manifest in `evidence/public_numeric_evidence.zip`. Upstream license and access terms must be checked at the provider before downloading; third-party raw datasets are not redistributed in this repository. A raw hash identifies the exact local input used by this release and may differ from a newly downloaded provider package.
+Third-party raw datasets are not redistributed. Obtain them from the listed providers under their access/license terms; a local hash does not confer redistribution permission. Non-crypto origins below retain their historical manifest tier. All current model-input dimensions and test populations are in [dataset_graph_identity_a24.csv](publication/a24/dataset_graph_identity_a24.csv) and [split_policy_by_dataset_a24.csv](publication/a24/split_policy_by_dataset_a24.csv). Historical `outputs/benchmark/` paths resolve locally under `archive/benchmark/outputs/`.
 
-**Access limitation:** The Ethereum, BSC and Polygon entries are locally constructed `*_hybrid_graph.pt` artifacts. The frozen manifest identifies their hashes and loader, but does not establish a public upstream download or redistribution permission. The repository URL shown below is a provenance/code location, not a dataset download. Consequently, an independent full rerun of those three graphs is not yet supported from public raw data alone; the evidence-only `verify` and `tables` paths remain available. LANL's listed `.pt` is also a constructed graph; obtain source logs from LANL subject to its terms.
+## Corrected Ethereum / BSC / Polygon
 
-Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_dataset_manifest.py` and the frozen source snapshot/configs in the evidence ZIP. Follow `projects/benchmark/README.md` for the evidence-only reviewer path. The original raw path is retained for provenance, not as a portable path.
+Provider/code: [Cryptocurrency-Graphs-of-graphs](https://github.com/Xtra-Computing/Cryptocurrency-Graphs-of-graphs). Obtain transaction ZIPs and label files under provider terms. Current evaluation uses full raw contract-history populations, not the old hybrid `.pt` files: Ethereum N=14,464 E=95,098; BSC N=7,499 E=48,462; Polygon N=2,353 E=15,368. All have eight observable features. Features and edges are built without fraud labels. Standardized Euclidean k=5 neighbors use stable contract-ID boundary ties, binary symmetric union, no self-loops and **no transfer-edge union**. E stores both directions, so E/N is the mean undirected degree.
+
+Source: `src/gog_fraud/data/crypto_raw.py`; protocol/config: `configs/benchmark/a08_crypto_clean_v1.yaml`. After provider acquisition and local path configuration, run `python projects/benchmark/scripts/a24_g1_inputs.py`. This reconstructs features/edges and verifies actual archived score hashes; full score binding requires the author's private A08 arrays. Public input manifests and 105 scalar/hash bindings are available without those arrays. The three independent raw rebuilds matched the score-bound inputs byte for byte. Label joins and seeded unstratified 60/20/20 masks are downstream from graph construction.
+
+A23 mistakenly reused old hybrid dimensions in its graph table. A24 corrects metadata; all 455 frozen metric rows and selected run IDs are unchanged. Whole-graph positive prevalence differs from mean test prevalence. Do not use old A05 hybrid tensor hashes or A16 reconciliation dimensions for current crypto inference.
 
 ## Elliptic
-
 - Upstream landing/provider: https://www.kaggle.com/datasets/ellipticco/elliptic-data-set
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `elliptic_txs_classes.csv`
@@ -20,7 +23,6 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Source evidence: benchmark_8x10_pipeline.load_elliptic (unknown labels removed)
 
 ## DGraphFin
-
 - Upstream landing/provider: https://dgraph.xinye.com/dataset
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `dgraphfin.npz`
@@ -31,8 +33,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 367702; positives: 4652; unit: loan_account_node
 - Label provenance: `real_external_label`
 - Source evidence: dgraphfin_aligned.load_dgraphfin_aligned; official val/test masks
-## BitcoinOTC
 
+## BitcoinOTC
 - Upstream landing/provider: https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -44,47 +46,7 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Label provenance: `synthetic_node_injection_on_real_trust_graph`
 - Source evidence: benchmark_8x10_pipeline.load_bitcoinotc + fixed injection seed 42; differs from archived round5 data_freeze.json; A05 superseding 35-run canonical-tensor campaign
 
-## Ethereum
-
-- Upstream landing/provider: https://github.com/Sam-7878/dlg_gnn
-- Access and license: check provider terms; manual acquisition unless the provider package loader is available.
-- Expected raw basename: `ethereum_hybrid_graph.pt`
-- Frozen raw SHA-256: `4fa51d3e5fd09464f6ef7bb106376b365758e1e35d580c46c6cea65b4261c654`
-- Constructed artifact: `outputs/benchmark/a04_constructed_graphs/Ethereum.pt`
-- Constructed file SHA-256: `f313b2ac539a3da3645b262fd430cc909e857666af120fdb0bc2d1fff1e643ae`
-- Constructed tensor SHA-256: `f4b6dd781059ad9f89be4a6810dcd8ab383eab02a8aca5ed7b5b2075c612f39d`
-- Evaluation nodes: 14385; positives: 6018; unit: smart_contract_node
-- Label provenance: `real_external_label`
-- Source evidence: a03_run_crypto_production.load_gog_graph + seed split
-
-## BSC
-
-- Upstream landing/provider: https://github.com/Sam-7878/dlg_gnn
-- Access and license: check provider terms; manual acquisition unless the provider package loader is available.
-- Expected raw basename: `bsc_hybrid_graph.pt`
-- Frozen raw SHA-256: `2bd0a4943829241b84c694c1b301634e876e310bd63d415173a36de3ee510883`
-- Constructed artifact: `outputs/benchmark/a04_constructed_graphs/BSC.pt`
-- Constructed file SHA-256: `ee8623293f23cbf56eec6119acccf57e594ba86d2e0568af103e780766b7f774`
-- Constructed tensor SHA-256: `01f67876c85ec972d4fd4208a9e9e1af12289d2778864529be15d164be4709d5`
-- Evaluation nodes: 7481; positives: 1104; unit: smart_contract_node
-- Label provenance: `real_external_label`
-- Source evidence: a03_run_crypto_production.load_gog_graph + seed split
-
-## Polygon
-
-- Upstream landing/provider: https://github.com/Sam-7878/dlg_gnn
-- Access and license: check provider terms; manual acquisition unless the provider package loader is available.
-- Expected raw basename: `polygon_hybrid_graph.pt`
-- Frozen raw SHA-256: `292528febddc636ee2b5b09a76f7250e4473ff6d518d7977c49ff0beae7dad74`
-- Constructed artifact: `outputs/benchmark/a04_constructed_graphs/Polygon.pt`
-- Constructed file SHA-256: `2da5bcb770b60bdf0ca771e4806b9eb9eeb087cc62eb1b622456b2a463ac78ae`
-- Constructed tensor SHA-256: `f4649616c7855e2ef4783db848e72b10ca8fccb48f329d9df566fbece2702303`
-- Evaluation nodes: 2303; positives: 60; unit: smart_contract_node
-- Label provenance: `real_external_label`
-- Source evidence: a03_run_crypto_production.load_gog_graph + seed split
-
 ## Yelp-Syn
-
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Yelp.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -95,8 +57,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 716847; positives: 7168; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_yelp + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## Amazon-Syn
 
+## Amazon-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Amazon.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -107,8 +69,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 13752; positives: 412; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_amazon + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## Reddit-Syn
 
+## Reddit-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Reddit.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -119,8 +81,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 232965; positives: 4659; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_reddit + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## Flickr-Syn
 
+## Flickr-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Flickr.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -131,8 +93,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 89250; positives: 1785; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_flickr + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## Cora-Syn
 
+## Cora-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Planetoid.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -143,8 +105,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 2708; positives: 81; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_cora + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## CiteSeer-Syn
 
+## CiteSeer-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Planetoid.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -155,8 +117,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 3327; positives: 99; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_citeseer + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## PubMed-Syn
 
+## PubMed-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Planetoid.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
@@ -167,8 +129,8 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 19717; positives: 591; unit: node
 - Label provenance: `synthetic_node_injection`
 - Source evidence: benchmark_8x10_pipeline.load_pubmed + fixed injection seed 42; all 3 tensor hashes match round5 data_freeze.json
-## LANL-RedTeam
 
+## LANL-RedTeam
 - Upstream landing/provider: https://csr.lanl.gov/data/cyber1/
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `lanl_graph.pt`
@@ -179,31 +141,3 @@ Construction manifest capture uses `evaluation/benchmark/v2/scripts/a04_build_da
 - Evaluation nodes: 16694; positives: 301; unit: destination_computer_node
 - Label provenance: `real_external_label`
 - Source evidence: lanl_graph.pt + lanl_ground_truth_freeze.json; 749 red-team events map to 301 nodes
-
-## Post-review tensor audit — 2026-10-09
-
-The frozen manifest’s `real_external_label` describes supplied labels, not a verified label-independent graph builder. Non-executing ZIP/opcode inspection confirmed raw artifact hashes and every node label against the upstream processed CSV. Hybrid tensors contain all sibling kNN edges, plus 43,140 / 22,427 / 6,896 additional edges (Ethereum / BSC / Polygon), all joining same-label nodes. Seven of eight feature columns are constant zero. The original hybrid generator and the meaning of the remaining feature are still required; these observations alone do not establish how edges were generated. See [construction audit](DATASET_CONSTRUCTION_AUDIT.md) and [machine-readable evidence](evidence/astra_revision/hybrid_tensor_audit.json).
-
-`src/run_evaluation_pipeline.py` reads an existing Polygon tensor and copies it into a streaming benchmark (or creates a simulated fallback). It does not establish provenance of the three original frozen hybrid tensors.
-
-
-## 6. A16 Canonical Model-Input & Test-Split Denominator Ledger
-
-While Sections 1--4 above document the upstream benchmark origins and raw source characteristics, the exact model-input tensors ($N_{\text{input}}, E_{\text{input}}, d$) and seed-level test-split denominators ($N_{\text{test}}, P_{\text{test}}, \pi_{\text{test}}$) evaluated across seeds 42--46 are governed by `projects/benchmark/publication/a16/dataset_identity_reconciliation.csv` and `projects/benchmark/publication/a16/evaluation_population_by_seed.csv`:
-
-| Dataset | Model Input Nodes ($N_{\text{input}}$) | Model Input Edges ($E_{\text{input}}$) | Feature Dim ($d$) | Test Split ($N_{\text{test}}$) | Mean Test Positives ($P_{\text{test}}$) | Evaluated Test Prevalence ($\pi_{\text{test}}$) |
-| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-| **Elliptic** | 46,564 | 83,188 | 165 | 23,282 | 2,272.4 | 0.0976 |
-| **DGraphFin** | 1,225,601 | 746,271 | 17 | 183,840 | 2,326.0 | 0.0127 |
-| **BitcoinOTC** | 6,005 | 7,409 | 67 | 3,003 | 90.0 | 0.0300 |
-| **Ethereum** | 14,385 | 115,065 | 8 | 2,893 | 1,183.0 | 0.4089 |
-| **BSC** | 7,481 | 59,832 | 8 | 1,500 | 221.0 | 0.1473 |
-| **Polygon** | 2,303 | 18,411 | 8 | 471 | 12.2 | 0.0259 |
-| **Yelp-Syn** | 716,847 | 14,004,995 | 300 | 358,424 | 3,584.0 | 0.0100 |
-| **Amazon-Syn** | 13,752 | 507,378 | 767 | 6,876 | 206.0 | 0.0300 |
-| **Reddit-Syn** | 232,965 | 114,869,737 | 602 | 116,483 | 2,330.0 | 0.0200 |
-| **Flickr-Syn** | 89,250 | 1,001,494 | 500 | 44,625 | 892.4 | 0.0200 |
-| **Cora-Syn** | 2,708 | 11,276 | 1433 | 1,354 | 40.4 | 0.0298 |
-| **CiteSeer-Syn** | 3,327 | 9,914 | 3703 | 1,664 | 50.0 | 0.0300 |
-| **PubMed-Syn** | 19,717 | 93,958 | 500 | 9,859 | 296.0 | 0.0300 |
-| **LANL-RedTeam** | 16,694 | 323,897 | 13 | 3,338 | 60.0 | 0.0180 |

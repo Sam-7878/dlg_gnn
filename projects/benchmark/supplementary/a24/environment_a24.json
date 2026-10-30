@@ -1,0 +1,40 @@
+{
+  "packages": {
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1",
+    "pygod": "1.1.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "psutil": "7.2.2",
+    "pyod": "3.6.7",
+    "numba": "0.68.1",
+    "llvmlite": "0.50.0"
+  },
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "CUDA_VISIBLE_DEVICES": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+  "local_dependencies": "local_storage/benchmark/a24/deps",
+  "protocols_sha256": {
+    "elliptic_ablation_plan.yaml": "b278e77229867a521c2522934fb0d3169940a64f2220b6381deeb4ad123e6423",
+    "resource_plan.yaml": "efcec6a0544d717848a578a33806c72b356d819a8585bb154963af49d648539f"
+  },
+  "sources": {
+    "projects/benchmark/scripts/a24_common.py": "f6cd75496f26f5ba450692dda6d10a4da87f79028e45698bb42ac0ef11d5b7c8",
+    "projects/benchmark/scripts/a24_cora_exact.py": "d27335ce8b92de63359e8a48fe00219343ecbc59f9cbba9b17bb5b149f9834f0",
+    "projects/benchmark/scripts/a24_followup.py": "c4c4c2c2ab3df5bf69f7c45e306654523c6db778fcdfb401c34af9c17b106dcf",
+    "projects/benchmark/scripts/a24_g0_freeze.py": "65819cd403d4b8cd67fa23b97840b7f03e103e6908ce3b0e990f37643750220c",
+    "projects/benchmark/scripts/a24_g1_inputs.py": "090b0c64736deac01ae21d355e5ab1213921c07fd26b45e9469eb2d353a1de60",
+    "projects/benchmark/scripts/a24_inputs.py": "9cc433ee97303a0aadc6b7d3aa5226a0cf610e27698e029f5d19d8ecc4520bc1",
+    "projects/benchmark/scripts/a24_metadata.py": "a009c39f8614401fd61b73859aed9e8942d6ea5ab9f1afd0fa6a6869c176c9d4",
+    "projects/benchmark/scripts/a24_package.py": "d111b6c4fcc4597846dcd2a4cbc2836fc28a4b93589c347b34b615cb71734dbf",
+    "projects/benchmark/scripts/a24_paper_validate.py": "95d6d2f138fe28dbced0e7ef8ca85d2ab55cdd6e170b78a6e648c5b615e4682e",
+    "projects/benchmark/scripts/a24_plot_delta.py": "153dcf7e1f279caacacc269c8ff39e4df5eb328647622c90faa139278a1c624e",
+    "projects/benchmark/scripts/a24_preregister.py": "cb2d5f185d4c145067653d3f0bc84304e4c3330e67df2cfc8b816995e5ccbec7",
+    "projects/benchmark/scripts/a24_public_manifest.py": "9b0303d41c4a9d9d79dd4ebd5909cf6af4f11dcae55b85e98b35cb333a48328f",
+    "projects/benchmark/scripts/a24_run_studies.py": "65b95ccbb2a10a8d990916ec276643c7343c8fb3641f0862019255dae6645878",
+    "projects/benchmark/scripts/a24_score_audit.py": "0a5fcf80a5f571e4c4ee964c94156fa7539355a4c8cba4dbdda11903a41127d9",
+    "projects/benchmark/scripts/a24_statistics.py": "196399c71d76114c3dbbc8379a7a2065020e30ee25f9ce7bf09a2ba08f0f4923",
+    "projects/benchmark/scripts/a24_summarize.py": "502a019dad484ca9370c33abfcdd2511e222a8c43976420b8a2ee9370768f6e5",
+    "projects/benchmark/scripts/a24_verify.py": "9880f3a2509ffd95e0e4bdfaf61c61283c12da831e9df45f7ee32ebca12d8cf4"
+  }
+}

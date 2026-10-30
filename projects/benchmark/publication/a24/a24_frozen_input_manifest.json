@@ -1,0 +1,470 @@
+{
+  "gate": "A24-G0",
+  "status": "PASS",
+  "baseline_tag": "benchmark-a23-preprint-2026-10-30",
+  "baseline_commit": "94b0abbb4c89405da3f3c4fab7121f62bbe0b827",
+  "tag_object": "a3f1572e9493e287618d81b86708e5d2b64ed32c",
+  "current_head": "b46218cab3821932972ae6c9f95455a7a33392aa",
+  "successful_runs": 455,
+  "primary_runs": 420,
+  "external_runs": 35,
+  "primary_supported_pairs": 84,
+  "primary_possible_pairs": 91,
+  "campaign_for_new_results": "A24_SUPPLEMENTARY",
+  "python": "3.14.4",
+  "dependencies": {
+    "torch": "2.14.1",
+    "torch-geometric": "2.8.0.post1",
+    "pygod": "1.1.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "psutil": "7.2.2"
+  },
+  "files": {
+    "projects/benchmark/publication/a16/canonical_selected_run_registry.csv": {
+      "sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+      "bytes": 671520
+    },
+    "projects/benchmark/publication/a23/a22_archived_evidence_manifest.json": {
+      "sha256": "a5f9aeba3270d6bd5bb7584532c6d7e842d134134161125eaebbb6f0e8164fd3",
+      "bytes": 7620
+    },
+    "projects/benchmark/publication/a23/a22_review_findings.csv": {
+      "sha256": "caec690cef0975c0ef61ada7ca46f111dce5e46ec6c96089cb757fdd8b84b739",
+      "bytes": 2829
+    },
+    "projects/benchmark/publication/a23/a23_claims_to_evidence.csv": {
+      "sha256": "49170cd78204a5f8a57bc9a593c61e51c37fe3795170a49952c01df62277dbd7",
+      "bytes": 5029
+    },
+    "projects/benchmark/publication/a23/A23_CORRECTION_NOTE_ON_A22.md": {
+      "sha256": "05d0eb280a9581cc2151a5199d8e8fe5d467c709973c926c755def1f42342f0e",
+      "bytes": 4146
+    },
+    "projects/benchmark/publication/a23/a23_g2_prohibited_phrase_scan.json": {
+      "sha256": "7047dc42f6f1a54b5d7e2eee18c1231d2695f88586875999fdbb244f3f686352",
+      "bytes": 1304
+    },
+    "projects/benchmark/publication/a23/a23_g4_asymmetric_orientation_test.json": {
+      "sha256": "56d6dea402a0e5983fbda0fc36bfc191528e81fed3628bf21860642a6e30e382",
+      "bytes": 702
+    },
+    "projects/benchmark/publication/a23/A23_SHA256SUMS.txt": {
+      "sha256": "4a7c23f8adcab76a1bf71d2d1e33c54722d58bea227a3be6b80d2cf671bce96f",
+      "bytes": 4329
+    },
+    "projects/benchmark/publication/a23/a23_stat_view_membership.csv": {
+      "sha256": "ae127cb8669e137e4a82b717ccb2870b876ce0b0c2edd6ecaf598bf95ae72574",
+      "bytes": 1753
+    },
+    "projects/benchmark/publication/a23/A23_SUBMISSION_READINESS_REPORT.md": {
+      "sha256": "8c0fd5a519472945f7b270b5385fdef370c859760b576998e790adb5a1d02a09",
+      "bytes": 8289
+    },
+    "projects/benchmark/publication/a23/ablation_provenance_noncausal.csv": {
+      "sha256": "30bca3524f052aee1aa4b3e7a1f88943f5646483dcc081e544235158677f9525",
+      "bytes": 2032
+    },
+    "projects/benchmark/publication/a23/ablation_provenance_noncausal.md": {
+      "sha256": "814194df69b5d39c8b4f39a274b5b8f675816f3aa35a495df0d5a78c3aa30284",
+      "bytes": 1634
+    },
+    "projects/benchmark/publication/a23/dataset_graph_identity_canonical.csv": {
+      "sha256": "f616c1c931392c8f57213764917c26d7bb1cab8f631773828a28cb4b11faf047",
+      "bytes": 12106
+    },
+    "projects/benchmark/publication/a23/dataset_graph_identity_canonical.md": {
+      "sha256": "a95e040c4ea55ee23631e041fe246d14cefa6f78d1da53ef4a7c7eb7bf367d8c",
+      "bytes": 4356
+    },
+    "projects/benchmark/publication/a23/dataset_graph_identity_gate.json": {
+      "sha256": "b96b36da3e321303f2dc4f73a633a8bc1734a524d86d746985a1e93516290364",
+      "bytes": 400
+    },
+    "projects/benchmark/publication/a23/g1_exact_loss_canonical_trace.md": {
+      "sha256": "f6be3bd73b0830cbd8a5cf0754d1c9f413d2486cc84e65d88e6850230ba21e0e",
+      "bytes": 6395
+    },
+    "projects/benchmark/publication/a23/gadnr_failure_evidence_note.md": {
+      "sha256": "b069e81a5d1c8e88502a51803da98b72a12b8bc3333c3477516345eefc5e8508",
+      "bytes": 3193
+    },
+    "projects/benchmark/publication/a23/s3_label_provenance_gate.csv": {
+      "sha256": "06c540662770fdb83ebde7d40d2601ae34c791ad78343cde7751d064669930a5",
+      "bytes": 2026
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_ablation_provenance_audit.csv": {
+      "sha256": "62567a7ecd878317c0d4e4502c99f242f279cba4c3a70ae368b682ad62ceb76c",
+      "bytes": 1820
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_applsci_SHA256SUMS.txt": {
+      "sha256": "e442f3dded4cd81c39672a93c11604dca3b276312ccc52d0abbd8fdaf08aebfc",
+      "bytes": 373
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_archived_score_float32_floor_diagnostic.json": {
+      "sha256": "c9c7e90c578c61eef27dd9bca812ab0e80d570354714654b641946ed25414cab",
+      "bytes": 14621
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_claim_language_audit.md": {
+      "sha256": "6c02fb16f987ce3d2f94be25181eb5c95c6b10ffb7c1f66f27537345c2b9774c",
+      "bytes": 3172
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_dataset_topology_diagnostics.csv": {
+      "sha256": "31438829c8f07f51f0ca53fbe881673dfaac3ff58066b681fd295a61fd34befe",
+      "bytes": 5346
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_data_and_split_provenance.md": {
+      "sha256": "5a76843554cbf7668f6b7b6af4904384f38c3feb9ad8d4fc97f335f43fe9603a",
+      "bytes": 5589
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_dense_exact_training_equivalence.json": {
+      "sha256": "e396f4be6b8918d405913ce47d013c04636a6d3163ede521a282c79d318d3fa9",
+      "bytes": 45060
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_exact_loss_source_trace.md": {
+      "sha256": "d3799cc2d0634abf88a7e005aef5ffe11e595bc2b17663e3ed6fc7cb279e5239",
+      "bytes": 7314
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_feature_only_baseline_scope.md": {
+      "sha256": "80fc8760632cbdb1010cdff85597e582496aaa06219091c6a7091e87145c5dfd",
+      "bytes": 2547
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_gadnr_numerical_diagnostic.json": {
+      "sha256": "ec4159a386a1f2a8778eb47c6d02befb5eb63bc90ac04c366a4bfd561aa50d6a",
+      "bytes": 1740
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_installed_pygod_dump.json": {
+      "sha256": "dbeb4dfba7bdbeb981648805bd5c05aded943004c1aef6f9fc97f7e518183c7b",
+      "bytes": 951
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_installed_pygod_dump.src.txt": {
+      "sha256": "b9fa76f7aaeaf84793ca019ba36a511e4db7258ac7b966bcf70aea940f5f7da3",
+      "bytes": 8991
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_objective_branch_decision.md": {
+      "sha256": "6f3dab4f4be90e03ea4dcb23c35d66969b61b3a19248e9523cbaf94595e44135",
+      "bytes": 4183
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_preprints_SHA256SUMS.txt": {
+      "sha256": "ed8a29ab010691169bb3c4455db3207f18eb2f25ad4f4faa2d28a3db4b090753",
+      "bytes": 361
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_rank_effect_size.csv": {
+      "sha256": "bb6678be830cff26ccc58266f5faf49ef50635e1e7a5284f7b35adc95a6428b5",
+      "bytes": 833
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_release_invariants.json": {
+      "sha256": "dc392ddfc6ee0d4e79b846f1aba8cfc6068b5590cf658154526b2038efa42c63",
+      "bytes": 2642
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_stat_view_membership.csv": {
+      "sha256": "33f190c41ab1281dd08e2ec3ac4db0b95020f478dd57e76afcc8e62ced4cccc3",
+      "bytes": 1584
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/A22_SUBMISSION_READINESS_REPORT.md": {
+      "sha256": "1f1f46899588c507454b04e9aa991b38ed4a2f5a13a8ebbac169c8d5da498124",
+      "bytes": 8386
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_support_failure_ledger.csv": {
+      "sha256": "e7c78cf5bc256073eb626e33fe4f546e94f9b8b34ed17387a3f03798f25dbb07",
+      "bytes": 62973
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_support_table_fig_consistency.json": {
+      "sha256": "48092f09d9b01f45f8b93320aad945842ad918aef6af6e6583a341f22f51d06f",
+      "bytes": 1005
+    },
+    "projects/benchmark/publication/a23/archive_a22_snapshot/a22_telemetry_audit.md": {
+      "sha256": "e643a887aab673c7b8d95cb2013bd2c9c608e47aaa5500318fd0b85614a0445c",
+      "bytes": 2119
+    },
+    "projects/benchmark/submission/applsci/COVER_LETTER.md": {
+      "sha256": "938e3c76b8f3e259043885da3baf3e172ce61046443a0fb084d31d7692eab7f6",
+      "bytes": 6689
+    },
+    "projects/benchmark/submission/applsci/DATA_AVAILABILITY.md": {
+      "sha256": "bec03feff3d5cb60b3faba60129bed4c2f564651f7c74d8ac496a7b803e9f857",
+      "bytes": 1447
+    },
+    "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.pdf": {
+      "sha256": "6cd073eda041b9a9767f994e32cdc4f38efd2a0303939e246c759a69e0ac8026",
+      "bytes": 366225
+    },
+    "projects/benchmark/submission/applsci/DLG-Benchmark_A16_AppliedSciences.tex": {
+      "sha256": "55c268a3f2f0776f1ff1662e3f66f2331d1d25ff3717bdd814cba216a83b7022",
+      "bytes": 71888
+    },
+    "projects/benchmark/submission/applsci/references.bib": {
+      "sha256": "b42f92f2f6143b4cf79eaee3ed55f7e01deba2a6fc4d77164529c4ef3b19e42c",
+      "bytes": 19402
+    },
+    "projects/benchmark/submission/applsci/SHA256SUMS.txt": {
+      "sha256": "148623e3e5f8cc343e221a2669bb175aa0544f2827c52c3eed4dac98442881bd",
+      "bytes": 373
+    },
+    "projects/benchmark/submission/applsci/soul-ori.sty": {
+      "sha256": "842e46b91b146591ebde3348a684b04fae92d46d4508482bc5036e1805e57f9c",
+      "bytes": 25493
+    },
+    "projects/benchmark/submission/applsci/soul.sty": {
+      "sha256": "0bc2aecc16e0a261db88863dfc5e26b0745abf3fc02caa97fcd076f2e56bf940",
+      "bytes": 16881
+    },
+    "projects/benchmark/submission/applsci/source_bundle.zip": {
+      "sha256": "15a1d5cae582ce8673b5dcbdc07a12650b8d78008bb5b9419c4d41e38393cbbc",
+      "bytes": 1854183
+    },
+    "projects/benchmark/submission/applsci/SUBMISSION_GATE_REPORT.md": {
+      "sha256": "f0336cd32aff530f455828c6b175a3b5c4009ed9397a4537dc9f340a6074f340",
+      "bytes": 2340
+    },
+    "projects/benchmark/submission/preprints/DATA_AVAILABILITY.md": {
+      "sha256": "c2573ed508154790d51536ddce744f4ab5893db47c47d858261a698f072b3d7c",
+      "bytes": 2753
+    },
+    "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.pdf": {
+      "sha256": "2ba2757a5372ccb05659ea664d4827956479a33acafa525eac397d94e341b719",
+      "bytes": 615068
+    },
+    "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints.tex": {
+      "sha256": "f7d88d32810dbc545068b48310b5ca1f438769e9fd1f8b6775a4105ffe358b86",
+      "bytes": 72260
+    },
+    "projects/benchmark/submission/preprints/DLG-Benchmark_A16_Preprints_kr.pdf": {
+      "sha256": "3dc02e2d36b7478d00cbfccba710d8eb8c629c911af16289dd31f0b7bf78f946",
+      "bytes": 915528
+    },
+    "projects/benchmark/submission/preprints/PREPRINT_GATE_REPORT.md": {
+      "sha256": "f0336cd32aff530f455828c6b175a3b5c4009ed9397a4537dc9f340a6074f340",
+      "bytes": 2340
+    },
+    "projects/benchmark/submission/preprints/references.bib": {
+      "sha256": "b42f92f2f6143b4cf79eaee3ed55f7e01deba2a6fc4d77164529c4ef3b19e42c",
+      "bytes": 19402
+    },
+    "projects/benchmark/submission/preprints/SHA256SUMS.txt": {
+      "sha256": "5e8b60e5889aa93a14047d9eb2ea84ae3a64ea3dcf14516e0a701ebebf9034fd",
+      "bytes": 361
+    },
+    "projects/benchmark/submission/preprints/source_bundle.zip": {
+      "sha256": "aec6d84e5f02dbc30710ffc7d019070f6d2de137ec3cbace7933514e8e187f62",
+      "bytes": 818200
+    },
+    "projects/benchmark/submission/preprints/figures/fig_conditional_delta.pdf": {
+      "sha256": "1789938dbcb83db12d8e85ec6ffd3cedb4a651663141b3f4a2aec2e368b1a5a7",
+      "bytes": 29656
+    },
+    "projects/benchmark/submission/preprints/figures/fig_conditional_delta.png": {
+      "sha256": "38fd1d446a9de34dff2d0f03db9889ea472d9211ac80611a557960f59cf317f3",
+      "bytes": 255734
+    },
+    "projects/benchmark/submission/preprints/figures/fig_dlg_architecture.pdf": {
+      "sha256": "36864ea727af0debb0c7c3a3c794e80f4523da4b93ef5b30b1534d02ff70fe7f",
+      "bytes": 53689
+    },
+    "projects/benchmark/submission/preprints/figures/fig_dlg_architecture.png": {
+      "sha256": "06ed16e599f269ffb8e11d00d8b501092c77085146b38e548df1c1497a731750",
+      "bytes": 278156
+    },
+    "projects/benchmark/submission/preprints/figures/fig_support_matrix.pdf": {
+      "sha256": "1e784af25e2b404541171bbadeadf8abb5befe5eb78b7a7219d5a07051bb2ff0",
+      "bytes": 36136
+    },
+    "projects/benchmark/submission/preprints/figures/fig_support_matrix.png": {
+      "sha256": "fb32d9c2b7ee946b4f15709a2fd782de8365da34e123608d371782249e53bec9",
+      "bytes": 259461
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A11_Preprints.pdf": {
+      "sha256": "042a4d4e65f3df03f91d225b1923f46d67c21ed57b48629ae52ba4232d8e46bb",
+      "bytes": 484133
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A11_Preprints.tex": {
+      "sha256": "b26b32158508dcf238fcd6d726bcccec4173c20f1fdf44e6186a16c909f3f767",
+      "bytes": 49157
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A12_Preprints.pdf": {
+      "sha256": "d595962eb43e3cf55c6eba193c72bf05b5eb20dceb43fafaf6cf23f10f7e6a97",
+      "bytes": 511963
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A12_Preprints.tex": {
+      "sha256": "215964401034d1619c5cd1d093a91a75bde38c957d912aefaae998d242fcb4b4",
+      "bytes": 52058
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A13_Preprints.pdf": {
+      "sha256": "4491f4c035b1caa2f63783f59dce3a48a10881cf01ff31f768f2014fbf7d16c6",
+      "bytes": 510977
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A13_Preprints.tex": {
+      "sha256": "c6a5b94168188474dbc0ae7ae5f2503231f5f993ddfdcc81af49d60a3a0bfcee",
+      "bytes": 53063
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A14_Preprints.pdf": {
+      "sha256": "671b0c80944de257595409b4cd59c1f88aa86da6aab3b43bf5dd59b936d0fe1c",
+      "bytes": 540944
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A14_Preprints.tex": {
+      "sha256": "21424cc8e323f929b8eea1f7aaeebf90bf3aec78f5a8906c32bf8413c48be8ee",
+      "bytes": 54341
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A15_Preprints.pdf": {
+      "sha256": "35343549afcda1d75768eca24ef8b146d6cdb6a765e7cfc12d4fbb8a41212a39",
+      "bytes": 590838
+    },
+    "projects/benchmark/submission/preprints/history/DLG-Benchmark_A15_Preprints.tex": {
+      "sha256": "a226b2dca3bf874f81f9c95d4e8790ced85020f9abd201d7d121653eeeba0422",
+      "bytes": 57272
+    },
+    "projects/benchmark/submission/preprints/history/PREPRINT_GATE_REPORT.md": {
+      "sha256": "5a6dcb091fe96bdf9c8227ec44be94bb410d657980be4f70721ee377a585ce3f",
+      "bytes": 3325
+    },
+    "projects/benchmark/submission/preprints/history/PREPRINT_GATE_REPORT_A14.md": {
+      "sha256": "5cda44af686871f856d1011f12b60aeb63e9b93480f284ed7c4cbb7dec3afdda",
+      "bytes": 2414
+    },
+    "projects/benchmark/submission/preprints/history/PREPRINT_GATE_REPORT_A15.md": {
+      "sha256": "712f9faeab330d2597c464fb41b11c1619d0f781a4ba3f63081e25e27e2935c4",
+      "bytes": 2567
+    },
+    "projects/benchmark/submission/preprints/history/PREPRINT_GATE_REPORT_A16.md": {
+      "sha256": "712f9faeab330d2597c464fb41b11c1619d0f781a4ba3f63081e25e27e2935c4",
+      "bytes": 2567
+    },
+    "projects/benchmark/submission/preprints/history/PREPRINT_GATE_REPORT_A19.md": {
+      "sha256": "c7aa7b54961b15fe37c3e75bb16cd805fff803ea92875a594fd173c9479631a9",
+      "bytes": 2452
+    },
+    "projects/benchmark/submission/applsci/Definitions/journalnames.tex": {
+      "sha256": "f4944f272ae0bfaccedb926f4da5ce40c0dabead50482afae191989430fb66dc",
+      "bytes": 108413
+    },
+    "projects/benchmark/submission/applsci/Definitions/logo-mdpi-eps-converted-to.pdf": {
+      "sha256": "a484622feb8c88b75adfd00d73145417b77d1a8dcade3d3474e69601493a3a10",
+      "bytes": 13206
+    },
+    "projects/benchmark/submission/applsci/Definitions/logo-mdpi.eps": {
+      "sha256": "f02d31469c6b2666c9de2da8d8731773bce3751d2fa99a27ff4bcf61a106cdcf",
+      "bytes": 563678
+    },
+    "projects/benchmark/submission/applsci/Definitions/logo-orcid.pdf": {
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759",
+      "bytes": 12671
+    },
+    "projects/benchmark/submission/applsci/Definitions/logo-updates-eps-converted-to.pdf": {
+      "sha256": "671d5fb53bb5c930440bad6959ab00a6d73d0435d1d928bdeea4e36eb53d12fb",
+      "bytes": 15505
+    },
+    "projects/benchmark/submission/applsci/Definitions/logo-updates.eps": {
+      "sha256": "b84b986524ff2e47afb07ecd5ef6d33cd85bc4b88d2053fdfb3e83210d695831",
+      "bytes": 851415
+    },
+    "projects/benchmark/submission/applsci/Definitions/mdpi.bst": {
+      "sha256": "3b747eee144173c46a43562ead905c26322c7cb394e350a925d36dcf63884680",
+      "bytes": 23683
+    },
+    "projects/benchmark/submission/applsci/Definitions/mdpi.cls": {
+      "sha256": "62979fe0fe0f72a57adc1ad683add9b0138f1dae635d1da4ae48a4d811159e40",
+      "bytes": 63307
+    },
+    "projects/benchmark/submission/applsci/Definitions/mdpi_apacite.bst": {
+      "sha256": "c7fffe0231922e5521dc360889fafe941ee26d154c1ce4e167e4ec9f2d13498f",
+      "bytes": 138426
+    },
+    "projects/benchmark/submission/applsci/Definitions/mdpi_apacite.sty": {
+      "sha256": "9e9bb23ded45f7f76236ad304d4bda2c066fb48041b272cebc20f940c17865a7",
+      "bytes": 71315
+    },
+    "projects/benchmark/submission/applsci/Definitions/mdpi_chicago.bst": {
+      "sha256": "4a73faf6e0cf1a225d1b9a41a6955d3cc29a55c5fdce662177d00eee3946ce36",
+      "bytes": 37920
+    },
+    "projects/benchmark/submission/applsci/figures/fig_conditional_delta.pdf": {
+      "sha256": "8601a49dc122818b7ae60caca97142f44d5f02e7a975683442a5f2297d90ef88",
+      "bytes": 29656
+    },
+    "projects/benchmark/submission/applsci/figures/fig_conditional_delta.png": {
+      "sha256": "38fd1d446a9de34dff2d0f03db9889ea472d9211ac80611a557960f59cf317f3",
+      "bytes": 255734
+    },
+    "projects/benchmark/submission/applsci/figures/fig_dlg_architecture.pdf": {
+      "sha256": "36864ea727af0debb0c7c3a3c794e80f4523da4b93ef5b30b1534d02ff70fe7f",
+      "bytes": 53689
+    },
+    "projects/benchmark/submission/applsci/figures/fig_dlg_architecture.png": {
+      "sha256": "06ed16e599f269ffb8e11d00d8b501092c77085146b38e548df1c1497a731750",
+      "bytes": 278156
+    },
+    "projects/benchmark/submission/applsci/figures/fig_support_matrix.pdf": {
+      "sha256": "3f688ee19c609e936f779f082f7b89522240bc99e2f145918e3764446bb13ffe",
+      "bytes": 36136
+    },
+    "projects/benchmark/submission/applsci/figures/fig_support_matrix.png": {
+      "sha256": "fb32d9c2b7ee946b4f15709a2fd782de8365da34e123608d371782249e53bec9",
+      "bytes": 259461
+    },
+    "projects/benchmark/submission/applsci/history/applsci_A15.zip": {
+      "sha256": "4864acf4ef08845e311d009cb1b1d1a7441ca4fb4b76002d9c8a8a9615687e62",
+      "bytes": 3255943
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A11_AppliedSciences.pdf": {
+      "sha256": "5295311924bc665490db87f7c4b41de22de260fbe934f9f462243dfb70500a6b",
+      "bytes": 324233
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A11_AppliedSciences.tex": {
+      "sha256": "0c19a8b3c0f122bc00fd49ec090f05ff81244ae4f8a35f2bbfb46fbb80d4551a",
+      "bytes": 49484
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A12_AppliedSciences.pdf": {
+      "sha256": "e845772cb02aff51ce3221e208cfeeda7730ca3b92710217d5ee3a6324b8c47c",
+      "bytes": 334332
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A12_AppliedSciences.tex": {
+      "sha256": "c20112ce98eee64731c254aed414bb6949827b0e757ee04423a9e557952cce68",
+      "bytes": 51700
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A13_AppliedSciences.pdf": {
+      "sha256": "7e7a587e3dccd2d7b425960fc32ecae767c7b46561e29c7436c705563379e09a",
+      "bytes": 334958
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A13_AppliedSciences.tex": {
+      "sha256": "b64e25f19cb0b7a2af464c6e555ac6dba1110b18ebf67dd97a26b0004f243078",
+      "bytes": 52686
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A14_AppliedSciences.pdf": {
+      "sha256": "e43270c3c8a7d2e513923c107674121506c7d18b83871cf7f71a8a94a44efb38",
+      "bytes": 355261
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A14_AppliedSciences.tex": {
+      "sha256": "fd750d53c28ef717b5f70dc523f954be119f018adb1a869f56e906a977ae8f80",
+      "bytes": 53964
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A15_AppliedSciences.pdf": {
+      "sha256": "36c0f66a7a50e8b2eb32d5a626ae92b891dea4d30172f2f1972073822604eef2",
+      "bytes": 352185
+    },
+    "projects/benchmark/submission/applsci/history/DLG-Benchmark_A15_AppliedSciences.tex": {
+      "sha256": "61a93c4ee5f1b9d7448befb495b9908857d3e04499f1901568feb000ebd37947",
+      "bytes": 56897
+    },
+    "projects/benchmark/submission/applsci/history/SUBMISSION_GATE_REPORT.md": {
+      "sha256": "5daaafae9eed33f60cc211270836c36e24ccf86c4848cb666b3c76d24819f8ba",
+      "bytes": 4025
+    },
+    "projects/benchmark/submission/applsci/history/SUBMISSION_GATE_REPORT_A14.md": {
+      "sha256": "7742ff07efe60d051fb87834900c40788a23fe7e94af72f3badf0496cd1c5081",
+      "bytes": 3229
+    },
+    "projects/benchmark/submission/applsci/history/SUBMISSION_GATE_REPORT_A15.md": {
+      "sha256": "26f34bfa97f931d7e4f35fd00022214080cba8263743d7652ea1fca7bdb74c84",
+      "bytes": 2955
+    },
+    "projects/benchmark/submission/applsci/history/SUBMISSION_GATE_REPORT_A16.md": {
+      "sha256": "26f34bfa97f931d7e4f35fd00022214080cba8263743d7652ea1fca7bdb74c84",
+      "bytes": 2955
+    },
+    "projects/benchmark/submission/applsci/history/SUBMISSION_GATE_REPORT_A19.md": {
+      "sha256": "c7aa7b54961b15fe37c3e75bb16cd805fff803ea92875a594fd173c9479631a9",
+      "bytes": 2452
+    }
+  }
+}

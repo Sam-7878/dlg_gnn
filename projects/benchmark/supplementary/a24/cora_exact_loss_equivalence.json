@@ -1,0 +1,416 @@
+{
+  "status": "PASS",
+  "source_reference": "installed PyGOD DOMINANT and repository dense DLG branches;same weights;full N2708Cora",
+  "input_identity": {
+    "source_path": "archive/benchmark/outputs/a04_constructed_graphs/Cora-Syn.pt",
+    "source_sha256": "064175ba2f9f0530e0e8b9809e69d6e49e75fcf50944ae627688d4f8c1e81e44",
+    "source_kind": "A04_FROZEN_CONSTRUCTED_TENSOR",
+    "dataset": "Cora-Syn",
+    "N": 2708,
+    "E": 11276,
+    "F": 1433,
+    "feature_hash": "669cbcb2db1be38d96a2ea59e9d6dd9b15db9415f7f1cda8f8948252ee0bf108",
+    "edge_hash": "aa038fea0a5e10b11669c7a27c290fd1cb85acf73406ed3dd63673a5b63de317",
+    "label_hash": "1ec183b943b6da543570b6d73948840e57074adf553ac61f8fe33ac46ea2cac1",
+    "split_hashes": {
+      "42": {
+        "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+        "val_mask": "6d72520e425d15b79a60a5098ecc0b6c14f54a36fbd1be528365f4885cc33503",
+        "test_mask": "46fe9f5bcded058860540221474454b325176d869c7f67a39131daa502a2942d"
+      },
+      "43": {
+        "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+        "val_mask": "61592cf93540b7beb6f340a73de1631d7bc7053d534f6dded6d434c2f08bb362",
+        "test_mask": "7eba1fcaec167d7f3b49a52445ae30c448b1661eb28f13cd591e1a4134f16d12"
+      },
+      "44": {
+        "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+        "val_mask": "d0eeb78178e3ba6fe19cf7b0f7dff50680a35dd733b6edd31d8b982f2da8e8ab",
+        "test_mask": "470d6a2b712597758ab53508d2d4bd779630579f2cf260b558e722a80b447449"
+      },
+      "45": {
+        "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+        "val_mask": "eeb8b2d9b6de17349356a3611c851480318e9171ed7f6b275ca58e97f06fc0d0",
+        "test_mask": "e9ade69ced0a98dca723fd104aa15e55ec3b9a3d5089ef5d32b1f6f827cf0611"
+      },
+      "46": {
+        "train_mask": "5c27b27819e2710afd6a4f5840e52cff409b458420e31d9ea3799a77367adae9",
+        "val_mask": "44d133845bb69d70bd12cd1fd21b8cd73236104e49fd339c27ce26f6751a552d",
+        "test_mask": "57231f496ce4aba542688510d944f051bb32e0bce9f18227b8e921db85ccd393"
+      }
+    }
+  },
+  "results": [
+    {
+      "family": "DOMINANT",
+      "N": 2708,
+      "dtype": "float32",
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "checks": {
+        "loss": {
+          "max_abs": 0.0,
+          "max_tolerance_fraction": 0.0,
+          "pass": true
+        },
+        "node_score": {
+          "max_abs": 1.9073486328125e-06,
+          "max_tolerance_fraction": 0.0023172900546342134,
+          "pass": true
+        },
+        "gradient/shared_encoder.convs.0.bias": {
+          "max_abs": 2.384185791015625e-07,
+          "max_tolerance_fraction": 0.0018591360421851277,
+          "pass": true
+        },
+        "gradient/shared_encoder.convs.0.lin.weight": {
+          "max_abs": 2.384185791015625e-07,
+          "max_tolerance_fraction": 0.0018657029140740633,
+          "pass": true
+        },
+        "gradient/shared_encoder.convs.1.bias": {
+          "max_abs": 9.5367431640625e-07,
+          "max_tolerance_fraction": 0.0018440625863149762,
+          "pass": true
+        },
+        "gradient/shared_encoder.convs.1.lin.weight": {
+          "max_abs": 5.960464477539063e-08,
+          "max_tolerance_fraction": 0.0016088878037407994,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.bias": {
+          "max_abs": 1.862645149230957e-09,
+          "max_tolerance_fraction": 0.0001428665709681809,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 1.1641532182693481e-10,
+          "max_tolerance_fraction": 1.1571884897421114e-05,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.5355809561442584e-05,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.546565469354391e-05,
+          "pass": true
+        },
+        "gradient/struct_decoder.nn.convs.0.bias": {
+          "max_abs": 4.76837158203125e-07,
+          "max_tolerance_fraction": 0.0012358593521639705,
+          "pass": true
+        },
+        "gradient/struct_decoder.nn.convs.0.lin.weight": {
+          "max_abs": 5.960464477539063e-08,
+          "max_tolerance_fraction": 0.0012945724884048104,
+          "pass": true
+        },
+        "oneAdam/shared_encoder.convs.0.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_tolerance_fraction": 8.955024532042444e-05,
+          "pass": true
+        },
+        "oneAdam/shared_encoder.convs.0.lin.weight": {
+          "max_abs": 5.465000867843628e-06,
+          "max_tolerance_fraction": 0.5029054284095764,
+          "pass": true
+        },
+        "oneAdam/shared_encoder.convs.1.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.477512266021222e-05,
+          "pass": true
+        },
+        "oneAdam/shared_encoder.convs.1.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_tolerance_fraction": 0.0005840031080879271,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.477672337088734e-05,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 1.341104507446289e-07,
+          "max_tolerance_fraction": 0.007495429366827011,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.bias": {
+          "max_abs": 2.3283064365386963e-09,
+          "max_tolerance_fraction": 0.0002240369067294523,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 1.862645149230957e-07,
+          "max_tolerance_fraction": 0.013771834783256054,
+          "pass": true
+        },
+        "oneAdam/struct_decoder.nn.convs.0.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.477512266021222e-05,
+          "pass": true
+        },
+        "oneAdam/struct_decoder.nn.convs.0.lin.weight": {
+          "max_abs": 4.3958425521850586e-07,
+          "max_tolerance_fraction": 0.04182824119925499,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Base",
+      "N": 2708,
+      "dtype": "float32",
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "checks": {
+        "loss": {
+          "max_abs": 4.76837158203125e-07,
+          "max_tolerance_fraction": 0.0013301987200975418,
+          "pass": true
+        },
+        "node_score": {
+          "max_abs": 9.5367431640625e-07,
+          "max_tolerance_fraction": 0.002542370231822133,
+          "pass": true
+        },
+        "gradient/alpha": {
+          "max_abs": 0.0,
+          "max_tolerance_fraction": 0.0,
+          "pass": true
+        },
+        "gradient/local_encoder.convs.0.bias": {
+          "max_abs": 5.960464477539063e-08,
+          "max_tolerance_fraction": 0.0009831078350543976,
+          "pass": true
+        },
+        "gradient/local_encoder.convs.0.lin.weight": {
+          "max_abs": 2.9802322387695312e-08,
+          "max_tolerance_fraction": 0.0012052813544869423,
+          "pass": true
+        },
+        "gradient/local_encoder.convs.1.bias": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_tolerance_fraction": 0.0017389230197295547,
+          "pass": true
+        },
+        "gradient/local_encoder.convs.1.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_tolerance_fraction": 0.0007482219371013343,
+          "pass": true
+        },
+        "gradient/global_encoder.convs.0.bias": {
+          "max_abs": 5.960464477539063e-08,
+          "max_tolerance_fraction": 0.0007578963413834572,
+          "pass": true
+        },
+        "gradient/global_encoder.convs.0.lin.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_tolerance_fraction": 0.00039228913374245167,
+          "pass": true
+        },
+        "gradient/global_encoder.convs.1.bias": {
+          "max_abs": 5.960464477539063e-08,
+          "max_tolerance_fraction": 0.001111328136175871,
+          "pass": true
+        },
+        "gradient/global_encoder.convs.1.lin.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_tolerance_fraction": 0.0004816091386601329,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_tolerance_fraction": 8.685929788043723e-05,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 1.1641532182693481e-10,
+          "max_tolerance_fraction": 1.1576791621337179e-05,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.bias": {
+          "max_abs": 3.725290298461914e-09,
+          "max_tolerance_fraction": 0.0002954060328193009,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 2.3283064365386963e-10,
+          "max_tolerance_fraction": 2.2988573618931696e-05,
+          "pass": true
+        },
+        "oneAdam/alpha": {
+          "max_abs": 0.0,
+          "max_tolerance_fraction": 0.0,
+          "pass": true
+        },
+        "oneAdam/local_encoder.convs.0.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.477512266021222e-05,
+          "pass": true
+        },
+        "oneAdam/local_encoder.convs.0.lin.weight": {
+          "max_abs": 3.864988684654236e-07,
+          "max_tolerance_fraction": 0.035779207944869995,
+          "pass": true
+        },
+        "oneAdam/local_encoder.convs.1.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.4775126298191026e-05,
+          "pass": true
+        },
+        "oneAdam/local_encoder.convs.1.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_tolerance_fraction": 0.0006447400082834065,
+          "pass": true
+        },
+        "oneAdam/global_encoder.convs.0.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_tolerance_fraction": 8.955076918937266e-05,
+          "pass": true
+        },
+        "oneAdam/global_encoder.convs.0.lin.weight": {
+          "max_abs": 1.043081283569336e-07,
+          "max_tolerance_fraction": 0.004862410482019186,
+          "pass": true
+        },
+        "oneAdam/global_encoder.convs.1.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.4775140850106254e-05,
+          "pass": true
+        },
+        "oneAdam/global_encoder.convs.1.lin.weight": {
+          "max_abs": 1.4901161193847656e-08,
+          "max_tolerance_fraction": 0.0006365702138282359,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.477594484342262e-05,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 1.7881393432617188e-07,
+          "max_tolerance_fraction": 0.009033868089318275,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.bias": {
+          "max_abs": 4.889443516731262e-09,
+          "max_tolerance_fraction": 0.00047119284863583744,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 1.7136335372924805e-07,
+          "max_tolerance_fraction": 0.013179553672671318,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "family": "DLG-Aug",
+      "N": 2708,
+      "dtype": "float32",
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "checks": {
+        "loss": {
+          "max_abs": 0.0,
+          "max_tolerance_fraction": 0.0,
+          "pass": true
+        },
+        "node_score": {
+          "max_abs": 7.62939453125e-06,
+          "max_tolerance_fraction": 0.0034935774747282267,
+          "pass": true
+        },
+        "gradient/encoder.convs.0.bias": {
+          "max_abs": 4.76837158203125e-07,
+          "max_tolerance_fraction": 0.0016789414221420884,
+          "pass": true
+        },
+        "gradient/encoder.convs.0.lin.weight": {
+          "max_abs": 2.384185791015625e-07,
+          "max_tolerance_fraction": 0.005563649348914623,
+          "pass": true
+        },
+        "gradient/encoder.convs.1.bias": {
+          "max_abs": 9.5367431640625e-07,
+          "max_tolerance_fraction": 0.001595600857399404,
+          "pass": true
+        },
+        "gradient/encoder.convs.1.lin.weight": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_tolerance_fraction": 0.0019488924881443381,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.bias": {
+          "max_abs": 1.862645149230957e-09,
+          "max_tolerance_fraction": 0.00016053166473284364,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.5665041398024186e-05,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.bias": {
+          "max_abs": 3.725290298461914e-09,
+          "max_tolerance_fraction": 0.00026007546694017947,
+          "pass": true
+        },
+        "gradient/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 6.984919309616089e-10,
+          "max_tolerance_fraction": 6.762128759874031e-05,
+          "pass": true
+        },
+        "oneAdam/encoder.convs.0.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_tolerance_fraction": 8.955024532042444e-05,
+          "pass": true
+        },
+        "oneAdam/encoder.convs.0.lin.weight": {
+          "max_abs": 2.942979335784912e-07,
+          "max_tolerance_fraction": 0.02060120366513729,
+          "pass": true
+        },
+        "oneAdam/encoder.convs.1.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.4775126298191026e-05,
+          "pass": true
+        },
+        "oneAdam/encoder.convs.1.lin.weight": {
+          "max_abs": 7.450580596923828e-09,
+          "max_tolerance_fraction": 0.0003463967877905816,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.bias": {
+          "max_abs": 4.656612873077393e-10,
+          "max_tolerance_fraction": 4.4776403228752315e-05,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.0.lin.weight": {
+          "max_abs": 4.470348358154297e-07,
+          "max_tolerance_fraction": 0.024377366527915,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.bias": {
+          "max_abs": 9.313225746154785e-10,
+          "max_tolerance_fraction": 8.955052180681378e-05,
+          "pass": true
+        },
+        "oneAdam/attr_decoder.convs.1.lin.weight": {
+          "max_abs": 6.742775440216064e-07,
+          "max_tolerance_fraction": 0.054867349565029144,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "not_a_trajectory_claim": true
+}

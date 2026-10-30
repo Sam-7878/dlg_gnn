@@ -146,3 +146,6 @@ _res/
 /projects/stream_mc/handoff/r02/
 /projects/stream_mc/handoff/r03/
 !/projects/stream_mc/evidence/r02_verification_evidence.zip
+
+# A24 unsubmitted manuscript writer remains author-local.
+/projects/benchmark/scripts/a24_build_manuscript.py

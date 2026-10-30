@@ -1,11 +1,7 @@
-# Benchmark environment provenance
+# Benchmark environment provenance — A24
 
-The frozen 435 approved results combine historical Round5/A03 and later A04/A05 campaigns. **Do not attribute all historical runs to the current environment.** Each registry row has environment/source provenance fields; limitations are disclosed in the manuscript.
+The 455 frozen results retain mixed historical execution environments; none are retrospectively assigned to A24. Source/run bindings remain in the canonical 455-row registry. Original 8-GB memory failures are historical observations, not proof of a 24-GB failure.
 
-| Campaign | Environment evidence | Interpretation |
-|---|---|---|
-| Historical Round5 | Archived freeze in `archive/benchmark/provenance/` & evidence ZIP | Historical Python 3.12 / PyTorch 2.5.1 era; some records are inventory matched, not run bound |
-| A03 | `environment/locks/benchmark-a03-cuda.lock.txt` | CUDA 13.0 development and qualification |
-| A04/A05 | `environment/locks/benchmark-a04-cuda.lock.txt` and `.hashed.txt` | WSL2 Ubuntu 26.04, Python 3.14.4, PyTorch 2.14.1+cu130, CUDA 13.0, PyG 2.8.0.post1, PyGOD 1.1.0; use per-run evidence for exact attribution |
+A24 ran in `.venv_cuda` on WSL2 Ubuntu 26.04, Python 3.14.4, PyTorch 2.14.1+cu130, CUDA 13.0, PyG 2.8.0.post1 and PyGOD 1.1.0. RTX3090 UUID GPU-ab53069a-3217-ee09-80f8-748b5fdbd156 was selected explicitly. Full versions and source hashes: [environment_a24.json](supplementary/a24/environment_a24.json). The shared environment lock is preserved. Supplementary PyOD 3.6.7, numba 0.68.1 and llvmlite 0.50.0 were installed in ignored `local_storage/benchmark/a24/deps`, without changing the shared virtual environment. Add that directory to PYTHONPATH when reproducing the feature-only script, or install the recorded packages into an isolated environment.
 
-The active local virtual environment is `/mnt/d/_work/goat_bank/.venv_cuda`; it is outside this Git checkout and is not assumed by CI. Fast archive verification uses standard Python. Paper regeneration requires SciPy. Full training additionally requires CUDA, PyTorch/PyG/PyGOD and separately acquired graphs. The exact package inventory is bundled in the A05/A06 evidence ZIP.
+Integrity and scalar replay need standard Python only; full statistics need NumPy/SciPy and full model runs require PyTorch/PyG/PyGOD plus provider data. Source-bundle PDF builds need TeX Live/latexmk and private A24 source inputs. Memory/timing measurements use synchronized GPU calls and separate allocated/reserved peaks; no speedup is attributed solely to VRAM or compared as a controlled RTX4070/3090 experiment. Hardware clock notes from earlier campaigns are historical user reports, not a measured current clock guarantee.
