@@ -8,7 +8,7 @@ Comprehensive build verification of both venue source packages.
 - **Main Output**: `preprint_main.pdf` -> `preprint_article.pdf`
 - **Page Count**: **21 pages** (includes expanded Section 2 Related Work, Section 3 Figure 1, and complete references)
 - **Exit Code**: `0 (SUCCESS)`
-- **SHA-256**: `dd4a532b917262fa59636d37914cd6ceb9c847982fc920aa53f417975a67c17d`
+- **SHA-256**: `e36c271709a8db831125bd21f0b97b693b2e9d8de393f65c2e8829d5c0f27948`
 - **Undefined References**: `0`
 - **Undefined Citations**: `0`
 
@@ -18,7 +18,7 @@ Comprehensive build verification of both venue source packages.
 - **Main Output**: `applsci_article.pdf`
 - **Page Count**: **19 pages** (compact 2-column MDPI layout)
 - **Exit Code**: `0 (SUCCESS)`
-- **SHA-256**: `ad0f9b8d62353dcb69355a5013a38329b5fd3e38062e760cba5fe48cedbfde6c`
+- **SHA-256**: `09d1db5cd68c9f68fa7e1d83a9dde2324d43b1048eabd35cc2edb7c9383a8dbf`
 - **Undefined References**: `0`
 - **Undefined Citations**: `0`
 

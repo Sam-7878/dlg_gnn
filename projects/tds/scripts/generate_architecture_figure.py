@@ -1,185 +1,179 @@
 #!/usr/bin/env python3
 """Generate publication-quality architecture and methodology overview figure for TDS manuscript.
+Clean, perfectly row/column-aligned grid layout with non-overlapping boxes and neat arrows.
 Outputs:
   - fig_tds_architecture.pdf
   - fig_tds_architecture.png
 """
-import sys
 from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
-print("Starting architecture figure generation...", flush=True)
+print("Starting clean grid-aligned architecture figure generation...", flush=True)
 
-fig, ax = plt.subplots(figsize=(11.0, 5.6), dpi=300)
-ax.set_xlim(0, 105)
-ax.set_ylim(0, 52)
+# Set figure size and resolution
+fig, ax = plt.subplots(figsize=(11.8, 5.6), dpi=300)
+ax.set_xlim(0, 100)
+ax.set_ylim(0, 50)
 ax.axis('off')
 
-# Style definitions
-box_data = dict(boxstyle='round,pad=0.45', facecolor='#eef2f7', edgecolor='#243b53', linewidth=1.4)
-box_filter = dict(boxstyle='round,pad=0.45', facecolor='#e0f2fe', edgecolor='#0369a1', linewidth=1.4)
-box_graph = dict(boxstyle='round,pad=0.45', facecolor='#ecfdf5', edgecolor='#047857', linewidth=1.4)
-box_tab = dict(boxstyle='round,pad=0.45', facecolor='#fef3c7', edgecolor='#b45309', linewidth=1.4)
-box_gnn = dict(boxstyle='round,pad=0.45', facecolor='#f3e8ff', edgecolor='#6b21a8', linewidth=1.4)
-box_size = dict(boxstyle='round,pad=0.45', facecolor='#fae8ff', edgecolor='#a21caf', linewidth=1.4)
-box_base = dict(boxstyle='round,pad=0.45', facecolor='#fff7ed', edgecolor='#c2410c', linewidth=1.4)
-box_eval = dict(boxstyle='round,pad=0.45', facecolor='#f1f5f9', edgecolor='#334155', linewidth=1.4)
-box_out = dict(boxstyle='round,pad=0.45', facecolor='#fee2e2', edgecolor='#b91c1c', linewidth=1.4)
+# Style definitions (Preserving user-favored pastel color palette)
+box_styles = {
+    'data':   dict(facecolor='#eef2f7', edgecolor='#243b53', linewidth=1.3),
+    'filter': dict(facecolor='#e0f2fe', edgecolor='#0369a1', linewidth=1.3),
+    'graph':  dict(facecolor='#ecfdf5', edgecolor='#047857', linewidth=1.3),
+    'tab':    dict(facecolor='#fef3c7', edgecolor='#b45309', linewidth=1.3),
+    'gnn0':   dict(facecolor='#f3e8ff', edgecolor='#6b21a8', linewidth=1.3),
+    'size':   dict(facecolor='#fae8ff', edgecolor='#a21caf', linewidth=1.3),
+    'base':   dict(facecolor='#fff7ed', edgecolor='#c2410c', linewidth=1.3),
+    'cal':    dict(facecolor='#f1f5f9', edgecolor='#334155', linewidth=1.3),
+    'audit':  dict(facecolor='#f1f5f9', edgecolor='#334155', linewidth=1.3),
+    'out':    dict(facecolor='#fee2e2', edgecolor='#b91c1c', linewidth=1.4),
+}
 
-# Section Headers (Top stage indicators)
-ax.text(12, 50, "Phase 1: Ingestion & Observation", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#1e3a8a')
-ax.text(37, 50, "Phase 2: Dual Representations", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#065f46')
-ax.text(65, 50, "Phase 3: Controlled Architectures", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#6b21a8')
-ax.text(93, 50, "Phase 4: Audit & Calibration", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#991b1b')
+# -------------------------------------------------------------
+# 1. Phase Headers: 2-line layout to prevent any overlapping
+# -------------------------------------------------------------
+# Col 1: cx = 12.5
+ax.text(12.5, 46.2, "Phase 1", ha='center', va='center', fontsize=9.2, fontweight='bold', color='#1e3a8a')
+ax.text(12.5, 44.2, "Ingestion & Observation", ha='center', va='center', fontsize=8.2, color='#1e3a8a')
 
-# Dividing dashed lines between phases
-for x in [24.5, 49.5, 80.5]:
-    ax.axvline(x, ymin=0.03, ymax=0.92, color='#cbd5e1', linestyle='--', linewidth=1.2)
+# Col 2: cx = 36.5
+ax.text(36.5, 46.2, "Phase 2", ha='center', va='center', fontsize=9.2, fontweight='bold', color='#065f46')
+ax.text(36.5, 44.2, "Dual Representations", ha='center', va='center', fontsize=8.2, color='#065f46')
 
-# ==========================================
-# PHASE 1: Data Ingestion & Time Filtering
-# ==========================================
-p1_text = (
-    "Multi-Chain Token Streams\n"
-    "• Ethereum (14,464 contracts)\n"
-    "• BSC (7,499 contracts)\n"
-    "• Polygon (2,353 contracts)\n"
-    "268,282,924 Source Transfers"
-)
-ax.text(12, 38.5, p1_text, ha='center', va='center', bbox=box_data, fontsize=8.0)
+# Col 3: cx = 61.2
+ax.text(61.2, 46.2, "Phase 3", ha='center', va='center', fontsize=9.2, fontweight='bold', color='#6b21a8')
+ax.text(61.2, 44.2, "Controlled Architectures", ha='center', va='center', fontsize=8.2, color='#6b21a8')
 
-p1_split = (
-    "Cutoff Filter: $t_e \\leq t_i$\n"
-    "[Cohort A: Full-Archive]\n"
-    "Cutoff $t_i = l_i$ (Last Transfer)\n"
-    "Test: 2.93% Positive (n=3,648)\n"
-    "-------------------------\n"
-    "[Cohort B: 7-Day Horizon]\n"
-    "Cutoff $t_i = f_i + 7d$\n"
-    "Test: 56.16% Positive (n=3,627)"
-)
-ax.text(12, 17.5, p1_split, ha='center', va='center', bbox=box_filter, fontsize=7.8)
+# Col 4: cx = 86.5
+ax.text(86.5, 46.2, "Phase 4", ha='center', va='center', fontsize=9.2, fontweight='bold', color='#991b1b')
+ax.text(86.5, 44.2, "Calibration & Audit", ha='center', va='center', fontsize=8.2, color='#991b1b')
 
-# ==========================================
-# PHASE 2: Dual-Track Representation
-# ==========================================
-p2_graph = (
-    "Graph Representation\n"
-    "• Topology E: Last 128 transfers\n"
-    "• Node Features: x_v in R^3\n"
-    "  [log(1+d_in), log(1+d_out), log(1+d_tot)]\n"
-    "• Preserves exact event order"
-)
-ax.text(37, 36.5, p2_graph, ha='center', va='center', bbox=box_graph, fontsize=7.8)
+# Dividing dashed vertical lines between phases
+for x in [24.5, 48.5, 74.0]:
+    ax.axvline(x, ymin=0.04, ymax=0.91, color='#cbd5e1', linestyle='--', linewidth=1.1)
 
-p2_tab = (
-    "Tabular Degree Summary\n"
-    "• 24 Summary Features:\n"
-    "  - Size: |V|, |E|, Directed Density\n"
-    "  - In/Out/Total Deg (mean, med, max)\n"
-    "  - History In/Out/Total (mean, med, max)\n"
-    "  - One-hot Chain Indicator"
-)
-ax.text(37, 16.5, p2_tab, ha='center', va='center', bbox=box_tab, fontsize=7.8)
+# Helper function to draw standardized boxes
+def draw_card(cx, cy, w, h, style_key, title, bullets, title_bold=True, title_color='#0f172a'):
+    rect = patches.FancyBboxPatch(
+        (cx - w/2, cy - h/2), w, h,
+        boxstyle="round,pad=0.3,rounding_size=1.0",
+        facecolor=box_styles[style_key]['facecolor'],
+        edgecolor=box_styles[style_key]['edgecolor'],
+        linewidth=box_styles[style_key]['linewidth']
+    )
+    ax.add_patch(rect)
+    
+    # Text inside card
+    card_text = f"\\textbf{{{title}}}\n" if title_bold else f"{title}\n"
+    # Format bullets
+    full_text = title + "\n" + "\n".join(bullets)
+    ax.text(cx, cy, full_text, ha='center', va='center', fontsize=7.8, color='#1e293b', linespacing=1.28)
 
-# ==========================================
-# PHASE 3: Controlled Architectures
-# ==========================================
-p3_gin0 = (
-    "Standard GNN (GIN-0)\n"
-    "• 2-Layer GIN (width 48)\n"
-    "• Mean--Max Readout\n"
-    "• Head: Chain one-hot only\n"
-    "--> AP: 0.6418 (lacks count scale)"
-)
-ax.text(65, 41.0, p3_gin0, ha='center', va='center', bbox=box_gnn, fontsize=7.7)
+# -------------------------------------------------------------
+# 2. Card Placement on Fixed 3-Row Grid
+# Row 1: cy = 34.0, h = 9.2
+# Row 2: cy = 21.5, h = 9.2
+# Row 3: cy =  9.0, h = 9.2
+# -------------------------------------------------------------
 
-p3_ginsize = (
-    "Size-Augmented GNNs\n"
-    "• GIN-size: Explicit Size in Head\n"
-    "  [h_G || log(1+|V|) || log(1+|E|)]\n"
-    "  --> AP: 0.9445 (+0.3027)\n"
-    "• GIN-sum: Sum-pooling readout\n"
-    "  --> AP: 0.9529 (+0.3111)"
-)
-ax.text(65, 27.5, p3_ginsize, ha='center', va='center', bbox=box_size, fontsize=7.7)
+# Phase 1
+draw_card(12.5, 34.0, 20.0, 9.2, 'data',
+          "Multi-Chain Ingestion",
+          ["• Ethereum, BSC, Polygon", "• 268M+ transfer rows"])
 
-p3_base = (
-    "Tabular & Linear Controls\n"
-    "• Summary MLP (24 feats) --> AP: 0.9582\n"
-    "• LightGBM (Val-selected) --> AP: 0.9632\n"
-    "• Retained-Node LR --> AP: 0.8943\n"
-    "• Isolation Forest --> AP: 0.6068"
-)
-ax.text(65, 12.0, p3_base, ha='center', va='center', bbox=box_base, fontsize=7.7)
+draw_card(12.5, 21.5, 20.0, 9.2, 'filter',
+          "Cutoff Windowing ($t_e \\leq t_i$)",
+          ["• Full-Archive: $t_i = l_i$", "• 7-Day Horizon: $t_i = f_i + 7\\mathrm{d}$"])
 
-# ==========================================
-# PHASE 4: Audit, Calibration & Decision
-# ==========================================
-p4_cal = (
-    "Probability Calibration\n"
-    "• Validation-only scalar T\n"
-    "  sigma(logit(p) / T)\n"
-    "• Preserves rank ordering\n"
-    "• Held-out loss can worsen\n"
-    "  (LightGBM NLL 0.304 --> 0.305)"
-)
-ax.text(93, 39.5, p4_cal, ha='center', va='center', bbox=box_eval, fontsize=7.7)
+# Phase 2
+draw_card(36.5, 34.0, 20.0, 9.2, 'graph',
+          "Graph Topology $\\mathcal{E}$",
+          ["• 128 recent event edges", "• In, Out, Total degrees"])
 
-p4_audit = (
-    "Diagnostic & Audit Rigor\n"
-    "• Observed span L_i = l_i - f_i\n"
-    "  Full oracle: AP 0.9464 (future)\n"
-    "• L >= 7d continuation subset:\n"
-    "  19.65% positive, MLP AP 0.5834\n"
-    "• Chain Alert Budgets (top 100):\n"
-    "  Eth: 1,800 / BSC: 226 / Poly: 11"
-)
-ax.text(93, 23.5, p4_audit, ha='center', va='center', bbox=box_eval, fontsize=7.7)
+draw_card(36.5, 9.0, 20.0, 9.2, 'tab',
+          "24-Dim Tabular Summary",
+          ["• Explicit size: $|V|, |E|$, density", "• Degree moments & chain"])
 
-p4_out = (
-    "Auditable Output Gate\n"
-    "Decision Checklist & Protocol\n"
-    "Strict separation: architecture\n"
-    "vs. explicit size representation"
-)
-ax.text(93, 8.5, p4_out, ha='center', va='center', bbox=box_out, fontsize=8.0, fontweight='bold')
+# Phase 3
+draw_card(61.2, 34.0, 22.0, 9.2, 'gnn0',
+          "Standard GNN (GIN-0)",
+          ["• 2-layer GIN (Mean--Max)", "• No explicit size $\\rightarrow$ AP: 0.6418"])
 
-# Connecting Arrows
+draw_card(61.2, 21.5, 22.0, 9.2, 'size',
+          "Size-Augmented GNNs",
+          ["• GIN-size (Explicit size) $\\rightarrow$ AP: 0.9445", "• GIN-sum (Sum readout) $\\rightarrow$ AP: 0.9529"])
+
+draw_card(61.2, 9.0, 22.0, 9.2, 'base',
+          "Tabular & Linear Controls",
+          ["• Summary MLP $\\rightarrow$ AP: 0.9582", "• LightGBM $\\rightarrow$ AP: 0.9632", "• Retained-Node LR $\\rightarrow$ AP: 0.8943"])
+
+# Phase 4
+draw_card(86.5, 34.0, 22.0, 9.2, 'cal',
+          "Probability Calibration",
+          ["• Validation-only scalar $T$", "• Preserves rank; checks NLL"])
+
+draw_card(86.5, 21.5, 22.0, 9.2, 'audit',
+          "Observed-Span Diagnostics",
+          ["• Full oracle $L$: AP 0.9464", "• $L \\geq 7\\mathrm{d}$ subset: AP 0.5834"])
+
+draw_card(86.5, 9.0, 22.0, 9.2, 'out',
+          "Auditable Output Gate",
+          ["• Validity Decision Protocol", "• Disentangles GNN vs. Size"])
+
+# -------------------------------------------------------------
+# 3. Neat, Aligned, Orthogonal & Orderly Arrows
+# -------------------------------------------------------------
 arrow_kw = dict(arrowstyle='->', lw=1.3, color='#334155')
 
-# P1 -> P2
-ax.annotate('', xy=(27, 36.5), xytext=(21.5, 38.5), arrowprops=arrow_kw)
-ax.annotate('', xy=(27, 16.5), xytext=(21.5, 17.5), arrowprops=arrow_kw)
-ax.annotate('', xy=(12, 26.5), xytext=(12, 30.5), arrowprops=arrow_kw)
+# Phase 1: Ingestion -> Cutoff Filter (Straight vertical)
+ax.annotate('', xy=(12.5, 26.5), xytext=(12.5, 29.0), arrowprops=arrow_kw)
 
-# P2 -> P3
-ax.annotate('', xy=(52, 41.0), xytext=(47.5, 37.0), arrowprops=arrow_kw)
-ax.annotate('', xy=(52, 28.5), xytext=(47.5, 35.0), arrowprops=arrow_kw)
-ax.annotate('', xy=(52, 26.5), xytext=(47.5, 18.0), arrowprops=arrow_kw)
-ax.annotate('', xy=(52, 13.0), xytext=(47.5, 16.0), arrowprops=arrow_kw)
+# Phase 1 Filter -> Phase 2 Dual Representations (Clean diagonal divergence)
+ax.annotate('', xy=(26.2, 33.0), xytext=(22.8, 23.5), arrowprops=arrow_kw)
+ax.annotate('', xy=(26.2, 10.0), xytext=(22.8, 19.5), arrowprops=arrow_kw)
 
-# P3 -> P4
-ax.annotate('', xy=(82.5, 39.5), xytext=(78.5, 39.5), arrowprops=arrow_kw)
-ax.annotate('', xy=(82.5, 27.5), xytext=(78.5, 27.5), arrowprops=arrow_kw)
-ax.annotate('', xy=(82.5, 15.0), xytext=(78.5, 14.0), arrowprops=arrow_kw)
-ax.annotate('', xy=(93, 14.0), xytext=(93, 17.0), arrowprops=arrow_kw)
+# Phase 2 -> Phase 3 Model Architectures
+# Graph -> GIN-0 (Perfect horizontal line at y=34.0)
+ax.annotate('', xy=(49.8, 34.0), xytext=(46.8, 34.0), arrowprops=arrow_kw)
+
+# Graph & Tabular -> Size-Augmented GNNs (Clean diagonal convergence to y=21.5)
+ax.annotate('', xy=(49.8, 23.0), xytext=(46.8, 31.5), arrowprops=arrow_kw)
+ax.annotate('', xy=(49.8, 20.0), xytext=(46.8, 11.5), arrowprops=arrow_kw)
+
+# Tabular -> Tabular Controls (Perfect horizontal line at y=9.0)
+ax.annotate('', xy=(49.8, 9.0), xytext=(46.8, 9.0), arrowprops=arrow_kw)
+
+# Phase 3 -> Phase 4 Calibration & Audit (All 3 Rows: Perfect horizontal lines)
+# Row 1: GIN-0 -> Calibration (y=34.0)
+ax.annotate('', xy=(75.1, 34.0), xytext=(72.5, 34.0), arrowprops=arrow_kw)
+
+# Row 2: Size-GNN -> Diagnostics (y=21.5)
+ax.annotate('', xy=(75.1, 21.5), xytext=(72.5, 21.5), arrowprops=arrow_kw)
+
+# Row 3: Tabular Controls -> Output Gate (y=9.0)
+ax.annotate('', xy=(75.1, 9.0), xytext=(72.5, 9.0), arrowprops=arrow_kw)
+
+# Phase 4 Internal Vertical flow (Straight vertical down to Output Gate)
+ax.annotate('', xy=(86.5, 26.5), xytext=(86.5, 29.0), arrowprops=arrow_kw)
+ax.annotate('', xy=(86.5, 14.0), xytext=(86.5, 16.5), arrowprops=arrow_kw)
 
 # Overall Title
 ax.set_title("Overview of Temporal-Admissible Contract Screening, Controlled Architectures, and Audit Framework",
-             pad=12, fontsize=11, fontweight='bold', color='#0f172a')
+             pad=10, fontsize=10.5, fontweight='bold', color='#0f172a')
 
 # Output paths
 root = Path('/mnt/d/_Work/goat_bank/dlg_gnn')
 out_paths = [
     root / 'projects/tds/results/319/figures/fig_tds_architecture.pdf',
     root / 'projects/tds/results/319/figures/fig_tds_architecture.png',
-    root / 'projects/tds/paper/submission_319/preprints/figures/fig_tds_architecture.pdf',
-    root / 'projects/tds/paper/submission_319/preprints/figures/fig_tds_architecture.png',
-    root / 'projects/tds/paper/submission_319/mdpi_applsci_anomaly/figures/fig_tds_architecture.pdf',
-    root / 'projects/tds/paper/submission_319/mdpi_applsci_anomaly/figures/fig_tds_architecture.png',
+    root / 'projects/tds/paper/submission_320/preprints/figures/fig_tds_architecture.pdf',
+    root / 'projects/tds/paper/submission_320/preprints/figures/fig_tds_architecture.png',
+    root / 'projects/tds/paper/submission_320/mdpi_applsci_anomaly/figures/fig_tds_architecture.pdf',
+    root / 'projects/tds/paper/submission_320/mdpi_applsci_anomaly/figures/fig_tds_architecture.png',
 ]
 
 for p in out_paths:
@@ -191,4 +185,4 @@ for p in out_paths:
     print(f'Saved: {p}', flush=True)
 
 plt.close(fig)
-print('All architecture figures successfully generated.', flush=True)
+print('Grid-aligned architecture figure successfully generated.', flush=True)

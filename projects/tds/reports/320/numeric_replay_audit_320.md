@@ -5,11 +5,11 @@ Independent verification performed on frozen raw scores and logs located in `pro
 ## 1. Cohort and Test Sample Support
 - **7-Day Test Total Samples**: $N = 3,627$
 - **Positive Count**: $2,037$
-- **Positive Prevalence**: $56.1627\%$ (matches reported 56.16%)
+- **Positive Prevalence**: 56.1627% (matches reported 56.16%)
 - **Chain Breakdown**:
-  - Ethereum: $n = 2,637$, positives $= 1,800$ (prevalence $68.26\%$)
-  - BSC: $n = 818$, positives $= 226$ (prevalence $27.63\%$)
-  - Polygon: $n = 172$, positives $= 11$ (prevalence $6.40\%$)
+  - Ethereum: $n = 2,637$, positives $= 1,800$ (prevalence 68.26%)
+  - BSC: $n = 818$, positives $= 226$ (prevalence 27.63%)
+  - Polygon: $n = 172$, positives $= 11$ (prevalence 6.40%)
 - **Audit Outcome**: 100% match.
 
 ## 2. Model Performance on 7-Day Cohort (5-seed Means)

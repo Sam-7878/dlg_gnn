@@ -3,8 +3,8 @@
   "venue": "Preprints.org",
   "article": {
     "path": "projects/tds/submission/preprints/320/preprint_article.pdf",
-    "bytes": 403961,
-    "sha256": "dd4a532b917262fa59636d37914cd6ceb9c847982fc920aa53f417975a67c17d"
+    "bytes": 400171,
+    "sha256": "e36c271709a8db831125bd21f0b97b693b2e9d8de393f65c2e8829d5c0f27948"
   },
   "supplement": {
     "path": "projects/tds/submission/preprints/320/supplement.pdf",
@@ -13,8 +13,8 @@
   },
   "source": {
     "path": "projects/tds/submission/preprints/320/preprint_source.zip",
-    "bytes": 141382,
-    "sha256": "320553c32eb8db53141b6027563cbde25f9bc79ff88ccbe3a76f5c9d3431f4f1"
+    "bytes": 137763,
+    "sha256": "f660bb1e9570981c788dfec0da19a339969f6a30a00e97beea5a040fb843ee07"
   },
   "authors": [
     {

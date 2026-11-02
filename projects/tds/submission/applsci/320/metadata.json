@@ -4,8 +4,8 @@
   "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt",
   "article": {
     "path": "projects/tds/submission/applsci/320/applsci_article.pdf",
-    "bytes": 347114,
-    "sha256": "ad0f9b8d62353dcb69355a5013a38329b5fd3e38062e760cba5fe48cedbfde6c"
+    "bytes": 343154,
+    "sha256": "09d1db5cd68c9f68fa7e1d83a9dde2324d43b1048eabd35cc2edb7c9383a8dbf"
   },
   "supplement": {
     "path": "projects/tds/submission/applsci/320/supplement.pdf",
@@ -14,8 +14,8 @@
   },
   "source": {
     "path": "projects/tds/submission/applsci/320/mdpi_source.zip",
-    "bytes": 1177230,
-    "sha256": "65779799829caa7e10127e7309c59c1d0ffc636c78cfe845f2234bc29f8daccd"
+    "bytes": 1173609,
+    "sha256": "d50440a003c10ef0bc405922c7726e49bbfea5005cf3d946327becbf3ead840d"
   },
   "authors": [
     {

@@ -12,8 +12,8 @@
   "artifacts": {
     "preprints": {
       "preprint_article.pdf": {
-        "sha256": "dd4a532b917262fa59636d37914cd6ceb9c847982fc920aa53f417975a67c17d",
-        "bytes": 403961,
+        "sha256": "e36c271709a8db831125bd21f0b97b693b2e9d8de393f65c2e8829d5c0f27948",
+        "bytes": 400171,
         "path": "projects/tds/submission/preprints/320/preprint_article.pdf"
       },
       "supplement.pdf": {
@@ -22,15 +22,15 @@
         "path": "projects/tds/submission/preprints/320/supplement.pdf"
       },
       "preprint_source.zip": {
-        "sha256": "320553c32eb8db53141b6027563cbde25f9bc79ff88ccbe3a76f5c9d3431f4f1",
-        "bytes": 141382,
+        "sha256": "f660bb1e9570981c788dfec0da19a339969f6a30a00e97beea5a040fb843ee07",
+        "bytes": 137763,
         "path": "projects/tds/submission/preprints/320/preprint_source.zip"
       }
     },
     "applsci": {
       "applsci_article.pdf": {
-        "sha256": "ad0f9b8d62353dcb69355a5013a38329b5fd3e38062e760cba5fe48cedbfde6c",
-        "bytes": 347114,
+        "sha256": "09d1db5cd68c9f68fa7e1d83a9dde2324d43b1048eabd35cc2edb7c9383a8dbf",
+        "bytes": 343154,
         "path": "projects/tds/submission/applsci/320/applsci_article.pdf"
       },
       "supplement.pdf": {
@@ -39,8 +39,8 @@
         "path": "projects/tds/submission/applsci/320/supplement.pdf"
       },
       "mdpi_source.zip": {
-        "sha256": "65779799829caa7e10127e7309c59c1d0ffc636c78cfe845f2234bc29f8daccd",
-        "bytes": 1177230,
+        "sha256": "d50440a003c10ef0bc405922c7726e49bbfea5005cf3d946327becbf3ead840d",
+        "bytes": 1173609,
         "path": "projects/tds/submission/applsci/320/mdpi_source.zip"
       }
     }

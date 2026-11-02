@@ -27,11 +27,19 @@ for d in [PRE_OUT, MDPI_OUT, AUTH_OUT, REPORTS_OUT]:
 def sha256_file(p: Path) -> str:
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
+def safe_copy(src: Path, dst: Path):
+    try:
+        shutil.copy2(src, dst)
+    except PermissionError:
+        alt = dst.parent / f"{dst.stem}_new{dst.suffix}"
+        shutil.copy2(src, alt)
+        print(f"NOTE: {dst.name} is open in a viewer. Saved updated version to {alt.name}.", flush=True)
+
 print("=== 1. Copying PDFs and creating clean source ZIPs ===")
 
 # Copy Preprints PDFs
-shutil.copy2(SUB320_BUILD / 'preprints/preprint_main.pdf', PRE_OUT / 'preprint_article.pdf')
-shutil.copy2(SUB320_BUILD / 'preprints/supplement/supplement317.pdf', PRE_OUT / 'supplement.pdf')
+safe_copy(SUB320_BUILD / 'preprints/preprint_main.pdf', PRE_OUT / 'preprint_article.pdf')
+safe_copy(SUB320_BUILD / 'preprints/supplement/supplement317.pdf', PRE_OUT / 'supplement.pdf')
 
 # Create Preprints source ZIP
 pre_zip_path = PRE_OUT / 'preprint_source.zip'
@@ -48,8 +56,8 @@ with zipfile.ZipFile(pre_zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
     zf.write(pre_dir / 'supplement/supplement317.tex', 'supplement/supplement317.tex')
 
 # Copy MDPI PDFs
-shutil.copy2(SUB320_BUILD / 'mdpi_applsci_anomaly/applsci_article.pdf', MDPI_OUT / 'applsci_article.pdf')
-shutil.copy2(SUB320_BUILD / 'mdpi_applsci_anomaly/supplement/supplement317.pdf', MDPI_OUT / 'supplement.pdf')
+safe_copy(SUB320_BUILD / 'mdpi_applsci_anomaly/applsci_article.pdf', MDPI_OUT / 'applsci_article.pdf')
+safe_copy(SUB320_BUILD / 'mdpi_applsci_anomaly/supplement/supplement317.pdf', MDPI_OUT / 'supplement.pdf')
 
 # Create MDPI source ZIP
 mdpi_zip_path = MDPI_OUT / 'mdpi_source.zip'
@@ -416,11 +424,11 @@ Independent verification performed on frozen raw scores and logs located in `pro
 ## 1. Cohort and Test Sample Support
 - **7-Day Test Total Samples**: $N = 3,627$
 - **Positive Count**: $2,037$
-- **Positive Prevalence**: $56.1627\%$ (matches reported 56.16%)
+- **Positive Prevalence**: 56.1627% (matches reported 56.16%)
 - **Chain Breakdown**:
-  - Ethereum: $n = 2,637$, positives $= 1,800$ (prevalence $68.26\%$)
-  - BSC: $n = 818$, positives $= 226$ (prevalence $27.63\%$)
-  - Polygon: $n = 172$, positives $= 11$ (prevalence $6.40\%$)
+  - Ethereum: $n = 2,637$, positives $= 1,800$ (prevalence 68.26%)
+  - BSC: $n = 818$, positives $= 226$ (prevalence 27.63%)
+  - Polygon: $n = 172$, positives $= 11$ (prevalence 6.40%)
 - **Audit Outcome**: 100% match.
 
 ## 2. Model Performance on 7-Day Cohort (5-seed Means)
