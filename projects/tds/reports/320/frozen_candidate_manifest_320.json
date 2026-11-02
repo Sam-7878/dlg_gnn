@@ -1,0 +1,54 @@
+{
+  "candidate_id": "FINAL_CANDIDATE_320_PUBLICATION_CLOSED",
+  "date": "2026-11-02",
+  "author_approval": "PENDING_MEETING_SIGNOFF",
+  "journal_status": "NOT_SUBMITTED",
+  "preprint_status": "NOT_POSTED",
+  "preprint_doi": null,
+  "rights": "CC_BY_NC_SA_4.0_RECONCILED",
+  "official_funding_evidence": "VERIFIED_LOCAL_HOLD_PHYSICAL_CERT",
+  "submission_permission": false,
+  "public_release_verified": false,
+  "artifacts": {
+    "preprints": {
+      "preprint_article.pdf": {
+        "sha256": "dd4a532b917262fa59636d37914cd6ceb9c847982fc920aa53f417975a67c17d",
+        "bytes": 403961,
+        "path": "projects/tds/submission/preprints/320/preprint_article.pdf"
+      },
+      "supplement.pdf": {
+        "sha256": "c574576168a8c4eab07573c936114ad601a518463104bbc06a24c5dd09ae2153",
+        "bytes": 169400,
+        "path": "projects/tds/submission/preprints/320/supplement.pdf"
+      },
+      "preprint_source.zip": {
+        "sha256": "320553c32eb8db53141b6027563cbde25f9bc79ff88ccbe3a76f5c9d3431f4f1",
+        "bytes": 141382,
+        "path": "projects/tds/submission/preprints/320/preprint_source.zip"
+      }
+    },
+    "applsci": {
+      "applsci_article.pdf": {
+        "sha256": "ad0f9b8d62353dcb69355a5013a38329b5fd3e38062e760cba5fe48cedbfde6c",
+        "bytes": 347114,
+        "path": "projects/tds/submission/applsci/320/applsci_article.pdf"
+      },
+      "supplement.pdf": {
+        "sha256": "fb78b5eb1e5a1ef1ab007ba02530d1172569c97e0e0746df6704d1b08e9a4076",
+        "bytes": 169400,
+        "path": "projects/tds/submission/applsci/320/supplement.pdf"
+      },
+      "mdpi_source.zip": {
+        "sha256": "65779799829caa7e10127e7309c59c1d0ffc636c78cfe845f2234bc29f8daccd",
+        "bytes": 1177230,
+        "path": "projects/tds/submission/applsci/320/mdpi_source.zip"
+      }
+    }
+  },
+  "science_source_sha256": {
+    "manuscript_body": "3cf4e89faf14de66eed7f536ec2cf01334feae56f5f83bb72795cc05adf7b339",
+    "references": "d177ad15f028fccf9b81a18dd11fd2ddf1e1fff6aa8b09024c26f2014219c371",
+    "declarations": "17d5133d5505d3debd1b7145021584f13103e171f615f466e8120894f7b42347"
+  },
+  "previous_candidate": "FINAL_CANDIDATE_319_SCIENTIFIC_RECONCILED"
+}

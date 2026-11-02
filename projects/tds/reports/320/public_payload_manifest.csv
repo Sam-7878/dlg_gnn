@@ -1,0 +1,11 @@
+asset_name,category,description
+projects/tds/scripts/replay_scores.py,allowed_public,"Standalone Python script to recompute AP, ROC-AUC, ECE, and tables from saved scores"
+projects/tds/results/319/seven_day_matched_models.csv,allowed_public,Modelwise evaluation metrics across 5 seeds
+projects/tds/results/319/seven_day_chain_support.csv,allowed_public,Chain-stratified support and positive prevalence counts
+projects/tds/results/319/new_statistics_319.csv,allowed_public,Bootstrap confidence intervals and Holm p-values
+projects/tds/results/319/seven_day_modelwise_calibration.csv,allowed_public,Pre- and post-temperature scaling calibration metrics
+projects/tds/results/319/single_feature_baselines.csv,allowed_public,Single-feature count and degree baselines
+projects/tds/results/319/oracle_lifetime_baselines.csv,allowed_public,Retrospective observed-span diagnostic scores
+projects/tds/results/319/lifetime_shortcut_audit.csv,allowed_public,Observed-span subgroup conditioning metrics
+projects/tds/results/319/runs/horizon7/*/model.pt,restricted_local,Trained neural checkpoints (available upon request)
+projects/tds/results/319/builder_*_comparisons.csv,restricted_local,Raw 268M transfer join tables (contains address strings; local only)

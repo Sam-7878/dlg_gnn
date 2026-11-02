@@ -1,0 +1,43 @@
+{
+  "candidate_id": "FINAL_CANDIDATE_320_PUBLICATION_CLOSED",
+  "venue": "Preprints.org",
+  "article": {
+    "path": "projects/tds/submission/preprints/320/preprint_article.pdf",
+    "bytes": 403961,
+    "sha256": "dd4a532b917262fa59636d37914cd6ceb9c847982fc920aa53f417975a67c17d"
+  },
+  "supplement": {
+    "path": "projects/tds/submission/preprints/320/supplement.pdf",
+    "bytes": 169400,
+    "sha256": "c574576168a8c4eab07573c936114ad601a518463104bbc06a24c5dd09ae2153"
+  },
+  "source": {
+    "path": "projects/tds/submission/preprints/320/preprint_source.zip",
+    "bytes": 141382,
+    "sha256": "320553c32eb8db53141b6027563cbde25f9bc79ff88ccbe3a76f5c9d3431f4f1"
+  },
+  "authors": [
+    {
+      "affiliation": "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea",
+      "corresponding": false,
+      "email": "parky@ajou.ac.kr",
+      "initials": "S.-S.P.",
+      "name": "Seong-Su Park",
+      "orcid": "0009-0008-4056-3875"
+    },
+    {
+      "affiliation": "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea",
+      "corresponding": true,
+      "email": "kkim86@ajou.ac.kr",
+      "initials": "K.-H.K.",
+      "name": "Ki-Hyung Kim",
+      "orcid": "0000-0001-6624-3003"
+    }
+  ],
+  "posted": false,
+  "preprint_doi": null,
+  "permission_to_submit": false,
+  "portal_selection_verified": false,
+  "special_issue_url": null,
+  "submitted": false
+}

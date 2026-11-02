@@ -1,0 +1,14 @@
+{
+  "scientific_evidence_pass": true,
+  "dual_build_pass": true,
+  "rights_verified": true,
+  "funding_official_proof_verified": true,
+  "exact_file_author_signoff_complete": false,
+  "permission_to_publish_preprint": false,
+  "tds_public_release_verified": false,
+  "preprint_posted": false,
+  "preprint_doi": null,
+  "permission_to_submit_mdpi": false,
+  "mdpi_submitted": false,
+  "status": "HOLD_AUTHOR_ACTION"
+}

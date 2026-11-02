@@ -1,0 +1,13 @@
+claim_id,claim_text,evidence_source,metric_value,reproducible_status
+C01,"24,316 original and 24,179 seven-day contracts reconstructed with 0 mismatch",seven_day_builder_equivalence.json,0 mismatches,PASS
+C02,Last-transfer sort yields 39.85% train / 2.93% test positive prevalence,table_sorting.tex / raw CSV,39.85% / 2.93%,PASS
+C03,First-transfer sort yields 14.79% train / 56.99% test positive prevalence,table_sorting.tex / raw CSV,14.79% / 56.99%,PASS
+C04,"Seven-day cohort has 24,179 contracts, 3,627 test, 2,037 positive (56.16%)",seven_day_chain_support.csv,56.16% (2037/3627),PASS
+C05,GIN-0 mean AP 0.6418 rises to 0.9445 with explicit size and 0.9529 with sum readout,seven_day_matched_models.csv,0.6418 -> 0.9445 -> 0.9529,PASS
+C06,"Summary MLP achieves AP 0.9582, competitive with size-augmented GNNs",seven_day_matched_models.csv,0.9582,PASS
+C07,LightGBM validation-selected grid achieves AP 0.9632,seven_day_matched_models.csv,0.9632,PASS
+C08,Single retained-node-count LR achieves AP 0.8943,single_feature_baselines.csv,0.8943,PASS
+C09,Full-archive observed span oracle achieves AP 0.9464 (retrospective future oracle),oracle_lifetime_baselines.csv,0.9464,PASS
+C10,"Day-7 continuation subset (L>=7d) has 19.65% prevalence, MLP AP drops to 0.5834",lifetime_shortcut_audit.csv,0.5834 (prevalence 19.65%),PASS
+C11,Temperature scaling worsens LightGBM test NLL from 0.3039 to 0.3054,seven_day_modelwise_calibration.csv,0.3039 -> 0.3054,PASS
+C12,"Chain positive support on 7d test is Ethereum 1,800 / BSC 226 / Polygon 11",seven_day_chain_support.csv,1800 / 226 / 11,PASS

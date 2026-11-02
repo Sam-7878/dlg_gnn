@@ -1,0 +1,43 @@
+{
+  "candidate_id": "FINAL_CANDIDATE_320_PUBLICATION_CLOSED",
+  "venue": "Applied Sciences Special Issue: Machine Learning and Its Application for Anomaly Detection",
+  "special_issue_url": "https://www.mdpi.com/journal/applsci/special_issues/c67h3u9qgt",
+  "article": {
+    "path": "projects/tds/submission/applsci/320/applsci_article.pdf",
+    "bytes": 347114,
+    "sha256": "ad0f9b8d62353dcb69355a5013a38329b5fd3e38062e760cba5fe48cedbfde6c"
+  },
+  "supplement": {
+    "path": "projects/tds/submission/applsci/320/supplement.pdf",
+    "bytes": 169400,
+    "sha256": "fb78b5eb1e5a1ef1ab007ba02530d1172569c97e0e0746df6704d1b08e9a4076"
+  },
+  "source": {
+    "path": "projects/tds/submission/applsci/320/mdpi_source.zip",
+    "bytes": 1177230,
+    "sha256": "65779799829caa7e10127e7309c59c1d0ffc636c78cfe845f2234bc29f8daccd"
+  },
+  "authors": [
+    {
+      "affiliation": "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea",
+      "corresponding": false,
+      "email": "parky@ajou.ac.kr",
+      "initials": "S.-S.P.",
+      "name": "Seong-Su Park",
+      "orcid": "0009-0008-4056-3875"
+    },
+    {
+      "affiliation": "Department of Computer Engineering, Graduate School, Ajou University, Suwon 16499, Republic of Korea",
+      "corresponding": true,
+      "email": "kkim86@ajou.ac.kr",
+      "initials": "K.-H.K.",
+      "name": "Ki-Hyung Kim",
+      "orcid": "0000-0001-6624-3003"
+    }
+  ],
+  "posted": false,
+  "preprint_doi": null,
+  "permission_to_submit": false,
+  "portal_selection_verified": false,
+  "submitted": false
+}
