@@ -1,4 +1,4 @@
-# Benchmark data acquisition and construction — A24
+# Benchmark data acquisition and construction
 
 Third-party raw datasets are not redistributed. Obtain them from the listed providers under their access/license terms; a local hash does not confer redistribution permission. Non-crypto origins below retain their historical manifest tier. All current model-input dimensions and test populations are in [dataset_graph_identity_a24.csv](publication/a24/dataset_graph_identity_a24.csv) and [split_policy_by_dataset_a24.csv](publication/a24/split_policy_by_dataset_a24.csv). Historical `outputs/benchmark/` paths resolve locally under `archive/benchmark/outputs/`.
 
@@ -8,7 +8,11 @@ Provider/code: [Cryptocurrency-Graphs-of-graphs](https://github.com/Xtra-Computi
 
 Source: `src/gog_fraud/data/crypto_raw.py`; protocol/config: `configs/benchmark/a08_crypto_clean_v1.yaml`. After provider acquisition and local path configuration, run `python projects/benchmark/scripts/a24_g1_inputs.py`. This reconstructs features/edges and verifies actual archived score hashes; full score binding requires the author's private A08 arrays. Public input manifests and 105 scalar/hash bindings are available without those arrays. The three independent raw rebuilds matched the score-bound inputs byte for byte. Label joins and seeded unstratified 60/20/20 masks are downstream from graph construction.
 
-A23 mistakenly reused old hybrid dimensions in its graph table. A24 corrects metadata; all 455 frozen metric rows and selected run IDs are unchanged. Whole-graph positive prevalence differs from mean test prevalence. Do not use old A05 hybrid tensor hashes or A16 reconciliation dimensions for current crypto inference.
+An earlier manuscript table copied dimensions from the pre-repair hybrid graph inventory. The counts changed from 14,385/115,065 to 14,464/95,098 on Ethereum, 7,481/59,832 to 7,499/48,462 on BSC, and 2,303/18,411 to 2,353/15,368 on Polygon. The score-bound input IDs are `ethereum_contract_clean_v1`, `bsc_contract_clean_v1`, and `polygon_contract_clean_v1`. The full contract population and similarity adjacency explain the corrected metadata. All 105 selected cryptocurrency score arrays already used those inputs. The audit verified all APs, source and tensor hashes, and input bindings. Whole-graph prevalence and mean test prevalence are separate values. [Input identity and score audit](publication/a26/A26_SCIENTIFIC_AUDIT.md)
+
+## Per-node score archive
+
+The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC rerun vectors (all seven configurations), and five DGraphFin AnomalyDAE rerun vectors. A further 113 vectors belong to separate supplementary studies and resource checks. The 310 other selected runs across ten datasets have no retained per-node arrays. Dataset terms and reviewer access are described in the [A26 access record](publication/a26/A26_EVIDENCE_ACCESS.md).
 
 ## Elliptic
 - Upstream landing/provider: https://www.kaggle.com/datasets/ellipticco/elliptic-data-set

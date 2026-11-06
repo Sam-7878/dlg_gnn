@@ -1,0 +1,513 @@
+{
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "views": [
+    {
+      "view": "S1",
+      "datasets": [
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Amazon-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "AnomalyDAE",
+        "CoLA",
+        "GADNR",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "n": 8,
+      "k": 7,
+      "Q": 29.035714285714278,
+      "W": 0.6049107142857141,
+      "ties": 0,
+      "correction": 1.0,
+      "doubled_ranks": [
+        [
+          2,
+          10,
+          12,
+          8,
+          14,
+          4,
+          6
+        ],
+        [
+          12,
+          8,
+          14,
+          10,
+          2,
+          6,
+          4
+        ],
+        [
+          8,
+          2,
+          14,
+          12,
+          10,
+          6,
+          4
+        ],
+        [
+          4,
+          2,
+          14,
+          12,
+          10,
+          6,
+          8
+        ],
+        [
+          6,
+          2,
+          10,
+          12,
+          14,
+          8,
+          4
+        ],
+        [
+          4,
+          8,
+          14,
+          10,
+          12,
+          2,
+          6
+        ],
+        [
+          6,
+          8,
+          12,
+          10,
+          14,
+          2,
+          4
+        ],
+        [
+          6,
+          2,
+          12,
+          10,
+          14,
+          4,
+          8
+        ]
+      ],
+      "original_b": 3,
+      "independent_b": 0,
+      "draws": 1000000,
+      "seed": 20261024,
+      "MC_p": 3.999996000004e-06,
+      "independent_p": 9.99999000001e-07,
+      "chi2_p": 5.9897409765493976e-05,
+      "ratio": 14.974367415725935,
+      "ID_F": 10.717514124293778,
+      "ID_p": 3.3330682230967066e-07,
+      "MC_tail_CI95": {
+        "original": [
+          6.186725501906401e-07,
+          8.767247788067677e-06
+        ],
+        "independent": [
+          0.0,
+          3.688872650206488e-06
+        ]
+      },
+      "exact_exceedances": 124255729032510633885,
+      "exact_null_assignments": 82606411253903523840000000,
+      "exact_p": 1.5041898945421018e-06,
+      "chi2_over_exact": 39.82037772147622,
+      "exact_within_both_separate_MC_tail_CI95": true
+    },
+    {
+      "view": "S2",
+      "datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon",
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "n": 13,
+      "k": 5,
+      "Q": 23.753846153846155,
+      "W": 0.45680473372781066,
+      "ties": 0,
+      "correction": 1.0,
+      "doubled_ranks": [
+        [
+          8,
+          4,
+          10,
+          6,
+          2
+        ],
+        [
+          8,
+          4,
+          6,
+          10,
+          2
+        ],
+        [
+          2,
+          8,
+          10,
+          4,
+          6
+        ],
+        [
+          8,
+          10,
+          2,
+          6,
+          4
+        ],
+        [
+          6,
+          10,
+          8,
+          4,
+          2
+        ],
+        [
+          2,
+          10,
+          8,
+          4,
+          6
+        ],
+        [
+          6,
+          8,
+          10,
+          4,
+          2
+        ],
+        [
+          4,
+          8,
+          10,
+          6,
+          2
+        ],
+        [
+          2,
+          8,
+          10,
+          4,
+          6
+        ],
+        [
+          2,
+          8,
+          10,
+          6,
+          4
+        ],
+        [
+          4,
+          10,
+          8,
+          2,
+          6
+        ],
+        [
+          6,
+          8,
+          10,
+          2,
+          4
+        ],
+        [
+          4,
+          8,
+          10,
+          2,
+          6
+        ]
+      ],
+      "original_b": 20,
+      "independent_b": 17,
+      "draws": 1000000,
+      "seed": 20261024,
+      "MC_p": 2.0999979000021e-05,
+      "independent_p": 1.7999982000018e-05,
+      "chi2_p": 8.948081829951442e-05,
+      "ratio": 4.2609956085872716,
+      "ID_F": 10.091503267973858,
+      "ID_p": 5.209486605204772e-06,
+      "MC_tail_CI95": {
+        "original": [
+          1.2216561020974466e-05,
+          3.088820974043738e-05
+        ],
+        "independent": [
+          9.90315665885742e-06,
+          2.721850774684384e-05
+        ]
+      },
+      "exact_exceedances": 128550002279805893073,
+      "exact_null_assignments": 8916100448256000000000000,
+      "exact_p": 1.4417738228257671e-05,
+      "chi2_over_exact": 6.20630066123262,
+      "exact_within_both_separate_MC_tail_CI95": true
+    },
+    {
+      "view": "S3",
+      "datasets": [
+        "Elliptic",
+        "DGraphFin",
+        "BitcoinOTC",
+        "Ethereum",
+        "BSC",
+        "Polygon"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "n": 6,
+      "k": 5,
+      "Q": 6.13333333333334,
+      "W": 0.2555555555555558,
+      "ties": 0,
+      "correction": 1.0,
+      "doubled_ranks": [
+        [
+          8,
+          4,
+          10,
+          6,
+          2
+        ],
+        [
+          8,
+          4,
+          6,
+          10,
+          2
+        ],
+        [
+          2,
+          8,
+          10,
+          4,
+          6
+        ],
+        [
+          8,
+          10,
+          2,
+          6,
+          4
+        ],
+        [
+          6,
+          10,
+          8,
+          4,
+          2
+        ],
+        [
+          2,
+          10,
+          8,
+          4,
+          6
+        ]
+      ],
+      "original_b": 192107,
+      "independent_b": 192095,
+      "draws": 1000000,
+      "seed": 20261024,
+      "MC_p": 0.19210780789219212,
+      "independent_p": 0.1920958079041921,
+      "chi2_p": 0.18940967757102545,
+      "ratio": 0.9859551241005217,
+      "ID_F": 1.7164179104477637,
+      "ID_p": 0.18587903172309408,
+      "MC_tail_CI95": {
+        "original": [
+          0.1913352515400071,
+          0.1928805322618826
+        ],
+        "independent": [
+          0.19132326995679713,
+          0.1928685139146519
+        ]
+      },
+      "exact_exceedances": 4783900740,
+      "exact_null_assignments": 24883200000,
+      "exact_p": 0.19225424141589506,
+      "chi2_over_exact": 0.9852041555810668,
+      "exact_within_both_separate_MC_tail_CI95": true
+    },
+    {
+      "view": "S4",
+      "datasets": [
+        "Yelp-Syn",
+        "Amazon-Syn",
+        "Reddit-Syn",
+        "Flickr-Syn",
+        "Cora-Syn",
+        "CiteSeer-Syn",
+        "PubMed-Syn"
+      ],
+      "models": [
+        "DOMINANT",
+        "CoLA",
+        "OCGNN",
+        "DLG-Base",
+        "DLG-Aug"
+      ],
+      "n": 7,
+      "k": 5,
+      "Q": 21.828571428571422,
+      "W": 0.7795918367346937,
+      "ties": 0,
+      "correction": 1.0,
+      "doubled_ranks": [
+        [
+          6,
+          8,
+          10,
+          4,
+          2
+        ],
+        [
+          4,
+          8,
+          10,
+          6,
+          2
+        ],
+        [
+          2,
+          8,
+          10,
+          4,
+          6
+        ],
+        [
+          2,
+          8,
+          10,
+          6,
+          4
+        ],
+        [
+          4,
+          10,
+          8,
+          2,
+          6
+        ],
+        [
+          6,
+          8,
+          10,
+          2,
+          4
+        ],
+        [
+          4,
+          8,
+          10,
+          2,
+          6
+        ]
+      ],
+      "original_b": 0,
+      "independent_b": 5,
+      "draws": 1000000,
+      "seed": 20261024,
+      "MC_p": 9.99999000001e-07,
+      "independent_p": 5.999994000006e-06,
+      "chi2_p": 0.0002167973408390973,
+      "ratio": 216.79755763643814,
+      "ID_F": 21.222222222222193,
+      "ID_p": 1.3610888878773692e-07,
+      "MC_tail_CI95": {
+        "original": [
+          0.0,
+          3.688872650206488e-06
+        ],
+        "independent": [
+          1.6234883192411703e-06,
+          1.1668293175208817e-05
+        ]
+      },
+      "exact_exceedances": 8321720,
+      "exact_null_assignments": 2985984000000,
+      "exact_p": 2.786927190500686e-06,
+      "chi2_over_exact": 77.7908162000273,
+      "exact_within_both_separate_MC_tail_CI95": true
+    }
+  ],
+  "small_enumeration_cross_checks": [
+    {
+      "cutoff": 192,
+      "exceedances": 216,
+      "assignments": 216
+    },
+    {
+      "cutoff": 194,
+      "exceedances": 201,
+      "assignments": 216
+    },
+    {
+      "cutoff": 196,
+      "exceedances": 141,
+      "assignments": 216
+    },
+    {
+      "cutoff": 200,
+      "exceedances": 93,
+      "assignments": 216
+    },
+    {
+      "cutoff": 208,
+      "exceedances": 27,
+      "assignments": 216
+    },
+    {
+      "cutoff": 224,
+      "exceedances": 1,
+      "assignments": 216
+    },
+    {
+      "cutoff": 225,
+      "exceedances": 0,
+      "assignments": 216
+    }
+  ]
+}
