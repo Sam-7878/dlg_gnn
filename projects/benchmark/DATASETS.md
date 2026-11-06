@@ -8,11 +8,11 @@ Provider/code: [Cryptocurrency-Graphs-of-graphs](https://github.com/Xtra-Computi
 
 Source: `src/gog_fraud/data/crypto_raw.py`; protocol/config: `configs/benchmark/a08_crypto_clean_v1.yaml`. After provider acquisition and local path configuration, run `python projects/benchmark/scripts/a24_g1_inputs.py`. This reconstructs features/edges and verifies actual archived score hashes; full score binding requires the author's private A08 arrays. Public input manifests and 105 scalar/hash bindings are available without those arrays. The three independent raw rebuilds matched the score-bound inputs byte for byte. Label joins and seeded unstratified 60/20/20 masks are downstream from graph construction.
 
-An earlier manuscript table copied dimensions from the pre-repair hybrid graph inventory. The counts changed from 14,385/115,065 to 14,464/95,098 on Ethereum, 7,481/59,832 to 7,499/48,462 on BSC, and 2,303/18,411 to 2,353/15,368 on Polygon. The score-bound input IDs are `ethereum_contract_clean_v1`, `bsc_contract_clean_v1`, and `polygon_contract_clean_v1`. The full contract population and similarity adjacency explain the corrected metadata. All 105 selected cryptocurrency score arrays already used those inputs. The audit verified all APs, source and tensor hashes, and input bindings. Whole-graph prevalence and mean test prevalence are separate values. [Input identity and score audit](publication/a26/A26_SCIENTIFIC_AUDIT.md)
+An earlier manuscript table copied dimensions from the pre-repair hybrid graph inventory. The counts changed from 14,385/115,065 to 14,464/95,098 on Ethereum, 7,481/59,832 to 7,499/48,462 on BSC, and 2,303/18,411 to 2,353/15,368 on Polygon. The score-bound input IDs are `ethereum_contract_clean_v1`, `bsc_contract_clean_v1`, and `polygon_contract_clean_v1`. The full contract population and similarity adjacency explain the corrected metadata. All 105 selected cryptocurrency score arrays already used those inputs. The audit verified all APs, source and tensor hashes, and input bindings. Whole-graph prevalence and mean test prevalence are separate values. [Input identity and score audit](publication/a27/A27_SCIENTIFIC_AUDIT.md)
 
 ## Per-node score archive
 
-The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC rerun vectors (all seven configurations), and five DGraphFin AnomalyDAE rerun vectors. A further 113 vectors belong to separate supplementary studies and resource checks. The 310 other selected runs across ten datasets have no retained per-node arrays. Dataset terms and reviewer access are described in the [A26 access record](publication/a26/A26_EVIDENCE_ACCESS.md).
+The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC rerun vectors (all seven configurations), and five DGraphFin AnomalyDAE rerun vectors. A further 113 vectors belong to separate supplementary studies and resource checks. The 310 other selected runs across ten datasets have no retained per-node arrays. Dataset terms and reviewer access are described in the [A27 access record](publication/a27/A27_EVIDENCE_ACCESS.md).
 
 ## Elliptic
 - Upstream landing/provider: https://www.kaggle.com/datasets/ellipticco/elliptic-data-set
@@ -34,7 +34,7 @@ The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC r
 - Constructed artifact: `outputs/benchmark/a04_constructed_graphs/DGraphFin.pt`
 - Constructed file SHA-256: `074c51214dbbc6028ad35b40b5447330bbaccce998f976156533fce4b0c2066e`
 - Constructed tensor SHA-256: `6fb60ea28d75eff20016a1064d669f7cc12720216bf5283a2d7864938590f923`
-- Evaluation nodes: 367702; positives: 4652; unit: loan_account_node
+- Model-input tensor nodes: 1,225,601 (746,271 directed edges, 17 features, 15,509 total positives, whole-tensor prevalence 0.0127; partitioned into 857,899 train nodes with 10,857 positives, 183,862 val nodes with 2,326 positives, and 183,840 test nodes with 2,326 positives); val+test evaluation pool: 367,702 nodes with 4,652 positives (0.0127); raw upstream source: 3,700,550 nodes and 4,300,999 edges; unit: loan_account_node
 - Label provenance: `real_external_label`
 - Source evidence: dgraphfin_aligned.load_dgraphfin_aligned; official val/test masks
 
@@ -46,9 +46,9 @@ The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC r
 - Constructed artifact: `outputs/benchmark/a04_constructed_graphs/BitcoinOTC.pt`
 - Constructed file SHA-256: `47b6ccbf1c570e54aafa29af8dd1ae411196ecfe0eb858f8d0e3f6b771f19052`
 - Constructed tensor SHA-256: `35d3fa39fff6e8b97194ed6cde791585368dc7bf862eca219898baf84030af32`
-- Evaluation nodes: 6005; positives: 180; unit: node
+- Evaluation nodes: 6,005 (7,409 directed edges, 67 features); positives: 180 (0.0300); test split: 3,003 nodes; unit: node
 - Label provenance: `synthetic_node_injection_on_real_trust_graph`
-- Source evidence: benchmark_8x10_pipeline.load_bitcoinotc + fixed injection seed 42; differs from archived round5 data_freeze.json; A05 superseding 35-run canonical-tensor campaign
+- Source evidence: benchmark_8x10_pipeline.load_bitcoinotc (raw SNAP soc-sign-bitcoinotc has 5,881 active user IDs and 35,592 signed temporal edges across node index range 1..6,005; final temporal window snapshot edge_window_size=10 + self-loops with edge coalescing + PyGOD outlier injection seed 42); differs from archived round5 data_freeze.json; A05 superseding 35-run canonical-tensor campaign
 
 ## Yelp-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Yelp.html

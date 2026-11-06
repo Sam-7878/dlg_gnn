@@ -1,3 +1,3 @@
-29a522a9f6567ac00a84ecb17f2f41f4473b85eaf4e2db467b7ce555fede116e  ../../paper/a26/preprints/DLG-Benchmark_A26_Preprints.pdf
-453b338555318b450ba1ce1b52544cf3c09ec7212429995249a79c93ff4dfd4b  ../../paper/a26/preprints/DLG-Benchmark_A26_Preprints.tex
-c52ed195fd2799ecb377c48a43d9bd6deea2e3237d600a82ed4bce9df08d2bae  ../../paper/a26/preprints/source_bundle.zip
+786833a3a92e4bede9ba22ed21cd3bf5030c49cfc68b7955aab417d90522f8dc  ../../paper/a27/preprints/DLG-Benchmark_A27_Preprints.pdf
+15ba876c1235d3d5022f2e6b13a0ee46801ef9ec95f13b436f84694058606998  ../../paper/a27/preprints/DLG-Benchmark_A27_Preprints.tex
+7fa8b6cc075d32106f3d16830b0ca7d26c4fc7cfb5cfffd2fd82045920599245  ../../paper/a27/preprints/source_bundle.zip

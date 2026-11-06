@@ -1,0 +1,636 @@
+{
+  "primary_registry_sha256": "45d4ca7b4a9b010aa779e7cb60a1816e0f1c08e98039a119d008a1d1cd5db907",
+  "archived_A05": [
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "seed": 42,
+      "score_sha256": "0a7f628c8056ddf384f7e54bd86e480c72b036fde70628ede3218cdaf3751065",
+      "file_sha256": "878ae6011a014525a1dd15f51a015d5b42f9de47c91cee8a8ffde2f68e2a0f25"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "seed": 43,
+      "score_sha256": "ac1fccf926a6e21c4b60df01b68b8e8e00b28de0d4dc2e9d2ecf55225d5a0c1c",
+      "file_sha256": "2ab84420968fe4316fd60777d4001c7c3fe41dcee3dd39121767501b613d51fc"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "seed": 44,
+      "score_sha256": "7bbb133b09ef4e0ce906ccc6abf41b5a02d5c59cabce99762c3a3c7d8034fc22",
+      "file_sha256": "72e299deeb6bcccc85ca81f7967cf99a980d03c41a7128f4af89e1ea63991883"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "seed": 45,
+      "score_sha256": "438c9db1df4cdfcaadc3a2aeb2b994aaf0023323f4ae5f71ee2faf59c64f0a4d",
+      "file_sha256": "0c32a520ee37fef398790618679711e4037426da6bbee1d23305cb348bd94dfb"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "AnomalyDAE",
+      "seed": 46,
+      "score_sha256": "78f447edf21cef5e2d837bb57e5876395472a90d96a65426ffb5eaa6b9e33206",
+      "file_sha256": "1daac25f8ef32e3e14baa8723a75e0f4c375c4c0c90ed2ace5ff7c9119514a06"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "seed": 42,
+      "score_sha256": "af024adce0136aa5f23e2a0c9f3cc49d3b4a1c404a88829ade0559cbac093f28",
+      "file_sha256": "5a08b95ade3142e5d696275fa1bf8dfde481f1342e7a0eade9e40aad23382054"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "seed": 43,
+      "score_sha256": "c49d9ea1fee426490c8fa8d1db45a1c6a19cc659561d51e9d033b6edb6802e32",
+      "file_sha256": "91678a3dc6153e659f8ed0bcc5a7320b0dbe7c624cd7344ea17a6c89a9b04f69"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "seed": 44,
+      "score_sha256": "b9eb42eb4d8b2e69e6184d9bbc3a082ad530b22aeed2448f61a0f18e3cb490fc",
+      "file_sha256": "290f45934af0e87948b969e1fd24f18da5fa7ed2d2bf76cd23055c94bb254253"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "seed": 45,
+      "score_sha256": "e6868d612c7035fdf90ed785c7ff12abf1410be4a6f2c12373e36986592f6e8f",
+      "file_sha256": "dd2d3c554ed3c73b38a4beac17677001de3bbca23096844ddb61fef6c27244e2"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "CoLA",
+      "seed": 46,
+      "score_sha256": "1612ce088a5ad793a033c117e0ab90f06483ca6b242ea00de29c68fd47e86aa1",
+      "file_sha256": "37187ea1111e5585951ae564ddaf5f0aa88bc893c172e2dc256e32de971977be"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "seed": 42,
+      "score_sha256": "30b17fe87a0ad5a2f4b66bf44ff155e07ae3daf08f3da1dcb6cbb6e8d6db90b2",
+      "file_sha256": "7bfd45b204cfb824cd41ef3c52ec133d0ef8dd55bcc0b7579bd6ad58e3be2292"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "seed": 43,
+      "score_sha256": "82ffd9f84e6460056ec1151729231b5dcfda08ac327943e256874aa9d9621c3b",
+      "file_sha256": "9997e3273fa9782d462f655531f362059b3584a1b775c6d7ebe39ddf60bbce54"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "seed": 44,
+      "score_sha256": "2bcfbf04d2a1f4abd975a2d405fe71cf402859729656ab69d12269be0d297ffa",
+      "file_sha256": "58bf59603f17974bde96ceaf4913ad18201d210d10d3a1ac5a77c049214530d4"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "seed": 45,
+      "score_sha256": "5f8b0ddc988b0d4028353d41edf1e4c302b8020c62e601c66428ccbf923fd461",
+      "file_sha256": "4aa6a4e307ade311c7d3fc2b3e58eb04856cabcd5075994bb34138000a8136c0"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Aug",
+      "seed": 46,
+      "score_sha256": "4d3536d18cb85ccd70b149f2f6a9bc0a5740fe789e0d30a23a4c85c83502560e",
+      "file_sha256": "07e78fedb9d07c0718c7bd93de2e7546a70132e988d104a7818c81bda6c6b85a"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "seed": 42,
+      "score_sha256": "16f4ce0189889fae6e7d6848d2cd922d1c9d8ff4714babaed3be7207f1ab8334",
+      "file_sha256": "6c1f74ec79d542d28b2ca6613f8b5c1e05f56667df8d0ba91016b7f00ae4231f"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "seed": 43,
+      "score_sha256": "960512712eb4ab84b20565c4ff9183faaf1343d960e8a524c04976c61d19f532",
+      "file_sha256": "4a9808fa84cb5e6a1a072dc69948d736d3f7db32219503f2d210d7325b72e134"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "seed": 44,
+      "score_sha256": "ffd372f81375957b19859a377aaeb787e02da408c3b3f3cc9b5f18b5ace3e960",
+      "file_sha256": "6055f418932424d97f711fd24b5988d1f9c87cfafb8423ce885dd19f1065dce6"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "seed": 45,
+      "score_sha256": "7073a6f3d83786661e4cc598051bd7eb95f61593cd5bea846d5bfb11e8b66463",
+      "file_sha256": "b55d4bc289d5b59f26c5910355e99bd54b013e0d6b9d75584365d770f932e72a"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DLG-Base",
+      "seed": 46,
+      "score_sha256": "b1e2660bdf65cfac148bf92b138f7ee3740974893f871c791cc72ec6edd5aec0",
+      "file_sha256": "344113841cbc41173176133b2de799fb7f5f46170b1cc857d5606d59f183e2b2"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "seed": 42,
+      "score_sha256": "2af5e3d36d791ac752650036dccfe1cf2d930e240414eb226f06b02dcc65ac96",
+      "file_sha256": "2bcccbd4b473bd502dfc4b663a93f84c27cc6aa9aa4ab93e05b564665412b805"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "seed": 43,
+      "score_sha256": "6044e5ca8706521e0bd65027107ec8fea877356e3fe76b6b47fa440795e9163a",
+      "file_sha256": "ec301a6e9f9c5c8324e13a557e07cb173c51f2edd0a5d7920ef0ef971840ccc1"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "seed": 44,
+      "score_sha256": "d690861b72100df239e804c782d770fcc598d8e274490ed87ad292808424ad70",
+      "file_sha256": "01b1fd90883df0ada6d58f87356c5898a0501c56baf7894aa7e06809b6c56a1a"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "seed": 45,
+      "score_sha256": "1d4cc0befa4cd5dd0ac2fca3c60726f2f92bfa5b959e845da4d21867c3aacc5d",
+      "file_sha256": "92e9f8f448d3860832a2fb6714f62b892c1fa2a40cb7ddc8defb71b2f752fa21"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "DOMINANT",
+      "seed": 46,
+      "score_sha256": "184788143bce40841a69abeb6b6c8e5a35a536b4fcdb3610766016ebe25fd222",
+      "file_sha256": "2e00345a64fbfaaf43956f6dd467e06dc2ac29356473c24be17555181e483823"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "seed": 42,
+      "score_sha256": "9a81b37eb7932141cf38c0fec2e885a87d38011fe2ab5070e5f64be3313469fa",
+      "file_sha256": "9a8c8df79a90f115d97a3974afefb49eaceeee17a2b2ad55e38d2a016f373ae9"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "seed": 43,
+      "score_sha256": "445f5a7176c46330889cf77fed5bb3843428559fa41d2eccf0b5816ef01dffb8",
+      "file_sha256": "f24a22acc409946181547b6816573f80177f5788aafb82f0f14ab2792cbf9a6d"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "seed": 44,
+      "score_sha256": "56b2e2996e084e49ec5d0945bdc10f0c6d2b8531d99557442965d4b5979b968c",
+      "file_sha256": "87a299716b7cffb391ae4ba919255db8b8f48244ea0311622d64167b6f6ec54b"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "seed": 45,
+      "score_sha256": "4374d3161a6112593330c6f96bebc18c83bc5c8feb459f51feb39b07beaf28bb",
+      "file_sha256": "fdbc0d981c2fd8141016df1dcdc1f985a6be015d04cea745684ac91a540ecd46"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "GADNR",
+      "seed": 46,
+      "score_sha256": "604eb24daecabaa09fa0b435e135e1ea1b4299b6e71ef6d61cdd3c63f29755ec",
+      "file_sha256": "55c430455c13999f70bf5a94a793d778c6bb3dc4660824afa52c083f6647878e"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "seed": 42,
+      "score_sha256": "67072004ec8174ef714c9b7d0f02f02d6d197a62315c6d4b7d1a27193c530fc5",
+      "file_sha256": "9a7431136bfed69c17db5de7f1bc7590ee0965dfd21eac4254fedcab49a75e17"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "seed": 43,
+      "score_sha256": "c63859bedb3670abf45889f59c14a44fdf11f037050b182a938a1709655ab45f",
+      "file_sha256": "6f9ae6dc97756eadfbb4bf8aef26959e6858bf0220c5448abdc01391bfb4fd41"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "seed": 44,
+      "score_sha256": "7923de907f9507b69067dd6481589ca9ecbfdc050e5109011a41c43a7c54bd38",
+      "file_sha256": "ed5772fb130c7628e45fe4a9e6b26bf09600fc0b86403802ac6f0036348640d4"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "seed": 45,
+      "score_sha256": "860eb8af4c31e7fb788016493e15a549a27b1923155c84dbec4186bba8273f69",
+      "file_sha256": "53e1dba7a6e9b7813279f1173288a9d2cce6434a90da48247ccc2c87ec63ee1b"
+    },
+    {
+      "dataset": "BitcoinOTC",
+      "model": "OCGNN",
+      "seed": 46,
+      "score_sha256": "fe9dc03e847fa4265af9ffefdac6165731f6e40d1d3b97ba64b4058463d2dd65",
+      "file_sha256": "a01fc75179cc24df3680fca5b16f6d1add4a21d3307b8bdbad406f65421a154d"
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "seed": 42,
+      "score_sha256": "9d4d1230de79aba55d81c1fddad9419916e7423ffa340ea8edbb0de3f72d8052",
+      "file_sha256": "991cec57aacf63971b55a4d4c7b15cd694825d098b80f948568f1c66a88db5c0"
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "seed": 43,
+      "score_sha256": "53eb5c2b800fc6d7e082be0ab40b14f1c56572ef04f3fbb7f6e6ed996ca74de5",
+      "file_sha256": "6dbcb2401075810f4bfcec06c8211715ae1b1c5682c4aff9aba77ce9ca9fddfb"
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "seed": 44,
+      "score_sha256": "2b9240b2a103f4307da97da01df19eaeb52ebf12abc0fedbf52e9fe2484c4875",
+      "file_sha256": "e79cbc39e1ff8d2a68114acea69c31c3eb7075a68c2cfad7957cbd99e606fb27"
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "seed": 45,
+      "score_sha256": "4efa276ee7019570d70bef449c4025b292bdb93135a8c0c6aa70cc8fcf64f76f",
+      "file_sha256": "7076251e36af378552d5cfe72b3a0e7f763c1d3156b82068abd163a3ce0d698a"
+    },
+    {
+      "dataset": "DGraphFin",
+      "model": "AnomalyDAE",
+      "seed": 46,
+      "score_sha256": "16fbecdc5e5e0347c6fa1bf92cce9057ce23611c9a4412c82e4dced442189567",
+      "file_sha256": "5943dcf140fdcb27f87d10484ce769bd70a0dcea5789ada17d11684c1f4b4bee"
+    }
+  ],
+  "missing_primary": 275,
+  "missing_external": 35,
+  "missing_runs_disk_audit": {
+    "total_missing_runs": 310,
+    "primary_missing_runs": 275,
+    "external_lanl_missing_runs": 35,
+    "verified_source_json_records": 310,
+    "score_files_in_source_dirs": 0,
+    "source_directories": [
+      "archive/benchmark/outputs/sci_defense_extension_real/benchmark/raw",
+      "archive/benchmark/outputs/sci_round5_final/raw"
+    ]
+  },
+  "supplementary_verified": 113,
+  "supplementary_breakdown": [
+    {
+      "campaign": "A24_ALERT_REPRODUCTION",
+      "dataset": "DGraphFin",
+      "count": 10,
+      "models": [
+        "DLG-Aug",
+        "DLG-Base"
+      ]
+    },
+    {
+      "campaign": "A24_ALERT_REPRODUCTION",
+      "dataset": "LANL-RedTeam",
+      "count": 10,
+      "models": [
+        "DLG-Aug",
+        "DLG-Base"
+      ]
+    },
+    {
+      "campaign": "A24_CANONICAL_CONTROL",
+      "dataset": "Elliptic",
+      "count": 25,
+      "models": [
+        "DLG-Aug",
+        "DLG-Aug-Permuted",
+        "DLG-Aug-Zero",
+        "DLG-Base",
+        "DLG-Base-70"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_FULL_DECLARED",
+      "dataset": "Cora-Syn",
+      "count": 1,
+      "models": [
+        "DOMINANT"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_FULL_DECLARED",
+      "dataset": "DGraphFin",
+      "count": 1,
+      "models": [
+        "DOMINANT"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_FULL_DECLARED",
+      "dataset": "Ethereum",
+      "count": 1,
+      "models": [
+        "DLG-Aug"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_FULL_DECLARED",
+      "dataset": "Reddit-Syn",
+      "count": 1,
+      "models": [
+        "DLG-Base"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_ONE_EPOCH_PILOT",
+      "dataset": "Cora-Syn",
+      "count": 1,
+      "models": [
+        "DOMINANT"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_ONE_EPOCH_PILOT",
+      "dataset": "DGraphFin",
+      "count": 1,
+      "models": [
+        "DOMINANT"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_ONE_EPOCH_PILOT",
+      "dataset": "Ethereum",
+      "count": 1,
+      "models": [
+        "DLG-Aug"
+      ]
+    },
+    {
+      "campaign": "A24_RESOURCE_ONE_EPOCH_PILOT",
+      "dataset": "Reddit-Syn",
+      "count": 1,
+      "models": [
+        "DLG-Base"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "BSC",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "DGraphFin",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "Elliptic",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "Ethereum",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "LANL-RedTeam",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    },
+    {
+      "campaign": "A24_SUPPLEMENTARY_FEATURE_ONLY",
+      "dataset": "Polygon",
+      "count": 10,
+      "models": [
+        "ECOD",
+        "IForest"
+      ]
+    }
+  ],
+  "dgraphfin_reconciliation": {
+    "raw_upstream_nodes": 3700550,
+    "raw_upstream_edges": 4300999,
+    "model_input_N": 1225601,
+    "model_input_E": 746271,
+    "model_input_d": 17,
+    "total_positives": 15509,
+    "train_N": 857899,
+    "train_positives": 10857,
+    "whole_tensor_prevalence": 0.012654199857865651,
+    "labeled_eval_pool_N": 367702,
+    "eval_pool_positives": 4652,
+    "val_N": 183862,
+    "val_positives": 2326,
+    "test_N": 183840,
+    "test_positives": 2326,
+    "labeled_pool_prevalence": 0.012651549352464767,
+    "test_prevalence": 0.01265230635335074,
+    "dense_float32_4N2_bytes_model_input": 6008391244804,
+    "dense_float32_4N2_tb_decimal": 6.008,
+    "dense_float32_4N2_gb_labeled_pool": 540.8
+  },
+  "reddit_dlg_aug_rtx3090_measurement": {
+    "dataset": "Reddit-Syn",
+    "model": "DLG-Aug",
+    "seed": 42,
+    "local_epochs": 20,
+    "global_epochs": 50,
+    "fit_seconds": 203.301106217,
+    "score_seconds": 2.49117196200001,
+    "mean_global_epoch_seconds": 3.8134419441800014,
+    "peak_allocated_bytes": 14869192704,
+    "peak_reserved_bytes": 18748538880,
+    "peak_allocated_gib": 13.848,
+    "peak_reserved_gib": 17.461,
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "crypto": [
+    {
+      "dataset": "Ethereum",
+      "dataset_id": "ethereum_contract_clean_v1",
+      "N": 14464,
+      "E": 95098,
+      "d": 8,
+      "old_N": 14385,
+      "old_E": 115065,
+      "archived_rebuild_sha256": "cb8d567bf74038c64122eb9432b122230c959ffa9c9d01c6547fa1b5c201faca",
+      "exact_primary_score_matches": 35,
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "source_sha256": "9083dfb5d7e297482f2c9f3c1d79290ab71983d24a0c68a0df937e20c8253053",
+      "input_manifest_sha256": "377489ed2d2f03fe6673d4d227ec4e7700b055ec079ba07fd2d1f6e1b1b29ec7",
+      "feature_hash": "ee937195cecd65451d6179a0ce18b0d2323ac6226eca5ea9ed38c9fe23a9c6e0",
+      "edge_hash": "1ee614612e76571630e925c226d756947746abcefe77491f6802f01a2427af3a",
+      "label_hash": "414f80c0ab07c201c917f69497d59d02ac56acd726df8a3b6ea1dd04c7ef1302"
+    },
+    {
+      "dataset": "BSC",
+      "dataset_id": "bsc_contract_clean_v1",
+      "N": 7499,
+      "E": 48462,
+      "d": 8,
+      "old_N": 7481,
+      "old_E": 59832,
+      "archived_rebuild_sha256": "ba365ace26a7b6cfa6bc8f79d5853a0a973f1bb1f2223bf9132dd266fbf1b839",
+      "exact_primary_score_matches": 35,
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "source_sha256": "19a21d9d0cfe044a4e362ae42160f0a5e32368105228dbbee631ff4fe4e8981e",
+      "input_manifest_sha256": "627d3042cdd45e1a2aca8dbd9f5560d796c87e3cfe2c9edf66a90dda98182e4d",
+      "feature_hash": "38af6d3247cd6aa3ba1442a35edc18eed7d688d270c43a5ca4d7d6af389c5023",
+      "edge_hash": "9c801f5d04947350014ff0727762f0bdbcf83f2027c0c7d4ce1396e7b9e03ca3",
+      "label_hash": "6771acea6328fad34f1d28adf6a2d3f98dc06a300bcb0d8ebf15645fe8ad12cb"
+    },
+    {
+      "dataset": "Polygon",
+      "dataset_id": "polygon_contract_clean_v1",
+      "N": 2353,
+      "E": 15368,
+      "d": 8,
+      "old_N": 2303,
+      "old_E": 18411,
+      "archived_rebuild_sha256": "ea71c68d922e6d706e1809263540c24530d85bff1b0ca4c4b27b666992a94453",
+      "exact_primary_score_matches": 35,
+      "builder_code_hashes": {
+        "src/gog_fraud/data/crypto_raw.py": "3636af0b1a5cdfce380c64130133a1ca84791c61d59de3a700913834ec7f56e2",
+        "src/gog_fraud/data/benchmark_node_adapter.py": "a68d2f103bc09cce07456a51015eb88ef292f40f0e943ec436ad445055ca6791",
+        "projects/benchmark/scripts/a08_data_repair.py": "fbf5513d652747fcfdd0ad447a39e6723a4839dc169a562ac1c08b35e69096ab",
+        "src/gog_fraud/data/level2/relation_builder.py": "bfb14efd473ff79c307fd6ca2b372c10b12a411228f08905a2992eb94c8df895"
+      },
+      "source_sha256": "cba36b0055481c0cac94fb75b898ea55e480fb9e93728fa47b1cf80e42ca14f5",
+      "input_manifest_sha256": "7c37ab1f83104c3ed731d820c3457a2fb6a044e201cbb91eceeb81cd531b9d5f",
+      "feature_hash": "33eec8df67e4808e08fc370ae7ede3c2f9ecf77b4553cb3028545287856f3846",
+      "edge_hash": "04b7b73000c6729e51a97c7aacbd629f24314f084e3230b29959cc055a2280b7",
+      "label_hash": "642adac1416795e99f73c005f9b7c358ab50d012b590dc8b3f88613a57cc504c"
+    }
+  ],
+  "elliptic_alerts": [
+    {
+      "model": "DLG-Aug",
+      "seed": 42,
+      "AP": 0.10804586714659188,
+      "ROC": 0.5874319572839224,
+      "P_at_1pct": 0.07725321888412018,
+      "lift": 0.7916414797799675
+    },
+    {
+      "model": "DLG-Aug",
+      "seed": 43,
+      "AP": 0.09949522531816848,
+      "ROC": 0.5459568946879756,
+      "P_at_1pct": 0.06866952789699571,
+      "lift": 0.703681315359971
+    },
+    {
+      "model": "DLG-Aug",
+      "seed": 44,
+      "AP": 0.09766492547496773,
+      "ROC": 0.5409069226759893,
+      "P_at_1pct": 0.004291845493562232,
+      "lift": 0.04398008220999819
+    },
+    {
+      "model": "DLG-Aug",
+      "seed": 45,
+      "AP": 0.10779211575346027,
+      "ROC": 0.5970822489354017,
+      "P_at_1pct": 0.02575107296137339,
+      "lift": 0.26376439977417304
+    },
+    {
+      "model": "DLG-Aug",
+      "seed": 46,
+      "AP": 0.10529046469975903,
+      "ROC": 0.5813726532929333,
+      "P_at_1pct": 0.02145922746781116,
+      "lift": 0.21980366647847752
+    },
+    {
+      "model": "DLG-Base",
+      "seed": 42,
+      "AP": 0.071875907484315,
+      "ROC": 0.3808903770672585,
+      "P_at_1pct": 0.03862660944206009,
+      "lift": 0.39582073988998373
+    },
+    {
+      "model": "DLG-Base",
+      "seed": 43,
+      "AP": 0.06584288636477176,
+      "ROC": 0.3204688013253246,
+      "P_at_1pct": 0.02145922746781116,
+      "lift": 0.21990041104999092
+    },
+    {
+      "model": "DLG-Base",
+      "seed": 44,
+      "AP": 0.07048567424464847,
+      "ROC": 0.3695501827600539,
+      "P_at_1pct": 0.004291845493562232,
+      "lift": 0.04398008220999819
+    },
+    {
+      "model": "DLG-Base",
+      "seed": 45,
+      "AP": 0.06782677198462606,
+      "ROC": 0.3422533158175334,
+      "P_at_1pct": 0.03862660944206009,
+      "lift": 0.3956465996612596
+    },
+    {
+      "model": "DLG-Base",
+      "seed": 46,
+      "AP": 0.06724128085575103,
+      "ROC": 0.336634361361524,
+      "P_at_1pct": 0.017167381974248927,
+      "lift": 0.17584293318278202
+    }
+  ]
+}

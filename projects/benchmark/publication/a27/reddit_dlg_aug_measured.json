@@ -1,0 +1,15 @@
+{
+  "dataset": "Reddit-Syn",
+  "model": "DLG-Aug",
+  "seed": 42,
+  "local_epochs": 20,
+  "global_epochs": 50,
+  "fit_seconds": 203.301106217,
+  "score_seconds": 2.49117196200001,
+  "mean_global_epoch_seconds": 3.8134419441800014,
+  "peak_allocated_bytes": 14869192704,
+  "peak_reserved_bytes": 18748538880,
+  "peak_allocated_gib": 13.848,
+  "peak_reserved_gib": 17.461,
+  "gpu": "NVIDIA GeForce RTX 3090"
+}
