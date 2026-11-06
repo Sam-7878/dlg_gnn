@@ -1,0 +1,40 @@
+{
+  "pdf_sha256": "172d595fd811e95d8e1f940788ace5ca127fe1cc3cc8baae0736155d94854b40",
+  "byte_identical_rebuilds": true,
+  "warnings": {
+    "clean1": [],
+    "clean2": []
+  },
+  "pages": 26,
+  "page_map": {
+    "Table 1": 7,
+    "Table 2": 10,
+    "Table 3": 11,
+    "Table 4": 12,
+    "Table 5": 12,
+    "Table 6": 13,
+    "Table 7": 14,
+    "Table 8": 16,
+    "Table 9": 16,
+    "Table A1": 20,
+    "Table A2": 20,
+    "Table A3": 21,
+    "Table A4": 21,
+    "Table A5": 21,
+    "Table A6": 22,
+    "Table A7": 22,
+    "Table A8": 23,
+    "Table A9": 23,
+    "Table A10": 23,
+    "Table A11": 24,
+    "Table A12": 25,
+    "Table A13": 26,
+    "Figure 1": 5,
+    "Figure 2": 9,
+    "Figure 3": 11
+  },
+  "table4_not_after_table5": true,
+  "merged_numeric_cells": 280,
+  "preserved_numeric_tables": 7,
+  "orcid_links_and_printed_ids": true
+}
