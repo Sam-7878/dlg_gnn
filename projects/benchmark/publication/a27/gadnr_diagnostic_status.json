@@ -10,7 +10,7 @@
     "cuda": "13.0",
     "config_sha256": "a31a052eb7cd5c09be210f85ae7278a76b2165e420f6610f0d5bd295fdcf412a",
     "detector_source_sha256": "a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9",
-    "status": "started",
+    "status": "incomplete_time_limit",
     "tensor_identity": {
       "N": 46564,
       "E": 83188,
@@ -18,7 +18,8 @@
       "source_sha256": "945b96f137483a1cdb9c1728798429e2d6a45696dcd07146b5cdf42734b67826",
       "feature_hash": "2d0a8934969d3e2180f5e7f08027232de3e9bbeadf933f9593de1fc85c9ccc8b",
       "edge_hash": "f2b0887b8591ed86dfa4ce09e5b98e078ebe43859a62f148d5ade98d554af986"
-    }
+    },
+    "historical_failure_cause": "unestablished"
   },
   "DGraphFin": {
     "diagnostic": "Timed out at the 300 s diagnostic cap",
@@ -31,7 +32,7 @@
     "cuda": "13.0",
     "config_sha256": "a31a052eb7cd5c09be210f85ae7278a76b2165e420f6610f0d5bd295fdcf412a",
     "detector_source_sha256": "a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9",
-    "status": "started",
+    "status": "incomplete_time_limit",
     "tensor_identity": {
       "N": 1225601,
       "E": 746271,
@@ -39,7 +40,8 @@
       "source_sha256": "074c51214dbbc6028ad35b40b5447330bbaccce998f976156533fce4b0c2066e",
       "feature_hash": "640b74a64de2742c010d81fe035a65f279890c87da0945f91dc866e0c821eadb",
       "edge_hash": "6e1a93f99018a5ca0cdc08de6a8da3f8c0799230fd1d49e88c874a0a68e6831d"
-    }
+    },
+    "historical_failure_cause": "unestablished"
   },
   "Yelp-Syn": {
     "diagnostic": "Timed out at the 300 s diagnostic cap",
@@ -52,7 +54,7 @@
     "cuda": "13.0",
     "config_sha256": "a31a052eb7cd5c09be210f85ae7278a76b2165e420f6610f0d5bd295fdcf412a",
     "detector_source_sha256": "a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9",
-    "status": "started",
+    "status": "incomplete_time_limit",
     "tensor_identity": {
       "N": 716847,
       "E": 14004995,
@@ -60,11 +62,12 @@
       "source_sha256": "ace899104bb119c00a19d948812606920e78c2baa71b6b2b004871476f575a53",
       "feature_hash": "00e17927c0182a0c6b64f319f16618a6e5068f19dae13e7778bc8f9985a26763",
       "edge_hash": "2e46ad595c6af51de12844255ce1b12bb6abd7c0778282feb59e2d0214cffae3"
-    }
+    },
+    "historical_failure_cause": "unestablished"
   },
   "Reddit-Syn": {
-    "diagnostic": "Timed out at the 300 s diagnostic cap",
-    "exit": 124,
+    "diagnostic": "Full-batch CPU graph preprocessing observed in watchdog stack. No retained terminal record.",
+    "exit": null,
     "dataset": "Reddit-Syn",
     "seed": 42,
     "epochs": 50,
@@ -73,7 +76,7 @@
     "cuda": "13.0",
     "config_sha256": "a31a052eb7cd5c09be210f85ae7278a76b2165e420f6610f0d5bd295fdcf412a",
     "detector_source_sha256": "a4253d1530d7957cc22f0e736c7b4625037a14206e333f2288dbd00e2a7264a9",
-    "status": "started",
+    "status": "incomplete_terminal_record_missing",
     "tensor_identity": {
       "N": 232965,
       "E": 114869737,
@@ -81,6 +84,8 @@
       "source_sha256": "15aa429034d64a452aa8a1ccad8b9fa1f8040fbe4bf0cbdf267bff078c6ba3fa",
       "feature_hash": "d699bcc7cdbe07b51a92ba74d5a5f4a4f51ce712d96867537ac8a012d7fdbd92",
       "edge_hash": "a8e0add89a33a52f69a4f5a18e1633613a50771e641baf4ece5c3dfe40307642"
-    }
+    },
+    "historical_failure_cause": "unestablished",
+    "log_sha256": "f8845fa054558fbedaf3f48e8c5b63aae560648fad94131559e2eb6efe04e816"
   }
 }

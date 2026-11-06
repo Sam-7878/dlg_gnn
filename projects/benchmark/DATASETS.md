@@ -39,7 +39,7 @@ The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC r
 - Source evidence: dgraphfin_aligned.load_dgraphfin_aligned; official val/test masks
 
 ## BitcoinOTC
-- Upstream landing/provider: https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html
+- Upstream landing/provider: https://snap.stanford.edu/data/soc-sign-bitcoinotc.html
 - Access and license: check provider terms; manual acquisition unless the provider package loader is available.
 - Expected raw basename: `data.pt`
 - Frozen raw SHA-256: `e39535e2040d94d5f522ca97cbb0cb2aef0aa669f2b2028b2975913e3397a074`
@@ -48,7 +48,7 @@ The selected evaluation registry has 105 cryptocurrency vectors, 35 BitcoinOTC r
 - Constructed tensor SHA-256: `35d3fa39fff6e8b97194ed6cde791585368dc7bf862eca219898baf84030af32`
 - Evaluation nodes: 6,005 (7,409 directed edges, 67 features); positives: 180 (0.0300); test split: 3,003 nodes; unit: node
 - Label provenance: `synthetic_node_injection_on_real_trust_graph`
-- Source evidence: benchmark_8x10_pipeline.load_bitcoinotc (raw SNAP soc-sign-bitcoinotc has 5,881 active user IDs and 35,592 signed temporal edges across node index range 1..6,005; final temporal window snapshot edge_window_size=10 + self-loops with edge coalescing + PyGOD outlier injection seed 42); differs from archived round5 data_freeze.json; A05 superseding 35-run canonical-tensor campaign
+- Source evidence: benchmark_8x10_pipeline.load_bitcoin_otc (raw SNAP soc-sign-bitcoinotc has 5,881 active user IDs and 35,592 signed temporal edges across node index range 1..6,005; final temporal window snapshot edge_window_size=10 + self-loops with edge coalescing + PyGOD outlier injection seed 42); differs from archived round5 data_freeze.json; A05 superseding 35-run canonical-tensor campaign
 
 ## Yelp-Syn
 - Upstream landing/provider: https://pytorch-geometric.readthedocs.io/en/2.7.0/generated/torch_geometric.datasets.Yelp.html

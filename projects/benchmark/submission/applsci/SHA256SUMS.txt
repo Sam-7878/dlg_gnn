@@ -1,3 +1,3 @@
-29ff916d9b88a47c509665d4008bc99ba187ba07d4a21f1489696d15371c1b43  ../../paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.pdf
-9b8e3eebd4db728798e99eddefd4674093dd7cbfb182e40a37ff54dc9fc50fef  ../../paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.tex
-3e508979eb84a398ef8b95ef1e2e760dc9006f8c36769e35e5c4f47b0190fe02  ../../paper/a27/applsci/source_bundle.zip
+172d595fd811e95d8e1f940788ace5ca127fe1cc3cc8baae0736155d94854b40  ../../paper/a28/applsci/DLG-Benchmark_A28_AppliedSciences.pdf
+df172072a6c40ea82e799713e0fc278315dccc43dc9e1bfd1d461de6965d43ec  ../../paper/a28/applsci/DLG-Benchmark_A28_AppliedSciences.tex
+753b4ae2c57550dcd331021604656be3ddf15327d878dd73678d445e28d06c23  ../../paper/a28/applsci/source_bundle.zip

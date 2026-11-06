@@ -4,12 +4,12 @@
 
 | File | Path | SHA-256 |
 |---|---|---|
-| `DLG-Benchmark_A27_Preprints.pdf` | `projects/benchmark/paper/a27/preprints/DLG-Benchmark_A27_Preprints.pdf` | `786833a3a92e4bede9ba22ed21cd3bf5030c49cfc68b7955aab417d90522f8dc` |
-| `DLG-Benchmark_A27_Preprints.tex` | `projects/benchmark/paper/a27/preprints/DLG-Benchmark_A27_Preprints.tex` | `15ba876c1235d3d5022f2e6b13a0ee46801ef9ec95f13b436f84694058606998` |
-| `source_bundle.zip` (Preprints) | `projects/benchmark/paper/a27/preprints/source_bundle.zip` | `7fa8b6cc075d32106f3d16830b0ca7d26c4fc7cfb5cfffd2fd82045920599245` |
-| `DLG-Benchmark_A27_AppliedSciences.pdf` | `projects/benchmark/paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.pdf` | `29ff916d9b88a47c509665d4008bc99ba187ba07d4a21f1489696d15371c1b43` |
-| `DLG-Benchmark_A27_AppliedSciences.tex` | `projects/benchmark/paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.tex` | `9b8e3eebd4db728798e99eddefd4674093dd7cbfb182e40a37ff54dc9fc50fef` |
-| `source_bundle.zip` (Applied Sciences) | `projects/benchmark/paper/a27/applsci/source_bundle.zip` | `3e508979eb84a398ef8b95ef1e2e760dc9006f8c36769e35e5c4f47b0190fe02` |
+| `DLG-Benchmark_A27_Preprints.pdf` | `projects/benchmark/paper/a27/preprints/DLG-Benchmark_A27_Preprints.pdf` | `894efa1ce3f97fb880458782227c62550da5a7cef935de9006e0293368598720` |
+| `DLG-Benchmark_A27_Preprints.tex` | `projects/benchmark/paper/a27/preprints/DLG-Benchmark_A27_Preprints.tex` | `8edef7c5dcab105320bd08005ed82446f277c44e58e516cfec679c1dfda7f529` |
+| `source_bundle.zip` (Preprints) | `projects/benchmark/paper/a27/preprints/source_bundle.zip` | `07cba0aad2883b5f6e94c00bcf2fa5a4a4d9a2a258c589597905a887ce75f0a1` |
+| `DLG-Benchmark_A27_AppliedSciences.pdf` | `projects/benchmark/paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.pdf` | `8c88a2526dc6f4e4581944417551e0f40f1559655c18e0753670c73354d80b06` |
+| `DLG-Benchmark_A27_AppliedSciences.tex` | `projects/benchmark/paper/a27/applsci/DLG-Benchmark_A27_AppliedSciences.tex` | `f989d3cb5400ae168bc84377ecba8663bd39022fac61227df613d09bf58c34d9` |
+| `source_bundle.zip` (Applied Sciences) | `projects/benchmark/paper/a27/applsci/source_bundle.zip` | `f46f8b9ba9089c5520095971d3667d80d270fb81a5099b4ffb56440ea60cf940` |
 
 Both clean double-builds (`clean1`, `clean2`) under `SOURCE_DATE_EPOCH=1793923200` produced byte-identical PDFs with **zero** LaTeX warnings (`Overfull`, `undefined`, `Float too large`, `multiply defined`).
 
@@ -22,12 +22,12 @@ Both clean double-builds (`clean1`, `clean2`) under `SOURCE_DATE_EPOCH=179392320
 1. **`A27-01` (Feature-only score orientation & complete 12-cell audit):**
    - **Pipeline call site verified:** `projects/benchmark/scripts/a24_run_studies.py` lines 78–79:
      ```python
-     det = IsolationForest(n_estimators=200, random_state=seed, n_jobs=1) if model == 'IForest' else ECOD(n_jobs=1)
+     det = IsolationForest(n_estimators=100, max_samples=256, max_features=1., bootstrap=False, contamination='auto', random_state=seed, n_jobs=4) if model == 'IForest' else ECOD(contamination=.1, n_jobs=1)
      det.fit(x)
      s = -det.score_samples(x) if model == 'IForest' else np.asarray(det.decision_scores_)
      ```
    - **API convention:** In `scikit-learn`, `IsolationForest.score_samples(X)` returns $-2^{-E(h(x))/c(n)} \in [-1, 0]$ (lower = more abnormal), so `-det.score_samples(x)` $= +2^{-E(h(x))/c(n)} \in (0, 1]$ is the exact higher-is-more-anomalous Liu et al. (2008) anomaly score (matching `PyOD` `IForest.decision_scores_`). In `PyOD`, `ECOD.decision_scores_` is the non-negative empirical tail negative log-probability sum (higher = more extreme tail).
-   - **12-cell empirical mechanism:** Appendix Table A3 (`tab:orientation_audit`) now reports all **12 dataset–estimator cells** (`Elliptic`, `DGraphFin`, `Ethereum`, `BSC`, `Polygon`, `LANL-RedTeam` $\times$ `IForest`, `ECOD`) alongside the standardized feature dispersion ratio $\mathrm{RMS}(|z|)_{\mathrm{pos}} / \mathrm{RMS}(|z|)_{\mathrm{neg}}$ and mean native score difference $\bar{s}_{\mathrm{pos}} - \bar{s}_{\mathrm{neg}}$. Native $\mathrm{ROC\text{-}AUC} > 0.5$ holds **if and only if** $\mathrm{RMS}(|z|)_{\mathrm{pos}} / \mathrm{RMS}(|z|)_{\mathrm{neg}} > 1$ (`BSC`: `1.35`, `Polygon`: `1.26`, `LANL-RedTeam`: `5.07`), whereas on `Elliptic` (`0.58`) and `Ethereum` (`0.97`) positive targets cluster in the interior of raw attribute space.
+   - Appendix Table A3 reports all 12 estimator–dataset cells. Elliptic and Ethereum combine below-0.5 native ROC-AUC with lower positive-class standardized feature dispersion. These diagnostics establish an association across the evaluated datasets. Estimator APIs and exact vector replays establish the native score convention.
 
 2. **`A27-02` (DGraphFin population and prevalence reconciliation across all three levels):**
    - Verified directly on `DGraphFin.pt` in `provenance.py` (`dgraphfin_reconciliation` in `provenance.json`):
@@ -44,14 +44,14 @@ Both clean double-builds (`clean1`, `clean2`) under `SOURCE_DATE_EPOCH=179392320
 ### P1 — Repository Tracking, Claims & Metadata Consistency
 
 4. **`A27-04` (Git tracking of audit scripts and Data Availability path):**
-   - `statistics.py`, `exact_null.cpp`, `exact_input.txt`, `exact_counts.txt`, `provenance.py`, `scores.py`, `README.md`, and all A27 JSON/Markdown audit outputs are tracked under `projects/benchmark/publication/a27/` in git (`release tag benchmark-a27-audit-2026-11-06`) and cited in the Data Availability Statement.
+   - The five requested audit source/input files and README are downloadable and byte-identical at the pinned public commit. The manuscript links directly to that commit. No A27 release tag was found. [Public audit files](https://github.com/Sam-7878/dlg_gnn/tree/71ffdbf9f7c75fc16163d17fd787f509dd6e2923/projects/benchmark/publication/a27)
 
 5. **`A27-05` (Section 5.3 causal attribution & portal abstract versions):**
    - Added the `Aug-Permuted` (`0.1081`) vs `Aug` (`0.1037`) and `Aug-Zero` (`0.0859`) vs `Base` (`0.0687`) causal attribution explanation directly to Section 5.3 immediately after Table 4.
-   - `abstract.txt` is exactly **200 words** (meeting the MDPI *Applied Sciences* $\le 200$-word limit), and `A27_PORTAL_METADATA.md` includes both the 200-word MDPI abstract and the 245-word extended Preprints.org abstract (`abstract_preprints_250w.txt`).
+   - The manuscript and portal share a 200-word abstract. A separate Editorial Office summary is at most 250 words and uses the same findings.
 
 6. **`A27-06` (Section 5.2 items & Table 2 LANL protocol note):**
-   - All five items in Section 5.2 (Elliptic, DGraphFin, Cryptocurrencies, Synthetic Benchmarks, and External Cybersecurity `LANL-RedTeam`) are explicit and complete, and Table 2 (`tab:pr_auc_main`) marks `LANL-RedTeam^\dagger` with a footnote cross-referencing Table 8 (`tab:lanl_protocols`) for the historical $\log(1+x)$ vs matched raw-feature protocols.
+   - A27 Section 5.2 contained four interpretive items. A28 adds the separate synthetic benchmark item. In A27, Table 2 (`tab:pr_auc_main`) marks `LANL-RedTeam^\dagger` with a footnote cross-referencing Table 8 (`tab:lanl_protocols`) for the historical $\log(1+x)$ vs matched raw-feature protocols.
 
 7. **`A27-07` (BitcoinOTC $N=6,005, E=7,409$ derivation & raw-to-evaluated edge transformations):**
    - Verified in `projects/benchmark/evidence/submission_closure_a09/historical_sources/benchmark_8x10_pipeline.py` lines 270–342: raw SNAP Bitcoin-OTC (`5,881` active user IDs, `35,592` signed temporal edges across node IDs `1..6,005`) $\to$ final PyG temporal window (`edge_window_size=10`) + self-loops with coalescing + PyGOD seed-42 outlier injection (`180` positives) = $N=6,005, E=7,409, d=67$. Documented in Table 1 (`^\ddagger`), Appendix Table A4 caption, and `DATASETS.md`.
@@ -104,3 +104,13 @@ Both clean double-builds (`clean1`, `clean2`) under `SOURCE_DATE_EPOCH=179392320
 4. **Actual `IsolationForest` / `ECOD` pipeline code path:**
    - Verified at `projects/benchmark/scripts/a24_run_studies.py` lines 78–79 and cited in Section 7.2, Section 7.3, Appendix Table A3, and `A27_SCIENTIFIC_AUDIT.md`.
 
+
+## Codex closure
+
+The two rebuilt packages supersede the AntiGravity PDF and ZIP hashes. The Reddit-Syn DLG-Aug measurement adds timing and memory evidence. The 113 archived supplementary arrays refer to the earlier study. For the four historical GADNR cells the cause remains unestablished. Three later diagnostics reached the 300 s cap. The Reddit-Syn watchdog recorded CPU preprocessing and the terminal record is missing. The fixed leaderboard remains at 455 successful evaluations and 84/91 primary pairs.
+
+Author approval of the current hashes and the corresponding author’s decision on permitted derived-score access remain pending. The author will record the preprint DOI and journal receipt after deposit and submission. [Sign-off](A27_AUTHOR_SIGNOFF.md) · [Receipts](A27_SUBMISSION_RECEIPTS.md)
+
+## A28 cross-reference
+
+The matched Elliptic control was independently refitted for the same configuration and five seeds. The means round independently to 0.5705 (primary) and 0.5706 (matched). [A28 seed-level verification](../a28/elliptic_roc.json) · [Current submission status](../a28/A28_WORK_ORDER_RESPONSE.md)

@@ -1,0 +1,22 @@
+{
+  "dataset": "Reddit-Syn",
+  "model": "DLG-Aug",
+  "seed": 42,
+  "local_epochs": 20,
+  "global_epochs": 50,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "tensor_sha256": "15aa429034d64a452aa8a1ccad8b9fa1f8040fbe4bf0cbdf267bff078c6ba3fa",
+  "instrumentation_sha256": "397e6088fda08fddefa64af0d43568dc7300f7192bedcb7543e5de949e2b67ce",
+  "input_load_and_clone_seconds": 31.593283651000093,
+  "fit_preprocessing_seconds": 0.23221836600009738,
+  "local_pretraining_seconds": 12.116452377999849,
+  "global_fit_including_setup_and_finalization_seconds": 189.2550675980001,
+  "fit_seconds": 201.60373834200004,
+  "score_seconds": 2.502941369999917,
+  "peak_allocated_bytes": 14869192704,
+  "peak_reserved_bytes": 18748538880,
+  "local_scope": "Includes local message graph setup, 20 epochs and extraction of embeddings.",
+  "global_scope": "Includes global setup, 50 epochs and fit finalization."
+}

@@ -1,11 +1,11 @@
 {
-  "pdf_sha256": "29ff916d9b88a47c509665d4008bc99ba187ba07d4a21f1489696d15371c1b43",
+  "pdf_sha256": "8c88a2526dc6f4e4581944417551e0f40f1559655c18e0753670c73354d80b06",
   "byte_identical_rebuilds": true,
   "warnings": {
     "clean1": [],
     "clean2": []
   },
-  "pages": 27,
+  "pages": 26,
   "page_map": {
     "Table 1": 7,
     "Table 2": 10,
@@ -20,15 +20,15 @@
     "Table A2": 20,
     "Table A3": 21,
     "Table A4": 21,
-    "Table A5": 22,
-    "Table S1": 23,
-    "Table S2": 23,
-    "Table S3": 24,
-    "Table S4": 24,
-    "Table S5": 24,
-    "Table S6": 25,
-    "Table S7": 26,
-    "Table S8": 27,
+    "Table A5": 21,
+    "Table S1": 22,
+    "Table S2": 22,
+    "Table S3": 23,
+    "Table S4": 23,
+    "Table S5": 23,
+    "Table S6": 24,
+    "Table S7": 25,
+    "Table S8": 26,
     "Figure 1": 5,
     "Figure 2": 9,
     "Figure 3": 11

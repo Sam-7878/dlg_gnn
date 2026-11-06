@@ -5,7 +5,9 @@
 The supplementary feature-only evaluation call site is `projects/benchmark/scripts/a24_run_studies.py` lines 78–79:
 
 ```python
-det = IsolationForest(n_estimators=200, random_state=seed, n_jobs=1) if model == 'IForest' else ECOD(n_jobs=1)
+det = IsolationForest(n_estimators=100, max_samples=256, max_features=1.,
+                bootstrap=False, contamination='auto', random_state=seed, n_jobs=4
+                ) if model == 'IForest' else ECOD(contamination=.1, n_jobs=1)
 det.fit(x)
 s = -det.score_samples(x) if model == 'IForest' else np.asarray(det.decision_scores_)
 ```
@@ -27,7 +29,7 @@ In `scikit-learn`, `IsolationForest.score_samples(X)` returns the opposite of th
 | LANL-RedTeam | IForest | 16,694 | 13 | 0.1746 | 0.0117 | 0.7819 | 0.2181 | 5.07 (1.64/0.32) | 3.93 (4.00/1.02) |
 | LANL-RedTeam | ECOD | 16,694 | 13 | 0.2007 | 0.0122 | 0.7186 | 0.2814 | 5.07 (1.64/0.32) | 3.93 (4.00/1.02) |
 
-Across all 12 dataset–estimator cells, native $\mathrm{ROC\text{-}AUC} > 0.5$ occurs **if and only if** the standardized attribute dispersion ratio $\mathrm{RMS}(\|z\|)_{\mathrm{pos}} / \mathrm{RMS}(\|z\|)_{\mathrm{neg}} > 1$ (`BSC`: `1.35`, `Polygon`: `1.26`, `LANL-RedTeam`: `5.07`). On `Elliptic` (`0.58`) and `Ethereum` (`0.97`), positive targets are more tightly clustered near the interior of raw attribute space than negative nodes, causing generic unsupervised tail-/isolation-based detectors to assign lower outlier scores to positive targets.
+On Elliptic and Ethereum, the positive-to-negative standardized feature RMS ratios were 0.58 and 0.97 and both estimators scored below ROC-AUC 0.5. On BSC, Polygon and LANL the ratios were 1.35, 1.26 and 5.07 and both ROC-AUCs exceeded 0.5. DGraphFin is near 1, with both ROC-AUCs below 0.5. These are observational diagnostics. The native orientation is established by the estimator API and the exact score replay. The ROC mirror identity also holds when tied scores receive half credit.
 
 ## 2. A27-02 — DGraphFin Three-Level Population and Prevalence Reconciliation
 
@@ -65,5 +67,5 @@ Verified in `projects/benchmark/evidence/submission_closure_a09/historical_sourc
 
 ## 5. A27-10 & A27-12 — Direct RTX 3090 Measurement (`Reddit-Syn / DLG-Aug`) and Elliptic ROC-AUC Rounding
 
-- **Direct RTX 3090 measurement (`Reddit-Syn / DLG-Aug`, seed 42, 20 local + 50 global epochs)**: fit time `203.30 s`, score time `2.491 s`, mean global epoch time `3.813 s`, peak allocated VRAM `13.848 GiB` (`14,869,192,704` bytes), peak reserved VRAM `17.461 GiB` (`18,748,538,880` bytes). Both Table 6 and Table 9 now report the directly measured `13.848 GiB` (`13.848/17.461 GiB` allocated/reserved), superseding the earlier 5-seed summary log figure (`13.968/17.375 GiB`).
-- **Elliptic DLG-Aug ROC-AUC**: Primary historical 5-seed mean is `0.570530` (reported as `0.5705` in Tables A1 and A5); fresh RTX 3090 matched control 5-seed mean is `0.570550` (`2.0e-5` difference across the `0.57055` half-way rounding boundary). Table S4 is unified to `0.5705` with an explicit caption note.
+- **Direct RTX 3090 measurement (`Reddit-Syn / DLG-Aug`, seed 42, 20 local + 50 global epochs)**: fit time `203.30 s`, score time `2.491 s`, mean global epoch time `3.813 s`, peak allocated VRAM `13.848 GiB` (`14,869,192,704` bytes), peak reserved VRAM `17.461 GiB` (`18,748,538,880` bytes). Both Table 6 and Table 9 now report the directly measured `13.848 GiB` (`13.848/17.461 GiB` allocated/reserved), for DLG-Aug. The separate DLG-Base resource case measured `13.968/17.375 GiB` at seed 42.
+- **Elliptic DLG-Aug ROC-AUC**. The primary mean is 0.570530 to six decimals and displays as 0.5705 in Tables A1 and A5. The separate matched-control mean is 0.5705501353752445 and displays as 0.5706 in S4 under the same rounding policy.

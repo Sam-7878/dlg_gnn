@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-11-06T22:25:50.891530+09:00",
+  "tag": "benchmark-a28-evidence-2026-11-06-r1",
+  "commit": "1b3824fdf21f01146449e1f6d17a68f0662d8e1c",
+  "public_evidence_files_byte_identical": 7,
+  "pinned_audit_files_byte_identical": 6,
+  "public_manifest_verified_against_local_private_files": 6,
+  "pages": {
+    "preprints": 28,
+    "applsci": 26
+  },
+  "public_changes": [
+    "projects/benchmark/publication/a27/SUPERSEDED.md",
+    "projects/benchmark/publication/a28/A28_PDF_QA.md",
+    "projects/benchmark/publication/a28/A28_SUBMISSION_HASHES.sha256",
+    "projects/benchmark/publication/a28/README.md",
+    "projects/benchmark/publication/a28/SCORE_REDISTRIBUTION_SCOPE.md",
+    "projects/benchmark/publication/a28/applsci_qa.json",
+    "projects/benchmark/publication/a28/elliptic_roc.json",
+    "projects/benchmark/publication/a28/gadnr_diagnostic_status.json",
+    "projects/benchmark/publication/a28/measure_reddit.py",
+    "projects/benchmark/publication/a28/preprints_qa.json",
+    "projects/benchmark/publication/a28/reddit_dlg_aug_phase_timing.json"
+  ]
+}
