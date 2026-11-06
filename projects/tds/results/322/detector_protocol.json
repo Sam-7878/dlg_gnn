@@ -1,0 +1,1 @@
+{"seeds":[321,17,27,37,47],"fit":"R321 contract adapters, no label supervision, fixed five epochs and width 32","split":"existing R317 original and horizon7 train/test","score":"mean node score, fixed orientation, stable order at ties","selection":"all seeds included, no test-driven changes"}

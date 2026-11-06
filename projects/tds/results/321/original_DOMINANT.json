@@ -1,0 +1,16 @@
+{
+  "cohort": "original",
+  "detector": "DOMINANT",
+  "n": 3648,
+  "positive": 107,
+  "ap": 0.015640811600333503,
+  "roc_auc": 0.10579143649689748,
+  "capture_37": 0,
+  "capture_50": 0,
+  "capture_100": 0,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 100.26
+}

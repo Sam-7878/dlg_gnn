@@ -1,0 +1,16 @@
+{
+  "cohort": "original",
+  "detector": "OCGNN",
+  "n": 3648,
+  "positive": 107,
+  "ap": 0.05708892140861296,
+  "roc_auc": 0.6125546666948194,
+  "capture_37": 2,
+  "capture_50": 3,
+  "capture_100": 9,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 27.59
+}

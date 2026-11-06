@@ -1,0 +1,5 @@
+R323 independent article and Supplement builds PASS
+PASS: 167 held-out score arrays
+PASS: 7200 matched-prevalence rows and all nine activity-stratum controls
+PASS: R323 final artifact hashes and preserved R322 checksums
+Replay archive SHA-256 73f5ac67b0f451ba73f617283ac1a29b0c561f099aeb958fb8fce5f42bd8368e

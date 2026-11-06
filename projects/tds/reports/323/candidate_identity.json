@@ -1,0 +1,45 @@
+{
+  "id": "TDS_R323_REVIEW_CANDIDATE",
+  "date": "2026-11-06",
+  "release": "HOLD_AUTHOR_ACTION",
+  "data_doi": null,
+  "preprint_doi": null,
+  "preprint_status": "NOT_POSTED",
+  "journal_status": "NOT_SUBMITTED",
+  "artifacts": {
+    "preprints": {
+      "preprint_article.pdf": {
+        "path": "projects/tds/submission/preprints/323/preprint_article.pdf",
+        "sha256": "29ffa80b8280b2a4787b7ea3971a8d85240cbd1818d5d8d3ac765b1122ddd5df"
+      },
+      "preprint_source.zip": {
+        "path": "projects/tds/submission/preprints/323/preprint_source.zip",
+        "sha256": "e1022b982d7bb2d235c7247b396c9583e0fc87312d9f38f42d8fe7ac548d602c"
+      },
+      "supplement.pdf": {
+        "path": "projects/tds/submission/preprints/323/supplement.pdf",
+        "sha256": "d9023564f93c82534fe93dc1af082262d7e174bdd0dd793cf1c4801aef01e314"
+      }
+    },
+    "applsci": {
+      "applsci_article.pdf": {
+        "path": "projects/tds/submission/applsci/323/applsci_article.pdf",
+        "sha256": "67a9ccf56cfd29fa3be13529d500564958ff13f9bc7e90bd84a04e2b7a3ecaa7"
+      },
+      "mdpi_source.zip": {
+        "path": "projects/tds/submission/applsci/323/mdpi_source.zip",
+        "sha256": "513aba7e393b72c301c8f3fed4f5f6188f153431e96db4631e0050feeec7b71b"
+      },
+      "supplement.pdf": {
+        "path": "projects/tds/submission/applsci/323/supplement.pdf",
+        "sha256": "3d7607c04c867114f918bacb2b275cb1f91f4e4cccd26828672f9d3b39bf0315"
+      }
+    }
+  },
+  "replay_candidate": {
+    "path": "projects/tds/publication/323/TDS_R323_numerical_replay_candidate.zip",
+    "sha256": "73f5ac67b0f451ba73f617283ac1a29b0c561f099aeb958fb8fce5f42bd8368e",
+    "scope": "identifier-reduced scores, split definitions, run hashes and CLI",
+    "permission_to_deposit": false
+  }
+}

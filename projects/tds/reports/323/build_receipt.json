@@ -1,0 +1,18 @@
+{
+  "preprints": {
+    "notices": [],
+    "files": {
+      "preprint_article.pdf": "29ffa80b8280b2a4787b7ea3971a8d85240cbd1818d5d8d3ac765b1122ddd5df",
+      "preprint_source.zip": "e1022b982d7bb2d235c7247b396c9583e0fc87312d9f38f42d8fe7ac548d602c",
+      "supplement.pdf": "d9023564f93c82534fe93dc1af082262d7e174bdd0dd793cf1c4801aef01e314"
+    }
+  },
+  "applsci": {
+    "notices": [],
+    "files": {
+      "applsci_article.pdf": "67a9ccf56cfd29fa3be13529d500564958ff13f9bc7e90bd84a04e2b7a3ecaa7",
+      "mdpi_source.zip": "513aba7e393b72c301c8f3fed4f5f6188f153431e96db4631e0050feeec7b71b",
+      "supplement.pdf": "3d7607c04c867114f918bacb2b275cb1f91f4e4cccd26828672f9d3b39bf0315"
+    }
+  }
+}

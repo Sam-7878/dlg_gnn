@@ -1,0 +1,16 @@
+{
+  "cohort": "horizon7",
+  "detector": "OCGNN",
+  "n": 3627,
+  "positive": 2037,
+  "ap": 0.689930291549568,
+  "roc_auc": 0.725435110827058,
+  "capture_37": 27,
+  "capture_50": 38,
+  "capture_100": 62,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 26.58
+}

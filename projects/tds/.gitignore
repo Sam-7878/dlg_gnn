@@ -50,3 +50,25 @@
 !/submission/applsci/319/README.md
 /submission/preprints/319/*
 !/submission/preprints/319/README.md
+
+# R321 private venue files and staged evidence archive.
+/submission/applsci/321/*
+!/submission/applsci/321/README.md
+/submission/preprints/321/*
+!/submission/preprints/321/README.md
+/publication/321/*.zip
+
+# R322 unpublished submission artifacts and review-only score package.
+/submission/applsci/322/*
+!/submission/applsci/322/README.md
+/submission/preprints/322/*
+!/submission/preprints/322/README.md
+/publication/322/*.zip
+
+# R323 private manuscript candidates and approval-only score bundle.
+/submission/applsci/323/*
+!/submission/applsci/323/README.md
+/submission/preprints/323/*
+!/submission/preprints/323/README.md
+/publication/323/*.zip
+/reports/323/*_build.log

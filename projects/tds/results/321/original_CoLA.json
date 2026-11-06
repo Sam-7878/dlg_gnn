@@ -1,0 +1,16 @@
+{
+  "cohort": "original",
+  "detector": "CoLA",
+  "n": 3648,
+  "positive": 107,
+  "ap": 0.09502866810048048,
+  "roc_auc": 0.7682923932465352,
+  "capture_37": 1,
+  "capture_50": 3,
+  "capture_100": 10,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 23.32
+}

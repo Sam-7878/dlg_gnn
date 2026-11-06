@@ -1,0 +1,16 @@
+{
+  "cohort": "horizon7",
+  "detector": "CoLA",
+  "n": 3627,
+  "positive": 2037,
+  "ap": 0.7040065229712079,
+  "roc_auc": 0.7684166813324564,
+  "capture_37": 6,
+  "capture_50": 7,
+  "capture_100": 18,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 24.19
+}

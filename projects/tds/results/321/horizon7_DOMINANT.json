@@ -1,0 +1,16 @@
+{
+  "cohort": "horizon7",
+  "detector": "DOMINANT",
+  "n": 3627,
+  "positive": 2037,
+  "ap": 0.43718538014002706,
+  "roc_auc": 0.3107206923487803,
+  "capture_37": 8,
+  "capture_50": 9,
+  "capture_100": 33,
+  "seed": 321,
+  "epochs": 5,
+  "batch_size": 64,
+  "hidden": 32,
+  "peak_mib": 99.21
+}
