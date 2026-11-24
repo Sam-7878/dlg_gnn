@@ -1,0 +1,94 @@
+[
+  {
+    "view": "S1",
+    "n": 8,
+    "k": 7,
+    "q_alpha": 2.949,
+    "critical_difference": 3.1852840532674636,
+    "mean_ranks": {
+      "DLG-Base": 2.375,
+      "AnomalyDAE": 2.625,
+      "DLG-Aug": 2.75,
+      "DOMINANT": 3.0,
+      "GADNR": 5.25,
+      "OCGNN": 5.625,
+      "CoLA": 6.375
+    },
+    "not_separated_groups": [
+      [
+        "DLG-Base",
+        "AnomalyDAE",
+        "DLG-Aug",
+        "DOMINANT",
+        "GADNR"
+      ],
+      [
+        "AnomalyDAE",
+        "DLG-Aug",
+        "DOMINANT",
+        "GADNR",
+        "OCGNN"
+      ],
+      [
+        "GADNR",
+        "OCGNN",
+        "CoLA"
+      ]
+    ]
+  },
+  {
+    "view": "S2",
+    "n": 13,
+    "k": 5,
+    "q_alpha": 2.728,
+    "critical_difference": 1.6918337797968035,
+    "mean_ranks": {
+      "DLG-Aug": 2.0,
+      "DLG-Base": 2.3076923076923075,
+      "DOMINANT": 2.3846153846153846,
+      "CoLA": 4.0,
+      "OCGNN": 4.3076923076923075
+    },
+    "not_separated_groups": [
+      [
+        "DLG-Aug",
+        "DLG-Base",
+        "DOMINANT"
+      ],
+      [
+        "DOMINANT",
+        "CoLA"
+      ],
+      [
+        "CoLA",
+        "OCGNN"
+      ]
+    ]
+  },
+  {
+    "view": "S4",
+    "n": 7,
+    "k": 5,
+    "q_alpha": 2.728,
+    "critical_difference": 2.3055808068993935,
+    "mean_ranks": {
+      "DLG-Base": 1.8571428571428572,
+      "DOMINANT": 2.0,
+      "DLG-Aug": 2.142857142857143,
+      "CoLA": 4.142857142857143,
+      "OCGNN": 4.857142857142857
+    },
+    "not_separated_groups": [
+      [
+        "DLG-Base",
+        "DOMINANT",
+        "DLG-Aug",
+        "CoLA"
+      ],
+      [
+        "CoLA",
+        "OCGNN"
+      ]
+    ]
+  }
+]

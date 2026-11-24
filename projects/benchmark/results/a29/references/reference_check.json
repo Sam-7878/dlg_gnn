@@ -1,0 +1,558 @@
+[
+  {
+    "key": "park2026dlg",
+    "title": "{DLG-GNN}: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection",
+    "source": "crossref",
+    "doi": "10.20944/preprints202609.0848.v1",
+    "found_title": "DLG-GNN: Decoupled Local-to-Global Graph Neural Network for Scalable Blockchain Fraud Detection",
+    "container": "",
+    "year": 2026,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "liu2022bond",
+    "title": "{BOND}: Benchmarking Unsupervised Outlier Node Detection on Static Attributed Graphs",
+    "source": "crossref",
+    "doi": "10.52202/068431-1959",
+    "found_title": "BOND: Benchmarking Unsupervised Outlier Node Detection on Static Attributed Graphs",
+    "container": "Advances in Neural Information Processing Systems 35",
+    "year": 2022,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "liu2024pygod",
+    "title": "{PyGOD}: A {Python} Library for Graph Outlier Detection",
+    "source": "url",
+    "url": "https://www.jmlr.org/papers/v25/23-0963.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "ding2019deep",
+    "title": "Deep Anomaly Detection on Attributed Networks",
+    "source": "crossref",
+    "doi": "10.1137/1.9781611975673.67",
+    "found_title": "Deep Anomaly Detection on Attributed Networks",
+    "container": "Proceedings of the 2019 SIAM International Conference on Data Mining",
+    "year": 2019,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "fan2020anomalydae",
+    "title": "{AnomalyDAE}: Dual Autoencoder for Anomaly Detection on Attributed Networks",
+    "source": "crossref",
+    "doi": "10.1109/ICASSP40776.2020.9053387",
+    "found_title": "Anomalydae: Dual Autoencoder for Anomaly Detection on Attributed Networks",
+    "container": "ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "year": 2020,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "liu2022cola",
+    "title": "Anomaly Detection on Attributed Networks via Contrastive Self-Supervised Learning",
+    "source": "crossref",
+    "doi": "10.1109/TNNLS.2021.3068344",
+    "found_title": "Anomaly Detection on Attributed Networks via Contrastive Self-Supervised Learning",
+    "container": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2022,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "xu2022conad",
+    "title": "Contrastive Attributed Network Anomaly Detection with Data Augmentation",
+    "source": "crossref",
+    "doi": "10.1007/978-3-031-05936-0_35",
+    "found_title": "Contrastive Attributed Network Anomaly Detection with Data Augmentation",
+    "container": "Lecture Notes in Computer Science",
+    "year": 2022,
+    "title_similarity": 0.993,
+    "status": "OK"
+  },
+  {
+    "key": "roy2024gadnr",
+    "title": "{GAD-NR}: Graph Anomaly Detection via Neighborhood Reconstruction",
+    "source": "crossref",
+    "doi": "10.1145/3616855.3635767",
+    "found_title": "GAD-NR: Graph Anomaly Detection via Neighborhood Reconstruction",
+    "container": "Proceedings of the 17th ACM International Conference on Web Search and Data Mining",
+    "year": 2024,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "wang2021ocgnn",
+    "title": "One-Class Graph Neural Networks for Anomaly Detection in Attributed Networks",
+    "source": "crossref",
+    "doi": "10.1007/s00521-021-05924-9",
+    "found_title": "One-class graph neural networks for anomaly detection in attributed networks",
+    "container": "Neural Computing and Applications",
+    "year": 2021,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "kent2015cyberdata",
+    "title": "Comprehensive, Multi-Source Cyber-Security Events",
+    "status": "ERROR",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "key": "demsar2006",
+    "title": "Statistical Comparisons of Classifiers over Multiple Data Sets",
+    "source": "url",
+    "url": "https://www.jmlr.org/papers/v7/demsar06a.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "holm1979",
+    "title": "A Simple Sequentially Rejective Multiple Test Procedure",
+    "source": "url",
+    "url": "https://www.jstor.org/stable/4615733",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "kumar2016edge",
+    "title": "Edge Weight Prediction in Weighted Signed Networks",
+    "source": "crossref",
+    "doi": "10.1109/ICDM.2016.0033",
+    "found_title": "Edge Weight Prediction in Weighted Signed Networks",
+    "container": "2016 IEEE 16th International Conference on Data Mining (ICDM)",
+    "year": 2016,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "pan2023prem",
+    "title": "{PREM}: A Simple Yet Effective Approach for Node-Level Graph Anomaly Detection",
+    "source": "crossref",
+    "doi": "10.1109/ICDM58522.2023.00157",
+    "found_title": "PREM: A Simple Yet Effective Approach for Node-Level Graph Anomaly Detection",
+    "container": "2023 IEEE International Conference on Data Mining (ICDM)",
+    "year": 2023,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "he2024adag",
+    "title": "{ADA-GAD}: Anomaly-Denoised Autoencoders for Graph Anomaly Detection",
+    "source": "crossref",
+    "doi": "10.1609/aaai.v38i8.28691",
+    "found_title": "ADA-GAD: Anomaly-Denoised Autoencoders for Graph Anomaly Detection",
+    "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "year": 2024,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "qiao2023tam",
+    "title": "Truncated Affinity Maximization: One-class Homophily Modeling for Graph Anomaly Detection",
+    "source": "url",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9b905031125e56a557db38dff4fa8d21-Abstract-Conference.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "chen2024gadam",
+    "title": "Boosting Graph Anomaly Detection with Adaptive Message Passing",
+    "source": "url",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/257a7d7934bad9b3a1774e8994e2a0dc-Abstract-Conference.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "tang2023gadbench",
+    "title": "{GADBench}: Revisiting and Benchmarking Supervised Graph Anomaly Detection",
+    "status": "ERROR",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "key": "zhou2026wild",
+    "title": "{GAD} in the Wild: Benchmarking Graph Anomaly Detection under Realistic Deployment Challenges",
+    "source": "arxiv",
+    "eprint": "2605.07133",
+    "found_title": "GAD in the Wild: Benchmarking Graph Anomaly Detection under Realistic Deployment Challenges",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "zhao2021graphsmote",
+    "title": "{GraphSMOTE}: Imbalanced Node Classification on Graphs with Graph Neural Networks",
+    "source": "crossref",
+    "doi": "10.1145/3437963.3441720",
+    "found_title": "GraphSMOTE: Imbalanced Node Classification on Graphs with Graph Neural Networks",
+    "container": "Proceedings of the 14th ACM International Conference on Web Search and Data Mining",
+    "year": 2021,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "liu2021pcgnn",
+    "title": "Pick and Choose: A {GNN}-based Imbalanced Learning Approach for Fraud Detection",
+    "source": "crossref",
+    "doi": "10.1145/3442381.3449989",
+    "found_title": "Pick and Choose: A GNN-based Imbalanced Learning Approach for Fraud Detection",
+    "container": "Proceedings of the Web Conference 2021",
+    "year": 2021,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "li2022dualaugment",
+    "title": "Dual-Augment Graph Neural Network for Fraud Detection",
+    "source": "crossref",
+    "doi": "10.1145/3511808.3557586",
+    "found_title": "Dual-Augment Graph Neural Network for Fraud Detection",
+    "container": "Proceedings of the 31st ACM International Conference on Information &amp; Knowledge Management",
+    "year": 2022,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "xu2020tgat",
+    "title": "Inductive Representation Learning on Temporal Graphs",
+    "source": "url",
+    "url": "https://openreview.net/forum?id=rJeW1yHYwH",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "rossi2020tgn",
+    "title": "Temporal Graph Networks for Deep Learning on Dynamic Graphs",
+    "source": "arxiv",
+    "eprint": "2006.10637",
+    "found_title": "Temporal Graph Networks for Deep Learning on Dynamic Graphs",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "pareja2020evolvegcn",
+    "title": "{EvolveGCN}: Evolving Graph Convolutional Networks for Dynamic Graphs",
+    "source": "crossref",
+    "doi": "10.1609/aaai.v34i04.5984",
+    "found_title": "EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs",
+    "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "year": 2020,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "trivedi2019dyrep",
+    "title": "{DyRep}: Learning Representations over Dynamic Graphs",
+    "source": "url",
+    "url": "https://openreview.net/forum?id=HyePrhR5KX",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "kumar2019jodie",
+    "title": "Predicting Dynamic Embedding Trajectory in Temporal Interaction Networks",
+    "source": "crossref",
+    "doi": "10.1145/3292500.3330895",
+    "found_title": "Predicting Dynamic Embedding Trajectory in Temporal Interaction Networks",
+    "container": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining",
+    "year": 2019,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "hamilton2017graphsage",
+    "title": "Inductive Representation Learning on Large Graphs",
+    "source": "url",
+    "url": "https://proceedings.neurips.cc/paper/2017/hash/5dd9db5e033da9c6fb5ba83c7a7ebea9-Abstract.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "chen2018fastgcn",
+    "title": "{FastGCN}: Fast Learning with Graph Convolutional Networks via Importance Sampling",
+    "source": "url",
+    "url": "https://openreview.net/forum?id=rytstxWAW",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "chiang2019clustergcn",
+    "title": "{Cluster-GCN}: An Efficient Algorithm for Training Deep and Large Graph Convolutional Networks",
+    "source": "url",
+    "url": "https://arxiv.org/abs/1905.07953",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "zou2019ladies",
+    "title": "Layer-Dependent Importance Sampling for Training Deep and Large Graph Convolutional Networks",
+    "source": "url",
+    "url": "https://proceedings.neurips.cc/paper/2019/hash/91ba4a4478a66bee9812b0804b6f9d1b-Abstract.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "zeng2020graphsaint",
+    "title": "{GraphSAINT}: Graph Sampling Based Inductive Learning Method",
+    "source": "url",
+    "url": "https://openreview.net/forum?id=BJe8pkHFwS",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "shchur2018pitfalls",
+    "title": "Pitfalls of Graph Neural Network Evaluation",
+    "source": "arxiv",
+    "eprint": "1811.05868",
+    "found_title": "Pitfalls of Graph Neural Network Evaluation",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "errica2020fair",
+    "title": "A Fair Comparison of Graph Neural Networks for Graph Classification",
+    "source": "url",
+    "url": "https://openreview.net/forum?id=HygDF6NFPB",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "hu2020ogb",
+    "title": "Open Graph Benchmark: Datasets for Machine Learning on Graphs",
+    "source": "url",
+    "url": "https://proceedings.neurips.cc/paper/2020/hash/fb60d411a5c5b72b2e7d3527cfc84fd0-Abstract.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "dwivedi2023benchmarking",
+    "title": "Benchmarking Graph Neural Networks",
+    "source": "url",
+    "url": "https://www.jmlr.org/papers/v24/22-0567.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "ma2023survey",
+    "title": "A Comprehensive Survey on Graph Anomaly Detection with Deep Learning",
+    "source": "crossref",
+    "doi": "10.1109/TKDE.2021.3118815",
+    "found_title": "A Comprehensive Survey on Graph Anomaly Detection With Deep Learning",
+    "container": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2023,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "qiao2025survey",
+    "title": "Deep Graph Anomaly Detection: A Survey and New Perspectives",
+    "source": "crossref",
+    "doi": "10.1109/TKDE.2025.3581578",
+    "found_title": "Deep Graph Anomaly Detection: A Survey and New Perspectives",
+    "container": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2025,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "luo2024multichain",
+    "title": "Multi-Chain Graphs of Graphs: A New Approach to Analyzing Blockchain Datasets",
+    "source": "crossref",
+    "doi": "10.52202/079017-0894",
+    "found_title": "Multi-Chain Graphs of Graphs: A New Approach to Analyzing Blockchain Datasets",
+    "container": "Advances in Neural Information Processing Systems 37",
+    "year": 2024,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "weber2019elliptic",
+    "title": "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics",
+    "source": "arxiv",
+    "eprint": "1908.02591",
+    "found_title": "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "huang2022dgraph",
+    "title": "{DGraph}: A Large-Scale Financial Dataset for Graph Anomaly Detection",
+    "source": "arxiv",
+    "eprint": "2207.03579",
+    "found_title": "DGraph: A Large-Scale Financial Dataset for Graph Anomaly Detection",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "snapbitcoinotc",
+    "title": "Bitcoin {OTC} Web of Trust Network",
+    "source": "url",
+    "url": "https://snap.stanford.edu/data/soc-sign-bitcoinotc.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "dilini2026comprehensive",
+    "title": "A Comprehensive Review on Graph-Based Anomaly Detection: Approaches for Intrusion Detection",
+    "source": "crossref",
+    "doi": "10.3390/app16041906",
+    "found_title": "A Comprehensive Review on Graph-Based Anomaly Detection: Approaches for Intrusion Detection",
+    "container": "Applied Sciences",
+    "year": 2026,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "heidrich2026systematic",
+    "title": "A Systematic Evaluation Method of Graph-Derived Signals for Tabular Machine Learning",
+    "source": "crossref",
+    "doi": "10.3390/app16052624",
+    "found_title": "A Systematic Evaluation Method of Graph-Derived Signals for Tabular Machine Learning",
+    "container": "Applied Sciences",
+    "year": 2026,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "jiang2025mvcg",
+    "title": "{MVCG-SPS}: A Multi-View Contrastive Graph Neural Network for Smart Ponzi Scheme Detection",
+    "source": "crossref",
+    "doi": "10.3390/app15063281",
+    "found_title": "MVCG-SPS: A Multi-View Contrastive Graph Neural Network for Smart Ponzi Scheme Detection",
+    "container": "Applied Sciences",
+    "year": 2025,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "liu2008iforest",
+    "title": "Isolation Forest",
+    "source": "crossref",
+    "doi": "10.1109/ICDM.2008.17",
+    "found_title": "Isolation Forest",
+    "container": "2008 Eighth IEEE International Conference on Data Mining",
+    "year": 2008,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "li2022ecod",
+    "title": "{ECOD}: Unsupervised Outlier Detection Using Empirical Cumulative Distribution Functions",
+    "source": "crossref",
+    "doi": "10.1109/TKDE.2022.3159580",
+    "found_title": "ECOD: Unsupervised Outlier Detection Using Empirical Cumulative Distribution Functions",
+    "container": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2023,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "iman1980friedman",
+    "title": "Approximations of the Critical Region of the {Friedman} Statistic",
+    "source": "crossref",
+    "doi": "10.1080/03610928008827904",
+    "found_title": "Approximations of the critical region of the fbietkan statistic",
+    "container": "Communications in Statistics - Theory and Methods",
+    "year": 1980,
+    "title_similarity": 0.952,
+    "status": "OK"
+  },
+  {
+    "key": "benavoli2017bayesian",
+    "title": "Time for a Change: a Tutorial for Comparing Multiple Classifiers Through {B}ayesian Analysis",
+    "source": "url",
+    "url": "https://jmlr.org/papers/v18/16-305.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "platonov2023heterophily",
+    "title": "A Critical Look at the Evaluation of {GNNs} under Heterophily: Are We Really Making Progress?",
+    "source": "arxiv",
+    "eprint": "2302.11640",
+    "found_title": "A critical look at the evaluation of GNNs under heterophily: Are we really making progress?",
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "dou2020care",
+    "title": "Enhancing Graph Neural Network-based Fraud Detectors against Camouflaged Fraudsters",
+    "source": "crossref",
+    "doi": "10.1145/3340531.3411903",
+    "found_title": "Enhancing Graph Neural Network-based Fraud Detectors against Camouflaged Fraudsters",
+    "container": "Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management",
+    "year": 2020,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "rayana2015collective",
+    "title": "Collective Opinion Spam Detection: Bridging Review Networks and Metadata",
+    "source": "crossref",
+    "doi": "10.1145/2783258.2783370",
+    "found_title": "Collective Opinion Spam Detection",
+    "container": "Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "year": 2015,
+    "title_similarity": 0.635,
+    "status": "CHECK"
+  },
+  {
+    "key": "mcauley2013amateurs",
+    "title": "From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise through Online Reviews",
+    "source": "crossref",
+    "doi": "10.1145/2488388.2488466",
+    "found_title": "From amateurs to connoisseurs",
+    "container": "Proceedings of the 22nd international conference on World Wide Web",
+    "year": 2013,
+    "title_similarity": 0.475,
+    "status": "CHECK"
+  },
+  {
+    "key": "zhao2020errorbounded",
+    "title": "Error-Bounded Graph Anomaly Loss for {GNNs}",
+    "source": "crossref",
+    "doi": "10.1145/3340531.3411979",
+    "found_title": "Error-Bounded Graph Anomaly Loss for GNNs",
+    "container": "Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management",
+    "year": 2020,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "ruff2018deep",
+    "title": "Deep One-Class Classification",
+    "source": "url",
+    "url": "https://proceedings.mlr.press/v80/ruff18a.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  },
+  {
+    "key": "pedregosa2011scikit",
+    "title": "Scikit-learn: Machine Learning in {P}ython",
+    "source": "url",
+    "url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+    "http_status": 200,
+    "title_similarity": 1.0,
+    "status": "OK"
+  }
+]

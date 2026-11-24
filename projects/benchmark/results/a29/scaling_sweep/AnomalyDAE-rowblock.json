@@ -1,0 +1,80 @@
+{
+  "model": "AnomalyDAE-rowblock",
+  "environment": {
+    "python": "3.14.4",
+    "torch": "2.14.1+cu130",
+    "cuda_runtime": "13.0",
+    "pyg": "2.8.0.post1",
+    "pygod": "1.1.0",
+    "numpy": "2.5.3",
+    "cuda_visible_devices": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+    "host": "HS-4070",
+    "utc": "2026-11-24T07:32:57Z",
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "gpu_total_bytes": 25769279488
+  },
+  "points": [
+    {
+      "N": 5000,
+      "E": 49936,
+      "fit_seconds": 3.0464285559996824,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 0.10994662949997291,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 145582080,
+      "peak_reserved_bytes": 176160768
+    },
+    {
+      "N": 10000,
+      "E": 99940,
+      "fit_seconds": 0.709642328999962,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 0.23593699749994812,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 221463552,
+      "peak_reserved_bytes": 291504128
+    },
+    {
+      "N": 20000,
+      "E": 199946,
+      "fit_seconds": 1.714975658000185,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 0.5672868130000097,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 374300672,
+      "peak_reserved_bytes": 501219328
+    },
+    {
+      "N": 50000,
+      "E": 499920,
+      "fit_seconds": 7.253367131999767,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 2.4012158235000243,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 830246400,
+      "peak_reserved_bytes": 1004535808
+    },
+    {
+      "N": 100000,
+      "E": 999948,
+      "fit_seconds": 24.66898120299993,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 8.201291711500062,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 1592703488,
+      "peak_reserved_bytes": 1912602624
+    },
+    {
+      "N": 200000,
+      "E": 1999938,
+      "fit_seconds": 94.32288514000038,
+      "optimizer_steps": 3,
+      "mean_epoch_seconds": 31.371220180000137,
+      "status": "COMPLETED",
+      "peak_allocated_bytes": 3122144256,
+      "peak_reserved_bytes": 3709861888
+    }
+  ],
+  "memory_cap": "torch.cuda.set_per_process_memory_fraction(1.0): no spill past physical VRAM",
+  "vram_bytes": 25769279488
+}

@@ -1,0 +1,139 @@
+{
+  "dataset": "Polygon",
+  "N": 2353,
+  "E": 15368,
+  "F": 8,
+  "seed": 42,
+  "epochs": 50,
+  "dense_adjacency_bytes_float32": 22146436,
+  "families": {
+    "DOMINANT": {
+      "dense_status": "COMPLETED",
+      "gram_status": "COMPLETED",
+      "dense_A": {
+        "fit_seconds": 1.7720986830000243,
+        "peak_allocated_bytes": 187514368,
+        "peak_reserved_bytes": 211812352,
+        "loss_first_last": [
+          109.47319793701172,
+          1.528321623802185
+        ]
+      },
+      "dense_B": {
+        "fit_seconds": 0.8087726119999843,
+        "peak_allocated_bytes": 188284416,
+        "peak_reserved_bytes": 211812352,
+        "loss_first_last": [
+          109.47319793701172,
+          1.528321623802185
+        ]
+      },
+      "gram": {
+        "fit_seconds": 9.718327959000021,
+        "peak_allocated_bytes": 76512256,
+        "peak_reserved_bytes": 77594624,
+        "loss_first_last": [
+          109.47328186035156,
+          1.528321623802185
+        ]
+      },
+      "noise_floor_denseA_vs_denseB": {
+        "max_rel_loss_diff": 4.1986173952917304e-07,
+        "final_rel_loss_diff": 0.0,
+        "score_spearman": 0.9999999974669239,
+        "score_max_rel_diff": 5.953757136141121e-07,
+        "top1pct_overlap_test": 1.0,
+        "top5pct_overlap_test": 1.0,
+        "delta_AP": 0.0,
+        "delta_ROC": 0.0,
+        "AP_x": 0.07071795270898179,
+        "AP_y": 0.07071795270898179
+      },
+      "denseA_vs_gram": {
+        "max_rel_loss_diff": 7.730274489485425e-07,
+        "final_rel_loss_diff": 0.0,
+        "score_spearman": 0.9999999997697203,
+        "score_max_rel_diff": 1.9309482603700933e-07,
+        "top1pct_overlap_test": 1.0,
+        "top5pct_overlap_test": 1.0,
+        "delta_AP": 0.0,
+        "delta_ROC": 0.0,
+        "AP_x": 0.07071795270898179,
+        "AP_y": 0.07071795270898179
+      },
+      "gram_AP": 0.07071795270898179,
+      "gram_ROC": 0.5482142857142858
+    },
+    "DLG-Base": {
+      "dense_status": "COMPLETED",
+      "gram_status": "COMPLETED",
+      "dense_A": {
+        "fit_seconds": 1.0761958529999447,
+        "peak_allocated_bytes": 166073856,
+        "peak_reserved_bytes": 190840832,
+        "loss_first_last": [
+          57.098167419433594,
+          1.8610683679580688
+        ]
+      },
+      "dense_B": {
+        "fit_seconds": 0.8414401180000368,
+        "peak_allocated_bytes": 166840320,
+        "peak_reserved_bytes": 190840832,
+        "loss_first_last": [
+          57.098167419433594,
+          1.8610683679580688
+        ]
+      },
+      "gram": {
+        "fit_seconds": 1.0203496190000578,
+        "peak_allocated_bytes": 77841920,
+        "peak_reserved_bytes": 79691776,
+        "loss_first_last": [
+          57.09820556640625,
+          1.8610687255859375
+        ]
+      },
+      "noise_floor_denseA_vs_denseB": {
+        "max_rel_loss_diff": 1.0966990236746611e-07,
+        "final_rel_loss_diff": 0.0,
+        "score_spearman": 0.9999999997697203,
+        "score_max_rel_diff": 5.4763175006787895e-08,
+        "top1pct_overlap_test": 1.0,
+        "top5pct_overlap_test": 1.0,
+        "delta_AP": 0.0,
+        "delta_ROC": 0.0,
+        "AP_x": 0.15319257996670693,
+        "AP_y": 0.15319257996670693
+      },
+      "denseA_vs_gram": {
+        "max_rel_loss_diff": 6.680945182711157e-07,
+        "final_rel_loss_diff": 1.9216267108162538e-07,
+        "score_spearman": 0.9999999949338477,
+        "score_max_rel_diff": 6.571581000814548e-07,
+        "top1pct_overlap_test": 1.0,
+        "top5pct_overlap_test": 1.0,
+        "delta_AP": 0.0,
+        "delta_ROC": 0.0,
+        "AP_x": 0.15319257996670693,
+        "AP_y": 0.15319257996670693
+      },
+      "gram_AP": 0.15319257996670693,
+      "gram_ROC": 0.8273351648351648
+    }
+  },
+  "memory_cap": "torch.cuda.set_per_process_memory_fraction(1.0): no spill past physical VRAM",
+  "environment": {
+    "python": "3.14.4",
+    "torch": "2.14.1+cu130",
+    "cuda_runtime": "13.0",
+    "pyg": "2.8.0.post1",
+    "pygod": "1.1.0",
+    "numpy": "2.5.3",
+    "cuda_visible_devices": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+    "host": "HS-4070",
+    "utc": "2026-11-24T06:37:11Z",
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "gpu_total_bytes": 25769279488
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-24",
+  "note": "Follow-up of the four non-OK rows of reference_check.json (56 entries parsed after fixing the entry splitter; 52 OK automatically).",
+  "items": [
+    {"key": "kent2015cyberdata", "auto": "ERROR 404 at Crossref", "resolution": "DataCite DOI 10.17021/1179829 resolves: 'Comprehensive, Multi-Source Cyber-Security Events Data Set', 2015, Los Alamos National Lab. Bib title corrected to add 'Data Set'.", "status": "OK"},
+    {"key": "tang2023gadbench", "auto": "ERROR timeout", "resolution": "NeurIPS 2023 Datasets and Benchmarks PDF returns HTTP 200 application/pdf; abstract page title 'GADBench: Revisiting and Benchmarking Supervised Graph Anomaly Detection'.", "status": "OK"},
+    {"key": "rayana2015collective", "auto": "CHECK 0.635", "resolution": "Crossref splits title/subtitle: 'Collective Opinion Spam Detection' + 'Bridging Review Networks and Metadata' = bib title.", "status": "OK"},
+    {"key": "mcauley2013amateurs", "auto": "CHECK 0.475", "resolution": "Crossref splits title/subtitle: 'From amateurs to connoisseurs' + 'modeling the evolution of user expertise through online reviews' = bib title.", "status": "OK"}
+  ]
+}

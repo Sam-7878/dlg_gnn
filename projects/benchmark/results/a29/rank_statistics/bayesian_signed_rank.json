@@ -1,0 +1,35 @@
+[
+  {
+    "comparison": "DLG-Aug - DLG-Base",
+    "view": "S2",
+    "n": 13,
+    "rope_AP": 0.01,
+    "P(DLG-Aug better)": 0.06478,
+    "P(practically equivalent)": 0.9027,
+    "P(DLG-Base better)": 0.03252,
+    "datasets_within_rope": 9,
+    "median_difference": 0.0006691467075902735
+  },
+  {
+    "comparison": "DLG-Aug - DOMINANT",
+    "view": "S2",
+    "n": 13,
+    "rope_AP": 0.01,
+    "P(DLG-Aug better)": 0.29448,
+    "P(practically equivalent)": 0.38654,
+    "P(DOMINANT better)": 0.31898,
+    "datasets_within_rope": 7,
+    "median_difference": 8.761816809838008e-05
+  },
+  {
+    "comparison": "DLG-Base - DOMINANT",
+    "view": "S2",
+    "n": 13,
+    "rope_AP": 0.01,
+    "P(DLG-Base better)": 0.0331,
+    "P(practically equivalent)": 0.91286,
+    "P(DOMINANT better)": 0.05404,
+    "datasets_within_rope": 9,
+    "median_difference": 0.00048409275137302477
+  }
+]
