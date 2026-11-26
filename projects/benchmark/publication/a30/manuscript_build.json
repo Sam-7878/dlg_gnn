@@ -1,0 +1,24 @@
+{
+  "release": "a30",
+  "freeze_date": "2026-11-26",
+  "source_date_epoch": "1795651200",
+  "final": true,
+  "pending": [],
+  "abstract_words": 197,
+  "submission_docs": {
+    "COVER_LETTER_A30.md": "projects/benchmark/paper/a30/COVER_LETTER_A30.md",
+    "SI_EDITOR_INQUIRY_A30.md": "projects/benchmark/paper/a30/SI_EDITOR_INQUIRY_A30.md"
+  },
+  "applsci": {
+    "pdf_sha256": "11590432ec49c231cd79801267d3d96a1e44b4c00b0a672a530aa5218c75e65c",
+    "byte_identical_rebuilds": true,
+    "warnings": [],
+    "pages": 33
+  },
+  "preprints": {
+    "pdf_sha256": "6f584ea720282cd16adc4e6f8d6f52f08ac43c05a38a817cd59e62192a11c5ac",
+    "byte_identical_rebuilds": true,
+    "warnings": [],
+    "pages": 36
+  }
+}

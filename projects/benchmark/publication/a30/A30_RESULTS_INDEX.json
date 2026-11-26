@@ -1,0 +1,257 @@
+[
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/cola_runs.json",
+    "sha256": "e4a9838f611a34f6e4a5345f347f415d52ab9f4905982fefd19faee389ac49f3",
+    "bytes": 46586
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/ocgnn_runs.json",
+    "sha256": "19faa1078d69bd1ddaca1f89d76487cb7ea0fb8b05995adbe58a4f19d9031ccc",
+    "bytes": 17425
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_Amazon-Syn.json",
+    "sha256": "c2f5bd3f3dfd60ab331e1e8d736617ac0e90fe78b89743d1296567967ae0a66e",
+    "bytes": 44703
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_BSC.json",
+    "sha256": "ba1c8ba3f05fe5924cc6f582cceee538e0f7b9d32ef8d26dcbfd434924aeed56",
+    "bytes": 44309
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_CiteSeer-Syn.json",
+    "sha256": "5acd5a412b2729c598368c1827ef212488c8d688a9157e538230508c2b7f60b8",
+    "bytes": 43875
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_Cora-Syn.json",
+    "sha256": "3ee292694513069eed2a5270319092ab3d24babbb34cb9a8e430f442b529b95a",
+    "bytes": 43953
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_Polygon.json",
+    "sha256": "b95fb925721b707a7200d306d40d1902299f3d26fc2b40c06f6793d297620c0e",
+    "bytes": 42967
+  },
+  {
+    "path": "projects/benchmark/results/a29/baseline_sanity/tune_PubMed-Syn.json",
+    "sha256": "3aa6131f008ff8075cfb5c6bcd445fc9fe267131dcdf0d3f57c1d22020df7b22",
+    "bytes": 44843
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/Amazon-Syn.json",
+    "sha256": "59aee0879b95b1a3bfdadffaf86d81db8ac7fbb9b13188d10fa50c2f6be5fd4c",
+    "bytes": 4257
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/BSC.json",
+    "sha256": "5cf4f49a8457146e9e4d1c2257d1b75f921a5457bd1b5abef8a92907a6737eef",
+    "bytes": 4233
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/BitcoinOTC.json",
+    "sha256": "460e82c0aca343a90db3bcd2a7519071878d057ebf6efe96a90a51b298bfa417",
+    "bytes": 4243
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/CiteSeer-Syn.json",
+    "sha256": "9398c0e4d26f6cb7b077206b60725761bad2f87fdff99e944977aa3361b473ee",
+    "bytes": 4267
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/Cora-Syn.json",
+    "sha256": "ff73af20b57a2c7d550cfde1ad5c60d5bf418a1579551854ab9de54b6c6d8b75",
+    "bytes": 4135
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/Elliptic.json",
+    "sha256": "00bcf24d398e586802021fc4c5dc05127d672b22a54c2838b6cfabd8ab50a330",
+    "bytes": 3460
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/Ethereum.json",
+    "sha256": "8b96cfceea70b9433707393bc24abce4264ccfeef876b5cc16951e76084635c9",
+    "bytes": 4330
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/NOTE_memory_cap.md",
+    "sha256": "7b9137c6e9547beeda2c30f4424a7e2537e978232a65f724f0bcd152175864ba",
+    "bytes": 798
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/Polygon.json",
+    "sha256": "6619c62787d27893d92d8011cfd91a84f1367adbebf535f74bc1c51627e751bd",
+    "bytes": 4216
+  },
+  {
+    "path": "projects/benchmark/results/a29/dense_vs_gram/PubMed-Syn.json",
+    "sha256": "6f381c506f9244b0a3176bb97ffafa712eb49383d2d953baa281c719b4e25c7b",
+    "bytes": 4227
+  },
+  {
+    "path": "projects/benchmark/results/a29/figures/fig_ap_lift.pdf",
+    "sha256": "1831e9fb1ccd28fc1ae613988e6880482afbd6647e3c962383116414ba4adc23",
+    "bytes": 27337
+  },
+  {
+    "path": "projects/benchmark/results/a29/figures/fig_ap_lift.png",
+    "sha256": "7e9b3726d35167b0f51db66740c41b5a8a546a426977771009af12278dd72f7a",
+    "bytes": 115748
+  },
+  {
+    "path": "projects/benchmark/results/a29/figures/fig_support_matrix.pdf",
+    "sha256": "3a9b5547424782cde97a483bcb40acd53fb80932ac9734c3a12dcde22bf5dcea",
+    "bytes": 22136
+  },
+  {
+    "path": "projects/benchmark/results/a29/figures/fig_support_matrix.png",
+    "sha256": "a8f101e9876807012069bdc44fdd446dce837aa27ffd8219cf32eee2a7e6ed8d",
+    "bytes": 136847
+  },
+  {
+    "path": "projects/benchmark/results/a29/gadnr_retry/gadnr_retry_summary.json",
+    "sha256": "5d841fe5cbd80622b42beb1c0a240ddfc92cc3c69db7b9db18a44ad1773febb0",
+    "bytes": 27373
+  },
+  {
+    "path": "projects/benchmark/results/a29/manuscript_build.json",
+    "sha256": "19e1bc8e58122578a1ea024eaf1f35e89c0b95ffe61eb577cc09a3b19be9012f",
+    "bytes": 679
+  },
+  {
+    "path": "projects/benchmark/results/a29/preregistration/A29_PREREGISTRATION_BINDING.json",
+    "sha256": "be3bd2af0f5cc9c05a2ef12923ab6c0beacdadd98300d6939ab9932b462ab797",
+    "bytes": 337
+  },
+  {
+    "path": "projects/benchmark/results/a29/preregistration/A29_PROTOCOL.yaml",
+    "sha256": "b302ed23604b3412708488110eb315d061b5a785ac4e4c119f0c945ba371e138",
+    "bytes": 7580
+  },
+  {
+    "path": "projects/benchmark/results/a29/rank_statistics/bayesian_signed_rank.json",
+    "sha256": "0c0b16e916cab60b918f6949cd14c6d70ca4b2ac7a808156bb5b23591b88a388",
+    "bytes": 874
+  },
+  {
+    "path": "projects/benchmark/results/a29/rank_statistics/fig_cd_diagram.pdf",
+    "sha256": "a0887bc7ba779cf0cdd68d7df606f64291d215ba63f2ece56d94e0e9269c4dd3",
+    "bytes": 19771
+  },
+  {
+    "path": "projects/benchmark/results/a29/rank_statistics/fig_cd_diagram.png",
+    "sha256": "30c833f3bc65f4f64f6061a11f34598cd0873b0685d7227b4900054394705994",
+    "bytes": 67888
+  },
+  {
+    "path": "projects/benchmark/results/a29/rank_statistics/nemenyi_cd.json",
+    "sha256": "ac3202ebe2ed9d23f600c5c6c279266099d421b50292b4c14156d1a3fb26f0da",
+    "bytes": 1632
+  },
+  {
+    "path": "projects/benchmark/results/a29/rank_statistics/rank_sensitivity.csv",
+    "sha256": "e4fbfe98ed701a0d480eca04a189a719020ae779b8cbd67778a161269fa4833f",
+    "bytes": 2941
+  },
+  {
+    "path": "projects/benchmark/results/a29/real_label/DATASETS_A29.json",
+    "sha256": "5a05b02de918c58f0cb2cde7558753e9ad656c8328da9cdf1a2bfc256205a7ab",
+    "bytes": 6332
+  },
+  {
+    "path": "projects/benchmark/results/a29/real_label/real_label_runs.csv",
+    "sha256": "850dc3839cb1c79e3c8fc368082b7eadab5f3aa014fc9eaef2bd8a7c358cbfeb",
+    "bytes": 87008
+  },
+  {
+    "path": "projects/benchmark/results/a29/real_label/real_label_summary.csv",
+    "sha256": "41bb8e91e017667398e34cd834791074379721a5f6e714ebf14ba5b00211cbdd",
+    "bytes": 14522
+  },
+  {
+    "path": "projects/benchmark/results/a29/real_label/real_label_summary.json",
+    "sha256": "3e8554ace13cfd36e3e0a4fd25462c8fd7291428e17e6ef32a038a433a2a623d",
+    "bytes": 36275
+  },
+  {
+    "path": "projects/benchmark/results/a29/references/manual_followup.json",
+    "sha256": "1225c144ac7f295499c1902d0d4856b36ea5e8e6a8e3e0f9e2aaaa4558a861d7",
+    "bytes": 1176
+  },
+  {
+    "path": "projects/benchmark/results/a29/references/reference_check.json",
+    "sha256": "38baa2760151bad0246b92d70c48aba000554e82cfaf7540543cf6246fa71a77",
+    "bytes": 20164
+  },
+  {
+    "path": "projects/benchmark/results/a29/resource_matrix/resource_matrix.csv",
+    "sha256": "8d3f4e9a4404289eff8f033fd35391ebba629d2bf95d98cc6c8c409cb5df80ab",
+    "bytes": 4261
+  },
+  {
+    "path": "projects/benchmark/results/a29/resource_matrix/resource_matrix.json",
+    "sha256": "7825bcfb19853a7dcf840c2938df011504ca4a363f7df4ba5a1820dd867c169d",
+    "bytes": 11354
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/AnomalyDAE-rowblock.json",
+    "sha256": "b53c07c9220d5be6454de888561470b07c61597b24d956f2fd7ff344f38f1812",
+    "bytes": 2220
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/DLG-Aug-Gram.json",
+    "sha256": "04d6eb3fc8cbcbf0eefa29c6ebc374b4749aff07dd09b58e71fd727e72365389",
+    "bytes": 2219
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/DLG-Base-Gram.json",
+    "sha256": "9816e8ce6b5129b98b29475e4649e11569930006018b3389c0bc88149e0591d5",
+    "bytes": 2219
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/DOMINANT-Gram.json",
+    "sha256": "6bfd8146f29c97688b1846fcd9a2fa64038e2bc14c36a4957bbcadc2c557ea45",
+    "bytes": 2220
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/DOMINANT-dense.attempt1_noncontiguous.json",
+    "sha256": "741388efdcb27542ac82be7d6ae0d803681c1426067368fac6d8d6dda98240e3",
+    "bytes": 1294
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/DOMINANT-dense.json",
+    "sha256": "ded781c2e4faf37a26935e5535b4349080267b45d8cb48a860d925488e9682f0",
+    "bytes": 2067
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/fig_memory_scaling.pdf",
+    "sha256": "7ea02e711e345a62b71dca5c268ca9e757da5763426415518c151d4485eae52d",
+    "bytes": 23833
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/fig_memory_scaling.png",
+    "sha256": "4268de41f09e816d6a4ce060456921ee04dcf316c420973cd021027b67f33de5",
+    "bytes": 125034
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/scaling_points.csv",
+    "sha256": "6016b572ba42bc3371cd47f6caef11c9cd1bccb6288b267c1d70e95a8424ee9c",
+    "bytes": 2891
+  },
+  {
+    "path": "projects/benchmark/results/a29/scaling_sweep/scaling_slopes.json",
+    "sha256": "ecf1b91ea72b46cae09d9454f1ddf2bfeaa8c321049267de40a8bf11bf8f563a",
+    "bytes": 204
+  },
+  {
+    "path": "projects/benchmark/results/a29/supervised_reference/supervised_runs_all.csv",
+    "sha256": "e8c74e941b34b77dccd4f66ec04abdd0453dc5c364e2909958a7180fd1486a54",
+    "bytes": 27324
+  },
+  {
+    "path": "projects/benchmark/results/a29/supervised_reference/supervised_summary_all.json",
+    "sha256": "ea34d279803f31ebf9845884a6e73c2e6089002149c61e7f6bda6263f735d137",
+    "bytes": 7284
+  }
+]

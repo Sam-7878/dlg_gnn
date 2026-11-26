@@ -12,7 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-from a29_common import LOCAL, RESULTS, ROOT, read_json
+from a29_common import EVIDENCE_TAG, LOCAL, REV, RESULTS, ROOT, read_json
 
 A28 = ROOT / 'projects/benchmark/paper/a28/applsci/DLG-Benchmark_A28_AppliedSciences.tex'
 FIG = {
@@ -71,9 +71,10 @@ def data_availability():
     return ('Aggregate results, analysis scripts, dataset reconciliation tables and reproduction code for the primary benchmark are '
             f'archived under the annotated tag \\nolinkurl{{{TAG}}} (scientific commit \\nolinkurl{{9e7e3a940d7e754b497043cf3959557c82773928}}) at '
             f'\\url{{https://github.com/Sam-7878/dlg_gnn/releases/tag/{TAG}}}. The scripts, pre-registered protocol and aggregate '
-            'results of the extension studies in this version are in \\nolinkurl{projects/benchmark/results/a29} and '
-            '\\nolinkurl{projects/benchmark/scripts/a29_*.py} of the same repository; the commit and checksums of the submitted '
-            'version are listed in the A29 evidence record (\\nolinkurl{projects/benchmark/publication/a29}). '
+            f'results of the extension studies in this version are archived under the annotated tag \\nolinkurl{{{EVIDENCE_TAG}}} at '
+            f'\\url{{https://github.com/Sam-7878/dlg_gnn/tree/{EVIDENCE_TAG}}} (directories \\nolinkurl{{projects/benchmark/results/a29}}, '
+            f'\\nolinkurl{{projects/benchmark/scripts}} and \\nolinkurl{{projects/benchmark/publication/{REV}}}, which lists the '
+            'checksums of the submitted files). '
             'Per-node scores, labels, split masks and node identifiers are retained by the authors and not redistributed. '
             'Per-node arrays are unavailable for 310 earlier runs (275 primary and 35 LANL) whose scripts stored only summary files. '
             'Third-party datasets must be obtained from their providers under their terms; the source address and file hash of each '
@@ -165,7 +166,7 @@ def ocgnn_table():
         rows.append([g, pm([r['pr_auc'] for r in rr]), pm([r['roc_auc'] for r in rr]),
                      f2(np.mean([r['frac_inside_sphere'] for r in rr])), f'{np.mean([r["dist_cv"] for r in rr]):.3g}',
                      f'{np.mean([r["score_sd"] for r in rr]):.3g}'])
-    return table('tab:ocgnn_sanity', 'OCGNN hypersphere diagnostics (primary settings, five seeds). ``Inside'' is the share of nodes '
+    return table('tab:ocgnn_sanity', 'OCGNN hypersphere diagnostics (primary settings, five seeds). ``Inside\'\' is the share of nodes '
                  'whose embedding lies inside the learned sphere; CV is the coefficient of variation of the squared distance to the '
                  'centre. A share near 1 with a very small spread means the embeddings have collapsed onto the centre, so the '
                  'anomaly scores carry little ranking information.',
@@ -296,7 +297,8 @@ def real_dataset_table():
     return table('tab:real_datasets', 'Extension graphs with real anomaly labels and their own edges. Edges are stored in both '
                  'directions without self-loops; features are used as distributed. Amazon-Fraud nodes 0--3,304 carry no label and '
                  'stay in the graph but not in the evaluation. The distributed Weibo file holds 347 positive users (4.1\\%), fewer '
-                 'than the 868 listed in the BOND paper; we use the file unchanged.',
+                 'than the 868 listed in the BOND paper, while its edge count (407,963 directed entries before symmetrisation) '
+                 'matches BOND; we use the file unchanged.',
                  'lrrrrr>{\\raggedright\\arraybackslash}X', ['Graph', 'Nodes', 'Edges', 'Feat.', 'Positives', 'Prevalence', 'Domain / label'],
                  rows, size='\\scriptsize')
 
@@ -456,7 +458,7 @@ def rank_sensitivity_table():
         tag = '' if r['p_exact'] else '$^\\dagger$'
         rows.append([names.get(r['analysis'], r['analysis']), r['n'], r['k'], f"{float(r['Q']):.2f}", f"{float(r['Kendall_W']):.2f}",
                      f"${p3(float(p))}${tag}"] + [f"{float(r['mean_rank_' + m]):.2f}" for m in ('DOMINANT', 'DLG-Base', 'DLG-Aug')])
-    return table('tab:rank_sensitivity', 'Sensitivity of the rank analysis (mean ranks, 1 = best). ``Tied'' rounds AP to the given grid '
+    return table('tab:rank_sensitivity', 'Sensitivity of the rank analysis (mean ranks, 1 = best). ``Tied\'\' rounds AP to the given grid '
                  'so that near-equal values share an average rank. $^\\dagger$ Monte Carlo $p$ ($10^6$ permutations) where ties '
                  'prevent exact enumeration.', '>{\\raggedright\\arraybackslash}Xrrrrrrrr',
                  ['Analysis', '$n$', '$k$', '$Q$', '$W$', '$p$', 'DOMINANT', 'DLG-Base', 'DLG-Aug'], rows, size='\\scriptsize')
@@ -554,12 +556,13 @@ def gadnr_text():
         spill = (r.get('cuda_peak_reserved_bytes') or 0) > 24 * GIB  # same rule as spilled()
         sent.append(f'On {name} it completed in {(r.get("fit_seconds") or 0) / 60:.0f} minutes with AP {f4(m.get("pr_auc"))} '
                     f'($\\pi_{{\\mathrm{{test}}}} = {f4(m.get("test_prevalence"))}$)'
-                    + (f', but only by spilling past the 24 GiB card (peak {gib(r.get("cuda_peak_allocated_bytes"))} GiB)' if spill else '') + '.')
+                    + (f', but only by spilling past the 24 GiB card ({gib(r.get("cuda_peak_reserved_bytes"))} GiB reserved)' if spill else '') + '.')
     for name, r in g.items():
         if r['status'] != 'COMPLETED':
             sent.append(f'On {name} ' + gadnr_stop(r) + '.')
     head = (f'Without the earlier 300 s limit and with a 12 h cap per graph (seed 42), GADNR completed on '
-            f'{NUMWORD[len(done)] if done else "none"} of the {NUMWORD[len(g)]} graphs. ')
+            f'{NUMWORD[len(done)] if done else "none"} of the {NUMWORD[len(g)]} graphs. GPU memory in this paragraph is the '
+            'reserved peak, which includes memory held by the allocator; Table~\\ref{tab:gadnr_retry} lists the allocated peak. ')
     return head + ' '.join(sent) + gadnr_seed_sentence()
 
 
@@ -666,7 +669,7 @@ def dense_vs_gram_table():
                          f"{c['delta_AP']:+.1e}" if c else '---', dense_mem, gib((r.get('gram') or {}).get('peak_allocated_bytes'))])
     if not rows:
         return pending('dense_vs_gram table')
-    return table('tab:dense_vs_gram', 'Dense PyGOD loss versus the memory-saving loss on real graphs (seed 42, 50 epochs, identical '
+    return table('tab:dense_vs_gram', 'Dense PyGOD loss versus the memory-saving loss on nine benchmark graphs (seed 42, 50 epochs, identical '
                  'initial weights). Loss diff.: largest relative difference in the training loss over all epochs; noise: the same '
                  'quantity for two dense runs from the same start, i.e. what GPU arithmetic alone produces. $1-\\rho$: one minus the '
                  'Spearman correlation of the final anomaly scores (0 = identical ranking); Top-1\\%: overlap of the top-1\\% test alert lists. Memory is the peak allocated '
@@ -710,7 +713,7 @@ def dvg_numbers():
     worst = max(comp, key=lambda t: abs(t[2]['denseA_vs_gram']['delta_AP']))
     rest = max(abs(r['denseA_vs_gram']['delta_AP']) for g, f, r in comp if (g, f) != worst[:2])
     txt = (f'For DOMINANT and DLG-Base we trained the dense PyGOD code and our implementation from the same initial weights for 50 '
-           f'epochs on {len(gs)} real graphs (Table~\\ref{{tab:dense_vs_gram}}). To know how much difference GPU arithmetic alone '
+           f'epochs on {len(gs)} benchmark graphs (Table~\\ref{{tab:dense_vs_gram}}). To know how much difference GPU arithmetic alone '
            'produces, we also trained the dense model twice from the same start. The training losses of the two implementations '
            f'differed by at most {sci_tex(mx)} in relative terms (two dense runs: up to {sci_tex(nf)}), and the rank correlation of '
            f'the final anomaly scores differed from 1 by at most {sci_tex(1 - rho)}. '
@@ -774,7 +777,7 @@ def scaling_numbers():
 
 RES_GRAPHS = ['Cora-Syn', 'Elliptic', 'DGraphFin', 'Reddit-Syn']
 RES_MODELS = ['DOMINANT', 'DLG-Base', 'DLG-Aug', 'OCGNN', 'CoLA', 'AnomalyDAE', 'GADNR']
-RES_STATUS = {'GPU_OOM': 'OOM', 'TIMEOUT_OBSERVED': '$>$3 h', 'HOST_OOM': 'RAM OOM', 'ERROR': 'error', 'NOT_RUN': 'n/r',
+RES_STATUS = {'GPU_OOM': 'OOM', 'TIMEOUT_OBSERVED': '$>$3 h$^\\dagger$', 'HOST_OOM': 'RAM OOM', 'ERROR': 'error', 'NOT_RUN': 'n/r',
               'EXCEEDS_CAP_PROJECTED': '$>$12 h', 'OTHER_ERROR': 'error'}
 
 
@@ -806,7 +809,8 @@ def resource_table():
                  'previous version. Graph sizes (nodes / edges): Cora-Syn 2,708 / 11,276; Elliptic 46,564 / 83,188; DGraphFin 1,225,601 / 746,271; '
                  'Reddit-Syn 232,965 / 114,869,737. '
                  'GADNR values on the three larger graphs come from the retry in Table~\\ref{tab:gadnr_retry} (12 h cap); other cells '
-                 'had a 3 h cap. $^\\ast$ Reserved memory exceeded the 24 GB card (spilling into system memory).',
+                 'had a 3 h cap. $^\\ast$ Reserved memory exceeded the 24 GB card (spilling into system memory). $^\\dagger$ Cap of this '
+                 'measurement only; the primary runs, which had no time cap, completed (Table~\\ref{tab:pr_auc_main}).',
                  'l' + '>{\\raggedleft\\arraybackslash}X' * len(RES_GRAPHS), head, rows, size='\\scriptsize')
 
 
@@ -834,11 +838,13 @@ def resource_text():
                 'values have therefore been replaced by these measurements. ')
     ad = {g: by[(g, 'AnomalyDAE')]['status'] for g in RES_GRAPHS}
     adfail = [(g, RES_STATUS.get(st, st)) for g, st in ad.items() if st not in ('success', 'COMPLETED')]
-    why = {'TIMEOUT_OBSERVED': lambda g: f'on {g} it exceeded the 3 h limit, because its exact row-by-row reconstruction visits every pair of nodes',
+    why = {'TIMEOUT_OBSERVED': lambda g: (f'on {g} it reached the 3 h cap, consistent with its exact row-by-row reconstruction visiting every '
+                                          'pair of nodes (its primary runs, which had no time cap, completed all five seeds; '
+                                          'Table~\\ref{tab:pr_auc_main})'),
            'GPU_OOM': lambda g: f'on {g} its edge attention needed a single 27.4 GiB tensor (64 values for each of the 115 million edges), '
                                 'more than the 24 GiB card holds'}
     if adfail:
-        txt += f'AnomalyDAE did not finish on {NUMWORD[len(adfail)]} graph{"s" if len(adfail) > 1 else ""}: ' + '; '.join(why.get(ad[g], lambda g: f'on {g} ({s})')(g) for g, s in adfail) + '. '
+        txt += f'Within the caps of this measurement, AnomalyDAE did not finish on {NUMWORD[len(adfail)]} graph{"s" if len(adfail) > 1 else ""}: ' + '; '.join(why.get(ad[g], lambda g: f'on {g} ({s})')(g) for g, s in adfail) + '. '
     gd = [(g, by[(g, 'GADNR')]) for g in RES_GRAPHS[1:]]
     done = [(g, r) for g, r in gd if ok(r)]
     if done:
@@ -982,8 +988,8 @@ ABSTRACT = (
     'whether a detector will run on their graph and whether its top alerts contain real anomalies. We test seven '
     'unsupervised detectors, including two configurations of our Decoupled Local-to-Global graph neural network (DLG-GNN), '
     'on 13 graphs from finance, blockchain and other domains plus an enterprise login graph. Of 91 detector--graph pairs, 84 '
-    'completed; failures came from detectors whose memory grows with the square of the node count. Computing a common '
-    'reconstruction loss without the node-by-node matrix removed this limit: <<ABS_EXACT>> Detection quality depended more '
+    'completed; all seven failures involved two detectors whose memory or preprocessing cost grew quickly with graph size. '
+    'Computing a common reconstruction loss without the node-by-node matrix scales well: <<ABS_EXACT>> Detection quality depended more '
     'on the graph than on the detector. On the Elliptic and DGraphFin financial graphs, all detectors ranked near '
     'random, although a supervised model predicted Elliptic labels well. The three reconstruction detectors led on average '
     'but were statistically indistinguishable, and <<ABS_REAL>> Detector choice should therefore test memory feasibility '
@@ -993,7 +999,7 @@ ABSTRACT = (
 def exact_abstract(dv, sc):
     if 'pending' in (dv['DVG_TEXT'] + sc['SCALING_TEXT']).lower():
         return pending('ABS_EXACT')
-    return (f'on {NUMWORD.get(int(dv["DVG_NG"]), dv["DVG_NG"])} real graphs it matched the standard loss and top alerts, '
+    return (f'on {NUMWORD.get(int(dv["DVG_NG"]), dv["DVG_NG"])} benchmark graphs it matched the standard loss and top alerts, '
             'with memory growing roughly in proportion to graph size.')
 
 
@@ -1005,7 +1011,7 @@ def key_findings(dv, sc, gtxt):
     kf['KF_RUN'] = ('Of 91 primary detector--graph pairs, 84 completed all five seeds on a 24 GB GPU. Every failure involved '
                     'AnomalyDAE or GADNR, whose memory or preprocessing grows quickly with graph size.')
     kf['KF_EXACT'] = (pending('KF_EXACT') if 'pending' in (dv['DVG_TEXT'] + sc['SCALING_TEXT']).lower() else
-                      f'The memory-saving loss reproduced the dense training loss and anomaly ranking on {dv["DVG_NG"]} real graphs '
+                      f'The memory-saving loss reproduced the dense training loss and anomaly ranking on {dv["DVG_NG"]} benchmark graphs '
                       f'(identical top-1\\% and top-5\\% alert lists), and its memory grew roughly in proportion to graph size, whereas '
                       f'the dense code no longer fitted on a 24 GB GPU beyond {sc["SCALE_DENSE_MAXN"]} nodes.')
     kf['KF_RANK'] = ('DOMINANT, DLG-Base and DLG-Aug formed a top group across graphs but could not be separated: a Bayesian test '
@@ -1084,7 +1090,7 @@ def build_all():
             'SUPPORT_CAPTION_RETRY': ('(Table~\\ref{tab:gadnr_retry}).'),
             'RESOURCE_TEXT': resource_text(), 'COLA_TEXT': cola_text(), 'OCGNN_TEXT': ocgnn_text(), 'TUNE_TEXT': tune_text(tu),
             'CONC_EXACT': (pending('CONC_EXACT') if 'pending' in dv['DVG_TEXT'].lower() else
-                           f'gave the same training loss and anomaly ranking as the dense code on {dv["DVG_NG"]} real graphs and '
+                           f'gave the same training loss and anomaly ranking as the dense code on {NUMWORD.get(int(dv["DVG_NG"]), dv["DVG_NG"])} benchmark graphs and '
                            'kept memory growing roughly in proportion to graph size')}
     nums.update(dv); nums.update(sc); nums.update(rank_numbers()); nums.update(sup_numbers())
     nums.update({k: v for k, v in real.items() if not k.startswith('_')})

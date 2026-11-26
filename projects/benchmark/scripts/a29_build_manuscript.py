@@ -1,4 +1,4 @@
-"""Build the A29 manuscript (Applied Sciences + Preprints variants) from the template.
+"""Build the manuscript (Applied Sciences + Preprints variants) of release REV (a29_common) from the template.
 
 * A28 tables are copied verbatim by \\label (numbers untouched); only captions may be simplified.
 * A29 numbers come from results/a29 via a29_numbers.numbers(); every <<KEY>> must resolve.
@@ -16,14 +16,19 @@ import sys
 import zipfile
 from pathlib import Path
 
-from a29_common import RESULTS, ROOT, dump
+import datetime
+
+from a29_common import EVIDENCE_TAG, FREEZE_DATE, PAPER_OUT, PUB_OUT, REV, ROOT, dump
 
 PAPER = ROOT / 'projects/benchmark/paper'
 TPL = PAPER / 'a29/template'
 A28 = PAPER / 'a28/applsci/DLG-Benchmark_A28_AppliedSciences.tex'
 A28P = PAPER / 'a28/preprints/DLG-Benchmark_A28_Preprints.tex'
 A28ZIP = PAPER / 'a28/applsci/source_bundle.zip'
-EPOCH = '1798416000'  # 2026-12-28 00:00 UTC, fixed for reproducible PDFs
+_FD = datetime.datetime.fromisoformat(FREEZE_DATE).replace(tzinfo=datetime.timezone.utc)
+EPOCH = str(int(_FD.timestamp()))  # freeze date 00:00 UTC: PDF date, header and metadata (A30-02)
+ZIPDATE = (_FD.year, _FD.month, _FD.day, 0, 0, 0)
+STEM = 'DLG-Benchmark_' + REV.upper() + '_{}'
 
 TITLE = 'Graph Anomaly Detection for Fraud and Cybersecurity: A Cross-Domain Benchmark of Detection Quality and GPU Memory Feasibility'
 
@@ -57,6 +62,8 @@ def front_applsci(abstract, keywords, featured):
     pre = A28.read_text()
     pre = pre[:pre.index('% Title and Citations')]
     auth = a28_between(r'\newcommand{\orcidauthorA}', r'\featuredapplication')
+    auth = re.sub(r'\\\\ \$\^\{1\}\$ \\quad ORCID:.*?(?=\}\n\n\\corres)', '', auth, flags=re.S)  # A30-06 (F9)
+    assert 'ORCID:' not in auth, auth
     return (pre + '% Title and Citations\n\\Title{' + TITLE + '}\n\\TitleCitation{' + TITLE + '}\n\n' + auth +
             '\\featuredapplication{' + featured + '}\n\n\\abstract{' + abstract + '}\n\n\\keyword{' + keywords +
             '}\n\n\\reftitle{References}\n')
@@ -66,6 +73,12 @@ def front_preprints(abstract, keywords):
     pre = A28P.read_text()
     head = pre[:pre.index('\n\\title{') + 1]  # the line-start \title, not the one inside the \Title macro
     auth = pre[pre.index(r'\author[1]'):pre.index(r'\begin{document}')]
+    auth = re.sub(r'(\\author\[1\]\{Seong-Su Park)\\thanks\{ORCID: .*?\}\}\}\n', r'\1}\n', auth, flags=re.S)  # A30-06 (F6)
+    auth = auth.replace('; ORCID: \\href{https://orcid.org/0000-0001-6624-3003}{\\mbox{0000-0001-6624-3003}}}}', '}}')
+    auth = auth.replace('\\texttt{kkim86@ajou.ac.kr}}\n',
+                        '\\texttt{kkim86@ajou.ac.kr}\\\\ ORCID: S.-S.P. \\href{https://orcid.org/0009-0008-4056-3875}{0009-0008-4056-3875}; '
+                        'K.-H.K. \\href{https://orcid.org/0000-0001-6624-3003}{0000-0001-6624-3003}}\n', 1)
+    assert auth.count('\\thanks') == 1 and 'Seong-Su Park}' in auth and auth.count('ORCID') == 1, auth
     body = ('\\begin{document}\n\\maketitle\n\n\\begin{abstract}' + abstract + '\\end{abstract}\n\n'
             '\\noindent{\\small\\textbf{Keywords: }' + keywords + '}\\par\n')
     return head + '\\title{' + TITLE + '}\n\n' + auth, body
@@ -141,11 +154,11 @@ def bundle(dirpath: Path, stem: str, tex: str, figures: dict):
         for info in src.infolist():
             if (info.filename.startswith('Definitions/') or info.filename.startswith('soul')
                     or info.filename in ('figures/fig_dlg_architecture.pdf', 'figures/fig_a24_delta_sample_sd.pdf')):
-                z.writestr(zipfile.ZipInfo(info.filename, date_time=(2026, 12, 28, 0, 0, 0)), src.read(info.filename))
-        z.writestr(zipfile.ZipInfo(stem + '.tex', date_time=(2026, 12, 28, 0, 0, 0)), tex)
-        z.writestr(zipfile.ZipInfo('references.bib', date_time=(2026, 12, 28, 0, 0, 0)), (TPL / 'references.bib').read_text())
+                z.writestr(zipfile.ZipInfo(info.filename, date_time=ZIPDATE), src.read(info.filename))
+        z.writestr(zipfile.ZipInfo(stem + '.tex', date_time=ZIPDATE), tex)
+        z.writestr(zipfile.ZipInfo('references.bib', date_time=ZIPDATE), (TPL / 'references.bib').read_text())
         for name, path in sorted(figures.items()):
-            z.writestr(zipfile.ZipInfo('figures/' + name, date_time=(2026, 12, 28, 0, 0, 0)), Path(path).read_bytes())
+            z.writestr(zipfile.ZipInfo('figures/' + name, date_time=ZIPDATE), Path(path).read_bytes())
 
 
 def plain(tex):
@@ -162,10 +175,13 @@ def abstract_words(tex):
 
 def submission_docs(nums):
     out = {}
-    for tpl, name in (('COVER_LETTER_template.md', 'COVER_LETTER_A29.md'), ('SI_EDITOR_INQUIRY_template.md', 'SI_EDITOR_INQUIRY_A29.md')):
-        text = (TPL / tpl).read_text().replace('<<TITLE>>', TITLE).replace('<<ABSTRACT_PLAIN>>', plain(fill(nums['ABSTRACT'], nums)))
-        (PAPER / 'a29' / name).write_text(text)
-        out[name] = str(PAPER / 'a29' / name)
+    PAPER_OUT.mkdir(parents=True, exist_ok=True)
+    for tpl, name in (('COVER_LETTER_template.md', f'COVER_LETTER_{REV.upper()}.md'), ('SI_EDITOR_INQUIRY_template.md', f'SI_EDITOR_INQUIRY_{REV.upper()}.md')):
+        text = ((TPL / tpl).read_text().replace('<<TITLE>>', TITLE).replace('<<ABSTRACT_PLAIN>>', plain(fill(nums['ABSTRACT'], nums)))
+                .replace('<<REV>>', REV.upper()).replace('<<REV_LOWER>>', REV).replace('<<EVIDENCE_TAG>>', EVIDENCE_TAG))
+        assert '<<' not in text, re.findall(r'<<[A-Z_]+>>', text)
+        (PAPER_OUT / name).write_text(text)
+        out[name] = str((PAPER_OUT / name).relative_to(ROOT))
     return out
 
 
@@ -176,20 +192,21 @@ def main(compile_pdf=True, final=False):
         print('PENDING items:', *sorted(set(a29_numbers.PENDING)), sep='\n  ', flush=True)
         if final:
             raise SystemExit('final build refused: pending items remain')
-    report = {'final': final, 'pending': sorted(set(a29_numbers.PENDING)),
+    report = {'release': REV, 'freeze_date': FREEZE_DATE, 'source_date_epoch': EPOCH, 'final': final, 'pending': sorted(set(a29_numbers.PENDING)),
               'abstract_words': abstract_words(fill(nums['ABSTRACT'], nums)), 'submission_docs': submission_docs(nums)}
     print('abstract words:', report['abstract_words'], flush=True)
     if final and report['abstract_words'] > 200:
         raise SystemExit('final build refused: abstract exceeds the 200-word limit of Applied Sciences')
     for variant, venue in (('applsci', 'AppliedSciences'), ('preprints', 'Preprints')):
-        stem = f'DLG-Benchmark_A29_{venue}'
+        stem = STEM.format(venue)
         tex = assemble(variant, nums, sections, tables, appendix)
-        d = PAPER / 'a29' / variant
+        d = PAPER_OUT / variant
         bundle(d, stem, tex, figures)
         if compile_pdf:
             report[variant] = compile_variant(d, stem)
             print(variant, report[variant], flush=True)
-    dump(RESULTS / 'manuscript_build.json', report)
+    PUB_OUT.mkdir(parents=True, exist_ok=True)
+    dump(PUB_OUT / 'manuscript_build.json', report)
 
 
 if __name__ == '__main__':

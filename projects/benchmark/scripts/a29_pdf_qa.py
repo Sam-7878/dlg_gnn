@@ -1,8 +1,9 @@
-"""A29 PDF quality assurance for both manuscript variants.
+"""PDF quality assurance for both manuscript variants of release REV (a29_common).
 
 Checks per variant: leftover placeholders (<<, %%, PENDING, ??), LaTeX warnings of the last pass, page map of every
 numbered table/figure, table order, and that each carried-over A28 table body is byte-identical to the frozen A28 source
-(only captions of the two split AP tables carry a part note). Writes publication/a29/{applsci,preprints}_qa.json.
+(only captions of the two split AP tables carry a part note). Writes publication/<REV>/{applsci,preprints}_qa.json and <REV>_PDF_QA.md.
+Also checks that the PDF date (metadata and the date printed on page 1) is the freeze date (A30-02).
   python a29_pdf_qa.py
 """
 from __future__ import annotations
@@ -11,12 +12,13 @@ import json
 import re
 import subprocess
 
-from a29_build_manuscript import A28, EPOCH, PAPER, a28_table
-from a29_common import ROOT, dump
+from a29_build_manuscript import A28, EPOCH, STEM, a28_table
+from a29_common import FREEZE_DATE, PAPER_OUT, PUB_OUT, REV, ROOT, dump
 from a29_numbers import APPENDIX_A28
 
-PUB = ROOT / 'projects/benchmark/publication/a29'
-VARIANTS = {'applsci': 'DLG-Benchmark_A29_AppliedSciences', 'preprints': 'DLG-Benchmark_A29_Preprints'}
+PUB = PUB_OUT
+VARIANTS = {'applsci': STEM.format('AppliedSciences'), 'preprints': STEM.format('Preprints')}
+BUILD = PUB_OUT / 'manuscript_build.json'
 
 
 def body(t):
@@ -33,7 +35,7 @@ def pages(pdf):
 
 
 def qa(variant, stem):
-    d = PAPER / 'a29' / variant
+    d = PAPER_OUT / variant
     pdf = str(d / (stem + '.pdf'))
     txt = pages(pdf)
     page_map, order = {}, []
@@ -51,13 +53,19 @@ def qa(variant, stem):
     identity = {lab: body(a28_table(lab, a28)) in body(tex) for lab in APPENDIX_A28}
     main_tables = [k for k in order if re.fullmatch(r'Table \d+', k)]
     app_tables = [k for k in order if k.startswith('Table A')]
-    rec = {'pdf_sha256': json.loads((ROOT / 'projects/benchmark/results/a29/manuscript_build.json').read_text())[variant]['pdf_sha256'],
+    rec = {'pdf_sha256': json.loads(BUILD.read_text())[variant]['pdf_sha256'],
            'pages': len(txt), 'page_map': page_map,
            'main_tables_in_order': main_tables == sorted(main_tables, key=lambda k: int(k.split()[1])),
            'appendix_tables_in_order': app_tables == sorted(app_tables, key=lambda k: int(k.split()[1][1:])),
            'appendix_tables': len(app_tables), 'main_tables': len(main_tables), 'figures': sum(k.startswith('Figure') for k in order), 'leftovers': leftovers, 'log_warnings': warn,
            'a28_tables_identical': identity, 'a28_tables_all_identical': all(identity.values()),
            'abstract_has_no_pending': 'PENDING' not in full.split('Keywords')[0]}
+    info = subprocess.run(['pdfinfo', '-isodates', pdf], capture_output=True, text=True).stdout
+    created = re.search(r'CreationDate:\s+(\S+)', info).group(1)
+    import datetime
+    shown = datetime.date.fromisoformat(FREEZE_DATE).strftime('%B %-d, %Y')  # e.g. "November 26, 2026" (header / title date)
+    rec.update(pdf_creation_date=created, date_shown_on_page1=shown in txt[0],
+               pdf_date_matches_freeze=created.startswith(FREEZE_DATE) and shown in txt[0])
     dump(PUB / f'{variant}_qa.json', rec)
     return rec
 
@@ -68,13 +76,14 @@ def key(k):
 
 
 def write_md(recs, epoch):
-    """Human-readable QA record in the A28 format (publication/a29/A29_PDF_QA.md)."""
+    """Human-readable QA record in the A28 format (publication/<REV>/<REV>_PDF_QA.md)."""
     a, p = recs['applsci'], recs['preprints']
-    build = json.loads((ROOT / 'projects/benchmark/results/a29/manuscript_build.json').read_text())
+    build = json.loads(BUILD.read_text())
     ok = all(build[v]['byte_identical_rebuilds'] for v in recs)
     clean = all(not r['log_warnings'] and not r['leftovers'] for r in recs.values())
-    lines = ['# A29 PDF quality assurance', '',
-             (f'Both source bundles produced {"byte-identical" if ok else "NON-IDENTICAL"} PDFs in two fresh builds at fixed epoch {epoch}. '
+    lines = [f'# {REV.upper()} PDF quality assurance', '',
+             (f'Both source bundles produced {"byte-identical" if ok else "NON-IDENTICAL"} PDFs in two fresh builds at fixed epoch {epoch} '
+              f'({FREEZE_DATE}, the freeze date; the PDF dates {"match it" if all(r["pdf_date_matches_freeze"] for r in recs.values()) else "DO NOT match it"}). '
               f'The final builds showed {"zero" if clean else "SOME"} overfull boxes, undefined references, oversized floats or leftover placeholders. '
               f'Each variant has {a["main_tables"]} main tables, {a["figures"]} figures and {a["appendix_tables"]} appendix tables, '
               f'{"in order" if all(r["main_tables_in_order"] and r["appendix_tables_in_order"] for r in recs.values()) else "NOT in order"}. '
@@ -85,8 +94,8 @@ def write_md(recs, epoch):
         lines.append(f'| {k} | {p["page_map"].get(k, "missing")} | {a["page_map"].get(k, "missing")} |')
     lines += ['', f'Preprints PDF has {p["pages"]} pages and SHA-256 `{p["pdf_sha256"]}`.', '',
               f'Applied Sciences PDF has {a["pages"]} pages and SHA-256 `{a["pdf_sha256"]}`.', '',
-              '[Submission hash manifest](A29_SUBMISSION_HASHES.sha256)', '']
-    (PUB / 'A29_PDF_QA.md').write_text('\n'.join(lines))
+              f'[Manuscript hash list]({REV.upper()}_MANUSCRIPT_HASHES.sha256)', '']
+    (PUB / f'{REV.upper()}_PDF_QA.md').write_text('\n'.join(lines))
 
 
 if __name__ == '__main__':

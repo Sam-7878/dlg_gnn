@@ -28,6 +28,14 @@ GPU_3090 = 'GPU-ab53069a-3217-ee09-80f8-748b5fdbd156'
 SEEDS = [42, 43, 44, 45, 46]
 MODELS7 = ['DOMINANT', 'AnomalyDAE', 'CoLA', 'GADNR', 'OCGNN', 'DLG-Base', 'DLG-Aug']
 
+# Manuscript release (A30): text, build and sign-off only; the A29 data in results/a29 is unchanged.
+# FREEZE_DATE fixes the PDF date (SOURCE_DATE_EPOCH), zip timestamps and the evidence tag name; change it on the day of a new freeze.
+REV = 'a30'
+FREEZE_DATE = '2026-11-26'
+EVIDENCE_TAG = f'benchmark-{REV}-evidence-{FREEZE_DATE}-r1'
+PAPER_OUT = ROOT / 'projects/benchmark/paper' / REV            # built manuscripts of this release
+PUB_OUT = ROOT / 'projects/benchmark/publication' / REV        # QA, hash lists, sign-off of this release
+
 for p in (RESULTS, LOCAL):
     p.mkdir(parents=True, exist_ok=True)
 
