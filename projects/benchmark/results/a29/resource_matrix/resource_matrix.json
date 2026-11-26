@@ -281,7 +281,15 @@
   {
     "graph": "DGraphFin",
     "model": "GADNR",
-    "status": "NOT_RUN"
+    "status": "OTHER_ERROR",
+    "source": "A29-06 retry (12 h cap)",
+    "fit_seconds": null,
+    "score_seconds": null,
+    "peak_allocated_bytes": 27864760832,
+    "peak_reserved_bytes": 37845204992,
+    "host_peak_rss_bytes": 4876554240,
+    "mean_epoch_seconds": null,
+    "note": "Traceback (most recent call last):\n  File \"/mnt/d/_Work/goat_bank/dlg_gnn/projects/benchmark/scripts/a29_gadnr_retry.py\", line 150, in cell\n    det.fit(d)\n    ~~~~~~~^^^\n  File \"/mnt/d/_Work/goat_bank"
   },
   {
     "graph": "Reddit-Syn",
@@ -370,6 +378,14 @@
   {
     "graph": "Reddit-Syn",
     "model": "GADNR",
-    "status": "NOT_RUN"
+    "status": "HOST_OOM",
+    "source": "A29-06 retry (12 h cap)",
+    "fit_seconds": null,
+    "score_seconds": null,
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "host_peak_rss_bytes": 18253611008,
+    "mean_epoch_seconds": null,
+    "note": "Killed by the kernel OOM killer at the cgroup limit (systemd: \"Failed with result 'oom-kill'\"; 17G memory peak, 6G memory swap peak) during process_graph, before any GPU use."
   }
 ]

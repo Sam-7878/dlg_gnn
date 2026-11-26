@@ -155,8 +155,9 @@ def cell(name: str, seed: int):
         status, err = 'GPU_OOM', repr(e)[:2000]
     except MemoryError as e:
         status, err = 'HOST_OOM', repr(e)[:2000]
-    except Exception as e:
-        status, err = 'OTHER_ERROR', traceback.format_exc()[-4000:]
+    except Exception as e:  # CUDA driver OOM (e.g. inside torch.inverse) arrives as AcceleratorError, not OutOfMemoryError
+        status = 'GPU_OOM' if 'out of memory' in str(e).lower() else 'OTHER_ERROR'
+        err = traceback.format_exc()[-4000:]
     finally:
         torch.optim.Adam.step = step
     if status == 'COMPLETED':
@@ -200,16 +201,28 @@ def driver(seeds=(42,), cells=CELLS):
                 dump(folder / 'result.json', hb)
             r = read_json(folder / 'result.json')
             print(name, seed, r['status'], flush=True)
+    summarize()
+
+
+def summarize():
+    """All retry records (every cell, seeds 42-46 where run) plus the earlier attempts kept beside them."""
     summary = []
-    for name in cells:
-        for seed in seeds:
-            p = RUNS / f'{name}__seed{seed}' / 'result.json'
+    for name in CELLS:
+        for seed in (42, 43, 44, 45, 46):
+            folder = RUNS / f'{name}__seed{seed}'
+            p = folder / 'result.json'
             if p.exists():
                 r = read_json(p)
-                summary.append({k: r.get(k) for k in ('dataset', 'seed', 'status', 'error', 'phases', 'epoch_seconds',
-                                                      'projected_total_seconds', 'elapsed_seconds', 'fit_seconds',
-                                                      'score_seconds', 'peak_rss_bytes', 'cuda_peak_allocated_bytes',
-                                                      'cuda_peak_reserved_bytes', 'metrics', 'input', 'returncode', 'phase')})
+                rec = {k: r.get(k) for k in ('dataset', 'seed', 'status', 'error', 'phases', 'epoch_seconds',
+                                             'projected_total_seconds', 'elapsed_seconds', 'fit_seconds',
+                                             'score_seconds', 'peak_rss_bytes', 'cuda_peak_allocated_bytes',
+                                             'cuda_peak_reserved_bytes', 'metrics', 'input', 'returncode', 'phase',
+                                             'host_memory_cap', 'recorded_by')}
+                rec['earlier_attempts'] = [{'path': str(d.relative_to(RUNS)),
+                                            'note': read_json(d / 'NOTE.json') if (d / 'NOTE.json').exists() else None,
+                                            'status': read_json(d / 'result.json').get('status') if (d / 'result.json').exists() else None}
+                                           for d in sorted(folder.glob('attempt*')) if d.is_dir()]
+                summary.append(rec)
     dump(OUT / 'gadnr_retry_summary.json', summary)
 
 
@@ -218,5 +231,7 @@ if __name__ == '__main__':
         cell(sys.argv[2], int(sys.argv[3]))
     elif sys.argv[1] == 'all':
         driver()
+    elif sys.argv[1] == 'summarize':
+        summarize()
     elif sys.argv[1] == 'seeds':
         driver(seeds=(43, 44, 45, 46), cells=sys.argv[2:])

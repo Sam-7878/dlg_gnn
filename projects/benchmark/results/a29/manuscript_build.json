@@ -1,33 +1,21 @@
 {
-  "final": false,
-  "pending": [
-    "ABS_EXACT",
-    "ABS_REAL",
-    "GADNR_RETRY_TEXT (2/5 cells)",
-    "GUIDE_FEATURE_GRAPHS",
-    "KF_EXACT",
-    "KF_REAL",
-    "REAL_TEXT (incomplete: Amazon-Fraud, YelpChi)",
-    "RESOURCE_TEXT (GADNR retry cells not yet run)",
-    "TUNE_TEXT (3/6 graphs complete)",
-    "dense DOMINANT sweep",
-    "fig_support_matrix (A28 fallback)"
-  ],
-  "abstract_words": 156,
+  "final": true,
+  "pending": [],
+  "abstract_words": 196,
   "submission_docs": {
     "COVER_LETTER_A29.md": "/mnt/d/_Work/goat_bank/dlg_gnn/projects/benchmark/paper/a29/COVER_LETTER_A29.md",
     "SI_EDITOR_INQUIRY_A29.md": "/mnt/d/_Work/goat_bank/dlg_gnn/projects/benchmark/paper/a29/SI_EDITOR_INQUIRY_A29.md"
   },
   "applsci": {
-    "pdf_sha256": "27bc7ce3b5f8a44bd9df13dfca6e92a29b6dd12d8ce7eaf68fe7cfe0182bab1a",
+    "pdf_sha256": "e237361833dfb934c3d1848eec6eca1523a58b75fdf9e906770ef854f33c45eb",
     "byte_identical_rebuilds": true,
     "warnings": [],
-    "pages": 30
+    "pages": 33
   },
   "preprints": {
-    "pdf_sha256": "9cee321f537a2b541030cd9409c6ea046bad65b4298cd7cad8fb258e9341ca64",
+    "pdf_sha256": "137c2d9aa2c679349d2b903b75b6e09fb977f4c26d23ba1e1a7b53fb04e15ab7",
     "byte_identical_rebuilds": true,
     "warnings": [],
-    "pages": 35
+    "pages": 36
   }
 }

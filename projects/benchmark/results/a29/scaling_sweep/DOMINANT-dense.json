@@ -1,0 +1,61 @@
+{
+ "model": "DOMINANT-dense",
+ "environment": {
+  "python": "3.14.4",
+  "torch": "2.14.1+cu130",
+  "cuda_runtime": "13.0",
+  "pyg": "2.8.0.post1",
+  "pygod": "1.1.0",
+  "numpy": "2.5.3",
+  "cuda_visible_devices": "GPU-ab53069a-3217-ee09-80f8-748b5fdbd156",
+  "host": "HS-4070",
+  "utc": "2026-11-26T00:19:29Z",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "gpu_total_bytes": 25769279488
+ },
+ "points": [
+  {
+   "N": 5000,
+   "E": 49936,
+   "fit_seconds": 2.1401447850075783,
+   "optimizer_steps": 3,
+   "mean_epoch_seconds": 0.07326997749623843,
+   "status": "COMPLETED",
+   "peak_allocated_bytes": 587909632,
+   "peak_reserved_bytes": 698351616
+  },
+  {
+   "N": 10000,
+   "E": 99940,
+   "fit_seconds": 1.1299506049981574,
+   "optimizer_steps": 3,
+   "mean_epoch_seconds": 0.23791744700429263,
+   "status": "COMPLETED",
+   "peak_allocated_bytes": 2104403456,
+   "peak_reserved_bytes": 2164260864
+  },
+  {
+   "N": 20000,
+   "E": 199946,
+   "fit_seconds": 3.0287087649921887,
+   "optimizer_steps": 3,
+   "mean_epoch_seconds": 0.9025602949986933,
+   "status": "COMPLETED",
+   "peak_allocated_bytes": 8134641664,
+   "peak_reserved_bytes": 8256487424
+  },
+  {
+   "N": 50000,
+   "E": 499920,
+   "status": "GPU_OOM",
+   "error": "AcceleratorError(\"CUDA error: out of memory\\nSearch for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\\nThe CUDA driver logged these messages, which may provide useful details:\\nSticky error detected\\nReturning 2 (CUDA_ERROR_OUT_OF_MEMORY) from cuMemFree_v2\\n\\n\")",
+   "peak_allocated_bytes": 40232786432,
+   "peak_reserved_bytes": 40584085504,
+   "exceeds_physical_vram": true,
+   "status_as_recorded": "ERROR",
+   "status_note": "Reclassified 2026-11-26 from the recorded error text (CUDA driver out of memory, AcceleratorError); the sweep code then classified only torch.OutOfMemoryError as GPU_OOM. Measurements unchanged."
+  }
+ ],
+ "memory_cap": "torch.cuda.set_per_process_memory_fraction(1.0): no spill past physical VRAM",
+ "vram_bytes": 25769279488
+}

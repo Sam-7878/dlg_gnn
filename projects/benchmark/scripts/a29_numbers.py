@@ -502,7 +502,7 @@ def tune_text(tu):
             'with small validation sets the chosen configuration does not always carry over to the test nodes. After tuning, the '
             f'three reconstruction models still could not be separated (Friedman $p = {p3(g3["p_chi2"])}$, $\\chi^2$ approximation), '
             f'and the best average ranks over all seven detectors were {oxford(f"{m} ({x:.2f})" for m, x in best7[:3])}.'
-            + fail_sentence())
+            + fail_sentence() + rerun_sentence())
 
 
 def fail_sentence():
@@ -518,23 +518,106 @@ def fail_sentence():
             + ' search runs, ' + oxford(parts) + ' did not finish; they are recorded and were not eligible for selection.')
 
 
+def rerun_sentence():
+    """Runs whose first attempt failed while two memory-spilling jobs ran at once (records kept as attempt1_*), and how the
+    repeat run, made with one GPU job at a time, ended."""
+    root = LOCAL / 'baseline_sanity/tune'
+    first = sorted(p for p in root.rglob('result.json') if any(x.startswith('attempt1_concurrent_spill_') for x in p.parts))
+    if not first:
+        return ''
+    graphs = sorted({p.relative_to(root).parts[0] for p in first})
+    again = []
+    for p in first:
+        rel = [x for x in p.relative_to(root).parts if not x.startswith('attempt1_concurrent_spill_')]
+        st = read_json(root.joinpath(*rel))['status']  # the repeat must exist once the tuning text is rendered
+        if st != 'success':
+            again.append((rel[0], st))
+    txt = (f' The first attempt at {len(first)} GADNR runs on {oxford(graphs)} ran out of memory while a second job was also '
+           'spilling into shared system memory, so these runs were repeated with one GPU job at a time')
+    if not again:
+        return txt + '; all of them then finished, and the first attempts are kept in the evidence record.'
+    ag = sorted({g for g, _ in again})
+    return (txt + f'. {NUMWORD.get(len(first) - len(again), len(first) - len(again)).capitalize()} of them then finished; the other '
+            f'{NUMWORD.get(len(again), len(again))}, on {oxford(ag)}, ran out of memory again when running alone and {"is" if len(again) == 1 else "are"} among the '
+            f'unfinished runs above. The first attempts are kept in the evidence record.')
+
+
 # ---------------------------------------------------------------- A29-06 GADNR texts
 def gadnr_text():
     g = gadnr()
     if len(g) < len(GADNR_CELLS):
         return pending(f'GADNR_RETRY_TEXT ({len(g)}/{len(GADNR_CELLS)} cells)')
-    parts = []
+    done = [(n, r) for n, r in g.items() if r['status'] == 'COMPLETED']
+    sent = []
+    for name, r in done:
+        m = r.get('metrics') or {}
+        spill = (r.get('cuda_peak_reserved_bytes') or 0) > 24 * GIB  # same rule as spilled()
+        sent.append(f'On {name} it completed in {(r.get("fit_seconds") or 0) / 60:.0f} minutes with AP {f4(m.get("pr_auc"))} '
+                    f'($\\pi_{{\\mathrm{{test}}}} = {f4(m.get("test_prevalence"))}$)'
+                    + (f', but only by spilling past the 24 GiB card (peak {gib(r.get("cuda_peak_allocated_bytes"))} GiB)' if spill else '') + '.')
     for name, r in g.items():
-        st = r['status']
-        if st == 'COMPLETED':
-            m = r.get('metrics') or {}
-            spill = (r.get('cuda_peak_reserved_bytes') or 0) > 24 * GIB  # same rule as spilled()
-            parts.append(f'on {name} it completed in {(r.get("fit_seconds") or 0) / 60:.0f} minutes with AP {f4(m.get("pr_auc"))} '
-                         f'($\\pi_{{\\mathrm{{test}}}} = {f4(m.get("test_prevalence"))}$)'
-                         + (f', but only by spilling past the 24 GiB card (peak {gib(r.get("cuda_peak_allocated_bytes"))} GiB)' if spill else ''))
-        else:
-            parts.append(f'on {name} it stopped with {STATUS_TXT.get(st, st)}')
-    return ('Without the earlier 300 s limit and with a 12 h cap per graph (seed 42), ' + oxford(parts) + '.')
+        if r['status'] != 'COMPLETED':
+            sent.append(f'On {name} ' + gadnr_stop(r) + '.')
+    head = (f'Without the earlier 300 s limit and with a 12 h cap per graph (seed 42), GADNR completed on '
+            f'{NUMWORD[len(done)] if done else "none"} of the {NUMWORD[len(g)]} graphs. ')
+    return head + ' '.join(sent) + gadnr_seed_sentence()
+
+
+def gadnr_stop(r):
+    """Why a GADNR retry cell did not finish: status, the stage it was in, and the memory it held at that point."""
+    st, ph = r['status'], r.get('phase') or ''
+    cpu = ph in ('load_input', 'process_graph')  # GADNR builds its neighbourhood structures on the CPU before training
+    rss, gpu = (r.get('peak_rss_bytes') or 0) / 1e9, (r.get('cuda_peak_reserved_bytes') or 0) / GIB
+    prep = ((r.get('phases') or {}).get('process_graph_done') or 0) / 3600
+    if cpu:
+        where = 'while still preparing the graph on the CPU, before training began'
+    else:
+        where = ('in the first training epoch' if not r.get('epoch_seconds') else 'during training') + \
+                (f', after {prep:.1f} h of preparing the graph on the CPU' if prep >= 0.5 else '')
+    if st == 'GPU_OOM':
+        return f'it ran out of GPU memory {where} ({gpu:.1f} GiB reserved, beyond the 24 GiB card)'
+    cap = r.get('host_memory_cap')
+    if st == 'HOST_OOM' and cap:
+        return (f'the host ran out of RAM {where}: an uncapped first attempt filled the memory of the machine within minutes and made it '
+                f'unresponsive, and a repeat limited to {cap["MemoryMax"].rstrip("G")} GiB of RAM (plus {cap["MemorySwapMax"].rstrip("G")} GiB swap) '
+                'was stopped by the kernel when it reached that limit')
+    if st == 'HOST_OOM':
+        return f'the host ran out of RAM {where} (peak {rss:.1f} GB of about 22 GB)'
+    if st == 'TIMEOUT_OBSERVED':
+        return (f'it reached the 12 h cap {where}' + (f' (host RAM {rss:.1f} GB, with swapping)' if cpu and rss > 15 else '')
+                + ('' if cpu else f' ({gpu:.1f} GiB GPU memory reserved)'))
+    err = (r.get('error') or '').lower()
+    if 'illegal memory access' in err:  # observed message only; the cause (e.g. spill exhaustion or a kernel fault) is not established
+        return (f'the GPU reported an illegal memory access {where} ({gpu:.1f} GiB reserved'
+                + (', beyond the 24 GiB card' if gpu > 24 else '') + '; the cause was not established)')
+    return f'it stopped with {STATUS_TXT.get(st, st)} {where}'
+
+
+def gadnr_seed_sentence(g='Elliptic'):
+    """Seeds 43-46 on the one large graph where seed 42 completed; earlier attempts (attempt1_*) are reported, not dropped."""
+    base = LOCAL / 'gadnr_retry'
+    first = read_json(base / f'{g}__seed42' / 'result.json') if (base / f'{g}__seed42' / 'result.json').exists() else {}
+    if first.get('status') != 'COMPLETED':
+        return ''
+    recs = {s: base / f'{g}__seed{s}' / 'result.json' for s in (43, 44, 45, 46)}
+    if not all(p.exists() for p in recs.values()):
+        return ' ' + pending(f'GADNR {g} seeds 43--46')
+    rs = {s: read_json(p) for s, p in recs.items()}
+    ok = [s for s, r in rs.items() if r['status'] == 'COMPLETED']
+    aps = [first['metrics']['pr_auc']] + [rs[s]['metrics']['pr_auc'] for s in ok]
+    earlier = sorted(s for s in recs if any((base / f'{g}__seed{s}').glob('attempt1_*/result.json')))
+    txt = f' On {g} we also ran seeds 43--46: '
+    txt += (('all four' if len(ok) == 4 else NUMWORD[len(ok)]) + ' completed' + (f' (AP over the {NUMWORD[len(aps)]} completed seeds {np.mean(aps):.4f} $\\pm$ {np.std(aps, ddof=1):.4f})' if len(aps) > 1 else '')
+            if ok else 'none completed')
+    bad = [s for s in rs if s not in ok]
+    if bad:
+        txt += '; seed' + ('s ' if len(bad) > 1 else ' ') + oxford(str(s) for s in bad) + ' stopped with ' + oxford(sorted(set(STATUS_TXT.get(rs[s]['status'], rs[s]['status']) for s in bad)))
+    txt += '.'
+    if earlier:
+        txt += (f' A first attempt at seed{"s" if len(earlier) > 1 else ""} {oxford(str(s) for s in earlier)} ran out of GPU memory, '
+                'while a second memory-heavy job was running at the same time; they were repeated with one GPU job at a time, and the '
+                'repeats are reported.')
+    return txt
 
 
 # ---------------------------------------------------------------- A29-05a/b/c
@@ -686,7 +769,7 @@ def scaling_numbers():
               f'({rbt[-1][1]:.0f} s per epoch at $N = {rbt[-1][0]:,}$), approaching the $N^2$ growth of its arithmetic.'
               if rbmax else ''))
     return {'SCALING_TEXT': txt, 'SCALE_DENSE_MAXN': f'{dmax:,}' if dmax else '---',
-            'SCALE_GRAM_SLOPES': f'{min(sl):.2f}--{max(sl):.2f}', 'SCALE_GRAM_LOCAL': f'{2 ** min(loc):.1f}--{2 ** max(loc):.1f}'}
+            'SCALE_GRAM_SLOPES': f'{min(sl):.2f}--{max(sl):.2f}', 'SCALE_GRAM_LOCAL': rng(2 ** min(loc), 2 ** max(loc), 1)}
 
 
 RES_GRAPHS = ['Cora-Syn', 'Elliptic', 'DGraphFin', 'Reddit-Syn']
@@ -743,6 +826,12 @@ def resource_text():
            'Cost followed the number of edges more than the number of nodes. On Reddit-Syn (233 thousand nodes, 115 million edges) the '
            f'{NUMWORD[len(rd)]} detectors that finished took {fit(rd)} s and {mem(rd)} GiB, whereas on DGraphFin (1.2 million nodes, '
            f'0.75 million edges) they took {fit(dg)} s and at most {max(r["peak_allocated_bytes"] for r in dg) / GIB:.1f} GiB. ')
+    base = by[('Reddit-Syn', 'DLG-Base')]
+    if ok(base):
+        txt += ('The previous version\'s first-order estimate for DLG-Base on Reddit-Syn, 4.9 GB, left out the sparse message-passing '
+                f'workspace and the stored activations; the measured {base["peak_allocated_bytes"] / GIB:.1f} GiB, and the much higher cost '
+                'on Reddit-Syn than on the larger DGraphFin, show that such edge-dependent buffers dominate on dense graphs. The estimated '
+                'values have therefore been replaced by these measurements. ')
     ad = {g: by[(g, 'AnomalyDAE')]['status'] for g in RES_GRAPHS}
     adfail = [(g, RES_STATUS.get(st, st)) for g, st in ad.items() if st not in ('success', 'COMPLETED')]
     why = {'TIMEOUT_OBSERVED': lambda g: f'on {g} it exceeded the 3 h limit, because its exact row-by-row reconstruction visits every pair of nodes',
@@ -760,8 +849,9 @@ def resource_text():
                          + (' (more than the card holds, so it ran only by spilling into system memory)' if sp else ''))
         txt += 'GADNR, the slowest detector, finished ' + '; '.join(parts) + '. '
     nd = [(g, RES_STATUS.get(r['status'], r['status'])) for g, r in gd if not ok(r)]
-    if nd:
-        txt += 'It did not finish on ' + ' or '.join(f'{g} ({s})' for g, s in nd) + ' even with the 12 h cap. '
+    if nd:  # the reasons are given once, with the GADNR retry (Section 5.1, Table 2)
+        txt += ('It did not finish on ' + oxford([g for g, _ in nd]).replace(' and ', ' or ') + '; the reasons are given with the GADNR retry in '
+                'Section~\\ref{sec:res_run} (Table~\\ref{tab:gadnr_retry}). ')
     return txt.strip()
 
 
@@ -827,7 +917,7 @@ def real_story(runs, gains):
         f'{sup["YelpChi"]["HGB-X"]["AP_mean"]:.2f} AP on these graphs (Section~\\ref{{sec:res_reference}}).\n\\end{{itemize}}\n'
         f'DOMINANT, DLG-Base and DLG-Aug again behaved alike: their mean AP differed by at most 0.01 on {NUMWORD.get(len(close), len(close))} '
         f'of the five graphs' + (f' and by {max(spread.values()):.3f} on {max(spread, key=spread.get)}' if len(close) < 5 else '') + '. ')
-    text += real_gadnr_sentence(runs)
+    text += real_gadnr_sentence(runs) + real_rerun_sentence()
     kf = ('On five further graphs with real labels and their own edges, graph detectors clearly beat feature-only detectors on '
           'two (Weibo and Tolokers), no detector beat random ranking on Reddit, and on the two review-fraud graphs (Amazon and '
           'YelpChi) the feature-only Isolation Forest was best.')
@@ -851,6 +941,24 @@ def real_gadnr_sentence(runs):
     if not parts:
         return ''
     return 'Some cells did not complete: ' + '; '.join(parts) + '; they are marked in Table~\\ref{tab:real_label}.'
+
+
+def real_rerun_sentence():
+    """Real-label cells whose earlier attempts crashed (crash_attempt1.json: 2026-11-23, before the CUDA-context fix;
+    attempt2_concurrent_spill_*.json: two spilling jobs at once). The reported value is the latest run, made alone."""
+    root = LOCAL / 'real_label'
+    cells = sorted({p.parent for p in root.rglob('*.json') if p.name == 'crash_attempt1.json' or p.name.startswith('attempt2_')})
+    if not cells:
+        return ''
+    txt = dict(STATUS_TXT, success='completed')
+    desc = [f'{c.parent.name} on {c.parent.parent.name} (seed {c.name}; '
+            + (txt.get(read_json(c / 'result.json')['status'], read_json(c / 'result.json')['status']) if (c / 'result.json').exists() else 'pending') + ')'
+            for c in cells]
+    if any(d.endswith('pending)') for d in desc):
+        return pending('real-label repeat runs')
+    return (f' Earlier attempts at {NUMWORD.get(len(cells), len(cells))} of these runs stopped with GPU memory errors, either before '
+            'a fix that records such failures or while a second memory-heavy job was running; each was repeated with one GPU job at a '
+            f'time, and the repeat is reported: {"; ".join(desc)}. The earlier attempts are kept in the evidence record.')
 
 
 # ---------------------------------------------------------------- A29-12 numbers
@@ -973,7 +1081,7 @@ def build_all():
     nums = {'KEYWORDS': KEYWORDS, 'FEATURED': FEATURED, 'DATA_AVAILABILITY': data_availability(),
             'PREREG_SHA': read_json(RESULTS / 'preregistration/A29_PREREGISTRATION_BINDING.json')['protocol_sha256'],
             'GADNR_RETRY_TEXT': gtxt,
-            'SUPPORT_CAPTION_RETRY': ('Retries of the GADNR cells are reported separately in Table~\\ref{tab:gadnr_retry}.'),
+            'SUPPORT_CAPTION_RETRY': ('(Table~\\ref{tab:gadnr_retry}).'),
             'RESOURCE_TEXT': resource_text(), 'COLA_TEXT': cola_text(), 'OCGNN_TEXT': ocgnn_text(), 'TUNE_TEXT': tune_text(tu),
             'CONC_EXACT': (pending('CONC_EXACT') if 'pending' in dv['DVG_TEXT'].lower() else
                            f'gave the same training loss and anomaly ranking as the dense code on {dv["DVG_NG"]} real graphs and '

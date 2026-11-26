@@ -11,7 +11,7 @@ import json
 import re
 import subprocess
 
-from a29_build_manuscript import A28, PAPER, a28_table
+from a29_build_manuscript import A28, EPOCH, PAPER, a28_table
 from a29_common import ROOT, dump
 from a29_numbers import APPENDIX_A28
 
@@ -62,8 +62,37 @@ def qa(variant, stem):
     return rec
 
 
+def key(k):
+    kind, num = k.split()
+    return (kind == 'Figure', num.startswith('A'), int(num.lstrip('A')))
+
+
+def write_md(recs, epoch):
+    """Human-readable QA record in the A28 format (publication/a29/A29_PDF_QA.md)."""
+    a, p = recs['applsci'], recs['preprints']
+    build = json.loads((ROOT / 'projects/benchmark/results/a29/manuscript_build.json').read_text())
+    ok = all(build[v]['byte_identical_rebuilds'] for v in recs)
+    clean = all(not r['log_warnings'] and not r['leftovers'] for r in recs.values())
+    lines = ['# A29 PDF quality assurance', '',
+             (f'Both source bundles produced {"byte-identical" if ok else "NON-IDENTICAL"} PDFs in two fresh builds at fixed epoch {epoch}. '
+              f'The final builds showed {"zero" if clean else "SOME"} overfull boxes, undefined references, oversized floats or leftover placeholders. '
+              f'Each variant has {a["main_tables"]} main tables, {a["figures"]} figures and {a["appendix_tables"]} appendix tables, '
+              f'{"in order" if all(r["main_tables_in_order"] and r["appendix_tables_in_order"] for r in recs.values()) else "NOT in order"}. '
+              f'The {len(a["a28_tables_identical"])} tables carried over from A28 are '
+              f'{"identical to the A28 source apart from the part notes in two captions" if all(r["a28_tables_all_identical"] for r in recs.values()) else "NOT all identical"}.'),
+             '', '| Artifact | Preprints page | Applied Sciences page |', '|---|---:|---:|']
+    for k in sorted(set(a['page_map']) | set(p['page_map']), key=key):
+        lines.append(f'| {k} | {p["page_map"].get(k, "missing")} | {a["page_map"].get(k, "missing")} |')
+    lines += ['', f'Preprints PDF has {p["pages"]} pages and SHA-256 `{p["pdf_sha256"]}`.', '',
+              f'Applied Sciences PDF has {a["pages"]} pages and SHA-256 `{a["pdf_sha256"]}`.', '',
+              '[Submission hash manifest](A29_SUBMISSION_HASHES.sha256)', '']
+    (PUB / 'A29_PDF_QA.md').write_text('\n'.join(lines))
+
+
 if __name__ == '__main__':
+    recs = {}
     for v, s in VARIANTS.items():
-        r = qa(v, s)
+        r = recs[v] = qa(v, s)
         print(v, {k: r[k] for k in ('pages', 'main_tables', 'figures', 'main_tables_in_order', 'appendix_tables_in_order', 'appendix_tables',
                                      'a28_tables_all_identical', 'leftovers', 'log_warnings')})
+    write_md(recs, EPOCH)

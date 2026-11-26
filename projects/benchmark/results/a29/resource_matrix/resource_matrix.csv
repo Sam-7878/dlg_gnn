@@ -19,11 +19,15 @@ DGraphFin,DLG-Aug,success,A29-05c,45.256319090000034,0.42362569499982783,4027628
 DGraphFin,OCGNN,success,A29-05c,24.809361769000134,0.278295232000346,2103452672,2493513728,2610376704,False,0.011322083925058308,,
 DGraphFin,CoLA,success,A29-05c,28.961892970000008,0.32182493100026477,2752334336,3122659328,2528710656,False,0.012405297600018664,,
 DGraphFin,AnomalyDAE,TIMEOUT_OBSERVED,A29-05c,,,,,,,,,
-DGraphFin,GADNR,NOT_RUN,,,,,,,,,,
+DGraphFin,GADNR,OTHER_ERROR,A29-06 retry (12 h cap),,,27864760832,37845204992,4876554240,,,"Traceback (most recent call last):
+  File ""/mnt/d/_Work/goat_bank/dlg_gnn/projects/benchmark/scripts/a29_gadnr_retry.py"", line 150, in cell
+    det.fit(d)
+    ~~~~~~~^^^
+  File ""/mnt/d/_Work/goat_bank",
 Reddit-Syn,DOMINANT,success,A29-05c,295.5566667239982,3.2783963170004427,14872081408,18574475264,9979539456,False,0.40327940317763766,,
 Reddit-Syn,DLG-Base,success,A29-05c,309.2361341299984,3.3161110109977017,14993277440,18574475264,9980112896,False,0.40861611215280635,,
 Reddit-Syn,DLG-Aug,success,A29-05c,292.2297135910012,3.2282992120017298,14869192704,18777899008,10539827200,False,0.34408397456404416,,
 Reddit-Syn,OCGNN,success,A29-05c,291.22686546899786,6.765932766000333,11715912192,15476981760,17800105984,False,0.02043710969402168,,
 Reddit-Syn,CoLA,success,A29-05c,320.8186142159975,7.078378971997154,11716664832,15476981760,17885044736,False,0.18144435813864723,,
 Reddit-Syn,AnomalyDAE,GPU_OOM,A29-05c,,,35695908864,37545312256,6350090240,True,,"CUDA out of memory. Tried to allocate 27.39 GiB. GPU 0 has a total capacity of 24.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of t",
-Reddit-Syn,GADNR,NOT_RUN,,,,,,,,,,
+Reddit-Syn,GADNR,HOST_OOM,A29-06 retry (12 h cap),,,0,0,18253611008,,,"Killed by the kernel OOM killer at the cgroup limit (systemd: ""Failed with result 'oom-kill'""; 17G memory peak, 6G memory swap peak) during process_graph, before any GPU use.",

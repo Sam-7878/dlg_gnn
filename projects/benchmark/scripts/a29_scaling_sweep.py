@@ -80,8 +80,9 @@ def one(model):
             pt['status'] = 'COMPLETED'
         except torch.OutOfMemoryError as e:
             pt.update(status='GPU_OOM', error=str(e)[:300]); stop = f'GPU OOM at N={n}'
-        except Exception as e:
-            pt.update(status='ERROR', error=repr(e)[:500]); stop = f'error at N={n}'
+        except Exception as e:  # CUDA driver OOM (spill exhausted) arrives as AcceleratorError, not OutOfMemoryError
+            oom = 'out of memory' in str(e).lower()
+            pt.update(status='GPU_OOM' if oom else 'ERROR', error=repr(e)[:500]); stop = f'{"GPU OOM" if oom else "error"} at N={n}'
         finally:
             torch.optim.Adam.step = step
         res['vram_bytes'] = vram
