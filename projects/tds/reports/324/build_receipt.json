@@ -1,0 +1,40 @@
+{
+  "final": false,
+  "supplement_labels": {
+    "tab:fullmetrics": "S1",
+    "tab:horizon": "S2",
+    "tab:archival": "S3",
+    "tab:statistics": "S4",
+    "tab:chain": "S5",
+    "tab:operating": "S6",
+    "tab:matched-prevalence": "S7",
+    "tab:tree-grid": "S8",
+    "tab:checklist": "S9",
+    "tab:counterparty": "S10",
+    "tab:neural-grid": "S11",
+    "tab:windows": "S12",
+    "tab:long-refits": "S13",
+    "tab:direction": "S14",
+    "tab:seeds": "S15",
+    "tab:environment": "S16"
+  },
+  "venues": {
+    "preprints": {
+      "notices": [],
+      "files": {
+        "preprint_article.pdf": "72db9fef82add1d614b007bc5182d66d586e0497998f58f140b36f37a54d67b4",
+        "preprint_source.zip": "c685e7a4fa9667dce767a68b1e8aef7ab5029a326acdafeb968136e3ec4d3a5c",
+        "supplement.pdf": "eae3a8c0a6e71797ae522dd3a552ca6c7ea6dd314c91c578433f9106a8cc3b8c"
+      }
+    },
+    "applsci": {
+      "notices": [],
+      "files": {
+        "applsci_article.pdf": "a6a3c010447d42ff7406bcd6468f8c7c296a38561c70855f019529562328641f",
+        "mdpi_source.zip": "ab4e1ea113aa7caa6cebdcc4427df9001b396c8e9235717aed93929ab8c6e10d",
+        "supplement.pdf": "eae3a8c0a6e71797ae522dd3a552ca6c7ea6dd314c91c578433f9106a8cc3b8c"
+      }
+    }
+  },
+  "shared_files_identical": 42
+}

@@ -72,3 +72,10 @@
 !/submission/preprints/323/README.md
 /publication/323/*.zip
 /reports/323/*_build.log
+
+# R324 private manuscript candidates (review build; DOI placeholder).
+/submission/applsci/324/*
+!/submission/applsci/324/README.md
+/submission/preprints/324/*
+!/submission/preprints/324/README.md
+/reports/324/*_build.log

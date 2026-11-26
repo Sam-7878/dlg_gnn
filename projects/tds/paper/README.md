@@ -1,5 +1,12 @@
 # TDS paper workspace
 
+Current candidate (R324, 2026-11-26): `submission_324/`. Shared sources in `common/`,
+template wrappers in `venues/`. Build with `../scripts/revision324/build.py [--final]`, then
+`../scripts/revision324/qa.py`. Outputs: `../submission/{preprints,applsci}/324/`.
+Report: `../reports/324/final_report.md`. Older `submission_3xx/` trees are history.
+
+# TDS paper workspace
+
 Current final candidate: `submission_318/`, identity
 `FINAL_CANDIDATE_318_RECONCILED`. Common source is in its `shared/` directory;
 the venue source trees have byte-identical scientific body, Bib, declarations,

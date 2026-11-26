@@ -1,0 +1,170 @@
+{
+  "failed": [],
+  "checks": {
+    "P0-1 no \"pending\"": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-1 no \"approval\"": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-1 no \"proposed public\"": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-1 no \"subject to review\"": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-2 licence strings via macros": {
+      "pass": true,
+      "detail": ""
+    },
+    "P0-4 cohort names": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-3 no zero SD": {
+      "pass": true,
+      "detail": []
+    },
+    "P0-3 shared deterministic note": {
+      "pass": true,
+      "detail": [
+        "data/r319_models.tex",
+        "data/table_full_metrics.tex",
+        "data/table_horizon.tex",
+        "data/table_primary.tex",
+        "data/tree_grid.tex",
+        "data/windows.tex",
+        "replay_reference.tex"
+      ]
+    },
+    "P0-3 no \"Runs\" header": {
+      "pass": true,
+      "detail": ""
+    },
+    "P0-5 SD format": {
+      "pass": true,
+      "detail": ""
+    },
+    "P0-6 checklist consequence column": {
+      "pass": true,
+      "detail": ""
+    },
+    "P0-7 five-decimal footnote": {
+      "pass": true,
+      "detail": ""
+    },
+    "P0-8 seed sentence and table": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-5 3,618 of 3,648": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-6 versions": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-7 UTC-day column": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-8 single archive": {
+      "pass": true,
+      "detail": ""
+    },
+    "N6 tree counts": {
+      "pass": true,
+      "detail": ""
+    },
+    "N2 seed-7 note": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-2 abstract 195-205 words": {
+      "pass": true,
+      "detail": 195
+    },
+    "P1-2 abstract numbers": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-2 abstract SI keywords": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-2 abstract identical in venues": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-1 three RQs and three contributions": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-1 motivation before RQs": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-3 horizon table only in Supplement": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-4 Discussion >= 8 paragraphs": {
+      "pass": true,
+      "detail": 8
+    },
+    "P1-4 literature dialogue": {
+      "pass": true,
+      "detail": ""
+    },
+    "P1-4 numbers": {
+      "pass": true,
+      "detail": ""
+    },
+    "Supplement contents numbering": {
+      "pass": true,
+      "detail": {
+        "tab:fullmetrics": "S1",
+        "tab:horizon": "S2",
+        "tab:archival": "S3",
+        "tab:statistics": "S4",
+        "tab:chain": "S5",
+        "tab:operating": "S6",
+        "tab:matched-prevalence": "S7",
+        "tab:tree-grid": "S8",
+        "tab:checklist": "S9",
+        "tab:counterparty": "S10",
+        "tab:neural-grid": "S11",
+        "tab:windows": "S12",
+        "tab:long-refits": "S13",
+        "tab:direction": "S14",
+        "tab:seeds": "S15",
+        "tab:environment": "S16"
+      }
+    },
+    "All \\STab labels defined": {
+      "pass": true,
+      "detail": []
+    },
+    "No hard-coded Supplement table numbers": {
+      "pass": true,
+      "detail": ""
+    },
+    "Numbers match result CSVs": {
+      "pass": true,
+      "detail": "31 values"
+    },
+    "DOI placeholder present in review PDF": {
+      "pass": true,
+      "detail": true
+    },
+    "No \"pending\" in built PDF": {
+      "pass": true,
+      "detail": ""
+    }
+  }
+}
