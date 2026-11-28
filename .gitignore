@@ -68,8 +68,8 @@ _res/
 !/archive/benchmark/outputs/manuscript_m5/
 /archive/benchmark/outputs/manuscript_m5/*
 !/archive/benchmark/outputs/manuscript_m5/release/
-/projects/**/paper/history/
-/projects/**/paper/*
+/projects/**/papers/history/
+/projects/**/papers/*
 /docs/papers/*
 !/docs/papers/README.md
 /docs/work_reports/**/artifacts/
@@ -105,7 +105,7 @@ _res/
 *.sty
 *.bst
 *.pdf
-/projects/**/paper/current/
+/projects/**/papers/current/
 /projects/benchmark/manuscript_base_a06/
 /projects/benchmark/scripts/a07_build_manuscript.py
 /projects/benchmark/scripts/astra_revision.py
